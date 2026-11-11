@@ -81,8 +81,12 @@ export function Match({ game, onDone }: { game: MatchGame; onDone: () => void })
     <div className="flex flex-1 flex-col gap-4">
       <Prompt>{l(game.prompt)}</Prompt>
       <div className="grid grid-cols-2 gap-x-4 gap-y-3">
-        <div className="flex flex-col gap-3">{game.pairs.map((p, i) => card('a', i, p.a))}</div>
-        <div className="flex flex-col gap-3">{right.map((i) => card('b', i, game.pairs[i]!.b))}</div>
+        <div role="group" aria-label={t('match.left')} className="flex flex-col gap-3">
+          {game.pairs.map((p, i) => card('a', i, p.a))}
+        </div>
+        <div role="group" aria-label={t('match.right')} className="flex flex-col gap-3">
+          {right.map((i) => card('b', i, game.pairs[i]!.b))}
+        </div>
       </div>
       <Feedback
         correct={solved ? t('match.done') : undefined}

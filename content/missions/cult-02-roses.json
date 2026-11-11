@@ -1,0 +1,298 @@
+{
+  "id": "cult-02-roses",
+  "subject": "culture",
+  "free": true,
+  "order": 7,
+  "place": "kazanlak",
+  "badge": {
+    "id": "roses",
+    "icon": "badges/rose.webp"
+  },
+  "title": {
+    "bg": "Долината на розите",
+    "en": "The Valley of Roses"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Мирише ли ти на рози?",
+          "en": "Can you smell roses?"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "В България има цяла долина с рози!",
+          "en": "Bulgaria has a whole valley of roses!"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Нареди розата!",
+          "en": "Put the rose together!"
+        }
+      ],
+      "game": {
+        "type": "puzzle",
+        "prompt": {
+          "bg": "Нареди розата!",
+          "en": "Fix the rose!"
+        },
+        "img": "puzzles/rose.webp",
+        "pieces": 4
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Между Стара планина и Средна гора е Розовата долина. Там е град Казанлък.",
+          "en": "Between the Balkan Mountains and Sredna Gora lies the Valley of Roses, with the town of Kazanlak."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Там растат маслодайни рози. От тях се прави българското розово масло – едно от най-ценните в света.",
+          "en": "Oil-bearing roses grow there. They are used to make Bulgarian rose oil – one of the most precious in the world."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Розите се берат рано сутрин през май и юни. Това се нарича розобер.",
+          "en": "The roses are picked early in the morning in May and June. This is called the rose harvest."
+        },
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "Всяка година в началото на юни в Казанлък има Празник на розата.",
+          "en": "Every year in early June Kazanlak holds the Rose Festival."
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи всяко нещо с неговата двойка!",
+          "en": "Match each thing with its pair!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Маслодайна роза",
+              "en": "Oil-bearing rose"
+            },
+            "b": {
+              "bg": "От нея се прави розово масло",
+              "en": "Rose oil is made from it"
+            }
+          },
+          {
+            "a": {
+              "bg": "Розобер",
+              "en": "Rose harvest"
+            },
+            "b": {
+              "bg": "Рано сутрин през май и юни",
+              "en": "Early mornings in May and June"
+            }
+          },
+          {
+            "a": {
+              "bg": "Празник на розата",
+              "en": "Rose Festival"
+            },
+            "b": {
+              "bg": "Казанлък, в началото на юни",
+              "en": "Kazanlak, in early June"
+            }
+          },
+          {
+            "a": {
+              "bg": "Розовата долина",
+              "en": "Valley of Roses"
+            },
+            "b": {
+              "bg": "Между Стара планина и Средна гора",
+              "en": "Between the Balkan Mountains and Sredna Gora"
+            }
+          }
+        ],
+        "hint": {
+          "bg": "Спомни си какво разказаха Корен и Рая.",
+          "en": "Remember what Koren and Raya told you."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "В кой град е Празникът на розата?",
+            "en": "In which town is the Rose Festival?"
+          },
+          "options": [
+            {
+              "bg": "Казанлък",
+              "en": "Kazanlak"
+            },
+            {
+              "bg": "Варна",
+              "en": "Varna"
+            },
+            {
+              "bg": "Видин",
+              "en": "Vidin"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "bg": "Градът е в Розовата долина.",
+            "en": "The town is in the Valley of Roses."
+          }
+        },
+        {
+          "q": {
+            "bg": "Кога се берат розите?",
+            "en": "When are the roses picked?"
+          },
+          "options": [
+            {
+              "bg": "Вечер през зимата",
+              "en": "In winter evenings"
+            },
+            {
+              "bg": "Рано сутрин през май и юни",
+              "en": "Early mornings in May and June"
+            },
+            {
+              "bg": "По обед през август",
+              "en": "At noon in August"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "bg": "Тогава цветовете са най-свежи.",
+            "en": "That is when the flowers are freshest."
+          }
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Розовата долина се простира между Стара планина и Средна гора. Неин център е Казанлък.",
+          "en": "The Valley of Roses lies between the Balkan Mountains and Sredna Gora, with Kazanlak at its centre."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Отглежда се маслодайна роза (Rosa damascena). Българското розово масло е сред най-ценените в парфюмерията.",
+          "en": "The oil-bearing damask rose (Rosa damascena) grows here. Bulgarian rose oil is among the most valued in perfumery."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Цветовете се берат на ръка рано сутрин, когато съдържат най-много масло.",
+          "en": "The petals are picked by hand early in the morning, when they hold the most oil."
+        },
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "За един килограм розово масло са нужни над три тона розов цвят.",
+          "en": "Over three tonnes of petals are needed for one kilogram of rose oil."
+        }
+      ],
+      "game": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди как се прави розовото масло.",
+          "en": "Put the making of rose oil in order."
+        },
+        "items": [
+          {
+            "bg": "Берат розовия цвят рано сутрин",
+            "en": "The petals are picked early in the morning"
+          },
+          {
+            "bg": "Цветът се дестилира в казани",
+            "en": "The petals are distilled in stills"
+          },
+          {
+            "bg": "Получава се розово масло",
+            "en": "Rose oil is obtained"
+          },
+          {
+            "bg": "Маслото се използва в парфюми и козметика",
+            "en": "The oil is used in perfume and cosmetics"
+          }
+        ],
+        "hint": {
+          "bg": "Започни от полето и завърши в магазина.",
+          "en": "Start in the field and finish in the shop."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Колко розов цвят е нужен за 1 кг розово масло?",
+            "en": "How many petals are needed for 1 kg of rose oil?"
+          },
+          "options": [
+            {
+              "bg": "Около 30 кг",
+              "en": "About 30 kg"
+            },
+            {
+              "bg": "Около 300 кг",
+              "en": "About 300 kg"
+            },
+            {
+              "bg": "Над 3 тона",
+              "en": "Over 3 tonnes"
+            }
+          ],
+          "answer": 2,
+          "hint": {
+            "bg": "Много, много повече, отколкото мислиш.",
+            "en": "Much, much more than you think."
+          }
+        },
+        {
+          "q": {
+            "bg": "Защо розите се берат рано сутрин?",
+            "en": "Why are roses picked early in the morning?"
+          },
+          "options": [
+            {
+              "bg": "Тогава имат най-много масло",
+              "en": "They hold the most oil then"
+            },
+            {
+              "bg": "Защото пчелите спят",
+              "en": "Because the bees are asleep"
+            },
+            {
+              "bg": "Защото е по-тъмно",
+              "en": "Because it is darker"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "bg": "Слънцето изпарява ценното масло.",
+            "en": "The sun evaporates the precious oil."
+          }
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Национален статистически институт / Министерство на земеделието – данни за маслодайната роза.",
+    "Исторически музей „Искра“ – Казанлък: Музей на розата.",
+    "[учебник/помагало – издателство и страница: попълва учителят]"
+  ],
+  "review": null,
+  "draft": true
+}

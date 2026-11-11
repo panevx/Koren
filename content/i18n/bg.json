@@ -156,5 +156,7 @@
   "level.young.short": "7–10 г.",
   "level.guard.short": "11–14 г.",
   "parents.younger": "По-малко години",
-  "parents.older": "Повече години"
+  "parents.older": "Повече години",
+  "match.left": "Първа колона",
+  "match.right": "Втора колона"
 }

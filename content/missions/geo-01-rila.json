@@ -42,7 +42,6 @@
           "varna",
           "pliska"
         ],
-        "showIcons": true,
         "prompt": {
           "bg": "Намери планината!",
           "en": "Find the mountain!"
@@ -50,7 +49,8 @@
         "hint": {
           "bg": "Планината е долу, вляво.",
           "en": "The mountain is down, on the left."
-        }
+        },
+        "showIcons": true
       },
       "check": []
     },
@@ -97,7 +97,8 @@
         "hint": {
           "bg": "Търси в планините на югозапад, южно от София.",
           "en": "Look in the mountains in the south-west, south of Sofia."
-        }
+        },
+        "showIcons": false
       },
       "check": [
         {

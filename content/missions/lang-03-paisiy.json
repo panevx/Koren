@@ -1,0 +1,297 @@
+{
+  "id": "lang-03-paisiy",
+  "subject": "language",
+  "free": true,
+  "order": 10,
+  "badge": {
+    "id": "paisiy",
+    "icon": "badges/journal.webp"
+  },
+  "title": {
+    "bg": "Паисий и „История славянобългарска“",
+    "en": "Paisius and the Slavo-Bulgarian History"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Виж тази стара книга!",
+          "en": "Look at this old book!"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Написал я е монахът Паисий, за да не забравим кои сме.",
+          "en": "The monk Paisius wrote it, so we never forget who we are."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Нареди книгата!",
+          "en": "Put the book together!"
+        }
+      ],
+      "game": {
+        "type": "puzzle",
+        "prompt": {
+          "bg": "Нареди книгата!",
+          "en": "Fix the book!"
+        },
+        "img": "puzzles/journal.webp",
+        "pieces": 4
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Паисий е монах в Хилендарския манастир на Света гора.",
+          "en": "Paisius is a monk in the Hilendar Monastery on Mount Athos."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "През 1762 г. той завършва книгата „История славянобългарска“.",
+          "en": "In 1762 he finishes the book “Slavo-Bulgarian History”."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "В нея пише за славното минало на българите, за да се гордеят с езика и историята си.",
+          "en": "In it he writes about the glorious past of the Bulgarians, so they will be proud of their language and history."
+        },
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "На 1 ноември празнуваме Деня на народните будители – Паисий е един от тях.",
+          "en": "On 1 November we celebrate the Day of the National Awakeners – Paisius is one of them."
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи всяко нещо с неговата двойка!",
+          "en": "Match each thing with its pair!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Паисий",
+              "en": "Paisius"
+            },
+            "b": {
+              "bg": "Монах в Хилендарския манастир",
+              "en": "A monk in the Hilendar Monastery"
+            }
+          },
+          {
+            "a": {
+              "bg": "1762",
+              "en": "1762"
+            },
+            "b": {
+              "bg": "Годината на „История славянобългарска“",
+              "en": "The year of the “Slavo-Bulgarian History”"
+            }
+          },
+          {
+            "a": {
+              "bg": "1 ноември",
+              "en": "1 November"
+            },
+            "b": {
+              "bg": "Ден на народните будители",
+              "en": "Day of the National Awakeners"
+            }
+          },
+          {
+            "a": {
+              "bg": "Софроний Врачански",
+              "en": "Sophronius of Vratsa"
+            },
+            "b": {
+              "bg": "Направил първия препис на книгата",
+              "en": "Made the first copy of the book"
+            }
+          }
+        ],
+        "hint": {
+          "bg": "Годината и датата са числа – търси ги сред текстовете.",
+          "en": "The year and the date are numbers – look for them among the texts."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Как се казва книгата на Паисий?",
+            "en": "What is Paisius's book called?"
+          },
+          "options": [
+            {
+              "bg": "„История славянобългарска“",
+              "en": "“Slavo-Bulgarian History”"
+            },
+            {
+              "bg": "„За буквите“",
+              "en": "“On the Letters”"
+            },
+            {
+              "bg": "„Под игото“",
+              "en": "“Under the Yoke”"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "bg": "В името има думата „История“.",
+            "en": "The name has the word “History”."
+          }
+        },
+        {
+          "q": {
+            "bg": "Кога е Денят на народните будители?",
+            "en": "When is the Day of the National Awakeners?"
+          },
+          "options": [
+            {
+              "bg": "24 май",
+              "en": "24 May"
+            },
+            {
+              "bg": "1 ноември",
+              "en": "1 November"
+            },
+            {
+              "bg": "3 март",
+              "en": "3 March"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "bg": "Есента е.",
+            "en": "It is in autumn."
+          }
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "През 1762 г. в Хилендарския манастир Паисий завършва „История славянобългарска“.",
+          "en": "In 1762, in the Hilendar Monastery, Paisius completes the “Slavo-Bulgarian History”."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Тази година се приема за начало на Българското възраждане.",
+          "en": "This year is taken as the start of the Bulgarian National Revival."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Паисий се обръща към онези, които се срамуват да се нарекат българи: „О, неразумний юроде, поради что се срамиш да се наречеш болгарин?“",
+          "en": "Paisius speaks to those ashamed to call themselves Bulgarian: “O foolish one, why are you ashamed to call yourself a Bulgarian?”"
+        },
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "Книгата се разпространява в преписи. Първият е направен от Софроний Врачански през 1765 г.",
+          "en": "The book spreads in hand-written copies. The first is made by Sophronius of Vratsa in 1765."
+        }
+      ],
+      "game": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди събитията по време.",
+          "en": "Put the events in time order."
+        },
+        "items": [
+          {
+            "bg": "Паисий завършва „История славянобългарска“ (1762 г.)",
+            "en": "Paisius completes the “Slavo-Bulgarian History” (1762)"
+          },
+          {
+            "bg": "Софроний Врачански прави първия препис (1765 г.)",
+            "en": "Sophronius of Vratsa makes the first copy (1765)"
+          },
+          {
+            "bg": "Априлското въстание (1876 г.)",
+            "en": "The April Uprising (1876)"
+          },
+          {
+            "bg": "Освобождението на България (1878 г.)",
+            "en": "The Liberation of Bulgaria (1878)"
+          }
+        ],
+        "hint": {
+          "bg": "Гледай годините в скобите.",
+          "en": "Look at the years in brackets."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Началото на коя епоха бележи 1762 г.?",
+            "en": "The start of which era does 1762 mark?"
+          },
+          "options": [
+            {
+              "bg": "Второто българско царство",
+              "en": "The Second Bulgarian Empire"
+            },
+            {
+              "bg": "Българското възраждане",
+              "en": "The Bulgarian National Revival"
+            },
+            {
+              "bg": "Покръстването",
+              "en": "The Christianization"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "bg": "Българите се „събуждат“.",
+            "en": "The Bulgarians “wake up”."
+          }
+        },
+        {
+          "q": {
+            "bg": "Как се разпространява книгата на Паисий?",
+            "en": "How did Paisius's book spread?"
+          },
+          "options": [
+            {
+              "bg": "В преписи на ръка",
+              "en": "In hand-written copies"
+            },
+            {
+              "bg": "По радиото",
+              "en": "On the radio"
+            },
+            {
+              "bg": "Отпечатана в милиони броеве",
+              "en": "Printed in millions"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "bg": "Тогава в България още няма печатници.",
+            "en": "Bulgaria had no printing presses yet."
+          }
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Паисий Хилендарски. История славянобългарска (1762). Критично издание, БАН.",
+    "Енциклопедия „Българско възраждане“.",
+    "[учебник/помагало – издателство и страница: попълва учителят]"
+  ],
+  "review": null,
+  "draft": true
+}

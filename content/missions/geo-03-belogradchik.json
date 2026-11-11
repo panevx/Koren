@@ -1,0 +1,333 @@
+{
+  "id": "geo-03-belogradchik",
+  "subject": "geography",
+  "free": true,
+  "order": 12,
+  "place": "belogradchik",
+  "badge": {
+    "id": "belogradchik",
+    "icon": "tiles/discover.webp"
+  },
+  "title": {
+    "bg": "Белоградчишките скали",
+    "en": "The Belogradchik Rocks"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Виж тези червени скали!",
+          "en": "Look at these red rocks!"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Приличат на хора и животни!",
+          "en": "They look like people and animals!"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Намери скалите на картата!",
+          "en": "Find the rocks on the map!"
+        }
+      ],
+      "game": {
+        "type": "map",
+        "target": "belogradchik",
+        "choices": [
+          "belogradchik",
+          "varna",
+          "plovdiv"
+        ],
+        "prompt": {
+          "bg": "Намери скалите!",
+          "en": "Find the rocks!"
+        },
+        "hint": {
+          "bg": "Скалите са горе, вляво.",
+          "en": "The rocks are up, on the left."
+        },
+        "showIcons": true
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "В северозападна България са Белоградчишките скали – високи до около 200 метра.",
+          "en": "In north-western Bulgaria stand the Belogradchik Rocks – up to about 200 metres high."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Те са червеникави и приличат на хора и животни. Хората са им дали имена.",
+          "en": "They are reddish and look like people and animals. People have given them names."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Има скали, наречени Мадоната, Конникът, Монасите и Адам и Ева.",
+          "en": "There are rocks called the Madonna, the Horseman, the Monks and Adam and Eve."
+        },
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "Между скалите е построена Белоградчишката крепост.",
+          "en": "The Belogradchik Fortress is built among the rocks."
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи името на скалата с това, на което прилича!",
+          "en": "Match each rock's name with what it looks like!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Мадоната",
+              "en": "The Madonna"
+            },
+            "b": {
+              "bg": "Жена с дете",
+              "en": "A woman with a child"
+            }
+          },
+          {
+            "a": {
+              "bg": "Конникът",
+              "en": "The Horseman"
+            },
+            "b": {
+              "bg": "Човек на кон",
+              "en": "A man on a horse"
+            }
+          },
+          {
+            "a": {
+              "bg": "Монасите",
+              "en": "The Monks"
+            },
+            "b": {
+              "bg": "Редица монаси",
+              "en": "A row of monks"
+            }
+          },
+          {
+            "a": {
+              "bg": "Адам и Ева",
+              "en": "Adam and Eve"
+            },
+            "b": {
+              "bg": "Двама души един до друг",
+              "en": "Two people side by side"
+            }
+          }
+        ],
+        "hint": {
+          "bg": "Името подсказва формата.",
+          "en": "The name tells you the shape."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "В коя част на България са скалите?",
+            "en": "In which part of Bulgaria are the rocks?"
+          },
+          "options": [
+            {
+              "bg": "Северозападна",
+              "en": "North-west"
+            },
+            {
+              "bg": "На морето",
+              "en": "On the coast"
+            },
+            {
+              "bg": "В Родопите",
+              "en": "In the Rhodopes"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "bg": "Близо до Видин.",
+            "en": "Near Vidin."
+          }
+        },
+        {
+          "q": {
+            "bg": "Какво е построено между скалите?",
+            "en": "What is built among the rocks?"
+          },
+          "options": [
+            {
+              "bg": "Летище",
+              "en": "An airport"
+            },
+            {
+              "bg": "Крепост",
+              "en": "A fortress"
+            },
+            {
+              "bg": "Пристанище",
+              "en": "A port"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "bg": "Скалите служат за стени.",
+            "en": "The rocks work as walls."
+          }
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Белоградчишките скали са образувани преди милиони години от пясъчници и конгломерати.",
+          "en": "The Belogradchik Rocks formed millions of years ago from sandstones and conglomerates."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Червеният им цвят идва от железни оксиди в скалите.",
+          "en": "Their red colour comes from iron oxides in the rock."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Белоградчишката крепост използва скалите като естествени стени. Строена е още от римляните и разширявана по-късно.",
+          "en": "The Belogradchik Fortress uses the rocks as natural walls. It was first built by the Romans and enlarged later."
+        },
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "Наблизо е пещерата Магура с праисторически рисунки.",
+          "en": "Nearby is the Magura Cave with prehistoric paintings."
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Откъде идва червеният цвят на скалите?",
+              "en": "Where does the rocks' red colour come from?"
+            },
+            "options": [
+              {
+                "bg": "От железни оксиди",
+                "en": "From iron oxides"
+              },
+              {
+                "bg": "От боя",
+                "en": "From paint"
+              },
+              {
+                "bg": "От залеза",
+                "en": "From the sunset"
+              }
+            ],
+            "answer": 0,
+            "hint": {
+              "bg": "Същото вещество прави ръждата червена.",
+              "en": "The same substance makes rust red."
+            }
+          },
+          {
+            "q": {
+              "bg": "Кой пръв строи крепостта при скалите?",
+              "en": "Who first built the fortress at the rocks?"
+            },
+            "options": [
+              {
+                "bg": "Османците",
+                "en": "The Ottomans"
+              },
+              {
+                "bg": "Римляните",
+                "en": "The Romans"
+              },
+              {
+                "bg": "Хан Аспарух",
+                "en": "Khan Asparuh"
+              }
+            ],
+            "answer": 1,
+            "hint": {
+              "bg": "Те строят пътища и крепости из цяла Европа.",
+              "en": "They built roads and fortresses all over Europe."
+            }
+          },
+          {
+            "q": {
+              "bg": "Какво има в пещерата Магура?",
+              "en": "What is in the Magura Cave?"
+            },
+            "options": [
+              {
+                "bg": "Езеро с делфини",
+                "en": "A lake with dolphins"
+              },
+              {
+                "bg": "Вулкан",
+                "en": "A volcano"
+              },
+              {
+                "bg": "Праисторически рисунки",
+                "en": "Prehistoric paintings"
+              }
+            ],
+            "answer": 2,
+            "hint": {
+              "bg": "Нарисувани са от древни хора.",
+              "en": "They were painted by ancient people."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "От какви скали са Белоградчишките скали?",
+            "en": "What kind of rock are the Belogradchik Rocks?"
+          },
+          "options": [
+            {
+              "bg": "Пясъчници и конгломерати",
+              "en": "Sandstones and conglomerates"
+            },
+            {
+              "bg": "Лед",
+              "en": "Ice"
+            },
+            {
+              "bg": "Вулканична лава",
+              "en": "Volcanic lava"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "bg": "Пясъкът се е превърнал в камък.",
+            "en": "Sand has turned into stone."
+          }
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Министерство на околната среда и водите: природна забележителност „Белоградчишки скали“.",
+    "География на България. София: Институт по география – БАН, 2002.",
+    "[учебник/помагало – издателство и страница: попълва учителят]"
+  ],
+  "review": null,
+  "draft": true
+}

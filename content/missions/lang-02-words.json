@@ -1,0 +1,397 @@
+{
+  "id": "lang-02-words",
+  "subject": "language",
+  "free": true,
+  "order": 9,
+  "badge": {
+    "id": "words",
+    "icon": "levels/small.webp"
+  },
+  "title": {
+    "bg": "Първите думи",
+    "en": "First words"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Корен, как се чувстваш днес?",
+          "en": "Koren, how do you feel today?"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Понякога се радвам, понякога се чудя – като теб!",
+          "en": "Sometimes I'm happy, sometimes I wonder – just like you!"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Свържи Корен и Рая с едно и също настроение!",
+          "en": "Match Koren and Raya with the same feeling!"
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Кое лице е същото?",
+          "en": "Which face matches?"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Радост",
+              "en": "Joy",
+              "img": "heroes/koren-joy.webp"
+            },
+            "b": {
+              "bg": "Радост",
+              "en": "Joy",
+              "img": "heroes/raya-joy.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Изненада",
+              "en": "Surprise",
+              "img": "heroes/koren-surprise.webp"
+            },
+            "b": {
+              "bg": "Изненада",
+              "en": "Surprise",
+              "img": "heroes/raya-surprise.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Смях",
+              "en": "Laughter",
+              "img": "heroes/koren-laughter.webp"
+            },
+            "b": {
+              "bg": "Смях",
+              "en": "Laughter",
+              "img": "heroes/raya-laughter.webp"
+            }
+          }
+        ],
+        "hint": {
+          "bg": "Гледай устата и очите.",
+          "en": "Look at the mouth and the eyes."
+        }
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Здравей! Знаеш ли най-важните български думи?",
+          "en": "Hello! Do you know the most important Bulgarian words?"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Когато срещнеш някого, казваш „Здравей!“. Когато си тръгваш – „Довиждане!“.",
+          "en": "When you meet someone, you say “Здравей!”. When you leave – “Довиждане!”."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Учтивите думи „Моля“ и „Благодаря“ отварят всички врати.",
+          "en": "The polite words “Моля” and “Благодаря” open every door."
+        },
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "Свържи българската дума с английската!",
+          "en": "Match the Bulgarian word with the English one!"
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи българската дума с английската!",
+          "en": "Match the Bulgarian word with the English one!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Здравей",
+              "en": "Здравей"
+            },
+            "b": {
+              "bg": "Hello",
+              "en": "Hello"
+            }
+          },
+          {
+            "a": {
+              "bg": "Благодаря",
+              "en": "Благодаря"
+            },
+            "b": {
+              "bg": "Thank you",
+              "en": "Thank you"
+            }
+          },
+          {
+            "a": {
+              "bg": "Довиждане",
+              "en": "Довиждане"
+            },
+            "b": {
+              "bg": "Goodbye",
+              "en": "Goodbye"
+            }
+          },
+          {
+            "a": {
+              "bg": "Моля",
+              "en": "Моля"
+            },
+            "b": {
+              "bg": "Please",
+              "en": "Please"
+            }
+          },
+          {
+            "a": {
+              "bg": "Добро утро",
+              "en": "Добро утро"
+            },
+            "b": {
+              "bg": "Good morning",
+              "en": "Good morning"
+            }
+          }
+        ],
+        "hint": {
+          "bg": "„Добро утро“ казваме сутрин.",
+          "en": "We say “Добро утро” in the morning."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Какво казваме, когато някой ни помогне?",
+            "en": "What do we say when someone helps us?"
+          },
+          "options": [
+            {
+              "bg": "Довиждане",
+              "en": "Довиждане"
+            },
+            {
+              "bg": "Благодаря",
+              "en": "Благодаря"
+            },
+            {
+              "bg": "Лека нощ",
+              "en": "Лека нощ"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "bg": "Така показваме, че сме доволни.",
+            "en": "That is how we show we are grateful."
+          }
+        },
+        {
+          "q": {
+            "bg": "Какво казваме сутрин?",
+            "en": "What do we say in the morning?"
+          },
+          "options": [
+            {
+              "bg": "Добро утро",
+              "en": "Добро утро"
+            },
+            {
+              "bg": "Лека нощ",
+              "en": "Лека нощ"
+            },
+            {
+              "bg": "Довиждане",
+              "en": "Довиждане"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "bg": "В поздрава има думата „утро“.",
+            "en": "The greeting has the word “утро” (morning)."
+          }
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Българският е славянски език и се пише на кирилица.",
+          "en": "Bulgarian is a Slavic language written in Cyrillic."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "За разлика от повечето славянски езици, той няма падежи при съществителните, но има членуване: „книга“ – „книгата“.",
+          "en": "Unlike most Slavic languages it has no noun cases, but it has a definite article: “книга” – “книгата” (the book)."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Към непознат възрастен се обръщаме учтиво с „Вие“.",
+          "en": "We address an adult we don't know politely with “Вие”."
+        },
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "Да проверим колко добре познаваш езика!",
+          "en": "Let's see how well you know the language!"
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Кое е множественото число на „дете“?",
+              "en": "What is the plural of “дете” (child)?"
+            },
+            "options": [
+              {
+                "bg": "детета",
+                "en": "детета"
+              },
+              {
+                "bg": "деца",
+                "en": "деца"
+              },
+              {
+                "bg": "детове",
+                "en": "детове"
+              }
+            ],
+            "answer": 1,
+            "hint": {
+              "bg": "Звучи като началото на „децата“.",
+              "en": "It sounds like the start of “децата”."
+            }
+          },
+          {
+            "q": {
+              "bg": "Как е с член думата „книга“?",
+              "en": "What is “книга” with the definite article?"
+            },
+            "options": [
+              {
+                "bg": "книгата",
+                "en": "книгата"
+              },
+              {
+                "bg": "книгът",
+                "en": "книгът"
+              },
+              {
+                "bg": "книгото",
+                "en": "книгото"
+              }
+            ],
+            "answer": 0,
+            "hint": {
+              "bg": "Женски род – членът е „-та“.",
+              "en": "Feminine – the article is “-та”."
+            }
+          },
+          {
+            "q": {
+              "bg": "Коя дума е глагол?",
+              "en": "Which word is a verb?"
+            },
+            "options": [
+              {
+                "bg": "червен",
+                "en": "червен"
+              },
+              {
+                "bg": "книга",
+                "en": "книга"
+              },
+              {
+                "bg": "чета",
+                "en": "чета"
+              }
+            ],
+            "answer": 2,
+            "hint": {
+              "bg": "Глаголът казва какво правим.",
+              "en": "A verb tells what we do."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Как се обръщаме учтиво към непознат възрастен?",
+            "en": "How do we politely address an adult we don't know?"
+          },
+          "options": [
+            {
+              "bg": "ти",
+              "en": "ти"
+            },
+            {
+              "bg": "Вие",
+              "en": "Вие"
+            },
+            {
+              "bg": "той",
+              "en": "той"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "bg": "Пише се с главна буква в писмо.",
+            "en": "It is written with a capital letter in a letter."
+          }
+        },
+        {
+          "q": {
+            "bg": "Кое е умалителното на „къща“?",
+            "en": "What is the diminutive of “къща” (house)?"
+          },
+          "options": [
+            {
+              "bg": "къщище",
+              "en": "къщище"
+            },
+            {
+              "bg": "къщар",
+              "en": "къщар"
+            },
+            {
+              "bg": "къщичка",
+              "en": "къщичка"
+            }
+          ],
+          "answer": 2,
+          "hint": {
+            "bg": "Умалителното звучи мило и малко.",
+            "en": "A diminutive sounds small and sweet."
+          }
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Граматика на съвременния български книжовен език. София: БАН.",
+    "[учебник/помагало – издателство и страница: попълва учителят]"
+  ],
+  "review": null,
+  "draft": true
+}

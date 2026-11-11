@@ -1,0 +1,295 @@
+{
+  "id": "hist-03-tarnovo",
+  "subject": "history",
+  "free": true,
+  "order": 6,
+  "place": "veliko-tarnovo",
+  "badge": {
+    "id": "tarnovo",
+    "icon": "tiles/collection.webp"
+  },
+  "title": {
+    "bg": "Царевец и Второто българско царство",
+    "en": "Tsarevets and the Second Bulgarian Empire"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Здравей! Виж колко красива крепост!",
+          "en": "Hi! Look what a beautiful fortress!"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Казва се Царевец. Там живели царете.",
+          "en": "It is called Tsarevets. Kings lived there."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Нареди картината с нас!",
+          "en": "Put our picture together!"
+        }
+      ],
+      "game": {
+        "type": "puzzle",
+        "prompt": {
+          "bg": "Нареди картината!",
+          "en": "Put the picture together!"
+        },
+        "img": "puzzles/koren-raya.webp",
+        "pieces": 4
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "През 1185 г. братята Асен и Петър вдигат въстание в Търново срещу Византия.",
+          "en": "In 1185 the brothers Asen and Peter lead an uprising in Tarnovo against Byzantium."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Така започва Второто българско царство, а Търново става негова столица.",
+          "en": "That is how the Second Bulgarian Empire begins, with Tarnovo as its capital."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "На хълма Царевец са дворецът на царете и патриаршията.",
+          "en": "The kings' palace and the Patriarchate stand on the hill of Tsarevets."
+        },
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "През 1393 г. Търново пада под османска власт.",
+          "en": "In 1393 Tarnovo falls under Ottoman rule."
+        }
+      ],
+      "game": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди събитията по време.",
+          "en": "Put the events in time order."
+        },
+        "items": [
+          {
+            "bg": "Въстанието на Асен и Петър (1185 г.)",
+            "en": "The uprising of Asen and Peter (1185)"
+          },
+          {
+            "bg": "Битката при Клокотница (1230 г.)",
+            "en": "The Battle of Klokotnitsa (1230)"
+          },
+          {
+            "bg": "Търново пада под османска власт (1393 г.)",
+            "en": "Tarnovo falls to the Ottomans (1393)"
+          }
+        ],
+        "hint": {
+          "bg": "Започни с най-малката година.",
+          "en": "Start with the smallest year."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кои братя вдигат въстанието през 1185 г.?",
+            "en": "Which brothers lead the uprising in 1185?"
+          },
+          "options": [
+            {
+              "bg": "Кирил и Методий",
+              "en": "Cyril and Methodius"
+            },
+            {
+              "bg": "Асен и Петър",
+              "en": "Asen and Peter"
+            },
+            {
+              "bg": "Борис и Симеон",
+              "en": "Boris and Simeon"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "bg": "Единият брат се казва Петър.",
+            "en": "One of the brothers is called Peter."
+          }
+        },
+        {
+          "q": {
+            "bg": "Как се казва крепостта в Търново?",
+            "en": "What is the fortress in Tarnovo called?"
+          },
+          "options": [
+            {
+              "bg": "Баба Вида",
+              "en": "Baba Vida"
+            },
+            {
+              "bg": "Асенова крепост",
+              "en": "Asen's Fortress"
+            },
+            {
+              "bg": "Царевец",
+              "en": "Tsarevets"
+            }
+          ],
+          "answer": 2,
+          "hint": {
+            "bg": "В името ѝ има думата „цар“.",
+            "en": "Its name has the word “tsar” in it."
+          }
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "През 1185 г. Асен и Петър вдигат въстание в Търново. Така започва Второто българско царство.",
+          "en": "In 1185 Asen and Peter lead an uprising in Tarnovo. The Second Bulgarian Empire begins."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Най-голямата си сила царството постига при цар Иван Асен II (1218–1241).",
+          "en": "The empire is at its strongest under Tsar Ivan Asen II (1218–1241)."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "През 1230 г. при Клокотница той побеждава епирския владетел Теодор Комнин. Казват, че тогава България стига до три морета.",
+          "en": "In 1230 at Klokotnitsa he defeats Theodore Komnenos of Epirus. It is said that Bulgaria then reaches three seas."
+        },
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "През 1393 г. след дълга обсада Търново пада под османска власт.",
+          "en": "In 1393, after a long siege, Tarnovo falls under Ottoman rule."
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "При кой цар Второто българско царство е най-силно?",
+              "en": "Under which tsar is the Second Empire strongest?"
+            },
+            "options": [
+              {
+                "bg": "Иван Асен II",
+                "en": "Ivan Asen II"
+              },
+              {
+                "bg": "Иван Шишман",
+                "en": "Ivan Shishman"
+              },
+              {
+                "bg": "Калоян",
+                "en": "Kaloyan"
+              }
+            ],
+            "answer": 0,
+            "hint": {
+              "bg": "Той носи името на един от братята-основатели.",
+              "en": "He carries the name of one of the founding brothers."
+            }
+          },
+          {
+            "q": {
+              "bg": "Кого побеждава Иван Асен II при Клокотница?",
+              "en": "Who does Ivan Asen II defeat at Klokotnitsa?"
+            },
+            "options": [
+              {
+                "bg": "Хан Аспарух",
+                "en": "Khan Asparuh"
+              },
+              {
+                "bg": "Теодор Комнин",
+                "en": "Theodore Komnenos"
+              },
+              {
+                "bg": "Константин IV",
+                "en": "Constantine IV"
+              }
+            ],
+            "answer": 1,
+            "hint": {
+              "bg": "Той е владетел на Епир.",
+              "en": "He is the ruler of Epirus."
+            }
+          },
+          {
+            "q": {
+              "bg": "До колко морета стига България според преданието?",
+              "en": "How many seas does Bulgaria reach, according to tradition?"
+            },
+            "options": [
+              {
+                "bg": "Едно",
+                "en": "One"
+              },
+              {
+                "bg": "Две",
+                "en": "Two"
+              },
+              {
+                "bg": "Три",
+                "en": "Three"
+              }
+            ],
+            "answer": 2,
+            "hint": {
+              "bg": "Черно, Бяло и Адриатическо.",
+              "en": "The Black, the Aegean and the Adriatic."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Коя година Търново пада под османска власт?",
+            "en": "In which year does Tarnovo fall to the Ottomans?"
+          },
+          "options": [
+            {
+              "bg": "1185",
+              "en": "1185"
+            },
+            {
+              "bg": "1393",
+              "en": "1393"
+            },
+            {
+              "bg": "1878",
+              "en": "1878"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "bg": "В края на XIV век.",
+            "en": "At the end of the 14th century."
+          }
+        }
+      ]
+    }
+  },
+  "sources": [
+    "История на България, т. 3: Второ българско царство. София: БАН, 1982.",
+    "[учебник/помагало – издателство и страница: попълва учителят]"
+  ],
+  "review": null,
+  "draft": true
+}

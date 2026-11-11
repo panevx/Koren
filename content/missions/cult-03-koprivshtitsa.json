@@ -1,0 +1,333 @@
+{
+  "id": "cult-03-koprivshtitsa",
+  "subject": "culture",
+  "free": true,
+  "order": 8,
+  "place": "koprivshtitsa",
+  "badge": {
+    "id": "koprivshtitsa",
+    "icon": "tiles/missions.webp"
+  },
+  "title": {
+    "bg": "Копривщица и народната носия",
+    "en": "Koprivshtitsa and folk costume"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Да идем в Копривщица!",
+          "en": "Let's go to Koprivshtitsa!"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Там къщите са шарени и много стари.",
+          "en": "The houses there are colourful and very old."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Намери къщичката на картата!",
+          "en": "Find the little house on the map!"
+        }
+      ],
+      "game": {
+        "type": "map",
+        "target": "koprivshtitsa",
+        "choices": [
+          "koprivshtitsa",
+          "varna",
+          "musala"
+        ],
+        "prompt": {
+          "bg": "Намери къщичката!",
+          "en": "Find the little house!"
+        },
+        "hint": {
+          "bg": "Къщичката е в средата на картата.",
+          "en": "The little house is in the middle of the map."
+        },
+        "showIcons": true
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Копривщица е град-музей. Тук има стотици къщи от времето на Възраждането.",
+          "en": "Koprivshtitsa is a museum town with hundreds of houses from the National Revival."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Веднъж на пет години тук се събират певци и танцьори от цяла България за Националния събор на народното творчество.",
+          "en": "Once every five years singers and dancers from all over Bulgaria gather here for the National Folklore Festival."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Те идват облечени в народни носии – ризи с шевици, сукмани, престилки и пафти.",
+          "en": "They come in folk costume – embroidered shirts, sukman dresses, aprons and pafti buckles."
+        },
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "Всеки край на България има своя носия и свои шевици.",
+          "en": "Every region of Bulgaria has its own costume and embroidery."
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи частта от носията с това, което е!",
+          "en": "Match each part of the costume with what it is!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Пафти",
+              "en": "Pafti"
+            },
+            "b": {
+              "bg": "Голяма метална тока за колана",
+              "en": "A big metal belt buckle"
+            }
+          },
+          {
+            "a": {
+              "bg": "Шевица",
+              "en": "Shevitsa"
+            },
+            "b": {
+              "bg": "Бродерия по ризата",
+              "en": "Embroidery on the shirt"
+            }
+          },
+          {
+            "a": {
+              "bg": "Престилка",
+              "en": "Apron"
+            },
+            "b": {
+              "bg": "Носи се отпред върху сукмана",
+              "en": "Worn in front over the dress"
+            }
+          },
+          {
+            "a": {
+              "bg": "Калпак",
+              "en": "Kalpak"
+            },
+            "b": {
+              "bg": "Мъжка шапка от агнешка кожа",
+              "en": "A man's lambskin hat"
+            }
+          }
+        ],
+        "hint": {
+          "bg": "Пафтите блестят на кръста.",
+          "en": "The pafti shine at the waist."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Колко често е съборът в Копривщица?",
+            "en": "How often is the festival in Koprivshtitsa?"
+          },
+          "options": [
+            {
+              "bg": "Всяка седмица",
+              "en": "Every week"
+            },
+            {
+              "bg": "Веднъж на пет години",
+              "en": "Once every five years"
+            },
+            {
+              "bg": "Веднъж на сто години",
+              "en": "Once every hundred years"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "bg": "Чака се дълго – няколко години.",
+            "en": "You wait a long time – several years."
+          }
+        },
+        {
+          "q": {
+            "bg": "Какво е шевица?",
+            "en": "What is a shevitsa?"
+          },
+          "options": [
+            {
+              "bg": "Бродерия",
+              "en": "Embroidery"
+            },
+            {
+              "bg": "Шапка",
+              "en": "A hat"
+            },
+            {
+              "bg": "Танц",
+              "en": "A dance"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "bg": "Прави се с игла и конец.",
+            "en": "It is made with needle and thread."
+          }
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Копривщица е архитектурен резерват с над 300 къщи от епохата на Възраждането.",
+          "en": "Koprivshtitsa is an architectural reserve with over 300 houses from the National Revival."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "На 20 април 1876 г. тук избухва Априлското въстание – в борба за свобода от османска власт.",
+          "en": "On 20 April 1876 the April Uprising breaks out here – a fight for freedom from Ottoman rule."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Тодор Каблешков пише тогава прочутото „кърваво писмо“, с което съобщава, че въстанието е започнало.",
+          "en": "Todor Kableshkov then writes the famous “bloody letter”, announcing that the uprising has begun."
+        },
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "Днес тук се провежда Националният събор на българското народно творчество – веднъж на пет години.",
+          "en": "Today the National Festival of Bulgarian Folklore takes place here – once every five years."
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Кога избухва Априлското въстание в Копривщица?",
+              "en": "When does the April Uprising break out in Koprivshtitsa?"
+            },
+            "options": [
+              {
+                "bg": "20 април 1876 г.",
+                "en": "20 April 1876"
+              },
+              {
+                "bg": "3 март 1878 г.",
+                "en": "3 March 1878"
+              },
+              {
+                "bg": "24 май 1885 г.",
+                "en": "24 May 1885"
+              }
+            ],
+            "answer": 0,
+            "hint": {
+              "bg": "Въстанието носи името на месеца.",
+              "en": "The uprising is named after the month."
+            }
+          },
+          {
+            "q": {
+              "bg": "Кой пише „кървавото писмо“?",
+              "en": "Who wrote the “bloody letter”?"
+            },
+            "options": [
+              {
+                "bg": "Христо Ботев",
+                "en": "Hristo Botev"
+              },
+              {
+                "bg": "Тодор Каблешков",
+                "en": "Todor Kableshkov"
+              },
+              {
+                "bg": "Иван Вазов",
+                "en": "Ivan Vazov"
+              }
+            ],
+            "answer": 1,
+            "hint": {
+              "bg": "Той е от Копривщица.",
+              "en": "He is from Koprivshtitsa."
+            }
+          },
+          {
+            "q": {
+              "bg": "От коя епоха са къщите в Копривщица?",
+              "en": "From which era are the houses in Koprivshtitsa?"
+            },
+            "options": [
+              {
+                "bg": "Античността",
+                "en": "Antiquity"
+              },
+              {
+                "bg": "Каменната епоха",
+                "en": "The Stone Age"
+              },
+              {
+                "bg": "Възраждането",
+                "en": "The National Revival"
+              }
+            ],
+            "answer": 2,
+            "hint": {
+              "bg": "Тогава българите се „събуждат“ за своята история и култура.",
+              "en": "That is when Bulgarians “woke up” to their history and culture."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Какво е пафти?",
+            "en": "What are pafti?"
+          },
+          "options": [
+            {
+              "bg": "Метални токи за колана",
+              "en": "Metal belt buckles"
+            },
+            {
+              "bg": "Обувки",
+              "en": "Shoes"
+            },
+            {
+              "bg": "Хляб",
+              "en": "Bread"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "bg": "Блестят на кръста на носията.",
+            "en": "They shine at the waist of the costume."
+          }
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Национален исторически музей – „Априлското въстание 1876“.",
+    "Министерство на културата: Национален събор на българското народно творчество – Копривщица.",
+    "[учебник/помагало – издателство и страница: попълва учителят]"
+  ],
+  "review": null,
+  "draft": true
+}

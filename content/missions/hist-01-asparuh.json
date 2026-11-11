@@ -42,7 +42,6 @@
           "musala",
           "varna"
         ],
-        "showIcons": true,
         "prompt": {
           "bg": "Намери крепостта!",
           "en": "Find the fortress!"
@@ -50,7 +49,8 @@
         "hint": {
           "bg": "Крепостта е горе, вдясно.",
           "en": "The fortress is up, on the right."
-        }
+        },
+        "showIcons": true
       },
       "check": []
     },
@@ -97,7 +97,8 @@
         "hint": {
           "bg": "Търси на североизток – близо до морето, но не на самия бряг.",
           "en": "Look in the north-east – near the sea, but not on the coast."
-        }
+        },
+        "showIcons": false
       },
       "check": [
         {
@@ -228,7 +229,8 @@
         "hint": {
           "bg": "Тя е на североизток от Велики Преслав – втората столица.",
           "en": "It lies north-east of Veliki Preslav – the second capital."
-        }
+        },
+        "showIcons": false
       },
       "check": [
         {

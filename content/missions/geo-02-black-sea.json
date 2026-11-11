@@ -1,0 +1,273 @@
+{
+  "id": "geo-02-black-sea",
+  "subject": "geography",
+  "free": true,
+  "order": 11,
+  "place": "varna",
+  "badge": {
+    "id": "black-sea",
+    "icon": "levels/young.webp"
+  },
+  "title": {
+    "bg": "Черно море",
+    "en": "The Black Sea"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Обичаш ли морето?",
+          "en": "Do you love the sea?"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "България има море – Черно море!",
+          "en": "Bulgaria has a sea – the Black Sea!"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Намери морето на картата!",
+          "en": "Find the sea on the map!"
+        }
+      ],
+      "game": {
+        "type": "map",
+        "target": "varna",
+        "choices": [
+          "varna",
+          "musala",
+          "pliska"
+        ],
+        "prompt": {
+          "bg": "Намери морето!",
+          "en": "Find the sea!"
+        },
+        "hint": {
+          "bg": "Морето е най-вдясно.",
+          "en": "The sea is on the far right."
+        },
+        "showIcons": true
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "На изток България граничи с Черно море.",
+          "en": "In the east, Bulgaria borders the Black Sea."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Варна е най-големият град на морето. Наричат я „морската столица“.",
+          "en": "Varna is the biggest town on the sea. It is called the “sea capital”."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "На юг е древният Несебър – град, в който стоят църкви на повече от 700 години.",
+          "en": "To the south is ancient Nessebar – a town with churches more than 700 years old."
+        },
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "В Черно море живеят делфини!",
+          "en": "Dolphins live in the Black Sea!"
+        }
+      ],
+      "game": {
+        "type": "map",
+        "target": "nessebar",
+        "choices": [
+          "nessebar",
+          "varna",
+          "sofia",
+          "plovdiv"
+        ],
+        "prompt": {
+          "bg": "Намери Несебър на картата!",
+          "en": "Find Nessebar on the map!"
+        },
+        "hint": {
+          "bg": "На брега е, на юг от Варна.",
+          "en": "It is on the coast, south of Varna."
+        },
+        "showIcons": false
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кой град наричат „морската столица“?",
+            "en": "Which town is called the “sea capital”?"
+          },
+          "options": [
+            {
+              "bg": "Варна",
+              "en": "Varna"
+            },
+            {
+              "bg": "Пловдив",
+              "en": "Plovdiv"
+            },
+            {
+              "bg": "Видин",
+              "en": "Vidin"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "bg": "Той е най-големият град на морето.",
+            "en": "It is the biggest town on the sea."
+          }
+        },
+        {
+          "q": {
+            "bg": "Кои животни живеят в Черно море?",
+            "en": "Which animals live in the Black Sea?"
+          },
+          "options": [
+            {
+              "bg": "Пингвини",
+              "en": "Penguins"
+            },
+            {
+              "bg": "Делфини",
+              "en": "Dolphins"
+            },
+            {
+              "bg": "Крокодили",
+              "en": "Crocodiles"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "bg": "Те са умни и обичат да скачат.",
+            "en": "They are clever and love to jump."
+          }
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Българското черноморско крайбрежие е дълго около 378 км.",
+          "en": "Bulgaria's Black Sea coast is about 378 km long."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Черно море е по-малко солено от океаните. Под около 150–200 м дълбочина водата съдържа сероводород и там почти няма живот.",
+          "en": "The Black Sea is less salty than the oceans. Below about 150–200 m the water contains hydrogen sulphide and there is almost no life."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "В него живеят три вида делфини: афала, муткур и обикновен делфин.",
+          "en": "Three kinds of dolphin live in it: the bottlenose, the harbour porpoise and the common dolphin."
+        },
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "Старият Несебър е в списъка на световното наследство на ЮНЕСКО от 1983 г.",
+          "en": "Old Nessebar has been on the UNESCO World Heritage List since 1983."
+        }
+      ],
+      "game": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди градовете по брега от север на юг.",
+          "en": "Order the coastal towns from north to south."
+        },
+        "items": [
+          {
+            "bg": "Балчик",
+            "en": "Balchik"
+          },
+          {
+            "bg": "Варна",
+            "en": "Varna"
+          },
+          {
+            "bg": "Несебър",
+            "en": "Nessebar"
+          },
+          {
+            "bg": "Бургас",
+            "en": "Burgas"
+          }
+        ],
+        "hint": {
+          "bg": "Погледни картата: северът е горе.",
+          "en": "Look at the map: north is at the top."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Защо в дълбоките части на Черно море почти няма живот?",
+            "en": "Why is there almost no life in the deep Black Sea?"
+          },
+          "options": [
+            {
+              "bg": "Водата е сладка",
+              "en": "The water is fresh"
+            },
+            {
+              "bg": "Твърде студено е",
+              "en": "It is too cold"
+            },
+            {
+              "bg": "Има сероводород",
+              "en": "There is hydrogen sulphide"
+            }
+          ],
+          "answer": 2,
+          "hint": {
+            "bg": "Газ, който мирише на развалени яйца.",
+            "en": "A gas that smells of rotten eggs."
+          }
+        },
+        {
+          "q": {
+            "bg": "Колко вида делфини живеят в Черно море?",
+            "en": "How many kinds of dolphin live in the Black Sea?"
+          },
+          "options": [
+            {
+              "bg": "Три",
+              "en": "Three"
+            },
+            {
+              "bg": "Десет",
+              "en": "Ten"
+            },
+            {
+              "bg": "Нито един",
+              "en": "None"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "bg": "Афала, муткур и още един.",
+            "en": "The bottlenose, the porpoise and one more."
+          }
+        }
+      ]
+    }
+  },
+  "sources": [
+    "UNESCO World Heritage List: Ancient City of Nessebar (inscribed 1983), whc.unesco.org",
+    "География на България. София: Институт по география – БАН, 2002.",
+    "[учебник/помагало – издателство и страница: попълва учителят]"
+  ],
+  "review": null,
+  "draft": true
+}

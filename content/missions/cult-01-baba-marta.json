@@ -35,12 +35,12 @@
       ],
       "game": {
         "type": "puzzle",
-        "img": "puzzles/martenitsa.webp",
-        "pieces": 4,
         "prompt": {
           "bg": "Нареди мартеницата!",
           "en": "Fix the martenitsa!"
-        }
+        },
+        "img": "puzzles/martenitsa.webp",
+        "pieces": 4
       },
       "check": []
     },

@@ -1,4 +1,4 @@
-import { cleanup, fireEvent, render, screen } from '@testing-library/react'
+import { cleanup, fireEvent, render, screen, within } from '@testing-library/react'
 import { MemoryRouter } from 'react-router'
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import { AppRoutes } from '../src/App'
@@ -32,8 +32,8 @@ function solveGame(game: Game) {
       return next()
     case 'match':
       for (const pair of game.pairs) {
-        fireEvent.click(screen.getByRole('button', { name: pair.a.bg }))
-        fireEvent.click(screen.getByRole('button', { name: pair.b.bg }))
+        fireEvent.click(within(screen.getByRole('group', { name: 'Първа колона' })).getByRole('button', { name: pair.a.bg }))
+        fireEvent.click(within(screen.getByRole('group', { name: 'Втора колона' })).getByRole('button', { name: pair.b.bg }))
       }
       return next()
     case 'order':

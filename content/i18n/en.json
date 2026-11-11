@@ -156,5 +156,7 @@
   "level.young.short": "7–10 y",
   "level.guard.short": "11–14 y",
   "parents.younger": "Younger",
-  "parents.older": "Older"
+  "parents.older": "Older",
+  "match.left": "First column",
+  "match.right": "Second column"
 }

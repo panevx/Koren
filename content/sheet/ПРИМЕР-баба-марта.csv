@@ -1,0 +1,37 @@
+﻿mission,level,block,kind,bg,en,img,opt_bg,opt_en,opt_img,answer,hint_bg,hint_en
+cult-01-baba-marta,,title,,Баба Марта и мартениците,Baba Marta and the martenitsa,,,,,,,
+cult-01-baba-marta,,meta,subject,culture,,,,,,,,
+cult-01-baba-marta,,meta,order,2,,,,,,,,
+cult-01-baba-marta,,meta,free,true,,,,,,,,
+cult-01-baba-marta,,meta,badge,baba-marta,,tiles/culture.webp,,,,,,
+cult-01-baba-marta,,meta,draft,true,,,,,,,,
+cult-01-baba-marta,,source,,"UNESCO, Intangible Cultural Heritage: “Cultural practices associated to the 1st of March” (2017), ich.unesco.org",,,,,,,,
+cult-01-baba-marta,,source,,[учебник/помагало – издателство и страница: попълва учителят],,,,,,,,
+cult-01-baba-marta,small,story,koren:wave,Днес е 1 март – денят на Баба Марта!,Today is 1 March – Baba Marta's day!,,,,,,,
+cult-01-baba-marta,small,story,raya:point,Подаряваме си мартеници – бели и червени.,We give each other martenitsi – white and red.,,,,,,,
+cult-01-baba-marta,small,story,koren:point,Нареди пъзела с мартеницата!,Put the martenitsa puzzle together!,,,,,,,
+cult-01-baba-marta,small,game,puzzle,Нареди мартеницата!,Fix the martenitsa!,puzzles/martenitsa.webp,,,,4,,
+cult-01-baba-marta,young,story,raya:wave,На 1 март празнуваме Баба Марта – една от най-обичаните български традиции.,On 1 March we celebrate Baba Marta – one of the best-loved Bulgarian traditions.,,,,,,,
+cult-01-baba-marta,young,story,koren:point,Тогава си подаряваме мартеници от бял и червен конец и казваме: „Честита Баба Марта!“,We give each other martenitsi made of white and red thread and say: “Happy Baba Marta!”,,,,,,,
+cult-01-baba-marta,young,story,raya:point,"Според традицията белият цвят носи чистота, а червеният – здраве.","By tradition, white stands for purity and red for health.",,,,,,,
+cult-01-baba-marta,young,story,koren:think,"Носим мартеницата, докато видим щъркел, лястовица или цъфнало дърво. Тогава я закачаме на дърво.","We wear the martenitsa until we see a stork, a swallow or a tree in blossom. Then we hang it on a tree.",,,,,,,
+cult-01-baba-marta,young,game,match,Свържи всяко нещо с неговата двойка!,Match each thing with its pair!,,,,,,Спомни си какво разказаха Корен и Рая.,Remember what Koren and Raya told you.
+cult-01-baba-marta,young,game,pair,1 март,1 March,,Баба Марта,Baba Marta,,,,
+cult-01-baba-marta,young,game,pair,Пижо и Пенда,Pizho and Penda,,Мартенички момче и момиче,Martenitsa boy and girl,,,,
+cult-01-baba-marta,young,game,pair,Щъркел или лястовица,A stork or a swallow,,Време е да свалим мартеницата,Time to take the martenitsa off,,,,
+cult-01-baba-marta,young,game,pair,Цъфнало дърво,A tree in blossom,,Там закачаме мартеницата,Where we hang the martenitsa,,,,
+cult-01-baba-marta,young,check,question,Какви са цветовете на мартеницата?,What colours is a martenitsa?,,Синьо и жълто | Бяло и червено | Зелено и бяло,Blue and yellow | White and red | Green and white,,2,Като пискюлчетата на мартеницата.,Like the martenitsa's tassels.
+cult-01-baba-marta,young,check,question,"Какво казваме, когато подаряваме мартеница?",What do we say when we give a martenitsa?,,Честита Баба Марта! | Честита Нова година! | Честит рожден ден!,Happy Baba Marta! | Happy New Year! | Happy birthday!,,1,Името на празника е в поздрава.,The name of the holiday is in the greeting.
+cult-01-baba-marta,guard,story,raya:wave,Баба Марта е древен обичай за посрещане на пролетта. Празнуваме я на 1 март.,Baba Marta is an ancient custom of welcoming spring. We celebrate it on 1 March.,,,,,,,
+cult-01-baba-marta,guard,story,koren:point,Мартеницата се прави от усукани бели и червени конци. Подаряваме я на близките си за здраве.,A martenitsa is made of twisted white and red threads. We give it to our loved ones for good health.,,,,,,,
+cult-01-baba-marta,guard,story,raya:point,"Носим я, докато видим първия щъркел, лястовица или цъфнало дърво – знак, че пролетта е дошла.","We wear it until we see the first stork, swallow or tree in blossom – a sign that spring has come.",,,,,,,
+cult-01-baba-marta,guard,story,koren:think,През 2017 г. ЮНЕСКО вписва обичаите около 1 март в списъка на нематериалното културно наследство на човечеството.,In 2017 UNESCO added the customs of 1 March to the list of the Intangible Cultural Heritage of Humanity.,,,,,,,
+cult-01-baba-marta,guard,game,order,Подреди обичая от началото до края.,"Put the custom in order, from start to finish.",,,,,,Започни от изработката и завърши с пролетта.,Start with making it and finish with spring.
+cult-01-baba-marta,guard,game,item,Правим мартеница от бял и червен конец.,We make a martenitsa from white and red thread.,,,,,,,
+cult-01-baba-marta,guard,game,item,На 1 март я подаряваме на близък човек.,On 1 March we give it to someone close.,,,,,,,
+cult-01-baba-marta,guard,game,item,Носим я на ръката или на дрехата.,We wear it on the wrist or on our clothes.,,,,,,,
+cult-01-baba-marta,guard,game,item,"Виждаме щъркел, лястовица или цъфнало дърво.","We see a stork, a swallow or a tree in blossom.",,,,,,,
+cult-01-baba-marta,guard,game,item,Закачаме мартеницата на цъфнало дърво.,We hang the martenitsa on a tree in blossom.,,,,,,,
+cult-01-baba-marta,guard,check,question,През коя година ЮНЕСКО вписва обичаите около 1 март?,In which year did UNESCO list the customs of 1 March?,,2007 | 2017 | 1997,2007 | 2017 | 1997,,2,Годината е в този век и завършва на 7.,The year is in this century and ends in 7.
+cult-01-baba-marta,guard,check,question,Какво ни казва първият щъркел?,What does the first stork tell us?,,Започва училището | Идва зимата | Пролетта е дошла,School is starting | Winter is coming | Spring has come,,3,"Щъркелите се връщат, когато стане топло.",Storks come back when it gets warm.
+cult-01-baba-marta,guard,check,question,Как се казват мартеничките момче и момиче?,What are the martenitsa boy and girl called?,,Хитър Петър и Настрадин | Пижо и Пенда | Крали Марко и Яна,Clever Peter and Nasradin | Pizho and Penda | Krali Marko and Yana,,2,Имената им започват с буквата П.,Their names start with the letter P.

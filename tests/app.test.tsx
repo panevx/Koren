@@ -3,6 +3,7 @@ import { MemoryRouter } from 'react-router'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { AppRoutes, resolveBasename } from '../src/App'
 import { ErrorBoundary } from '../src/components/ErrorBoundary'
+import { MISSIONS } from '../src/content/missions'
 import { lockParents } from '../src/screens/Parents'
 import { activeProfile, useProfiles } from '../src/store/profiles'
 import { useSettings } from '../src/store/settings'
@@ -170,13 +171,13 @@ describe('parents section', () => {
 
     cleanup()
     renderAt('/collection')
-    expect(await screen.findByText('0 от 4 значки')).toBeInTheDocument()
+    expect(await screen.findByText(`0 от ${MISSIONS.length} значки`)).toBeInTheDocument()
     cleanup()
     renderAt('/who')
     fireEvent.click(await screen.findByRole('button', { name: /Пътешественик 1/ }))
     cleanup()
     renderAt('/collection')
-    expect(await screen.findByText('1 от 4 значки')).toBeInTheDocument()
+    expect(await screen.findByText(`1 от ${MISSIONS.length} значки`)).toBeInTheDocument()
   })
 
   it('a profile is deleted only after a second tap, and never the last one', async () => {
@@ -204,7 +205,7 @@ describe('parents section', () => {
     renderAt('/parents')
     await screen.findByRole('heading', { name: 'Само за родители' })
     solveGate()
-    expect(screen.getByText(/Изиграни мисии: 1 от 4/)).toBeInTheDocument()
+    expect(screen.getByText(`Пътешественик 1 — Изиграни мисии: 1 от ${MISSIONS.length}`)).toBeInTheDocument()
     expect(screen.getByText('Баба Марта и мартениците')).toBeInTheDocument()
   })
 

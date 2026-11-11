@@ -1,0 +1,298 @@
+{
+  "id": "hist-02-simeon",
+  "subject": "history",
+  "free": true,
+  "order": 5,
+  "place": "veliki-preslav",
+  "badge": {
+    "id": "simeon",
+    "icon": "levels/guard.webp"
+  },
+  "title": {
+    "bg": "Цар Симеон и Златният век",
+    "en": "Tsar Simeon and the Golden Age"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Това е историята на цар Симеон.",
+          "en": "This is the story of Tsar Simeon."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Той обичал книгите и имал красива столица – Преслав.",
+          "en": "He loved books and had a beautiful capital – Preslav."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Намери крепостта на картата!",
+          "en": "Find the fortress on the map!"
+        }
+      ],
+      "game": {
+        "type": "map",
+        "target": "veliki-preslav",
+        "choices": [
+          "veliki-preslav",
+          "musala",
+          "varna"
+        ],
+        "prompt": {
+          "bg": "Намери крепостта!",
+          "en": "Find the fortress!"
+        },
+        "hint": {
+          "bg": "Крепостта е вдясно, далеч от планината.",
+          "en": "The fortress is on the right, far from the mountain."
+        },
+        "showIcons": true
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Синът на княз Борис I – Симеон – учил в Константинопол и знаел гръцки много добре.",
+          "en": "Prince Boris I's son Simeon studied in Constantinople and knew Greek very well."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "През 893 г. Симеон става владетел, а столицата се мести от Плиска във Велики Преслав.",
+          "en": "In 893 Simeon becomes ruler, and the capital moves from Pliska to Veliki Preslav."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "При него работят много книжовници. Затова това време се нарича Златен век на българската книжнина.",
+          "en": "Many scholars work in his time. That is why it is called the Golden Age of Bulgarian literature."
+        },
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "Симеон е първият български владетел, който приема титлата цар.",
+          "en": "Simeon is the first Bulgarian ruler to take the title of tsar."
+        }
+      ],
+      "game": {
+        "type": "map",
+        "target": "veliki-preslav",
+        "choices": [
+          "veliki-preslav",
+          "pliska",
+          "sofia",
+          "plovdiv"
+        ],
+        "prompt": {
+          "bg": "Намери Велики Преслав – столицата на Симеон!",
+          "en": "Find Veliki Preslav – Simeon's capital!"
+        },
+        "hint": {
+          "bg": "Търси на югозапад от Плиска – първата столица.",
+          "en": "Look south-west of Pliska – the first capital."
+        },
+        "showIcons": false
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Как се нарича времето на цар Симеон?",
+            "en": "What is Tsar Simeon's time called?"
+          },
+          "options": [
+            {
+              "bg": "Каменна епоха",
+              "en": "Stone Age"
+            },
+            {
+              "bg": "Златен век",
+              "en": "Golden Age"
+            },
+            {
+              "bg": "Ледников период",
+              "en": "Ice Age"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "bg": "Свързано е с най-ценния метал.",
+            "en": "It is named after the most precious metal."
+          }
+        },
+        {
+          "q": {
+            "bg": "Къде премества столицата Симеон?",
+            "en": "Where does Simeon move the capital?"
+          },
+          "options": [
+            {
+              "bg": "Велики Преслав",
+              "en": "Veliki Preslav"
+            },
+            {
+              "bg": "Велико Търново",
+              "en": "Veliko Tarnovo"
+            },
+            {
+              "bg": "София",
+              "en": "Sofia"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "bg": "Името ѝ започва с „Велики“.",
+            "en": "Its name starts with “Veliki”."
+          }
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Симеон е трети син на княз Борис I. Учи в Константинопол и е подготвян за духовник.",
+          "en": "Simeon is the third son of Prince Boris I. He studies in Constantinople and is prepared for the Church."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "През 893 г. Преславският събор го обявява за владетел, а столицата се мести във Велики Преслав.",
+          "en": "In 893 the Council of Preslav makes him ruler, and the capital moves to Veliki Preslav."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "През 917 г. Симеон разбива византийската армия при река Ахелой – една от най-големите битки на Средновековието.",
+          "en": "In 917 Simeon crushes the Byzantine army at the river Achelous – one of the biggest battles of the Middle Ages."
+        },
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "В Преслав работят Йоан Екзарх, Константин Преславски и Черноризец Храбър, който пише „За буквите“ – защита на славянската писменост.",
+          "en": "John the Exarch, Constantine of Preslav and Chernorizets Hrabar work in Preslav; Hrabar writes “On the Letters” – a defence of Slavic writing."
+        }
+      ],
+      "game": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди събитията по време.",
+          "en": "Put the events in time order."
+        },
+        "items": [
+          {
+            "bg": "Симеон учи в Константинопол",
+            "en": "Simeon studies in Constantinople"
+          },
+          {
+            "bg": "Преславският събор (893 г.)",
+            "en": "The Council of Preslav (893)"
+          },
+          {
+            "bg": "Битката при Ахелой (917 г.)",
+            "en": "The Battle of Achelous (917)"
+          },
+          {
+            "bg": "Смъртта на цар Симеон (927 г.)",
+            "en": "Tsar Simeon dies (927)"
+          }
+        ],
+        "hint": {
+          "bg": "Гледай годините в скобите.",
+          "en": "Look at the years in brackets."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кой пише „За буквите“?",
+            "en": "Who wrote “On the Letters”?"
+          },
+          "options": [
+            {
+              "bg": "Паисий Хилендарски",
+              "en": "Paisius of Hilendar"
+            },
+            {
+              "bg": "Черноризец Храбър",
+              "en": "Chernorizets Hrabar"
+            },
+            {
+              "bg": "Васил Левски",
+              "en": "Vasil Levski"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "bg": "Името му означава „смел монах“.",
+            "en": "His name means “brave monk”."
+          }
+        },
+        {
+          "q": {
+            "bg": "При коя река Симеон побеждава през 917 г.?",
+            "en": "At which river does Simeon win in 917?"
+          },
+          "options": [
+            {
+              "bg": "Ахелой",
+              "en": "Achelous"
+            },
+            {
+              "bg": "Марица",
+              "en": "Maritsa"
+            },
+            {
+              "bg": "Дунав",
+              "en": "Danube"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "bg": "Името ѝ започва с буквата А.",
+            "en": "Its name starts with the letter A."
+          }
+        },
+        {
+          "q": {
+            "bg": "Чий син е Симеон?",
+            "en": "Whose son is Simeon?"
+          },
+          "options": [
+            {
+              "bg": "Хан Крум",
+              "en": "Khan Krum"
+            },
+            {
+              "bg": "Хан Аспарух",
+              "en": "Khan Asparuh"
+            },
+            {
+              "bg": "Княз Борис I",
+              "en": "Prince Boris I"
+            }
+          ],
+          "answer": 2,
+          "hint": {
+            "bg": "Баща му покръства българите.",
+            "en": "His father converted the Bulgarians to Christianity."
+          }
+        }
+      ]
+    }
+  },
+  "sources": [
+    "История на България, т. 2: Първа българска държава. София: БАН, 1981.",
+    "Божилов, Ив. Цар Симеон Велики (893–927): Златният век на Средновековна България. София, 1983.",
+    "[учебник/помагало – издателство и страница: попълва учителят]"
+  ],
+  "review": null,
+  "draft": true
+}
