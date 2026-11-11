@@ -1,0 +1,13 @@
+import type { Game } from '../content/schema'
+import { Quiz } from './Quiz'
+
+/**
+ * Game templates by type. Adding a template = a component here + a schema entry
+ * in src/content/schema.ts. The mission screen never changes.
+ */
+export function GameView({ game, onDone }: { game: Game; onDone: () => void }) {
+  switch (game.type) {
+    case 'quiz':
+      return <Quiz questions={game.questions} onDone={onDone} />
+  }
+}

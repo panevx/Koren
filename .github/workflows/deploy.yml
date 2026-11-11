@@ -29,6 +29,8 @@ jobs:
         env:
           # Site is served from https://<user>.github.io/<repo>/
           BASE_PATH: /${{ github.event.repository.name }}/
+          # The public demo shows draft missions (marked "Draft") so the team can test them.
+          VITE_SHOW_DRAFTS: "1"
 
       - name: Publish dist/ to the gh-pages branch
         uses: peaceiris/actions-gh-pages@v4

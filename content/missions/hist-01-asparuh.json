@@ -1,0 +1,103 @@
+{
+  "id": "hist-01-asparuh",
+  "subject": "history",
+  "free": true,
+  "order": 1,
+  "place": "pliska",
+  "badge": { "id": "asparuh", "icon": "tiles/history.webp" },
+  "title": { "bg": "Хан Аспарух и новата държава", "en": "Khan Asparuh and the new state" },
+  "levels": {
+    "young": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Здравей! Днес ще пътуваме преди повече от 1300 години – при хан Аспарух, сина на хан Кубрат.",
+          "en": "Hello! Today we travel back more than 1300 years – to Khan Asparuh, the son of Khan Kubrat."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Аспарух повел своите българи на запад, към делтата на голямата река Дунав.",
+          "en": "Asparuh led his Bulgars west, to the delta of the great river Danube."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "През 680 г. византийският император Константин IV тръгнал срещу тях с войска и кораби. Но българите победили!",
+          "en": "In 680 the Byzantine emperor Constantine IV marched against them with an army and ships. But the Bulgars won!"
+        },
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "През 681 г. Византия сключила мир с Аспарух. Така се родила новата българска държава. Аспарух се съюзил със славянските племена, а Плиска станала столица.",
+          "en": "In 681 Byzantium made peace with Asparuh. That is how the new Bulgarian state was born. Asparuh made an alliance with the Slavic tribes, and Pliska became the capital."
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": { "bg": "Кой хан основал новата българска държава на Дунав?", "en": "Which khan founded the new Bulgarian state on the Danube?" },
+            "options": [
+              { "bg": "Хан Крум", "en": "Khan Krum" },
+              { "bg": "Хан Аспарух", "en": "Khan Asparuh" },
+              { "bg": "Княз Борис I", "en": "Prince Boris I" }
+            ],
+            "answer": 1,
+            "hint": { "bg": "Той е героят на тази мисия!", "en": "He is the hero of this mission!" }
+          },
+          {
+            "q": { "bg": "Към коя голяма река отишли българите на Аспарух?", "en": "Which great river did Asparuh's Bulgars travel to?" },
+            "options": [
+              { "bg": "Нил", "en": "The Nile" },
+              { "bg": "Амазонка", "en": "The Amazon" },
+              { "bg": "Дунав", "en": "The Danube" }
+            ],
+            "answer": 2,
+            "hint": { "bg": "И днес тази река е северната граница на България.", "en": "Even today this river is Bulgaria's northern border." }
+          },
+          {
+            "q": { "bg": "През коя година Византия сключила мир с Аспарух?", "en": "In which year did Byzantium make peace with Asparuh?" },
+            "options": [
+              { "bg": "681 г.", "en": "681" },
+              { "bg": "1878 г.", "en": "1878" },
+              { "bg": "1944 г.", "en": "1944" }
+            ],
+            "answer": 0,
+            "hint": { "bg": "Било е преди повече от 1300 години.", "en": "It was more than 1300 years ago." }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": { "bg": "Коя е първата столица на новата държава?", "en": "What was the first capital of the new state?" },
+          "options": [
+            { "bg": "София", "en": "Sofia" },
+            { "bg": "Плиска", "en": "Pliska" },
+            { "bg": "Велико Търново", "en": "Veliko Tarnovo" }
+          ],
+          "answer": 1,
+          "hint": { "bg": "Името ѝ започва с буквата П.", "en": "Its name starts with the letter P." }
+        },
+        {
+          "q": { "bg": "С кого се съюзил Аспарух?", "en": "Who did Asparuh make an alliance with?" },
+          "options": [
+            { "bg": "С викингите", "en": "The Vikings" },
+            { "bg": "С римляните", "en": "The Romans" },
+            { "bg": "Със славянските племена", "en": "The Slavic tribes" }
+          ],
+          "answer": 2,
+          "hint": { "bg": "Те вече живеели по тези земи.", "en": "They already lived in these lands." }
+        }
+      ]
+    }
+  },
+  "sources": [
+    "История на България, т. 2: Първа българска държава. София: БАН, 1981.",
+    "Златарски, В. История на българската държава през средните векове, т. I, ч. 1. София, 1918.",
+    "[учебник История и цивилизации, 5. клас – издателство и страница: попълва учителят]"
+  ],
+  "review": null,
+  "draft": true
+}

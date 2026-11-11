@@ -27,7 +27,7 @@ const DEFAULTS: Persisted = { lang: 'bg', age: DEFAULT_AGE, onboarded: false, re
  * localStorage can throw (Safari private mode, full quota, blocked site data).
  * Settings must never crash the app — at worst they are not remembered.
  */
-const safeLocalStorage: StateStorage = {
+export const safeLocalStorage: StateStorage = {
   getItem: (name) => {
     try {
       return window.localStorage.getItem(name)

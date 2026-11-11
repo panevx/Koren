@@ -75,25 +75,33 @@ describe('age levels change the interface', () => {
 })
 
 describe('hub navigation', () => {
-  it('every tile opens a screen with its title and a way home', () => {
+  it('every tile opens a screen with its title and a way home', async () => {
     renderAt('/home')
     const tiles = within(screen.getAllByRole('list')[0]!).getAllByRole('listitem')
     expect(tiles).toHaveLength(6)
-    for (const name of ['Открий България', 'История', 'Култура и традиции', 'Български език', 'Мисии и игри', 'Значки и колекции']) {
+    // History and Missions now open real mission lists; the rest are still "Coming soon".
+    for (const name of ['Открий България', 'Култура и традиции', 'Български език', 'Значки и колекции']) {
       cleanup()
       renderAt('/home')
       fireEvent.click(screen.getByRole('link', { name: new RegExp(name) }))
-      expect(screen.getByRole('heading', { name })).toBeInTheDocument()
+      expect(await screen.findByRole('heading', { name })).toBeInTheDocument()
       expect(screen.getByText('Скоро')).toBeInTheDocument()
       fireEvent.click(screen.getByRole('button', { name: /Към Начало/ }))
       expect(screen.getByRole('link', { name: /Открий България/ })).toBeInTheDocument()
     }
+    for (const name of ['История', 'Мисии и игри']) {
+      cleanup()
+      renderAt('/home')
+      fireEvent.click(screen.getByRole('link', { name: new RegExp(name) }))
+      expect(await screen.findByRole('heading', { name })).toBeInTheDocument()
+      expect(screen.getByRole('link', { name: /Хан Аспарух/ })).toBeInTheDocument()
+    }
   })
 
-  it('unknown topics and routes fall back safely', () => {
+  it('unknown topics and routes fall back safely', async () => {
     useSettings.getState().completeOnboarding()
     renderAt('/topic/nope')
-    expect(screen.getByRole('link', { name: /Открий България/ })).toBeInTheDocument()
+    expect(await screen.findByRole('link', { name: /Открий България/ })).toBeInTheDocument()
     cleanup()
     renderAt('/no/such/page')
     expect(screen.getByRole('link', { name: /Открий България/ })).toBeInTheDocument()

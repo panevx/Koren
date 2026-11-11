@@ -5,7 +5,7 @@
 
 ## Стек
 React + Vite + TypeScript (strict) + Tailwind v4, React Router, Zustand.
-По-късно: Zod (v0.3), Motion, vite-plugin-pwa (v0.8).
+Zod (схема на мисиите, v0.3). По-късно: Motion, vite-plugin-pwa (v0.8).
 Хостинг сега: GitHub Pages (клон `gh-pages`, публикува се от `.github/workflows/deploy.yml`).
 План за по-късно: Cloudflare Pages + 1 Worker + KV (кодове за достъп, v0.7).
 
@@ -32,6 +32,16 @@ React + Vite + TypeScript (strict) + Tailwind v4, React Router, Zustand.
   `levels/` (3 нива), `scenes/`, `ornaments/`, `icons/`.
 - Всяка картинка се посочва с `img('път')` от src/components/Brand.tsx; тестът проверява, че файлът съществува.
 - Без текст в картинките — надписите идват от i18n (напр. „АБВ“ върху книгата е текст в SectionIcon).
+
+## Мисии (v0.3)
+- Една мисия = един файл `content/missions/<id>.json`; името на файла = `id` (напр. `hist-01-asparuh`).
+- Схемата е в `src/content/schema.ts`; `tests/content.test.ts` проверява всеки файл
+  (схема, двата езика, верен отговор, различни отговори, картинките съществуват, уникални id).
+- Всяко ниво: `story` (1–6 реплики на Корен/Рая, поза wave/point/think) → `game` → `check` (0–3) → значка.
+- `sources` е задължително. Без одобрение от учител (`review: null`) мисията ТРЯБВА да е `"draft": true`.
+  Черновите се виждат в dev и в демото (VITE_SHOW_DRAFTS=1), но не и в build за семейства.
+- Нов шаблон игра = компонент в `src/games` + запис в `Game` в схемата. Екранът на мисията не се пипа.
+- Мисиите се зареждат при нужда (lazy) — началните екрани остават малки.
 
 ## Възрастови нива
 `small` 4–6, `young` 7–10, `guard` 11–14 (src/theme/levels.ts).

@@ -17,6 +17,7 @@ const paths = {
   save: 'M5 4h11l3 3v13H5Zm3 0v5h7V4M8 20v-6h8v6',
   refresh: 'M4 12a8 8 0 0 1 14-5.3M20 4v4h-4m4 4a8 8 0 0 1-14 5.3M4 20v-4h4',
   clock: 'M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0-13v4.5l3 2',
+  close: 'M6 6l12 12M18 6 6 18',
 } as const
 
 export type IconName = keyof typeof paths
