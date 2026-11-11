@@ -1,6 +1,7 @@
 import { Navigate, useNavigate, useParams } from 'react-router'
 import { BottomNav } from '../components/BottomNav'
-import { Avatar, img } from '../components/Brand'
+import { Avatar } from '../components/Brand'
+import { SectionIcon } from '../components/SectionIcon'
 import { Icon } from '../components/Icon'
 import { Button, Screen, TopBar } from '../components/ui'
 import { useT } from '../i18n/useT'
@@ -17,18 +18,14 @@ export function ComingSoon({ section }: { section?: SectionId }) {
   const found = sectionById(section ?? params.id)
   // Only real topics are valid; /topic/anything-else goes home.
   if (!found || (!section && !found.path.startsWith('/topic/'))) return <Navigate to="/home" replace />
-  const { Art, label, arrives, item, host } = found
+  const { id, label, arrives, host } = found
 
   return (
     <Screen>
       <TopBar title={t(label)} onBack={() => navigate('/home')} />
       <div className="flex flex-1 flex-col items-center justify-center gap-5 px-6 pb-32 text-center">
-        <div className="relative grid size-40 place-items-center rounded-full bg-white shadow-md">
-          {item ? (
-            <img src={img(`items/${item}.webp`)} alt="" width={400} height={400} className="size-28 object-contain" />
-          ) : (
-            <Art className="size-24" />
-          )}
+        <div className="relative mt-4 grid size-40 place-items-center rounded-full bg-white shadow-md">
+          <SectionIcon id={id} className="size-28" />
           <span className="absolute -top-1 -right-2 inline-flex items-center gap-1 rounded-full bg-gold px-3 py-1 text-sm font-black text-ink shadow">
             <Icon name="clock" width="1em" height="1em" />
             {t('soon.badge')}

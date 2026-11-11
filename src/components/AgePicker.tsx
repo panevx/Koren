@@ -1,4 +1,4 @@
-import type { CSSProperties, ComponentType } from 'react'
+import type { CSSProperties } from 'react'
 import { useT } from '../i18n/useT'
 import { useSettings } from '../store/settings'
 import {
@@ -7,15 +7,8 @@ import {
   MAX_AGE,
   MIN_AGE,
   ageToLevel,
-  type Level,
 } from '../theme/levels'
-import { BearArt, CompassArt, HelmetArt } from './Art'
-
-const LEVEL_ART: Record<Level, ComponentType<{ className?: string }>> = {
-  small: BearArt,
-  young: CompassArt,
-  guard: HelmetArt,
-}
+import { LevelIcon } from './SectionIcon'
 
 /** Slider 4–14 plus the three level cards. Both edit the same `age`. */
 export function AgePicker() {
@@ -57,7 +50,6 @@ export function AgePicker() {
 
       <div role="radiogroup" aria-label={t('age.subtitle')} className="flex flex-col gap-3">
         {LEVELS.map((level) => {
-          const Art = LEVEL_ART[level]
           const selected = level === current
           return (
             <button
@@ -75,7 +67,7 @@ export function AgePicker() {
               }`}
             >
               <span className={`grid size-14 shrink-0 place-items-center rounded-2xl ${selected ? 'bg-white/15' : 'bg-cream'}`}>
-                <Art className="size-11" />
+                <LevelIcon level={level} className="size-12" />
               </span>
               <span className="flex flex-1 flex-col">
                 <span className="text-lg font-black">{t(`level.${level}.range`)}</span>

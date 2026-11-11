@@ -1,7 +1,8 @@
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs'
 import { join, resolve } from 'node:path'
 import { describe, expect, it } from 'vitest'
-import { SECTIONS } from '../src/sections'
+import { SECTIONS, sectionIcon } from '../src/sections'
+import { LEVELS } from '../src/theme/levels'
 
 const PUBLIC = resolve(__dirname, '../public')
 const SRC = resolve(__dirname, '../src')
@@ -14,9 +15,23 @@ function walk(dir: string): string[] {
 }
 
 describe('images', () => {
-  it('every section item exists', () => {
+  it('every section has its painted icon', () => {
     for (const s of SECTIONS) {
-      if (s.item) expect(existsSync(join(PUBLIC, 'img/items', `${s.item}.webp`)), s.item).toBe(true)
+      expect(existsSync(join(PUBLIC, 'img', sectionIcon(s.id))), s.id).toBe(true)
+    }
+  })
+
+  it('every age level has its icon', () => {
+    for (const level of LEVELS) {
+      expect(existsSync(join(PUBLIC, 'img/levels', `${level}.webp`)), level).toBe(true)
+    }
+  })
+
+  it('both heroes have every mood used by <Avatar>', () => {
+    for (const hero of ['koren', 'raya']) {
+      for (const mood of ['joy', 'thoughtful', 'surprise', 'determination', 'laughter']) {
+        expect(existsSync(join(PUBLIC, 'img/heroes', `${hero}-${mood}.webp`)), `${hero}-${mood}`).toBe(true)
+      }
     }
   })
 

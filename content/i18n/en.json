@@ -57,5 +57,6 @@
   "settings.resetHint": "Brings back the start screen, language and age.",
   "error.title": "Oops! Something went wrong.",
   "error.text": "Koren and Raya will start over. Settings will go back to the defaults.",
-  "error.restart": "Start over"
+  "error.restart": "Start over",
+  "tile.language.glyph": "АБВ"
 }

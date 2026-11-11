@@ -25,11 +25,13 @@ React + Vite + TypeScript (strict) + Tailwind v4, React Router, Zustand.
 Върху златисто се пише с тъмен текст (бял не минава контраста).
 
 ## Графика
-- `design/characters/` — оригиналите (PNG от ChatGPT). НЕ се публикуват в приложението.
-- `public/img/` — само оптимизирани WebP (≤ 150 KB, проверява се от tests/assets.test.ts):
-  `heroes/` (лица 320×320 и сцената на Корен и Рая), `scenes/`, `items/`, `ornaments/`.
+- `design/characters/` — оригиналите от ChatGPT (v1 на бял фон; `v2/` с прозрачен фон). НЕ се публикуват.
+- `design/logo/` — официалното лого като SVG (7 варианта) + PNG. Източникът на истината за марката.
+- `public/img/` — само оптимизирани файлове (≤ 150 KB, проверява се от tests/assets.test.ts):
+  `logo/` (SVG), `heroes/` (лица 320×320 + сцената), `poses/` (цял ръст, за мисиите), `tiles/` (6 раздела),
+  `levels/` (3 нива), `scenes/`, `ornaments/`, `icons/`.
 - Всяка картинка се посочва с `img('път')` от src/components/Brand.tsx; тестът проверява, че файлът съществува.
-- Без текст в картинките — надписите идват от i18n.
+- Без текст в картинките — надписите идват от i18n (напр. „АБВ“ върху книгата е текст в SectionIcon).
 
 ## Възрастови нива
 `small` 4–6, `young` 7–10, `guard` 11–14 (src/theme/levels.ts).

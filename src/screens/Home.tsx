@@ -2,6 +2,7 @@ import { Link } from 'react-router'
 import { BottomNav } from '../components/BottomNav'
 import { Avatar, Logo, img } from '../components/Brand'
 import { Icon } from '../components/Icon'
+import { SectionIcon } from '../components/SectionIcon'
 import { Screen } from '../components/ui'
 import { useT } from '../i18n/useT'
 import { SECTIONS } from '../sections'
@@ -35,7 +36,7 @@ export function Home() {
         />
         <div className="relative flex items-start justify-between px-4 pt-4 pb-16">
           <span className="tap" aria-hidden="true" />
-          <div className="rounded-full bg-white/90 px-4 pt-1 pb-0.5 shadow-md">
+          <div className="rounded-full bg-white/90 px-5 py-1.5 shadow-md">
             <Logo size="sm" />
           </div>
           <Link
@@ -60,13 +61,13 @@ export function Home() {
           </p>
         </div>
         <ul className="grid grid-cols-2 gap-3">
-          {SECTIONS.map(({ id, path, label, desc, Art }) => (
+          {SECTIONS.map(({ id, path, label, desc }) => (
             <li key={id}>
               <Link
                 to={path}
                 className="rounded-level flex h-full min-h-[9rem] flex-col items-center justify-center gap-2 border-2 border-sand bg-white p-3 text-center shadow-sm transition hover:-translate-y-0.5 hover:border-green hover:shadow-md"
               >
-                <Art className={layout.art} />
+                <SectionIcon id={id} className={layout.art} />
                 <span className={`${layout.label} leading-tight font-extrabold text-green-dark`}>{t(label)}</span>
                 {layout.showDesc && <span className="text-sm leading-snug text-muted">{t(desc)}</span>}
               </Link>

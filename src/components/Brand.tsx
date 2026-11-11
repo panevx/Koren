@@ -1,34 +1,13 @@
 import type { ReactNode } from 'react'
 import { useT } from '../i18n/useT'
 
-/** KOREN wordmark: green mountains, red embroidery star, red swoosh. */
-export function Logo({ size = 'lg' }: { size?: 'sm' | 'lg' }) {
+/** Official KOREN logo (design/logo, vector). `lg` = main lockup, `sm` = compact for headers. */
+export function Logo({ size = 'lg', className = '' }: { size?: 'sm' | 'lg'; className?: string }) {
   const t = useT()
-  const big = size === 'lg'
-  return (
-    <div className="flex flex-col items-center leading-none select-none">
-      <svg
-        viewBox="0 0 120 34"
-        className={big ? 'w-28' : 'w-20'}
-        aria-hidden="true"
-        focusable="false"
-      >
-        <path d="M14 34 44 4l14 14L72 2l34 32Z" fill="#0B6B3E" />
-        <path d="m44 4-8 9 8-3 6 4Zm28-2-7 9 7-3 6 3Z" fill="#fff" />
-        <g fill="#C62828" transform="translate(12 8)">
-          <path d="M0-7 2-2H-2Z M0 7l-2-5h4Z M-7 0l5-2v4Z M7 0 2 2v-4Z" />
-          <rect x="-2" y="-2" width="4" height="4" transform="rotate(45)" />
-        </g>
-      </svg>
-      <span
-        className={`font-black tracking-tight text-green ${big ? 'text-4xl -mt-1' : 'text-xl'}`}
-      >
-        {t('app.name')}
-      </span>
-      <svg viewBox="0 0 120 8" className={big ? 'w-32 -mt-1' : 'w-20'} aria-hidden="true" focusable="false">
-        <path d="M4 6C40 0 80 0 116 4" stroke="#C62828" strokeWidth="3" fill="none" strokeLinecap="round" />
-      </svg>
-    </div>
+  return size === 'lg' ? (
+    <img src={img('logo/koren.svg')} alt={t('app.name')} width={632} height={336} className={`h-auto w-44 select-none ${className}`} />
+  ) : (
+    <img src={img('logo/koren-compact.svg')} alt={t('app.name')} width={389} height={330} className={`h-12 w-auto select-none ${className}`} />
   )
 }
 
