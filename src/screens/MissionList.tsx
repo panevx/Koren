@@ -8,7 +8,7 @@ import type { Subject } from '../content/schema'
 import { useLocalized } from '../content/useLocalized'
 import { useT } from '../i18n/useT'
 import { sectionById, type SectionId } from '../sections'
-import { useProgress } from '../store/progress'
+import { useActiveProfile } from '../store/profiles'
 import { ComingSoon } from './ComingSoon'
 
 /** Hub topics that map to a mission subject. */
@@ -26,7 +26,7 @@ export function MissionList({ topic }: { topic?: boolean }) {
   const t = useT()
   const l = useLocalized()
   const params = useParams()
-  const done = useProgress((s) => s.done)
+  const done = useActiveProfile().done
 
   const section = topic ? sectionById(params.id) : sectionById('missions')
   const subject = topic && section ? TOPIC_SUBJECT[section.id] : undefined

@@ -6,7 +6,8 @@ import { SectionIcon } from '../components/SectionIcon'
 import { Screen } from '../components/ui'
 import { useT } from '../i18n/useT'
 import { SECTIONS } from '../sections'
-import { useSettings } from '../store/settings'
+import { ProfileAvatar, useProfileName } from '../components/ProfileAvatar'
+import { activeProfile, useProfiles } from '../store/profiles'
 import { ageToLevel, type Level } from '../theme/levels'
 
 /** How the hub adapts per age level, beyond the global size/colour theme. */
@@ -18,7 +19,10 @@ const LAYOUT: Record<Level, { art: string; showDesc: boolean; label: string }> =
 
 export function Home() {
   const t = useT()
-  const level = useSettings((s) => ageToLevel(s.age))
+  const profiles = useProfiles((s) => s.profiles)
+  const profile = useProfiles(activeProfile)
+  const name = useProfileName()
+  const level = ageToLevel(profile.age)
   const layout = LAYOUT[level]
 
   return (
@@ -35,14 +39,20 @@ export function Home() {
           decoding="async"
         />
         <div className="relative flex items-start justify-between px-4 pt-4 pb-16">
-          <span className="tap" aria-hidden="true" />
+          <Link
+            to="/who"
+            className="tap grid place-items-center rounded-full"
+            aria-label={`${t('profile.who')} ${name(profile, profiles.indexOf(profile))}`}
+          >
+            <ProfileAvatar avatar={profile.avatar} className="size-12 shadow-md" />
+          </Link>
           <div className="rounded-full bg-white/90 px-5 py-1.5 shadow-md">
             <Logo size="sm" />
           </div>
           <Link
-            to="/settings"
+            to="/parents"
             className="tap grid place-items-center rounded-full bg-white/90 text-green shadow-md hover:bg-white"
-            aria-label={t('settings.title')}
+            aria-label={t('parents.title')}
           >
             <Icon name="gear" />
           </Link>

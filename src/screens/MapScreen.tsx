@@ -9,13 +9,13 @@ import { useLocalized } from '../content/useLocalized'
 import { useT } from '../i18n/useT'
 import { BulgariaMap, type MapMarker } from '../map/BulgariaMap'
 import { PlaceGlyph } from '../map/PlaceGlyph'
-import { useProgress } from '../store/progress'
+import { useActiveProfile } from '../store/profiles'
 
 /** "Discover Bulgaria": every place on the map; places with finished missions turn gold. */
 export function MapScreen() {
   const t = useT()
   const l = useLocalized()
-  const done = useProgress((s) => s.done)
+  const done = useActiveProfile().done
   const [selected, setSelected] = useState<string | null>(null)
 
   const missionsAt = (placeId: string) => MISSIONS.filter((m) => m.place === placeId)

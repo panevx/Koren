@@ -5,7 +5,7 @@ import { AppRoutes } from '../src/App'
 import { MISSIONS } from '../src/content/missions'
 import type { Game, Question } from '../src/content/schema'
 import { shuffledIndexes } from '../src/games/shuffle'
-import { useProgress } from '../src/store/progress'
+import { activeProfile, useProfiles } from '../src/store/profiles'
 import { useSettings } from '../src/store/settings'
 import { LEVEL_DEFAULT_AGE, type Level } from '../src/theme/levels'
 
@@ -56,7 +56,7 @@ function solveGame(game: Game) {
 beforeEach(() => {
   localStorage.clear()
   useSettings.getState().reset()
-  useProgress.getState().reset()
+  useProfiles.getState().reset()
 })
 afterEach(cleanup)
 
@@ -64,7 +64,7 @@ describe('every mission can be finished on every level', () => {
   for (const m of MISSIONS) {
     for (const level of Object.keys(m.levels) as Level[]) {
       it(`${m.id} · ${level}`, async () => {
-        useSettings.getState().setAge(LEVEL_DEFAULT_AGE[level])
+        useProfiles.getState().setAge(LEVEL_DEFAULT_AGE[level])
         render(
           <MemoryRouter initialEntries={[`/mission/${m.id}`]}>
             <AppRoutes />
@@ -76,10 +76,36 @@ describe('every mission can be finished on every level', () => {
         solveGame(content.game)
         if (content.check.length) solveQuestions(content.check)
         expect(screen.getByRole('heading', { name: 'Спечели значка!' })).toBeInTheDocument()
-        expect(useProgress.getState().done[m.id]?.level).toBe(level)
+        expect(activeProfile(useProfiles.getState()).done[m.id]?.level).toBe(level)
       })
     }
   }
+})
+
+describe('a break after 3 missions in a row', () => {
+  it('Koren and Raya suggest a pause on the 3rd badge — and it is only a suggestion', async () => {
+    useProfiles.getState().setAge(8)
+    const three = MISSIONS.slice(0, 3)
+    for (const [i, m] of three.entries()) {
+      cleanup()
+      render(
+        <MemoryRouter initialEntries={[`/mission/${m.id}`]}>
+          <AppRoutes />
+        </MemoryRouter>,
+      )
+      const content = m.levels.young!
+      await screen.findByText(content.story[0]!.bg)
+      for (let k = 0; k < content.story.length; k++) fireEvent.click(screen.getByRole('button', { name: /Напред/ }))
+      solveGame(content.game)
+      if (content.check.length) solveQuestions(content.check)
+      const pause = screen.queryByRole('heading', { name: 'Време за почивка!' })
+      if (i < 2) expect(pause).not.toBeInTheDocument()
+      else expect(pause).toBeInTheDocument()
+    }
+    // "One more" is allowed — and starts a new count.
+    fireEvent.click(screen.getByRole('button', { name: 'Още една мисия' }))
+    expect(useProfiles.getState().streak).toBe(0)
+  })
 })
 
 describe('there is at least one mission per subject and all 5 templates are used', () => {

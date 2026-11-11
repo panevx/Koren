@@ -1,3 +1,4 @@
+import { activeProfile, useProfiles } from '../store/profiles'
 import { useSettings } from '../store/settings'
 import { ageToLevel } from './levels'
 
@@ -8,11 +9,17 @@ import { ageToLevel } from './levels'
  */
 export function syncDocumentWithSettings(): () => void {
   const apply = () => {
-    const { lang, age } = useSettings.getState()
+    const { lang } = useSettings.getState()
+    const { age } = activeProfile(useProfiles.getState())
     const root = document.documentElement
     root.lang = lang
     root.dataset.level = ageToLevel(age)
   }
   apply()
-  return useSettings.subscribe(apply)
+  const offSettings = useSettings.subscribe(apply)
+  const offProfiles = useProfiles.subscribe(apply)
+  return () => {
+    offSettings()
+    offProfiles()
+  }
 }

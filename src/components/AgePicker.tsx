@@ -1,6 +1,6 @@
 import type { CSSProperties } from 'react'
 import { useT } from '../i18n/useT'
-import { useSettings } from '../store/settings'
+import { useProfiles, useAge } from '../store/profiles'
 import {
   LEVELS,
   LEVEL_DEFAULT_AGE,
@@ -10,11 +10,11 @@ import {
 } from '../theme/levels'
 import { LevelIcon } from './SectionIcon'
 
-/** Slider 4–14 plus the three level cards. Both edit the same `age`. */
+/** Slider 4–14 plus the three level cards. Both edit the age of the child who is playing. */
 export function AgePicker() {
   const t = useT()
-  const age = useSettings((s) => s.age)
-  const setAge = useSettings((s) => s.setAge)
+  const age = useAge()
+  const setAge = useProfiles((s) => s.setAge)
   const current = ageToLevel(age)
   const fill = ((age - MIN_AGE) / (MAX_AGE - MIN_AGE)) * 100
   const ticks = Array.from({ length: MAX_AGE - MIN_AGE + 1 }, (_, i) => MIN_AGE + i)

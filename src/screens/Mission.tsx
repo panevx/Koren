@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { Navigate, useNavigate, useParams } from 'react-router'
 import { Avatar, img } from '../components/Brand'
 import { Icon } from '../components/Icon'
@@ -11,8 +11,7 @@ import { Quiz } from '../games/Quiz'
 import type { TKey } from '../i18n'
 import { useT } from '../i18n/useT'
 import { play } from '../sound'
-import { useProgress } from '../store/progress'
-import { useSettings } from '../store/settings'
+import { BREAK_AFTER, useAge, useProfiles } from '../store/profiles'
 import { ageToLevel, type Level } from '../theme/levels'
 
 type Phase = 'story' | 'game' | 'check' | 'badge'
@@ -20,7 +19,7 @@ type Phase = 'story' | 'game' | 'check' | 'badge'
 export function Mission() {
   const { id } = useParams()
   const mission = missionById(id)
-  const age = useSettings((s) => s.age)
+  const age = useAge()
   if (!mission) return <Navigate to="/missions" replace />
   // The level is fixed when the mission starts, so changing age mid-game cannot reshuffle it.
   return <MissionRun key={mission.id} mission={mission} childLevel={ageToLevel(age)} />
@@ -130,11 +129,18 @@ function Badge({ mission, level }: { mission: MissionData; level: Level }) {
   const t = useT()
   const l = useLocalized()
   const navigate = useNavigate()
-  const complete = useProgress((s) => s.complete)
+  const complete = useProfiles((s) => s.complete)
+  const takeBreak = useProfiles((s) => s.takeBreak)
+  const streak = useProfiles((s) => s.streak)
+  // Count the mission exactly once, even if React runs the effect twice (StrictMode).
+  const counted = useRef(false)
   useEffect(() => {
+    if (counted.current) return
+    counted.current = true
     complete(mission.id, level, mission.badge.id)
     play('badge')
   }, [complete, mission, level])
+  const needsBreak = streak >= BREAK_AFTER
 
   return (
     <div className="flex flex-1 flex-col items-center justify-center gap-5 text-center">
@@ -145,19 +151,52 @@ function Badge({ mission, level }: { mission: MissionData; level: Level }) {
         </div>
       </div>
       <p className="text-xl font-extrabold">{l(mission.title)}</p>
-      <div className="flex -space-x-3" aria-hidden="true">
-        <Avatar hero="raya" mood="laughter" className="size-16" />
-        <Avatar hero="koren" mood="laughter" className="size-16" />
-      </div>
-      <div className="flex w-full flex-col gap-3">
-        <Button variant="primary" onClick={() => navigate('/missions')}>
-          {t('badge.more')}
-        </Button>
-        <Button variant="secondary" onClick={() => navigate('/home')}>
-          <Icon name="home" />
-          {t('badge.home')}
-        </Button>
-      </div>
+
+      {needsBreak ? (
+        // After 3 missions in a row Koren and Raya suggest a pause — a suggestion, never a lock.
+        <section className="rounded-level flex w-full flex-col gap-3 border-2 border-sky bg-sky/15 p-4" aria-live="polite">
+          <div className="flex items-center justify-center -space-x-3" aria-hidden="true">
+            <Avatar hero="raya" mood="joy" className="size-14" />
+            <Avatar hero="koren" mood="joy" className="size-14" />
+          </div>
+          <h3 className="text-xl font-black">{t('break.title')}</h3>
+          <p className="font-semibold">{t('break.text', { n: streak })}</p>
+          <Button
+            variant="accent"
+            onClick={() => {
+              takeBreak()
+              navigate('/home')
+            }}
+          >
+            {t('break.rest')}
+          </Button>
+          <Button
+            variant="secondary"
+            onClick={() => {
+              takeBreak()
+              navigate('/missions')
+            }}
+          >
+            {t('break.more')}
+          </Button>
+        </section>
+      ) : (
+        <>
+          <div className="flex -space-x-3" aria-hidden="true">
+            <Avatar hero="raya" mood="laughter" className="size-16" />
+            <Avatar hero="koren" mood="laughter" className="size-16" />
+          </div>
+          <div className="flex w-full flex-col gap-3">
+            <Button variant="primary" onClick={() => navigate('/missions')}>
+              {t('badge.more')}
+            </Button>
+            <Button variant="secondary" onClick={() => navigate('/home')}>
+              <Icon name="home" />
+              {t('badge.home')}
+            </Button>
+          </div>
+        </>
+      )}
     </div>
   )
 }

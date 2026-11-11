@@ -3,7 +3,7 @@ import { MemoryRouter } from 'react-router'
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import { AppRoutes } from '../src/App'
 import { missionById } from '../src/content/missions'
-import { PROGRESS_KEY, useProgress } from '../src/store/progress'
+import { PROFILES_KEY, activeProfile, useProfiles } from '../src/store/profiles'
 import { useSettings } from '../src/store/settings'
 
 const ID = 'hist-01-asparuh'
@@ -37,8 +37,8 @@ function answerAll(questions: typeof young.check, tryWrongFirst: boolean) {
 beforeEach(() => {
   localStorage.clear()
   useSettings.getState().reset()
-  useSettings.getState().setAge(8)
-  useProgress.getState().reset()
+  useProfiles.getState().setAge(8)
+  useProfiles.getState().reset()
 })
 afterEach(cleanup)
 
@@ -73,9 +73,9 @@ describe('mission Хан Аспарух (young)', () => {
 
     // Badge.
     expect(screen.getByRole('heading', { name: 'Спечели значка!' })).toBeInTheDocument()
-    expect(useProgress.getState().done[ID]?.level).toBe('young')
-    expect(useProgress.getState().badges).toEqual(['asparuh'])
-    expect(JSON.parse(localStorage.getItem(PROGRESS_KEY)!).state.badges).toEqual(['asparuh'])
+    expect(activeProfile(useProfiles.getState()).done[ID]?.level).toBe('young')
+    expect(activeProfile(useProfiles.getState()).badges).toEqual(['asparuh'])
+    expect(JSON.parse(localStorage.getItem(PROFILES_KEY)!).state.profiles[0].badges).toEqual(['asparuh'])
 
     fireEvent.click(screen.getByRole('button', { name: 'Още мисии' }))
     expect(await screen.findByText('Изиграна')).toBeInTheDocument()
@@ -88,7 +88,7 @@ describe('mission Хан Аспарух (young)', () => {
     expect(screen.getByRole('button', { name: /Изход/ })).toBeInTheDocument()
     fireEvent.click(screen.getByRole('button', { name: /Изход/ }))
     expect(await screen.findByRole('link', { name: /Хан Аспарух/ })).toBeInTheDocument()
-    expect(useProgress.getState().badges).toEqual([])
+    expect(activeProfile(useProfiles.getState()).badges).toEqual([])
   })
 
   it('is played in English when the app is in English', async () => {
@@ -103,7 +103,7 @@ describe('mission Хан Аспарух (young)', () => {
     [9, 'young'],
     [13, 'guard'],
   ] as const)('age %i plays the %s version', async (age, level) => {
-    useSettings.getState().setAge(age)
+    useProfiles.getState().setAge(age)
     renderAt(`/mission/${ID}`)
     const content = mission.levels[level]!
     expect(await screen.findByText(content.story[0]!.bg)).toBeInTheDocument()
@@ -135,8 +135,8 @@ describe('mission Хан Аспарух (young)', () => {
 
   it('progress is not saved when "Remember" is off', () => {
     useSettings.getState().setRemember(false)
-    useProgress.getState().complete(ID, 'young', 'asparuh')
-    expect(localStorage.getItem(PROGRESS_KEY)).toBeNull()
+    useProfiles.getState().complete(ID, 'young', 'asparuh')
+    expect(localStorage.getItem(PROFILES_KEY)).toBeNull()
   })
 })
 
@@ -151,7 +151,7 @@ describe('map screen', () => {
   })
 
   it('a place with a finished mission turns gold', async () => {
-    useProgress.getState().complete(ID, 'young', 'asparuh')
+    useProfiles.getState().complete(ID, 'young', 'asparuh')
     renderAt('/map')
     const pliska = await screen.findByRole('button', { name: 'Плиска' })
     expect(pliska.firstElementChild).toHaveClass('bg-gold')

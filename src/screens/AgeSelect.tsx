@@ -3,16 +3,11 @@ import { AgePicker } from '../components/AgePicker'
 import { Icon } from '../components/Icon'
 import { Button, Screen, TopBar } from '../components/ui'
 import { useT } from '../i18n/useT'
-import { useSettings } from '../store/settings'
 
 export function AgeSelect() {
   const t = useT()
   const navigate = useNavigate()
-  const completeOnboarding = useSettings((s) => s.completeOnboarding)
-  const finish = () => {
-    completeOnboarding()
-    navigate('/home')
-  }
+  const finish = () => navigate('/sign')
 
   return (
     <Screen>

@@ -1,9 +1,8 @@
 import { lazy, Suspense, type ReactNode } from 'react'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router'
 import { AgeSelect } from './screens/AgeSelect'
-import { ComingSoon } from './screens/ComingSoon'
 import { Home } from './screens/Home'
-import { Settings } from './screens/Settings'
+import { SignSelect } from './screens/SignSelect'
 import { Welcome } from './screens/Welcome'
 import { useSettings } from './store/settings'
 
@@ -27,6 +26,9 @@ const basename = resolveBasename(import.meta.env.BASE_URL, window.location.pathn
 // so the start screens stay small.
 const Mission = lazy(() => import('./screens/Mission').then((m) => ({ default: m.Mission })))
 const MapScreen = lazy(() => import('./screens/MapScreen').then((m) => ({ default: m.MapScreen })))
+const WhoPlays = lazy(() => import('./screens/WhoPlays').then((m) => ({ default: m.WhoPlays })))
+const Parents = lazy(() => import('./screens/Parents').then((m) => ({ default: m.Parents })))
+const Passport = lazy(() => import('./screens/Passport').then((m) => ({ default: m.Passport })))
 const MissionList = lazy(() => import('./screens/MissionList').then((m) => ({ default: m.MissionList })))
 
 function Loading() {
@@ -46,11 +48,14 @@ export function AppRoutes() {
         <Route path="/" element={<FirstVisitOnly><Welcome /></FirstVisitOnly>} />
         <Route path="/age" element={<AgeSelect />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/settings" element={<Settings />} />
+        <Route path="/sign" element={<SignSelect />} />
+        <Route path="/who" element={<WhoPlays />} />
+        <Route path="/parents" element={<Parents />} />
+        <Route path="/settings" element={<Navigate to="/parents" replace />} />
         <Route path="/map" element={<MapScreen />} />
         <Route path="/missions" element={<MissionList />} />
         <Route path="/mission/:id" element={<Mission />} />
-        <Route path="/collection" element={<ComingSoon section="collection" />} />
+        <Route path="/collection" element={<Passport />} />
         <Route path="/topic/:id" element={<MissionList topic />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
