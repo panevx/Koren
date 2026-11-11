@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2048" height="1024" viewBox="0 0 1024 512" role="img">
+<title>KOREN — основно лого</title>
+<g transform="translate(369 79) scale(1)"><g fill="#0B6B3E">
+  <path d="M0 129L90 41L124 72L193 0L331 129H281L193 45L125 114L90 81L42 129Z"/>
+  <path fill="#FFFFFF" d="M163 34L193 4L235 43L209 36L194 48L180 37Z M74 59L90 44L114 65L99 61L89 69L82 61Z"/>
+</g></g>
+<g transform="translate(240 289) scale(0.81)"><g fill="#C62828"><g transform="rotate(0)"><path d="M0-10L-13-30L0-49L13-30Z"/></g><g transform="rotate(45)"><path d="M0-10L-13-30L0-49L13-30Z"/></g><g transform="rotate(90)"><path d="M0-10L-13-30L0-49L13-30Z"/></g><g transform="rotate(135)"><path d="M0-10L-13-30L0-49L13-30Z"/></g><g transform="rotate(180)"><path d="M0-10L-13-30L0-49L13-30Z"/></g><g transform="rotate(225)"><path d="M0-10L-13-30L0-49L13-30Z"/></g><g transform="rotate(270)"><path d="M0-10L-13-30L0-49L13-30Z"/></g><g transform="rotate(315)"><path d="M0-10L-13-30L0-49L13-30Z"/></g><path d="M0-6L6 0L0 6L-6 0Z"/></g></g>
+<g transform="translate(301 228) scale(1)"><g fill="none" stroke="#0B6B3E" stroke-width="20" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M17 14V111 M82 14L17 69 M41 51L87 111"/>
+  <path d="M153 13C126 13 109 32 109 62C109 93 126 112 153 112C180 112 197 93 197 62C197 32 180 13 153 13Z"/>
+  <path d="M225 111V14H264C287 14 299 24 299 42C299 60 287 69 266 69H225 M262 69L303 111"/>
+  <path d="M399 14H333V111H400 M333 61H389"/>
+  <path d="M429 111V14L510 111V14"/>
+</g></g>
+<g transform="translate(484 385) scale(1)"><path d="M0 0Q105 29 210 0" fill="none" stroke="#C62828" stroke-width="6" stroke-linecap="round"/></g>
+</svg>
