@@ -22,6 +22,8 @@ export default defineConfig({
   // BASE_PATH is set by the GitHub Pages workflow ("/Koren/"); locally the app lives at "/".
   base: process.env.BASE_PATH ?? '/',
   plugins: [react(), tailwindcss(), spaFallback()],
+  // Older phones (iOS 14, Chrome 87) must still parse the bundle; a syntax error there is a blank screen.
+  build: { target: ['es2020', 'safari14', 'chrome87', 'firefox78'] },
   test: {
     environment: 'jsdom',
     setupFiles: ['./tests/setup.ts'],

@@ -54,5 +54,8 @@
   "settings.notSaved": "Settings last only while the app is open.",
   "settings.reset": "Start over",
   "settings.resetConfirm": "Tap again to erase the settings",
-  "settings.resetHint": "Brings back the start screen, language and age."
+  "settings.resetHint": "Brings back the start screen, language and age.",
+  "error.title": "Oops! Something went wrong.",
+  "error.text": "Koren and Raya will start over. Settings will go back to the defaults.",
+  "error.restart": "Start over"
 }

@@ -1,7 +1,8 @@
 import { act, cleanup, fireEvent, render, screen, within } from '@testing-library/react'
 import { MemoryRouter } from 'react-router'
-import { afterEach, beforeEach, describe, expect, it } from 'vitest'
-import { AppRoutes } from '../src/App'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import { AppRoutes, resolveBasename } from '../src/App'
+import { ErrorBoundary } from '../src/components/ErrorBoundary'
 import { useSettings } from '../src/store/settings'
 import { syncDocumentWithSettings } from '../src/theme/applyTheme'
 
@@ -116,5 +117,34 @@ describe('settings screen', () => {
     fireEvent.click(screen.getByRole('button', { name: /Натисни пак/ }))
     expect(useSettings.getState().onboarded).toBe(false)
     expect(screen.getByRole('button', { name: /Започни приключението/ })).toBeInTheDocument()
+  })
+})
+
+describe('resolveBasename', () => {
+  it.each([
+    ['/Koren/', '/Koren/home', '/Koren'],
+    ['/Koren/', '/koren/home', '/koren'],
+    ['/Koren/', '/KOREN', '/KOREN'],
+    ['/Koren/', '/Korenx/home', '/Koren'],
+    ['/', '/home', '/'],
+  ])('base %s at %s → %s', (base, path, expected) => {
+    expect(resolveBasename(base, path)).toBe(expected)
+  })
+})
+
+describe('error boundary', () => {
+  it('shows a way out instead of a blank page', () => {
+    const Boom = () => {
+      throw new Error('boom')
+    }
+    const spy = vi.spyOn(console, 'error').mockImplementation(() => {})
+    render(
+      <ErrorBoundary>
+        <Boom />
+      </ErrorBoundary>,
+    )
+    expect(screen.getByRole('alert')).toHaveTextContent('Опа! Нещо се обърка.')
+    expect(screen.getByRole('button', { name: 'Започни отначало' })).toBeInTheDocument()
+    spy.mockRestore()
   })
 })

@@ -7,8 +7,21 @@ import { Settings } from './screens/Settings'
 import { Welcome } from './screens/Welcome'
 import { useSettings } from './store/settings'
 
-// BASE_URL is "/Koren/" on GitHub Pages and "/" locally; the router needs it without the trailing slash.
-const basename = import.meta.env.BASE_URL.replace(/\/$/, '') || '/'
+/**
+ * BASE_URL is "/Koren/" on GitHub Pages and "/" locally. GitHub also answers
+ * "/koren/…" (via 404.html); a case mismatch would make the router render
+ * nothing, so the basename is taken from the real URL when it matches loosely.
+ */
+export function resolveBasename(base: string, pathname: string): string {
+  const wanted = base.replace(/\/$/, '')
+  if (!wanted) return '/'
+  const actual = pathname.slice(0, wanted.length)
+  const boundary = pathname.charAt(wanted.length)
+  const matches = actual.toLowerCase() === wanted.toLowerCase() && (boundary === '' || boundary === '/')
+  return matches ? actual : wanted
+}
+
+const basename = resolveBasename(import.meta.env.BASE_URL, window.location.pathname)
 
 /** Returning visitors skip the start screens and land on the hub. */
 function FirstVisitOnly({ children }: { children: ReactNode }) {
