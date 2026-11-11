@@ -10,6 +10,7 @@ import { GameView } from '../games'
 import { Quiz } from '../games/Quiz'
 import type { TKey } from '../i18n'
 import { useT } from '../i18n/useT'
+import { play } from '../sound'
 import { useProgress } from '../store/progress'
 import { useSettings } from '../store/settings'
 import { ageToLevel, type Level } from '../theme/levels'
@@ -132,6 +133,7 @@ function Badge({ mission, level }: { mission: MissionData; level: Level }) {
   const complete = useProgress((s) => s.complete)
   useEffect(() => {
     complete(mission.id, level, mission.badge.id)
+    play('badge')
   }, [complete, mission, level])
 
   return (

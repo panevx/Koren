@@ -11,17 +11,20 @@ type Persisted = {
   onboarded: boolean
   /** When false, nothing but this flag is written to the device. */
   remember: boolean
+  /** Sound effects on/off. */
+  sound: boolean
 }
 
 type SettingsState = Persisted & {
   setLang: (lang: Lang) => void
   setAge: (age: number) => void
   setRemember: (remember: boolean) => void
+  setSound: (sound: boolean) => void
   completeOnboarding: () => void
   reset: () => void
 }
 
-const DEFAULTS: Persisted = { lang: 'bg', age: DEFAULT_AGE, onboarded: false, remember: true }
+const DEFAULTS: Persisted = { lang: 'bg', age: DEFAULT_AGE, onboarded: false, remember: true, sound: true }
 
 /**
  * localStorage can throw (Safari private mode, full quota, blocked site data).
@@ -60,6 +63,7 @@ export function sanitize(raw: unknown): Partial<Persisted> {
   if (typeof r.age === 'number') out.age = clampAge(r.age)
   if (typeof r.onboarded === 'boolean') out.onboarded = r.onboarded
   if (typeof r.remember === 'boolean') out.remember = r.remember
+  if (typeof r.sound === 'boolean') out.sound = r.sound
   return out
 }
 
@@ -70,6 +74,7 @@ export const useSettings = create<SettingsState>()(
       setLang: (lang) => set({ lang }),
       setAge: (age) => set({ age: clampAge(age) }),
       setRemember: (remember) => set({ remember }),
+      setSound: (sound) => set({ sound }),
       completeOnboarding: () => set({ onboarded: true }),
       reset: () => set({ ...DEFAULTS }),
     }),
@@ -79,7 +84,7 @@ export const useSettings = create<SettingsState>()(
       storage: createJSONStorage(() => safeLocalStorage),
       partialize: (s): Partial<Persisted> =>
         s.remember
-          ? { lang: s.lang, age: s.age, onboarded: s.onboarded, remember: true }
+          ? { lang: s.lang, age: s.age, onboarded: s.onboarded, remember: true, sound: s.sound }
           : { remember: false },
       merge: (persisted, current) => ({ ...current, ...sanitize(persisted) }),
       // Unknown or older shapes: keep whatever still validates.

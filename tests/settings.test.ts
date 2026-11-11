@@ -14,7 +14,7 @@ describe('settings store', () => {
     s.setLang('en')
     s.setAge(12)
     s.completeOnboarding()
-    expect(stored()).toEqual({ lang: 'en', age: 12, onboarded: true, remember: true })
+    expect(stored()).toEqual({ lang: 'en', age: 12, onboarded: true, remember: true, sound: true })
   })
 
   it('writes nothing but the flag when "remember" is off', () => {

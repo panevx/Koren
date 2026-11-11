@@ -146,7 +146,7 @@ describe('map screen', () => {
     fireEvent.click(await screen.findByRole('button', { name: 'Плиска' }))
     expect(screen.getByRole('heading', { name: 'Плиска' })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: /Хан Аспарух/ })).toHaveAttribute('href', `/mission/${ID}`)
-    fireEvent.click(screen.getByRole('button', { name: 'Рилски манастир' }))
+    fireEvent.click(screen.getByRole('button', { name: 'Белоградчишки скали' }))
     expect(screen.getByText('Скоро тук ще има мисия.')).toBeInTheDocument()
   })
 

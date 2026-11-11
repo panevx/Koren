@@ -23,10 +23,29 @@ function Section({ icon, title, children }: { icon: IconName; title: string; chi
   )
 }
 
+function SwitchRow({ label, hint, checked, onChange }: { label: string; hint: string; checked: boolean; onChange: (v: boolean) => void }) {
+  return (
+    <div className="flex items-start gap-4">
+      <span className="flex-1 text-sm text-muted">{hint}</span>
+      <button
+        type="button"
+        role="switch"
+        aria-checked={checked}
+        aria-label={label}
+        onClick={() => onChange(!checked)}
+        className={`tap relative flex shrink-0 items-center rounded-full transition ${checked ? 'bg-green' : 'bg-sand'}`}
+        style={{ width: 'calc(var(--tap) * 1.4)' }}
+      >
+        <span className={`absolute size-7 rounded-full bg-white shadow transition-all ${checked ? 'right-1.5' : 'left-1.5'}`} />
+      </button>
+    </div>
+  )
+}
+
 export function Settings() {
   const t = useT()
   const navigate = useNavigate()
-  const { lang, age, remember, setLang, setRemember, reset } = useSettings()
+  const { lang, age, remember, sound, setLang, setRemember, setSound, reset } = useSettings()
   const level = ageToLevel(age)
 
   // Show "saved" feedback after any change made on this screen.
@@ -34,7 +53,7 @@ export function Settings() {
   useEffect(
     () =>
       useSettings.subscribe((s, prev) => {
-        if (s.lang !== prev.lang || s.age !== prev.age || s.remember !== prev.remember) setChanged(true)
+        if (s.lang !== prev.lang || s.age !== prev.age || s.remember !== prev.remember || s.sound !== prev.sound) setChanged(true)
       }),
     [],
   )
@@ -88,23 +107,12 @@ export function Settings() {
           <AgePicker />
         </Section>
 
+        <Section icon="sound" title={t('settings.sound')}>
+          <SwitchRow label={t('settings.sound')} hint={t('settings.soundHint')} checked={sound} onChange={setSound} />
+        </Section>
+
         <Section icon="save" title={t('settings.remember')}>
-          <label className="flex items-start gap-4">
-            <span className="flex-1 text-sm text-muted">{t('settings.rememberHint')}</span>
-            <button
-              type="button"
-              role="switch"
-              aria-checked={remember}
-              aria-label={t('settings.remember')}
-              onClick={() => setRemember(!remember)}
-              className={`tap relative flex shrink-0 items-center rounded-full transition ${remember ? 'bg-green' : 'bg-sand'}`}
-              style={{ width: 'calc(var(--tap) * 1.4)' }}
-            >
-              <span
-                className={`absolute size-7 rounded-full bg-white shadow transition-all ${remember ? 'right-1.5' : 'left-1.5'}`}
-              />
-            </button>
-          </label>
+          <SwitchRow label={t('settings.remember')} hint={t('settings.rememberHint')} checked={remember} onChange={setRemember} />
         </Section>
 
         <p

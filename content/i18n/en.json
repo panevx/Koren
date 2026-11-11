@@ -95,5 +95,16 @@
   "map.tryAgain": "Not here. Try again!",
   "map.found": "Well done! This is {name}!",
   "map.noMission": "A mission is coming here soon.",
-  "map.close": "Close"
+  "map.close": "Close",
+  "match.done": "Well done! You matched every pair!",
+  "order.slots": "Places to fill",
+  "order.cards": "Cards to place",
+  "order.empty": "tap a card",
+  "order.done": "Well done! Everything is in order!",
+  "order.tryAgain": "The green ones are right. Try again with the others!",
+  "puzzle.board": "Puzzle",
+  "puzzle.piece": "Piece {n}",
+  "puzzle.done": "Well done! The picture is whole!",
+  "settings.sound": "Sound effects",
+  "settings.soundHint": "A short sound for a right answer, a hint and a badge."
 }

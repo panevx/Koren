@@ -79,8 +79,8 @@ describe('hub navigation', () => {
     renderAt('/home')
     const tiles = within(screen.getAllByRole('list')[0]!).getAllByRole('listitem')
     expect(tiles).toHaveLength(6)
-    // History and Missions open mission lists, Discover opens the map; the rest are still "Coming soon".
-    for (const name of ['Култура и традиции', 'Български език', 'Значки и колекции']) {
+    // Topics with missions open mission lists, Discover opens the map; Collection is still "Coming soon" (v0.6).
+    for (const name of ['Значки и колекции']) {
       cleanup()
       renderAt('/home')
       fireEvent.click(screen.getByRole('link', { name: new RegExp(name) }))
@@ -93,12 +93,12 @@ describe('hub navigation', () => {
     renderAt('/home')
     fireEvent.click(screen.getByRole('link', { name: /Открий България/ }))
     expect(await screen.findByRole('group', { name: 'Карта на България' })).toBeInTheDocument()
-    for (const name of ['История', 'Мисии и игри']) {
+    for (const name of ['История', 'Култура и традиции', 'Български език', 'Мисии и игри']) {
       cleanup()
       renderAt('/home')
       fireEvent.click(screen.getByRole('link', { name: new RegExp(name) }))
       expect(await screen.findByRole('heading', { name })).toBeInTheDocument()
-      expect(screen.getByRole('link', { name: /Хан Аспарух/ })).toBeInTheDocument()
+      expect(screen.getAllByRole('link', { name: /Хан Аспарух|Баба Марта|Азбуката/ }).length).toBeGreaterThan(0)
     }
   })
 

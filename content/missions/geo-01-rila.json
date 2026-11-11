@@ -1,0 +1,297 @@
+{
+  "id": "geo-01-rila",
+  "subject": "geography",
+  "free": true,
+  "order": 4,
+  "place": "rila-monastery",
+  "badge": {
+    "id": "rila",
+    "icon": "tiles/discover.webp"
+  },
+  "title": {
+    "bg": "Рила – покривът на Балканите",
+    "en": "Rila – the roof of the Balkans"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Да се качим на планината Рила!",
+          "en": "Let's climb the Rila mountains!"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Там е най-високият връх – Мусала.",
+          "en": "The highest peak is there – Musala."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Намери планината на картата!",
+          "en": "Find the mountain on the map!"
+        }
+      ],
+      "game": {
+        "type": "map",
+        "target": "musala",
+        "choices": [
+          "musala",
+          "varna",
+          "pliska"
+        ],
+        "showIcons": true,
+        "prompt": {
+          "bg": "Намери планината!",
+          "en": "Find the mountain!"
+        },
+        "hint": {
+          "bg": "Планината е долу, вляво.",
+          "en": "The mountain is down, on the left."
+        }
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Рила е най-високата планина в България и на целия Балкански полуостров.",
+          "en": "Rila is the highest mountain range in Bulgaria and on the whole Balkan Peninsula."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Най-високият ѝ връх е Мусала – 2925 метра.",
+          "en": "Its highest peak is Musala – 2925 metres."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "В Рила са Седемте рилски езера, а в една красива долина е Рилският манастир.",
+          "en": "Rila has the Seven Rila Lakes, and the Rila Monastery stands in a beautiful valley."
+        },
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "Манастирът е основан от свети Иван Рилски преди повече от 1000 години.",
+          "en": "The monastery was founded by Saint Ivan of Rila more than 1000 years ago."
+        }
+      ],
+      "game": {
+        "type": "map",
+        "target": "rila-monastery",
+        "choices": [
+          "rila-monastery",
+          "plovdiv",
+          "veliko-tarnovo",
+          "belogradchik"
+        ],
+        "prompt": {
+          "bg": "Намери Рилския манастир на картата!",
+          "en": "Find the Rila Monastery on the map!"
+        },
+        "hint": {
+          "bg": "Търси в планините на югозапад, южно от София.",
+          "en": "Look in the mountains in the south-west, south of Sofia."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кой е най-високият връх в България?",
+            "en": "What is the highest peak in Bulgaria?"
+          },
+          "options": [
+            {
+              "bg": "Мусала",
+              "en": "Musala"
+            },
+            {
+              "bg": "Вихрен",
+              "en": "Vihren"
+            },
+            {
+              "bg": "Ботев",
+              "en": "Botev"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "bg": "Той е в Рила.",
+            "en": "It is in Rila."
+          }
+        },
+        {
+          "q": {
+            "bg": "Кой основава Рилския манастир?",
+            "en": "Who founded the Rila Monastery?"
+          },
+          "options": [
+            {
+              "bg": "Хан Аспарух",
+              "en": "Khan Asparuh"
+            },
+            {
+              "bg": "Васил Левски",
+              "en": "Vasil Levski"
+            },
+            {
+              "bg": "Свети Иван Рилски",
+              "en": "Saint Ivan of Rila"
+            }
+          ],
+          "answer": 2,
+          "hint": {
+            "bg": "Манастирът носи неговото име.",
+            "en": "The monastery carries his name."
+          }
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Рила е най-високата планина на Балканския полуостров. Връх Мусала се издига на 2925 м.",
+          "en": "Rila is the highest mountain range on the Balkan Peninsula. Musala Peak rises to 2925 m."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "От Рила извират големи реки като Искър, Марица и Места.",
+          "en": "Big rivers such as the Iskar, the Maritsa and the Mesta spring from Rila."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Седемте рилски езера са ледникови – образувани са от древни ледници.",
+          "en": "The Seven Rila Lakes are glacial – they were formed by ancient glaciers."
+        },
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "Рилският манастир е основан през X век от свети Иван Рилски. От 1983 г. е в списъка на световното наследство на ЮНЕСКО.",
+          "en": "The Rila Monastery was founded in the 10th century by Saint Ivan of Rila. Since 1983 it has been on the UNESCO World Heritage List."
+        }
+      ],
+      "game": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди върховете от най-високия към най-ниския.",
+          "en": "Order the peaks from the highest to the lowest."
+        },
+        "items": [
+          {
+            "bg": "Мусала (Рила)",
+            "en": "Musala (Rila)"
+          },
+          {
+            "bg": "Вихрен (Пирин)",
+            "en": "Vihren (Pirin)"
+          },
+          {
+            "bg": "Ботев (Стара планина)",
+            "en": "Botev (Balkan Mountains)"
+          },
+          {
+            "bg": "Черни връх (Витоша)",
+            "en": "Cherni Vrah (Vitosha)"
+          }
+        ],
+        "hint": {
+          "bg": "Мусала и Вихрен са почти еднакво високи, но Мусала е по-висок.",
+          "en": "Musala and Vihren are almost as high as each other, but Musala is higher."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кои реки извират от Рила?",
+            "en": "Which rivers spring from Rila?"
+          },
+          "options": [
+            {
+              "bg": "Искър, Марица и Места",
+              "en": "Iskar, Maritsa and Mesta"
+            },
+            {
+              "bg": "Дунав, Янтра и Осъм",
+              "en": "Danube, Yantra and Osam"
+            },
+            {
+              "bg": "Камчия и Тунджа",
+              "en": "Kamchia and Tundzha"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "bg": "Едната от тях минава през София.",
+            "en": "One of them flows through Sofia."
+          }
+        },
+        {
+          "q": {
+            "bg": "От коя година Рилският манастир е в списъка на ЮНЕСКО?",
+            "en": "Since which year has the Rila Monastery been on the UNESCO list?"
+          },
+          "options": [
+            {
+              "bg": "1878",
+              "en": "1878"
+            },
+            {
+              "bg": "1983",
+              "en": "1983"
+            },
+            {
+              "bg": "2007",
+              "en": "2007"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "bg": "През XX век.",
+            "en": "In the 20th century."
+          }
+        },
+        {
+          "q": {
+            "bg": "Как са образувани Седемте рилски езера?",
+            "en": "How were the Seven Rila Lakes formed?"
+          },
+          "options": [
+            {
+              "bg": "Изкопани са от хора",
+              "en": "People dug them"
+            },
+            {
+              "bg": "От древни ледници",
+              "en": "By ancient glaciers"
+            },
+            {
+              "bg": "От вулкан",
+              "en": "By a volcano"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "bg": "Някога планината е била покрита с лед.",
+            "en": "Long ago the mountain was covered in ice."
+          }
+        }
+      ]
+    }
+  },
+  "sources": [
+    "UNESCO World Heritage List: Rila Monastery (inscribed 1983), whc.unesco.org",
+    "География на България. София: Институт по география – БАН, 2002.",
+    "[учебник/помагало – издателство и страница: попълва учителят]"
+  ],
+  "review": null,
+  "draft": true
+}

@@ -1,0 +1,325 @@
+{
+  "id": "cult-01-baba-marta",
+  "subject": "culture",
+  "free": true,
+  "order": 2,
+  "badge": {
+    "id": "baba-marta",
+    "icon": "tiles/culture.webp"
+  },
+  "title": {
+    "bg": "Баба Марта и мартениците",
+    "en": "Baba Marta and the martenitsa"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Днес е 1 март – денят на Баба Марта!",
+          "en": "Today is 1 March – Baba Marta's day!"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Подаряваме си мартеници – бели и червени.",
+          "en": "We give each other martenitsi – white and red."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Нареди пъзела с мартеницата!",
+          "en": "Put the martenitsa puzzle together!"
+        }
+      ],
+      "game": {
+        "type": "puzzle",
+        "img": "puzzles/martenitsa.webp",
+        "pieces": 4,
+        "prompt": {
+          "bg": "Нареди мартеницата!",
+          "en": "Fix the martenitsa!"
+        }
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "На 1 март празнуваме Баба Марта – една от най-обичаните български традиции.",
+          "en": "On 1 March we celebrate Baba Marta – one of the best-loved Bulgarian traditions."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Тогава си подаряваме мартеници от бял и червен конец и казваме: „Честита Баба Марта!“",
+          "en": "We give each other martenitsi made of white and red thread and say: “Happy Baba Marta!”"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Според традицията белият цвят носи чистота, а червеният – здраве.",
+          "en": "By tradition, white stands for purity and red for health."
+        },
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "Носим мартеницата, докато видим щъркел, лястовица или цъфнало дърво. Тогава я закачаме на дърво.",
+          "en": "We wear the martenitsa until we see a stork, a swallow or a tree in blossom. Then we hang it on a tree."
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи всяко нещо с неговата двойка!",
+          "en": "Match each thing with its pair!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "1 март",
+              "en": "1 March"
+            },
+            "b": {
+              "bg": "Баба Марта",
+              "en": "Baba Marta"
+            }
+          },
+          {
+            "a": {
+              "bg": "Пижо и Пенда",
+              "en": "Pizho and Penda"
+            },
+            "b": {
+              "bg": "Мартенички момче и момиче",
+              "en": "Martenitsa boy and girl"
+            }
+          },
+          {
+            "a": {
+              "bg": "Щъркел или лястовица",
+              "en": "A stork or a swallow"
+            },
+            "b": {
+              "bg": "Време е да свалим мартеницата",
+              "en": "Time to take the martenitsa off"
+            }
+          },
+          {
+            "a": {
+              "bg": "Цъфнало дърво",
+              "en": "A tree in blossom"
+            },
+            "b": {
+              "bg": "Там закачаме мартеницата",
+              "en": "Where we hang the martenitsa"
+            }
+          }
+        ],
+        "hint": {
+          "bg": "Спомни си какво разказаха Корен и Рая.",
+          "en": "Remember what Koren and Raya told you."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Какви са цветовете на мартеницата?",
+            "en": "What colours is a martenitsa?"
+          },
+          "options": [
+            {
+              "bg": "Синьо и жълто",
+              "en": "Blue and yellow"
+            },
+            {
+              "bg": "Бяло и червено",
+              "en": "White and red"
+            },
+            {
+              "bg": "Зелено и бяло",
+              "en": "Green and white"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "bg": "Като пискюлчетата на мартеницата.",
+            "en": "Like the martenitsa's tassels."
+          }
+        },
+        {
+          "q": {
+            "bg": "Какво казваме, когато подаряваме мартеница?",
+            "en": "What do we say when we give a martenitsa?"
+          },
+          "options": [
+            {
+              "bg": "Честита Баба Марта!",
+              "en": "Happy Baba Marta!"
+            },
+            {
+              "bg": "Честита Нова година!",
+              "en": "Happy New Year!"
+            },
+            {
+              "bg": "Честит рожден ден!",
+              "en": "Happy birthday!"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "bg": "Името на празника е в поздрава.",
+            "en": "The name of the holiday is in the greeting."
+          }
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Баба Марта е древен обичай за посрещане на пролетта. Празнуваме я на 1 март.",
+          "en": "Baba Marta is an ancient custom of welcoming spring. We celebrate it on 1 March."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Мартеницата се прави от усукани бели и червени конци. Подаряваме я на близките си за здраве.",
+          "en": "A martenitsa is made of twisted white and red threads. We give it to our loved ones for good health."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Носим я, докато видим първия щъркел, лястовица или цъфнало дърво – знак, че пролетта е дошла.",
+          "en": "We wear it until we see the first stork, swallow or tree in blossom – a sign that spring has come."
+        },
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "През 2017 г. ЮНЕСКО вписва обичаите около 1 март в списъка на нематериалното културно наследство на човечеството.",
+          "en": "In 2017 UNESCO added the customs of 1 March to the list of the Intangible Cultural Heritage of Humanity."
+        }
+      ],
+      "game": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди обичая от началото до края.",
+          "en": "Put the custom in order, from start to finish."
+        },
+        "items": [
+          {
+            "bg": "Правим мартеница от бял и червен конец.",
+            "en": "We make a martenitsa from white and red thread."
+          },
+          {
+            "bg": "На 1 март я подаряваме на близък човек.",
+            "en": "On 1 March we give it to someone close."
+          },
+          {
+            "bg": "Носим я на ръката или на дрехата.",
+            "en": "We wear it on the wrist or on our clothes."
+          },
+          {
+            "bg": "Виждаме щъркел, лястовица или цъфнало дърво.",
+            "en": "We see a stork, a swallow or a tree in blossom."
+          },
+          {
+            "bg": "Закачаме мартеницата на цъфнало дърво.",
+            "en": "We hang the martenitsa on a tree in blossom."
+          }
+        ],
+        "hint": {
+          "bg": "Започни от изработката и завърши с пролетта.",
+          "en": "Start with making it and finish with spring."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "През коя година ЮНЕСКО вписва обичаите около 1 март?",
+            "en": "In which year did UNESCO list the customs of 1 March?"
+          },
+          "options": [
+            {
+              "bg": "2007",
+              "en": "2007"
+            },
+            {
+              "bg": "2017",
+              "en": "2017"
+            },
+            {
+              "bg": "1997",
+              "en": "1997"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "bg": "Годината е в този век и завършва на 7.",
+            "en": "The year is in this century and ends in 7."
+          }
+        },
+        {
+          "q": {
+            "bg": "Какво ни казва първият щъркел?",
+            "en": "What does the first stork tell us?"
+          },
+          "options": [
+            {
+              "bg": "Започва училището",
+              "en": "School is starting"
+            },
+            {
+              "bg": "Идва зимата",
+              "en": "Winter is coming"
+            },
+            {
+              "bg": "Пролетта е дошла",
+              "en": "Spring has come"
+            }
+          ],
+          "answer": 2,
+          "hint": {
+            "bg": "Щъркелите се връщат, когато стане топло.",
+            "en": "Storks come back when it gets warm."
+          }
+        },
+        {
+          "q": {
+            "bg": "Как се казват мартеничките момче и момиче?",
+            "en": "What are the martenitsa boy and girl called?"
+          },
+          "options": [
+            {
+              "bg": "Хитър Петър и Настрадин",
+              "en": "Clever Peter and Nasradin"
+            },
+            {
+              "bg": "Пижо и Пенда",
+              "en": "Pizho and Penda"
+            },
+            {
+              "bg": "Крали Марко и Яна",
+              "en": "Krali Marko and Yana"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "bg": "Имената им започват с буквата П.",
+            "en": "Their names start with the letter P."
+          }
+        }
+      ]
+    }
+  },
+  "sources": [
+    "UNESCO, Intangible Cultural Heritage: “Cultural practices associated to the 1st of March” (2017), ich.unesco.org",
+    "[учебник/помагало – издателство и страница: попълва учителят]"
+  ],
+  "review": null,
+  "draft": true
+}

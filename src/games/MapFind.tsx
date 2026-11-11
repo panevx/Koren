@@ -9,6 +9,7 @@ import { useT } from '../i18n/useT'
 import { BulgariaMap, type MapMarker } from '../map/BulgariaMap'
 import { PlaceGlyph } from '../map/PlaceGlyph'
 import { UNITS_PER_KM } from '../map/projection'
+import { play } from '../sound'
 
 /** Radius of the hint circle around the target. */
 const HINT_RADIUS_KM = 45
@@ -29,8 +30,13 @@ export function MapFind({ game, onDone }: { game: MapGame; onDone: () => void })
 
   const choose = (id: string) => {
     if (solved || wrong.includes(id)) return
-    if (id === game.target) setSolved(true)
-    else setWrong((w) => [...w, id])
+    if (id === game.target) {
+      setSolved(true)
+      play('correct')
+    } else {
+      setWrong((w) => [...w, id])
+      play('hint')
+    }
   }
 
   const markers: MapMarker[] = choices.map((p, i) => {

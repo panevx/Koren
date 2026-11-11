@@ -5,6 +5,7 @@ import { Button } from '../components/ui'
 import type { Question } from '../content/schema'
 import { useLocalized } from '../content/useLocalized'
 import { useT } from '../i18n/useT'
+import { play } from '../sound'
 
 type Props = {
   questions: Question[]
@@ -58,8 +59,13 @@ function QuizQuestion({
 
   const choose = (i: number) => {
     if (solved || wrong.includes(i)) return
-    if (i === question.answer) setSolved(true)
-    else setWrong([...wrong, i])
+    if (i === question.answer) {
+      setSolved(true)
+      play('correct')
+    } else {
+      setWrong([...wrong, i])
+      play('hint')
+    }
   }
 
   return (

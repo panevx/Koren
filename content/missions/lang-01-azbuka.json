@@ -1,0 +1,372 @@
+{
+  "id": "lang-01-azbuka",
+  "subject": "language",
+  "free": true,
+  "order": 3,
+  "place": "veliki-preslav",
+  "badge": {
+    "id": "azbuka",
+    "icon": "tiles/language.webp"
+  },
+  "title": {
+    "bg": "Азбуката на Кирил и Методий",
+    "en": "The alphabet of Cyril and Methodius"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Това е нашата азбука!",
+          "en": "This is our alphabet!"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Всяка голяма буква си има малка сестричка.",
+          "en": "Every big letter has a little sister."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Свържи голямата буква с малката!",
+          "en": "Match the big letter with the small one!"
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи голямата буква с малката!",
+          "en": "Match the big letter with the small one!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "А",
+              "en": "А"
+            },
+            "b": {
+              "bg": "а",
+              "en": "а"
+            }
+          },
+          {
+            "a": {
+              "bg": "Б",
+              "en": "Б"
+            },
+            "b": {
+              "bg": "б",
+              "en": "б"
+            }
+          },
+          {
+            "a": {
+              "bg": "Д",
+              "en": "Д"
+            },
+            "b": {
+              "bg": "д",
+              "en": "д"
+            }
+          },
+          {
+            "a": {
+              "bg": "Ж",
+              "en": "Ж"
+            },
+            "b": {
+              "bg": "ж",
+              "en": "ж"
+            }
+          }
+        ],
+        "hint": {
+          "bg": "Малката буква прилича на голямата.",
+          "en": "The small letter looks like the big one."
+        }
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Знаеш ли, че българската азбука има 30 букви?",
+          "en": "Did you know the Bulgarian alphabet has 30 letters?"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Първата славянска азбука – глаголицата – е създадена от братята Кирил и Методий.",
+          "en": "The first Slavic alphabet – Glagolitic – was created by the brothers Cyril and Methodius."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Техните ученици, като Климент и Наум, донасят книгите в България. По-късно тук се създава кирилицата.",
+          "en": "Their students, such as Clement and Naum, brought the books to Bulgaria. Later the Cyrillic alphabet was created here."
+        },
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "На 24 май празнуваме Деня на светите братя Кирил и Методий, на българската азбука, просвета и култура.",
+          "en": "On 24 May we celebrate the Day of Saints Cyril and Methodius, of the Bulgarian alphabet, education and culture."
+        }
+      ],
+      "game": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди буквите по азбучен ред!",
+          "en": "Put the letters in alphabetical order!"
+        },
+        "items": [
+          {
+            "bg": "А",
+            "en": "А"
+          },
+          {
+            "bg": "Б",
+            "en": "Б"
+          },
+          {
+            "bg": "В",
+            "en": "В"
+          },
+          {
+            "bg": "Г",
+            "en": "Г"
+          },
+          {
+            "bg": "Д",
+            "en": "Д"
+          }
+        ],
+        "hint": {
+          "bg": "Започни с първата буква – А.",
+          "en": "Start with the first letter – А."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Колко букви има българската азбука?",
+            "en": "How many letters does the Bulgarian alphabet have?"
+          },
+          "options": [
+            {
+              "bg": "26",
+              "en": "26"
+            },
+            {
+              "bg": "30",
+              "en": "30"
+            },
+            {
+              "bg": "33",
+              "en": "33"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "bg": "Повече са от английските букви.",
+            "en": "More than the English letters."
+          }
+        },
+        {
+          "q": {
+            "bg": "Кога е Денят на българската азбука?",
+            "en": "When is the Day of the Bulgarian alphabet?"
+          },
+          "options": [
+            {
+              "bg": "3 март",
+              "en": "3 March"
+            },
+            {
+              "bg": "24 май",
+              "en": "24 May"
+            },
+            {
+              "bg": "1 ноември",
+              "en": "1 November"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "bg": "В края на пролетта е.",
+            "en": "It is at the end of spring."
+          }
+        },
+        {
+          "q": {
+            "bg": "Кои братя създават първата славянска азбука?",
+            "en": "Which brothers created the first Slavic alphabet?"
+          },
+          "options": [
+            {
+              "bg": "Кирил и Методий",
+              "en": "Cyril and Methodius"
+            },
+            {
+              "bg": "Климент и Наум",
+              "en": "Clement and Naum"
+            },
+            {
+              "bg": "Борис и Симеон",
+              "en": "Boris and Simeon"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "bg": "Празнуваме ги на 24 май.",
+            "en": "We celebrate them on 24 May."
+          }
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Около 863 г. братята Кирил и Методий създават глаголицата – първата славянска азбука.",
+          "en": "Around 863 the brothers Cyril and Methodius create Glagolitic – the first Slavic alphabet."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "След смъртта на Методий учениците им са прогонени от Великоморавия. Княз Борис I ги приема в България през 886 г.",
+          "en": "After Methodius dies, their students are driven out of Great Moravia. Prince Boris I welcomes them to Bulgaria in 886."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Климент заминава за Охрид, а в Преслав книжовниците създават кирилицата – по-лесна за писане.",
+          "en": "Clement goes to Ohrid, while in Preslav the scholars create the Cyrillic alphabet – easier to write."
+        },
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "Кирилицата се разпространява сред много славянски народи. С нейни варианти и днес пишат българи, сърби, руснаци и други.",
+          "en": "Cyrillic spreads among many Slavic peoples. Bulgarians, Serbs, Russians and others still write with versions of it today."
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Коя азбука създават Кирил и Методий?",
+              "en": "Which alphabet did Cyril and Methodius create?"
+            },
+            "options": [
+              {
+                "bg": "Кирилицата",
+                "en": "Cyrillic"
+              },
+              {
+                "bg": "Глаголицата",
+                "en": "Glagolitic"
+              },
+              {
+                "bg": "Латиницата",
+                "en": "Latin"
+              }
+            ],
+            "answer": 1,
+            "hint": {
+              "bg": "Кирилицата идва по-късно, в България.",
+              "en": "Cyrillic came later, in Bulgaria."
+            }
+          },
+          {
+            "q": {
+              "bg": "Кой владетел приема учениците в България?",
+              "en": "Which ruler welcomed the students to Bulgaria?"
+            },
+            "options": [
+              {
+                "bg": "Княз Борис I",
+                "en": "Prince Boris I"
+              },
+              {
+                "bg": "Хан Крум",
+                "en": "Khan Krum"
+              },
+              {
+                "bg": "Хан Аспарух",
+                "en": "Khan Asparuh"
+              }
+            ],
+            "answer": 0,
+            "hint": {
+              "bg": "Той покръства българите.",
+              "en": "He converted the Bulgarians to Christianity."
+            }
+          },
+          {
+            "q": {
+              "bg": "В коя книжовна школа е създадена кирилицата?",
+              "en": "In which literary school was Cyrillic created?"
+            },
+            "options": [
+              {
+                "bg": "Охридската",
+                "en": "Ohrid"
+              },
+              {
+                "bg": "Преславската",
+                "en": "Preslav"
+              },
+              {
+                "bg": "Търновската",
+                "en": "Tarnovo"
+              }
+            ],
+            "answer": 1,
+            "hint": {
+              "bg": "Школата е в столицата на цар Симеон.",
+              "en": "The school was in Tsar Simeon's capital."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "През коя година учениците пристигат в България?",
+            "en": "In which year did the students arrive in Bulgaria?"
+          },
+          "options": [
+            {
+              "bg": "681",
+              "en": "681"
+            },
+            {
+              "bg": "886",
+              "en": "886"
+            },
+            {
+              "bg": "1396",
+              "en": "1396"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "bg": "В края на IX век.",
+            "en": "At the end of the 9th century."
+          }
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Кирило-Методиевска енциклопедия, т. I–IV. София: БАН, 1985–2003.",
+    "[учебник/помагало – издателство и страница: попълва учителят]"
+  ],
+  "review": null,
+  "draft": true
+}

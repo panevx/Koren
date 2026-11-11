@@ -76,11 +76,44 @@ export const MapGame = z
   .refine((g) => g.choices.includes(g.target), { message: 'choices must include the target', path: ['choices'] })
   .refine((g) => new Set(g.choices).size === g.choices.length, { message: 'choices must be unique', path: ['choices'] })
 
+const distinct = (items: { bg: string; en: string }[]) =>
+  new Set(items.map((i) => i.bg)).size === items.length && new Set(items.map((i) => i.en)).size === items.length
+
+/** Connect pairs: tap an item on the left, then its partner on the right. */
+export const MatchGame = z
+  .object({
+    type: z.literal('match'),
+    prompt: Text,
+    pairs: z.array(z.object({ a: Option, b: Option }).strict()).min(2).max(6),
+    hint: Text.optional(),
+  })
+  .strict()
+  .refine((g) => distinct(g.pairs.map((p) => p.a)) && distinct(g.pairs.map((p) => p.b)), {
+    message: 'every item in a column must be different',
+    path: ['pairs'],
+  })
+
+/** Put cards in order. `items` are written in the CORRECT order; the game shuffles them. */
+export const OrderGame = z
+  .object({ type: z.literal('order'), prompt: Text, items: z.array(Option).min(3).max(6), hint: Text.optional() })
+  .strict()
+  .refine((g) => distinct(g.items), { message: 'items must be different', path: ['items'] })
+
+/** Picture puzzle: 4 (2×2), 6 (3×2) or 9 (3×3) pieces, swapped by tapping two of them. */
+export const PuzzleGame = z
+  .object({
+    type: z.literal('puzzle'),
+    prompt: Text,
+    img: ImgPath,
+    pieces: z.union([z.literal(4), z.literal(6), z.literal(9)]),
+  })
+  .strict()
+
 /**
- * One entry per game template: v0.3 `quiz`, v0.4 `map`. match, order and puzzle
- * are added here (and in src/games) without touching the mission screen.
+ * One entry per game template (all 5 since v0.5). A new template is added here
+ * and in src/games without touching the mission screen.
  */
-export const Game = z.discriminatedUnion('type', [QuizGame, MapGame])
+export const Game = z.discriminatedUnion('type', [QuizGame, MapGame, MatchGame, OrderGame, PuzzleGame])
 
 export const LevelContent = z
   .object({
@@ -121,6 +154,10 @@ export type StoryLine = z.infer<typeof StoryLine>
 export type Question = z.infer<typeof Question>
 export type Game = z.infer<typeof Game>
 export type MapGame = z.infer<typeof MapGame>
+export type MatchGame = z.infer<typeof MatchGame>
+export type OrderGame = z.infer<typeof OrderGame>
+export type PuzzleGame = z.infer<typeof PuzzleGame>
+export type Option = z.infer<typeof Option>
 export type Place = z.infer<typeof Place>
 export type PlaceIcon = (typeof PLACE_ICONS)[number]
 export type LevelContent = z.infer<typeof LevelContent>
