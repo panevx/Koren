@@ -15,7 +15,7 @@
     "allowImportingTsExtensions": true,
     "skipLibCheck": true,
     "noEmit": true,
-    "types": ["vite/client", "node", "@testing-library/jest-dom"]
+    "types": ["vite/client", "node", "@testing-library/jest-dom", "vite-plugin-pwa/client"]
   },
   "include": ["src", "content", "tests", "vite.config.ts"]
 }

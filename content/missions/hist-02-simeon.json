@@ -86,7 +86,7 @@
         "target": "veliki-preslav",
         "choices": [
           "veliki-preslav",
-          "pliska",
+          "varna",
           "sofia",
           "plovdiv"
         ],
@@ -95,8 +95,8 @@
           "en": "Find Veliki Preslav – Simeon's capital!"
         },
         "hint": {
-          "bg": "Търси на югозапад от Плиска – първата столица.",
-          "en": "Look south-west of Pliska – the first capital."
+          "bg": "Търси на североизток – навътре в сушата, не на брега.",
+          "en": "Look in the north-east – inland, not on the coast."
         },
         "showIcons": false
       },

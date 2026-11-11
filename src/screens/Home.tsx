@@ -3,6 +3,7 @@ import { BottomNav } from '../components/BottomNav'
 import { Avatar, Logo, img } from '../components/Brand'
 import { Icon } from '../components/Icon'
 import { SectionIcon } from '../components/SectionIcon'
+import { UpdateBanner } from '../components/UpdateBanner'
 import { Screen } from '../components/ui'
 import { useT } from '../i18n/useT'
 import { SECTIONS } from '../sections'
@@ -61,6 +62,7 @@ export function Home() {
 
       <div className="relative -mt-8 flex-1 rounded-t-[2rem] bg-cream px-4 pt-5 pb-28">
         <h1 className="sr-only">{t('nav.home')}</h1>
+        <UpdateBanner />
         <div className="mb-4 flex items-center gap-3">
           <div className="flex shrink-0 -space-x-4" aria-hidden="true">
             <Avatar hero="raya" mood="joy" className="size-14" />

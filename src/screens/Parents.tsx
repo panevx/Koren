@@ -1,6 +1,7 @@
 import { useEffect, useState, type ReactNode } from 'react'
 import { useNavigate } from 'react-router'
 import { Flag } from '../components/Brand'
+import { OfflinePanel } from '../components/OfflinePanel'
 import { Icon, type IconName } from '../components/Icon'
 import { AvatarPicker, ProfileAvatar, useProfileName } from '../components/ProfileAvatar'
 import { Button, Screen, TopBar } from '../components/ui'
@@ -347,6 +348,10 @@ function ParentsArea() {
               </button>
             ))}
           </div>
+        </Section>
+
+        <Section icon="save" title={t('offline.title')}>
+          <OfflinePanel />
         </Section>
 
         <Section icon="sound" title={t('settings.sound')}>

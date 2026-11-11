@@ -158,5 +158,20 @@
   "parents.younger": "Younger",
   "parents.older": "Older",
   "match.left": "First column",
-  "match.right": "Second column"
+  "match.right": "Second column",
+  "offline.title": "Without internet",
+  "offline.ready": "The app is stored on this device and works without internet.",
+  "offline.preparing": "The app is getting ready to work offline – open it once more with internet.",
+  "offline.unsupported": "This browser cannot keep the app for offline use. Please try Chrome or Safari.",
+  "offline.status": "Pictures on this device: {n} of {total}",
+  "offline.downloading": "Downloading… {n} of {total}",
+  "offline.allDone": "Everything is downloaded ({n} pictures). Have a good trip!",
+  "offline.failed": "{n} pictures did not download. Try again with a better connection.",
+  "offline.download": "Download everything for a trip",
+  "offline.install": "Install on this phone",
+  "offline.installed": "The app is installed.",
+  "offline.installIos": "On iPhone and iPad: tap “Share”, then “Add to Home Screen”.",
+  "offline.installOther": "To install, choose “Add to Home screen” in the browser menu.",
+  "offline.update": "New missions are here!",
+  "offline.updateNow": "Update"
 }

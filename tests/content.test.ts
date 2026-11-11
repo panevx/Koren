@@ -146,3 +146,22 @@ describe('map controls never cover a place', () => {
     for (const p of PLACES) expect(p.x < 1000 * 0.47 && p.y > 690 * 0.76, p.id).toBe(false)
   })
 })
+
+describe('map games are fair for younger children', () => {
+  // ~1 km per 0.009° latitude; good enough at Bulgaria's size.
+  const km = (a: { lat: number; lon: number }, b: { lat: number; lon: number }) =>
+    Math.hypot((a.lat - b.lat) * 111.2, (a.lon - b.lon) * 111.2 * Math.cos((42.7 * Math.PI) / 180))
+
+  it('for 4–10 year olds no two choices are closer than 50 km (they would overlap on a phone)', () => {
+    for (const m of MISSIONS) {
+      for (const level of ['small', 'young'] as const) {
+        const g = m.levels[level]?.game
+        if (g?.type !== 'map') continue
+        const pts = g.choices.map((id) => PLACES.find((p) => p.id === id)!)
+        for (let i = 0; i < pts.length; i++)
+          for (let j = i + 1; j < pts.length; j++)
+            expect(km(pts[i]!, pts[j]!), `${m.id} ${level}: ${pts[i]!.id} – ${pts[j]!.id}`).toBeGreaterThan(50)
+      }
+    }
+  })
+})
