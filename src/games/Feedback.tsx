@@ -12,12 +12,12 @@ export function Feedback({ correct, help }: { correct?: string; help?: string })
     <div role="status" aria-live="polite" className="min-h-20">
       {correct ? (
         <div className="flex items-center gap-3">
-          <Avatar hero="koren" mood="joy" className="size-16" />
+          <Avatar hero="koren" mood="joy" className="size-[min(4rem,15vw)]" />
           <p className="rounded-level flex-1 rounded-bl-sm bg-green/10 px-4 py-3 text-lg font-extrabold text-green-dark">{correct}</p>
         </div>
       ) : help ? (
         <div className="flex items-center gap-3">
-          <Avatar hero="raya" mood="thoughtful" className="size-16" />
+          <Avatar hero="raya" mood="thoughtful" className="size-[min(4rem,15vw)]" />
           <p className="rounded-level flex-1 rounded-bl-sm bg-gold/20 px-4 py-3 text-lg font-bold text-ink">{help}</p>
         </div>
       ) : null}

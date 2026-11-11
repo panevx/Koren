@@ -49,7 +49,7 @@ function MissionRun({ mission, childLevel }: { mission: MissionData; childLevel:
           <Icon name="close" />
           {t('mission.exit')}
         </button>
-        <div className="flex-1">
+        <div className="min-w-0 flex-1">
           <p className="truncate text-sm font-black text-green-dark">{l(mission.title)}</p>
           <PhaseDots phases={phases} current={phase} />
         </div>

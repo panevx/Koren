@@ -32,7 +32,7 @@ export function ComingSoon({ section }: { section?: SectionId }) {
           </span>
         </div>
         <div className="flex max-w-sm items-end gap-3 text-left">
-          <Avatar hero={host} mood="thoughtful" className="size-16" />
+          <Avatar hero={host} mood="thoughtful" className="size-[min(4rem,15vw)]" />
           <p className="rounded-level relative rounded-bl-sm bg-white px-4 py-3 text-lg font-semibold text-ink shadow-sm">
             {t('soon.text', { version: arrives })}
           </p>

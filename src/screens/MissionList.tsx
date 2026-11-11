@@ -50,10 +50,10 @@ export function MissionList({ topic }: { topic?: boolean }) {
                   to={`/mission/${m.id}`}
                   className="rounded-level flex items-center gap-4 border-2 border-sand bg-white p-3 shadow-sm transition hover:border-green hover:shadow-md"
                 >
-                  <span className={`grid size-16 shrink-0 place-items-center rounded-full ${isDone ? 'bg-gold' : 'bg-cream'}`}>
-                    <img src={img(m.badge.icon)} alt="" className={`size-12 object-contain ${isDone ? '' : 'opacity-80'}`} />
+                  <span className={`grid size-[min(4rem,16vw)] shrink-0 place-items-center rounded-full ${isDone ? 'bg-gold' : 'bg-cream'}`}>
+                    <img src={img(m.badge.icon)} alt="" className={`size-[75%] object-contain ${isDone ? '' : 'opacity-80'}`} />
                   </span>
-                  <span className="flex flex-1 flex-col gap-0.5">
+                  <span className="flex min-w-0 flex-1 flex-col gap-0.5">
                     <span className="text-xs font-black tracking-wide text-red uppercase">{t(`subject.${m.subject}`)}</span>
                     <span className="text-lg leading-tight font-extrabold">{l(m.title)}</span>
                     {isDone && (
@@ -62,9 +62,9 @@ export function MissionList({ topic }: { topic?: boolean }) {
                         {t('missions.done')}
                       </span>
                     )}
-                    {m.draft && <span className="text-xs font-semibold text-muted">{t('missions.draft')}</span>}
+                    {m.draft && <span className="self-start rounded-full bg-gold/25 px-2 text-xs font-bold text-ink">{t('missions.draftShort')}</span>}
                   </span>
-                  <span className="grid size-12 shrink-0 place-items-center rounded-full bg-green text-white" aria-hidden="true">
+                  <span className="grid size-[min(3rem,11vw)] shrink-0 place-items-center rounded-full bg-green text-white" aria-hidden="true">
                     <Icon name="play" />
                   </span>
                 </Link>

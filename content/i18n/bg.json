@@ -173,5 +173,6 @@
   "offline.installIos": "На iPhone и iPad: натиснете „Сподели“, после „Добави към началния екран“.",
   "offline.installOther": "За да го инсталирате, изберете „Добави към началния екран“ от менюто на браузъра.",
   "offline.update": "Има нови мисии!",
-  "offline.updateNow": "Обнови"
+  "offline.updateNow": "Обнови",
+  "missions.draftShort": "Чернова"
 }

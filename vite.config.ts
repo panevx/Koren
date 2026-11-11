@@ -1,20 +1,30 @@
 /// <reference types="vitest/config" />
-import { copyFileSync } from 'node:fs'
-import { resolve } from 'node:path'
+import { copyFileSync, mkdirSync, readdirSync } from 'node:fs'
+import { dirname, resolve } from 'node:path'
 import { defineConfig, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 
-// GitHub Pages serves the app from /<repo>/ and has no SPA fallback.
-// Copying index.html to 404.html makes deep links (e.g. /Koren/settings) load the app.
-function spaFallback(): Plugin {
+// GitHub Pages serves the app from /<repo>/ and has no SPA fallback, but it does answer
+// "/home" with "home.html". So every known address gets its own copy of index.html → HTTP 200
+// (no 404 in the console, indexable). 404.html still catches anything unknown.
+function spaRoutes(): Plugin {
   return {
-    name: 'koren-spa-fallback',
+    name: 'koren-spa-routes',
     apply: 'build',
     closeBundle() {
       const out = resolve(__dirname, 'dist')
-      copyFileSync(resolve(out, 'index.html'), resolve(out, '404.html'))
+      const index = resolve(out, 'index.html')
+      const missions = readdirSync(resolve(__dirname, 'content/missions'))
+        .filter((f) => f.endsWith('.json'))
+        .map((f) => `mission/${f.replace(/\.json$/, '')}`)
+      const routes = ['home', 'age', 'sign', 'who', 'parents', 'settings', 'map', 'missions', 'collection', ...['history', 'culture', 'language'].map((t) => `topic/${t}`), ...missions]
+      copyFileSync(index, resolve(out, '404.html'))
+      for (const r of routes) {
+        mkdirSync(dirname(resolve(out, `${r}.html`)), { recursive: true })
+        copyFileSync(index, resolve(out, `${r}.html`))
+      }
     },
   }
 }
@@ -25,7 +35,7 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
-    spaFallback(),
+    spaRoutes(),
     VitePWA({
       // "prompt": a new version waits until the child is on the hub — never a reload mid-mission.
       registerType: 'prompt',
@@ -48,14 +58,16 @@ export default defineConfig({
       workbox: {
         // Stored at first visit: the whole app (all code, all missions) + what the first screens show.
         globPatterns: [
-          '**/*.{js,css,html,woff2}',
+          '**/*.{js,css,woff2}',
+          'index.html',
           'favicon.svg',
           'img/logo/*.svg',
           'img/icons/*.png',
           'img/ornaments/*.png',
           'img/heroes/koren-raya-512.webp',
           'img/heroes/*-joy.webp',
-          'img/scenes/sunset-600.webp',
+          'img/scenes/header-520.webp',
+          'img/scenes/header-720.webp',
           'img/tiles/*.webp',
           'img/levels/*.webp',
         ],

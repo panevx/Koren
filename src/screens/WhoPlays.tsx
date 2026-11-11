@@ -29,14 +29,14 @@ export function WhoPlays() {
                   p.id === activeId ? 'border-green' : 'border-sand hover:border-green'
                 }`}
               >
-                <ProfileAvatar avatar={p.avatar} className="size-16" />
-                <span className="flex flex-1 flex-col">
+                <ProfileAvatar avatar={p.avatar} className="size-[min(4rem,16vw)]" />
+                <span className="flex min-w-0 flex-1 flex-col">
                   <span className="text-xl font-black">{name(p, i)}</span>
+                  {p.id === activeId && <span className="text-xs font-black text-green uppercase">{t('profile.playing')}</span>}
                   <span className="text-sm font-semibold text-muted">
                     {t('age.years', { n: p.age })} · {t('profile.badges', { n: p.badges.length, total: MISSIONS.length })}
                   </span>
                 </span>
-                {p.id === activeId && <span className="text-xs font-black text-green uppercase">{t('profile.playing')}</span>}
               </button>
             </li>
           ))}

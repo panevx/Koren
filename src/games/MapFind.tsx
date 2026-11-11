@@ -84,14 +84,14 @@ export function MapFind({ game, onDone }: { game: MapGame; onDone: () => void })
       <div role="status" aria-live="polite" className="min-h-20">
         {solved ? (
           <div className="flex items-center gap-3">
-            <Avatar hero="koren" mood="joy" className="size-16" />
+            <Avatar hero="koren" mood="joy" className="size-[min(4rem,15vw)]" />
             <p className="rounded-level flex-1 rounded-bl-sm bg-green/10 px-4 py-3 text-lg font-extrabold text-green-dark">
               {t('map.found', { name: l(target.name) })}
             </p>
           </div>
         ) : wrong.length > 0 ? (
           <div className="flex items-center gap-3">
-            <Avatar hero="raya" mood="thoughtful" className="size-16" />
+            <Avatar hero="raya" mood="thoughtful" className="size-[min(4rem,15vw)]" />
             <p className="rounded-level flex-1 rounded-bl-sm bg-gold/20 px-4 py-3 text-lg font-bold text-ink">
               {showHint ? l(game.hint) : t('map.tryAgain')}
             </p>

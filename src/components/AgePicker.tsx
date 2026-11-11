@@ -66,8 +66,8 @@ export function AgePicker() {
                   : 'border-sand bg-white text-ink hover:border-green'
               }`}
             >
-              <span className={`grid size-14 shrink-0 place-items-center rounded-2xl ${selected ? 'bg-white/15' : 'bg-cream'}`}>
-                <LevelIcon level={level} className="size-12" />
+              <span className={`grid size-[min(3.5rem,14vw)] shrink-0 place-items-center rounded-2xl ${selected ? 'bg-white/15' : 'bg-cream'}`}>
+                <LevelIcon level={level} className="size-[85%]" />
               </span>
               <span className="flex flex-1 flex-col">
                 <span className="text-lg font-black">{t(`level.${level}.range`)}</span>

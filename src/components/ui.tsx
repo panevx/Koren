@@ -6,7 +6,7 @@ import { Icon } from './Icon'
 /** Phone-width column, centred on tablets and laptops. */
 export function Screen({ children, className = '' }: { children: ReactNode; className?: string }) {
   return (
-    <div className="min-h-dvh bg-cream">
+    <div className="min-h-dvh overflow-x-clip bg-cream">
       <main className={`mx-auto flex min-h-dvh w-full max-w-md flex-col ${className}`}>{children}</main>
     </div>
   )

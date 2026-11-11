@@ -30,14 +30,14 @@ export function Home() {
     <Screen>
       <header className="relative overflow-hidden">
         <img
-          src={img('scenes/sunset-600.webp')}
-          srcSet={`${img('scenes/sunset-600.webp')} 600w, ${img('scenes/sunset-900.webp')} 900w`}
+          src={img('scenes/header-720.webp')}
+          srcSet={`${img('scenes/header-520.webp')} 520w, ${img('scenes/header-720.webp')} 720w`}
           sizes="(max-width: 448px) 100vw, 448px"
           alt=""
-          width={900}
-          height={450}
-          className="absolute inset-0 h-full w-full object-cover object-[70%_30%]"
-          decoding="async"
+          width={720}
+          height={268}
+          className="absolute inset-0 h-full w-full object-cover object-[70%_40%]"
+          fetchPriority="high"
         />
         <div className="relative flex items-start justify-between px-4 pt-4 pb-16">
           <Link
@@ -65,8 +65,8 @@ export function Home() {
         <UpdateBanner />
         <div className="mb-4 flex items-center gap-3">
           <div className="flex shrink-0 -space-x-4" aria-hidden="true">
-            <Avatar hero="raya" mood="joy" className="size-14" />
-            <Avatar hero="koren" mood="joy" className="size-14" />
+            <Avatar hero="raya" mood="joy" className="size-[min(3.5rem,12vw)]" />
+            <Avatar hero="koren" mood="joy" className="size-[min(3.5rem,12vw)]" />
           </div>
           <p className="rounded-level flex-1 rounded-bl-sm border-2 border-[var(--accent)] bg-[var(--accent-soft)] px-4 py-2 font-extrabold text-ink">
             {t(`home.greeting.${level}`)}

@@ -93,8 +93,8 @@ export function Avatar({ hero, mood, className = 'size-14' }: { hero: Hero; mood
     <img
       src={img(`heroes/${hero}-${mood}.webp`)}
       alt=""
-      width={320}
-      height={320}
+      width={192}
+      height={192}
       className={`shrink-0 rounded-full border-[3px] border-white bg-white object-cover shadow-md ${className}`}
       decoding="async"
     />

@@ -26,14 +26,12 @@ export function Passport() {
       <div className="flex flex-col gap-4 px-4 pb-28">
         <section className="rounded-level relative overflow-hidden bg-green p-4 text-white shadow-md">
           <div className="flex items-center gap-3">
-            <ProfileAvatar avatar={profile.avatar} className="size-16" />
-            <div className="flex-1">
-              <p className="text-xs font-black tracking-widest text-gold uppercase">{t('passport.title')}</p>
-              <p className="text-2xl font-black">{name(profile, index)}</p>
-            </div>
-            <img src={img('logo/koren-white.svg')} alt="" className="h-10 w-auto opacity-90" />
+            <ProfileAvatar avatar={profile.avatar} className="size-[min(4rem,15vw)]" />
+            <p className="min-w-0 flex-1 text-xs font-black tracking-wide text-gold uppercase">{t('passport.title')}</p>
+            <img src={img('logo/koren-white.svg')} alt="" className="h-[min(2.5rem,8vw)] w-auto shrink-0 opacity-90" />
           </div>
-          <div className="mt-3">
+          <p className="mt-2 text-2xl leading-tight font-black">{name(profile, index)}</p>
+          <div className="mt-2">
             <p className="mb-1 text-sm font-bold">{t('passport.count', { n: earned.length, total })}</p>
             <div className="h-3 overflow-hidden rounded-full bg-white/25" aria-hidden="true">
               <div className="h-full rounded-full bg-gold" style={{ width: `${total ? (earned.length / total) * 100 : 0}%` }} />
@@ -54,10 +52,10 @@ export function Passport() {
                   aria-label={`${l(m.title)} – ${has ? t('passport.earned') : t('passport.locked')}`}
                 >
                   <span
-                    className={`grid size-24 place-items-center rounded-full p-1.5 ${has ? 'bg-gold shadow-[0_4px_0_#d49a00]' : 'bg-sand'}`}
+                    className={`grid size-[min(6rem,26vw)] place-items-center rounded-full p-1.5 ${has ? 'bg-gold shadow-[0_4px_0_#d49a00]' : 'bg-sand'}`}
                   >
                     <span className="grid size-full place-items-center rounded-full border-4 border-white bg-cream">
-                      <img src={img(m.badge.icon)} alt="" className={`size-14 object-contain ${has ? '' : 'opacity-40 grayscale'}`} />
+                      <img src={img(m.badge.icon)} alt="" className={`size-[60%] object-contain ${has ? '' : 'opacity-40 grayscale'}`} />
                     </span>
                   </span>
                   <span className="text-sm leading-tight font-extrabold">{l(m.title)}</span>
