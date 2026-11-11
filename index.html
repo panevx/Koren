@@ -8,6 +8,32 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/img/icons/apple-touch-icon.png" />
     <title>KOREN</title>
+    <script>
+      // Starts downloading the biggest picture of the first screen right away, before the app code arrives
+      // (it would otherwise be found only after ~100 KB of JavaScript has loaded and run).
+      // Must match the srcset/sizes of <Heroes> (Brand.tsx) and the hub header (Home.tsx).
+      ;(function () {
+        try {
+          if (document.querySelector('link[rel="preload"][as="image"]')) return // added at build time (home.html)
+          var base = document.querySelector('link[rel="icon"]').href.replace(/favicon\.svg$/, '')
+          var root = new URL(base).pathname.replace(/\/$/, '').toLowerCase()
+          var path = location.pathname.replace(/\/$/, '').toLowerCase()
+          var onboarded = /"onboarded":true/.test(localStorage.getItem('koren:settings') || '')
+          var set
+          if (path === root + '/home' || (path === root && onboarded))
+            set = ['scenes/header-520.webp 520w', 'scenes/header-720.webp 720w', '(max-width: 448px) 100vw, 448px']
+          else if (path === root) set = ['heroes/koren-raya-512.webp 512w', 'heroes/koren-raya-768.webp 768w', '(max-width: 448px) 90vw, 384px']
+          if (!set) return
+          var link = document.createElement('link')
+          link.rel = 'preload'
+          link.as = 'image'
+          link.setAttribute('imagesrcset', base + 'img/' + set[0] + ', ' + base + 'img/' + set[1])
+          link.setAttribute('imagesizes', set[2])
+          link.setAttribute('fetchpriority', 'high')
+          document.head.appendChild(link)
+        } catch (e) {}
+      })()
+    </script>
     <style>
       /* Splash shown before React mounts. The app replaces #root's content. */
       body { margin: 0; background: #fbf7f0; }

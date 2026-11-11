@@ -81,6 +81,11 @@ body {
      "anywhere" also lets flex/grid items shrink below their longest word. */
   overflow-wrap: anywhere;
   hyphens: auto;
+  /* …but only really long words get a hyphen (12+ letters, at least 4 on each side):
+     "славянобългар-ска" yes, "на-родната" no. */
+  hyphenate-limit-chars: 12 4 4;
+  -webkit-hyphenate-limit-before: 4;
+  -webkit-hyphenate-limit-after: 4;
   background: var(--color-cream);
   color: var(--color-ink);
   font-family: var(--font-sans);

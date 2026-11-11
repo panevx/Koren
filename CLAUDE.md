@@ -51,13 +51,15 @@ Zod (схема на мисиите, v0.3), vite-plugin-pwa (работа без
 - Картинките на мисиите: при първо показване (кеш `koren-img`) или всички наведнъж с „Изтегли всичко за пътуване“ (За родители).
 - `src/offline/assets.ts` изчислява списъка от мисиите; `tests/offline.test.ts` пази, че покрива ВСЯКА картинка в `public/img`.
 - Иконки: `08-…-golyam-znak.svg` (обикновени), `07-koren-ikonka.svg` (maskable — знакът е в безопасния кръг).
-- Lighthouse (мобилен, с gzip) на /home: Performance 93, Accessibility 100, Best Practices 100, SEO 100.
+- Lighthouse (мобилен, с gzip) на /home: Performance 96, Accessibility 100, Best Practices 100, SEO 100.
+- Най-голямата картинка на първия екран се зарежда предварително: `<link rel=preload>` в `home.html` (при build)
+  и малък скрипт в `index.html` за началния екран. srcset/sizes ТРЯБВА да съвпадат с Home.tsx и Heroes в Brand.tsx.
 - Всеки известен адрес има свой HTML при build (`home.html`, `mission/<id>.html`…) → GitHub Pages отговаря 200, не 404.
 
 ## Оформление — да не излиза от екрана (v0.8.1)
 - Текстова колона до картинка/бутон във flex ред: винаги `min-w-0 flex-1`.
 - Картинки/аватари до текст: размер с таван по ширина на екрана, напр. `size-[min(4rem,16vw)]`.
-- `body`: `overflow-wrap: anywhere; hyphens: auto` — дългите думи се пренасят; `Screen` е с `overflow-x-clip`.
+- `body`: `overflow-wrap: anywhere; hyphens: auto` + `hyphenate-limit-chars: 12 4 4` — тире само при думи с 12+ букви; `Screen` е с `overflow-x-clip`.
 - Размерът на шрифта по ниво е `--root-fs` с `clamp()` по `vw` — по-малък на 320 px телефони.
 - Проверка: 11 екрана × 320/360/412 px × 3 нива × bg/en × нормален/130% системен шрифт →
   0 елемента извън екрана и 0 „смачкани“ думи (буква под буква).

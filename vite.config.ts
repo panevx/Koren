@@ -1,5 +1,5 @@
 /// <reference types="vitest/config" />
-import { copyFileSync, mkdirSync, readdirSync } from 'node:fs'
+import { copyFileSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
 import { defineConfig, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
@@ -25,6 +25,15 @@ function spaRoutes(): Plugin {
         mkdirSync(dirname(resolve(out, `${r}.html`)), { recursive: true })
         copyFileSync(index, resolve(out, `${r}.html`))
       }
+      // The hub is where returning children land: its header picture is in the HTML itself,
+      // so the browser starts fetching it with the very first bytes. Must match Home.tsx.
+      const base = process.env.BASE_PATH ?? '/'
+      const preload =
+        `<link rel="preload" as="image" fetchpriority="high" ` +
+        `imagesrcset="${base}img/scenes/header-520.webp 520w, ${base}img/scenes/header-720.webp 720w" ` +
+        `imagesizes="(max-width: 448px) 100vw, 448px" />`
+      const home = resolve(out, 'home.html')
+      writeFileSync(home, readFileSync(home, 'utf8').replace('<title>', `${preload}\n    <title>`))
     },
   }
 }
