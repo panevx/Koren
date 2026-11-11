@@ -7,9 +7,11 @@
 React + Vite + TypeScript (strict) + Tailwind v4, React Router, Zustand.
 Zod (схема на мисиите, v0.3). По-късно: Motion, vite-plugin-pwa (v0.8).
 Хостинг сега: GitHub Pages (клон `gh-pages`, публикува се от `.github/workflows/deploy.yml`).
-План за по-късно: Cloudflare Pages + 1 Worker + KV (кодове за достъп, v0.7).
+Плащания и кодове за достъп — НЕ преди v2.0 (решение на екипа: до състезанието всичко е безплатно).
+Тогава: Cloudflare Pages + 1 Worker + KV, подпис ECDSA P-256 (Ed25519 няма в по-стари браузъри).
 
 ## Принципи (не се нарушават)
+- Всички мисии са безплатни (`"free": true`) до v2.0. Не добавяй заключване, цени или бутони за плащане.
 - Съдържанието е данни: мисия = JSON в content/missions, валидиран със src/content/schema.ts.
   Нова мисия никога не изисква нов код.
 - 5 игрови шаблона в src/games: quiz, match, order, map, puzzle.
