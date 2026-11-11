@@ -35,14 +35,30 @@ export function Button({
 }
 
 /** Title bar with a back button, used on every inner screen. */
-export function TopBar({ title, right, onBack }: { title: string; right?: ReactNode; onBack?: () => void }) {
+export function TopBar({
+  title,
+  right,
+  onBack,
+  fallback = '/home',
+}: {
+  title: string
+  right?: ReactNode
+  onBack?: () => void
+  /** Where "back" goes when the screen was opened directly (no in-app history). */
+  fallback?: string
+}) {
   const t = useT()
   const navigate = useNavigate()
+  const goBack = () => {
+    const idx = (window.history.state as { idx?: number } | null)?.idx ?? 0
+    if (idx > 0) navigate(-1)
+    else navigate(fallback, { replace: true })
+  }
   return (
     <header className="flex items-center gap-2 px-3 pt-3 pb-2">
       <button
         type="button"
-        onClick={onBack ?? (() => navigate(-1))}
+        onClick={onBack ?? goBack}
         className="tap grid place-items-center rounded-full text-green hover:bg-white"
         aria-label={t('nav.back')}
       >

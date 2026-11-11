@@ -1,26 +1,24 @@
-import type { ComponentType } from 'react'
 import { Link } from 'react-router'
-import { BookArt, CastleArt, GamepadArt, MapArt, ShevitsaArt, TrophyArt } from '../components/Art'
 import { BottomNav } from '../components/BottomNav'
 import { Landscape, Logo } from '../components/Brand'
 import { Icon } from '../components/Icon'
 import { Screen } from '../components/ui'
-import type { TKey } from '../i18n'
 import { useT } from '../i18n/useT'
+import { SECTIONS } from '../sections'
+import { useSettings } from '../store/settings'
+import { ageToLevel, type Level } from '../theme/levels'
 
-type Tile = { to: string; label: TKey; Art: ComponentType<{ className?: string }> }
-
-export const HOME_TILES: readonly Tile[] = [
-  { to: '/map', label: 'tile.discover', Art: MapArt },
-  { to: '/topic/history', label: 'tile.history', Art: CastleArt },
-  { to: '/topic/culture', label: 'tile.culture', Art: ShevitsaArt },
-  { to: '/topic/language', label: 'tile.language', Art: BookArt },
-  { to: '/missions', label: 'tile.missions', Art: GamepadArt },
-  { to: '/collection', label: 'tile.collection', Art: TrophyArt },
-]
+/** How the hub adapts per age level, beyond the global size/colour theme. */
+const LAYOUT: Record<Level, { art: string; showDesc: boolean; label: string }> = {
+  small: { art: 'size-20', showDesc: false, label: 'text-lg' },
+  young: { art: 'size-16', showDesc: false, label: 'text-base' },
+  guard: { art: 'size-12', showDesc: true, label: 'text-base' },
+}
 
 export function Home() {
   const t = useT()
+  const level = useSettings((s) => ageToLevel(s.age))
+  const layout = LAYOUT[level]
 
   return (
     <Screen>
@@ -31,7 +29,7 @@ export function Home() {
           <Logo size="sm" />
           <Link
             to="/settings"
-            className="tap grid place-items-center rounded-full bg-white/80 text-green shadow-sm hover:bg-white"
+            className="tap grid place-items-center rounded-full bg-white/85 text-green shadow-sm hover:bg-white"
             aria-label={t('settings.title')}
           >
             <Icon name="gear" />
@@ -41,15 +39,19 @@ export function Home() {
 
       <div className="relative -mt-8 flex-1 rounded-t-[2rem] bg-cream px-4 pt-5 pb-28">
         <h1 className="sr-only">{t('nav.home')}</h1>
+        <p className="rounded-level mb-4 border-2 border-[var(--accent)] bg-[var(--accent-soft)] px-4 py-2 text-center font-extrabold text-ink">
+          {t(`home.greeting.${level}`)}
+        </p>
         <ul className="grid grid-cols-2 gap-3">
-          {HOME_TILES.map(({ to, label, Art }) => (
-            <li key={to}>
+          {SECTIONS.map(({ id, path, label, desc, Art }) => (
+            <li key={id}>
               <Link
-                to={to}
-                className="rounded-level flex aspect-[1.1] flex-col items-center justify-center gap-2 border-2 border-sand bg-white p-3 text-center shadow-sm transition hover:-translate-y-0.5 hover:border-green hover:shadow-md"
+                to={path}
+                className="rounded-level flex h-full min-h-[9rem] flex-col items-center justify-center gap-2 border-2 border-sand bg-white p-3 text-center shadow-sm transition hover:-translate-y-0.5 hover:border-green hover:shadow-md"
               >
-                <Art className="size-16" />
-                <span className="text-base leading-tight font-extrabold text-green-dark">{t(label)}</span>
+                <Art className={layout.art} />
+                <span className={`${layout.label} leading-tight font-extrabold text-green-dark`}>{t(label)}</span>
+                {layout.showDesc && <span className="text-sm leading-snug text-muted">{t(desc)}</span>}
               </Link>
             </li>
           ))}
