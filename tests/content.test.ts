@@ -2,7 +2,10 @@ import { existsSync, readFileSync, readdirSync } from 'node:fs'
 import { basename, join, resolve } from 'node:path'
 import { describe, expect, it } from 'vitest'
 import { MISSIONS, parseMissions, pickLevel } from '../src/content/missions'
+import { PLACES } from '../src/content/places'
 import { Mission, POSES } from '../src/content/schema'
+import { BULGARIA_OUTLINE } from '../src/map/geo'
+import { insidePolygon, project } from '../src/map/projection'
 
 const DIR = resolve(__dirname, '../content/missions')
 const PUBLIC_IMG = resolve(__dirname, '../public/img')
@@ -50,6 +53,15 @@ describe('content/missions — every file', () => {
             expect(new Set(q.options.map((o) => o.bg)).size, q.q.bg).toBe(q.options.length)
             expect(new Set(q.options.map((o) => o.en)).size, q.q.en).toBe(q.options.length)
           }
+        }
+      })
+
+      it('every place it mentions exists on the map', () => {
+        const ids = new Set(PLACES.map((p) => p.id))
+        if (m.place) expect(ids.has(m.place), `place ${m.place}`).toBe(true)
+        for (const level of Object.values(m.levels)) {
+          if (level?.game.type !== 'map') continue
+          for (const id of level.game.choices) expect(ids.has(id), `choice ${id}`).toBe(true)
         }
       })
 
@@ -108,5 +120,29 @@ describe('mission loader', () => {
     const m = MISSIONS[0]!
     expect(pickLevel(m, 'small').level).toBe(Object.keys(m.levels).includes('small') ? 'small' : 'young')
     expect(POSES).toContain('wave')
+  })
+})
+
+describe('content/map/places.json', () => {
+  it('ids are unique', () => {
+    expect(new Set(PLACES.map((p) => p.id)).size).toBe(PLACES.length)
+  })
+
+  it('every place lies inside the border of Bulgaria', () => {
+    for (const p of PLACES) expect(insidePolygon(p.x, p.y, BULGARIA_OUTLINE), p.id).toBe(true)
+  })
+
+  it('points outside Bulgaria are detected (sanity check of the test itself)', () => {
+    for (const [lat, lon] of [[44.43, 26.1], [41.01, 28.98], [40.64, 22.94]] as const) {
+      const { x, y } = project(lat, lon) // Bucharest, Istanbul, Thessaloniki
+      expect(insidePolygon(x, y, BULGARIA_OUTLINE)).toBe(false)
+    }
+  })
+})
+
+describe('map controls never cover a place', () => {
+  it('no place is in the bottom-left corner where the zoom buttons sit', () => {
+    // Buttons: 3 × 48 px + gaps ≈ 170 × 60 px on a ~360 px wide map → 47% × 24% of the map.
+    for (const p of PLACES) expect(p.x < 1000 * 0.47 && p.y > 690 * 0.76, p.id).toBe(false)
   })
 })

@@ -44,7 +44,7 @@ function MissionRun({ mission, childLevel }: { mission: MissionData; childLevel:
         <button
           type="button"
           onClick={exit}
-          className="tap flex items-center gap-1 rounded-full border-2 border-sand bg-white px-3 font-extrabold text-ink hover:border-red"
+          className="tap flex shrink-0 items-center gap-1 rounded-full border-2 border-sand bg-white px-3 font-extrabold text-ink hover:border-red"
         >
           <Icon name="close" />
           {t('mission.exit')}

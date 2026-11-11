@@ -45,11 +45,42 @@ export const Question = z
 
 export const QuizGame = z.object({ type: z.literal('quiz'), questions: z.array(Question).min(1).max(6) }).strict()
 
+export const PLACE_ICONS = ['fortress', 'city', 'sea', 'monastery', 'mountain', 'rose', 'house', 'rock'] as const
+
+/** A place on the map of Bulgaria (content/map/places.json). */
+export const Place = z
+  .object({
+    id: z.string().regex(/^[a-z0-9-]+$/),
+    icon: z.enum(PLACE_ICONS),
+    lat: z.number().min(41).max(44.3),
+    lon: z.number().min(22.3).max(28.7),
+    name: Text,
+  })
+  .strict()
+
 /**
- * One entry per game template. v0.3 ships `quiz`; match, order, map and puzzle
+ * "Find it on the map": the child taps one of `choices` (place ids, must include `target`).
+ * `showIcons` draws each place's picture on its marker — for children who cannot read yet.
+ * After the second wrong tap Raya gives `hint` and the target area is highlighted.
+ */
+export const MapGame = z
+  .object({
+    type: z.literal('map'),
+    target: z.string(),
+    choices: z.array(z.string()).min(2).max(8),
+    prompt: Text,
+    hint: Text,
+    showIcons: z.boolean().default(false),
+  })
+  .strict()
+  .refine((g) => g.choices.includes(g.target), { message: 'choices must include the target', path: ['choices'] })
+  .refine((g) => new Set(g.choices).size === g.choices.length, { message: 'choices must be unique', path: ['choices'] })
+
+/**
+ * One entry per game template: v0.3 `quiz`, v0.4 `map`. match, order and puzzle
  * are added here (and in src/games) without touching the mission screen.
  */
-export const Game = z.discriminatedUnion('type', [QuizGame])
+export const Game = z.discriminatedUnion('type', [QuizGame, MapGame])
 
 export const LevelContent = z
   .object({
@@ -89,6 +120,9 @@ export type Text = z.infer<typeof Text>
 export type StoryLine = z.infer<typeof StoryLine>
 export type Question = z.infer<typeof Question>
 export type Game = z.infer<typeof Game>
+export type MapGame = z.infer<typeof MapGame>
+export type Place = z.infer<typeof Place>
+export type PlaceIcon = (typeof PLACE_ICONS)[number]
 export type LevelContent = z.infer<typeof LevelContent>
 export type Mission = z.infer<typeof Mission>
 export type Subject = (typeof SUBJECTS)[number]

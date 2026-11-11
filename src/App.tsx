@@ -26,6 +26,7 @@ const basename = resolveBasename(import.meta.env.BASE_URL, window.location.pathn
 // Missions (and the content schema they validate against) load only when a child opens them,
 // so the start screens stay small.
 const Mission = lazy(() => import('./screens/Mission').then((m) => ({ default: m.Mission })))
+const MapScreen = lazy(() => import('./screens/MapScreen').then((m) => ({ default: m.MapScreen })))
 const MissionList = lazy(() => import('./screens/MissionList').then((m) => ({ default: m.MissionList })))
 
 function Loading() {
@@ -46,7 +47,7 @@ export function AppRoutes() {
         <Route path="/age" element={<AgeSelect />} />
         <Route path="/home" element={<Home />} />
         <Route path="/settings" element={<Settings />} />
-        <Route path="/map" element={<ComingSoon section="discover" />} />
+        <Route path="/map" element={<MapScreen />} />
         <Route path="/missions" element={<MissionList />} />
         <Route path="/mission/:id" element={<Mission />} />
         <Route path="/collection" element={<ComingSoon section="collection" />} />

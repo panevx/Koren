@@ -4,9 +4,56 @@
   "free": true,
   "order": 1,
   "place": "pliska",
-  "badge": { "id": "asparuh", "icon": "tiles/history.webp" },
-  "title": { "bg": "Хан Аспарух и новата държава", "en": "Khan Asparuh and the new state" },
+  "badge": {
+    "id": "asparuh",
+    "icon": "tiles/history.webp"
+  },
+  "title": {
+    "bg": "Хан Аспарух и новата държава",
+    "en": "Khan Asparuh and the new state"
+  },
   "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Здравей! Да идем при хан Аспарух!",
+          "en": "Hi! Let's visit Khan Asparuh!"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Неговият главен град се казва Плиска.",
+          "en": "His main town is called Pliska."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Намери крепостта на картата!",
+          "en": "Find the fortress on the map!"
+        }
+      ],
+      "game": {
+        "type": "map",
+        "target": "pliska",
+        "choices": [
+          "pliska",
+          "musala",
+          "varna"
+        ],
+        "showIcons": true,
+        "prompt": {
+          "bg": "Намери крепостта!",
+          "en": "Find the fortress!"
+        },
+        "hint": {
+          "bg": "Крепостта е горе, вдясно.",
+          "en": "The fortress is up, on the right."
+        }
+      },
+      "check": []
+    },
     "young": {
       "story": [
         {
@@ -35,60 +82,229 @@
         }
       ],
       "game": {
-        "type": "quiz",
-        "questions": [
-          {
-            "q": { "bg": "Кой хан основал новата българска държава на Дунав?", "en": "Which khan founded the new Bulgarian state on the Danube?" },
-            "options": [
-              { "bg": "Хан Крум", "en": "Khan Krum" },
-              { "bg": "Хан Аспарух", "en": "Khan Asparuh" },
-              { "bg": "Княз Борис I", "en": "Prince Boris I" }
-            ],
-            "answer": 1,
-            "hint": { "bg": "Той е героят на тази мисия!", "en": "He is the hero of this mission!" }
-          },
-          {
-            "q": { "bg": "Към коя голяма река отишли българите на Аспарух?", "en": "Which great river did Asparuh's Bulgars travel to?" },
-            "options": [
-              { "bg": "Нил", "en": "The Nile" },
-              { "bg": "Амазонка", "en": "The Amazon" },
-              { "bg": "Дунав", "en": "The Danube" }
-            ],
-            "answer": 2,
-            "hint": { "bg": "И днес тази река е северната граница на България.", "en": "Even today this river is Bulgaria's northern border." }
-          },
-          {
-            "q": { "bg": "През коя година Византия сключила мир с Аспарух?", "en": "In which year did Byzantium make peace with Asparuh?" },
-            "options": [
-              { "bg": "681 г.", "en": "681" },
-              { "bg": "1878 г.", "en": "1878" },
-              { "bg": "1944 г.", "en": "1944" }
-            ],
-            "answer": 0,
-            "hint": { "bg": "Било е преди повече от 1300 години.", "en": "It was more than 1300 years ago." }
-          }
-        ]
+        "type": "map",
+        "target": "pliska",
+        "choices": [
+          "pliska",
+          "veliko-tarnovo",
+          "sofia",
+          "varna"
+        ],
+        "prompt": {
+          "bg": "Намери Плиска – първата столица – на картата!",
+          "en": "Find Pliska – the first capital – on the map!"
+        },
+        "hint": {
+          "bg": "Търси на североизток – близо до морето, но не на самия бряг.",
+          "en": "Look in the north-east – near the sea, but not on the coast."
+        }
       },
       "check": [
         {
-          "q": { "bg": "Коя е първата столица на новата държава?", "en": "What was the first capital of the new state?" },
+          "q": {
+            "bg": "Коя е първата столица на новата държава?",
+            "en": "What was the first capital of the new state?"
+          },
           "options": [
-            { "bg": "София", "en": "Sofia" },
-            { "bg": "Плиска", "en": "Pliska" },
-            { "bg": "Велико Търново", "en": "Veliko Tarnovo" }
+            {
+              "bg": "София",
+              "en": "Sofia"
+            },
+            {
+              "bg": "Плиска",
+              "en": "Pliska"
+            },
+            {
+              "bg": "Велико Търново",
+              "en": "Veliko Tarnovo"
+            }
           ],
           "answer": 1,
-          "hint": { "bg": "Името ѝ започва с буквата П.", "en": "Its name starts with the letter P." }
+          "hint": {
+            "bg": "Името ѝ започва с буквата П.",
+            "en": "Its name starts with the letter P."
+          }
         },
         {
-          "q": { "bg": "С кого се съюзил Аспарух?", "en": "Who did Asparuh make an alliance with?" },
+          "q": {
+            "bg": "С кого се съюзил Аспарух?",
+            "en": "Who did Asparuh make an alliance with?"
+          },
           "options": [
-            { "bg": "С викингите", "en": "The Vikings" },
-            { "bg": "С римляните", "en": "The Romans" },
-            { "bg": "Със славянските племена", "en": "The Slavic tribes" }
+            {
+              "bg": "С викингите",
+              "en": "The Vikings"
+            },
+            {
+              "bg": "С римляните",
+              "en": "The Romans"
+            },
+            {
+              "bg": "Със славянските племена",
+              "en": "The Slavic tribes"
+            }
           ],
           "answer": 2,
-          "hint": { "bg": "Те вече живеели по тези земи.", "en": "They already lived in these lands." }
+          "hint": {
+            "bg": "Те вече живеели по тези земи.",
+            "en": "They already lived in these lands."
+          }
+        },
+        {
+          "q": {
+            "bg": "През коя година Византия сключила мир с Аспарух?",
+            "en": "In which year did Byzantium make peace with Asparuh?"
+          },
+          "options": [
+            {
+              "bg": "681 г.",
+              "en": "681"
+            },
+            {
+              "bg": "1878 г.",
+              "en": "1878"
+            },
+            {
+              "bg": "1944 г.",
+              "en": "1944"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "bg": "Било е преди повече от 1300 години.",
+            "en": "It was more than 1300 years ago."
+          }
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Пренасяме се в края на VII век. Старата Велика България на хан Кубрат се е разпаднала под натиска на хазарите.",
+          "en": "We travel to the end of the 7th century. Khan Kubrat's Old Great Bulgaria has broken apart under pressure from the Khazars."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Синът на Кубрат – Аспарух – повежда своята част от българите на запад и се установява в Онгъла, близо до делтата на Дунав.",
+          "en": "Kubrat's son Asparuh leads his part of the Bulgars west and settles in Onglos, near the Danube delta."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "През 680 г. император Константин IV напада по суша и по море. Българите удържат, а когато византийците отстъпват, ги разбиват.",
+          "en": "In 680 Emperor Constantine IV attacks by land and by sea. The Bulgars hold out, and when the Byzantines retreat, they defeat them."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Аспарух преминава Дунав. През 681 г. Византия е принудена да сключи мир и да му плаща ежегоден данък.",
+          "en": "Asparuh crosses the Danube. In 681 Byzantium is forced to make peace and to pay him a yearly tribute."
+        },
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "Аспарух се съюзява със Седемте славянски племена и северите. Центърът на новата държава става Плиска.",
+          "en": "Asparuh allies with the Seven Slavic Tribes and the Severi. Pliska becomes the centre of the new state."
+        }
+      ],
+      "game": {
+        "type": "map",
+        "target": "pliska",
+        "choices": [
+          "pliska",
+          "veliki-preslav",
+          "veliko-tarnovo",
+          "varna",
+          "nessebar",
+          "sofia"
+        ],
+        "prompt": {
+          "bg": "Отбележи на картата първата столица на Дунавска България.",
+          "en": "Mark the first capital of Danube Bulgaria on the map."
+        },
+        "hint": {
+          "bg": "Тя е на североизток от Велики Преслав – втората столица.",
+          "en": "It lies north-east of Veliki Preslav – the second capital."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Как се нарича областта край делтата на Дунав, където се установява Аспарух?",
+            "en": "What is the area near the Danube delta where Asparuh settles called?"
+          },
+          "options": [
+            {
+              "bg": "Тракия",
+              "en": "Thrace"
+            },
+            {
+              "bg": "Онгъла",
+              "en": "Onglos"
+            },
+            {
+              "bg": "Македония",
+              "en": "Macedonia"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "bg": "Името ѝ означава „ъгъл“.",
+            "en": "Its name means “corner”."
+          }
+        },
+        {
+          "q": {
+            "bg": "Какво се задължава да плаща Византия на българите след мира от 681 г.?",
+            "en": "What does Byzantium agree to pay the Bulgars after the peace of 681?"
+          },
+          "options": [
+            {
+              "bg": "Нищо",
+              "en": "Nothing"
+            },
+            {
+              "bg": "Откуп за пленници",
+              "en": "A ransom for prisoners"
+            },
+            {
+              "bg": "Ежегоден данък",
+              "en": "A yearly tribute"
+            }
+          ],
+          "answer": 2,
+          "hint": {
+            "bg": "Плащало се е всяка година.",
+            "en": "It was paid every year."
+          }
+        },
+        {
+          "q": {
+            "bg": "Кой е бащата на хан Аспарух?",
+            "en": "Who was Khan Asparuh's father?"
+          },
+          "options": [
+            {
+              "bg": "Хан Тервел",
+              "en": "Khan Tervel"
+            },
+            {
+              "bg": "Хан Кубрат",
+              "en": "Khan Kubrat"
+            },
+            {
+              "bg": "Хан Крум",
+              "en": "Khan Krum"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "bg": "Той е владетел на Стара Велика България.",
+            "en": "He ruled Old Great Bulgaria."
+          }
         }
       ]
     }

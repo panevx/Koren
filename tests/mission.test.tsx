@@ -53,9 +53,19 @@ describe('mission Хан Аспарух (young)', () => {
       fireEvent.click(screen.getByRole('button', { name: /Напред/ }))
     }
 
-    // Game: a wrong answer gives a hint and never ends the mission.
-    expect(young.game.type).toBe('quiz')
-    if (young.game.type === 'quiz') answerAll(young.game.questions, true)
+    // Game: find Pliska on the map. Two wrong taps → Raya's hint; never a dead end.
+    const game = young.game
+    if (game.type !== 'map') throw new Error('young level should play the map game')
+    const pointOf = (id: string) => `Точка ${game.choices.indexOf(id) + 1}`
+    const wrong = game.choices.filter((c) => c !== game.target)
+    fireEvent.click(screen.getByRole('button', { name: pointOf(wrong[0]!) }))
+    expect(screen.getByRole('status')).toHaveTextContent('Не е тук. Опитай пак!')
+    fireEvent.click(screen.getByRole('button', { name: pointOf(wrong[1]!) }))
+    expect(screen.getByRole('status')).toHaveTextContent(game.hint.bg)
+    expect(screen.queryByRole('button', { name: /Готово/ })).not.toBeInTheDocument()
+    fireEvent.click(screen.getByRole('button', { name: pointOf(game.target) }))
+    expect(screen.getByRole('status')).toHaveTextContent('Браво! Това е Плиска!')
+    fireEvent.click(screen.getByRole('button', { name: /Готово/ }))
 
     // Check.
     expect(screen.getByRole('heading', { name: 'Провери какво научи' })).toBeInTheDocument()
@@ -88,10 +98,29 @@ describe('mission Хан Аспарух (young)', () => {
     expect(screen.getByRole('button', { name: /Exit/ })).toBeInTheDocument()
   })
 
-  it('a 5-year-old gets the closest available level instead of nothing', async () => {
-    useSettings.getState().setAge(5)
+  it.each([
+    [5, 'small'],
+    [9, 'young'],
+    [13, 'guard'],
+  ] as const)('age %i plays the %s version', async (age, level) => {
+    useSettings.getState().setAge(age)
     renderAt(`/mission/${ID}`)
-    expect(await screen.findByText(young.story[0]!.bg)).toBeInTheDocument()
+    const content = mission.levels[level]!
+    expect(await screen.findByText(content.story[0]!.bg)).toBeInTheDocument()
+    for (let i = 0; i < content.story.length; i++) fireEvent.click(screen.getByRole('button', { name: /Напред/ }))
+    if (content.game.type !== 'map') throw new Error('expected a map game')
+    // Each level has a different number of places to choose from.
+    expect(screen.getAllByRole('button', { name: /^Точка \d$/ })).toHaveLength(content.game.choices.length)
+  })
+
+  it('the three versions really differ: story length, choices, pictures, check', () => {
+    const { small, young: y, guard } = mission.levels
+    expect([small!.story.length, y!.story.length, guard!.story.length]).toEqual([3, 4, 5])
+    const g = (l: typeof small) => (l!.game.type === 'map' ? l!.game : null)!
+    expect([g(small).choices.length, g(y).choices.length, g(guard).choices.length]).toEqual([3, 4, 6])
+    expect(g(small).showIcons).toBe(true)
+    expect(g(guard).showIcons).toBe(false)
+    expect(small!.check).toHaveLength(0) // 4–6: nothing to read in the check phase
   })
 
   it('an unknown mission id goes back to the list', async () => {
@@ -108,5 +137,24 @@ describe('mission Хан Аспарух (young)', () => {
     useSettings.getState().setRemember(false)
     useProgress.getState().complete(ID, 'young', 'asparuh')
     expect(localStorage.getItem(PROGRESS_KEY)).toBeNull()
+  })
+})
+
+describe('map screen', () => {
+  it('shows every place and opens the mission at Pliska', async () => {
+    renderAt('/map')
+    fireEvent.click(await screen.findByRole('button', { name: 'Плиска' }))
+    expect(screen.getByRole('heading', { name: 'Плиска' })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /Хан Аспарух/ })).toHaveAttribute('href', `/mission/${ID}`)
+    fireEvent.click(screen.getByRole('button', { name: 'Рилски манастир' }))
+    expect(screen.getByText('Скоро тук ще има мисия.')).toBeInTheDocument()
+  })
+
+  it('a place with a finished mission turns gold', async () => {
+    useProgress.getState().complete(ID, 'young', 'asparuh')
+    renderAt('/map')
+    const pliska = await screen.findByRole('button', { name: 'Плиска' })
+    expect(pliska.firstElementChild).toHaveClass('bg-gold')
+    expect(screen.getByRole('button', { name: 'София' }).firstElementChild).not.toHaveClass('bg-gold')
   })
 })

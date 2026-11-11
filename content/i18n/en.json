@@ -85,5 +85,15 @@
   "check.title": "Check what you learned",
   "badge.title": "You earned a badge!",
   "badge.more": "More missions",
-  "badge.home": "Back to Home"
+  "badge.home": "Back to Home",
+  "map.label": "Map of Bulgaria",
+  "map.zoomIn": "Zoom in",
+  "map.zoomOut": "Zoom out",
+  "map.reset": "Whole map",
+  "map.zoomTip": "Zoom in with two fingers or the + button.",
+  "map.point": "Point {n}",
+  "map.tryAgain": "Not here. Try again!",
+  "map.found": "Well done! This is {name}!",
+  "map.noMission": "A mission is coming here soon.",
+  "map.close": "Close"
 }

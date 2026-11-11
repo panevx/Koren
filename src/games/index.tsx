@@ -1,4 +1,5 @@
 import type { Game } from '../content/schema'
+import { MapFind } from './MapFind'
 import { Quiz } from './Quiz'
 
 /**
@@ -9,5 +10,7 @@ export function GameView({ game, onDone }: { game: Game; onDone: () => void }) {
   switch (game.type) {
     case 'quiz':
       return <Quiz questions={game.questions} onDone={onDone} />
+    case 'map':
+      return <MapFind game={game} onDone={onDone} />
   }
 }
