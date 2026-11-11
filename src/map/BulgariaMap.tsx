@@ -166,7 +166,7 @@ export function BulgariaMap({ markers, onSelect, highlight, label }: Props) {
         ref={box}
         role="group"
         aria-label={label}
-        className="rounded-level relative w-full touch-none overflow-hidden border-2 border-sand bg-[#BFE8FB] select-none"
+        className="relative w-full touch-none overflow-hidden rounded-[2rem] bg-[#A9DDF8] shadow-soft select-none"
         style={{ aspectRatio: `${MAP_W} / ${MAP_H}` }}
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
@@ -178,17 +178,17 @@ export function BulgariaMap({ markers, onSelect, highlight, label }: Props) {
           style={{ transform: `translate(${view.tx}px, ${view.ty}px) scale(${view.s})` }}
         >
           <svg viewBox={`0 0 ${MAP_W} ${MAP_H}`} className="absolute inset-0 size-full" aria-hidden="true">
-            <path d={NEIGHBOURS_D} fill="#EFE3D3" stroke="#D8C6AE" strokeWidth={1.5} vectorEffect="non-scaling-stroke" />
-            <path d={BULGARIA_D} fill="#9CCC65" stroke="#0B6B3E" strokeWidth={2.5} vectorEffect="non-scaling-stroke" />
-            <path d={DANUBE_D} fill="none" stroke="#4FC3F7" strokeWidth={4} strokeLinecap="round" vectorEffect="non-scaling-stroke" />
+            <path d={NEIGHBOURS_D} fill="#F4EEE0" stroke="#DDD3BE" strokeWidth={1.5} vectorEffect="non-scaling-stroke" />
+            <path d={BULGARIA_D} fill="#8ED4A6" stroke="#0C6B3C" strokeWidth={3} strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
+            <path d={DANUBE_D} fill="none" stroke="#3D9FD1" strokeWidth={4} strokeLinecap="round" vectorEffect="non-scaling-stroke" />
             {highlight && (
               <circle
                 cx={highlight.x}
                 cy={highlight.y}
                 r={highlight.r}
-                fill="#F4B400"
+                fill="#FFD35A"
                 fillOpacity={0.3}
-                stroke="#F4B400"
+                stroke="#E2AB1E"
                 strokeWidth={3}
                 strokeDasharray="10 8"
                 vectorEffect="non-scaling-stroke"
@@ -243,7 +243,7 @@ function MapButton({ label, onClick, disabled, children }: { label: string; onCl
       aria-label={label}
       onClick={onClick}
       disabled={disabled}
-      className="grid size-12 place-items-center rounded-full bg-white/95 text-2xl font-black text-green shadow-md disabled:opacity-40"
+      className="press grid size-12 place-items-center rounded-full bg-white text-2xl font-black text-green-dark shadow-float disabled:opacity-40"
     >
       {children}
     </button>

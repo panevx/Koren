@@ -61,11 +61,11 @@ export function Order({ game, onDone }: { game: OrderGame; onDone: () => void })
       <ol className="flex flex-col gap-2" aria-label={t('order.slots')}>
         {slots.map((item, i) => (
           <li key={i} className="flex items-center gap-2">
-            <span className="grid size-9 shrink-0 place-items-center rounded-full bg-green text-lg font-black text-white" aria-hidden="true">
+            <span className="grid size-9 shrink-0 place-items-center rounded-full bg-green-dark text-lg font-black text-white" aria-hidden="true">
               {i + 1}
             </span>
             {item === null ? (
-              <span className="tap rounded-level flex flex-1 items-center border-2 border-dashed border-sand px-3 text-muted">
+              <span className="tap flex flex-1 items-center rounded-full bg-sand/70 px-4 text-sm font-bold text-muted shadow-[inset_0_2px_4px_rgb(28_43_35/0.1)]">
                 {t('order.empty')}
               </span>
             ) : (
@@ -74,12 +74,12 @@ export function Order({ game, onDone }: { game: OrderGame; onDone: () => void })
                 onClick={() => takeBack(i)}
                 disabled={locked[i]}
                 aria-label={`${i + 1}. ${l(game.items[item]!)}`}
-                className={`tap rounded-level flex flex-1 items-center gap-2 border-2 px-3 py-2 text-left font-extrabold ${
-                  locked[i] ? 'border-green bg-green/10 text-green-dark' : 'border-[var(--accent)] bg-white'
+                className={`tap press flex min-w-0 flex-1 items-center gap-2 rounded-[1.5rem] px-4 py-2 text-left leading-snug font-extrabold ${
+                  locked[i] ? 'bg-green-soft text-green-dark' : 'bg-white shadow-soft'
                 }`}
               >
                 {game.items[item]!.img && <img src={img(game.items[item]!.img!)} alt="" className="size-10 object-contain" />}
-                <span className="flex-1">{l(game.items[item]!)}</span>
+                <span className="min-w-0 flex-1">{l(game.items[item]!)}</span>
                 {locked[i] && <Icon name="check" />}
               </button>
             )}
@@ -88,13 +88,13 @@ export function Order({ game, onDone }: { game: OrderGame; onDone: () => void })
       </ol>
 
       {pool.length > 0 && (
-        <div className="flex flex-wrap justify-center gap-2" aria-label={t('order.cards')} role="group">
+        <div className="flex flex-wrap justify-center gap-x-2 gap-y-3" aria-label={t('order.cards')} role="group">
           {pool.map((item) => (
             <button
               key={item}
               type="button"
               onClick={() => place(item)}
-              className="tap rounded-level flex items-center gap-2 border-2 border-sand bg-white px-4 py-2 font-extrabold shadow-sm hover:border-green"
+              className="tap press puck flex items-center gap-2 rounded-[1.5rem] bg-white px-4 py-2 text-left leading-snug font-extrabold [--edge:var(--color-sand)]"
             >
               {game.items[item]!.img && <img src={img(game.items[item]!.img!)} alt="" className="size-10 object-contain" />}
               {l(game.items[item]!)}
@@ -106,6 +106,7 @@ export function Order({ game, onDone }: { game: OrderGame; onDone: () => void })
       <Feedback
         correct={solved ? t('order.done') : undefined}
         help={misses === 0 || solved ? undefined : misses >= 2 && game.hint ? l(game.hint) : t('order.tryAgain')}
+        nudge={misses}
       />
       {solved && <DoneButton onClick={onDone} />}
     </div>

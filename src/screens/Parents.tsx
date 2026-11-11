@@ -59,27 +59,27 @@ function Gate({ onPass }: { onPass: () => void }) {
         <div
           aria-live="polite"
           aria-atomic="true"
-          className="rounded-level grid h-16 w-40 place-items-center border-2 border-sand bg-white text-3xl font-black tracking-widest"
+          className="grid h-16 w-44 place-items-center rounded-full bg-white text-3xl font-black tracking-widest shadow-[inset_0_3px_6px_rgb(28_43_35/0.14)] ring-2 ring-sand"
         >
           <span className="sr-only">{t('gate.answer')}: </span>
           {input || ' '}
         </div>
-        <p role="status" className="min-h-6 text-center font-bold text-red">
+        <p role="status" className="min-h-6 text-center font-bold text-coral-dark">
           {wrong ? t('gate.wrong') : ''}
         </p>
-        <div className="grid w-full max-w-xs grid-cols-3 gap-2">
+        <div className="grid w-full max-w-xs grid-cols-3 gap-x-3 gap-y-4">
           {['1', '2', '3', '4', '5', '6', '7', '8', '9', '⌫', '0'].map((k) => (
             <button
               key={k}
               type="button"
               onClick={() => key(k)}
               aria-label={k === '⌫' ? t('gate.delete') : k}
-              className="tap rounded-level border-2 border-sand bg-white text-2xl font-black hover:border-green"
+              className="tap press puck rounded-full bg-white text-2xl font-black [--edge:var(--color-sand)]"
             >
               {k}
             </button>
           ))}
-          <button type="button" onClick={submit} disabled={!input} className="tap rounded-level bg-green text-lg font-black text-white disabled:opacity-40">
+          <button type="button" onClick={submit} disabled={!input} className="tap press puck rounded-full bg-green text-[min(1.25rem,6.5vw)] font-black text-white [--edge:var(--color-green-deep)] disabled:opacity-40">
             {t('gate.ok')}
           </button>
         </div>
@@ -96,9 +96,9 @@ export function Parents() {
 
 function Section({ icon, title, children }: { icon: IconName; title: string; children: ReactNode }) {
   return (
-    <section className="rounded-level bg-white p-4 shadow-sm">
-      <h2 className="mb-3 flex items-center gap-2 text-lg font-black">
-        <span className="text-green">
+    <section className="rounded-level bg-white p-5 shadow-soft">
+      <h2 className="mb-3 flex items-center gap-2.5 text-lg font-black">
+        <span className="grid size-9 place-items-center rounded-full bg-green-soft text-green-dark">
           <Icon name={icon} />
         </span>
         {title}
@@ -118,10 +118,10 @@ function SwitchRow({ label, hint, checked, onChange }: { label: string; hint: st
         aria-checked={checked}
         aria-label={label}
         onClick={() => onChange(!checked)}
-        className={`tap relative flex shrink-0 items-center rounded-full transition ${checked ? 'bg-green' : 'bg-sand'}`}
+        className={`tap relative flex shrink-0 items-center rounded-full shadow-[inset_0_2px_4px_rgb(28_43_35/0.18)] transition-colors ${checked ? 'bg-green' : 'bg-sand'}`}
         style={{ width: 'calc(var(--tap) * 1.4)' }}
       >
-        <span className={`absolute size-7 rounded-full bg-white shadow transition-all ${checked ? 'right-1.5' : 'left-1.5'}`} />
+        <span className={`absolute left-1.5 size-7 rounded-full bg-white shadow-soft transition-transform duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${checked ? 'translate-x-[calc(var(--tap)*1.4-2.5rem)]' : ''}`} />
       </button>
     </div>
   )
@@ -151,7 +151,7 @@ function ProfileForm({ initial, onSave, onCancel }: { initial: Draft; onSave: (d
   const t = useT()
   const [d, setD] = useState(initial)
   return (
-    <div className="flex flex-col gap-4 rounded-level border-2 border-green bg-cream p-3">
+    <div className="rounded-level flex flex-col gap-4 bg-green-soft p-4">
       <label className="flex flex-col gap-1 font-bold">
         {t('parents.nickname')}
         <input
@@ -160,19 +160,19 @@ function ProfileForm({ initial, onSave, onCancel }: { initial: Draft; onSave: (d
           maxLength={NICKNAME_MAX}
           autoComplete="off"
           onChange={(e) => setD({ ...d, nickname: e.target.value })}
-          className="tap rounded-level border-2 border-sand bg-white px-3 text-lg font-bold"
+          className="tap rounded-full bg-white px-5 text-lg font-bold ring-2 ring-muted/40 focus:ring-green"
         />
         <span className="text-sm font-normal text-muted">{t('parents.nicknameHint')}</span>
       </label>
       <div className="flex items-center gap-3 font-bold">
         <span className="flex-1">{t('parents.age')}</span>
-        <button type="button" aria-label={t('parents.younger')} onClick={() => setD({ ...d, age: clampAge(d.age - 1) })} disabled={d.age <= MIN_AGE} className="tap grid place-items-center rounded-full border-2 border-sand bg-white text-2xl disabled:opacity-40">
+        <button type="button" aria-label={t('parents.younger')} onClick={() => setD({ ...d, age: clampAge(d.age - 1) })} disabled={d.age <= MIN_AGE} className="tap press puck grid place-items-center rounded-full bg-white text-2xl font-black [--edge:var(--color-sand)] disabled:opacity-40">
           −
         </button>
         <output className="w-24 text-center text-xl font-black" aria-live="polite">
           {t('age.years', { n: d.age })}
         </output>
-        <button type="button" aria-label={t('parents.older')} onClick={() => setD({ ...d, age: clampAge(d.age + 1) })} disabled={d.age >= MAX_AGE} className="tap grid place-items-center rounded-full border-2 border-sand bg-white text-2xl disabled:opacity-40">
+        <button type="button" aria-label={t('parents.older')} onClick={() => setD({ ...d, age: clampAge(d.age + 1) })} disabled={d.age >= MAX_AGE} className="tap press puck grid place-items-center rounded-full bg-white text-2xl font-black [--edge:var(--color-sand)] disabled:opacity-40">
           +
         </button>
       </div>
@@ -180,11 +180,11 @@ function ProfileForm({ initial, onSave, onCancel }: { initial: Draft; onSave: (d
         <p className="mb-2 font-bold">{t('profile.avatar')}</p>
         <AvatarPicker value={d.avatar} onChange={(avatar) => setD({ ...d, avatar })} />
       </div>
-      <div className="flex gap-2">
-        <Button variant="secondary" className="flex-1" onClick={onCancel}>
+      <div className="flex flex-wrap gap-x-2 gap-y-3">
+        <Button variant="secondary" className="grow px-5" onClick={onCancel}>
           {t('parents.cancel')}
         </Button>
-        <Button variant="accent" className="flex-1" onClick={() => onSave(d)}>
+        <Button variant="accent" className="grow px-5" onClick={() => onSave(d)}>
           {t('parents.save')}
         </Button>
       </div>
@@ -213,26 +213,26 @@ function ProfileCard({ profile, index }: { profile: Profile; index: number }) {
     )
 
   return (
-    <li className="rounded-level flex flex-col gap-3 border-2 border-sand p-3">
+    <li className="rounded-level flex flex-col gap-3 bg-cream p-3">
       <div className="flex items-center gap-3">
         <ProfileAvatar avatar={profile.avatar} className="size-14" />
-        <div className="flex-1">
+        <div className="min-w-0 flex-1">
           <p className="text-lg font-black">{name(profile, index)}</p>
           <p className="text-sm font-semibold text-muted">
             {t('age.years', { n: profile.age })} · {t(`level.${ageToLevel(profile.age)}.short`)} ·{' '}
             {t('profile.badges', { n: profile.badges.length, total })}
           </p>
-          {profile.id === activeId && <p className="text-xs font-black text-green uppercase">{t('profile.playing')}</p>}
+          {profile.id === activeId && <p className="text-xs font-black text-green-dark uppercase">{t('profile.playing')}</p>}
         </div>
       </div>
-      <div className="flex flex-wrap gap-2">
-        <Button variant="secondary" className="flex-1" onClick={() => setEditing(true)} aria-label={`${t('parents.edit')}: ${name(profile, index)}`}>
+      <div className="flex flex-wrap gap-x-2 gap-y-3">
+        <Button variant="secondary" className="grow px-5 text-base" onClick={() => setEditing(true)} aria-label={`${t('parents.edit')}: ${name(profile, index)}`}>
           {t('parents.edit')}
         </Button>
         {profiles.length > 1 && (
           <Button
             variant="secondary"
-            className={`flex-1 ${armed ? 'border-red text-red' : ''}`}
+            className={`grow px-5 text-base ${armed ? 'text-coral-dark ring-[3px] ring-coral' : ''}`}
             onClick={() => confirm() && removeProfile(profile.id)}
             aria-label={`${armed ? t('parents.removeConfirm') : t('parents.remove')}: ${name(profile, index)}`}
           >
@@ -260,7 +260,7 @@ function Learns({ profile, index }: { profile: Profile; index: number }) {
         <ul className="flex flex-col gap-1 text-sm">
           {played.map((m) => (
             <li key={m.id} className="flex items-center gap-2">
-              <Icon name="check" className="shrink-0 text-green" width="1em" height="1em" />
+              <Icon name="check" className="shrink-0 text-green-dark" width="1em" height="1em" />
               <span className="flex-1">
                 <b>{l(m.title)}</b> · {t(`subject.${m.subject}`)} · {t(`level.${profile.done[m.id]!.level}.short`)}
               </span>
@@ -294,7 +294,7 @@ function ParentsArea() {
   return (
     <Screen>
       <TopBar title={t('parents.title')} onBack={() => navigate('/home')} />
-      <div className="flex flex-col gap-4 px-4 pb-8">
+      <div className="flex flex-col gap-4 px-4 pb-10">
         <Section icon="users" title={t('parents.profiles')}>
           <p className="mb-3 text-sm text-muted">{t('parents.profilesHint')}</p>
           <ul className="flex flex-col gap-3">
@@ -330,7 +330,7 @@ function ParentsArea() {
         </Section>
 
         <Section icon="globe" title={t('settings.language')}>
-          <div role="radiogroup" aria-label={t('settings.language')} className="grid grid-cols-2 gap-1 rounded-full bg-cream p-1">
+          <div role="radiogroup" aria-label={t('settings.language')} className="grid grid-cols-2 gap-1 rounded-full bg-sand p-1.5">
             {LANGS.map((l) => (
               <button
                 key={l}
@@ -339,8 +339,8 @@ function ParentsArea() {
                 aria-checked={lang === l}
                 lang={l}
                 onClick={() => setLang(l)}
-                className={`tap flex items-center justify-center gap-2 rounded-full font-extrabold transition ${
-                  lang === l ? 'bg-green text-white shadow' : 'text-muted hover:text-green'
+                className={`tap press flex items-center justify-center gap-2 rounded-full font-extrabold ${
+                  lang === l ? 'bg-white text-green-dark shadow-soft' : 'text-muted'
                 }`}
               >
                 <Flag lang={l} className="h-4 w-6" />
@@ -366,8 +366,8 @@ function ParentsArea() {
           <p className="text-sm text-muted">{t('parents.privacyText')}</p>
         </Section>
 
-        <div className="flex flex-col items-center gap-2 pt-2">
-          <Button variant="secondary" onClick={eraseAll} className={armed ? 'border-red text-red' : ''}>
+        <div className="flex flex-col items-center gap-2 pt-3">
+          <Button variant="secondary" onClick={eraseAll} className={armed ? 'text-coral-dark ring-[3px] ring-coral' : ''}>
             <Icon name="refresh" />
             {armed ? t('parents.eraseConfirm') : t('parents.eraseAll')}
           </Button>

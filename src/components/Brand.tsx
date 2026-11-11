@@ -7,37 +7,54 @@ export function Logo({ size = 'lg', className = '' }: { size?: 'sm' | 'lg'; clas
   return size === 'lg' ? (
     <img src={img('logo/koren.svg')} alt={t('app.name')} width={632} height={336} className={`h-auto w-44 select-none ${className}`} />
   ) : (
-    <img src={img('logo/koren-compact.svg')} alt={t('app.name')} width={389} height={330} className={`h-12 w-auto select-none ${className}`} />
+    <img src={img('logo/koren-compact.svg')} alt={t('app.name')} width={389} height={330} className={`h-10 w-auto select-none ${className}`} />
   )
 }
 
-/** Sky, Balkan mountains, a fortress and green hills — the KOREN backdrop. */
-export function Landscape({ className = '' }: { className?: string }) {
+/**
+ * Toy-like backdrop: sky, a sun, drifting clouds, rounded hills and a small fortress.
+ * Pure vector in the KOREN palette — sharp on every screen and costs no download.
+ */
+export function Scenery({ className = '' }: { className?: string }) {
   return (
-    <svg
-      viewBox="0 0 400 220"
-      preserveAspectRatio="xMidYMax slice"
-      className={className}
-      aria-hidden="true"
-      focusable="false"
-    >
-      <defs>
-        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#BFE8FB" />
-          <stop offset="1" stopColor="#FBF7F0" />
-        </linearGradient>
-      </defs>
-      <rect width="400" height="220" fill="url(#sky)" />
-      <path d="M0 140 60 80l40 30 60-60 50 45 40-30 70 55 80-40v140H0Z" fill="#A9C7B0" />
-      <path d="m160 50 18 18-10-3-8 8-6-9-10 3Z" fill="#fff" opacity=".9" />
-      <path d="M0 160c60-30 120-30 180-10s120 10 220-30v100H0Z" fill="#7CB342" />
-      <g fill="#C9B79C">
-        <path d="M284 128v-34h-4v-8h6v4h4v-4h5v4h4v-4h6v8h-4v34Z" />
-        <path d="M306 128v-48h-5v-9h6v5h4v-5h5v5h4v-5h6v9h-5v48Z" />
-        <path d="M262 132v-18h52v18Z" />
-      </g>
-      <path d="M0 190c80-30 160-20 240 0s120 0 160-15v45H0Z" fill="#0B6B3E" />
-    </svg>
+    <div className={`overflow-hidden bg-gradient-to-b from-sky to-sky-soft ${className}`} aria-hidden="true">
+      {/* sun with a soft halo */}
+      <div className="absolute top-[9%] right-[9%] aspect-square w-[16%] min-w-12 rounded-full bg-gold shadow-[0_0_0_10px_rgb(255_211_90/0.35),0_0_0_22px_rgb(255_211_90/0.18)]" />
+      {/* clouds */}
+      <svg viewBox="0 0 400 120" className="anim-drift absolute top-[6%] left-0 w-full" focusable="false">
+        <g fill="#fff">
+          <path d="M36 54a14 14 0 0 1 14-14 18 18 0 0 1 34-4 15 15 0 0 1 22 13 12 12 0 0 1-2 24H44a12 12 0 0 1-8-19Z" opacity=".95" />
+          <path d="M216 86a10 10 0 0 1 10-10 13 13 0 0 1 25-3 11 11 0 0 1 16 10 9 9 0 0 1-2 17h-42a9 9 0 0 1-7-14Z" opacity=".8" />
+        </g>
+      </svg>
+      {/* hills + fortress */}
+      <svg viewBox="0 0 400 150" preserveAspectRatio="xMidYMax slice" className="absolute inset-x-0 bottom-0 h-[58%] w-full" focusable="false">
+        <ellipse cx="320" cy="150" rx="210" ry="96" fill="#8ED4A6" />
+        <g transform="translate(286 34)">
+          <path d="M0 40V14h7v6h8v-6h8v6h8v-6h7v26Z" fill="#FFF7E3" />
+          <path d="M12 40V28a7 7 0 0 1 14 0v12Z" fill="#E2AB1E" />
+          <path d="M19 14V-6" stroke="#4A1410" strokeWidth="2" strokeLinecap="round" />
+          <path d="M19-6h14l-4 5 4 5H19Z" fill="#FF655C" />
+        </g>
+        <ellipse cx="70" cy="158" rx="230" ry="92" fill="#3DAE74" />
+        <ellipse cx="250" cy="176" rx="280" ry="84" fill="#138B50" />
+      </svg>
+    </div>
+  )
+}
+
+/** Корен or Рая, full body, waving (design/characters/v2/*_wave.png, 240 px wide). */
+export function HeroFigure({ hero, className = '' }: { hero: Hero; className?: string }) {
+  return (
+    <img
+      src={img(`heroes/${hero}-wave.webp`)}
+      alt=""
+      width={240}
+      height={hero === 'koren' ? 522 : 535}
+      className={`pop-3d w-auto select-none ${className}`}
+      fetchPriority="high"
+      draggable={false}
+    />
   )
 }
 
@@ -66,24 +83,6 @@ export function Flag({ lang, className = 'w-7 h-5' }: { lang: 'bg' | 'en'; class
 /** URL of a file in public/img, respecting the GitHub Pages base path. */
 export const img = (path: string) => `${import.meta.env.BASE_URL}img/${path}`
 
-/** Корен и Рая on the hilltop (design/characters/28, cropped and exported to WebP). */
-export function Heroes({ className = '' }: { className?: string }) {
-  const t = useT()
-  return (
-    <img
-      src={img('heroes/koren-raya-768.webp')}
-      srcSet={`${img('heroes/koren-raya-512.webp')} 512w, ${img('heroes/koren-raya-768.webp')} 768w`}
-      sizes="(max-width: 448px) 90vw, 384px"
-      alt={t('hero.alt')}
-      width={768}
-      height={810}
-      className={className}
-      fetchPriority="high"
-      decoding="async"
-    />
-  )
-}
-
 export type Hero = 'koren' | 'raya'
 export type Mood = 'joy' | 'thoughtful' | 'surprise' | 'determination' | 'laughter'
 
@@ -95,7 +94,7 @@ export function Avatar({ hero, mood, className = 'size-14' }: { hero: Hero; mood
       alt=""
       width={192}
       height={192}
-      className={`shrink-0 rounded-full border-[3px] border-white bg-white object-cover shadow-md ${className}`}
+      className={`shrink-0 rounded-full bg-white object-cover shadow-soft ring-[3px] ring-white ${className}`}
       decoding="async"
     />
   )

@@ -174,5 +174,8 @@
   "offline.installOther": "За да го инсталирате, изберете „Добави към началния екран“ от менюто на браузъра.",
   "offline.update": "Има нови мисии!",
   "offline.updateNow": "Обнови",
-  "missions.draftShort": "Чернова"
+  "missions.draftShort": "Чернова",
+  "home.next": "Следваща мисия",
+  "home.allDone.caption": "Браво!",
+  "home.allDone": "Изигра всички мисии"
 }

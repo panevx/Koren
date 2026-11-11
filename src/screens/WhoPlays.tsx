@@ -3,7 +3,11 @@ import { ProfileAvatar, useProfileName } from '../components/ProfileAvatar'
 import { Screen, TopBar } from '../components/ui'
 import { MISSIONS } from '../content/missions'
 import { useT } from '../i18n/useT'
+import { m, rise, stagger } from '../motion'
 import { useProfiles } from '../store/profiles'
+
+/** A different colour behind each child's sign. */
+const TINTS = ['bg-gold', 'bg-sky', 'bg-coral']
 
 /** "Who is playing?" — children switch between their own profiles. Adding or deleting needs a parent. */
 export function WhoPlays() {
@@ -14,10 +18,10 @@ export function WhoPlays() {
   return (
     <Screen>
       <TopBar title={t('profile.who')} />
-      <div className="flex flex-col gap-3 px-4 pb-8">
-        <ul className="flex flex-col gap-3">
+      <div className="flex flex-col gap-4 px-4 pb-8">
+        <m.ul variants={stagger} initial="hidden" animate="show" className="flex flex-col gap-4">
           {profiles.map((p, i) => (
-            <li key={p.id}>
+            <m.li key={p.id} variants={rise}>
               <button
                 type="button"
                 onClick={() => {
@@ -25,22 +29,28 @@ export function WhoPlays() {
                   navigate('/home')
                 }}
                 aria-pressed={p.id === activeId}
-                className={`tap rounded-level flex w-full items-center gap-4 border-[3px] bg-white p-3 text-left shadow-sm ${
-                  p.id === activeId ? 'border-green' : 'border-sand hover:border-green'
+                className={`tap press flex w-full items-center gap-4 rounded-full bg-white p-2 pr-5 text-left ${
+                  p.id === activeId ? 'shadow-float ring-4 ring-green' : 'shadow-soft'
                 }`}
               >
-                <ProfileAvatar avatar={p.avatar} className="size-[min(4rem,16vw)]" />
+                <span className={`grid size-[min(4.5rem,18vw)] shrink-0 place-items-center rounded-full ${TINTS[i % TINTS.length]}`}>
+                  <ProfileAvatar avatar={p.avatar} className="size-[82%] shadow-none" />
+                </span>
                 <span className="flex min-w-0 flex-1 flex-col">
-                  <span className="text-xl font-black">{name(p, i)}</span>
-                  {p.id === activeId && <span className="text-xs font-black text-green uppercase">{t('profile.playing')}</span>}
+                  <span className="text-xl leading-tight font-black">{name(p, i)}</span>
+                  {p.id === activeId && (
+                    <span className="self-start rounded-full bg-green-soft px-2.5 py-0.5 text-xs font-black text-green-dark uppercase">
+                      {t('profile.playing')}
+                    </span>
+                  )}
                   <span className="text-sm font-semibold text-muted">
                     {t('age.years', { n: p.age })} · {t('profile.badges', { n: p.badges.length, total: MISSIONS.length })}
                   </span>
                 </span>
               </button>
-            </li>
+            </m.li>
           ))}
-        </ul>
+        </m.ul>
         <Link to="/parents" className="mt-2 text-center text-sm font-semibold text-muted underline">
           {t('profile.whoHint')}
         </Link>

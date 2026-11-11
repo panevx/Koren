@@ -228,8 +228,8 @@ describe('passport', () => {
   it('shows every badge, earned in colour and the rest locked', async () => {
     useProfiles.getState().complete('geo-01-rila', 'young', 'rila')
     renderAt('/collection')
-    expect(await screen.findByRole('link', { name: 'Рила – покривът на Балканите – Спечелена' })).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: 'Баба Марта и мартениците – Още не е спечелена' })).toBeInTheDocument()
+    expect(await screen.findByRole('link', { name: /^Рила – покривът на Балканите\s*Спечелена$/ })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /^Баба Марта и мартениците\s*Още не е спечелена$/ })).toBeInTheDocument()
   })
 })
 
@@ -259,5 +259,35 @@ describe('error boundary', () => {
     expect(screen.getByRole('alert')).toHaveTextContent('Опа! Нещо се обърка.')
     expect(screen.getByRole('button', { name: 'Започни отначало' })).toBeInTheDocument()
     spy.mockRestore()
+  })
+})
+
+describe('hub', () => {
+  it('offers the next unplayed mission, then the passport when all are done', async () => {
+    useSettings.getState().completeOnboarding()
+    renderAt('/home')
+    const first = MISSIONS[0]!
+    expect(await screen.findByRole('link', { name: new RegExp(`Следваща мисия.*${first.title.bg}`) })).toHaveAttribute('href', `/mission/${first.id}`)
+
+    cleanup()
+    for (const mission of MISSIONS) useProfiles.getState().complete(mission.id, 'young', mission.badge.id)
+    renderAt('/home')
+    expect(await screen.findByRole('link', { name: /Браво!.*Изигра всички мисии/ })).toHaveAttribute('href', '/collection')
+  })
+
+  it('shows how many missions and badges the child has', async () => {
+    useSettings.getState().completeOnboarding()
+    useProfiles.getState().complete('hist-01-asparuh', 'young', 'asparuh')
+    renderAt('/home')
+    expect(await screen.findByText(`1 от ${MISSIONS.length} изиграни`)).toBeInTheDocument()
+    expect(screen.getByText(`1 от ${MISSIONS.length} значки`)).toBeInTheDocument()
+  })
+
+  it('has the floating navigation with the current tab marked', () => {
+    useSettings.getState().completeOnboarding()
+    renderAt('/home')
+    const nav = screen.getByRole('navigation', { name: 'Основна навигация' })
+    expect(within(nav).getByRole('link', { name: 'Начало' })).toHaveAttribute('aria-current', 'page')
+    expect(within(nav).getAllByRole('link')).toHaveLength(4)
   })
 })

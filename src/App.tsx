@@ -4,6 +4,7 @@ import { AgeSelect } from './screens/AgeSelect'
 import { Home } from './screens/Home'
 import { SignSelect } from './screens/SignSelect'
 import { Welcome } from './screens/Welcome'
+import { MotionRoot } from './motion'
 import { useSettings } from './store/settings'
 
 /**
@@ -65,8 +66,10 @@ export function AppRoutes() {
 
 export function App() {
   return (
-    <BrowserRouter basename={basename}>
-      <AppRoutes />
-    </BrowserRouter>
+    <MotionRoot>
+      <BrowserRouter basename={basename}>
+        <AppRoutes />
+      </BrowserRouter>
+    </MotionRoot>
   )
 }

@@ -1,5 +1,4 @@
 import { Navigate, useNavigate, useParams } from 'react-router'
-import { BottomNav } from '../components/BottomNav'
 import { Avatar } from '../components/Brand'
 import { SectionIcon } from '../components/SectionIcon'
 import { Icon } from '../components/Icon'
@@ -21,19 +20,19 @@ export function ComingSoon({ section }: { section?: SectionId }) {
   const { id, label, arrives, host } = found
 
   return (
-    <Screen>
+    <Screen nav>
       <TopBar title={t(label)} onBack={() => navigate('/home')} />
       <div className="flex flex-1 flex-col items-center justify-center gap-5 px-6 pb-32 text-center">
-        <div className="relative mt-4 grid size-40 place-items-center rounded-full bg-white shadow-md">
-          <SectionIcon id={id} className="size-28" />
-          <span className="absolute -top-1 -right-2 inline-flex items-center gap-1 rounded-full bg-gold px-3 py-1 text-sm font-black text-ink shadow">
+        <div className="relative mt-4 grid size-40 place-items-center rounded-full bg-white shadow-float">
+          <SectionIcon id={id} className="pop-3d size-28" />
+          <span className="absolute -top-1 -right-2 inline-flex items-center gap-1 rounded-full bg-gold px-3 py-1 text-sm font-black text-ink shadow-soft">
             <Icon name="clock" width="1em" height="1em" />
             {t('soon.badge')}
           </span>
         </div>
         <div className="flex max-w-sm items-end gap-3 text-left">
           <Avatar hero={host} mood="thoughtful" className="size-[min(4rem,15vw)]" />
-          <p className="rounded-level relative rounded-bl-sm bg-white px-4 py-3 text-lg font-semibold text-ink shadow-sm">
+          <p className="relative rounded-[1.5rem] rounded-bl-md bg-white px-4 py-3 text-lg font-semibold text-ink shadow-soft">
             {t('soon.text', { version: arrives })}
           </p>
         </div>
@@ -42,7 +41,6 @@ export function ComingSoon({ section }: { section?: SectionId }) {
           {t('soon.back')}
         </Button>
       </div>
-      <BottomNav />
     </Screen>
   )
 }

@@ -34,13 +34,13 @@ export class ErrorBoundary extends Component<{ children: ReactNode }, State> {
     const t = (key: Parameters<typeof translate>[1]) => translate(lang, key)
     return (
       <div role="alert" className="flex min-h-dvh flex-col items-center justify-center gap-4 bg-cream p-6 text-center">
-        <p className="text-4xl font-black text-green">{t('app.name')}</p>
+        <p className="text-4xl font-black text-green-dark">{t('app.name')}</p>
         <p className="max-w-xs text-lg font-bold">{t('error.title')}</p>
         <p className="max-w-xs text-muted">{t('error.text')}</p>
         <button
           type="button"
           onClick={this.restart}
-          className="tap rounded-level bg-green px-6 text-lg font-extrabold text-white"
+          className="tap press puck rounded-full bg-green px-8 text-xl font-extrabold text-white [--edge:var(--color-green-deep)]"
         >
           {t('error.restart')}
         </button>

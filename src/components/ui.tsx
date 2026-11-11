@@ -1,23 +1,33 @@
 import type { ButtonHTMLAttributes, ReactNode } from 'react'
 import { useNavigate } from 'react-router'
 import { useT } from '../i18n/useT'
+import { m, pageEnter } from '../motion'
+import { BottomNav } from './BottomNav'
 import { Icon } from './Icon'
 
-/** Phone-width column, centred on tablets and laptops. */
-export function Screen({ children, className = '' }: { children: ReactNode; className?: string }) {
+/**
+ * Phone-width column, centred on tablets and laptops. Every screen slides in softly.
+ * The floating navigation is rendered OUTSIDE the animated column: a transformed
+ * ancestor would break its `position: fixed`.
+ */
+export function Screen({ children, className = '', nav = false }: { children: ReactNode; className?: string; nav?: boolean }) {
   return (
     <div className="min-h-dvh overflow-x-clip bg-cream">
-      <main className={`mx-auto flex min-h-dvh w-full max-w-md flex-col ${className}`}>{children}</main>
+      <m.main {...pageEnter} className={`mx-auto flex min-h-dvh w-full max-w-md flex-col ${className}`}>
+        {children}
+      </m.main>
+      {nav && <BottomNav />}
     </div>
   )
 }
 
 type Variant = 'primary' | 'accent' | 'secondary'
 
+/** Pill buttons with a 3D side. White on green needs bold text-xl (see contrast rules in index.css). */
 const variants: Record<Variant, string> = {
-  primary: 'bg-red text-white shadow-[0_4px_0_var(--color-red-dark)] active:translate-y-[2px] active:shadow-[0_2px_0_var(--color-red-dark)]',
-  accent: 'bg-green text-white shadow-[0_4px_0_var(--color-green-dark)] active:translate-y-[2px] active:shadow-[0_2px_0_var(--color-green-dark)]',
-  secondary: 'bg-white text-ink border-2 border-sand hover:border-green',
+  primary: 'puck bg-coral text-coral-ink [--edge:var(--color-coral-deep)]',
+  accent: 'puck bg-green text-white [--edge:var(--color-green-deep)]',
+  secondary: 'puck bg-white text-ink [--edge:var(--color-sand)]',
 }
 
 export function Button({
@@ -28,11 +38,19 @@ export function Button({
   return (
     <button
       type="button"
-      className={`tap rounded-level inline-flex items-center justify-center gap-2 px-6 text-lg font-extrabold transition disabled:opacity-50 ${variants[variant]} ${className}`}
+      className={`tap press inline-flex items-center justify-center gap-2 rounded-full px-7 py-1.5 text-center text-xl leading-tight font-extrabold disabled:opacity-50 ${variants[variant]} ${className}`}
       {...props}
     />
   )
 }
+
+/** White surface with the soft layered shadow — the basic card. No borders. */
+export function Card({ children, className = '', as: Tag = 'div' }: { children: ReactNode; className?: string; as?: 'div' | 'section' | 'li' }) {
+  return <Tag className={`rounded-level bg-white shadow-soft ${className}`}>{children}</Tag>
+}
+
+/** Round white button with an icon (back, close, settings). */
+export const roundButton = 'tap press grid shrink-0 place-items-center rounded-full bg-white text-green-dark shadow-soft'
 
 /** Title bar with a back button, used on every inner screen. */
 export function TopBar({
@@ -55,17 +73,12 @@ export function TopBar({
     else navigate(fallback, { replace: true })
   }
   return (
-    <header className="flex items-center gap-2 px-3 pt-3 pb-2">
-      <button
-        type="button"
-        onClick={onBack ?? goBack}
-        className="tap grid place-items-center rounded-full text-green hover:bg-white"
-        aria-label={t('nav.back')}
-      >
+    <header className="flex items-center gap-3 px-4 pt-4 pb-3">
+      <button type="button" onClick={onBack ?? goBack} className={roundButton} aria-label={t('nav.back')}>
         <Icon name="back" />
       </button>
-      <h1 className="flex-1 text-center text-2xl font-black">{title}</h1>
-      <div className="tap grid place-items-center">{right}</div>
+      <h1 className="min-w-0 flex-1 text-center text-2xl leading-tight font-black">{title}</h1>
+      <div className="tap grid shrink-0 place-items-center">{right}</div>
     </header>
   )
 }

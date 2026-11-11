@@ -3,12 +3,14 @@ import { img } from '../components/Brand'
 import type { MatchGame, Option } from '../content/schema'
 import { useLocalized } from '../content/useLocalized'
 import { useT } from '../i18n/useT'
+import { bouncy, m } from '../motion'
 import { play } from '../sound'
 import { DoneButton, Feedback, Prompt } from './Feedback'
 import { shuffledIndexes } from './shuffle'
 
 type Side = 'a' | 'b'
-const PAIR_COLORS = ['bg-green', 'bg-red', 'bg-[#1E88E5]', 'bg-[#8E24AA]', 'bg-[#EF6C00]', 'bg-[#5D4037]']
+/** Number badges of found pairs (white digits — all pass 4.5:1). */
+const PAIR_COLORS = ['bg-green-dark', 'bg-coral-dark', 'bg-[#1E6FB8]', 'bg-[#7B2FA0]', 'bg-[#B45309]', 'bg-[#5D4037]']
 
 /**
  * Match pairs by tapping: an item on one side, then its partner on the other
@@ -55,23 +57,26 @@ export function Match({ game, onDone }: { game: MatchGame; onDone: () => void })
         onClick={() => tap(side, pair)}
         aria-pressed={active || done}
         disabled={done}
-        className={`tap rounded-level relative flex w-full flex-col items-center justify-center gap-1 border-2 px-2 py-2 text-center text-base leading-tight font-extrabold transition ${
+        className={`tap press rounded-level relative flex w-full flex-col items-center justify-center gap-1 px-2 py-2.5 text-center text-base leading-tight font-extrabold ${
           done
-            ? 'border-green bg-green/10 text-green-dark'
+            ? 'bg-green-soft text-green-dark'
             : active
-              ? 'border-gold bg-gold/20 shadow-md ring-2 ring-gold'
-              : 'border-sand bg-white hover:border-green'
+              ? 'scale-[1.04] bg-gold text-ink shadow-float'
+              : 'bg-white shadow-soft'
         }`}
       >
-        {option.img && <img src={img(option.img)} alt="" className="size-14 object-contain" />}
+        {option.img && <img src={img(option.img)} alt="" className="size-16 rounded-full object-cover" />}
         <span>{l(option)}</span>
         {done && (
-          <span
-            className={`absolute -top-2 -right-2 grid size-7 place-items-center rounded-full text-sm font-black text-white ${PAIR_COLORS[number % PAIR_COLORS.length]}`}
+          <m.span
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={bouncy}
+            className={`absolute -top-2 -right-2 grid size-7 place-items-center rounded-full text-sm font-black text-white ring-2 ring-white ${PAIR_COLORS[number % PAIR_COLORS.length]}`}
             aria-hidden="true"
           >
             {number + 1}
-          </span>
+          </m.span>
         )}
       </button>
     )
@@ -91,6 +96,7 @@ export function Match({ game, onDone }: { game: MatchGame; onDone: () => void })
       <Feedback
         correct={solved ? t('match.done') : undefined}
         help={!lastMissed ? undefined : misses >= 2 && game.hint ? l(game.hint) : t('quiz.tryAgain')}
+        nudge={misses}
       />
       {solved && <DoneButton onClick={onDone} />}
     </div>

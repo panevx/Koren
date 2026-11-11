@@ -50,14 +50,14 @@ export function Puzzle({ game, onDone }: { game: PuzzleGame; onDone: () => void 
   return (
     <div className="flex flex-1 flex-col gap-4">
       <div className="flex items-center gap-3">
-        <div className="flex-1">
+        <div className="min-w-0 flex-1">
           <Prompt>{l(game.prompt)}</Prompt>
         </div>
-        <img src={src} alt="" className="rounded-level size-20 shrink-0 border-2 border-white object-cover shadow-sm" aria-hidden="true" />
+        <img src={src} alt="" className="size-20 shrink-0 -rotate-3 rounded-[1.25rem] object-cover shadow-float ring-4 ring-white" aria-hidden="true" />
       </div>
 
       <div
-        className="rounded-level mx-auto grid w-full max-w-sm gap-1 overflow-hidden bg-sand p-1"
+        className="mx-auto grid w-full max-w-sm gap-1.5 rounded-[2rem] bg-white p-2.5 shadow-soft"
         style={{ gridTemplateColumns: `repeat(${cols}, 1fr)`, aspectRatio: `${cols} / ${rows}` }}
         role="group"
         aria-label={t('puzzle.board')}
@@ -75,8 +75,8 @@ export function Puzzle({ game, onDone }: { game: PuzzleGame; onDone: () => void 
               disabled={done && !solved}
               aria-pressed={active}
               aria-label={t('puzzle.piece', { n: pos + 1 })}
-              className={`relative min-h-16 rounded-md bg-no-repeat transition ${
-                active ? 'z-10 scale-95 ring-4 ring-[var(--accent)]' : done ? '' : 'hover:brightness-110'
+              className={`press relative min-h-16 rounded-2xl bg-no-repeat ${
+                active ? 'z-10 scale-95 shadow-float ring-4 ring-coral' : done ? '' : 'shadow-soft'
               }`}
               style={{
                 backgroundImage: `url("${src}")`,

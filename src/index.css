@@ -18,54 +18,77 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-/* KOREN brand tokens — the only place colours are defined. */
+/*
+ * KOREN design tokens — "Playful 3D". The only place colours and shadows are defined.
+ * Main: green #138B50, white, coral #FF655C. Extra: gold #FFD35A, sky #72C8F5, background #F8F5ED.
+ *
+ * Contrast rules (WCAG 4.5:1, or 3:1 for bold text ≥ 18.7 px):
+ *   - white text on `green`  → only bold text-xl or larger (4.3:1). Small white text goes on `green-dark`.
+ *   - text on `coral`        → always `coral-ink` (white on coral is 2.9:1).
+ *   - green / coral as TEXT on light backgrounds → `green-dark` / `coral-dark`.
+ *   - gold and sky carry `ink`.
+ * `*-deep` is the darker "side" of a 3D element; `*-soft` is a tinted surface.
+ */
 @theme {
   --font-sans: 'Nunito Variable', 'Nunito', system-ui, sans-serif;
 
-  --color-green: #0b6b3e;
-  --color-green-dark: #08502e;
-  --color-red: #c62828;
-  --color-red-dark: #9e1f1f;
-  --color-gold: #f4b400;
-  --color-leaf: #7cb342;
-  --color-sky: #4fc3f7;
-  --color-sand: #ead9c4;
-  --color-cream: #fbf7f0;
-  --color-ink: #1f2a24;
-  --color-muted: #5b665f;
+  --color-green: #138b50;
+  --color-green-dark: #0c6b3c;
+  --color-green-deep: #0a5230;
+  --color-green-soft: #dff3e7;
+  --color-mint: #8ed4a6;
+  --color-coral: #ff655c;
+  --color-coral-dark: #c4352d;
+  --color-coral-deep: #d8433a;
+  --color-coral-soft: #ffe4e1;
+  --color-coral-ink: #4a1410;
+  --color-gold: #ffd35a;
+  --color-gold-deep: #e2ab1e;
+  --color-gold-soft: #fff4cf;
+  --color-sky: #72c8f5;
+  --color-sky-deep: #3d9fd1;
+  --color-sky-soft: #e1f3fd;
+  --color-cream: #f8f5ed;
+  --color-sand: #ebe4d4;
+  --color-ink: #1c2b23;
+  --color-muted: #55635b;
+
+  /* Soft, layered shadows: a contact shadow, a mid shadow and a wide ambient one. */
+  --shadow-soft: 0 1px 2px rgb(28 43 35 / 0.05), 0 6px 14px -6px rgb(28 43 35 / 0.12), 0 18px 30px -18px rgb(28 43 35 / 0.18);
+  --shadow-float: 0 2px 4px rgb(28 43 35 / 0.06), 0 12px 24px -8px rgb(28 43 35 / 0.18), 0 28px 48px -24px rgb(28 43 35 / 0.3);
 }
 
 /*
  * Age levels. The root font-size scales every rem-based size in the UI,
  * so one attribute on <html> makes the whole app bigger or denser.
- *   small  4–6   big targets (64px), warm gold accent, very round
- *   young  7–10  default, green accent
- *   guard  11–14 denser, red accent, sharper corners, more text
+ *   small  4–6   biggest targets (64px), gold accent, roundest (32px)
+ *   young  7–10  default, green accent (28px)
+ *   guard  11–14 denser, coral accent, 24px corners, more text
  */
 :root {
   --tap: 56px;
-  --radius: 1.25rem;
-  --accent: var(--color-green);
+  --radius: 1.75rem;
+  --accent: var(--color-green-dark);
   --accent-ink: #fff;
-  --accent-soft: #e3f0e8;
+  --accent-soft: var(--color-green-soft);
   /* Base size per level, gently smaller on very narrow phones (320 px) so text always has room. */
   --root-fs: clamp(15px, 4.6vw, 17px);
   font-size: var(--root-fs);
 }
 :root[data-level='small'] {
   --tap: 64px;
-  --radius: 1.75rem;
+  --radius: 2rem;
   --accent: var(--color-gold);
   --accent-ink: var(--color-ink);
-  --accent-soft: #fdf1cc;
+  --accent-soft: var(--color-gold-soft);
   --root-fs: clamp(17px, 5.3vw, 19px);
 }
 :root[data-level='guard'] {
   --tap: 48px;
-  --radius: 0.75rem;
-  --accent: var(--color-red);
-  --accent-ink: #fff;
-  --accent-soft: #f8e1e1;
+  --radius: 1.5rem;
+  --accent: var(--color-coral);
+  --accent-ink: var(--color-coral-ink);
+  --accent-soft: var(--color-coral-soft);
   --root-fs: 15px;
 }
 
@@ -93,16 +116,8 @@ body {
 }
 
 :focus-visible {
-  outline: 3px solid var(--color-sky);
-  outline-offset: 2px;
-}
-
-/* Cross-stitch border (шевица) used at the bottom of hero screens. */
-.shevitsa {
-  height: 14px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='14' viewBox='0 0 28 14'%3E%3Cpath fill='%23C62828' d='M6 1h2v2h2v2h2v2h-2v2H8v2H6V9H4V7H2V5h2V3h2z'/%3E%3Cpath fill='%230B6B3E' d='M20 5h2v2h2v2h-2v2h-2V9h-2V7h2z'/%3E%3C/svg%3E");
-  background-repeat: repeat-x;
-  background-size: auto 100%;
+  outline: 3px solid #0b5cad;
+  outline-offset: 3px;
 }
 
 .tap {
@@ -114,7 +129,51 @@ body {
   border-radius: var(--radius);
 }
 
-/* Range slider styled to the brand, with a large thumb for small fingers. */
+/*
+ * 3D "puck": a highlight on the top edge, a solid darker side below, and a soft drop shadow.
+ * Set the side colour with --edge (e.g. class="[--edge:var(--color-coral-deep)]").
+ */
+.puck {
+  box-shadow:
+    inset 0 2px 0 rgb(255 255 255 / 0.38),
+    0 5px 0 var(--edge, var(--color-sand)),
+    0 14px 22px -12px rgb(28 43 35 / 0.4);
+}
+
+/*
+ * Springy press: quick squash on touch, overshooting release (the bezier goes past 1).
+ * Only transform is animated, so it stays on the compositor (60 fps).
+ */
+.press {
+  transition:
+    transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.15s ease-out,
+    filter 0.15s ease-out;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.press:active:not(:disabled) {
+  transform: translateY(3px) scale(0.97);
+  transition-duration: 0.08s;
+}
+.puck.press:active:not(:disabled) {
+  box-shadow:
+    inset 0 2px 0 rgb(255 255 255 / 0.38),
+    0 1px 0 var(--edge, var(--color-sand)),
+    0 6px 10px -8px rgb(28 43 35 / 0.4);
+}
+@media (hover: hover) {
+  .press:hover:not(:disabled) {
+    filter: brightness(1.04);
+  }
+}
+
+/* Painted icons and characters "stand" on the page with a soft ground shadow. */
+.pop-3d {
+  filter: drop-shadow(0 8px 6px rgb(28 43 35 / 0.22));
+}
+
+/* Range slider: fat rounded track and a big 3D coral thumb for small fingers. */
 .age-range {
   -webkit-appearance: none;
   appearance: none;
@@ -124,43 +183,67 @@ body {
   cursor: pointer;
 }
 .age-range::-webkit-slider-runnable-track {
-  height: 10px;
+  height: 14px;
   border-radius: 999px;
   background: linear-gradient(
     to right,
-    var(--accent) 0%,
-    var(--accent) var(--fill, 50%),
-    #e6dccd var(--fill, 50%),
-    #e6dccd 100%
+    var(--color-green) 0%,
+    var(--color-green) var(--fill, 50%),
+    var(--color-sand) var(--fill, 50%),
+    var(--color-sand) 100%
   );
+  box-shadow: inset 0 2px 3px rgb(28 43 35 / 0.18);
 }
 .age-range::-moz-range-track {
-  height: 10px;
+  height: 14px;
   border-radius: 999px;
-  background: #e6dccd;
+  background: var(--color-sand);
 }
 .age-range::-moz-range-progress {
-  height: 10px;
+  height: 14px;
   border-radius: 999px;
-  background: var(--accent);
+  background: var(--color-green);
 }
 .age-range::-webkit-slider-thumb {
   -webkit-appearance: none;
-  width: 34px;
-  height: 34px;
+  width: 38px;
+  height: 38px;
   margin-top: -12px;
   border-radius: 50%;
-  background: var(--color-red);
+  background: var(--color-coral);
   border: 4px solid #fff;
-  box-shadow: 0 2px 6px rgb(0 0 0 / 0.3);
+  box-shadow:
+    0 3px 0 var(--color-coral-deep),
+    0 8px 12px -4px rgb(28 43 35 / 0.4);
 }
 .age-range::-moz-range-thumb {
-  width: 26px;
-  height: 26px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  background: var(--color-red);
+  background: var(--color-coral);
   border: 4px solid #fff;
-  box-shadow: 0 2px 6px rgb(0 0 0 / 0.3);
+  box-shadow:
+    0 3px 0 var(--color-coral-deep),
+    0 8px 12px -4px rgb(28 43 35 / 0.4);
+}
+
+/* Ambient motion — only for people who have not asked for reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes bob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+  @keyframes drift {
+    from { transform: translateX(-6%); }
+    to { transform: translateX(6%); }
+  }
+  @keyframes spin-slow {
+    to { transform: rotate(360deg); }
+  }
+  .anim-bob { animation: bob 3.6s ease-in-out infinite; }
+  .anim-bob-late { animation: bob 3.6s ease-in-out -1.5s infinite; }
+  .anim-drift { animation: drift 14s ease-in-out infinite alternate; }
+  .anim-spin-slow { animation: spin-slow 18s linear infinite; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -168,6 +251,7 @@ body {
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
 }

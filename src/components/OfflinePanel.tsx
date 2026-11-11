@@ -40,7 +40,7 @@ export function OfflinePanel() {
         <>
           <p className="text-sm text-muted">{offlineReady || navigator.serviceWorker?.controller ? t('offline.ready') : t('offline.preparing')}</p>
 
-          <div className="rounded-level flex flex-col gap-2 bg-cream p-3">
+          <div className="flex flex-col gap-3 rounded-[1.5rem] bg-cream p-4">
             <p className="font-bold" aria-live="polite">
               {progress
                 ? t('offline.downloading', { n: progress.done, total: progress.total })
@@ -49,11 +49,11 @@ export function OfflinePanel() {
                   : t('offline.status', { n: cached ?? 0, total: paths.length })}
             </p>
             {progress && (
-              <div className="h-3 overflow-hidden rounded-full bg-sand" aria-hidden="true">
+              <div className="h-3.5 overflow-hidden rounded-full bg-sand" aria-hidden="true">
                 <div className="h-full rounded-full bg-green transition-all" style={{ width: `${(progress.done / progress.total) * 100}%` }} />
               </div>
             )}
-            {failed > 0 && <p className="text-sm font-bold text-red">{t('offline.failed', { n: failed })}</p>}
+            {failed > 0 && <p className="text-sm font-bold text-coral-dark">{t('offline.failed', { n: failed })}</p>}
             {!all && (
               <Button variant="accent" onClick={download} disabled={progress !== null}>
                 <Icon name="save" />
@@ -64,7 +64,7 @@ export function OfflinePanel() {
         </>
       )}
 
-      <div className="rounded-level flex flex-col gap-2 bg-cream p-3">
+      <div className="flex flex-col gap-2 rounded-[1.5rem] bg-cream p-4">
         {installed ? (
           <p className="flex items-center gap-2 font-bold text-green-dark">
             <Icon name="check" />

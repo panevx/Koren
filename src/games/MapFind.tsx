@@ -1,7 +1,6 @@
 import { useState } from 'react'
-import { Avatar } from '../components/Brand'
 import { Icon } from '../components/Icon'
-import { Button } from '../components/ui'
+import { Card } from '../components/ui'
 import { placeById, type MapPlace } from '../content/places'
 import type { MapGame } from '../content/schema'
 import { useLocalized } from '../content/useLocalized'
@@ -10,6 +9,7 @@ import { BulgariaMap, type MapMarker } from '../map/BulgariaMap'
 import { PlaceGlyph } from '../map/PlaceGlyph'
 import { UNITS_PER_KM } from '../map/projection'
 import { play } from '../sound'
+import { DoneButton, Feedback } from './Feedback'
 
 /** Radius of the hint circle around the target. */
 const HINT_RADIUS_KM = 45
@@ -42,7 +42,7 @@ export function MapFind({ game, onDone }: { game: MapGame; onDone: () => void })
   const markers: MapMarker[] = choices.map((p, i) => {
     const isWrong = wrong.includes(p.id)
     const isRight = solved && p.id === game.target
-    const tone = isRight ? 'bg-gold text-ink' : isWrong ? 'bg-sand text-muted opacity-60' : 'bg-green text-white'
+    const tone = isRight ? 'bg-gold text-ink' : isWrong ? 'bg-sand text-muted opacity-70' : 'bg-coral text-coral-ink'
     return {
       id: p.id,
       x: p.x,
@@ -52,7 +52,7 @@ export function MapFind({ game, onDone }: { game: MapGame; onDone: () => void })
       disabled: isWrong || (solved && !isRight),
       className: 'size-12',
       content: (
-        <span className={`grid size-9 place-items-center rounded-full border-[3px] border-white shadow-md transition ${tone}`}>
+        <span className={`grid size-9 place-items-center rounded-full shadow-float ring-[3px] ring-white transition-transform ${isRight ? 'scale-125' : ''} ${tone}`}>
           {isRight ? (
             <Icon name="check" width="1.1em" height="1.1em" />
           ) : game.showIcons ? (
@@ -65,14 +65,14 @@ export function MapFind({ game, onDone }: { game: MapGame; onDone: () => void })
 
   return (
     <div className="flex flex-1 flex-col gap-3">
-      <div className="rounded-level flex items-center gap-3 bg-white px-4 py-3 shadow-sm">
+      <Card className="flex items-center gap-3 px-4 py-3">
         {game.showIcons && (
-          <span className="grid size-14 shrink-0 place-items-center rounded-full bg-green text-white" aria-hidden="true">
+          <span className="puck grid size-14 shrink-0 place-items-center rounded-full bg-coral text-coral-ink [--edge:var(--color-coral-deep)]" aria-hidden="true">
             <PlaceGlyph icon={target.icon} className="size-8" />
           </span>
         )}
-        <h3 className="flex-1 text-xl leading-snug font-extrabold">{l(game.prompt)}</h3>
-      </div>
+        <h3 className="min-w-0 flex-1 text-xl leading-snug font-extrabold">{l(game.prompt)}</h3>
+      </Card>
 
       <BulgariaMap
         label={t('map.label')}
@@ -81,32 +81,14 @@ export function MapFind({ game, onDone }: { game: MapGame; onDone: () => void })
         highlight={showHint ? { x: target.x, y: target.y, r: HINT_RADIUS_KM * UNITS_PER_KM } : undefined}
       />
 
-      <div role="status" aria-live="polite" className="min-h-20">
-        {solved ? (
-          <div className="flex items-center gap-3">
-            <Avatar hero="koren" mood="joy" className="size-[min(4rem,15vw)]" />
-            <p className="rounded-level flex-1 rounded-bl-sm bg-green/10 px-4 py-3 text-lg font-extrabold text-green-dark">
-              {t('map.found', { name: l(target.name) })}
-            </p>
-          </div>
-        ) : wrong.length > 0 ? (
-          <div className="flex items-center gap-3">
-            <Avatar hero="raya" mood="thoughtful" className="size-[min(4rem,15vw)]" />
-            <p className="rounded-level flex-1 rounded-bl-sm bg-gold/20 px-4 py-3 text-lg font-bold text-ink">
-              {showHint ? l(game.hint) : t('map.tryAgain')}
-            </p>
-          </div>
-        ) : (
-          <p className="text-center text-sm font-semibold text-muted">{t('map.zoomTip')}</p>
-        )}
-      </div>
+      <Feedback
+        correct={solved ? t('map.found', { name: l(target.name) }) : undefined}
+        help={wrong.length > 0 ? (showHint ? l(game.hint) : t('map.tryAgain')) : undefined}
+        idle={t('map.zoomTip')}
+        nudge={wrong.length}
+      />
 
-      {solved && (
-        <Button variant="accent" className="mt-auto w-full" onClick={onDone} autoFocus>
-          {t('quiz.finish')}
-          <Icon name="chevron" />
-        </Button>
-      )}
+      {solved && <DoneButton onClick={onDone} />}
     </div>
   )
 }

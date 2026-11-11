@@ -174,5 +174,8 @@
   "offline.installOther": "To install, choose “Add to Home screen” in the browser menu.",
   "offline.update": "New missions are here!",
   "offline.updateNow": "Update",
-  "missions.draftShort": "Draft"
+  "missions.draftShort": "Draft",
+  "home.next": "Next mission",
+  "home.allDone.caption": "Well done!",
+  "home.allDone": "You played every mission"
 }

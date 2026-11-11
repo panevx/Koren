@@ -25,13 +25,12 @@ function spaRoutes(): Plugin {
         mkdirSync(dirname(resolve(out, `${r}.html`)), { recursive: true })
         copyFileSync(index, resolve(out, `${r}.html`))
       }
-      // The hub is where returning children land: its header picture is in the HTML itself,
-      // so the browser starts fetching it with the very first bytes. Must match Home.tsx.
+      // The hub is where returning children land: Koren and Raya (the biggest pictures there) are
+      // named in the HTML itself, so the browser fetches them with the very first bytes.
       const base = process.env.BASE_PATH ?? '/'
-      const preload =
-        `<link rel="preload" as="image" fetchpriority="high" ` +
-        `imagesrcset="${base}img/scenes/header-520.webp 520w, ${base}img/scenes/header-720.webp 720w" ` +
-        `imagesizes="(max-width: 448px) 100vw, 448px" />`
+      const preload = ['raya', 'koren']
+        .map((h) => `<link rel="preload" as="image" fetchpriority="high" href="${base}img/heroes/${h}-wave.webp" />`)
+        .join('\n    ')
       const home = resolve(out, 'home.html')
       writeFileSync(home, readFileSync(home, 'utf8').replace('<title>', `${preload}\n    <title>`))
     },
@@ -54,8 +53,8 @@ export default defineConfig({
         short_name: 'KOREN',
         description: 'Мисии за деца 4–14 г. за историята, културата, езика и природата на България.',
         lang: 'bg',
-        theme_color: '#0B6B3E',
-        background_color: '#FBF7F0',
+        theme_color: '#138B50',
+        background_color: '#F8F5ED',
         display: 'standalone',
         orientation: 'portrait',
         icons: [
@@ -73,10 +72,8 @@ export default defineConfig({
           'img/logo/*.svg',
           'img/icons/*.png',
           'img/ornaments/*.png',
-          'img/heroes/koren-raya-512.webp',
+          'img/heroes/*-wave.webp',
           'img/heroes/*-joy.webp',
-          'img/scenes/header-520.webp',
-          'img/scenes/header-720.webp',
           'img/tiles/*.webp',
           'img/levels/*.webp',
         ],

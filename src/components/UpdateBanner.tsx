@@ -8,9 +8,9 @@ export function UpdateBanner() {
   const { needRefresh, update } = usePwa()
   if (!needRefresh) return null
   return (
-    <div role="status" className="rounded-level mb-3 flex items-center gap-3 border-2 border-gold bg-gold/20 px-3 py-2">
-      <span className="flex-1 font-extrabold">{t('offline.update')}</span>
-      <Button variant="accent" className="px-4 text-base" onClick={update}>
+    <div role="status" className="flex items-center gap-3 rounded-full bg-gold py-1.5 pr-1.5 pl-5 shadow-soft">
+      <span className="min-w-0 flex-1 font-extrabold text-ink">{t('offline.update')}</span>
+      <Button variant="secondary" className="px-5 text-base" onClick={update}>
         {t('offline.updateNow')}
       </Button>
     </div>

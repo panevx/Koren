@@ -18,8 +18,8 @@ export const avatarImg = (a: AvatarId) => AVATAR_IMG[a]
 
 export function ProfileAvatar({ avatar, className = 'size-12' }: { avatar: AvatarId; className?: string }) {
   return (
-    <span className={`grid shrink-0 place-items-center rounded-full border-[3px] border-white bg-cream shadow-sm ${className}`} aria-hidden="true">
-      <img src={img(AVATAR_IMG[avatar])} alt="" className="size-[78%] object-contain" />
+    <span className={`grid shrink-0 place-items-center rounded-full bg-white shadow-soft ${className}`} aria-hidden="true">
+      <img src={img(AVATAR_IMG[avatar])} alt="" className="size-[76%] object-contain" />
     </span>
   )
 }
@@ -43,11 +43,11 @@ export function AvatarPicker({ value, onChange }: { value: AvatarId; onChange: (
           aria-checked={value === a}
           aria-label={t(`avatar.${a}` as TKey)}
           onClick={() => onChange(a)}
-          className={`tap rounded-level grid aspect-square place-items-center border-[3px] transition ${
-            value === a ? 'border-green bg-green/10 shadow-md' : 'border-sand bg-white hover:border-green'
+          className={`tap press grid aspect-square place-items-center rounded-full ${
+            value === a ? 'scale-105 bg-green-soft shadow-soft ring-4 ring-green' : 'bg-white shadow-soft'
           }`}
         >
-          <img src={img(AVATAR_IMG[a])} alt="" className="size-[75%] object-contain" />
+          <img src={img(AVATAR_IMG[a])} alt="" className="pop-3d size-[72%] object-contain" />
         </button>
       ))}
     </div>

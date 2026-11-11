@@ -10,6 +10,7 @@ import { GameView } from '../games'
 import { Quiz } from '../games/Quiz'
 import type { TKey } from '../i18n'
 import { useT } from '../i18n/useT'
+import { bouncy, m } from '../motion'
 import { play } from '../sound'
 import { BREAK_AFTER, useAge, useProfiles } from '../store/profiles'
 import { ageToLevel, type Level } from '../theme/levels'
@@ -40,11 +41,11 @@ function MissionRun({ mission, childLevel }: { mission: MissionData; childLevel:
 
   return (
     <Screen>
-      <header className="sticky top-0 z-10 flex items-center gap-3 bg-cream/95 px-3 pt-3 pb-2 backdrop-blur">
+      <header className="sticky top-0 z-10 flex items-center gap-3 bg-cream px-4 pt-4 pb-3">
         <button
           type="button"
           onClick={exit}
-          className="tap flex shrink-0 items-center gap-1 rounded-full border-2 border-sand bg-white px-3 font-extrabold text-ink hover:border-red"
+          className="tap press flex shrink-0 items-center gap-1 rounded-full bg-white pr-4 pl-3 font-extrabold text-ink shadow-soft"
         >
           <Icon name="close" />
           {t('mission.exit')}
@@ -55,16 +56,17 @@ function MissionRun({ mission, childLevel }: { mission: MissionData; childLevel:
         </div>
       </header>
 
-      <div className="flex flex-1 flex-col px-4 pt-2 pb-6">
+      <div className="flex flex-1 flex-col px-4 pb-6">
         {mission.draft && (
-          <p className="mb-3 rounded-full bg-gold/25 px-3 py-1 text-center text-xs font-bold text-ink">
-            {t('missions.draft')}
-          </p>
+          <p className="mb-3 self-center rounded-full bg-sand px-3 py-1 text-center text-xs font-bold text-ink">{t('missions.draft')}</p>
         )}
-        {phase === 'story' && <Story lines={content.story} onDone={next} />}
-        {phase === 'game' && <GameView game={content.game} onDone={next} />}
-        {phase === 'check' && <Quiz questions={content.check} title={t('check.title')} onDone={next} />}
-        {phase === 'badge' && <Badge mission={mission} level={level} />}
+        {/* Each phase slides in like a new page. */}
+        <m.div key={phase} initial={{ opacity: 0, x: 28 }} animate={{ opacity: 1, x: 0 }} className="flex flex-1 flex-col">
+          {phase === 'story' && <Story lines={content.story} onDone={next} />}
+          {phase === 'game' && <GameView game={content.game} onDone={next} />}
+          {phase === 'check' && <Quiz questions={content.check} title={t('check.title')} onDone={next} />}
+          {phase === 'badge' && <Badge mission={mission} level={level} />}
+        </m.div>
       </div>
     </Screen>
   )
@@ -74,13 +76,15 @@ function PhaseDots({ phases, current }: { phases: Phase[]; current: Phase }) {
   const t = useT()
   const at = phases.indexOf(current)
   return (
-    <div className="mt-1 flex items-center gap-1.5" aria-label={t('mission.progress', { n: at + 1, total: phases.length })} role="img">
+    <div className="mt-1.5 flex items-center gap-1.5" aria-label={t('mission.progress', { n: at + 1, total: phases.length })} role="img">
       {phases.map((p, i) => (
-        <span
-          key={p}
-          title={t(`mission.phase.${p}` as TKey)}
-          className={`h-2 flex-1 rounded-full ${i < at ? 'bg-green' : i === at ? 'bg-[var(--accent)]' : 'bg-sand'}`}
-        />
+        <span key={p} title={t(`mission.phase.${p}` as TKey)} className="h-2.5 flex-1 overflow-hidden rounded-full bg-sand">
+          <span
+            className={`block h-full origin-left rounded-full transition-transform duration-500 ease-out ${i < at ? 'bg-green' : 'bg-coral'} ${
+              i <= at ? 'scale-x-100' : 'scale-x-0'
+            }`}
+          />
+        </span>
       ))}
     </div>
   )
@@ -92,27 +96,41 @@ function Story({ lines, onDone }: { lines: StoryLine[]; onDone: () => void }) {
   const [i, setI] = useState(0)
   const line = lines[i]!
   const last = i === lines.length - 1
+  const fromRight = line.hero === 'raya'
   return (
     <div className="flex flex-1 flex-col gap-3">
       <p className="text-center text-sm font-bold text-muted">{t('mission.progress', { n: i + 1, total: lines.length })}</p>
       <div className="relative flex flex-1 flex-col">
-        <p
+        <m.p
           key={i}
+          initial={{ opacity: 0, y: 12, scale: 0.96 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
           aria-live="polite"
-          className="rounded-level relative z-10 rounded-bl-sm border-2 border-sand bg-white px-4 py-4 text-xl leading-snug font-bold shadow-md"
+          className={`relative z-10 rounded-[1.75rem] bg-white px-5 py-4 text-xl leading-snug font-bold shadow-soft ${
+            fromRight ? 'rounded-br-md' : 'rounded-bl-md'
+          }`}
         >
           {l(line)}
-        </p>
-        {line.img && <img src={img(line.img)} alt="" className="rounded-level mt-3 w-full object-cover" />}
-        <img
-          src={img(`poses/${line.hero}-${line.pose}.webp`)}
-          alt=""
-          className={`mt-2 h-[34dvh] max-h-80 w-auto object-contain drop-shadow-md ${line.hero === 'raya' ? 'self-end' : 'self-start'}`}
-        />
+        </m.p>
+        {line.img && <img src={img(line.img)} alt="" className="rounded-level mt-3 w-full object-cover shadow-soft" />}
+        {/* The hero walks in from their side and stands on a soft "stage". */}
+        <div className={`relative mt-3 flex ${fromRight ? 'justify-end pr-3' : 'justify-start pl-3'}`}>
+          <span className="absolute bottom-0 h-[70%] w-[62%] rounded-[45%] bg-sky-soft" aria-hidden="true" />
+          <span className="absolute bottom-1 h-4 w-[38%] rounded-[50%] bg-ink/15 blur-[3px]" aria-hidden="true" />
+          <m.img
+            key={`${i}-${line.hero}-${line.pose}`}
+            src={img(`poses/${line.hero}-${line.pose}.webp`)}
+            alt=""
+            initial={{ opacity: 0, x: fromRight ? 70 : -70, rotate: fromRight ? 8 : -8 }}
+            animate={{ opacity: 1, x: 0, rotate: 0 }}
+            transition={bouncy}
+            className="relative h-[34dvh] max-h-80 w-auto object-contain"
+          />
+        </div>
       </div>
       <div className="flex gap-3">
         {i > 0 && (
-          <Button variant="secondary" onClick={() => setI(i - 1)} aria-label={t('mission.prev')}>
+          <Button variant="secondary" className="px-5" onClick={() => setI(i - 1)} aria-label={t('mission.prev')}>
             <Icon name="back" />
           </Button>
         )}
@@ -124,6 +142,19 @@ function Story({ lines, onDone }: { lines: StoryLine[]; onDone: () => void }) {
     </div>
   )
 }
+
+/** Confetti pieces flying out from behind the badge (fixed pattern — no randomness, no re-render jitter). */
+const CONFETTI = Array.from({ length: 18 }, (_, i) => {
+  const angle = (i / 18) * Math.PI * 2 + (i % 3) * 0.3
+  const dist = 105 + (i % 4) * 24
+  return {
+    x: Math.cos(angle) * dist,
+    y: Math.sin(angle) * dist - 24,
+    rotate: (i % 2 ? 1 : -1) * (140 + i * 22),
+    color: ['bg-coral', 'bg-gold', 'bg-sky', 'bg-green', 'bg-mint'][i % 5]!,
+    shape: i % 3 === 0 ? 'h-3.5 w-1.5 rounded-sm' : i % 3 === 1 ? 'size-2.5 rounded-full' : 'size-2.5 rounded-sm',
+  }
+})
 
 function Badge({ mission, level }: { mission: MissionData; level: Level }) {
   const t = useT()
@@ -143,18 +174,55 @@ function Badge({ mission, level }: { mission: MissionData; level: Level }) {
   const needsBreak = streak >= BREAK_AFTER
 
   return (
-    <div className="flex flex-1 flex-col items-center justify-center gap-5 text-center">
-      <h2 className="text-3xl font-black text-green-dark">{t('badge.title')}</h2>
-      <div className="grid size-48 place-items-center rounded-full bg-gold p-3 shadow-[0_6px_0_#d49a00]">
-        <div className="grid size-full place-items-center rounded-full border-4 border-white bg-cream">
-          <img src={img(mission.badge.icon)} alt="" className="size-28 object-contain" />
-        </div>
+    <div className="flex flex-1 flex-col items-center justify-center gap-3 text-center">
+      <m.h2 initial={{ opacity: 0, y: -14 }} animate={{ opacity: 1, y: 0 }} className="text-3xl font-black text-green-dark">
+        {t('badge.title')}
+      </m.h2>
+
+      {/* The reward: slowly turning rays, confetti, and the badge dropping in with a bounce. */}
+      <div className="relative grid size-56 place-items-center" aria-hidden="true">
+        <div
+          className="anim-spin-slow absolute inset-0 rounded-full"
+          style={{
+            background: 'repeating-conic-gradient(from 0deg, var(--color-gold) 0 12deg, transparent 12deg 24deg)',
+            WebkitMaskImage: 'radial-gradient(circle, #000 34%, transparent 70%)',
+            maskImage: 'radial-gradient(circle, #000 34%, transparent 70%)',
+            opacity: 0.55,
+          }}
+        />
+        {CONFETTI.map((c, i) => (
+          <m.span
+            key={i}
+            className={`absolute ${c.color} ${c.shape}`}
+            initial={{ x: 0, y: 0, scale: 0, opacity: 0 }}
+            animate={{ x: c.x, y: [0, c.y, c.y + 70], scale: [0, 1, 0.9], opacity: [0, 1, 0], rotate: c.rotate }}
+            transition={{ duration: 1.4, delay: 0.3 + i * 0.012, ease: 'easeOut' }}
+          />
+        ))}
+        <m.div
+          initial={{ scale: 0, rotate: -30 }}
+          animate={{ scale: 1, rotate: 0 }}
+          transition={{ type: 'spring', stiffness: 240, damping: 11, delay: 0.12 }}
+          className="relative grid size-40 place-items-center overflow-hidden rounded-full bg-gold p-3 shadow-[inset_0_4px_0_rgb(255_255_255/0.55),0_8px_0_var(--color-gold-deep),0_26px_34px_-14px_rgb(28_43_35/0.5)]"
+        >
+          <div className="grid size-full place-items-center rounded-full bg-white shadow-[inset_0_3px_6px_rgb(28_43_35/0.14)]">
+            <img src={img(mission.badge.icon)} alt="" className="pop-3d size-[5.5rem] object-contain" />
+          </div>
+          {/* one glint of light across the medal */}
+          <m.span
+            className="absolute inset-y-0 w-10 -skew-x-12 bg-white/55"
+            initial={{ x: -160 }}
+            animate={{ x: 160 }}
+            transition={{ duration: 0.7, delay: 0.75, ease: 'easeInOut' }}
+          />
+        </m.div>
       </div>
+
       <p className="text-xl font-extrabold">{l(mission.title)}</p>
 
       {needsBreak ? (
         // After 3 missions in a row Koren and Raya suggest a pause — a suggestion, never a lock.
-        <section className="rounded-level flex w-full flex-col gap-3 border-2 border-sky bg-sky/15 p-4" aria-live="polite">
+        <section className="flex w-full flex-col gap-3 rounded-[2rem] bg-sky-soft p-5" aria-live="polite">
           <div className="flex items-center justify-center -space-x-3" aria-hidden="true">
             <Avatar hero="raya" mood="joy" className="size-14" />
             <Avatar hero="koren" mood="joy" className="size-14" />
@@ -182,11 +250,20 @@ function Badge({ mission, level }: { mission: MissionData; level: Level }) {
         </section>
       ) : (
         <>
+          {/* Koren and Raya jump for joy. */}
           <div className="flex -space-x-3" aria-hidden="true">
-            <Avatar hero="raya" mood="laughter" className="size-16" />
-            <Avatar hero="koren" mood="laughter" className="size-16" />
+            {(['raya', 'koren'] as const).map((hero, i) => (
+              <m.div
+                key={hero}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: [30, -16, 0, -8, 0] }}
+                transition={{ duration: 0.9, delay: 0.5 + i * 0.12, ease: 'easeOut' }}
+              >
+                <Avatar hero={hero} mood="laughter" className="size-16" />
+              </m.div>
+            ))}
           </div>
-          <div className="flex w-full flex-col gap-3">
+          <div className="flex w-full flex-col gap-3.5">
             <Button variant="primary" onClick={() => navigate('/missions')}>
               {t('badge.more')}
             </Button>

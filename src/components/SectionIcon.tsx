@@ -16,7 +16,7 @@ export function SectionIcon({ id, className = 'size-16' }: { id: SectionId; clas
       <img src={img(sectionIcon(id))} alt="" width={192} height={192} className="size-full object-contain" decoding="async" />
       {id === 'language' && (
         <span
-          className="absolute top-[31%] left-[13%] w-[38%] -rotate-6 text-center leading-none font-black text-red"
+          className="absolute top-[31%] left-[13%] w-[38%] -rotate-6 text-center leading-none font-black text-coral-dark"
           style={{ fontSize: '12cqw' }}
         >
           {t('tile.language.glyph')}
