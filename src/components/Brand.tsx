@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react'
 import { useT } from '../i18n/useT'
 
 /** KOREN wordmark: green mountains, red embroidery star, red swoosh. */
@@ -8,7 +9,7 @@ export function Logo({ size = 'lg' }: { size?: 'sm' | 'lg' }) {
     <div className="flex flex-col items-center leading-none select-none">
       <svg
         viewBox="0 0 120 34"
-        className={big ? 'w-40' : 'w-20'}
+        className={big ? 'w-28' : 'w-20'}
         aria-hidden="true"
         focusable="false"
       >
@@ -20,11 +21,11 @@ export function Logo({ size = 'lg' }: { size?: 'sm' | 'lg' }) {
         </g>
       </svg>
       <span
-        className={`font-black tracking-tight text-green ${big ? 'text-5xl -mt-1' : 'text-xl'}`}
+        className={`font-black tracking-tight text-green ${big ? 'text-4xl -mt-1' : 'text-xl'}`}
       >
         {t('app.name')}
       </span>
-      <svg viewBox="0 0 120 8" className={big ? 'w-44 -mt-1' : 'w-20'} aria-hidden="true" focusable="false">
+      <svg viewBox="0 0 120 8" className={big ? 'w-32 -mt-1' : 'w-20'} aria-hidden="true" focusable="false">
         <path d="M4 6C40 0 80 0 116 4" stroke="#C62828" strokeWidth="3" fill="none" strokeLinecap="round" />
       </svg>
     </div>
@@ -83,17 +84,51 @@ export function Flag({ lang, className = 'w-7 h-5' }: { lang: 'bg' | 'en'; class
   )
 }
 
+/** URL of a file in public/img, respecting the GitHub Pages base path. */
+export const img = (path: string) => `${import.meta.env.BASE_URL}img/${path}`
+
+/** Корен и Рая on the hilltop (design/characters/28, cropped and exported to WebP). */
 export function Heroes({ className = '' }: { className?: string }) {
   const t = useT()
-  // Placeholder cropped from the design board until the ChatGPT character sheet exists.
   return (
     <img
-      src={`${import.meta.env.BASE_URL}img/heroes/koren-raya-placeholder.webp`}
+      src={img('heroes/koren-raya-768.webp')}
+      srcSet={`${img('heroes/koren-raya-512.webp')} 512w, ${img('heroes/koren-raya-768.webp')} 768w`}
+      sizes="(max-width: 448px) 90vw, 384px"
       alt={t('hero.alt')}
-      width={400}
-      height={238}
+      width={768}
+      height={810}
       className={className}
+      fetchPriority="high"
       decoding="async"
     />
+  )
+}
+
+export type Hero = 'koren' | 'raya'
+export type Mood = 'joy' | 'thoughtful' | 'surprise' | 'determination' | 'laughter'
+
+/** Round portrait of a hero. Decorative: the speech text next to it carries the meaning. */
+export function Avatar({ hero, mood, className = 'size-14' }: { hero: Hero; mood: Mood; className?: string }) {
+  return (
+    <img
+      src={img(`heroes/${hero}-${mood}.webp`)}
+      alt=""
+      width={320}
+      height={320}
+      className={`shrink-0 rounded-full border-[3px] border-white bg-white object-cover shadow-md ${className}`}
+      decoding="async"
+    />
+  )
+}
+
+/** Embroidery ornaments (design/characters/42, 43) around a line of text. */
+export function Ornamented({ children, className = '' }: { children: ReactNode; className?: string }) {
+  return (
+    <div className={`flex items-center justify-center gap-2 ${className}`}>
+      <img src={img('ornaments/left.png')} alt="" width={56} height={57} className="size-5 shrink-0" />
+      {children}
+      <img src={img('ornaments/right.png')} alt="" width={56} height={56} className="size-5 shrink-0" />
+    </div>
   )
 }

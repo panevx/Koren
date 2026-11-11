@@ -1,6 +1,6 @@
 import { Link } from 'react-router'
 import { BottomNav } from '../components/BottomNav'
-import { Landscape, Logo } from '../components/Brand'
+import { Avatar, Logo, img } from '../components/Brand'
 import { Icon } from '../components/Icon'
 import { Screen } from '../components/ui'
 import { useT } from '../i18n/useT'
@@ -23,13 +23,24 @@ export function Home() {
   return (
     <Screen>
       <header className="relative overflow-hidden">
-        <Landscape className="absolute inset-0 h-full w-full" />
-        <div className="relative flex items-start justify-between px-4 pt-4 pb-14">
+        <img
+          src={img('scenes/sunset-600.webp')}
+          srcSet={`${img('scenes/sunset-600.webp')} 600w, ${img('scenes/sunset-900.webp')} 900w`}
+          sizes="(max-width: 448px) 100vw, 448px"
+          alt=""
+          width={900}
+          height={450}
+          className="absolute inset-0 h-full w-full object-cover object-[70%_30%]"
+          decoding="async"
+        />
+        <div className="relative flex items-start justify-between px-4 pt-4 pb-16">
           <span className="tap" aria-hidden="true" />
-          <Logo size="sm" />
+          <div className="rounded-full bg-white/90 px-4 pt-1 pb-0.5 shadow-md">
+            <Logo size="sm" />
+          </div>
           <Link
             to="/settings"
-            className="tap grid place-items-center rounded-full bg-white/85 text-green shadow-sm hover:bg-white"
+            className="tap grid place-items-center rounded-full bg-white/90 text-green shadow-md hover:bg-white"
             aria-label={t('settings.title')}
           >
             <Icon name="gear" />
@@ -39,9 +50,15 @@ export function Home() {
 
       <div className="relative -mt-8 flex-1 rounded-t-[2rem] bg-cream px-4 pt-5 pb-28">
         <h1 className="sr-only">{t('nav.home')}</h1>
-        <p className="rounded-level mb-4 border-2 border-[var(--accent)] bg-[var(--accent-soft)] px-4 py-2 text-center font-extrabold text-ink">
-          {t(`home.greeting.${level}`)}
-        </p>
+        <div className="mb-4 flex items-center gap-3">
+          <div className="flex shrink-0 -space-x-4" aria-hidden="true">
+            <Avatar hero="raya" mood="joy" className="size-14" />
+            <Avatar hero="koren" mood="joy" className="size-14" />
+          </div>
+          <p className="rounded-level flex-1 rounded-bl-sm border-2 border-[var(--accent)] bg-[var(--accent-soft)] px-4 py-2 font-extrabold text-ink">
+            {t(`home.greeting.${level}`)}
+          </p>
+        </div>
         <ul className="grid grid-cols-2 gap-3">
           {SECTIONS.map(({ id, path, label, desc, Art }) => (
             <li key={id}>
