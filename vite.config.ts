@@ -19,7 +19,7 @@ function spaRoutes(): Plugin {
       const missions = readdirSync(resolve(__dirname, 'content/missions'))
         .filter((f) => f.endsWith('.json'))
         .map((f) => `mission/${f.replace(/\.json$/, '')}`)
-      const routes = ['home', 'age', 'sign', 'who', 'parents', 'settings', 'map', 'missions', 'collection', ...['history', 'culture', 'language'].map((t) => `topic/${t}`), ...missions]
+      const routes = ['home', 'age', 'sign', 'who', 'parents', 'settings', 'map', 'timeline', 'missions', 'collection', ...['history', 'culture', 'language'].map((t) => `topic/${t}`), ...missions]
       copyFileSync(index, resolve(out, '404.html'))
       for (const r of routes) {
         mkdirSync(dirname(resolve(out, `${r}.html`)), { recursive: true })

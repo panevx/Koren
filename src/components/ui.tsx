@@ -77,7 +77,7 @@ export function TopBar({
       <button type="button" onClick={onBack ?? goBack} className={roundButton} aria-label={t('nav.back')}>
         <Icon name="back" />
       </button>
-      <h1 className="min-w-0 flex-1 text-center text-2xl leading-tight font-black">{title}</h1>
+      <h1 className="min-w-0 flex-1 text-center text-[length:min(1.5rem,6.4vw)] leading-tight font-black">{title}</h1>
       <div className="tap grid shrink-0 place-items-center">{right}</div>
     </header>
   )

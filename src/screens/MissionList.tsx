@@ -1,6 +1,7 @@
 import { Link, useParams } from 'react-router'
 import { BadgeArt } from '../components/BadgeArt'
 import { Icon } from '../components/Icon'
+import { TimelineLink } from '../components/TimelineLink'
 import { Screen, TopBar } from '../components/ui'
 import { missionsBySubject } from '../content/missions'
 import type { Subject } from '../content/schema'
@@ -48,6 +49,7 @@ export function MissionList({ topic }: { topic?: boolean }) {
     <Screen nav>
       <TopBar title={section ? t(section.label) : t('missions.title')} />
       <div className="flex flex-col gap-4 px-4 pb-32">
+        {subject === 'history' && <TimelineLink />}
         {/* Progress pill */}
         <div className="flex items-center gap-3 rounded-full bg-white py-2 pr-4 pl-2 shadow-soft">
           <span className="grid size-10 shrink-0 place-items-center rounded-full bg-gold text-ink">
@@ -70,12 +72,12 @@ export function MissionList({ topic }: { topic?: boolean }) {
                   <BadgeArt icon={mission.badge.icon} lazy={i >= 6} className="size-[min(4.5rem,18vw)]" />
                   <span className="flex min-w-0 flex-1 flex-col items-start gap-1">
                     <span className="flex flex-wrap items-center gap-1.5">
-                      <span className={`rounded-full px-2.5 py-0.5 text-xs font-black tracking-wide text-ink uppercase ${SUBJECT_TINT[mission.subject]}`}>
+                      <span className={`rounded-full px-2.5 py-0.5 text-xs font-black tracking-wide whitespace-nowrap text-ink uppercase ${SUBJECT_TINT[mission.subject]}`}>
                         {t(`subject.${mission.subject}`)}
                       </span>
-                      {mission.draft && <span className="rounded-full bg-sand px-2.5 py-0.5 text-xs font-bold text-ink">{t('missions.draftShort')}</span>}
+                      {mission.draft && <span className="rounded-full bg-sand px-2.5 py-0.5 text-xs font-bold whitespace-nowrap text-ink">{t('missions.draftShort')}</span>}
                     </span>
-                    <span className="text-lg leading-tight font-extrabold">{l(mission.title)}</span>
+                    <span className="text-[length:min(1.125rem,5.4vw)] leading-tight font-extrabold">{l(mission.title)}</span>
                     {isDone && (
                       <span className="flex items-center gap-1 text-sm font-bold text-green-dark">
                         <Icon name="check" width="1em" height="1em" />

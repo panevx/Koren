@@ -27,7 +27,7 @@ export function BottomNav() {
             <NavLink
               to={to}
               className={({ isActive }) =>
-                `press flex min-h-[var(--tap)] flex-col items-center justify-end gap-0.5 rounded-full pb-1 text-xs font-extrabold ${
+                `press flex min-h-[var(--tap)] flex-col items-center justify-end gap-0.5 rounded-full pb-1 text-[length:min(0.75rem,3.3vw)] font-extrabold ${
                   isActive ? 'text-green-dark' : 'text-muted'
                 }`
               }

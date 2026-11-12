@@ -177,5 +177,20 @@
   "missions.draftShort": "Draft",
   "home.next": "Next mission",
   "home.allDone.caption": "Well done!",
-  "home.allDone": "You played every mission"
+  "home.allDone": "You played every mission",
+  "timeline.title": "Timeline",
+  "timeline.year": "{year}",
+  "timeline.slider": "Year",
+  "timeline.prev": "Earlier",
+  "timeline.next": "Later",
+  "timeline.step": "{n} of {total}",
+  "timeline.mapLabel": "Map of Bulgaria and the Balkans",
+  "timeline.capital": "Capital: {name}",
+  "timeline.noState": "No Bulgarian state",
+  "timeline.then": "Bulgaria then",
+  "timeline.today": "Today's borders",
+  "timeline.planned": "A treaty never carried out",
+  "timeline.schematic": "Schematic map – the borders are approximate.",
+  "timeline.open": "Timeline",
+  "timeline.openHint": "How Bulgaria's borders change"
 }

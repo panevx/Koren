@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router'
 import { Icon } from '../components/Icon'
+import { TimelineLink } from '../components/TimelineLink'
 import { Card, Screen, TopBar } from '../components/ui'
 import { MISSIONS } from '../content/missions'
 import { PLACES } from '../content/places'
@@ -51,6 +52,7 @@ export function MapScreen() {
       <div className="flex flex-col gap-3 px-4 pb-32">
         <BulgariaMap label={t('map.label')} markers={markers} onSelect={setSelected} />
         <p className="text-center text-sm font-semibold text-muted">{t('map.zoomTip')}</p>
+        {!place && <TimelineLink />}
 
         {place && (
           <m.div key={place.id} initial={{ opacity: 0, y: 20, scale: 0.95 }} animate={{ opacity: 1, y: 0, scale: 1 }} transition={bouncy}>

@@ -30,6 +30,7 @@ const MapScreen = lazy(() => import('./screens/MapScreen').then((m) => ({ defaul
 const WhoPlays = lazy(() => import('./screens/WhoPlays').then((m) => ({ default: m.WhoPlays })))
 const Parents = lazy(() => import('./screens/Parents').then((m) => ({ default: m.Parents })))
 const Passport = lazy(() => import('./screens/Passport').then((m) => ({ default: m.Passport })))
+const Timeline = lazy(() => import('./screens/Timeline').then((m) => ({ default: m.Timeline })))
 const MissionList = lazy(() => import('./screens/MissionList').then((m) => ({ default: m.MissionList })))
 
 function Loading() {
@@ -54,6 +55,7 @@ export function AppRoutes() {
         <Route path="/parents" element={<Parents />} />
         <Route path="/settings" element={<Navigate to="/parents" replace />} />
         <Route path="/map" element={<MapScreen />} />
+        <Route path="/timeline" element={<Timeline />} />
         <Route path="/missions" element={<MissionList />} />
         <Route path="/mission/:id" element={<Mission />} />
         <Route path="/collection" element={<Passport />} />

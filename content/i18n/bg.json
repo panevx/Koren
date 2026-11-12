@@ -177,5 +177,20 @@
   "missions.draftShort": "Чернова",
   "home.next": "Следваща мисия",
   "home.allDone.caption": "Браво!",
-  "home.allDone": "Изигра всички мисии"
+  "home.allDone": "Изигра всички мисии",
+  "timeline.title": "Линия на времето",
+  "timeline.year": "{year} г.",
+  "timeline.slider": "Година",
+  "timeline.prev": "По-рано",
+  "timeline.next": "По-късно",
+  "timeline.step": "{n} от {total}",
+  "timeline.mapLabel": "Карта на България и Балканите",
+  "timeline.capital": "Столица: {name}",
+  "timeline.noState": "Няма българска държава",
+  "timeline.then": "България тогава",
+  "timeline.today": "Днешните граници",
+  "timeline.planned": "Неосъществен договор",
+  "timeline.schematic": "Схематична карта – границите са приблизителни.",
+  "timeline.open": "Линия на времето",
+  "timeline.openHint": "Как се променят границите на България"
 }

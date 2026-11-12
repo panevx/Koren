@@ -17,13 +17,14 @@ import { ageToLevel, type Level } from '../theme/levels'
 
 /** How the hub adapts per age level, beyond the global size/colour theme. */
 const LAYOUT: Record<Level, { label: string; showDesc: boolean }> = {
-  small: { label: 'text-2xl', showDesc: false },
-  young: { label: 'text-xl', showDesc: false },
-  guard: { label: 'text-xl', showDesc: true },
+  // Sizes follow the screen width (vw) on narrow phones, so a module title never breaks inside a word.
+  small: { label: 'text-[length:min(1.5rem,6.6vw)]', showDesc: false },
+  young: { label: 'text-[length:min(1.25rem,6vw)]', showDesc: false },
+  guard: { label: 'text-[length:min(1.25rem,6vw)]', showDesc: true },
 }
 /** Labels in the two narrow square modules follow the screen width, so "Български" never breaks. */
-const TIGHT = 'text-[clamp(1rem,5.4vw,1.25rem)]'
-const TIGHT_TALL = 'text-[clamp(1rem,6vw,1.5rem)]'
+const TIGHT = 'text-[length:min(1.25rem,5.4vw)]'
+const TIGHT_TALL = 'text-[length:min(1.5rem,6vw)]'
 
 /** The six modules in reading order. Each has its own size, shape, colour and icon placement. */
 const ORDER: readonly SectionId[] = ['discover', 'missions', 'history', 'language', 'culture', 'collection']
@@ -126,7 +127,7 @@ export function Home() {
             <SectionIcon id="collection" className="size-11" />
           </span>
           <span className="min-w-0 flex-1">
-            <span className="block text-lg leading-tight font-black">{t(section('collection').label)}</span>
+            <span className="block text-[length:min(1.125rem,5vw)] leading-tight font-black">{t(section('collection').label)}</span>
             {missions && <span className="block text-sm font-bold text-white/85">{t('passport.count', { n: profile.badges.length, total: missions.length })}</span>}
           </span>
           <Icon name="chevron" className="shrink-0" />

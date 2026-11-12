@@ -35,7 +35,7 @@ export function Passport() {
             </span>
             <div className="min-w-0 flex-1">
               <img src={img('logo/koren-white.svg')} alt="" className="mb-1.5 h-6 w-auto" />
-              <p className="text-2xl leading-tight font-black">{name(profile, index)}</p>
+              <p className="text-[length:min(1.5rem,6vw)] leading-tight font-black">{name(profile, index)}</p>
             </div>
           </div>
           <div className="relative mt-4">

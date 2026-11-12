@@ -76,7 +76,7 @@ export function AgePicker() {
               </span>
               <span className="flex min-w-0 flex-1 flex-col">
                 <span className="text-lg leading-tight font-black">{t(`level.${level}.range`)}</span>
-                <span className="text-sm font-bold text-muted">{t(`level.${level}.name`)}</span>
+                <span className="text-[length:min(0.875rem,4vw)] font-bold text-muted">{t(`level.${level}.name`)}</span>
               </span>
               <span className="grid size-8 shrink-0 place-items-center" aria-hidden="true">
                 {selected ? (
