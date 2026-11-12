@@ -5,7 +5,7 @@
   "order": 9,
   "badge": {
     "id": "words",
-    "icon": "levels/small.webp"
+    "icon": "badges/words.webp"
   },
   "title": {
     "bg": "Първите думи",

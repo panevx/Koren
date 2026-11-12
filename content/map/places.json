@@ -12,5 +12,6 @@
   {"id": "koprivshtitsa", "icon": "house", "lat": 42.636, "lon": 24.355, "name": {"bg": "Копривщица", "en": "Koprivshtitsa"}},
   {"id": "belogradchik", "icon": "rock", "lat": 43.627, "lon": 22.683, "name": {"bg": "Белоградчишки скали", "en": "Belogradchik Rocks"}},
   {"id": "balchik", "icon": "sea", "lat": 43.41, "lon": 28.155, "name": {"bg": "Балчик", "en": "Balchik"}},
-  {"id": "burgas", "icon": "city", "lat": 42.505, "lon": 27.46, "name": {"bg": "Бургас", "en": "Burgas"}}
+  {"id": "burgas", "icon": "city", "lat": 42.505, "lon": 27.46, "name": {"bg": "Бургас", "en": "Burgas"}},
+  {"id": "srebarna", "icon": "sea", "lat": 44.1, "lon": 27.07, "name": {"bg": "Сребърна", "en": "Srebarna"}}
 ]

@@ -6,7 +6,7 @@
   "place": "belogradchik",
   "badge": {
     "id": "belogradchik",
-    "icon": "tiles/discover.webp"
+    "icon": "badges/belogradchik.webp"
   },
   "title": {
     "bg": "Белоградчишките скали",

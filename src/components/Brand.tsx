@@ -19,7 +19,7 @@ export function Scenery({ className = '' }: { className?: string }) {
   return (
     <div className={`overflow-hidden bg-gradient-to-b from-sky to-sky-soft ${className}`} aria-hidden="true">
       {/* sun with a soft halo */}
-      <div className="absolute top-[9%] right-[9%] aspect-square w-[16%] min-w-12 rounded-full bg-gold shadow-[0_0_0_10px_rgb(255_211_90/0.35),0_0_0_22px_rgb(255_211_90/0.18)]" />
+      <div className="absolute top-[9%] right-[9%] aspect-square w-[16%] min-w-12 rounded-full bg-[radial-gradient(circle_at_35%_30%,#FFE9A3,#FFD35A_55%,#F2BE2E)] shadow-[0_0_0_10px_rgb(255_211_90/0.35),0_0_0_22px_rgb(255_211_90/0.18)]" />
       {/* clouds */}
       <svg viewBox="0 0 400 120" className="anim-drift absolute top-[6%] left-0 w-full" focusable="false">
         <g fill="#fff">
@@ -27,17 +27,33 @@ export function Scenery({ className = '' }: { className?: string }) {
           <path d="M216 86a10 10 0 0 1 10-10 13 13 0 0 1 25-3 11 11 0 0 1 16 10 9 9 0 0 1-2 17h-42a9 9 0 0 1-7-14Z" opacity=".8" />
         </g>
       </svg>
-      {/* hills + fortress */}
+      {/* hills + fortress — shaded from the top-left like the 3D figures standing on them */}
       <svg viewBox="0 0 400 150" preserveAspectRatio="xMidYMax slice" className="absolute inset-x-0 bottom-0 h-[58%] w-full" focusable="false">
-        <ellipse cx="320" cy="150" rx="210" ry="96" fill="#8ED4A6" />
+        <defs>
+          <radialGradient id="hill-far" cx="35%" cy="0%" r="90%">
+            <stop offset="0" stopColor="#B4E6C5" />
+            <stop offset="1" stopColor="#7CCB98" />
+          </radialGradient>
+          <radialGradient id="hill-mid" cx="30%" cy="0%" r="95%">
+            <stop offset="0" stopColor="#5CC48C" />
+            <stop offset="1" stopColor="#2F9F66" />
+          </radialGradient>
+          <radialGradient id="hill-near" cx="40%" cy="0%" r="100%">
+            <stop offset="0" stopColor="#22A463" />
+            <stop offset="1" stopColor="#0E7A45" />
+          </radialGradient>
+        </defs>
+        <ellipse cx="320" cy="150" rx="210" ry="96" fill="url(#hill-far)" />
         <g transform="translate(286 34)">
+          <path d="M3 42c8 3 24 3 32 0" stroke="#000" strokeOpacity=".12" strokeWidth="5" strokeLinecap="round" fill="none" />
           <path d="M0 40V14h7v6h8v-6h8v6h8v-6h7v26Z" fill="#FFF7E3" />
+          <path d="M31 14h7v26h-7Z" fill="#EADCB8" />
           <path d="M12 40V28a7 7 0 0 1 14 0v12Z" fill="#E2AB1E" />
           <path d="M19 14V-6" stroke="#4A1410" strokeWidth="2" strokeLinecap="round" />
           <path d="M19-6h14l-4 5 4 5H19Z" fill="#FF655C" />
         </g>
-        <ellipse cx="70" cy="158" rx="230" ry="92" fill="#3DAE74" />
-        <ellipse cx="250" cy="176" rx="280" ry="84" fill="#138B50" />
+        <ellipse cx="70" cy="158" rx="230" ry="92" fill="url(#hill-mid)" />
+        <ellipse cx="250" cy="176" rx="280" ry="84" fill="url(#hill-near)" />
       </svg>
     </div>
   )
@@ -50,7 +66,7 @@ export function HeroFigure({ hero, className = '' }: { hero: Hero; className?: s
       src={img(`heroes/${hero}-wave.webp`)}
       alt=""
       width={240}
-      height={hero === 'koren' ? 522 : 535}
+      height={hero === 'koren' ? 507 : 502}
       className={`pop-3d w-auto select-none ${className}`}
       fetchPriority="high"
       draggable={false}

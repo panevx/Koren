@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Navigate, useNavigate, useParams } from 'react-router'
+import { BadgeArt } from '../components/BadgeArt'
 import { Avatar, img } from '../components/Brand'
 import { Icon } from '../components/Icon'
 import { Button, Screen } from '../components/ui'
@@ -203,11 +204,9 @@ function Badge({ mission, level }: { mission: MissionData; level: Level }) {
           initial={{ scale: 0, rotate: -30 }}
           animate={{ scale: 1, rotate: 0 }}
           transition={{ type: 'spring', stiffness: 240, damping: 11, delay: 0.12 }}
-          className="relative grid size-40 place-items-center overflow-hidden rounded-full bg-gold p-3 shadow-[inset_0_4px_0_rgb(255_255_255/0.55),0_8px_0_var(--color-gold-deep),0_26px_34px_-14px_rgb(28_43_35/0.5)]"
+          className="relative grid size-44 place-items-center overflow-hidden rounded-full shadow-[0_26px_34px_-14px_rgb(28_43_35/0.5)]"
         >
-          <div className="grid size-full place-items-center rounded-full bg-white shadow-[inset_0_3px_6px_rgb(28_43_35/0.14)]">
-            <img src={img(mission.badge.icon)} alt="" className="pop-3d size-[5.5rem] object-contain" />
-          </div>
+          <BadgeArt icon={mission.badge.icon} className="size-full" />
           {/* one glint of light across the medal */}
           <m.span
             className="absolute inset-y-0 w-10 -skew-x-12 bg-white/55"

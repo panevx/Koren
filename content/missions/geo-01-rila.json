@@ -6,7 +6,7 @@
   "place": "rila-monastery",
   "badge": {
     "id": "rila",
-    "icon": "tiles/discover.webp"
+    "icon": "badges/rila.webp"
   },
   "title": {
     "bg": "Рила – покривът на Балканите",

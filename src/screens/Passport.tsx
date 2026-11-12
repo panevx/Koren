@@ -1,4 +1,5 @@
 import { Link } from 'react-router'
+import { BadgeArt } from '../components/BadgeArt'
 import { img } from '../components/Brand'
 import { Icon } from '../components/Icon'
 import { ProfileAvatar, useProfileName } from '../components/ProfileAvatar'
@@ -49,7 +50,7 @@ export function Passport() {
 
         {/* Medals stand directly on the page — no boxes around them. */}
         <m.ul variants={stagger} initial="hidden" animate="show" className="grid grid-cols-2 gap-x-3 gap-y-6">
-          {MISSIONS.map((mission) => {
+          {MISSIONS.map((mission, i) => {
             const has = profile.badges.includes(mission.badge.id)
             return (
               <m.li key={mission.id} variants={{ hidden: { opacity: 0, scale: 0.6 }, show: { opacity: 1, scale: 1, transition: bouncy } }}>
@@ -57,17 +58,7 @@ export function Passport() {
                   to={`/mission/${mission.id}`}
                   className="press flex h-full flex-col items-center gap-2 rounded-[2rem] px-1 text-center"
                 >
-                  <span
-                    className={`grid size-[min(6.5rem,27vw)] place-items-center rounded-full p-2 ${
-                      has
-                        ? 'bg-gold shadow-[inset_0_3px_0_rgb(255_255_255/0.55),0_6px_0_var(--color-gold-deep),0_18px_22px_-12px_rgb(28_43_35/0.45)]'
-                        : 'bg-sand shadow-[inset_0_3px_6px_rgb(28_43_35/0.12)]'
-                    }`}
-                  >
-                    <span className={`grid size-full place-items-center rounded-full ${has ? 'bg-white' : 'bg-cream'}`}>
-                      <img src={img(mission.badge.icon)} alt="" className={`size-[66%] object-contain ${has ? 'pop-3d' : 'opacity-35 grayscale'}`} />
-                    </span>
-                  </span>
+                  <BadgeArt icon={mission.badge.icon} earned={has} lazy={i >= 4} className={`size-[min(6.75rem,28vw)] ${has ? 'pop-3d' : ''}`} />
                   <span className="text-sm leading-tight font-extrabold">{l(mission.title)}</span>
                   <span className={`flex items-center gap-1 text-xs font-bold ${has ? 'text-green-dark' : 'text-muted'}`}>
                     {has && <Icon name="check" width="1em" height="1em" />}

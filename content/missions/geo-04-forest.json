@@ -1,0 +1,424 @@
+{
+  "id": "geo-04-forest",
+  "subject": "geography",
+  "free": true,
+  "order": 13,
+  "badge": {
+    "id": "forest",
+    "icon": "animals/bear.webp"
+  },
+  "title": {
+    "bg": "Животните в гората",
+    "en": "Animals of the forest"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Да идем в гората!",
+          "en": "Let's go to the forest!"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Там живеят много животни.",
+          "en": "Many animals live there."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Намери ги!",
+          "en": "Find them!"
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Къде е мечката?",
+              "en": "Where is the bear?"
+            },
+            "options": [
+              {
+                "bg": "Лисица",
+                "en": "Fox",
+                "img": "animals/fox.webp"
+              },
+              {
+                "bg": "Мечка",
+                "en": "Bear",
+                "img": "animals/bear.webp"
+              },
+              {
+                "bg": "Заек",
+                "en": "Hare",
+                "img": "animals/hare.webp"
+              }
+            ],
+            "answer": 1,
+            "hint": {
+              "bg": "Тя е голяма и кафява.",
+              "en": "It is big and brown."
+            }
+          },
+          {
+            "q": {
+              "bg": "Къде е таралежът?",
+              "en": "Where is the hedgehog?"
+            },
+            "options": [
+              {
+                "bg": "Таралеж",
+                "en": "Hedgehog",
+                "img": "animals/hedgehog.webp"
+              },
+              {
+                "bg": "Катерица",
+                "en": "Squirrel",
+                "img": "animals/squirrel.webp"
+              },
+              {
+                "bg": "Вълк",
+                "en": "Wolf",
+                "img": "animals/wolf.webp"
+              }
+            ],
+            "answer": 0,
+            "hint": {
+              "bg": "Той има бодли.",
+              "en": "It has spines."
+            }
+          },
+          {
+            "q": {
+              "bg": "Къде е катерицата?",
+              "en": "Where is the squirrel?"
+            },
+            "options": [
+              {
+                "bg": "Язовец",
+                "en": "Badger",
+                "img": "animals/badger.webp"
+              },
+              {
+                "bg": "Елен",
+                "en": "Red deer",
+                "img": "animals/red-deer.webp"
+              },
+              {
+                "bg": "Катерица",
+                "en": "Squirrel",
+                "img": "animals/squirrel.webp"
+              }
+            ],
+            "answer": 2,
+            "hint": {
+              "bg": "Тя има пухкава опашка.",
+              "en": "It has a fluffy tail."
+            }
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "В българските гори живеят много диви животни. Да ги потърсим – тихо!",
+          "en": "Many wild animals live in Bulgaria's forests. Let's look for them – quietly!"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Кафявата мечка е най-едрият хищник у нас. През зимата спи в бърлога.",
+          "en": "The brown bear is our biggest predator. In winter it sleeps in a den."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Катерицата събира ядки и жълъди за зимата, а таралежът се свива на бодливо кълбо, когато се уплаши.",
+          "en": "The squirrel gathers nuts and acorns for winter, and the hedgehog curls into a spiny ball when it is scared."
+        },
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "Кълвачът чука по дърветата с човката си – така търси храна и си прави хралупа.",
+          "en": "The woodpecker taps on trees with its beak – that is how it looks for food and makes its hollow."
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи животното с това, което прави!",
+          "en": "Match each animal with what it does!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Мечка",
+              "en": "Bear",
+              "img": "animals/bear.webp"
+            },
+            "b": {
+              "bg": "Зимува в бърлога",
+              "en": "Spends winter in a den"
+            }
+          },
+          {
+            "a": {
+              "bg": "Катерица",
+              "en": "Squirrel",
+              "img": "animals/squirrel.webp"
+            },
+            "b": {
+              "bg": "Събира ядки за зимата",
+              "en": "Gathers nuts for winter"
+            }
+          },
+          {
+            "a": {
+              "bg": "Таралеж",
+              "en": "Hedgehog",
+              "img": "animals/hedgehog.webp"
+            },
+            "b": {
+              "bg": "Свива се на бодливо кълбо",
+              "en": "Curls into a spiny ball"
+            }
+          },
+          {
+            "a": {
+              "bg": "Кълвач",
+              "en": "Woodpecker",
+              "img": "animals/woodpecker.webp"
+            },
+            "b": {
+              "bg": "Чука по дърветата",
+              "en": "Taps on trees"
+            }
+          }
+        ],
+        "hint": {
+          "bg": "Спомни си какво разказаха Корен и Рая.",
+          "en": "Remember what Koren and Raya told you."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кое животно има бодли?",
+            "en": "Which animal has spines?"
+          },
+          "options": [
+            {
+              "bg": "Заек",
+              "en": "Hare",
+              "img": "animals/hare.webp"
+            },
+            {
+              "bg": "Таралеж",
+              "en": "Hedgehog",
+              "img": "animals/hedgehog.webp"
+            },
+            {
+              "bg": "Лисица",
+              "en": "Fox",
+              "img": "animals/fox.webp"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "bg": "То се свива на кълбо.",
+            "en": "It curls into a ball."
+          }
+        },
+        {
+          "q": {
+            "bg": "Кое животно има рога?",
+            "en": "Which animal has antlers?"
+          },
+          "options": [
+            {
+              "bg": "Вълк",
+              "en": "Wolf",
+              "img": "animals/wolf.webp"
+            },
+            {
+              "bg": "Язовец",
+              "en": "Badger",
+              "img": "animals/badger.webp"
+            },
+            {
+              "bg": "Елен",
+              "en": "Red deer",
+              "img": "animals/red-deer.webp"
+            }
+          ],
+          "answer": 2,
+          "hint": {
+            "bg": "Рогата му приличат на клони.",
+            "en": "Its antlers look like branches."
+          }
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Горите на България са дом на едри бозайници, които в много европейски страни вече са рядкост.",
+          "en": "Bulgaria's forests are home to large mammals that have become rare in many European countries."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Кафявата мечка е най-едрият хищник у нас. Среща се главно в Рила, Пирин, Родопите и Стара планина.",
+          "en": "The brown bear is our largest predator. It lives mainly in Rila, Pirin, the Rhodopes and the Balkan Mountains."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Вълците живеят и ловуват на глутници. Рисът – най-едрата дива котка в Европа – е много рядък и е защитен от закона.",
+          "en": "Wolves live and hunt in packs. The lynx – Europe's largest wild cat – is very rare and protected by law."
+        },
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "Бухалът е най-едрата сова в Европа. Ловува нощем и лети почти безшумно.",
+          "en": "The eagle owl is the largest owl in Europe. It hunts at night and flies almost silently."
+        }
+      ],
+      "game": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди животните от най-едрото към най-дребното.",
+          "en": "Order the animals from the largest to the smallest."
+        },
+        "items": [
+          {
+            "bg": "Мечка",
+            "en": "Bear",
+            "img": "animals/bear.webp"
+          },
+          {
+            "bg": "Вълк",
+            "en": "Wolf",
+            "img": "animals/wolf.webp"
+          },
+          {
+            "bg": "Лисица",
+            "en": "Fox",
+            "img": "animals/fox.webp"
+          },
+          {
+            "bg": "Таралеж",
+            "en": "Hedgehog",
+            "img": "animals/hedgehog.webp"
+          }
+        ],
+        "hint": {
+          "bg": "Мечката е най-едра, а таралежът – най-дребен.",
+          "en": "The bear is the largest and the hedgehog the smallest."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кой е най-едрият хищник в България?",
+            "en": "Which is the largest predator in Bulgaria?"
+          },
+          "options": [
+            {
+              "bg": "Вълк",
+              "en": "Wolf",
+              "img": "animals/wolf.webp"
+            },
+            {
+              "bg": "Кафява мечка",
+              "en": "Brown bear",
+              "img": "animals/bear.webp"
+            },
+            {
+              "bg": "Рис",
+              "en": "Lynx",
+              "img": "animals/lynx.webp"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "bg": "Зимува в бърлога.",
+            "en": "It spends the winter in a den."
+          }
+        },
+        {
+          "q": {
+            "bg": "Кое животно ловува на глутници?",
+            "en": "Which animal hunts in packs?"
+          },
+          "options": [
+            {
+              "bg": "Вълк",
+              "en": "Wolf",
+              "img": "animals/wolf.webp"
+            },
+            {
+              "bg": "Язовец",
+              "en": "Badger",
+              "img": "animals/badger.webp"
+            },
+            {
+              "bg": "Таралеж",
+              "en": "Hedgehog",
+              "img": "animals/hedgehog.webp"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "bg": "Прилича на голямо куче.",
+            "en": "It looks like a big dog."
+          }
+        },
+        {
+          "q": {
+            "bg": "Кое от тези животни е активно нощем?",
+            "en": "Which of these animals is active at night?"
+          },
+          "options": [
+            {
+              "bg": "Катерица",
+              "en": "Squirrel",
+              "img": "animals/squirrel.webp"
+            },
+            {
+              "bg": "Кълвач",
+              "en": "Woodpecker",
+              "img": "animals/woodpecker.webp"
+            },
+            {
+              "bg": "Бухал",
+              "en": "Eagle owl",
+              "img": "animals/owl.webp"
+            }
+          ],
+          "answer": 2,
+          "hint": {
+            "bg": "Има големи оранжеви очи.",
+            "en": "It has big orange eyes."
+          }
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Червена книга на Република България. Том 2 – Животни. София: БАН и МОСВ, 2015.",
+    "[учебник/помагало – издателство и страница: попълва учителят]"
+  ],
+  "review": null,
+  "draft": true
+}

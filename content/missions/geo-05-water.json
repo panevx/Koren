@@ -1,0 +1,407 @@
+{
+  "id": "geo-05-water",
+  "subject": "geography",
+  "free": true,
+  "order": 14,
+  "place": "srebarna",
+  "badge": {
+    "id": "water",
+    "icon": "animals/stork.webp"
+  },
+  "title": {
+    "bg": "Край водата и в небето",
+    "en": "By the water and in the sky"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Да идем край водата!",
+          "en": "Let's go to the water!"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Там има птици и жаби.",
+          "en": "There are birds and frogs there."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Намери ги!",
+          "en": "Find them!"
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Къде е щъркелът?",
+              "en": "Where is the stork?"
+            },
+            "options": [
+              {
+                "bg": "Жаба",
+                "en": "Frog",
+                "img": "animals/frog.webp"
+              },
+              {
+                "bg": "Щъркел",
+                "en": "Stork",
+                "img": "animals/stork.webp"
+              },
+              {
+                "bg": "Костенурка",
+                "en": "Tortoise",
+                "img": "animals/tortoise.webp"
+              }
+            ],
+            "answer": 1,
+            "hint": {
+              "bg": "Той има дълги червени крака.",
+              "en": "It has long red legs."
+            }
+          },
+          {
+            "q": {
+              "bg": "Къде е жабата?",
+              "en": "Where is the frog?"
+            },
+            "options": [
+              {
+                "bg": "Жаба",
+                "en": "Frog",
+                "img": "animals/frog.webp"
+              },
+              {
+                "bg": "Лястовица",
+                "en": "Swallow",
+                "img": "animals/swallow.webp"
+              },
+              {
+                "bg": "Делфин",
+                "en": "Dolphin",
+                "img": "animals/dolphin.webp"
+              }
+            ],
+            "answer": 0,
+            "hint": {
+              "bg": "Тя е зелена и скача.",
+              "en": "It is green and it jumps."
+            }
+          },
+          {
+            "q": {
+              "bg": "Къде е делфинът?",
+              "en": "Where is the dolphin?"
+            },
+            "options": [
+              {
+                "bg": "Пеликан",
+                "en": "Pelican",
+                "img": "animals/pelican.webp"
+              },
+              {
+                "bg": "Видра",
+                "en": "Otter",
+                "img": "animals/otter.webp"
+              },
+              {
+                "bg": "Делфин",
+                "en": "Dolphin",
+                "img": "animals/dolphin.webp"
+              }
+            ],
+            "answer": 2,
+            "hint": {
+              "bg": "Той живее в морето.",
+              "en": "It lives in the sea."
+            }
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Край реките, езерата и морето на България живеят много птици и животни.",
+          "en": "Many birds and animals live by Bulgaria's rivers, lakes and sea."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Белият щъркел зимува в Африка и се връща при нас напролет. Затова го чакаме с мартеница!",
+          "en": "The white stork spends the winter in Africa and comes back to us in spring. That is why we wait for it with a martenitsa!"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Лястовицата лепи гнездото си от кал под стрехите на къщите.",
+          "en": "The swallow builds its nest from mud under the eaves of houses."
+        },
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "Делфинът живее в Черно море, но не е риба – той е бозайник и диша въздух.",
+          "en": "The dolphin lives in the Black Sea, but it is not a fish – it is a mammal and breathes air."
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи животното с това, което знаеш за него!",
+          "en": "Match each animal with what you know about it!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Щъркел",
+              "en": "Stork",
+              "img": "animals/stork.webp"
+            },
+            "b": {
+              "bg": "Зимува в Африка",
+              "en": "Spends winter in Africa"
+            }
+          },
+          {
+            "a": {
+              "bg": "Лястовица",
+              "en": "Swallow",
+              "img": "animals/swallow.webp"
+            },
+            "b": {
+              "bg": "Прави гнездо от кал",
+              "en": "Builds a nest of mud"
+            }
+          },
+          {
+            "a": {
+              "bg": "Делфин",
+              "en": "Dolphin",
+              "img": "animals/dolphin.webp"
+            },
+            "b": {
+              "bg": "Бозайник, който живее в морето",
+              "en": "A mammal that lives in the sea"
+            }
+          },
+          {
+            "a": {
+              "bg": "Жаба",
+              "en": "Frog",
+              "img": "animals/frog.webp"
+            },
+            "b": {
+              "bg": "Зелена е и скача",
+              "en": "It is green and jumps"
+            }
+          }
+        ],
+        "hint": {
+          "bg": "Спомни си какво разказаха Корен и Рая.",
+          "en": "Remember what Koren and Raya told you."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кое от тези животни живее в морето?",
+            "en": "Which of these animals lives in the sea?"
+          },
+          "options": [
+            {
+              "bg": "Жаба",
+              "en": "Frog",
+              "img": "animals/frog.webp"
+            },
+            {
+              "bg": "Делфин",
+              "en": "Dolphin",
+              "img": "animals/dolphin.webp"
+            },
+            {
+              "bg": "Костенурка",
+              "en": "Tortoise",
+              "img": "animals/tortoise.webp"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "bg": "То скача над вълните.",
+            "en": "It jumps over the waves."
+          }
+        },
+        {
+          "q": {
+            "bg": "Коя птица прави гнездо от кал?",
+            "en": "Which bird builds a nest of mud?"
+          },
+          "options": [
+            {
+              "bg": "Лястовица",
+              "en": "Swallow",
+              "img": "animals/swallow.webp"
+            },
+            {
+              "bg": "Щъркел",
+              "en": "Stork",
+              "img": "animals/stork.webp"
+            },
+            {
+              "bg": "Пеликан",
+              "en": "Pelican",
+              "img": "animals/pelican.webp"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "bg": "Опашката ѝ е раздвоена.",
+            "en": "Its tail is forked."
+          }
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Край Дунав, близо до Силистра, е езерото Сребърна – биосферен резерват и обект на световното наследство на ЮНЕСКО от 1983 г.",
+          "en": "By the Danube, near Silistra, lies Lake Srebarna – a biosphere reserve and a UNESCO World Heritage site since 1983."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Там гнезди къдроглавият пеликан – една от най-едрите летящи птици в света.",
+          "en": "The Dalmatian pelican nests there – one of the largest flying birds in the world."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "По Черноморието минава Via Pontica – един от най-големите прелетни пътища на птиците в Европа. Всяка есен оттук прелитат стотици хиляди птици.",
+          "en": "Via Pontica runs along the Black Sea coast – one of the biggest bird migration routes in Europe. Every autumn hundreds of thousands of birds fly along it."
+        },
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "Видрата и сухоземните костенурки са защитени видове – не бива да ги безпокоим или да ги взимаме от природата.",
+          "en": "The otter and the tortoises are protected species – we must not disturb them or take them from the wild."
+        }
+      ],
+      "game": {
+        "type": "map",
+        "target": "srebarna",
+        "choices": [
+          "srebarna",
+          "varna",
+          "burgas",
+          "rila-monastery",
+          "belogradchik",
+          "sofia"
+        ],
+        "prompt": {
+          "bg": "Намери резервата Сребърна на картата.",
+          "en": "Find the Srebarna reserve on the map."
+        },
+        "hint": {
+          "bg": "Търси на североизток, на самия Дунав.",
+          "en": "Look in the north-east, right on the Danube."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "От коя година Сребърна е обект на ЮНЕСКО?",
+            "en": "Since which year has Srebarna been a UNESCO site?"
+          },
+          "options": [
+            {
+              "bg": "1983",
+              "en": "1983"
+            },
+            {
+              "bg": "2007",
+              "en": "2007"
+            },
+            {
+              "bg": "1878",
+              "en": "1878"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "bg": "Същата година като Рилския манастир.",
+            "en": "The same year as the Rila Monastery."
+          }
+        },
+        {
+          "q": {
+            "bg": "Как се нарича прелетният път на птиците по Черноморието?",
+            "en": "What is the bird migration route along the Black Sea coast called?"
+          },
+          "options": [
+            {
+              "bg": "Via Pontica",
+              "en": "Via Pontica"
+            },
+            {
+              "bg": "Via Diagonalis",
+              "en": "Via Diagonalis"
+            },
+            {
+              "bg": "Via Egnatia",
+              "en": "Via Egnatia"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "bg": "Понт е древното име на Черно море.",
+            "en": "Pontus is the ancient name of the Black Sea."
+          }
+        },
+        {
+          "q": {
+            "bg": "Коя птица гнезди в Сребърна?",
+            "en": "Which bird nests at Srebarna?"
+          },
+          "options": [
+            {
+              "bg": "Къдроглав пеликан",
+              "en": "Dalmatian pelican",
+              "img": "animals/pelican.webp"
+            },
+            {
+              "bg": "Бухал",
+              "en": "Eagle owl",
+              "img": "animals/owl.webp"
+            },
+            {
+              "bg": "Кълвач",
+              "en": "Woodpecker",
+              "img": "animals/woodpecker.webp"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "bg": "Има голям клюн с торбичка.",
+            "en": "It has a big bill with a pouch."
+          }
+        }
+      ]
+    }
+  },
+  "sources": [
+    "UNESCO World Heritage List: Srebarna Nature Reserve (inscribed 1983), whc.unesco.org",
+    "Червена книга на Република България. Том 2 – Животни. София: БАН и МОСВ, 2015.",
+    "[учебник/помагало – издателство и страница: попълва учителят]"
+  ],
+  "review": null,
+  "draft": true
+}

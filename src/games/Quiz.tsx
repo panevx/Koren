@@ -91,7 +91,8 @@ function QuizQuestion({
               disabled={isWrong || (solved && !isRight)}
               aria-pressed={isRight || isWrong}
               className={`tap press rounded-level flex h-full w-full items-center gap-3 px-4 py-3 text-left text-lg leading-snug font-extrabold ${
-                withImages ? 'flex-col justify-center text-center' : ''
+                // Picture cards are narrow: the label shrinks with the card (cqw), so one long word never breaks.
+                withImages ? 'flex-col justify-center text-center [container-type:inline-size]' : ''
               } ${
                 isRight
                   ? 'bg-green-soft text-green-dark shadow-soft ring-[3px] ring-green'
@@ -105,7 +106,7 @@ function QuizQuestion({
               ) : (
                 <span className={`size-3.5 shrink-0 rounded-full ${isWrong || (solved && !isRight) ? 'bg-muted/40' : DOTS[i % DOTS.length]}`} aria-hidden="true" />
               )}
-              <span className="min-w-0 flex-1">{l(option)}</span>
+              <span className={`min-w-0 flex-1 ${withImages ? 'text-[length:clamp(0.6rem,12cqw,1.125rem)]' : ''}`}>{l(option)}</span>
               {isRight && (
                 <m.span initial={{ scale: 0 }} animate={{ scale: 1 }} transition={bouncy} className="grid size-8 shrink-0 place-items-center rounded-full bg-green text-white">
                   <Icon name="check" width="1.1em" height="1.1em" />

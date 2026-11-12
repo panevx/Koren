@@ -6,7 +6,7 @@
   "place": "koprivshtitsa",
   "badge": {
     "id": "koprivshtitsa",
-    "icon": "tiles/missions.webp"
+    "icon": "badges/koprivshtitsa.webp"
   },
   "title": {
     "bg": "Копривщица и народната носия",

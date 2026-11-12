@@ -57,7 +57,7 @@ export function Match({ game, onDone }: { game: MatchGame; onDone: () => void })
         onClick={() => tap(side, pair)}
         aria-pressed={active || done}
         disabled={done}
-        className={`tap press rounded-level relative flex w-full flex-col items-center justify-center gap-1 px-2 py-2.5 text-center text-base leading-tight font-extrabold ${
+        className={`tap press rounded-level relative flex w-full flex-col items-center justify-center gap-1 px-2 py-2.5 text-center leading-tight font-extrabold [container-type:inline-size] ${
           done
             ? 'bg-green-soft text-green-dark'
             : active
@@ -65,8 +65,15 @@ export function Match({ game, onDone }: { game: MatchGame; onDone: () => void })
               : 'bg-white shadow-soft'
         }`}
       >
-        {option.img && <img src={img(option.img)} alt="" className="size-16 rounded-full object-cover" />}
-        <span>{l(option)}</span>
+        {option.img && (
+          <img
+            src={img(option.img)}
+            alt=""
+            className={option.img.startsWith('heroes/') ? 'size-16 rounded-full object-cover' : 'pop-3d size-16 object-contain'}
+          />
+        )}
+        {/* The label shrinks with the card (cqw), so one long word never breaks. */}
+        <span className="text-[length:clamp(0.6rem,12cqw,1rem)]">{l(option)}</span>
         {done && (
           <m.span
             initial={{ scale: 0 }}

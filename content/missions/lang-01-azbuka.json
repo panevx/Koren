@@ -6,7 +6,7 @@
   "place": "veliki-preslav",
   "badge": {
     "id": "azbuka",
-    "icon": "tiles/language.webp"
+    "icon": "badges/azbuka.webp"
   },
   "title": {
     "bg": "Азбуката на Кирил и Методий",

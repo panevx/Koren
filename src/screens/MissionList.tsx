@@ -1,5 +1,5 @@
 import { Link, useParams } from 'react-router'
-import { img } from '../components/Brand'
+import { BadgeArt } from '../components/BadgeArt'
 import { Icon } from '../components/Icon'
 import { Screen, TopBar } from '../components/ui'
 import { missionsBySubject } from '../content/missions'
@@ -62,16 +62,12 @@ export function MissionList({ topic }: { topic?: boolean }) {
         </div>
 
         <m.ul variants={stagger} initial="hidden" animate="show" className="flex flex-col gap-3">
-          {missions.map((mission) => {
+          {missions.map((mission, i) => {
             const isDone = Boolean(done[mission.id])
             return (
               <m.li key={mission.id} variants={rise}>
                 <Link to={`/mission/${mission.id}`} className="press rounded-level flex items-center gap-3 bg-white p-2.5 shadow-soft">
-                  <span
-                    className={`grid size-[min(4.25rem,17vw)] shrink-0 place-items-center rounded-full ${isDone ? 'bg-gold' : SUBJECT_TINT[mission.subject]}`}
-                  >
-                    <img src={img(mission.badge.icon)} alt="" className="pop-3d size-[72%] object-contain" />
-                  </span>
+                  <BadgeArt icon={mission.badge.icon} lazy={i >= 6} className="size-[min(4.5rem,18vw)]" />
                   <span className="flex min-w-0 flex-1 flex-col items-start gap-1">
                     <span className="flex flex-wrap items-center gap-1.5">
                       <span className={`rounded-full px-2.5 py-0.5 text-xs font-black tracking-wide text-ink uppercase ${SUBJECT_TINT[mission.subject]}`}>

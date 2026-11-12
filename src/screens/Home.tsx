@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 import { Link } from 'react-router'
-import { HeroFigure, Logo, Scenery, img } from '../components/Brand'
+import { BadgeArt } from '../components/BadgeArt'
+import { HeroFigure, Logo, Scenery } from '../components/Brand'
 import { Icon } from '../components/Icon'
 import { ProfileAvatar, useProfileName } from '../components/ProfileAvatar'
 import { SectionIcon } from '../components/SectionIcon'
@@ -188,9 +189,7 @@ export function Home() {
               to={next ? `/mission/${next.id}` : '/collection'}
               className="tap press flex items-center gap-3 rounded-full bg-white p-1.5 shadow-float"
             >
-              <span className="grid size-[min(3rem,12vw)] shrink-0 place-items-center rounded-full bg-gold-soft">
-                <img src={img(next ? next.badge.icon : 'tiles/collection.webp')} alt="" className="size-[75%] object-contain" />
-              </span>
+              <BadgeArt icon={next ? next.badge.icon : 'tiles/collection.webp'} className="size-[min(3.25rem,13vw)]" />
               <span className="min-w-0 flex-1">
                 <span className="block text-xs font-black tracking-wide text-coral-dark uppercase">
                   {next ? t('home.next') : t('home.allDone.caption')}

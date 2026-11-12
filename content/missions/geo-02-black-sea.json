@@ -6,7 +6,7 @@
   "place": "varna",
   "badge": {
     "id": "black-sea",
-    "icon": "levels/young.webp"
+    "icon": "badges/black-sea.webp"
   },
   "title": {
     "bg": "Черно море",
