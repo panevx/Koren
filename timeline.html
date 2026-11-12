@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="bg">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#138B50" />
+    <meta name="description" content="KOREN — Далеч от България. Близо до корените си." />
+    <link rel="icon" type="image/svg+xml" href="/Koren/favicon.svg" />
+    <link rel="apple-touch-icon" href="/Koren/img/icons/apple-touch-icon.png" />
+    <title>KOREN</title>
+    <script>
+      // Starts downloading Koren and Raya (the biggest pictures of the start screen and of the hub)
+      // right away, before the app code arrives. home.html already carries these links from the build.
+      ;(function () {
+        try {
+          if (document.querySelector('link[rel="preload"][as="image"]')) return
+          var base = document.querySelector('link[rel="icon"]').href.replace(/favicon\.svg$/, '')
+          var root = new URL(base).pathname.replace(/\/$/, '').toLowerCase()
+          var path = location.pathname.replace(/\/$/, '').toLowerCase()
+          if (path !== root && path !== root + '/home') return
+          ;['raya', 'koren'].forEach(function (hero) {
+            var link = document.createElement('link')
+            link.rel = 'preload'
+            link.as = 'image'
+            link.href = base + 'img/heroes/' + hero + '-wave.webp'
+            link.setAttribute('fetchpriority', 'high')
+            document.head.appendChild(link)
+          })
+        } catch (e) {}
+      })()
+    </script>
+    <style>
+      /* Splash shown before React mounts. The app replaces #root's content. */
+      body { margin: 0; background: #f8f5ed; }
+      .boot { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
+        gap: 12px; padding: 24px; box-sizing: border-box; text-align: center; color: #1c2b23;
+        font: 600 16px/1.4 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
+      .boot b { font-size: 40px; font-weight: 900; color: #0c6b3c; letter-spacing: -1px; }
+      .boot-error { display: none; max-width: 340px; background: #fff; border: 2px solid #ff655c;
+        border-radius: 28px; padding: 14px 16px; }
+      .boot.failed .boot-loading { display: none; }
+      .boot.failed .boot-error { display: block; }
+    </style>
+    <script type="module" crossorigin src="/Koren/assets/index-DnnvwI5c.js"></script>
+    <link rel="stylesheet" crossorigin href="/Koren/assets/index-hSJD9T4s.css">
+  <link rel="manifest" href="/Koren/manifest.webmanifest"></head>
+  <body>
+    <!--
+      Static text here is the one allowed exception to the i18n rule:
+      it must work before (or without) JavaScript, so it is bilingual.
+    -->
+    <div id="root">
+      <div class="boot" id="boot">
+        <b>KOREN</b>
+        <span class="boot-loading">Зареждане… · Loading…</span>
+        <div class="boot-error" role="alert">
+          <p>Приложението не успя да се зареди. Опитай да презаредиш страницата.</p>
+          <p>The app could not load. Please reload the page.</p>
+          <p style="font-size:13px;color:#55635b">
+            GitHub Pages: Settings → Pages → Deploy from a branch → <code>gh-pages</code> / root
+          </p>
+        </div>
+      </div>
+    </div>
+    <script>
+      // If the app has not started within 8 s (script missing, old browser, wrong Pages branch),
+      // show a readable message instead of a blank or endless loading screen.
+      setTimeout(function () {
+        if (!window.__korenStarted) {
+          var el = document.getElementById('boot')
+          if (el) el.className += ' failed'
+        }
+      }, 8000)
+    </script>
+  </body>
+</html>
