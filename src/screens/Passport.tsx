@@ -44,7 +44,7 @@ export function Passport() {
           {/* The passport cover */}
           <section className="bg-stage-night relative overflow-hidden rounded-[var(--radius-stage)] p-5 text-white shadow-stage">
             <span className="absolute -top-16 -right-12 size-48 rounded-full bg-white/10" aria-hidden="true" />
-            <img src={img('ornaments/right.png')} alt="" className="kid-deco absolute right-4 bottom-4 size-10 opacity-40" />
+            <img src={img("ornaments/right.png")} alt="" className="kid-deco absolute top-4 right-4 size-9 opacity-40" />
             <div className="relative flex items-center gap-3">
               <span className="grid size-[min(4.5rem,18vw)] shrink-0 place-items-center rounded-full bg-gold shadow-[inset_0_3px_0_rgb(255_255_255/0.5),0_5px_0_var(--color-gold-deep)]">
                 <ProfileAvatar avatar={profile.avatar} className="size-[82%] shadow-none" />

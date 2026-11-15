@@ -41,7 +41,7 @@ export function MissionNode({
   const t = useT()
   const l = useLocalized()
   const art = stopArt(mission, status !== 'locked')
-  const label = `${l(mission.title)} – ${status === 'done' ? t('missions.done') : status === 'locked' ? t('path.locked') : t('path.play')}`
+  const label = `${l(mission.title)} – ${status === 'done' ? t('missions.done') : status === 'locked' ? t('path.locked') : t('path.play')}${isNext ? ` – ${t('path.here')}` : ''}`
   return (
     <li id={`stop-${mission.id}`} className="relative h-[var(--path-row)]">
       <div className="absolute top-1/2 flex w-[min(9.5rem,40vw)] -translate-x-1/2 -translate-y-1/2 flex-col items-center" style={{ left: `${x}%` }}>
@@ -67,6 +67,14 @@ export function MissionNode({
               animate={{ scale: 1.3, rotate: 60, opacity: [0, 0.9, 0] }}
               transition={{ duration: 1.1, delay: 0.3 }}
               className="pointer-events-none absolute inset-0 size-full"
+            />
+          )}
+          {isNext && (
+            <img
+              src={img(ART.balloon)}
+              alt=""
+              aria-hidden="true"
+              className={`anim-float pointer-events-none absolute -top-[42%] -right-[22%] size-[55%]`}
             />
           )}
           {isNext && <span className="anim-glow pointer-events-none absolute inset-[-16%] rounded-full bg-coral/25" aria-hidden="true" />}
@@ -103,14 +111,6 @@ export function MissionNode({
           {l(mission.title)}
         </span>
       </div>
-      {isNext && (
-        <img
-          src={img(ART.balloon)}
-          alt={t('path.here')}
-          className="anim-float pointer-events-none absolute top-[4%] size-[min(4.5rem,19vw)]"
-          style={{ left: `${x < 50 ? x + 22 : x - 38}%` }}
-        />
-      )}
     </li>
   )
 }

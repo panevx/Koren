@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react'
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { Icon } from '../components/Icon'
 import { useT } from '../i18n/useT'
 import { BULGARIA_D, DANUBE_D, MAP_H, MAP_W, NEIGHBOURS_D } from './geo'
@@ -44,6 +44,30 @@ export function BulgariaMap({ markers, onSelect, highlight, label }: Props) {
   const [view, setView] = useState<View>({ s: 1, tx: 0, ty: 0 })
   const viewRef = useRef(view)
   viewRef.current = view
+
+  // ── declutter: markers that would cover each other move apart (with a line to the true spot) ──
+  const [frameW, setFrameW] = useState(0)
+  const [sizes, setSizes] = useState<Record<string, number>>({})
+  useLayoutEffect(() => {
+    const el = box.current
+    if (!el) return
+    const measure = () => {
+      setFrameW(el.getBoundingClientRect().width)
+      const next: Record<string, number> = {}
+      markerRefs.current.forEach((m, id) => (next[id] = m.offsetWidth))
+      setSizes((old) => (Object.keys(next).length === Object.keys(old).length && Object.entries(next).every(([k, v]) => old[k] === v) ? old : next))
+    }
+    measure()
+    if (typeof ResizeObserver === 'undefined') return
+    const ro = new ResizeObserver(measure)
+    ro.observe(el)
+    return () => ro.disconnect()
+  }, [markers])
+  const shrink = markerShrink(frameW)
+  const placed = useMemo(
+    () => declutter(markers, Object.fromEntries(Object.entries(sizes).map(([k, v]) => [k, v * shrink])), frameW > 0 ? (frameW * view.s) / MAP_W : 0),
+    [markers, sizes, frameW, view.s, shrink],
+  )
 
   const size = () => {
     const r = box.current?.getBoundingClientRect()
@@ -181,6 +205,17 @@ export function BulgariaMap({ markers, onSelect, highlight, label }: Props) {
             <path d={NEIGHBOURS_D} fill="#F4EEE0" stroke="#DDD3BE" strokeWidth={1.5} vectorEffect="non-scaling-stroke" />
             <path d={BULGARIA_D} fill="#8ED4A6" stroke="#0C6B3C" strokeWidth={3} strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
             <path d={DANUBE_D} fill="none" stroke="#3D9FD1" strokeWidth={4} strokeLinecap="round" vectorEffect="non-scaling-stroke" />
+            {/* where a marker had to move aside: a thin line and a dot at the real place */}
+            {markers.map((m) => {
+              const q = placed[m.id]
+              if (!q || Math.hypot(q.x - m.x, q.y - m.y) < 2) return null
+              return (
+                <g key={`leader-${m.id}`}>
+                  <line x1={m.x} y1={m.y} x2={q.x} y2={q.y} stroke="#0C6B3C" strokeWidth={2} strokeOpacity={0.7} vectorEffect="non-scaling-stroke" />
+                  <circle cx={m.x} cy={m.y} r={5 / view.s} fill="#0C6B3C" stroke="#fff" strokeWidth={1.5} vectorEffect="non-scaling-stroke" />
+                </g>
+              )
+            })}
             {highlight && (
               <circle
                 cx={highlight.x}
@@ -210,7 +245,7 @@ export function BulgariaMap({ markers, onSelect, highlight, label }: Props) {
                 if (e.detail === 0) onSelect(m.id)
               }}
               className={`absolute grid -translate-x-1/2 -translate-y-1/2 place-items-center ${m.className ?? ''}`}
-              style={{ left: pct(m.x, MAP_W), top: pct(m.y, MAP_H), scale: `${1 / view.s}` }}
+              style={{ left: pct(placed[m.id]?.x ?? m.x, MAP_W), top: pct(placed[m.id]?.y ?? m.y, MAP_H), scale: `${shrink / view.s}` }}
             >
               {m.content}
             </button>
@@ -256,4 +291,66 @@ function midpoint(pts: { x: number; y: number }[]) {
 }
 function distance(a: { x: number; y: number }, b: { x: number; y: number }) {
   return Math.hypot(a.x - b.x, a.y - b.y)
+}
+
+/** On a narrow map the landmarks are drawn a little smaller (down to 62 %), so they have room. Taps still reach them (HIT_RADIUS). */
+export function markerShrink(frameW: number) {
+  return frameW > 0 ? Math.min(1, Math.max(0.62, frameW / 460)) : 1
+}
+
+/**
+ * Moves markers apart so none covers another on screen. Works in screen pixels (markers keep their size
+ * at every zoom): `ppu` = screen px per map unit. Pairs closer than their radii + a gap are pushed apart
+ * a little at a time, with a soft pull back to the true spot, so a marker moves only as far as needed.
+ * Returns positions in map units. Without a measured frame (tests, first paint) nothing moves.
+ */
+export function declutter(markers: readonly { id: string; x: number; y: number }[], sizes: Record<string, number>, ppu: number) {
+  const out: Record<string, { x: number; y: number }> = {}
+  for (const m of markers) out[m.id] = { x: m.x, y: m.y }
+  if (!ppu) return out
+  const pts = markers.map((m) => ({ id: m.id, ox: m.x * ppu, oy: m.y * ppu, x: m.x * ppu, y: m.y * ppu, r: (sizes[m.id] ?? 0) / 2 }))
+  const GAP = 3
+  const W = MAP_W * ppu, H = MAP_H * ppu
+  const inside = (p: (typeof pts)[number]) => {
+    p.x = Math.min(W - p.r, Math.max(p.r, p.x))
+    p.y = Math.min(H - p.r, Math.max(p.r, p.y))
+  }
+  // 80 rounds of "push apart + pull home", then up to 400 of pushing only, so the end result never overlaps.
+  for (let it = 0; it < 480; it++) {
+    let moved = false
+    for (let i = 0; i < pts.length; i++)
+      for (let j = i + 1; j < pts.length; j++) {
+        const a = pts[i]!, b = pts[j]!
+        if (!a.r || !b.r) continue
+        let dx = b.x - a.x, dy = b.y - a.y
+        let d = Math.hypot(dx, dy)
+        const need = a.r + b.r + GAP
+        if (d >= need) continue
+        if (d < 0.01) {
+          // same spot: separate along a fixed direction (deterministic)
+          dx = 1
+          dy = 0.35
+          d = Math.hypot(dx, dy)
+        }
+        const push = (need - d) / 2 + 0.01
+        a.x -= (dx / d) * push
+        a.y -= (dy / d) * push
+        b.x += (dx / d) * push
+        b.y += (dy / d) * push
+        moved = true
+      }
+    // the frame edge is a wall: a marker pushed against it makes its neighbour move instead
+    for (const p of pts) inside(p)
+    if (it < 80)
+      for (const p of pts) {
+        p.x += (p.ox - p.x) * 0.04
+        p.y += (p.oy - p.y) * 0.04
+      }
+    else if (!moved) break
+  }
+  for (const p of pts) {
+    inside(p)
+    out[p.id] = { x: p.x / ppu, y: p.y / ppu }
+  }
+  return out
 }
