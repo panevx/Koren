@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { Navigate, useNavigate, useParams } from 'react-router'
+import { Navigate, useLocation, useNavigate, useParams } from 'react-router'
 import { BadgeArt } from '../components/BadgeArt'
 import { Avatar, img } from '../components/Brand'
 import { Icon } from '../components/Icon'
-import { Button, Screen } from '../components/ui'
+import { Button, Screen, useTitle } from '../components/ui'
 import { missionById, pickLevel } from '../content/missions'
 import type { Mission as MissionData, StoryLine } from '../content/schema'
 import { useLocalized } from '../content/useLocalized'
@@ -36,9 +36,28 @@ function MissionRun({ mission, childLevel }: { mission: MissionData; childLevel:
     () => ['story', 'game', ...(content.check.length ? (['check'] as const) : []), 'badge'],
     [content],
   )
-  const [phase, setPhase] = useState<Phase>('story')
-  const next = () => setPhase(phases[phases.indexOf(phase) + 1] ?? 'badge')
-  const exit = () => navigate('/missions')
+  useTitle(l(mission.title))
+  // Each phase is its own history entry: the phone's "back" gesture goes one step back
+  // (game → story) instead of throwing the child out of the mission.
+  const location = useLocation()
+  const saved = (location.state as { phase?: Phase } | null)?.phase
+  const phase: Phase = saved && phases.includes(saved) ? saved : 'story'
+  const next = () => {
+    const to = phases[phases.indexOf(phase) + 1] ?? 'badge'
+    // The badge replaces the last step, so "back" from the badge cannot replay the quiz and count it twice.
+    navigate(location.pathname, { state: { phase: to }, replace: to === 'badge' })
+  }
+  // Leaving in the middle of a game asks once more ("tap again to leave") — no lost progress by accident.
+  const [confirming, setConfirming] = useState(false)
+  useEffect(() => {
+    if (!confirming) return
+    const timer = setTimeout(() => setConfirming(false), 4000)
+    return () => clearTimeout(timer)
+  }, [confirming])
+  const exit = () => {
+    if (phase === 'story' || phase === 'badge' || confirming) navigate('/missions')
+    else setConfirming(true)
+  }
 
   return (
     // Wide landscape screen: a wider column, so the story can sit beside the hero.
@@ -50,7 +69,7 @@ function MissionRun({ mission, childLevel }: { mission: MissionData; childLevel:
           className="tap press flex shrink-0 items-center gap-1 rounded-full bg-white pr-4 pl-3 font-extrabold text-ink shadow-soft"
         >
           <Icon name="close" />
-          {t('mission.exit')}
+          {confirming ? t('mission.exitConfirm') : t('mission.exit')}
         </button>
         <div className="min-w-0 flex-1">
           <p className="truncate text-sm font-black text-green-dark">{l(mission.title)}</p>

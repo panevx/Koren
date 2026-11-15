@@ -117,6 +117,8 @@ body,
 
 body {
   margin: 0;
+  /* Quick double taps (children tap fast) must not zoom the page on iPhone. Pinch-zoom still works. */
+  touch-action: manipulation;
   /* Long Bulgarian words ("славянобългарска") wrap instead of stretching a card past the screen.
      "anywhere" also lets flex/grid items shrink below their longest word. */
   overflow-wrap: anywhere;

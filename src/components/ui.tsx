@@ -1,4 +1,4 @@
-import type { ButtonHTMLAttributes, ReactNode } from 'react'
+import { useEffect, type ButtonHTMLAttributes, type ReactNode } from 'react'
 import { useNavigate } from 'react-router'
 import { useT } from '../i18n/useT'
 import { m, pageEnter } from '../motion'
@@ -53,6 +53,13 @@ export function Card({ children, className = '', as: Tag = 'div' }: { children: 
 /** Round white button with an icon (back, close, settings). */
 export const roundButton = 'tap press grid shrink-0 place-items-center rounded-full bg-white text-green-dark shadow-soft'
 
+/** Browser tab / screen reader page title: "Screen – KOREN" (just "KOREN" without a screen name). */
+export function useTitle(title?: string) {
+  useEffect(() => {
+    document.title = title ? `${title} – KOREN` : 'KOREN'
+  }, [title])
+}
+
 /** Title bar with a back button, used on every inner screen. */
 export function TopBar({
   title,
@@ -68,6 +75,7 @@ export function TopBar({
 }) {
   const t = useT()
   const navigate = useNavigate()
+  useTitle(title)
   const goBack = () => {
     const idx = (window.history.state as { idx?: number } | null)?.idx ?? 0
     if (idx > 0) navigate(-1)

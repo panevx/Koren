@@ -1,5 +1,5 @@
-import { cleanup, fireEvent, render, screen } from '@testing-library/react'
-import { MemoryRouter } from 'react-router'
+import { act, cleanup, fireEvent, render, screen } from '@testing-library/react'
+import { MemoryRouter, useNavigate } from 'react-router'
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import { AppRoutes } from '../src/App'
 import { missionById } from '../src/content/missions'
@@ -10,10 +10,19 @@ const ID = 'hist-01-asparuh'
 const mission = missionById(ID)!
 const young = mission.levels.young!
 
-function renderAt(path: string) {
+/** The phone's "back" gesture, as the router sees it. */
+let goBack: () => void = () => {}
+function BackGesture() {
+  const navigate = useNavigate()
+  goBack = () => void navigate(-1)
+  return null
+}
+
+function renderAt(path: string, entries: string[] = []) {
   return render(
-    <MemoryRouter initialEntries={[path]}>
+    <MemoryRouter initialEntries={[...entries, path]}>
       <AppRoutes />
+      <BackGesture />
     </MemoryRouter>,
   )
 }
@@ -86,9 +95,27 @@ describe('mission Хан Аспарух (young)', () => {
     expect(await screen.findByRole('button', { name: /Изход/ })).toBeInTheDocument()
     for (let i = 0; i < young.story.length; i++) fireEvent.click(screen.getByRole('button', { name: /Напред/ }))
     expect(screen.getByRole('button', { name: /Изход/ })).toBeInTheDocument()
+    // In the middle of the game, one tap only asks — a second tap leaves.
     fireEvent.click(screen.getByRole('button', { name: /Изход/ }))
+    fireEvent.click(await screen.findByRole('button', { name: /Докосни пак/ }))
     expect(await screen.findByRole('link', { name: /Хан Аспарух/ })).toBeInTheDocument()
     expect(activeProfile(useProfiles.getState()).badges).toEqual([])
+  })
+
+  it('"back" during the game returns to the story, not out of the mission', async () => {
+    renderAt(`/mission/${ID}`, ['/missions'])
+    await screen.findByRole('button', { name: /Изход/ })
+    for (let i = 0; i < young.story.length; i++) fireEvent.click(screen.getByRole('button', { name: /Напред/ }))
+    expect(screen.queryByText(young.story[0]!.bg)).not.toBeInTheDocument()
+    act(() => goBack())
+    expect(await screen.findByText(young.story[0]!.bg)).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: /Изход/ })).toBeInTheDocument()
+  })
+
+  it('the page title names the mission', async () => {
+    renderAt(`/mission/${ID}`)
+    await screen.findByRole('button', { name: /Изход/ })
+    expect(document.title).toBe(`${mission.title.bg} – KOREN`)
   })
 
   it('is played in English when the app is in English', async () => {

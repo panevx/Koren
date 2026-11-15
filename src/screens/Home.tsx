@@ -6,7 +6,8 @@ import { Icon } from '../components/Icon'
 import { ProfileAvatar, useProfileName } from '../components/ProfileAvatar'
 import { SectionIcon } from '../components/SectionIcon'
 import { UpdateBanner } from '../components/UpdateBanner'
-import { Screen, roundButton } from '../components/ui'
+import { Screen, roundButton, useTitle } from '../components/ui'
+import { earnedCount } from '../content/badges'
 import { useLocalized } from '../content/useLocalized'
 import { useMissions } from '../content/useMissions'
 import { useT } from '../i18n/useT'
@@ -50,6 +51,7 @@ export function Home() {
   const level = ageToLevel(profile.age)
   const { label, showDesc } = LAYOUT[level]
   const missions = useMissions()
+  useTitle(t('nav.home'))
   const next = missions?.find((mission) => !profile.done[mission.id])
   const played = missions?.filter((mission) => profile.done[mission.id]).length ?? 0
 
@@ -128,7 +130,7 @@ export function Home() {
           </span>
           <span className="min-w-0 flex-1">
             <span className="block text-[length:min(1.125rem,5vw)] leading-tight font-black">{t(section('collection').label)}</span>
-            {missions && <span className="block text-sm font-bold text-white/85">{t('passport.count', { n: profile.badges.length, total: missions.length })}</span>}
+            {missions && <span className="block text-sm font-bold text-white/85">{t('passport.count', { n: earnedCount(profile.badges, missions), total: missions.length })}</span>}
           </span>
           <Icon name="chevron" className="shrink-0" />
         </Link>

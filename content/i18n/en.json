@@ -61,6 +61,7 @@
   "subject.language": "Language",
   "subject.geography": "Geography",
   "mission.exit": "Exit",
+  "mission.exitConfirm": "Tap again",
   "mission.next": "Next",
   "mission.prev": "Back",
   "mission.phase.story": "Story",

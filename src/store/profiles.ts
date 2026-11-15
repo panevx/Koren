@@ -203,3 +203,11 @@ export function activeProfile(s: Pick<State, 'profiles' | 'activeId'>): Profile 
 export const useActiveProfile = () => useProfiles(activeProfile)
 /** Age of the child who is playing now. */
 export const useAge = () => useProfiles((s) => activeProfile(s).age)
+
+// The app open twice (two tabs, or a tab and the installed app): take the other copy's saves,
+// so neither one overwrites the other's progress with stale data.
+if (typeof window !== 'undefined') {
+  window.addEventListener('storage', (e) => {
+    if (e.key === PROFILES_KEY && e.newValue) void useProfiles.persist.rehydrate()
+  })
+}

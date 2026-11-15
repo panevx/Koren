@@ -61,6 +61,7 @@
   "subject.language": "Език",
   "subject.geography": "География",
   "mission.exit": "Изход",
+  "mission.exitConfirm": "Докосни пак",
   "mission.next": "Напред",
   "mission.prev": "Назад",
   "mission.phase.story": "История",

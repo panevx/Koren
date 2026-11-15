@@ -1,3 +1,4 @@
+import { earnedCount } from '../content/badges'
 import { Link, useNavigate } from 'react-router'
 import { ProfileAvatar, useProfileName } from '../components/ProfileAvatar'
 import { Screen, TopBar } from '../components/ui'
@@ -44,7 +45,7 @@ export function WhoPlays() {
                     </span>
                   )}
                   <span className="text-sm font-semibold text-muted">
-                    {t('age.years', { n: p.age })} · {t('profile.badges', { n: p.badges.length, total: MISSIONS.length })}
+                    {t('age.years', { n: p.age })} · {t('profile.badges', { n: earnedCount(p.badges, MISSIONS), total: MISSIONS.length })}
                   </span>
                 </span>
               </button>

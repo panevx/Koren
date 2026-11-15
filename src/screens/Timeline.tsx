@@ -33,7 +33,8 @@ export function Timeline() {
       <div className="flex flex-col gap-3 px-4 pb-32 side:grid side:grid-cols-2 side:items-start side:gap-x-4 short:pb-8 side:[&>*]:col-start-2">
         {/* Year + title, with earlier / later buttons */}
         <div className="flex items-center gap-3">
-          <button type="button" onClick={() => go(index - 1)} disabled={index === 0} aria-label={t('timeline.prev')} className={`${roundButton} disabled:opacity-40`}>
+          {/* aria-disabled (not disabled): at the first/last year the button keeps keyboard focus instead of dropping it. */}
+          <button type="button" onClick={() => go(index - 1)} aria-disabled={index === 0} aria-label={t('timeline.prev')} className={`${roundButton} aria-disabled:opacity-40`}>
             <Icon name="back" />
           </button>
           <div className="min-w-0 flex-1">
@@ -47,7 +48,7 @@ export function Timeline() {
               {yearLabel}
             </m.p>
           </div>
-          <button type="button" onClick={() => go(index + 1)} disabled={index === last} aria-label={t('timeline.next')} className={`${roundButton} disabled:opacity-40`}>
+          <button type="button" onClick={() => go(index + 1)} aria-disabled={index === last} aria-label={t('timeline.next')} className={`${roundButton} aria-disabled:opacity-40`}>
             <Icon name="chevron" />
           </button>
         </div>

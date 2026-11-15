@@ -5,6 +5,7 @@ import { OfflinePanel } from '../components/OfflinePanel'
 import { Icon, type IconName } from '../components/Icon'
 import { AvatarPicker, ProfileAvatar, useProfileName } from '../components/ProfileAvatar'
 import { Button, Screen, TopBar } from '../components/ui'
+import { earnedCount } from '../content/badges'
 import { MISSIONS } from '../content/missions'
 import { useLocalized } from '../content/useLocalized'
 import { LANGS } from '../i18n'
@@ -220,7 +221,7 @@ function ProfileCard({ profile, index }: { profile: Profile; index: number }) {
           <p className="text-lg font-black">{name(profile, index)}</p>
           <p className="text-sm font-semibold text-muted">
             {t('age.years', { n: profile.age })} · {t(`level.${ageToLevel(profile.age)}.short`)} ·{' '}
-            {t('profile.badges', { n: profile.badges.length, total })}
+            {t('profile.badges', { n: earnedCount(profile.badges, MISSIONS), total })}
           </p>
           {profile.id === activeId && <p className="text-xs font-black text-green-dark uppercase">{t('profile.playing')}</p>}
         </div>

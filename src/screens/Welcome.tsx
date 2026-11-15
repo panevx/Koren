@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router'
 import { Flag, HeroFigure, Logo, Ornamented, Scenery } from '../components/Brand'
 import { Icon } from '../components/Icon'
-import { Button, Screen } from '../components/ui'
+import { Button, Screen, useTitle } from '../components/ui'
 import { LANGS } from '../i18n'
 import { useT } from '../i18n/useT'
 import { bouncy, m } from '../motion'
@@ -12,6 +12,7 @@ export function Welcome() {
   const navigate = useNavigate()
   const lang = useSettings((s) => s.lang)
   const setLang = useSettings((s) => s.setLang)
+  useTitle()
 
   return (
     // Wide landscape screen: the scene on the left, the buttons on the right.

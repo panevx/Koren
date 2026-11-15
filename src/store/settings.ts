@@ -87,3 +87,11 @@ export const useSettings = create<SettingsState>()(
     },
   ),
 )
+
+// The app open twice (two tabs, or a tab and the installed app): take the other copy's saves,
+// so neither one overwrites the other's progress with stale data.
+if (typeof window !== 'undefined') {
+  window.addEventListener('storage', (e) => {
+    if (e.key === STORAGE_KEY && e.newValue) void useSettings.persist.rehydrate()
+  })
+}

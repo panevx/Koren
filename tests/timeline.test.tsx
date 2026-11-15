@@ -131,7 +131,7 @@ describe('timeline screen', () => {
     expect(screen.getByText('681 г.')).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: 'Раждането на България' })).toBeInTheDocument()
     expect(screen.getByText('Столица: Плиска')).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: 'По-рано' })).toBeDisabled()
+    expect(screen.getByRole('button', { name: 'По-рано' })).toHaveAttribute('aria-disabled', 'true')
 
     const slider = screen.getByRole('slider', { name: 'Година' })
     expect(slider).toHaveAttribute('aria-valuetext', '681 г. – Раждането на България')
@@ -146,7 +146,10 @@ describe('timeline screen', () => {
 
     fireEvent.change(slider, { target: { value: String(EPOCHS.length - 1) } })
     expect(screen.getByText('1940 г.')).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: 'По-късно' })).toBeDisabled()
+    expect(screen.getByRole('button', { name: 'По-късно' })).toHaveAttribute('aria-disabled', 'true')
+    // At the last year the button stays focusable (keyboard users are not dropped to the page start) and does nothing.
+    fireEvent.click(screen.getByRole('button', { name: 'По-късно' }))
+    expect(screen.getByRole('button', { name: 'По-късно' })).toHaveAttribute('aria-disabled', 'true')
   })
 
   it('explains the dotted line only where there is one (1878)', async () => {

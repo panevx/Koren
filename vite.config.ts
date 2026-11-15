@@ -83,7 +83,8 @@ export default defineConfig({
         runtimeCaching: [
           {
             urlPattern: ({ url }) => url.pathname.includes('/img/'),
-            handler: 'CacheFirst',
+            // Shown from the cache at once, refreshed in the background when online — a replaced picture with the same name still arrives.
+            handler: 'StaleWhileRevalidate',
             options: { cacheName: 'koren-img', expiration: { maxEntries: 400 } },
           },
         ],
