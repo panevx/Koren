@@ -91,8 +91,9 @@ describe('age levels change the interface', () => {
 describe('hub navigation', () => {
   it('every tile opens a screen with its title and a way home', async () => {
     renderAt('/home')
-    const tiles = within(screen.getAllByRole('list')[0]!).getAllByRole('listitem')
-    expect(tiles).toHaveLength(6)
+    // v0.13: the hub shows four worlds; the path and the passport are in the navigation and the adventure card.
+    const worlds = within(screen.getByRole('region', { name: 'Светове за откриване' })).getAllByRole('listitem')
+    expect(worlds).toHaveLength(4)
     // Every tile now leads somewhere real: no "Coming soon" left on the hub.
     for (const name of [] as string[]) {
       cleanup()
@@ -114,10 +115,10 @@ describe('hub navigation', () => {
       expect(await screen.findByRole('heading', { name })).toBeInTheDocument()
       expect(screen.getAllByRole('link', { name: /Хан Аспарух|Баба Марта|Азбуката/ }).length).toBeGreaterThan(0)
     }
-    // "Missions and games" opens the adventure path: every mission is a stop on it.
+    // The path link under the adventure card opens the adventure path: every mission is a stop on it.
     cleanup()
     renderAt('/home')
-    fireEvent.click(screen.getByRole('link', { name: /Мисии и игри/ }))
+    fireEvent.click(await screen.findByRole('link', { name: /Пътят на приключенията/ }))
     expect(await screen.findByRole('heading', { name: 'Пътят на приключенията' })).toBeInTheDocument()
     expect(screen.getAllByRole('button', { name: /Хан Аспарух|Баба Марта|Азбуката/ }).length).toBeGreaterThan(0)
   })

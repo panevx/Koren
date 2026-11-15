@@ -25,6 +25,7 @@ export function useDrag(onDrop: (id: string, target: string) => void) {
     s.el.style.transform = ''
     s.el.style.zIndex = ''
     s.el.style.pointerEvents = ''
+    delete s.el.dataset.dragging
     justDragged.current = true
     setTimeout(() => (justDragged.current = false), 0)
     const id = target?.getAttribute('data-drop')
@@ -54,8 +55,9 @@ export function useDrag(onDrop: (id: string, target: string) => void) {
               s.el.style.transition = 'none'
               s.el.style.zIndex = '40'
               s.el.style.pointerEvents = 'none' // so the drop target under the finger can be found
+              s.el.dataset.dragging = 'true' // lifted: a long shadow (index.css)
             }
-            s.el.style.transform = `translate(${dx}px, ${dy}px) scale(1.08)`
+            s.el.style.transform = `translate(${dx}px, ${dy}px) scale(1.12) rotate(-3deg)`
             const over = targetAt(e.clientX, e.clientY)
             if (over !== s.over) {
               s.over?.removeAttribute('data-over')

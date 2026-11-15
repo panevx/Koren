@@ -1,4 +1,4 @@
-import { useEffect, type ButtonHTMLAttributes, type ReactNode } from 'react'
+import { useEffect, type ComponentProps, type ReactNode } from 'react'
 import { useNavigate } from 'react-router'
 import { useT } from '../i18n/useT'
 import { m, pageEnter } from '../motion'
@@ -7,14 +7,17 @@ import { Icon } from './Icon'
 
 /**
  * Phone-width column, centred on tablets and laptops. Every screen slides in softly.
- * The floating navigation is rendered OUTSIDE the animated column: a transformed
- * ancestor would break its `position: fixed`.
+ * The navigation is rendered OUTSIDE the animated column: a transformed ancestor would break its `position: fixed`.
+ * - `nav`: shows the navigation (bottom pill, side rail on a sideways phone, side bar on a computer).
+ * - `wide`: on a computer the screen may use the whole width next to the side bar (it lays itself out in columns);
+ *   without it the phone column stays centred in the free space.
  */
-export function Screen({ children, className = '', nav = false }: { children: ReactNode; className?: string; nav?: boolean }) {
+export function Screen({ children, className = '', nav = false, wide = false }: { children: ReactNode; className?: string; nav?: boolean; wide?: boolean }) {
   return (
-    // Sideways phone: the column moves right to make room for the side rail.
-    <div className={`min-h-dvh overflow-x-clip bg-cream ${nav ? 'short:pl-[calc(5.25rem+env(safe-area-inset-left))]' : ''}`}>
-      <m.main {...pageEnter} className={`mx-auto flex min-h-dvh w-full max-w-md flex-col ${className}`}>
+    <div
+      className={`min-h-dvh overflow-x-clip bg-cream ${nav ? 'short:pl-[calc(5.25rem+env(safe-area-inset-left))] wide:pl-[calc(var(--rail)+1rem)]' : ''}`}
+    >
+      <m.main {...pageEnter} className={`mx-auto flex min-h-dvh w-full max-w-md flex-col ${wide ? 'wide:max-w-6xl wide:px-4' : ''} ${className}`}>
         {children}
       </m.main>
       {nav && <BottomNav />}
@@ -35,7 +38,7 @@ export function Button({
   variant = 'primary',
   className = '',
   ...props
-}: ButtonHTMLAttributes<HTMLButtonElement> & { variant?: Variant }) {
+}: ComponentProps<'button'> & { variant?: Variant }) {
   return (
     <button
       type="button"

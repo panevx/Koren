@@ -54,7 +54,7 @@ export function MissionList({ topic }: { topic?: boolean }) {
   return (
     <Screen nav>
       <TopBar title={section ? t(section.label) : t('missions.title')} />
-      <div className="flex flex-col gap-4 px-4 pb-32 short:pb-8">
+      <div className="flex flex-col gap-4 px-4 pb-32 short:pb-8 wide:pb-10">
         {subject === 'history' && <TimelineLink />}
         {/* Progress pill */}
         <div className="flex items-center gap-3 rounded-full bg-white py-2 pr-4 pl-2 shadow-soft">

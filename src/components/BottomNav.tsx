@@ -1,54 +1,88 @@
-import { NavLink } from 'react-router'
+import { useEffect, useState, type CSSProperties } from 'react'
+import { NavLink, useLocation } from 'react-router'
 import type { TKey } from '../i18n'
 import { useT } from '../i18n/useT'
-import { Icon, type IconName } from './Icon'
+import { img, Logo } from './Brand'
 
-const ITEMS: readonly { to: string; label: TKey; icon: IconName }[] = [
-  { to: '/home', label: 'nav.home', icon: 'home' },
-  { to: '/map', label: 'nav.map', icon: 'map' },
-  { to: '/missions', label: 'nav.missions', icon: 'flag' },
-  { to: '/collection', label: 'nav.collection', icon: 'star' },
+/** The four main places. Each has a 3D picture (the same art as on the home screen). */
+const ITEMS: readonly { to: string; label: TKey; art: string; round?: boolean }[] = [
+  { to: '/home', label: 'nav.home', art: 'heroes/koren-joy.webp', round: true },
+  { to: '/map', label: 'nav.map', art: 'tiles/discover.webp' },
+  { to: '/missions', label: 'nav.missions', art: 'tiles/missions.webp' },
+  { to: '/collection', label: 'nav.collection', art: 'tiles/collection.webp' },
 ]
 
 /**
- * Floating pill navigation. The active tab's icon sits in a raised green ball
- * that springs up (CSS transform only). On a phone held sideways it becomes a rail
- * on the left, so it does not cover a fifth of the low screen.
+ * The navigation bar is mounted again on every screen, so the sliding highlight remembers where it was:
+ * it starts at the previous tab and glides to the new one (CSS transform only).
+ */
+let lastIndex = 0
+
+/**
+ * Navigation — part of the game, not a toolbar:
+ * - phone: a floating pill at the bottom; the active tab's picture jumps up and a soft highlight slides under it;
+ * - phone held sideways (`short:`): a rail on the left, so it does not cover the low screen;
+ * - computer / tablet sideways (`wide:`): a side bar with the logo and big rows.
  */
 export function BottomNav() {
   const t = useT()
+  const { pathname } = useLocation()
+  const active = ITEMS.findIndex((it) => pathname === it.to || pathname.startsWith(it.to + '/'))
+  const [at, setAt] = useState(active >= 0 ? lastIndex : -1)
+  useEffect(() => {
+    if (active < 0) return
+    // next frame: let the browser paint the old position first, then glide
+    const id = requestAnimationFrame(() => setAt(active))
+    lastIndex = active
+    return () => cancelAnimationFrame(id)
+  }, [active])
+
   return (
     <nav
       aria-label={t('nav.main')}
-      className="pointer-events-none fixed inset-x-0 bottom-0 z-20 px-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] short:inset-y-0 short:right-auto short:flex short:items-center short:pr-0 short:pb-0 short:pl-[max(0.5rem,env(safe-area-inset-left))]"
+      className="pointer-events-none fixed inset-x-0 bottom-0 z-20 px-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] short:inset-y-0 short:right-auto short:flex short:items-center short:pr-0 short:pb-0 short:pl-[max(0.5rem,env(safe-area-inset-left))] wide:inset-y-0 wide:right-auto wide:w-[var(--rail)] wide:p-4 wide:pr-0"
     >
-      <ul className="pointer-events-auto mx-auto grid max-w-sm grid-cols-4 rounded-full bg-white px-2 py-1.5 shadow-float short:w-[4.75rem] short:grid-cols-1 short:gap-1 short:rounded-[2.25rem] short:px-1 short:py-2">
-        {ITEMS.map(({ to, label, icon }) => (
-          <li key={to}>
-            <NavLink
-              to={to}
-              className={({ isActive }) =>
-                `press flex min-h-[var(--tap)] flex-col items-center justify-end gap-0.5 rounded-full pb-1 text-[length:min(0.75rem,3.3vw)] font-extrabold ${
-                  isActive ? 'text-green-dark' : 'text-muted'
-                }`
-              }
+      <div className="pointer-events-auto relative mx-auto max-w-sm rounded-full bg-white px-2 py-1.5 shadow-float short:w-[4.75rem] short:rounded-[2.25rem] short:px-1 short:py-2 wide:flex wide:h-full wide:max-w-none wide:flex-col wide:gap-6 wide:rounded-[var(--radius-stage)] wide:px-3 wide:py-6">
+        <Logo size="sm" className="mx-auto hidden h-14 wide:block" />
+        <ul className="relative grid grid-cols-4 short:grid-cols-1 short:gap-1 wide:grid-cols-1 wide:gap-2">
+          {/* The sliding highlight under the active tab. One cell = 100% of its own size, so translate by the index. */}
+          {at >= 0 && (
+            <li
+              aria-hidden="true"
+              className="nav-hl pointer-events-none absolute top-0 left-0 transition-transform duration-500 ease-[var(--ease-spring)]"
+              style={{ '--i': at } as CSSProperties}
             >
-              {({ isActive }) => (
-                <>
-                  <span
-                    className={`grid size-9 place-items-center rounded-full transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${
-                      isActive ? 'puck -translate-y-1 scale-110 bg-green text-white [--edge:var(--color-green-deep)]' : ''
-                    }`}
-                  >
-                    <Icon name={icon} width="1.35em" height="1.35em" />
-                  </span>
-                  {t(label)}
-                </>
-              )}
-            </NavLink>
-          </li>
-        ))}
-      </ul>
+              <span className="block size-full rounded-full bg-green-soft wide:rounded-[1.25rem]" />
+            </li>
+          )}
+          {ITEMS.map(({ to, label, art, round }) => (
+            <li key={to} className="relative">
+              <NavLink
+                to={to}
+                className={({ isActive }) =>
+                  `press group flex min-h-[var(--tap)] flex-col items-center justify-end gap-0.5 rounded-full pb-1 text-[length:min(0.75rem,3.3vw)] font-extrabold wide:flex-row wide:justify-start wide:gap-3 wide:rounded-[1.25rem] wide:px-3 wide:py-2 wide:text-base ${
+                    isActive ? 'text-green-dark' : 'text-muted'
+                  }`
+                }
+              >
+                {({ isActive }) => (
+                  <>
+                    <img
+                      src={img(art)}
+                      alt=""
+                      draggable={false}
+                      className={`size-9 object-contain transition-transform duration-500 ease-[var(--ease-spring)] wide:size-11 ${round ? 'rounded-full bg-gold-soft' : ''} ${
+                        isActive ? 'pop-3d -translate-y-1.5 scale-125 wide:translate-y-0 wide:scale-110' : 'opacity-80 saturate-[0.7] group-hover:opacity-100'
+                      }`}
+                    />
+                    {t(label)}
+                  </>
+                )}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      </div>
     </nav>
   )
 }

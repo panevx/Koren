@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Navigate, useLocation, useNavigate, useParams } from 'react-router'
 import { BadgeArt } from '../components/BadgeArt'
-import { Avatar, img } from '../components/Brand'
+import { Avatar, img, Scenery } from '../components/Brand'
 import { Icon } from '../components/Icon'
 import { Button, Screen, useTitle } from '../components/ui'
 import { missionById, pickLevel } from '../content/missions'
@@ -9,7 +9,8 @@ import { useChildMissions } from '../content/useChildMissions'
 import { isUnlocked, reachedMilestones, unlockedIds, type MilestoneId } from '../content/progress'
 import { earnedCount } from '../content/badges'
 import { UnlockInfo } from '../components/UnlockInfo'
-import { ART } from '../world'
+import { RewardModal } from '../components/RewardModal'
+import { ART, GAME_ART } from '../world'
 import type { Mission as MissionData, StoryLine } from '../content/schema'
 import { useLocalized } from '../content/useLocalized'
 import { GameView } from '../games'
@@ -106,20 +107,15 @@ function MissionRun({ mission, childLevel }: { mission: MissionData; childLevel:
   return (
     // Wide landscape screen: a wider column, so the story can sit beside the hero.
     <Screen className="side:max-w-3xl">
-      <header className="sticky top-0 z-10 flex items-center gap-3 bg-cream px-4 pt-4 pb-3 short:pt-2 short:pb-2">
-        <button
-          type="button"
-          onClick={exit}
-          className="tap press flex shrink-0 items-center gap-1 rounded-full bg-white pr-4 pl-3 font-extrabold text-ink shadow-soft"
-        >
-          <Icon name="close" />
-          {confirming ? t('mission.exitConfirm') : t('mission.exit')}
-        </button>
-        <div className="min-w-0 flex-1">
-          <p className="truncate text-sm font-black text-green-dark">{l(mission.title)}</p>
-          <PhaseDots phases={phases} current={phase} />
-        </div>
-      </header>
+      <GameHeader
+        title={l(mission.title)}
+        phases={phases}
+        phase={phase}
+        game={content.game.type}
+        exitLabel={confirming ? t('mission.exitConfirm') : t('mission.exit')}
+        confirming={confirming}
+        onExit={exit}
+      />
 
       <div className="flex flex-1 flex-col px-4 pb-6">
         {mission.draft && (
@@ -137,24 +133,75 @@ function MissionRun({ mission, childLevel }: { mission: MissionData; childLevel:
   )
 }
 
-function PhaseDots({ phases, current }: { phases: Phase[]; current: Phase }) {
+const PHASE_ART: Record<Exclude<Phase, 'game'>, string> = { story: ART.scroll, check: ART.orb, badge: ART.gold }
+
+/**
+ * The game header: a way out (asks twice in the middle of a game), the mission's name and the steps of the
+ * mission as stepping stones with pictures — story, game, check, badge. Done steps are green, the current one
+ * is lifted and glowing, a filled line runs between them.
+ */
+function GameHeader({
+  title,
+  phases,
+  phase,
+  game,
+  exitLabel,
+  confirming,
+  onExit,
+}: {
+  title: string
+  phases: Phase[]
+  phase: Phase
+  game: string
+  exitLabel: string
+  confirming: boolean
+  onExit: () => void
+}) {
   const t = useT()
-  const at = phases.indexOf(current)
+  const at = phases.indexOf(phase)
   return (
-    <div className="mt-1.5 flex items-center gap-1.5" aria-label={t('mission.progress', { n: at + 1, total: phases.length })} role="img">
-      {phases.map((p, i) => (
-        <span key={p} title={t(`mission.phase.${p}` as TKey)} className="h-2.5 flex-1 overflow-hidden rounded-full bg-sand">
-          <span
-            className={`block h-full origin-left rounded-full transition-transform duration-500 ease-out ${i < at ? 'bg-green' : 'bg-coral'} ${
-              i <= at ? 'scale-x-100' : 'scale-x-0'
-            }`}
-          />
-        </span>
-      ))}
-    </div>
+    <header className="sticky top-0 z-10 flex items-center gap-3 bg-cream/95 px-4 pt-3 pb-2 backdrop-blur-sm short:pt-1.5 short:pb-1">
+      <button
+        type="button"
+        onClick={onExit}
+        className={`tap press flex shrink-0 items-center gap-1 rounded-full pr-4 pl-3 font-extrabold shadow-soft transition-colors ${
+          confirming ? 'bg-coral text-coral-ink' : 'bg-white text-ink'
+        }`}
+      >
+        <Icon name="close" />
+        {exitLabel}
+      </button>
+      <div className="min-w-0 flex-1">
+        <p className="truncate text-sm leading-tight font-black text-green-dark">{title}</p>
+        <ol className="relative mt-1 flex items-center justify-between" aria-label={t('mission.progress', { n: at + 1, total: phases.length })} role="img">
+          {/* the line between the stones, filled up to the current step */}
+          <span className="absolute inset-x-3 top-1/2 h-1.5 -translate-y-1/2 overflow-hidden rounded-full bg-sand" aria-hidden="true">
+            <span
+              className="block h-full origin-left rounded-full bg-green transition-transform duration-700 ease-[var(--ease-calm)]"
+              style={{ transform: `scaleX(${phases.length > 1 ? at / (phases.length - 1) : 1})` }}
+            />
+          </span>
+          {phases.map((p, i) => (
+            <li
+              key={p}
+              title={t(`mission.phase.${p}` as TKey)}
+              className={`relative grid size-8 place-items-center rounded-full transition-transform duration-500 ease-[var(--ease-spring)] ${
+                i < at ? 'bg-green-soft ring-2 ring-green' : i === at ? 'scale-125 bg-white shadow-float ring-[3px] ring-coral' : 'bg-white ring-2 ring-sand'
+              }`}
+            >
+              <img src={img(p === 'game' ? (GAME_ART[game] ?? ART.orb) : PHASE_ART[p])} alt="" className={`size-[78%] object-contain ${i > at ? 'opacity-40 grayscale' : ''}`} />
+            </li>
+          ))}
+        </ol>
+      </div>
+    </header>
   )
 }
 
+/**
+ * The story: Koren and Raya speak on a little stage — sky, hills, a fortress — the hero walking in from their side,
+ * the speech bubble above them with its tail pointing down at the speaker. On a wide screen the bubble sits beside.
+ */
 function Story({ lines, onDone }: { lines: StoryLine[]; onDone: () => void }) {
   const t = useT()
   const l = useLocalized()
@@ -164,24 +211,31 @@ function Story({ lines, onDone }: { lines: StoryLine[]; onDone: () => void }) {
   const fromRight = line.hero === 'raya'
   return (
     <div className="flex flex-1 flex-col gap-3">
-      <p className="text-center text-sm font-bold text-muted short:sr-only">{t('mission.progress', { n: i + 1, total: lines.length })}</p>
-      <div className="relative flex flex-1 flex-col side:flex-row-reverse side:items-end side:gap-3">
+      <p className="sr-only">{t('mission.progress', { n: i + 1, total: lines.length })}</p>
+      {line.img && <img src={img(line.img)} alt="" className="rounded-level w-full object-cover shadow-soft" />}
+      <div className="relative flex min-h-[min(27rem,62dvh)] flex-1 flex-col overflow-hidden rounded-[var(--radius-stage)] shadow-soft short:min-h-[calc(100dvh-8rem)] side:flex-row-reverse side:items-end">
+        <Scenery className="absolute inset-0" />
+        {/* the speech bubble */}
         <m.p
           key={i}
-          initial={{ opacity: 0, y: 12, scale: 0.96 }}
+          initial={{ opacity: 0, y: 12, scale: 0.94 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={bouncy}
           aria-live="polite"
-          className={`relative z-10 rounded-[1.75rem] bg-white px-5 py-4 text-xl leading-snug font-bold shadow-soft side:min-w-0 side:flex-1 side:self-center ${
-            fromRight ? 'rounded-br-md' : 'rounded-bl-md'
+          className={`relative z-10 m-3 rounded-[1.75rem] bg-white px-5 py-4 text-[length:min(1.25rem,5.6vw)] leading-snug font-bold shadow-float side:mb-auto side:min-w-0 side:flex-1 ${
+            fromRight ? 'origin-bottom-right rounded-br-md' : 'origin-bottom-left rounded-bl-md'
           }`}
         >
           {l(line)}
+          {/* tail towards the speaker */}
+          <span
+            className={`absolute -bottom-2.5 size-6 rotate-45 rounded-[4px] bg-white side:hidden ${fromRight ? 'right-[22%]' : 'left-[22%]'}`}
+            aria-hidden="true"
+          />
         </m.p>
-        {line.img && <img src={img(line.img)} alt="" className="rounded-level mt-3 w-full object-cover shadow-soft" />}
-        {/* The hero walks in from their side and stands on a soft "stage". */}
-        <div className={`relative mt-3 flex side:mt-0 side:shrink-0 ${fromRight ? 'justify-end pr-3' : 'justify-start pl-3'}`}>
-          <span className="absolute bottom-0 h-[70%] w-[62%] rounded-[45%] bg-sky-soft" aria-hidden="true" />
-          <span className="absolute bottom-1 h-4 w-[38%] rounded-[50%] bg-ink/15 blur-[3px]" aria-hidden="true" />
+        {/* the hero walks in from their side and stands on the hill */}
+        <div className={`relative mt-auto flex px-4 side:mt-0 side:shrink-0 ${fromRight ? 'justify-end' : 'justify-start'}`}>
+          <span className={`absolute bottom-2 h-4 w-[34%] rounded-[50%] bg-ink/20 blur-[3px] ${fromRight ? 'right-[8%]' : 'left-[8%]'}`} aria-hidden="true" />
           <m.img
             key={`${i}-${line.hero}-${line.pose}`}
             src={img(`poses/${line.hero}-${line.pose}.webp`)}
@@ -189,9 +243,17 @@ function Story({ lines, onDone }: { lines: StoryLine[]; onDone: () => void }) {
             initial={{ opacity: 0, x: fromRight ? 70 : -70, rotate: fromRight ? 8 : -8 }}
             animate={{ opacity: 1, x: 0, rotate: 0 }}
             transition={bouncy}
-            className="relative h-[34dvh] max-h-80 w-auto object-contain short:h-[44dvh]"
+            className="relative h-[min(17rem,36dvh)] w-auto object-contain short:h-[52dvh]"
           />
         </div>
+        {/* which line we are on: small stones on the stage */}
+        {lines.length > 1 && (
+          <span className="absolute right-0 bottom-3 left-0 flex justify-center gap-1.5 side:hidden" aria-hidden="true">
+            {lines.map((_, n) => (
+              <span key={n} className={`size-2 rounded-full transition-transform duration-300 ${n === i ? 'scale-150 bg-white' : 'bg-white/60'}`} />
+            ))}
+          </span>
+        )}
       </div>
       <div className="flex gap-3">
         {i > 0 && (
@@ -248,6 +310,15 @@ function Badge({ mission, level }: { mission: MissionData; level: Level }) {
     play('badge')
   }, [complete, mission, level])
   const needsBreak = streak >= BREAK_AFTER
+  // A new medal gets its own moment: the reward window opens once the badge has landed.
+  const best = rewards[rewards.length - 1]
+  const [shown, setShown] = useState<MilestoneId | null>(null)
+  const [closed, setClosed] = useState(false)
+  useEffect(() => {
+    if (!best || closed) return
+    const timer = setTimeout(() => setShown(best), 1300)
+    return () => clearTimeout(timer)
+  }, [best, closed])
 
   return (
     <div className="flex flex-1 flex-col items-center justify-center gap-3 text-center">
@@ -293,6 +364,15 @@ function Badge({ mission, level }: { mission: MissionData; level: Level }) {
       </div>
 
       <p className="text-xl font-extrabold">{l(mission.title)}</p>
+      {shown && !closed && (
+        <RewardModal
+          reward={shown}
+          onClose={() => {
+            setClosed(true)
+            setShown(null)
+          }}
+        />
+      )}
 
       {(opened.length > 0 || rewards.length > 0) && <Unlocked missions={opened} rewards={rewards} />}
 

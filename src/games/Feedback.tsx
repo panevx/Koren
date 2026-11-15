@@ -1,7 +1,8 @@
 import { Avatar, img } from '../components/Brand'
+import { Sparkles } from '../components/ds'
 import { ART } from '../world'
 import { Icon } from '../components/Icon'
-import { Button, Card } from '../components/ui'
+import { Button } from '../components/ui'
 import { useT } from '../i18n/useT'
 import { bouncy, m } from '../motion'
 
@@ -23,6 +24,7 @@ export function Feedback({ correct, help, idle, nudge = 0 }: { correct?: string;
             className="relative shrink-0"
             transition={{ default: bouncy, y: { duration: 0.55, delay: 0.2, times: [0, 0.4, 1] } }}
           >
+            <Sparkles burst={correct} />
             <Avatar hero="koren" mood="joy" className="size-[min(4rem,15vw)]" />
             <m.img
               src={img(ART.star)}
@@ -71,10 +73,19 @@ export function DoneButton({ onClick, label }: { onClick: () => void; label?: st
   )
 }
 
+/**
+ * The task of a game, said by Koren: his face and a speech bubble. (Koren gives tasks and cheers; Raya helps.)
+ * On the narrowest phones the face gets smaller so the words keep their room.
+ */
 export function Prompt({ children }: { children: string }) {
   return (
-    <Card className="px-[min(1.25rem,4vw)] py-4">
-      <h3 className="text-center text-[length:min(1.25rem,6vw)] leading-snug font-extrabold">{children}</h3>
-    </Card>
+    <div className="flex items-center gap-2.5">
+      <m.span initial={{ scale: 0.5, rotate: -12 }} animate={{ scale: 1, rotate: 0 }} transition={bouncy} className="shrink-0">
+        <Avatar hero="koren" mood="determination" className="size-[min(3.5rem,13vw)]" />
+      </m.span>
+      <div className="relative min-w-0 flex-1 rounded-[1.5rem] rounded-bl-md bg-white px-[min(1.125rem,4vw)] py-3.5 shadow-soft">
+        <h3 className="text-[length:min(1.2rem,5.6vw)] leading-snug font-extrabold">{children}</h3>
+      </div>
+    </div>
   )
 }

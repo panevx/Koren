@@ -13,3 +13,12 @@ export function byPathOrder<T extends { id: string }>(missions: readonly T[]): T
   }
   return [...missions].sort((a, b) => at(a.id) - at(b.id))
 }
+
+type RawChapter = { title: { bg: string; en: string }; missions: string[] }
+const CHAPTERS = (raw as { chapters: RawChapter[] }).chapters
+
+/** The chapter of the adventure path a mission belongs to (number from 1, title, ids) — for the hub's adventure card. */
+export function chapterOf(id: string): { n: number; title: { bg: string; en: string }; missions: readonly string[] } | undefined {
+  const i = CHAPTERS.findIndex((c) => c.missions.includes(id))
+  return i < 0 ? undefined : { n: i + 1, title: CHAPTERS[i]!.title, missions: CHAPTERS[i]!.missions }
+}

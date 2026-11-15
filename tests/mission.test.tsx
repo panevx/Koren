@@ -152,7 +152,7 @@ describe('mission Хан Аспарух (young)', () => {
 
   it('an unknown mission id goes back to the list', async () => {
     renderAt('/mission/nope-99-x')
-    expect(await screen.findByRole('button', { name: /Хан Аспарух/ })).toBeInTheDocument()
+    expect((await screen.findAllByRole('button', { name: /Хан Аспарух/ }))[0]).toBeInTheDocument()
   })
 
   it('a locked mission explains how it opens and links to the mission before it', async () => {

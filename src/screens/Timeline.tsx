@@ -30,7 +30,7 @@ export function Timeline() {
     // Wide landscape screen: the map on the left (stays in view), the controls and the story on the right.
     <Screen nav className="side:max-w-3xl">
       <TopBar title={t('timeline.title')} />
-      <div className="flex flex-col gap-3 px-4 pb-32 side:grid side:grid-cols-2 side:items-start side:gap-x-4 short:pb-8 side:[&>*]:col-start-2">
+      <div className="flex flex-col gap-3 px-4 pb-32 wide:pb-10 side:grid side:grid-cols-2 side:items-start side:gap-x-4 short:pb-8 side:[&>*]:col-start-2">
         {/* Year + title, with earlier / later buttons */}
         <div className="flex items-center gap-3">
           {/* aria-disabled (not disabled): at the first/last year the button keeps keyboard focus instead of dropping it. */}

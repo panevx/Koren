@@ -4,6 +4,8 @@
 @custom-variant short (@media (orientation: landscape) and (max-height: 520px));
 /* Any wide landscape screen (phone sideways, tablet sideways, computer): two columns instead of one tall stack. */
 @custom-variant side (@media (orientation: landscape) and (min-width: 640px));
+/* Tablet sideways and computers: a real desktop composition — a side bar instead of the floating pill, wider screens. */
+@custom-variant wide (@media (min-width: 1024px) and (min-height: 600px));
 
 /* Nunito, self-hosted (no Google Fonts request). Only Cyrillic + Latin subsets ship. */
 @font-face {
@@ -57,10 +59,45 @@
   --color-sand: #ebe4d4;
   --color-ink: #1c2b23;
   --color-muted: #55635b;
+  /* v0.13: deeper shades for text on tinted surfaces and the night sky of the reward screen. */
+  --color-sky-dark: #0b5a84;
+  --color-gold-dark: #7a5600;
+  --color-night: #10301f;
+
+  /* Radii: chips < controls < cards < stages. */
+  --radius-chip: 0.875rem;
+  --radius-card: 1.75rem;
+  --radius-stage: 2.25rem;
+
+  /* Motion: one springy curve for presses and fills, one calm curve for fades. */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-calm: cubic-bezier(0.22, 1, 0.36, 1);
 
   /* Soft, layered shadows: a contact shadow, a mid shadow and a wide ambient one. */
   --shadow-soft: 0 1px 2px rgb(28 43 35 / 0.05), 0 6px 14px -6px rgb(28 43 35 / 0.12), 0 18px 30px -18px rgb(28 43 35 / 0.18);
   --shadow-float: 0 2px 4px rgb(28 43 35 / 0.06), 0 12px 24px -8px rgb(28 43 35 / 0.18), 0 28px 48px -24px rgb(28 43 35 / 0.3);
+  /* A raised stage (the adventure card, the reward): a long soft shadow that lifts it off the page. */
+  --shadow-stage: 0 2px 6px rgb(28 43 35 / 0.08), 0 20px 36px -14px rgb(28 43 35 / 0.32), 0 44px 70px -40px rgb(16 48 31 / 0.45);
+}
+
+/* Type scale (v0.13). Sizes follow the screen width on narrow phones, so no word ever breaks. */
+@utility text-display {
+  font-size: min(2.125rem, 9vw);
+  line-height: 1.05;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+@utility text-title {
+  font-size: min(1.5rem, 6.4vw);
+  line-height: 1.12;
+  font-weight: 900;
+}
+@utility text-label {
+  font-size: 0.75rem;
+  line-height: 1.2;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 /*
@@ -80,6 +117,8 @@
   --root-fs: clamp(15px, 4.6vw, 17px);
   /* Height of one stop on the adventure path. */
   --path-row: 8.75rem;
+  /* Width of the desktop side bar (wide:). */
+  --rail: 12.5rem;
   /* Tablets and computers: the whole UI (rem sizes, --tap) grows, so it is not a tiny phone in the middle. */
   --scale: 1;
   font-size: calc(var(--root-fs) * var(--scale));
@@ -261,8 +300,8 @@ body {
   @keyframes spin-slow {
     to { transform: rotate(360deg); }
   }
-  .anim-bob { animation: bob 3.6s ease-in-out infinite; }
-  .anim-bob-late { animation: bob 3.6s ease-in-out -1.5s infinite; }
+  .anim-bob { animation: bob 3.6s ease-in-out 5; }
+  .anim-bob-late { animation: bob 3.6s ease-in-out -1.5s 5; }
   .anim-drift { animation: drift 14s ease-in-out infinite alternate; }
   .anim-spin-slow { animation: spin-slow 18s linear infinite; }
   @keyframes glow {
@@ -270,7 +309,7 @@ body {
     50% { transform: scale(1.1); opacity: 1; }
   }
   /* Hint glow around a thing that is still missing (a soft gold halo). */
-  .anim-glow { animation: glow 1.4s ease-in-out infinite; }
+  .anim-glow { animation: glow 1.4s ease-in-out 8; }
   @keyframes wiggle {
     0%, 100% { transform: rotate(0); }
     25% { transform: rotate(-6deg); }
@@ -282,7 +321,57 @@ body {
     50% { transform: translateY(-8px) rotate(2deg); }
   }
   /* The hot-air balloon on the adventure path. */
-  .anim-float { animation: float 4.5s ease-in-out infinite; }
+  .anim-float { animation: float 4.5s ease-in-out 6; }
+}
+
+/*
+ * Ambient animations above run a few times and then rest (no endless motion that pulls a child's attention).
+ * Surfaces of the "Playful 3D" system:
+ */
+/* Tinted stage backgrounds with soft light from the top-left (like the 3D figures). */
+.bg-stage-green {
+  background: radial-gradient(120% 90% at 15% 0%, #1a9a58 0%, var(--color-green) 45%, var(--color-green-dark) 100%);
+}
+.bg-stage-sky {
+  background: radial-gradient(120% 100% at 20% 0%, #c9ecff 0%, var(--color-sky) 60%, #4fb3e8 100%);
+}
+.bg-stage-gold {
+  background: radial-gradient(120% 100% at 20% 0%, #fff0b8 0%, var(--color-gold) 60%, #f7c23c 100%);
+}
+.bg-stage-coral {
+  background: radial-gradient(120% 100% at 20% 0%, #ffa59d 0%, var(--color-coral) 60%, #f2554c 100%);
+}
+.bg-stage-night {
+  background: radial-gradient(120% 90% at 50% 0%, #1f6a43 0%, var(--color-green-deep) 55%, var(--color-night) 100%);
+}
+/* A thing being dragged in a game is lifted off the page. */
+[data-dragging='true'] {
+  box-shadow: var(--shadow-stage) !important;
+}
+
+/* The sliding highlight of the navigation: one cell wide, moved by its index (--i). Gaps: short 0.25rem, wide 0.5rem. */
+.nav-hl {
+  width: 25%;
+  height: 100%;
+  transform: translateX(calc(var(--i) * 100%));
+}
+@media (orientation: landscape) and (max-height: 520px) {
+  .nav-hl {
+    width: 100%;
+    height: calc((100% - 0.75rem) / 4);
+    transform: translateY(calc(var(--i) * (100% + 0.25rem)));
+  }
+}
+@media (min-width: 1024px) and (min-height: 600px) {
+  .nav-hl {
+    width: 100%;
+    height: calc((100% - 1.5rem) / 4);
+    transform: translateY(calc(var(--i) * (100% + 0.5rem)));
+  }
+}
+/* Decorations that make the app feel like a picture book. The oldest children (11–14) get a calmer interface without them. */
+:root[data-level='guard'] .kid-deco {
+  display: none;
 }
 
 @media (prefers-reduced-motion: reduce) {

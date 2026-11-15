@@ -6,7 +6,8 @@ import { UnlockInfo } from '../components/UnlockInfo'
 import { useProgress } from '../content/useProgress'
 import { ART } from '../world'
 import { TimelineLink } from '../components/TimelineLink'
-import { Card, Screen, TopBar } from '../components/ui'
+import { Screen, TopBar } from '../components/ui'
+import { CharacterMessage } from '../components/ds'
 import { useChildMissions } from '../content/useChildMissions'
 import { PLACES } from '../content/places'
 import { useLocalized } from '../content/useLocalized'
@@ -44,8 +45,9 @@ export function MapScreen() {
       label: l(p.name),
       className: p.img ? 'size-14' : 'size-12',
       content: (
-        <span data-state={state} className={`relative grid place-items-center transition-transform duration-300 ${active ? 'scale-125' : ''}`}>
+        <span data-state={state} className={`relative grid place-items-center transition-transform duration-500 ease-[var(--ease-spring)] ${active ? '-translate-y-1 scale-[1.35]' : ''}`}>
           {fresh && <img src={img(ART.burst)} alt="" className="anim-spin-slow pointer-events-none absolute size-16 max-w-none opacity-80" />}
+          {active && <span className="anim-glow pointer-events-none absolute size-16 rounded-full bg-gold/60" aria-hidden="true" />}
           {p.img ? (
             <span
               className={`relative grid size-11 place-items-center rounded-full shadow-float ring-[3px] ${
@@ -78,71 +80,110 @@ export function MapScreen() {
   const here = place ? missionsAt(place.id) : []
 
   return (
-    <Screen nav>
+    <Screen nav wide>
       <TopBar title={t('tile.discover')} />
-      <div className="flex flex-col gap-3 px-4 pb-32 short:pb-8">
-        <BulgariaMap label={t('map.label')} markers={markers} onSelect={setSelected} />
-        <p className="text-center text-sm font-semibold text-muted">{t('map.zoomTip')}</p>
-        {!place && <TimelineLink />}
+      <div className="flex flex-col gap-3 px-4 pb-32 short:pb-8 wide:grid wide:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)] wide:items-start wide:gap-6 wide:pb-10">
+        <div className="flex flex-col gap-3">
+          <BulgariaMap label={t('map.label')} markers={markers} onSelect={setSelected} />
+          {/* What the colours mean — a picture legend. */}
+          <ul className="flex flex-wrap items-center justify-center gap-2 text-sm font-extrabold">
+            <li className="flex items-center gap-1.5 rounded-full bg-white py-1 pr-3 pl-1 shadow-soft">
+              <span className="size-5 rounded-full bg-gold-soft ring-[3px] ring-gold" aria-hidden="true" />
+              {t('map.legend.done')}
+            </li>
+            <li className="flex items-center gap-1.5 rounded-full bg-white py-1 pr-3 pl-1 shadow-soft">
+              <span className="size-5 rounded-full bg-white ring-[3px] ring-coral" aria-hidden="true" />
+              {t('map.legend.open')}
+            </li>
+            <li className="flex items-center gap-1.5 rounded-full bg-white py-1 pr-3 pl-1 shadow-soft">
+              <img src={img(ART.key)} alt="" className="size-5" />
+              {t('map.legend.locked')}
+            </li>
+          </ul>
+          <p className="text-center text-sm font-semibold text-muted wide:hidden">{t('map.zoomTip')}</p>
+        </div>
 
-        {place && (
-          <m.div key={place.id} initial={{ opacity: 0, y: 20, scale: 0.95 }} animate={{ opacity: 1, y: 0, scale: 1 }} transition={bouncy}>
-            <Card as="section" className="relative p-4">
-              <button
-                type="button"
-                onClick={() => setSelected(null)}
-                aria-label={t('map.close')}
-                className="tap press absolute top-1 right-1 grid place-items-center rounded-full text-muted"
-              >
-                <Icon name="close" />
-              </button>
-              <h2 className="flex items-center gap-3 pr-12 text-xl leading-tight font-black" aria-live="polite">
+        <div className="flex flex-col gap-3 wide:sticky wide:top-4">
+          {!place && (
+            <CharacterMessage hero="koren" mood="determination" className="wide:mt-1">
+              <p className="font-extrabold">{t('map.pick')}</p>
+            </CharacterMessage>
+          )}
+          {!place && <TimelineLink />}
+
+          {place && (
+            <m.section
+              key={place.id}
+              initial={{ opacity: 0, y: 24, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={bouncy}
+              aria-live="polite"
+              className="relative overflow-hidden rounded-[var(--radius-stage)] bg-white shadow-stage"
+            >
+              {/* Header: the landmark rises out of a sky-coloured stage. */}
+              <div className="bg-stage-sky relative flex items-end gap-3 px-4 pt-4 pb-3">
                 {place.img ? (
                   <m.img
                     src={img(place.img)}
                     alt=""
-                    initial={{ scale: 0.5, rotate: -10 }}
-                    animate={{ scale: 1, rotate: 0 }}
+                    initial={{ scale: 0.4, y: 20, rotate: -10 }}
+                    animate={{ scale: 1, y: 0, rotate: 0 }}
                     transition={bouncy}
-                    className="pop-3d size-[min(5.5rem,22vw)] shrink-0 object-contain"
+                    className="pop-3d -mb-1 size-[min(6.5rem,26vw)] shrink-0 object-contain"
                   />
                 ) : (
-                  <span className="puck grid size-11 shrink-0 place-items-center rounded-full bg-sky text-ink [--edge:var(--color-sky-deep)]">
-                    <PlaceGlyph icon={place.icon} className="size-6" />
+                  <span className="puck grid size-14 shrink-0 place-items-center rounded-full bg-white text-ink [--edge:var(--color-sky-deep)]">
+                    <PlaceGlyph icon={place.icon} className="size-7" />
                   </span>
                 )}
-                {l(place.name)}
-              </h2>
-              {here.length ? (
-                <ul className="mt-4 flex flex-col gap-3">
-                  {here.map((mission) =>
-                    progress.status(mission) === 'locked' ? (
-                      <li key={mission.id} className="flex items-start gap-3 rounded-[1.5rem] bg-sand/60 p-3">
-                        <img src={img(ART.key)} alt="" className="size-10 shrink-0" />
-                        <div className="min-w-0 flex-1">
-                          <p className="leading-tight font-extrabold">{l(mission.title)}</p>
-                          <UnlockInfo mission={mission} className="mt-1 text-sm" />
-                        </div>
-                      </li>
-                    ) : (
-                      <li key={mission.id}>
-                        <Link to={`/mission/${mission.id}`} className="tap press flex items-center gap-3 rounded-full bg-cream py-1.5 pr-1.5 pl-5 font-extrabold">
-                          <span className="min-w-0 flex-1 leading-tight">{l(mission.title)}</span>
-                          {done[mission.id] && <Icon name="check" className="shrink-0 text-green-dark" />}
-                          <span className="puck grid size-11 shrink-0 place-items-center rounded-full bg-coral text-coral-ink [--edge:var(--color-coral-deep)]" aria-hidden="true">
-                            <Icon name="play" width="1.1em" height="1.1em" />
-                          </span>
-                        </Link>
-                      </li>
-                    ),
-                  )}
-                </ul>
-              ) : (
-                <p className="mt-3 font-semibold text-muted">{t('map.noMission')}</p>
-              )}
-            </Card>
-          </m.div>
-        )}
+                <h2 className="text-title min-w-0 flex-1 pr-10 pb-1 text-ink">{l(place.name)}</h2>
+                <button
+                  type="button"
+                  onClick={() => setSelected(null)}
+                  aria-label={t('map.close')}
+                  className="tap press absolute top-1 right-1 grid place-items-center rounded-full text-ink"
+                >
+                  <Icon name="close" />
+                </button>
+              </div>
+              <div className="p-4">
+                {here.length ? (
+                  <>
+                    <h3 className="text-label mb-2 text-muted">{t('map.missionsHere')}</h3>
+                    <ul className="flex flex-col gap-2.5">
+                      {here.map((mission) =>
+                        progress.status(mission) === 'locked' ? (
+                          <li key={mission.id} className="flex items-start gap-3 rounded-[1.5rem] bg-sand/60 p-3">
+                            <img src={img(ART.key)} alt="" className="size-10 shrink-0" />
+                            <div className="min-w-0 flex-1">
+                              <p className="leading-tight font-extrabold">{l(mission.title)}</p>
+                              <UnlockInfo mission={mission} className="mt-1 text-sm" />
+                            </div>
+                          </li>
+                        ) : (
+                          <li key={mission.id}>
+                            <Link
+                              to={`/mission/${mission.id}`}
+                              className={`tap press flex items-center gap-3 rounded-full py-1.5 pr-1.5 pl-5 font-extrabold ${done[mission.id] ? 'bg-gold-soft' : 'bg-cream'}`}
+                            >
+                              <span className="min-w-0 flex-1 leading-tight">{l(mission.title)}</span>
+                              {done[mission.id] && <Icon name="check" className="shrink-0 text-green-dark" />}
+                              <span className="puck grid size-11 shrink-0 place-items-center rounded-full bg-coral text-coral-ink [--edge:var(--color-coral-deep)]" aria-hidden="true">
+                                <Icon name="play" width="1.1em" height="1.1em" />
+                              </span>
+                            </Link>
+                          </li>
+                        ),
+                      )}
+                    </ul>
+                  </>
+                ) : (
+                  <p className="font-semibold text-muted">{t('map.noMission')}</p>
+                )}
+              </div>
+            </m.section>
+          )}
+        </div>
       </div>
     </Screen>
   )
