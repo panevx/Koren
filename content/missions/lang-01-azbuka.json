@@ -99,15 +99,17 @@
         },
         {
           "hero": "koren",
-          "pose": "point",
+          "pose": "reading",
           "bg": "Първата славянска азбука – глаголицата – е създадена от братята Кирил и Методий.",
-          "en": "The first Slavic alphabet – Glagolitic – was created by the brothers Cyril and Methodius."
+          "en": "The first Slavic alphabet – Glagolitic – was created by the brothers Cyril and Methodius.",
+          "img": "history/kiril-metodiy.webp"
         },
         {
           "hero": "raya",
           "pose": "point",
           "bg": "Техните ученици, като Климент и Наум, донасят книгите в България. По-късно тук се създава кирилицата.",
-          "en": "Their students, such as Clement and Naum, brought the books to Bulgaria. Later the Cyrillic alphabet was created here."
+          "en": "Their students, such as Clement and Naum, brought the books to Bulgaria. Later the Cyrillic alphabet was created here.",
+          "img": "people/kliment-ohridski.webp"
         },
         {
           "hero": "koren",
@@ -233,13 +235,15 @@
           "hero": "koren",
           "pose": "wave",
           "bg": "Около 863 г. братята Кирил и Методий създават глаголицата – първата славянска азбука.",
-          "en": "Around 863 the brothers Cyril and Methodius create Glagolitic – the first Slavic alphabet."
+          "en": "Around 863 the brothers Cyril and Methodius create Glagolitic – the first Slavic alphabet.",
+          "img": "history/kiril-metodiy.webp"
         },
         {
           "hero": "raya",
           "pose": "point",
           "bg": "След смъртта на Методий учениците им са прогонени от Великоморавия. Княз Борис I ги приема в България през 886 г.",
-          "en": "After Methodius dies, their students are driven out of Great Moravia. Prince Boris I welcomes them to Bulgaria in 886."
+          "en": "After Methodius dies, their students are driven out of Great Moravia. Prince Boris I welcomes them to Bulgaria in 886.",
+          "img": "people/kliment-ohridski.webp"
         },
         {
           "hero": "koren",

@@ -15,7 +15,11 @@ export const Text = z.object({ bg: nonEmpty, en: nonEmpty }).strict()
 export const ImgPath = z.string().regex(/^[a-z0-9/_-]+\.(webp|png|svg)$/, 'image path like "folder/name.webp"')
 
 export const HEROES = ['koren', 'raya'] as const
-export const POSES = ['wave', 'point', 'think'] as const
+/**
+ * Full-body poses of Koren and Raya (public/img/poses/<hero>-<pose>.webp). Since v0.14 there are 13:
+ * the first three plus ten from design/v5 — chosen by what the story line is about (map, reading, nature…).
+ */
+export const POSES = ['wave', 'point', 'think', 'celebrate', 'chef', 'compass', 'encourage', 'explorer', 'map', 'nature', 'reading', 'treasure', 'winter'] as const
 export const SUBJECTS = ['history', 'culture', 'language', 'geography'] as const
 export const LEVEL_KEYS = ['small', 'young', 'guard'] as const
 

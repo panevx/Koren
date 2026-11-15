@@ -25,11 +25,12 @@
           "hero": "koren",
           "pose": "point",
           "bg": "България има море – Черно море!",
-          "en": "Bulgaria has a sea – the Black Sea!"
+          "en": "Bulgaria has a sea – the Black Sea!",
+          "img": "nature/black-sea.webp"
         },
         {
           "hero": "raya",
-          "pose": "point",
+          "pose": "encourage",
           "bg": "Намери морето на картата!",
           "en": "Find the sea on the map!"
         }
@@ -60,23 +61,26 @@
           "hero": "koren",
           "pose": "wave",
           "bg": "На изток България граничи с Черно море.",
-          "en": "In the east, Bulgaria borders the Black Sea."
+          "en": "In the east, Bulgaria borders the Black Sea.",
+          "img": "nature/black-sea.webp"
         },
         {
           "hero": "raya",
-          "pose": "point",
+          "pose": "map",
           "bg": "Варна е най-големият град на морето. Наричат я „морската столица“.",
-          "en": "Varna is the biggest town on the sea. It is called the “sea capital”."
+          "en": "Varna is the biggest town on the sea. It is called the “sea capital”.",
+          "img": "city/varna.webp"
         },
         {
           "hero": "koren",
           "pose": "point",
           "bg": "На юг е древният Несебър – град, в който стоят църкви на повече от 700 години.",
-          "en": "To the south is ancient Nessebar – a town with churches more than 700 years old."
+          "en": "To the south is ancient Nessebar – a town with churches more than 700 years old.",
+          "img": "landmarks/nessebar.webp"
         },
         {
           "hero": "raya",
-          "pose": "think",
+          "pose": "nature",
           "bg": "В Черно море живеят делфини!",
           "en": "Dolphins live in the Black Sea!"
         }
@@ -165,11 +169,12 @@
           "hero": "koren",
           "pose": "point",
           "bg": "Черно море е по-малко солено от океаните. Под около 150–200 м дълбочина водата съдържа сероводород и там почти няма живот.",
-          "en": "The Black Sea is less salty than the oceans. Below about 150–200 m the water contains hydrogen sulphide and there is almost no life."
+          "en": "The Black Sea is less salty than the oceans. Below about 150–200 m the water contains hydrogen sulphide and there is almost no life.",
+          "img": "nature/black-sea.webp"
         },
         {
           "hero": "raya",
-          "pose": "point",
+          "pose": "nature",
           "bg": "В него живеят три вида делфини: афала, муткур и обикновен делфин.",
           "en": "Three kinds of dolphin live in it: the bottlenose, the harbour porpoise and the common dolphin."
         },
@@ -177,7 +182,8 @@
           "hero": "koren",
           "pose": "think",
           "bg": "Старият Несебър е в списъка на световното наследство на ЮНЕСКО от 1983 г.",
-          "en": "Old Nessebar has been on the UNESCO World Heritage List since 1983."
+          "en": "Old Nessebar has been on the UNESCO World Heritage List since 1983.",
+          "img": "landmarks/nessebar.webp"
         }
       ],
       "game": {

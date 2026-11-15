@@ -21,11 +21,12 @@
           "hero": "koren",
           "pose": "wave",
           "bg": "Някога в крепостите живеели царе.",
-          "en": "Long ago kings lived in fortresses."
+          "en": "Long ago kings lived in fortresses.",
+          "img": "history/medieval-fortress.webp"
         },
         {
           "hero": "raya",
-          "pose": "point",
+          "pose": "treasure",
           "bg": "Царят е изгубил короната си. Помогни му!",
           "en": "The king has lost his crown. Help him!"
         }

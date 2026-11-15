@@ -23,9 +23,10 @@
         },
         {
           "hero": "koren",
-          "pose": "point",
+          "pose": "reading",
           "bg": "Казва се Царевец. Там живели царете.",
-          "en": "It is called Tsarevets. Kings lived there."
+          "en": "It is called Tsarevets. Kings lived there.",
+          "img": "history/medieval-throne.webp"
         },
         {
           "hero": "raya",
@@ -61,9 +62,10 @@
         },
         {
           "hero": "koren",
-          "pose": "point",
+          "pose": "reading",
           "bg": "На хълма Царевец са дворецът на царете и патриаршията.",
-          "en": "The kings' palace and the Patriarchate stand on the hill of Tsarevets."
+          "en": "The kings' palace and the Patriarchate stand on the hill of Tsarevets.",
+          "img": "history/medieval-throne.webp"
         },
         {
           "hero": "raya",

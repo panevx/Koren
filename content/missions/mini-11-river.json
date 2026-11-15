@@ -24,9 +24,10 @@
       "story": [
         {
           "hero": "raya",
-          "pose": "think",
+          "pose": "map",
           "bg": "Реките започват високо в планината.",
-          "en": "Rivers begin high in the mountains."
+          "en": "Rivers begin high in the mountains.",
+          "img": "geo/river.webp"
         },
         {
           "hero": "koren",

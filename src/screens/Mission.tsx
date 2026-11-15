@@ -212,9 +212,9 @@ function Story({ lines, onDone }: { lines: StoryLine[]; onDone: () => void }) {
   return (
     <div className="flex flex-1 flex-col gap-3">
       <p className="sr-only">{t('mission.progress', { n: i + 1, total: lines.length })}</p>
-      {line.img && <img src={img(line.img)} alt="" className="rounded-level w-full object-cover shadow-soft" />}
       <div className="relative flex min-h-[min(27rem,62dvh)] flex-1 flex-col overflow-hidden rounded-[var(--radius-stage)] shadow-soft short:min-h-0 side:flex-row-reverse side:items-end">
-        <Scenery className="absolute inset-0" />
+        {/* The fortress of the backdrop would peek out behind a story object — it steps aside. */}
+        <Scenery className="absolute inset-0" castle={!line.img} />
         {/* the speech bubble */}
         <m.p
           key={i}
@@ -233,6 +233,19 @@ function Story({ lines, onDone }: { lines: StoryLine[]; onDone: () => void }) {
             aria-hidden="true"
           />
         </m.p>
+        {/* What the line is about (a 3D object from public/img) stands on the hill across from the speaker.
+            Wide screens put the hero on the left (row-reverse), so there the object always stands on the right. */}
+        {line.img && (
+          <m.img
+            key={`obj-${i}`}
+            src={img(line.img)}
+            alt=""
+            initial={{ opacity: 0, scale: 0.5, y: 30 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ ...bouncy, delay: 0.15 }}
+            className={`pop-3d absolute bottom-[7%] z-[1] max-h-[min(12rem,28dvh)] w-[44%] object-contain object-bottom short:bottom-[3%] short:max-h-[19dvh] short:w-[24%] side:right-[4%] side:left-auto side:w-[32%] ${fromRight ? 'left-[5%]' : 'right-[5%]'}`}
+          />
+        )}
         {/* the hero walks in from their side and stands on the hill */}
         <div className={`relative mt-auto flex px-4 side:mt-0 side:shrink-0 ${fromRight ? 'justify-end' : 'justify-start'}`}>
           <span className={`absolute bottom-2 h-4 w-[34%] rounded-[50%] bg-ink/20 blur-[3px] ${fromRight ? 'right-[8%]' : 'left-[8%]'}`} aria-hidden="true" />

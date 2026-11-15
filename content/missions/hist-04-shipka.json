@@ -34,7 +34,7 @@
         },
         {
           "hero": "koren",
-          "pose": "point",
+          "pose": "encourage",
           "bg": "Той ни напомня за свободата на България. Намери го!",
           "en": "It reminds us of Bulgaria's freedom. Find it!"
         }
@@ -96,7 +96,8 @@
           "hero": "raya",
           "pose": "wave",
           "bg": "Връх Шипка е в Стара планина, близо до Казанлък.",
-          "en": "Shipka Peak is in the Balkan Mountains, near Kazanlak."
+          "en": "Shipka Peak is in the Balkan Mountains, near Kazanlak.",
+          "img": "geo/balkan.webp"
         },
         {
           "hero": "koren",

@@ -25,7 +25,7 @@
         },
         {
           "hero": "raya",
-          "pose": "point",
+          "pose": "encourage",
           "bg": "Сложи всяка забележителност на нейното място.",
           "en": "Put each landmark in its place."
         }
@@ -154,7 +154,7 @@
       "story": [
         {
           "hero": "koren",
-          "pose": "think",
+          "pose": "map",
           "bg": "Майсторско изпитание: има и празни места-капани.",
           "en": "A master challenge: there are trap spots too."
         },

@@ -24,13 +24,13 @@
       "story": [
         {
           "hero": "koren",
-          "pose": "think",
+          "pose": "reading",
           "bg": "Някога книгите се пишели на ръка.",
           "en": "Long ago books were written by hand."
         },
         {
           "hero": "raya",
-          "pose": "point",
+          "pose": "encourage",
           "bg": "Какво му трябва на писаря? Сложи го в сандъка!",
           "en": "What does the scribe need? Put it in the chest!"
         }

@@ -57,7 +57,8 @@
           "hero": "raya",
           "pose": "point",
           "bg": "Там растат маслодайни рози. От тях се прави българското розово масло – едно от най-ценните в света.",
-          "en": "Oil-bearing roses grow there. They are used to make Bulgarian rose oil – one of the most precious in the world."
+          "en": "Oil-bearing roses grow there. They are used to make Bulgarian rose oil – one of the most precious in the world.",
+          "img": "science/rose-distillation.webp"
         },
         {
           "hero": "koren",
@@ -67,7 +68,7 @@
         },
         {
           "hero": "raya",
-          "pose": "think",
+          "pose": "celebrate",
           "bg": "Всяка година в началото на юни в Казанлък има Празник на розата.",
           "en": "Every year in early June Kazanlak holds the Rose Festival."
         }
@@ -190,7 +191,8 @@
           "hero": "raya",
           "pose": "point",
           "bg": "Отглежда се маслодайна роза (Rosa damascena). Българското розово масло е сред най-ценените в парфюмерията.",
-          "en": "The oil-bearing damask rose (Rosa damascena) grows here. Bulgarian rose oil is among the most valued in perfumery."
+          "en": "The oil-bearing damask rose (Rosa damascena) grows here. Bulgarian rose oil is among the most valued in perfumery.",
+          "img": "science/rose-distillation.webp"
         },
         {
           "hero": "koren",

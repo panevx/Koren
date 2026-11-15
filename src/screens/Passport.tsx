@@ -60,9 +60,9 @@ export function Passport() {
                 { n: medals, label: t('passport.stat.rewards'), art: ART.gold },
                 { n: places, label: t('passport.stat.places'), art: ART.gemBlue },
               ].map((s) => (
-                <div key={s.label} className="flex flex-col items-center rounded-[1.25rem] bg-white/10 px-1 py-2">
+                <div key={s.label} className="flex flex-col items-center rounded-[1.25rem] bg-white/10 px-1 py-2 [container-type:inline-size]">
                   <img src={img(s.art)} alt="" className="pop-3d size-8 object-contain" />
-                  <dt className="order-last text-xs font-bold text-white/85">{s.label}</dt>
+                  <dt className="order-last text-[length:clamp(0.6rem,13cqw,0.75rem)] font-bold text-white/85">{s.label}</dt>
                   <dd className="text-2xl leading-none font-black">{s.n}</dd>
                 </div>
               ))}
@@ -151,7 +151,7 @@ function BadgeItem({ mission, has, i }: { mission: Mission; has: boolean; i: num
   const t = useT()
   const l = useLocalized()
   const body = (
-    <Link to={`/mission/${mission.id}`} className="press flex h-full flex-col items-center gap-1.5 rounded-[2rem] px-1 text-center">
+    <Link to={`/mission/${mission.id}`} className="press flex h-full flex-col items-center gap-1.5 rounded-[2rem] px-1 text-center [container-type:inline-size]">
       <span className="relative">
         <BadgeArt
           icon={mission.badge.icon}
@@ -171,7 +171,7 @@ function BadgeItem({ mission, has, i }: { mission: Mission; has: boolean; i: num
           />
         )}
       </span>
-      <span className={`leading-tight font-extrabold ${has ? 'text-sm' : 'text-xs text-muted'}`}>{l(mission.title)}</span>
+      <span className={`w-full leading-tight font-extrabold ${has ? 'text-sm' : 'text-[length:clamp(0.55rem,10.5cqw,0.75rem)] text-muted'}`}>{l(mission.title)}</span>
       <span className={`flex items-center gap-1 text-xs font-bold ${has ? 'text-green-dark' : 'sr-only'}`}>
         {has && <Icon name="check" width="1em" height="1em" />}
         {has ? t('passport.earned') : t('passport.locked')}

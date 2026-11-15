@@ -24,11 +24,12 @@
           "hero": "raya",
           "pose": "point",
           "bg": "Написал я е монахът Паисий, за да не забравим кои сме.",
-          "en": "The monk Paisius wrote it, so we never forget who we are."
+          "en": "The monk Paisius wrote it, so we never forget who we are.",
+          "img": "people/paisiy.webp"
         },
         {
           "hero": "koren",
-          "pose": "point",
+          "pose": "reading",
           "bg": "Нареди книгата!",
           "en": "Put the book together!"
         }
@@ -50,11 +51,12 @@
           "hero": "raya",
           "pose": "wave",
           "bg": "Паисий е монах в Хилендарския манастир на Света гора.",
-          "en": "Paisius is a monk in the Hilendar Monastery on Mount Athos."
+          "en": "Paisius is a monk in the Hilendar Monastery on Mount Athos.",
+          "img": "people/paisiy.webp"
         },
         {
           "hero": "koren",
-          "pose": "point",
+          "pose": "reading",
           "bg": "През 1762 г. той завършва книгата „История славянобългарска“.",
           "en": "In 1762 he finishes the book “Slavo-Bulgarian History”."
         },
@@ -183,7 +185,8 @@
           "hero": "koren",
           "pose": "wave",
           "bg": "През 1762 г. в Хилендарския манастир Паисий завършва „История славянобългарска“.",
-          "en": "In 1762, in the Hilendar Monastery, Paisius completes the “Slavo-Bulgarian History”."
+          "en": "In 1762, in the Hilendar Monastery, Paisius completes the “Slavo-Bulgarian History”.",
+          "img": "people/paisiy.webp"
         },
         {
           "hero": "raya",

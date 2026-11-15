@@ -19,17 +19,19 @@
           "hero": "koren",
           "pose": "wave",
           "bg": "Това е историята на цар Симеон.",
-          "en": "This is the story of Tsar Simeon."
+          "en": "This is the story of Tsar Simeon.",
+          "img": "history/simeon.webp"
         },
         {
           "hero": "raya",
-          "pose": "point",
+          "pose": "reading",
           "bg": "Той обичал книгите и имал красива столица – Преслав.",
-          "en": "He loved books and had a beautiful capital – Preslav."
+          "en": "He loved books and had a beautiful capital – Preslav.",
+          "img": "history/preslav.webp"
         },
         {
           "hero": "koren",
-          "pose": "point",
+          "pose": "encourage",
           "bg": "Намери еднаквите карти!",
           "en": "Find the matching cards!"
         }
@@ -72,17 +74,19 @@
           "hero": "raya",
           "pose": "wave",
           "bg": "Синът на княз Борис I – Симеон – учил в Константинопол и знаел гръцки много добре.",
-          "en": "Prince Boris I's son Simeon studied in Constantinople and knew Greek very well."
+          "en": "Prince Boris I's son Simeon studied in Constantinople and knew Greek very well.",
+          "img": "history/simeon.webp"
         },
         {
           "hero": "koren",
           "pose": "point",
           "bg": "През 893 г. Симеон става владетел, а столицата се мести от Плиска във Велики Преслав.",
-          "en": "In 893 Simeon becomes ruler, and the capital moves from Pliska to Veliki Preslav."
+          "en": "In 893 Simeon becomes ruler, and the capital moves from Pliska to Veliki Preslav.",
+          "img": "history/preslav.webp"
         },
         {
           "hero": "raya",
-          "pose": "point",
+          "pose": "reading",
           "bg": "При него работят много книжовници. Затова това време се нарича Златен век на българската книжнина.",
           "en": "Many scholars work in his time. That is why it is called the Golden Age of Bulgarian literature."
         },
@@ -171,13 +175,15 @@
           "hero": "koren",
           "pose": "wave",
           "bg": "Симеон е трети син на княз Борис I. Учи в Константинопол и е подготвян за духовник.",
-          "en": "Simeon is the third son of Prince Boris I. He studies in Constantinople and is prepared for the Church."
+          "en": "Simeon is the third son of Prince Boris I. He studies in Constantinople and is prepared for the Church.",
+          "img": "history/simeon.webp"
         },
         {
           "hero": "raya",
           "pose": "point",
           "bg": "През 893 г. Преславският събор го обявява за владетел, а столицата се мести във Велики Преслав.",
-          "en": "In 893 the Council of Preslav makes him ruler, and the capital moves to Veliki Preslav."
+          "en": "In 893 the Council of Preslav makes him ruler, and the capital moves to Veliki Preslav.",
+          "img": "history/preslav.webp"
         },
         {
           "hero": "koren",

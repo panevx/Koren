@@ -29,7 +29,7 @@
         },
         {
           "hero": "koren",
-          "pose": "point",
+          "pose": "encourage",
           "bg": "Намери къщичката на картата!",
           "en": "Find the little house on the map!"
         }
@@ -64,7 +64,7 @@
         },
         {
           "hero": "koren",
-          "pose": "point",
+          "pose": "celebrate",
           "bg": "Веднъж на пет години тук се събират певци и танцьори от цяла България за Националния събор на народното творчество.",
           "en": "Once every five years singers and dancers from all over Bulgaria gather here for the National Folklore Festival."
         },
@@ -72,7 +72,8 @@
           "hero": "raya",
           "pose": "point",
           "bg": "Те идват облечени в народни носии – ризи с шевици, сукмани, престилки и пафти.",
-          "en": "They come in folk costume – embroidered shirts, sukman dresses, aprons and pafti buckles."
+          "en": "They come in folk costume – embroidered shirts, sukman dresses, aprons and pafti buckles.",
+          "img": "culture/bulgarian-costume.webp"
         },
         {
           "hero": "koren",
@@ -213,7 +214,7 @@
         },
         {
           "hero": "raya",
-          "pose": "think",
+          "pose": "celebrate",
           "bg": "Днес тук се провежда Националният събор на българското народно творчество – веднъж на пет години.",
           "en": "Today the National Festival of Bulgarian Folklore takes place here – once every five years."
         }

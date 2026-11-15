@@ -3,6 +3,7 @@ import { join, relative, resolve } from 'node:path'
 import { describe, expect, it } from 'vitest'
 import { MISSIONS } from '../src/content/missions'
 import { allImages, missionImages } from '../src/offline/assets'
+import manifest from '../content/assets/manifest.json'
 
 const IMG = resolve(__dirname, '../public/img')
 const walk = (d: string): string[] => readdirSync(d).flatMap((f) => (statSync(join(d, f)).isDirectory() ? walk(join(d, f)) : [join(d, f)]))
@@ -16,7 +17,9 @@ describe('"Download everything for a trip"', () => {
   })
 
   it('covers every image the app ships (app icons are precached separately)', () => {
-    const missing = files.filter((f) => !f.startsWith('icons/') && !list.includes(f))
+    // Assets prepared for a later stage (manifest status "ready") ship but are not shown yet — nothing downloads them.
+    const later = new Set((manifest.assets as { status: string; path?: string }[]).filter((a) => a.status === 'ready').map((a) => a.path))
+    const missing = files.filter((f) => !f.startsWith('icons/') && !list.includes(f) && !later.has(f))
     expect(missing, 'images in public/img that are neither used nor downloaded').toEqual([])
   })
 

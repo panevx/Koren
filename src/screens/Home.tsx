@@ -122,12 +122,13 @@ export function Home() {
               className="press mt-3 flex items-center gap-3 rounded-full bg-white py-1.5 pr-3 pl-2 shadow-soft"
             >
               <img src={img(ART.gemGreen)} alt="" className="pop-3d size-10 shrink-0 object-contain" />
+              {/* The bar sits under the words (not beside them), so the title keeps the whole width on narrow phones. */}
               <span className="min-w-0 flex-1">
                 <span className="block text-sm leading-tight font-black">{t('path.title')}</span>
-                <span className="block text-xs font-bold text-muted">{t('missions.count', { done: played, total: missions.length })}</span>
-              </span>
-              <span className="w-[24%] shrink-0">
-                <ProgressBar value={played} max={missions.length} height="h-2.5" />
+                <span className="flex items-center gap-2">
+                  <span className="shrink-0 text-xs font-bold text-muted">{t('missions.count', { done: played, total: missions.length })}</span>
+                  <ProgressBar value={played} max={missions.length} height="h-2" className="min-w-8 flex-1" />
+                </span>
               </span>
               <Icon name="chevron" className="shrink-0 text-muted" />
             </Link>

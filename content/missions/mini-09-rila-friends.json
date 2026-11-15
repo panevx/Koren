@@ -26,11 +26,12 @@
           "hero": "raya",
           "pose": "wave",
           "bg": "Да се качим на Рила!",
-          "en": "Let's climb Rila!"
+          "en": "Let's climb Rila!",
+          "img": "geo/rila.webp"
         },
         {
           "hero": "koren",
-          "pose": "point",
+          "pose": "explorer",
           "bg": "Там има езера, орли и диви кози.",
           "en": "There are lakes, eagles and chamois there."
         }

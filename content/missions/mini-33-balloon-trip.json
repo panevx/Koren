@@ -30,7 +30,7 @@
         },
         {
           "hero": "raya",
-          "pose": "point",
+          "pose": "compass",
           "bg": "Пише къде да кацне всяка картинка. Помогни ни!",
           "en": "It says where each picture lands. Help us!"
         }

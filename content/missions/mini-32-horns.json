@@ -19,13 +19,13 @@
       "story": [
         {
           "hero": "raya",
-          "pose": "think",
+          "pose": "nature",
           "bg": "Някои животни имат рога, а други – не.",
           "en": "Some animals have horns and others do not."
         },
         {
           "hero": "koren",
-          "pose": "point",
+          "pose": "encourage",
           "bg": "Подреди ги в кутиите!",
           "en": "Sort them into the boxes!"
         }

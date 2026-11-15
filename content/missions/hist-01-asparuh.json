@@ -19,7 +19,8 @@
           "hero": "koren",
           "pose": "wave",
           "bg": "Здравей! Да идем при хан Аспарух!",
-          "en": "Hi! Let's visit Khan Asparuh!"
+          "en": "Hi! Let's visit Khan Asparuh!",
+          "img": "history/asparuh.webp"
         },
         {
           "hero": "raya",
@@ -29,7 +30,7 @@
         },
         {
           "hero": "koren",
-          "pose": "point",
+          "pose": "encourage",
           "bg": "Намери крепостта на картата!",
           "en": "Find the fortress on the map!"
         }
@@ -60,11 +61,12 @@
           "hero": "koren",
           "pose": "wave",
           "bg": "Здравей! Днес ще пътуваме преди повече от 1300 години – при хан Аспарух, сина на хан Кубрат.",
-          "en": "Hello! Today we travel back more than 1300 years – to Khan Asparuh, the son of Khan Kubrat."
+          "en": "Hello! Today we travel back more than 1300 years – to Khan Asparuh, the son of Khan Kubrat.",
+          "img": "history/asparuh.webp"
         },
         {
           "hero": "raya",
-          "pose": "point",
+          "pose": "map",
           "bg": "Аспарух повел своите българи на запад, към делтата на голямата река Дунав.",
           "en": "Asparuh led his Bulgars west, to the delta of the great river Danube."
         },
@@ -188,9 +190,10 @@
         },
         {
           "hero": "koren",
-          "pose": "point",
+          "pose": "map",
           "bg": "Синът на Кубрат – Аспарух – повежда своята част от българите на запад и се установява в Онгъла, близо до делтата на Дунав.",
-          "en": "Kubrat's son Asparuh leads his part of the Bulgars west and settles in Onglos, near the Danube delta."
+          "en": "Kubrat's son Asparuh leads his part of the Bulgars west and settles in Onglos, near the Danube delta.",
+          "img": "history/asparuh.webp"
         },
         {
           "hero": "raya",

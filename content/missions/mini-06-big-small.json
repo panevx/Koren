@@ -24,13 +24,13 @@
       "story": [
         {
           "hero": "koren",
-          "pose": "think",
+          "pose": "nature",
           "bg": "В гората има малки и големи животни.",
           "en": "There are small and big animals in the forest."
         },
         {
           "hero": "raya",
-          "pose": "point",
+          "pose": "encourage",
           "bg": "Подреди ги от най-малкото до най-голямото!",
           "en": "Put them in order from the smallest to the biggest!"
         }

@@ -29,7 +29,7 @@
         },
         {
           "hero": "koren",
-          "pose": "point",
+          "pose": "explorer",
           "bg": "Намери скалите на картата!",
           "en": "Find the rocks on the map!"
         }
@@ -70,7 +70,7 @@
         },
         {
           "hero": "raya",
-          "pose": "point",
+          "pose": "explorer",
           "bg": "Има скали, наречени Мадоната, Конникът, Монасите и Адам и Ева.",
           "en": "There are rocks called the Madonna, the Horseman, the Monks and Adam and Eve."
         },
@@ -197,7 +197,7 @@
         },
         {
           "hero": "raya",
-          "pose": "point",
+          "pose": "explorer",
           "bg": "Червеният им цвят идва от железни оксиди в скалите.",
           "en": "Their red colour comes from iron oxides in the rock."
         },

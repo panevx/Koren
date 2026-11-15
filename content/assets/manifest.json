@@ -1,0 +1,2631 @@
+{
+ "version": "v5",
+ "total": 300,
+ "summary": {
+  "used": 37,
+  "ready": 197,
+  "source": 10,
+  "duplicate": 49,
+  "review": 7
+ },
+ "composites": {
+  "history/kiril-metodiy.webp": [
+   "hero-kiril",
+   "hero-metodiy"
+  ]
+ },
+ "assets": [
+  {
+   "id": "animal-black-sea-dolphin",
+   "original": "design/v5/animal/animal-black-sea-dolphin.png",
+   "category": "animal",
+   "status": "duplicate",
+   "same": "animals/dolphin.webp"
+  },
+  {
+   "id": "animal-brown-bear",
+   "original": "design/v5/animal/animal-brown-bear.png",
+   "category": "animal",
+   "status": "duplicate",
+   "same": "animals/bear.webp"
+  },
+  {
+   "id": "animal-chamois",
+   "original": "design/v5/animal/animal-chamois.png",
+   "category": "animal",
+   "status": "duplicate",
+   "same": "animals/chamois.webp"
+  },
+  {
+   "id": "animal-dalmatian-pelican",
+   "original": "design/v5/animal/animal-dalmatian-pelican.png",
+   "category": "animal",
+   "status": "duplicate",
+   "same": "animals/pelican.webp"
+  },
+  {
+   "id": "animal-golden-eagle",
+   "original": "design/v5/animal/animal-golden-eagle.png",
+   "category": "animal",
+   "status": "duplicate",
+   "same": "animals/eagle.webp"
+  },
+  {
+   "id": "animal-hedgehog",
+   "original": "design/v5/animal/animal-hedgehog.png",
+   "category": "animal",
+   "status": "duplicate",
+   "same": "animals/hedgehog.webp"
+  },
+  {
+   "id": "animal-imperial-eagle",
+   "original": "design/v5/animal/animal-imperial-eagle.png",
+   "category": "animal",
+   "status": "ready",
+   "path": "animals/imperial-eagle.webp",
+   "stage": 4,
+   "size": "320x320"
+  },
+  {
+   "id": "animal-lynx",
+   "original": "design/v5/animal/animal-lynx.png",
+   "category": "animal",
+   "status": "duplicate",
+   "same": "animals/lynx.webp"
+  },
+  {
+   "id": "animal-otter",
+   "original": "design/v5/animal/animal-otter.png",
+   "category": "animal",
+   "status": "duplicate",
+   "same": "animals/otter.webp"
+  },
+  {
+   "id": "animal-red-deer",
+   "original": "design/v5/animal/animal-red-deer.png",
+   "category": "animal",
+   "status": "duplicate",
+   "same": "animals/red-deer.webp"
+  },
+  {
+   "id": "animal-red-fox",
+   "original": "design/v5/animal/animal-red-fox.png",
+   "category": "animal",
+   "status": "duplicate",
+   "same": "animals/fox.webp"
+  },
+  {
+   "id": "animal-roe-deer",
+   "original": "design/v5/animal/animal-roe-deer.png",
+   "category": "animal",
+   "status": "duplicate",
+   "same": "animals/roe-deer.webp"
+  },
+  {
+   "id": "animal-tortoise",
+   "original": "design/v5/animal/animal-tortoise.png",
+   "category": "animal",
+   "status": "duplicate",
+   "same": "animals/tortoise.webp"
+  },
+  {
+   "id": "animal-white-stork",
+   "original": "design/v5/animal/animal-white-stork.png",
+   "category": "animal",
+   "status": "duplicate",
+   "same": "animals/stork.webp"
+  },
+  {
+   "id": "animal-wild-boar",
+   "original": "design/v5/animal/animal-wild-boar.png",
+   "category": "animal",
+   "status": "duplicate",
+   "same": "animals/boar.webp"
+  },
+  {
+   "id": "animal-wolf",
+   "original": "design/v5/animal/animal-wolf.png",
+   "category": "animal",
+   "status": "duplicate",
+   "same": "animals/wolf.webp"
+  },
+  {
+   "id": "avatar-embroidered-vest",
+   "original": "design/v5/avatar/avatar-embroidered-vest.png",
+   "category": "avatar",
+   "status": "ready",
+   "path": "avatar/embroidered-vest.webp",
+   "stage": 9,
+   "size": "320x320"
+  },
+  {
+   "id": "avatar-explorer-backpack",
+   "original": "design/v5/avatar/avatar-explorer-backpack.png",
+   "category": "avatar",
+   "status": "ready",
+   "path": "avatar/explorer-backpack.webp",
+   "stage": 9,
+   "size": "320x320"
+  },
+  {
+   "id": "avatar-explorer-hat",
+   "original": "design/v5/avatar/avatar-explorer-hat.png",
+   "category": "avatar",
+   "status": "ready",
+   "path": "avatar/explorer-hat.webp",
+   "stage": 9,
+   "size": "640x404"
+  },
+  {
+   "id": "avatar-flower-crown",
+   "original": "design/v5/avatar/avatar-flower-crown.png",
+   "category": "avatar",
+   "status": "ready",
+   "path": "avatar/flower-crown.webp",
+   "stage": 9,
+   "size": "640x485"
+  },
+  {
+   "id": "avatar-folk-bag",
+   "original": "design/v5/avatar/avatar-folk-bag.png",
+   "category": "avatar",
+   "status": "ready",
+   "path": "avatar/folk-bag.webp",
+   "stage": 9,
+   "size": "320x320"
+  },
+  {
+   "id": "avatar-folk-hat",
+   "original": "design/v5/avatar/avatar-folk-hat.png",
+   "category": "avatar",
+   "status": "ready",
+   "path": "avatar/folk-hat.webp",
+   "stage": 9,
+   "size": "320x320"
+  },
+  {
+   "id": "avatar-leather-boots",
+   "original": "design/v5/avatar/avatar-leather-boots.png",
+   "category": "avatar",
+   "status": "ready",
+   "path": "avatar/leather-boots.webp",
+   "stage": 9,
+   "size": "320x320"
+  },
+  {
+   "id": "avatar-martenitsa-accessory",
+   "original": "design/v5/avatar/avatar-martenitsa-accessory.png",
+   "category": "avatar",
+   "status": "ready",
+   "path": "avatar/martenitsa-accessory.webp",
+   "stage": 9,
+   "size": "320x320"
+  },
+  {
+   "id": "avatar-rose-accessory",
+   "original": "design/v5/avatar/avatar-rose-accessory.png",
+   "category": "avatar",
+   "status": "ready",
+   "path": "avatar/rose-accessory.webp",
+   "stage": 9,
+   "size": "320x320"
+  },
+  {
+   "id": "avatar-traditional-belt",
+   "original": "design/v5/avatar/avatar-traditional-belt.png",
+   "category": "avatar",
+   "status": "ready",
+   "path": "avatar/traditional-belt.webp",
+   "stage": 9,
+   "size": "320x320"
+  },
+  {
+   "id": "city-bansko",
+   "original": "design/v5/city/city-bansko.png",
+   "category": "city",
+   "status": "ready",
+   "path": "city/bansko.webp",
+   "stage": 2,
+   "size": "320x320"
+  },
+  {
+   "id": "city-burgas",
+   "original": "design/v5/city/city-burgas.png",
+   "category": "city",
+   "status": "used",
+   "path": "city/burgas.webp",
+   "usedIn": "карта: Бургас",
+   "size": "640x367"
+  },
+  {
+   "id": "city-gabrovo",
+   "original": "design/v5/city/city-gabrovo.png",
+   "category": "city",
+   "status": "ready",
+   "path": "city/gabrovo.webp",
+   "stage": 2,
+   "size": "320x320"
+  },
+  {
+   "id": "city-karlovo",
+   "original": "design/v5/city/city-karlovo.png",
+   "category": "city",
+   "status": "ready",
+   "path": "city/karlovo.webp",
+   "stage": 2,
+   "size": "320x320"
+  },
+  {
+   "id": "city-koprivshtitsa",
+   "original": "design/v5/city/city-koprivshtitsa.png",
+   "category": "city",
+   "status": "ready",
+   "path": "city/koprivshtitsa.webp",
+   "stage": 2,
+   "size": "640x508"
+  },
+  {
+   "id": "city-plovdiv",
+   "original": "design/v5/city/city-plovdiv.png",
+   "category": "city",
+   "status": "used",
+   "path": "city/plovdiv.webp",
+   "usedIn": "карта: Пловдив",
+   "size": "320x320"
+  },
+  {
+   "id": "city-ruse",
+   "original": "design/v5/city/city-ruse.png",
+   "category": "city",
+   "status": "ready",
+   "path": "city/ruse.webp",
+   "stage": 2,
+   "size": "320x320"
+  },
+  {
+   "id": "city-sofia",
+   "original": "design/v5/city/city-sofia.png",
+   "category": "city",
+   "status": "used",
+   "path": "city/sofia.webp",
+   "usedIn": "Катедралата в София (история)",
+   "size": "320x320"
+  },
+  {
+   "id": "city-varna",
+   "original": "design/v5/city/city-varna.png",
+   "category": "city",
+   "status": "used",
+   "path": "city/varna.webp",
+   "usedIn": "карта: Варна; Черно море (история)",
+   "size": "320x320"
+  },
+  {
+   "id": "city-veliko-tarnovo",
+   "original": "design/v5/city/city-veliko-tarnovo.png",
+   "category": "city",
+   "status": "ready",
+   "path": "city/veliko-tarnovo.webp",
+   "stage": 2,
+   "size": "320x320"
+  },
+  {
+   "id": "currency-coin-bag",
+   "original": "design/v5/currency/currency-coin-bag.png",
+   "category": "currency",
+   "status": "ready",
+   "path": "currency/coin-bag.webp",
+   "stage": 9,
+   "size": "320x320"
+  },
+  {
+   "id": "currency-coin-stack",
+   "original": "design/v5/currency/currency-coin-stack.png",
+   "category": "currency",
+   "status": "ready",
+   "path": "currency/coin-stack.webp",
+   "stage": 9,
+   "size": "320x320"
+  },
+  {
+   "id": "currency-gold-coin",
+   "original": "design/v5/currency/currency-gold-coin.png",
+   "category": "currency",
+   "status": "ready",
+   "path": "currency/gold-coin.webp",
+   "stage": 9,
+   "size": "320x320"
+  },
+  {
+   "id": "currency-pendar",
+   "original": "design/v5/currency/currency-pendar.png",
+   "category": "currency",
+   "status": "ready",
+   "path": "currency/pendar.webp",
+   "stage": 9,
+   "size": "320x320"
+  },
+  {
+   "id": "food-banitsa",
+   "original": "design/v5/food/food-banitsa.png",
+   "category": "food",
+   "status": "ready",
+   "path": "food/banitsa.webp",
+   "stage": 6,
+   "size": "640x511"
+  },
+  {
+   "id": "food-bob-chorba",
+   "original": "design/v5/food/food-bob-chorba.png",
+   "category": "food",
+   "status": "ready",
+   "path": "food/bob-chorba.webp",
+   "stage": 6,
+   "size": "320x320"
+  },
+  {
+   "id": "food-kavarma",
+   "original": "design/v5/food/food-kavarma.png",
+   "category": "food",
+   "status": "ready",
+   "path": "food/kavarma.webp",
+   "stage": 6,
+   "size": "320x320"
+  },
+  {
+   "id": "food-kebapche",
+   "original": "design/v5/food/food-kebapche.png",
+   "category": "food",
+   "status": "ready",
+   "path": "food/kebapche.webp",
+   "stage": 6,
+   "size": "640x434"
+  },
+  {
+   "id": "food-kiselo-mlyako",
+   "original": "design/v5/food/food-kiselo-mlyako.png",
+   "category": "food",
+   "status": "ready",
+   "path": "food/kiselo-mlyako.webp",
+   "stage": 6,
+   "size": "320x320"
+  },
+  {
+   "id": "food-kozunak",
+   "original": "design/v5/food/food-kozunak.png",
+   "category": "food",
+   "status": "ready",
+   "path": "food/kozunak.webp",
+   "stage": 6,
+   "size": "320x320"
+  },
+  {
+   "id": "food-kyufte",
+   "original": "design/v5/food/food-kyufte.png",
+   "category": "food",
+   "status": "ready",
+   "path": "food/kyufte.webp",
+   "stage": 6,
+   "size": "320x320"
+  },
+  {
+   "id": "food-lyutenitsa",
+   "original": "design/v5/food/food-lyutenitsa.png",
+   "category": "food",
+   "status": "ready",
+   "path": "food/lyutenitsa.webp",
+   "stage": 6,
+   "size": "320x320"
+  },
+  {
+   "id": "food-mekitsi",
+   "original": "design/v5/food/food-mekitsi.png",
+   "category": "food",
+   "status": "ready",
+   "path": "food/mekitsi.webp",
+   "stage": 6,
+   "size": "320x320"
+  },
+  {
+   "id": "food-patatnik",
+   "original": "design/v5/food/food-patatnik.png",
+   "category": "food",
+   "status": "ready",
+   "path": "food/patatnik.webp",
+   "stage": 6,
+   "size": "320x320"
+  },
+  {
+   "id": "food-sarmi",
+   "original": "design/v5/food/food-sarmi.png",
+   "category": "food",
+   "status": "ready",
+   "path": "food/sarmi.webp",
+   "stage": 6,
+   "size": "640x481"
+  },
+  {
+   "id": "food-shkembe-chorba",
+   "original": "design/v5/food/food-shkembe-chorba.png",
+   "category": "food",
+   "status": "ready",
+   "path": "food/shkembe-chorba.webp",
+   "stage": 6,
+   "size": "320x320"
+  },
+  {
+   "id": "food-shopska-salad",
+   "original": "design/v5/food/food-shopska-salad.png",
+   "category": "food",
+   "status": "ready",
+   "path": "food/shopska-salad.webp",
+   "stage": 6,
+   "size": "320x320"
+  },
+  {
+   "id": "food-tarator",
+   "original": "design/v5/food/food-tarator.png",
+   "category": "food",
+   "status": "ready",
+   "path": "food/tarator.webp",
+   "stage": 6,
+   "size": "320x320"
+  },
+  {
+   "id": "food-tikvenik",
+   "original": "design/v5/food/food-tikvenik.png",
+   "category": "food",
+   "status": "ready",
+   "path": "food/tikvenik.webp",
+   "stage": 6,
+   "size": "320x320"
+  },
+  {
+   "id": "game-drag-handle",
+   "original": "design/v5/game/game-drag-handle.png",
+   "category": "game",
+   "status": "ready",
+   "path": "game/drag-handle.webp",
+   "stage": 9,
+   "size": "192x192"
+  },
+  {
+   "id": "game-drop-target",
+   "original": "design/v5/game/game-drop-target.png",
+   "category": "game",
+   "status": "ready",
+   "path": "game/drop-target.webp",
+   "stage": 9,
+   "size": "192x192"
+  },
+  {
+   "id": "game-key",
+   "original": "design/v5/game/game-key.png",
+   "category": "game",
+   "status": "duplicate",
+   "same": "world/mission-key.webp"
+  },
+  {
+   "id": "game-letter-tile",
+   "original": "design/v5/game/game-letter-tile.png",
+   "category": "game",
+   "status": "ready",
+   "path": "game/letter-tile.webp",
+   "stage": 7,
+   "size": "320x320"
+  },
+  {
+   "id": "game-magnifier",
+   "original": "design/v5/game/game-magnifier.png",
+   "category": "game",
+   "status": "duplicate",
+   "same": "world/discovery-magnifier.webp"
+  },
+  {
+   "id": "game-matching-card",
+   "original": "design/v5/game/game-matching-card.png",
+   "category": "game",
+   "status": "duplicate",
+   "same": "world/matching-card.webp"
+  },
+  {
+   "id": "game-mission-complete",
+   "original": "design/v5/game/game-mission-complete.png",
+   "category": "game",
+   "status": "ready",
+   "path": "game/mission-complete.webp",
+   "stage": 9,
+   "size": "320x320"
+  },
+  {
+   "id": "game-paint-bucket",
+   "original": "design/v5/game/game-paint-bucket.png",
+   "category": "game",
+   "status": "ready",
+   "path": "game/paint-bucket.webp",
+   "stage": 6,
+   "size": "192x192"
+  },
+  {
+   "id": "game-paintbrush",
+   "original": "design/v5/game/game-paintbrush.png",
+   "category": "game",
+   "status": "ready",
+   "path": "game/paintbrush.webp",
+   "stage": 6,
+   "size": "192x192"
+  },
+  {
+   "id": "game-puzzle-blue",
+   "original": "design/v5/game/game-puzzle-blue.png",
+   "category": "game",
+   "status": "ready",
+   "path": "game/puzzle-blue.webp",
+   "stage": 9,
+   "size": "320x320"
+  },
+  {
+   "id": "game-puzzle-green",
+   "original": "design/v5/game/game-puzzle-green.png",
+   "category": "game",
+   "status": "duplicate",
+   "same": "world/puzzle-piece-green.webp"
+  },
+  {
+   "id": "game-puzzle-red",
+   "original": "design/v5/game/game-puzzle-red.png",
+   "category": "game",
+   "status": "ready",
+   "path": "game/puzzle-red.webp",
+   "stage": 9,
+   "size": "320x320"
+  },
+  {
+   "id": "game-puzzle-yellow",
+   "original": "design/v5/game/game-puzzle-yellow.png",
+   "category": "game",
+   "status": "duplicate",
+   "same": "world/puzzle-piece-yellow.webp"
+  },
+  {
+   "id": "game-stamp",
+   "original": "design/v5/game/game-stamp.png",
+   "category": "game",
+   "status": "duplicate",
+   "same": "world/passport-stamp.webp"
+  },
+  {
+   "id": "game-timer",
+   "original": "design/v5/game/game-timer.png",
+   "category": "game",
+   "status": "ready",
+   "path": "game/timer.webp",
+   "stage": 9,
+   "size": "192x192"
+  },
+  {
+   "id": "game-treasure-chest-open",
+   "original": "design/v5/game/game-treasure-chest-open.png",
+   "category": "game",
+   "status": "duplicate",
+   "same": "world/treasure-chest-open.webp"
+  },
+  {
+   "id": "game-treasure-chest",
+   "original": "design/v5/game/game-treasure-chest.png",
+   "category": "game",
+   "status": "duplicate",
+   "same": "world/treasure-chest-closed.webp"
+  },
+  {
+   "id": "game-true-false-false",
+   "original": "design/v5/game/game-true-false-false.svg",
+   "category": "game",
+   "status": "ready",
+   "path": "game/true-false-false.svg",
+   "stage": 9
+  },
+  {
+   "id": "game-true-false-true",
+   "original": "design/v5/game/game-true-false-true.svg",
+   "category": "game",
+   "status": "ready",
+   "path": "game/true-false-true.svg",
+   "stage": 9
+  },
+  {
+   "id": "game-word-tile",
+   "original": "design/v5/game/game-word-tile.png",
+   "category": "game",
+   "status": "ready",
+   "path": "game/word-tile.webp",
+   "stage": 7,
+   "size": "640x295"
+  },
+  {
+   "id": "hero-budenie-book",
+   "original": "design/v5/hero/hero-budenie-book.png",
+   "category": "hero",
+   "status": "ready",
+   "path": "people/budenie-book.webp",
+   "stage": 5,
+   "size": "320x320"
+  },
+  {
+   "id": "hero-elin-pelin",
+   "original": "design/v5/hero/hero-elin-pelin.png",
+   "category": "hero",
+   "status": "ready",
+   "path": "people/elin-pelin.webp",
+   "stage": 5,
+   "size": "320x320",
+   "check": "Условен образ — сравни чертите със запазен портрет/снимка (историк)."
+  },
+  {
+   "id": "hero-feather-ink",
+   "original": "design/v5/hero/hero-feather-ink.png",
+   "category": "hero",
+   "status": "duplicate",
+   "same": "world/quill-ink.webp"
+  },
+  {
+   "id": "hero-georgi-rakovski",
+   "original": "design/v5/hero/hero-georgi-rakovski.png",
+   "category": "hero",
+   "status": "ready",
+   "path": "people/georgi-rakovski.webp",
+   "stage": 5,
+   "size": "320x320",
+   "check": "Условен образ — сравни чертите със запазен портрет/снимка (историк)."
+  },
+  {
+   "id": "hero-hristo-botev",
+   "original": "design/v5/hero/hero-hristo-botev.png",
+   "category": "hero",
+   "status": "ready",
+   "path": "people/hristo-botev.webp",
+   "stage": 5,
+   "size": "320x320",
+   "check": "Условен образ — сравни чертите със запазен портрет/снимка (историк)."
+  },
+  {
+   "id": "hero-ivan-vazov",
+   "original": "design/v5/hero/hero-ivan-vazov.png",
+   "category": "hero",
+   "status": "ready",
+   "path": "people/ivan-vazov.webp",
+   "stage": 5,
+   "size": "320x320",
+   "check": "Условен образ — сравни чертите със запазен портрет/снимка (историк)."
+  },
+  {
+   "id": "hero-kiril",
+   "original": "design/v5/hero/hero-kiril.png",
+   "category": "hero",
+   "status": "ready",
+   "path": "people/kiril.webp",
+   "stage": 5,
+   "size": "320x320",
+   "composite": "history/kiril-metodiy.webp (показва се в „Азбуката на Кирил и Методий“)",
+   "check": "Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста."
+  },
+  {
+   "id": "hero-kliment-ohridski",
+   "original": "design/v5/hero/hero-kliment-ohridski.png",
+   "category": "hero",
+   "status": "used",
+   "path": "people/kliment-ohridski.webp",
+   "usedIn": "Азбуката на Кирил и Методий (история)",
+   "size": "320x320",
+   "check": "Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста."
+  },
+  {
+   "id": "hero-lyuben-karavelov",
+   "original": "design/v5/hero/hero-lyuben-karavelov.png",
+   "category": "hero",
+   "status": "ready",
+   "path": "people/lyuben-karavelov.webp",
+   "stage": 5,
+   "size": "320x320",
+   "check": "Условен образ — сравни чертите със запазен портрет/снимка (историк)."
+  },
+  {
+   "id": "hero-metodiy",
+   "original": "design/v5/hero/hero-metodiy.png",
+   "category": "hero",
+   "status": "ready",
+   "path": "people/metodiy.webp",
+   "stage": 5,
+   "size": "320x320",
+   "composite": "history/kiril-metodiy.webp (показва се в „Азбуката на Кирил и Методий“)",
+   "check": "Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста."
+  },
+  {
+   "id": "hero-naum",
+   "original": "design/v5/hero/hero-naum.png",
+   "category": "hero",
+   "status": "ready",
+   "path": "people/naum.webp",
+   "stage": 5,
+   "size": "320x320",
+   "check": "Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста."
+  },
+  {
+   "id": "hero-neofit-rilski",
+   "original": "design/v5/hero/hero-neofit-rilski.png",
+   "category": "hero",
+   "status": "ready",
+   "path": "people/neofit-rilski.webp",
+   "stage": 5,
+   "size": "320x320",
+   "check": "Условен образ — сравни чертите със запазен портрет/снимка (историк)."
+  },
+  {
+   "id": "hero-old-school",
+   "original": "design/v5/hero/hero-old-school.png",
+   "category": "hero",
+   "status": "ready",
+   "path": "people/old-school.webp",
+   "stage": 5,
+   "size": "320x320"
+  },
+  {
+   "id": "hero-paisiy",
+   "original": "design/v5/hero/hero-paisiy.png",
+   "category": "hero",
+   "status": "used",
+   "path": "people/paisiy.webp",
+   "usedIn": "Паисий (история)",
+   "size": "320x320",
+   "check": "Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста."
+  },
+  {
+   "id": "hero-petar-beron",
+   "original": "design/v5/hero/hero-petar-beron.png",
+   "category": "hero",
+   "status": "ready",
+   "path": "people/petar-beron.webp",
+   "stage": 5,
+   "size": "320x320",
+   "check": "Условен образ — сравни чертите със запазен портрет/снимка (историк)."
+  },
+  {
+   "id": "hero-rayna-knyaginya",
+   "original": "design/v5/hero/hero-rayna-knyaginya.png",
+   "category": "hero",
+   "status": "ready",
+   "path": "people/rayna-knyaginya.webp",
+   "stage": 5,
+   "size": "320x320",
+   "check": "Условен образ — сравни чертите със запазен портрет/снимка (историк)."
+  },
+  {
+   "id": "hero-sofroniy",
+   "original": "design/v5/hero/hero-sofroniy.png",
+   "category": "hero",
+   "status": "ready",
+   "path": "people/sofroniy.webp",
+   "stage": 5,
+   "size": "320x320",
+   "check": "Условен образ — сравни чертите със запазен портрет/снимка (историк)."
+  },
+  {
+   "id": "hero-vasil-levski",
+   "original": "design/v5/hero/hero-vasil-levski.png",
+   "category": "hero",
+   "status": "ready",
+   "path": "people/vasil-levski.webp",
+   "stage": 5,
+   "size": "320x320",
+   "check": "Условен образ — сравни чертите със запазен портрет/снимка (историк)."
+  },
+  {
+   "id": "hero-yordan-yovkov",
+   "original": "design/v5/hero/hero-yordan-yovkov.png",
+   "category": "hero",
+   "status": "ready",
+   "path": "people/yordan-yovkov.webp",
+   "stage": 5,
+   "size": "320x320",
+   "check": "Условен образ — сравни чертите със запазен портрет/снимка (историк)."
+  },
+  {
+   "id": "hero-zahari-stoyanov",
+   "original": "design/v5/hero/hero-zahari-stoyanov.png",
+   "category": "hero",
+   "status": "ready",
+   "path": "people/zahari-stoyanov.webp",
+   "stage": 5,
+   "size": "320x320",
+   "check": "Условен образ — сравни чертите със запазен портрет/снимка (историк)."
+  },
+  {
+   "id": "history-asparuh",
+   "original": "design/v5/history/history-asparuh.png",
+   "category": "history",
+   "status": "used",
+   "path": "history/asparuh.webp",
+   "usedIn": "Хан Аспарух (история)",
+   "size": "320x320",
+   "check": "Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста."
+  },
+  {
+   "id": "history-boris-first",
+   "original": "design/v5/history/history-boris-first.png",
+   "category": "history",
+   "status": "ready",
+   "path": "history/boris-first.webp",
+   "stage": 5,
+   "size": "320x320",
+   "check": "Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста."
+  },
+  {
+   "id": "history-ivan-asen-second",
+   "original": "design/v5/history/history-ivan-asen-second.png",
+   "category": "history",
+   "status": "ready",
+   "path": "history/ivan-asen-second.webp",
+   "stage": 5,
+   "size": "320x320",
+   "check": "Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста."
+  },
+  {
+   "id": "history-ivan-shishman",
+   "original": "design/v5/history/history-ivan-shishman.png",
+   "category": "history",
+   "status": "ready",
+   "path": "history/ivan-shishman.webp",
+   "stage": 5,
+   "size": "320x320",
+   "check": "Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста."
+  },
+  {
+   "id": "history-kaloyan",
+   "original": "design/v5/history/history-kaloyan.png",
+   "category": "history",
+   "status": "ready",
+   "path": "history/kaloyan.webp",
+   "stage": 5,
+   "size": "320x320",
+   "check": "Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста."
+  },
+  {
+   "id": "history-krum",
+   "original": "design/v5/history/history-krum.png",
+   "category": "history",
+   "status": "ready",
+   "path": "history/krum.webp",
+   "stage": 5,
+   "size": "320x320",
+   "check": "Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста."
+  },
+  {
+   "id": "history-medieval-book",
+   "original": "design/v5/history/history-medieval-book.png",
+   "category": "history",
+   "status": "duplicate",
+   "same": "world/medieval-book.webp"
+  },
+  {
+   "id": "history-medieval-crown",
+   "original": "design/v5/history/history-medieval-crown.png",
+   "category": "history",
+   "status": "duplicate",
+   "same": "world/simeon-crown.webp"
+  },
+  {
+   "id": "history-medieval-fortress",
+   "original": "design/v5/history/history-medieval-fortress.png",
+   "category": "history",
+   "status": "used",
+   "path": "history/medieval-fortress.webp",
+   "usedIn": "Короната на царя (история)",
+   "size": "640x471"
+  },
+  {
+   "id": "history-medieval-gate",
+   "original": "design/v5/history/history-medieval-gate.png",
+   "category": "history",
+   "status": "ready",
+   "path": "history/medieval-gate.webp",
+   "stage": 5,
+   "size": "320x320"
+  },
+  {
+   "id": "history-medieval-scroll",
+   "original": "design/v5/history/history-medieval-scroll.png",
+   "category": "history",
+   "status": "duplicate",
+   "same": "world/old-scroll.webp"
+  },
+  {
+   "id": "history-medieval-shield",
+   "original": "design/v5/history/history-medieval-shield.png",
+   "category": "history",
+   "status": "duplicate",
+   "same": "world/asparuh-shield.webp"
+  },
+  {
+   "id": "history-medieval-throne",
+   "original": "design/v5/history/history-medieval-throne.png",
+   "category": "history",
+   "status": "used",
+   "path": "history/medieval-throne.webp",
+   "usedIn": "Царевец (история)",
+   "size": "320x320"
+  },
+  {
+   "id": "history-medieval-tower",
+   "original": "design/v5/history/history-medieval-tower.png",
+   "category": "history",
+   "status": "ready",
+   "path": "history/medieval-tower.webp",
+   "stage": 5,
+   "size": "320x320"
+  },
+  {
+   "id": "history-omurtag",
+   "original": "design/v5/history/history-omurtag.png",
+   "category": "history",
+   "status": "ready",
+   "path": "history/omurtag.webp",
+   "stage": 5,
+   "size": "320x320",
+   "check": "Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста."
+  },
+  {
+   "id": "history-petar-first",
+   "original": "design/v5/history/history-petar-first.png",
+   "category": "history",
+   "status": "ready",
+   "path": "history/petar-first.webp",
+   "stage": 5,
+   "size": "320x320",
+   "check": "Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста."
+  },
+  {
+   "id": "history-pliska",
+   "original": "design/v5/history/history-pliska.png",
+   "category": "history",
+   "status": "duplicate",
+   "same": "world/pliska.webp"
+  },
+  {
+   "id": "history-preslav",
+   "original": "design/v5/history/history-preslav.png",
+   "category": "history",
+   "status": "used",
+   "path": "history/preslav.webp",
+   "usedIn": "карта: Велики Преслав; Цар Симеон (история)",
+   "size": "320x320"
+  },
+  {
+   "id": "history-samuil",
+   "original": "design/v5/history/history-samuil.png",
+   "category": "history",
+   "status": "ready",
+   "path": "history/samuil.webp",
+   "stage": 5,
+   "size": "320x320",
+   "check": "Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста."
+  },
+  {
+   "id": "history-simeon",
+   "original": "design/v5/history/history-simeon.png",
+   "category": "history",
+   "status": "used",
+   "path": "history/simeon.webp",
+   "usedIn": "Цар Симеон (история)",
+   "size": "320x320",
+   "check": "Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста."
+  },
+  {
+   "id": "ingredient-cheese",
+   "original": "design/v5/ingredient/ingredient-cheese.png",
+   "category": "ingredient",
+   "status": "ready",
+   "path": "food/cheese.webp",
+   "stage": 6,
+   "size": "320x320"
+  },
+  {
+   "id": "ingredient-cucumber",
+   "original": "design/v5/ingredient/ingredient-cucumber.png",
+   "category": "ingredient",
+   "status": "ready",
+   "path": "food/cucumber.webp",
+   "stage": 6,
+   "size": "320x320"
+  },
+  {
+   "id": "ingredient-pepper",
+   "original": "design/v5/ingredient/ingredient-pepper.png",
+   "category": "ingredient",
+   "status": "ready",
+   "path": "food/pepper.webp",
+   "stage": 6,
+   "size": "320x320"
+  },
+  {
+   "id": "ingredient-tomato",
+   "original": "design/v5/ingredient/ingredient-tomato.png",
+   "category": "ingredient",
+   "status": "ready",
+   "path": "food/tomato.webp",
+   "stage": 6,
+   "size": "320x320"
+  },
+  {
+   "id": "ingredient-yogurt",
+   "original": "design/v5/ingredient/ingredient-yogurt.png",
+   "category": "ingredient",
+   "status": "ready",
+   "path": "food/yogurt.webp",
+   "stage": 6,
+   "size": "320x320"
+  },
+  {
+   "id": "koren-celebrate",
+   "original": "design/v5/koren/koren-celebrate.png",
+   "category": "koren",
+   "status": "used",
+   "path": "poses/koren-celebrate.webp",
+   "usedIn": "истории на мисиите (поза celebrate)",
+   "size": "458x900"
+  },
+  {
+   "id": "koren-chef",
+   "original": "design/v5/koren/koren-chef.png",
+   "category": "koren",
+   "status": "used",
+   "path": "poses/koren-chef.webp",
+   "usedIn": "мисия „Погача за гости“",
+   "size": "526x900"
+  },
+  {
+   "id": "koren-compass",
+   "original": "design/v5/koren/koren-compass.png",
+   "category": "koren",
+   "status": "ready",
+   "path": "poses/koren-compass.webp",
+   "stage": 5,
+   "size": "404x900"
+  },
+  {
+   "id": "koren-encourage",
+   "original": "design/v5/koren/koren-encourage.png",
+   "category": "koren",
+   "status": "used",
+   "path": "poses/koren-encourage.webp",
+   "usedIn": "истории (последната реплика преди играта)",
+   "size": "405x900"
+  },
+  {
+   "id": "koren-explorer",
+   "original": "design/v5/koren/koren-explorer.png",
+   "category": "koren",
+   "status": "used",
+   "path": "poses/koren-explorer.webp",
+   "usedIn": "географски мисии",
+   "size": "447x900"
+  },
+  {
+   "id": "koren-map",
+   "original": "design/v5/koren/koren-map.png",
+   "category": "koren",
+   "status": "used",
+   "path": "poses/koren-map.webp",
+   "usedIn": "мисии с карта",
+   "size": "376x900"
+  },
+  {
+   "id": "koren-nature",
+   "original": "design/v5/koren/koren-nature.png",
+   "category": "koren",
+   "status": "used",
+   "path": "poses/koren-nature.webp",
+   "usedIn": "мисии за животни и природа",
+   "size": "511x900"
+  },
+  {
+   "id": "koren-reading",
+   "original": "design/v5/koren/koren-reading.png",
+   "category": "koren",
+   "status": "used",
+   "path": "poses/koren-reading.webp",
+   "usedIn": "мисии за история и език",
+   "size": "352x900"
+  },
+  {
+   "id": "koren-treasure",
+   "original": "design/v5/koren/koren-treasure.png",
+   "category": "koren",
+   "status": "ready",
+   "path": "poses/koren-treasure.webp",
+   "stage": 5,
+   "size": "532x900"
+  },
+  {
+   "id": "koren-winter",
+   "original": "design/v5/koren/koren-winter.png",
+   "category": "koren",
+   "status": "used",
+   "path": "poses/koren-winter.webp",
+   "usedIn": "мисия „Баба Марта“",
+   "size": "364x900"
+  },
+  {
+   "id": "lake-seven-rila",
+   "original": "design/v5/lake/lake-seven-rila.png",
+   "category": "lake",
+   "status": "duplicate",
+   "same": "world/seven-rila-lakes.webp"
+  },
+  {
+   "id": "lake-srebarna",
+   "original": "design/v5/lake/lake-srebarna.png",
+   "category": "lake",
+   "status": "used",
+   "path": "geo/srebarna.webp",
+   "usedIn": "карта: Сребърна; Край водата (история)",
+   "size": "640x283"
+  },
+  {
+   "id": "landmark-alexander-nevsky",
+   "original": "design/v5/landmark/landmark-alexander-nevsky.png",
+   "category": "landmark",
+   "status": "duplicate",
+   "same": "world/alexander-nevsky.webp"
+  },
+  {
+   "id": "landmark-baba-vida",
+   "original": "design/v5/landmark/landmark-baba-vida.png",
+   "category": "landmark",
+   "status": "ready",
+   "path": "landmarks/baba-vida.webp",
+   "stage": 5,
+   "size": "640x463"
+  },
+  {
+   "id": "landmark-belogradchik",
+   "original": "design/v5/landmark/landmark-belogradchik.png",
+   "category": "landmark",
+   "status": "duplicate",
+   "same": "world/belogradchik-rocks.webp"
+  },
+  {
+   "id": "landmark-devetashka-cave",
+   "original": "design/v5/landmark/landmark-devetashka-cave.png",
+   "category": "landmark",
+   "status": "ready",
+   "path": "landmarks/devetashka-cave.webp",
+   "stage": 2,
+   "size": "320x320"
+  },
+  {
+   "id": "landmark-devils-throat",
+   "original": "design/v5/landmark/landmark-devils-throat.png",
+   "category": "landmark",
+   "status": "ready",
+   "path": "landmarks/devils-throat.webp",
+   "stage": 2,
+   "size": "320x320"
+  },
+  {
+   "id": "landmark-madara-rider",
+   "original": "design/v5/landmark/landmark-madara-rider.png",
+   "category": "landmark",
+   "status": "ready",
+   "path": "landmarks/madara-rider.webp",
+   "stage": 5,
+   "size": "320x320",
+   "check": "Формата да се сравни със снимка на истинския предмет (музей)."
+  },
+  {
+   "id": "landmark-nessebar",
+   "original": "design/v5/landmark/landmark-nessebar.png",
+   "category": "landmark",
+   "status": "used",
+   "path": "landmarks/nessebar.webp",
+   "usedIn": "карта: Несебър; Черно море (история)",
+   "size": "640x486"
+  },
+  {
+   "id": "landmark-rila-monastery",
+   "original": "design/v5/landmark/landmark-rila-monastery.png",
+   "category": "landmark",
+   "status": "duplicate",
+   "same": "world/rila-monastery.webp"
+  },
+  {
+   "id": "landmark-shipka",
+   "original": "design/v5/landmark/landmark-shipka.png",
+   "category": "landmark",
+   "status": "duplicate",
+   "same": "world/shipka-monument.webp"
+  },
+  {
+   "id": "landmark-tsarevets",
+   "original": "design/v5/landmark/landmark-tsarevets.png",
+   "category": "landmark",
+   "status": "duplicate",
+   "same": "world/tsarevets-fortress.webp"
+  },
+  {
+   "id": "map-bulgaria-borders",
+   "original": "design/v5/map/map-bulgaria-borders.svg",
+   "category": "map",
+   "status": "source",
+   "stage": 2,
+   "license": "Natural Earth 1:10m (public domain)"
+  },
+  {
+   "id": "map-bulgaria-cities",
+   "original": "design/v5/map/map-bulgaria-cities.svg",
+   "category": "map",
+   "status": "source",
+   "stage": 2,
+   "license": "Natural Earth 1:10m (public domain)"
+  },
+  {
+   "id": "map-bulgaria-historical",
+   "original": "design/v5/map/map-bulgaria-historical.png",
+   "category": "map",
+   "status": "source",
+   "stage": 2,
+   "license": "James Samuelson, „Bulgaria Past and Present“ (1888), карта след 1885 г. — обществено достояние (Wikimedia Commons)"
+  },
+  {
+   "id": "map-bulgaria-mountains",
+   "original": "design/v5/map/map-bulgaria-mountains.svg",
+   "category": "map",
+   "status": "source",
+   "stage": 2,
+   "license": "Natural Earth + GeoNames (CC BY 4.0 — изисква атрибуция)"
+  },
+  {
+   "id": "map-bulgaria-neighbors",
+   "original": "design/v5/map/map-bulgaria-neighbors.svg",
+   "category": "map",
+   "status": "source",
+   "stage": 2,
+   "license": "Natural Earth 1:10m (public domain)"
+  },
+  {
+   "id": "map-bulgaria-regions",
+   "original": "design/v5/map/map-bulgaria-regions.svg",
+   "category": "map",
+   "status": "source",
+   "stage": 2,
+   "license": "geoBoundaries gbOpen BGR ADM1 (лиценз по geoboundaries.org — атрибуция), 28 области"
+  },
+  {
+   "id": "map-bulgaria-relief",
+   "original": "design/v5/map/map-bulgaria-relief.png",
+   "category": "map",
+   "status": "review",
+   "check": "Няма записан източник. Релефът се прави от данни (SRTM/Copernicus) в проекцията на картата — етап 2."
+  },
+  {
+   "id": "map-bulgaria-rivers",
+   "original": "design/v5/map/map-bulgaria-rivers.svg",
+   "category": "map",
+   "status": "source",
+   "stage": 2,
+   "license": "Natural Earth 1:10m (public domain)"
+  },
+  {
+   "id": "map-bulgaria-roads",
+   "original": "design/v5/map/map-bulgaria-roads.svg",
+   "category": "map",
+   "status": "source",
+   "stage": 2,
+   "license": "Natural Earth 1:10m (public domain)"
+  },
+  {
+   "id": "map-bulgaria-tourism",
+   "original": "design/v5/map/map-bulgaria-tourism.svg",
+   "category": "map",
+   "status": "source",
+   "stage": 2,
+   "license": "Natural Earth + GeoNames (CC BY 4.0 — изисква атрибуция)"
+  },
+  {
+   "id": "minigame-beach-trash",
+   "original": "design/v5/minigame/minigame-beach-trash.png",
+   "category": "minigame",
+   "status": "ready",
+   "path": "minigame/beach-trash.webp",
+   "stage": 4,
+   "size": "640x409"
+  },
+  {
+   "id": "minigame-bulgaria-coat-of-arms",
+   "original": "design/v5/minigame/minigame-bulgaria-coat-of-arms.png",
+   "category": "minigame",
+   "status": "review",
+   "check": "Държавен символ: да се сравни детайл по детайл с официалното описание (Закон за държавния герб)."
+  },
+  {
+   "id": "minigame-bulgaria-flag",
+   "original": "design/v5/minigame/minigame-bulgaria-flag.svg",
+   "category": "minigame",
+   "status": "ready",
+   "path": "minigame/bulgaria-flag.svg",
+   "stage": 3,
+   "check": "Цветовете да се сравнят с официалните (бяло, зелено #00966E, червено #D62612)."
+  },
+  {
+   "id": "minigame-bulgaria-regions",
+   "original": "design/v5/minigame/minigame-bulgaria-regions.svg",
+   "category": "minigame",
+   "status": "source",
+   "stage": 3,
+   "license": "geoBoundaries gbOpen BGR ADM1 — основа за „Пъзел с 28-те области“ (етап 3)"
+  },
+  {
+   "id": "minigame-clay-pot",
+   "original": "design/v5/minigame/minigame-clay-pot.png",
+   "category": "minigame",
+   "status": "ready",
+   "path": "minigame/clay-pot.webp",
+   "stage": 6,
+   "size": "320x320"
+  },
+  {
+   "id": "minigame-cooking-pot",
+   "original": "design/v5/minigame/minigame-cooking-pot.png",
+   "category": "minigame",
+   "status": "ready",
+   "path": "minigame/cooking-pot.webp",
+   "stage": 6,
+   "size": "320x320"
+  },
+  {
+   "id": "minigame-easter-egg-blank",
+   "original": "design/v5/minigame/minigame-easter-egg-blank.png",
+   "category": "minigame",
+   "status": "ready",
+   "path": "minigame/easter-egg-blank.webp",
+   "stage": 6,
+   "size": "320x320"
+  },
+  {
+   "id": "minigame-easter-egg-decorated",
+   "original": "design/v5/minigame/minigame-easter-egg-decorated.png",
+   "category": "minigame",
+   "status": "ready",
+   "path": "minigame/easter-egg-decorated.webp",
+   "stage": 6,
+   "size": "320x320"
+  },
+  {
+   "id": "minigame-embroidery-board",
+   "original": "design/v5/minigame/minigame-embroidery-board.png",
+   "category": "minigame",
+   "status": "ready",
+   "path": "minigame/embroidery-board.webp",
+   "stage": 6,
+   "size": "320x320"
+  },
+  {
+   "id": "minigame-fairytale-flute",
+   "original": "design/v5/minigame/minigame-fairytale-flute.png",
+   "category": "minigame",
+   "status": "ready",
+   "path": "minigame/fairytale-flute.webp",
+   "stage": 7,
+   "size": "320x320"
+  },
+  {
+   "id": "minigame-fairytale-golden-apple",
+   "original": "design/v5/minigame/minigame-fairytale-golden-apple.png",
+   "category": "minigame",
+   "status": "ready",
+   "path": "minigame/fairytale-golden-apple.webp",
+   "stage": 7,
+   "size": "320x320"
+  },
+  {
+   "id": "minigame-fortress-gate",
+   "original": "design/v5/minigame/minigame-fortress-gate.png",
+   "category": "minigame",
+   "status": "ready",
+   "path": "minigame/fortress-gate.webp",
+   "stage": 5,
+   "size": "640x396"
+  },
+  {
+   "id": "minigame-fortress-tower",
+   "original": "design/v5/minigame/minigame-fortress-tower.png",
+   "category": "minigame",
+   "status": "ready",
+   "path": "minigame/fortress-tower.webp",
+   "stage": 5,
+   "size": "320x320"
+  },
+  {
+   "id": "minigame-fortress-wall",
+   "original": "design/v5/minigame/minigame-fortress-wall.png",
+   "category": "minigame",
+   "status": "ready",
+   "path": "minigame/fortress-wall.webp",
+   "stage": 5,
+   "size": "640x356"
+  },
+  {
+   "id": "minigame-glagolitic-scroll",
+   "original": "design/v5/minigame/minigame-glagolitic-scroll.png",
+   "category": "minigame",
+   "status": "review",
+   "check": "Знаците върху свитъка вероятно са измислени — да се провери или да се ползва празен свитък + шрифт."
+  },
+  {
+   "id": "minigame-hidden-object-scene",
+   "original": "design/v5/minigame/minigame-hidden-object-scene.png",
+   "category": "minigame",
+   "status": "ready",
+   "path": "minigame/hidden-object-scene.webp",
+   "stage": 7,
+   "size": "640x405"
+  },
+  {
+   "id": "minigame-pottery-wheel",
+   "original": "design/v5/minigame/minigame-pottery-wheel.png",
+   "category": "minigame",
+   "status": "ready",
+   "path": "minigame/pottery-wheel.webp",
+   "stage": 6,
+   "size": "320x320"
+  },
+  {
+   "id": "minigame-recycling-bin",
+   "original": "design/v5/minigame/minigame-recycling-bin.png",
+   "category": "minigame",
+   "status": "ready",
+   "path": "minigame/recycling-bin.webp",
+   "stage": 4,
+   "size": "640x325"
+  },
+  {
+   "id": "minigame-river-route",
+   "original": "design/v5/minigame/minigame-river-route.png",
+   "category": "minigame",
+   "status": "ready",
+   "path": "minigame/river-route.webp",
+   "stage": 3,
+   "size": "640x429"
+  },
+  {
+   "id": "minigame-woodcarving-board",
+   "original": "design/v5/minigame/minigame-woodcarving-board.png",
+   "category": "minigame",
+   "status": "ready",
+   "path": "minigame/woodcarving-board.webp",
+   "stage": 6,
+   "size": "640x454"
+  },
+  {
+   "id": "mountain-balkan",
+   "original": "design/v5/mountain/mountain-balkan.png",
+   "category": "mountain",
+   "status": "used",
+   "path": "geo/balkan.webp",
+   "usedIn": "Шипка (история)",
+   "size": "640x353"
+  },
+  {
+   "id": "mountain-pirin",
+   "original": "design/v5/mountain/mountain-pirin.png",
+   "category": "mountain",
+   "status": "ready",
+   "path": "geo/pirin.webp",
+   "stage": 3,
+   "size": "640x471"
+  },
+  {
+   "id": "mountain-rhodopes",
+   "original": "design/v5/mountain/mountain-rhodopes.png",
+   "category": "mountain",
+   "status": "ready",
+   "path": "geo/rhodopes.webp",
+   "stage": 3,
+   "size": "640x357"
+  },
+  {
+   "id": "mountain-rila",
+   "original": "design/v5/mountain/mountain-rila.png",
+   "category": "mountain",
+   "status": "used",
+   "path": "geo/rila.webp",
+   "usedIn": "Рила; Приятелите от Рила (история)",
+   "size": "640x454"
+  },
+  {
+   "id": "mountain-vitosha",
+   "original": "design/v5/mountain/mountain-vitosha.png",
+   "category": "mountain",
+   "status": "ready",
+   "path": "geo/vitosha.webp",
+   "stage": 3,
+   "size": "640x393"
+  },
+  {
+   "id": "nature-black-sea",
+   "original": "design/v5/nature/nature-black-sea.png",
+   "category": "nature",
+   "status": "used",
+   "path": "nature/black-sea.webp",
+   "usedIn": "Черно море (история)",
+   "size": "640x267"
+  },
+  {
+   "id": "nature-danube-plain",
+   "original": "design/v5/nature/nature-danube-plain.png",
+   "category": "nature",
+   "status": "ready",
+   "path": "nature/danube-plain.webp",
+   "stage": 3,
+   "size": "640x238"
+  },
+  {
+   "id": "nature-red-book",
+   "original": "design/v5/nature/nature-red-book.png",
+   "category": "nature",
+   "status": "ready",
+   "path": "nature/red-book.webp",
+   "stage": 4,
+   "size": "320x320"
+  },
+  {
+   "id": "nature-rose-valley",
+   "original": "design/v5/nature/nature-rose-valley.png",
+   "category": "nature",
+   "status": "duplicate",
+   "same": "world/rose-valley.webp"
+  },
+  {
+   "id": "nature-thracian-lowland",
+   "original": "design/v5/nature/nature-thracian-lowland.png",
+   "category": "nature",
+   "status": "ready",
+   "path": "nature/thracian-lowland.webp",
+   "stage": 3,
+   "size": "640x215"
+  },
+  {
+   "id": "peak-botev",
+   "original": "design/v5/peak/peak-botev.png",
+   "category": "peak",
+   "status": "ready",
+   "path": "geo/botev.webp",
+   "stage": 3,
+   "size": "640x490",
+   "check": "Силуетът на върха да се сравни със снимка."
+  },
+  {
+   "id": "peak-musala",
+   "original": "design/v5/peak/peak-musala.png",
+   "category": "peak",
+   "status": "used",
+   "path": "geo/musala.webp",
+   "usedIn": "карта: Мусала; Рила (история)",
+   "size": "640x449",
+   "check": "Силуетът на върха да се сравни със снимка."
+  },
+  {
+   "id": "peak-vihren",
+   "original": "design/v5/peak/peak-vihren.png",
+   "category": "peak",
+   "status": "ready",
+   "path": "geo/vihren.webp",
+   "stage": 3,
+   "size": "640x474",
+   "check": "Силуетът на върха да се сравни със снимка."
+  },
+  {
+   "id": "plant-edelweiss",
+   "original": "design/v5/plant/plant-edelweiss.png",
+   "category": "plant",
+   "status": "ready",
+   "path": "nature/edelweiss.webp",
+   "stage": 4,
+   "size": "320x320"
+  },
+  {
+   "id": "plant-pirin-tea",
+   "original": "design/v5/plant/plant-pirin-tea.png",
+   "category": "plant",
+   "status": "ready",
+   "path": "nature/pirin-tea.webp",
+   "stage": 4,
+   "size": "320x320"
+  },
+  {
+   "id": "plant-rhodope-haberlea",
+   "original": "design/v5/plant/plant-rhodope-haberlea.png",
+   "category": "plant",
+   "status": "ready",
+   "path": "nature/rhodope-haberlea.webp",
+   "stage": 4,
+   "size": "320x320"
+  },
+  {
+   "id": "raya-celebrate",
+   "original": "design/v5/raya/raya-celebrate.png",
+   "category": "raya",
+   "status": "used",
+   "path": "poses/raya-celebrate.webp",
+   "usedIn": "истории на мисиите (поза celebrate)",
+   "size": "453x900"
+  },
+  {
+   "id": "raya-chef",
+   "original": "design/v5/raya/raya-chef.png",
+   "category": "raya",
+   "status": "ready",
+   "path": "poses/raya-chef.webp",
+   "stage": 5,
+   "size": "433x900"
+  },
+  {
+   "id": "raya-compass",
+   "original": "design/v5/raya/raya-compass.png",
+   "category": "raya",
+   "status": "used",
+   "path": "poses/raya-compass.webp",
+   "usedIn": "мисии с ориентиране",
+   "size": "386x900"
+  },
+  {
+   "id": "raya-encourage",
+   "original": "design/v5/raya/raya-encourage.png",
+   "category": "raya",
+   "status": "used",
+   "path": "poses/raya-encourage.webp",
+   "usedIn": "истории (последната реплика преди играта)",
+   "size": "416x900"
+  },
+  {
+   "id": "raya-explorer",
+   "original": "design/v5/raya/raya-explorer.png",
+   "category": "raya",
+   "status": "used",
+   "path": "poses/raya-explorer.webp",
+   "usedIn": "географски мисии",
+   "size": "418x900"
+  },
+  {
+   "id": "raya-map",
+   "original": "design/v5/raya/raya-map.png",
+   "category": "raya",
+   "status": "used",
+   "path": "poses/raya-map.webp",
+   "usedIn": "мисии с карта",
+   "size": "391x900"
+  },
+  {
+   "id": "raya-nature",
+   "original": "design/v5/raya/raya-nature.png",
+   "category": "raya",
+   "status": "used",
+   "path": "poses/raya-nature.webp",
+   "usedIn": "мисии за животни и природа",
+   "size": "694x900"
+  },
+  {
+   "id": "raya-reading",
+   "original": "design/v5/raya/raya-reading.png",
+   "category": "raya",
+   "status": "used",
+   "path": "poses/raya-reading.webp",
+   "usedIn": "мисии за история и език",
+   "size": "371x900"
+  },
+  {
+   "id": "raya-treasure",
+   "original": "design/v5/raya/raya-treasure.png",
+   "category": "raya",
+   "status": "used",
+   "path": "poses/raya-treasure.webp",
+   "usedIn": "мисии със съкровища",
+   "size": "631x900"
+  },
+  {
+   "id": "raya-winter",
+   "original": "design/v5/raya/raya-winter.png",
+   "category": "raya",
+   "status": "ready",
+   "path": "poses/raya-winter.webp",
+   "stage": 5,
+   "size": "490x900"
+  },
+  {
+   "id": "reward-bronze-medal",
+   "original": "design/v5/reward/reward-bronze-medal.png",
+   "category": "reward",
+   "status": "duplicate",
+   "same": "world/bronze-medal.webp"
+  },
+  {
+   "id": "reward-gold-medal",
+   "original": "design/v5/reward/reward-gold-medal.png",
+   "category": "reward",
+   "status": "duplicate",
+   "same": "world/gold-medal.webp"
+  },
+  {
+   "id": "reward-level-up",
+   "original": "design/v5/reward/reward-level-up.png",
+   "category": "reward",
+   "status": "duplicate",
+   "same": "world/level-up-burst.webp"
+  },
+  {
+   "id": "reward-silver-medal",
+   "original": "design/v5/reward/reward-silver-medal.png",
+   "category": "reward",
+   "status": "duplicate",
+   "same": "world/silver-medal.webp"
+  },
+  {
+   "id": "reward-star",
+   "original": "design/v5/reward/reward-star.png",
+   "category": "reward",
+   "status": "duplicate",
+   "same": "world/correct-star.webp"
+  },
+  {
+   "id": "reward-trophy",
+   "original": "design/v5/reward/reward-trophy.png",
+   "category": "reward",
+   "status": "duplicate",
+   "same": "world/achievement-trophy.webp"
+  },
+  {
+   "id": "river-danube",
+   "original": "design/v5/river/river-danube.png",
+   "category": "river",
+   "status": "ready",
+   "path": "geo/danube.webp",
+   "stage": 3,
+   "size": "640x367"
+  },
+  {
+   "id": "river-iskar",
+   "original": "design/v5/river/river-iskar.png",
+   "category": "river",
+   "status": "ready",
+   "path": "geo/iskar.webp",
+   "stage": 3,
+   "size": "320x320"
+  },
+  {
+   "id": "river-maritsa",
+   "original": "design/v5/river/river-maritsa.png",
+   "category": "river",
+   "status": "ready",
+   "path": "geo/maritsa.webp",
+   "stage": 3,
+   "size": "640x417"
+  },
+  {
+   "id": "river-struma",
+   "original": "design/v5/river/river-struma.png",
+   "category": "river",
+   "status": "ready",
+   "path": "geo/struma.webp",
+   "stage": 3,
+   "size": "640x510"
+  },
+  {
+   "id": "river-tundzha",
+   "original": "design/v5/river/river-tundzha.png",
+   "category": "river",
+   "status": "ready",
+   "path": "geo/tundzha.webp",
+   "stage": 3,
+   "size": "640x439"
+  },
+  {
+   "id": "river-yantra",
+   "original": "design/v5/river/river-yantra.png",
+   "category": "river",
+   "status": "ready",
+   "path": "geo/yantra.webp",
+   "stage": 3,
+   "size": "320x320"
+  },
+  {
+   "id": "science-atanasoff-computer",
+   "original": "design/v5/science/science-atanasoff-computer.png",
+   "category": "science",
+   "status": "ready",
+   "path": "science/atanasoff-computer.webp",
+   "stage": 8,
+   "size": "640x503",
+   "check": "Формата да се сравни със снимка на истинския предмет (музей)."
+  },
+  {
+   "id": "science-bulgarian-yogurt",
+   "original": "design/v5/science/science-bulgarian-yogurt.png",
+   "category": "science",
+   "status": "ready",
+   "path": "science/bulgarian-yogurt.webp",
+   "stage": 8,
+   "size": "320x320"
+  },
+  {
+   "id": "science-computer",
+   "original": "design/v5/science/science-computer.png",
+   "category": "science",
+   "status": "ready",
+   "path": "science/computer.webp",
+   "stage": 8,
+   "size": "320x320"
+  },
+  {
+   "id": "science-cyrillic",
+   "original": "design/v5/science/science-cyrillic.png",
+   "category": "science",
+   "status": "review",
+   "check": "Буквите в картинката са рисувани от генератора — проверка буква по буква; иначе азбуката се показва като текст."
+  },
+  {
+   "id": "science-discovery-lab",
+   "original": "design/v5/science/science-discovery-lab.png",
+   "category": "science",
+   "status": "ready",
+   "path": "science/discovery-lab.webp",
+   "stage": 8,
+   "size": "320x320"
+  },
+  {
+   "id": "science-glagolitic",
+   "original": "design/v5/science/science-glagolitic.png",
+   "category": "science",
+   "status": "review",
+   "check": "Глаголическите знаци са рисувани от генератора — вероятно неточни. Глаголицата ще е шрифт (Noto Sans Glagolitic, OFL)."
+  },
+  {
+   "id": "science-invention-medal",
+   "original": "design/v5/science/science-invention-medal.png",
+   "category": "science",
+   "status": "ready",
+   "path": "science/invention-medal.webp",
+   "stage": 8,
+   "size": "320x320"
+  },
+  {
+   "id": "science-john-atanasoff",
+   "original": "design/v5/science/science-john-atanasoff.png",
+   "category": "science",
+   "status": "ready",
+   "path": "science/john-atanasoff.webp",
+   "stage": 8,
+   "size": "320x320",
+   "check": "Условен образ — сравни чертите със запазен портрет/снимка (историк)."
+  },
+  {
+   "id": "science-lightbulb",
+   "original": "design/v5/science/science-lightbulb.png",
+   "category": "science",
+   "status": "ready",
+   "path": "science/lightbulb.webp",
+   "stage": 8,
+   "size": "320x320"
+  },
+  {
+   "id": "science-microscope",
+   "original": "design/v5/science/science-microscope.png",
+   "category": "science",
+   "status": "ready",
+   "path": "science/microscope.webp",
+   "stage": 8,
+   "size": "320x320"
+  },
+  {
+   "id": "science-rose-distillation",
+   "original": "design/v5/science/science-rose-distillation.png",
+   "category": "science",
+   "status": "used",
+   "path": "science/rose-distillation.webp",
+   "usedIn": "Долината на розите (история)",
+   "size": "320x320"
+  },
+  {
+   "id": "science-rose-oil",
+   "original": "design/v5/science/science-rose-oil.png",
+   "category": "science",
+   "status": "duplicate",
+   "same": "world/rose-oil-bottle.webp"
+  },
+  {
+   "id": "science-telescope",
+   "original": "design/v5/science/science-telescope.png",
+   "category": "science",
+   "status": "ready",
+   "path": "science/telescope.webp",
+   "stage": 8,
+   "size": "320x320"
+  },
+  {
+   "id": "space-aleksandar-aleksandrov",
+   "original": "design/v5/space/space-aleksandar-aleksandrov.png",
+   "category": "space",
+   "status": "review",
+   "check": "Лице на жив човек — нужно е решение (право на образ) и сравнение със снимка."
+  },
+  {
+   "id": "space-cosmonaut",
+   "original": "design/v5/space/space-cosmonaut.png",
+   "category": "space",
+   "status": "ready",
+   "path": "space/cosmonaut.webp",
+   "stage": 8,
+   "size": "320x320"
+  },
+  {
+   "id": "space-earth",
+   "original": "design/v5/space/space-earth.png",
+   "category": "space",
+   "status": "ready",
+   "path": "space/earth.webp",
+   "stage": 8,
+   "size": "320x320"
+  },
+  {
+   "id": "space-food",
+   "original": "design/v5/space/space-food.png",
+   "category": "space",
+   "status": "ready",
+   "path": "space/food.webp",
+   "stage": 8,
+   "size": "320x320"
+  },
+  {
+   "id": "space-georgi-ivanov",
+   "original": "design/v5/space/space-georgi-ivanov.png",
+   "category": "space",
+   "status": "review",
+   "check": "Лице на реален човек — нужно е решение (право на образ) и сравнение със снимка."
+  },
+  {
+   "id": "space-rocket",
+   "original": "design/v5/space/space-rocket.png",
+   "category": "space",
+   "status": "ready",
+   "path": "space/rocket.webp",
+   "stage": 8,
+   "size": "320x320"
+  },
+  {
+   "id": "space-satellite",
+   "original": "design/v5/space/space-satellite.png",
+   "category": "space",
+   "status": "ready",
+   "path": "space/satellite.webp",
+   "stage": 8,
+   "size": "640x495"
+  },
+  {
+   "id": "terrain-cave",
+   "original": "design/v5/terrain/terrain-cave.png",
+   "category": "terrain",
+   "status": "ready",
+   "path": "geo/cave.webp",
+   "stage": 3,
+   "size": "640x507"
+  },
+  {
+   "id": "terrain-coast",
+   "original": "design/v5/terrain/terrain-coast.png",
+   "category": "terrain",
+   "status": "ready",
+   "path": "geo/coast.webp",
+   "stage": 3,
+   "size": "640x363"
+  },
+  {
+   "id": "terrain-forest",
+   "original": "design/v5/terrain/terrain-forest.png",
+   "category": "terrain",
+   "status": "ready",
+   "path": "geo/forest.webp",
+   "stage": 3,
+   "size": "640x485"
+  },
+  {
+   "id": "terrain-lake",
+   "original": "design/v5/terrain/terrain-lake.png",
+   "category": "terrain",
+   "status": "used",
+   "path": "geo/lake.webp",
+   "usedIn": "Край езерцето (история)",
+   "size": "640x334"
+  },
+  {
+   "id": "terrain-lowland",
+   "original": "design/v5/terrain/terrain-lowland.png",
+   "category": "terrain",
+   "status": "ready",
+   "path": "geo/lowland.webp",
+   "stage": 3,
+   "size": "640x302"
+  },
+  {
+   "id": "terrain-mountain",
+   "original": "design/v5/terrain/terrain-mountain.png",
+   "category": "terrain",
+   "status": "ready",
+   "path": "geo/mountain.webp",
+   "stage": 3,
+   "size": "640x507"
+  },
+  {
+   "id": "terrain-plain",
+   "original": "design/v5/terrain/terrain-plain.png",
+   "category": "terrain",
+   "status": "ready",
+   "path": "geo/plain.webp",
+   "stage": 3,
+   "size": "640x334"
+  },
+  {
+   "id": "terrain-plateau",
+   "original": "design/v5/terrain/terrain-plateau.png",
+   "category": "terrain",
+   "status": "ready",
+   "path": "geo/plateau.webp",
+   "stage": 3,
+   "size": "640x446"
+  },
+  {
+   "id": "terrain-river",
+   "original": "design/v5/terrain/terrain-river.png",
+   "category": "terrain",
+   "status": "used",
+   "path": "geo/river.webp",
+   "usedIn": "Пътят на реката (история)",
+   "size": "640x392"
+  },
+  {
+   "id": "terrain-valley",
+   "original": "design/v5/terrain/terrain-valley.png",
+   "category": "terrain",
+   "status": "ready",
+   "path": "geo/valley.webp",
+   "stage": 3,
+   "size": "640x371"
+  },
+  {
+   "id": "tradition-baba-marta",
+   "original": "design/v5/tradition/tradition-baba-marta.png",
+   "category": "tradition",
+   "status": "duplicate",
+   "same": "world/martenitsa-pizho-penda.webp"
+  },
+  {
+   "id": "tradition-bulgarian-costume",
+   "original": "design/v5/tradition/tradition-bulgarian-costume.png",
+   "category": "tradition",
+   "status": "used",
+   "path": "culture/bulgarian-costume.webp",
+   "usedIn": "Копривщица и носията; Облечи носията (история)",
+   "size": "320x320"
+  },
+  {
+   "id": "tradition-christmas-bread",
+   "original": "design/v5/tradition/tradition-christmas-bread.png",
+   "category": "tradition",
+   "status": "ready",
+   "path": "culture/christmas-bread.webp",
+   "stage": 6,
+   "size": "320x320"
+  },
+  {
+   "id": "tradition-easter-basket",
+   "original": "design/v5/tradition/tradition-easter-basket.png",
+   "category": "tradition",
+   "status": "ready",
+   "path": "culture/easter-basket.webp",
+   "stage": 6,
+   "size": "320x320"
+  },
+  {
+   "id": "tradition-easter-eggs",
+   "original": "design/v5/tradition/tradition-easter-eggs.png",
+   "category": "tradition",
+   "status": "ready",
+   "path": "culture/easter-eggs.webp",
+   "stage": 6,
+   "size": "320x320"
+  },
+  {
+   "id": "tradition-elbetitsa",
+   "original": "design/v5/tradition/tradition-elbetitsa.png",
+   "category": "tradition",
+   "status": "ready",
+   "path": "culture/elbetitsa.webp",
+   "stage": 6,
+   "size": "320x320"
+  },
+  {
+   "id": "tradition-embroidery",
+   "original": "design/v5/tradition/tradition-embroidery.png",
+   "category": "tradition",
+   "status": "duplicate",
+   "same": "world/bulgarian-embroidery.webp"
+  },
+  {
+   "id": "tradition-folk-drum",
+   "original": "design/v5/tradition/tradition-folk-drum.png",
+   "category": "tradition",
+   "status": "ready",
+   "path": "culture/folk-drum.webp",
+   "stage": 6,
+   "size": "320x320"
+  },
+  {
+   "id": "tradition-folk-wreath",
+   "original": "design/v5/tradition/tradition-folk-wreath.png",
+   "category": "tradition",
+   "status": "ready",
+   "path": "culture/folk-wreath.webp",
+   "stage": 6,
+   "size": "320x320"
+  },
+  {
+   "id": "tradition-gadulka",
+   "original": "design/v5/tradition/tradition-gadulka.png",
+   "category": "tradition",
+   "status": "ready",
+   "path": "culture/gadulka.webp",
+   "stage": 6,
+   "size": "320x320"
+  },
+  {
+   "id": "tradition-gaida",
+   "original": "design/v5/tradition/tradition-gaida.png",
+   "category": "tradition",
+   "status": "ready",
+   "path": "culture/gaida.webp",
+   "stage": 6,
+   "size": "320x320"
+  },
+  {
+   "id": "tradition-horo",
+   "original": "design/v5/tradition/tradition-horo.png",
+   "category": "tradition",
+   "status": "ready",
+   "path": "culture/horo.webp",
+   "stage": 6,
+   "size": "640x504"
+  },
+  {
+   "id": "tradition-kaval",
+   "original": "design/v5/tradition/tradition-kaval.png",
+   "category": "tradition",
+   "status": "ready",
+   "path": "culture/kaval.webp",
+   "stage": 6,
+   "size": "320x320"
+  },
+  {
+   "id": "tradition-koledari",
+   "original": "design/v5/tradition/tradition-koledari.png",
+   "category": "tradition",
+   "status": "ready",
+   "path": "culture/koledari.webp",
+   "stage": 6,
+   "size": "320x320"
+  },
+  {
+   "id": "tradition-kukeri",
+   "original": "design/v5/tradition/tradition-kukeri.png",
+   "category": "tradition",
+   "status": "ready",
+   "path": "culture/kukeri.webp",
+   "stage": 6,
+   "size": "320x320"
+  },
+  {
+   "id": "tradition-lazaruvane",
+   "original": "design/v5/tradition/tradition-lazaruvane.png",
+   "category": "tradition",
+   "status": "ready",
+   "path": "culture/lazaruvane.webp",
+   "stage": 6,
+   "size": "320x320"
+  },
+  {
+   "id": "tradition-name-day",
+   "original": "design/v5/tradition/tradition-name-day.png",
+   "category": "tradition",
+   "status": "ready",
+   "path": "culture/name-day.webp",
+   "stage": 6,
+   "size": "320x320"
+  },
+  {
+   "id": "tradition-nestinarstvo",
+   "original": "design/v5/tradition/tradition-nestinarstvo.png",
+   "category": "tradition",
+   "status": "ready",
+   "path": "culture/nestinarstvo.webp",
+   "stage": 6,
+   "size": "320x320",
+   "check": "Чувствителна тема (огън, религиозен обичай) — текстът се проверява от учител."
+  },
+  {
+   "id": "tradition-rose-festival",
+   "original": "design/v5/tradition/tradition-rose-festival.png",
+   "category": "tradition",
+   "status": "ready",
+   "path": "culture/rose-festival.webp",
+   "stage": 6,
+   "size": "320x320"
+  },
+  {
+   "id": "tradition-survachka",
+   "original": "design/v5/tradition/tradition-survachka.png",
+   "category": "tradition",
+   "status": "ready",
+   "path": "culture/survachka.webp",
+   "stage": 6,
+   "size": "320x320"
+  },
+  {
+   "id": "ui-back",
+   "original": "design/v5/ui/ui-back.png",
+   "category": "ui",
+   "status": "ready",
+   "path": "ui/back.webp",
+   "stage": 9,
+   "size": "640x472"
+  },
+  {
+   "id": "ui-calendar",
+   "original": "design/v5/ui/ui-calendar.png",
+   "category": "ui",
+   "status": "ready",
+   "path": "ui/calendar.webp",
+   "stage": 6,
+   "size": "192x192"
+  },
+  {
+   "id": "ui-collection",
+   "original": "design/v5/ui/ui-collection.png",
+   "category": "ui",
+   "status": "duplicate",
+   "same": "tiles/collection.webp"
+  },
+  {
+   "id": "ui-compass",
+   "original": "design/v5/ui/ui-compass.png",
+   "category": "ui",
+   "status": "duplicate",
+   "same": "levels/young.webp"
+  },
+  {
+   "id": "ui-forward",
+   "original": "design/v5/ui/ui-forward.png",
+   "category": "ui",
+   "status": "ready",
+   "path": "ui/forward.webp",
+   "stage": 9,
+   "size": "640x456"
+  },
+  {
+   "id": "ui-games",
+   "original": "design/v5/ui/ui-games.png",
+   "category": "ui",
+   "status": "ready",
+   "path": "ui/games.webp",
+   "stage": 9,
+   "size": "640x465"
+  },
+  {
+   "id": "ui-help",
+   "original": "design/v5/ui/ui-help.svg",
+   "category": "ui",
+   "status": "ready",
+   "path": "ui/help.svg",
+   "stage": 9
+  },
+  {
+   "id": "ui-home",
+   "original": "design/v5/ui/ui-home.png",
+   "category": "ui",
+   "status": "ready",
+   "path": "ui/home.webp",
+   "stage": 9,
+   "size": "192x192"
+  },
+  {
+   "id": "ui-language",
+   "original": "design/v5/ui/ui-language.png",
+   "category": "ui",
+   "status": "ready",
+   "path": "ui/language.webp",
+   "stage": 7,
+   "size": "192x192"
+  },
+  {
+   "id": "ui-lock",
+   "original": "design/v5/ui/ui-lock.png",
+   "category": "ui",
+   "status": "ready",
+   "path": "ui/lock.webp",
+   "stage": 9,
+   "size": "192x192"
+  },
+  {
+   "id": "ui-map",
+   "original": "design/v5/ui/ui-map.png",
+   "category": "ui",
+   "status": "duplicate",
+   "same": "tiles/discover.webp"
+  },
+  {
+   "id": "ui-missions",
+   "original": "design/v5/ui/ui-missions.png",
+   "category": "ui",
+   "status": "duplicate",
+   "same": "tiles/missions.webp"
+  },
+  {
+   "id": "ui-music",
+   "original": "design/v5/ui/ui-music.png",
+   "category": "ui",
+   "status": "ready",
+   "path": "ui/music.webp",
+   "stage": 6,
+   "size": "192x192"
+  },
+  {
+   "id": "ui-parental-controls",
+   "original": "design/v5/ui/ui-parental-controls.png",
+   "category": "ui",
+   "status": "ready",
+   "path": "ui/parental-controls.webp",
+   "stage": 9,
+   "size": "192x192"
+  },
+  {
+   "id": "ui-passport",
+   "original": "design/v5/ui/ui-passport.png",
+   "category": "ui",
+   "status": "ready",
+   "path": "ui/passport.webp",
+   "stage": 9,
+   "size": "192x192"
+  },
+  {
+   "id": "ui-profile",
+   "original": "design/v5/ui/ui-profile.png",
+   "category": "ui",
+   "status": "ready",
+   "path": "ui/profile.webp",
+   "stage": 9,
+   "size": "192x192"
+  },
+  {
+   "id": "ui-search",
+   "original": "design/v5/ui/ui-search.png",
+   "category": "ui",
+   "status": "ready",
+   "path": "ui/search.webp",
+   "stage": 9,
+   "size": "192x192"
+  },
+  {
+   "id": "ui-settings",
+   "original": "design/v5/ui/ui-settings.png",
+   "category": "ui",
+   "status": "ready",
+   "path": "ui/settings.webp",
+   "stage": 9,
+   "size": "192x192"
+  },
+  {
+   "id": "ui-sound",
+   "original": "design/v5/ui/ui-sound.png",
+   "category": "ui",
+   "status": "ready",
+   "path": "ui/sound.webp",
+   "stage": 9,
+   "size": "192x192"
+  },
+  {
+   "id": "ui-unlock",
+   "original": "design/v5/ui/ui-unlock.png",
+   "category": "ui",
+   "status": "ready",
+   "path": "ui/unlock.webp",
+   "stage": 9,
+   "size": "192x192"
+  },
+  {
+   "id": "world-border-crossing",
+   "original": "design/v5/world/world-border-crossing.png",
+   "category": "world",
+   "status": "ready",
+   "path": "places/border-crossing.webp",
+   "stage": 8,
+   "size": "640x452"
+  },
+  {
+   "id": "world-bulgaria-granary",
+   "original": "design/v5/world/world-bulgaria-granary.png",
+   "category": "world",
+   "status": "ready",
+   "path": "places/bulgaria-granary.webp",
+   "stage": 3,
+   "size": "640x392"
+  },
+  {
+   "id": "world-car-license-plate",
+   "original": "design/v5/world/world-car-license-plate.svg",
+   "category": "world",
+   "status": "ready",
+   "path": "places/car-license-plate.svg",
+   "stage": 8
+  },
+  {
+   "id": "world-customs",
+   "original": "design/v5/world/world-customs.png",
+   "category": "world",
+   "status": "ready",
+   "path": "places/customs.webp",
+   "stage": 8,
+   "size": "640x504"
+  },
+  {
+   "id": "world-daily-streak",
+   "original": "design/v5/world/world-daily-streak.png",
+   "category": "world",
+   "status": "ready",
+   "path": "places/daily-streak.webp",
+   "stage": 9,
+   "size": "320x320"
+  },
+  {
+   "id": "world-mineral-hisarya",
+   "original": "design/v5/world/world-mineral-hisarya.png",
+   "category": "world",
+   "status": "ready",
+   "path": "places/mineral-hisarya.webp",
+   "stage": 2,
+   "size": "640x464"
+  },
+  {
+   "id": "world-mineral-sandanski",
+   "original": "design/v5/world/world-mineral-sandanski.png",
+   "category": "world",
+   "status": "ready",
+   "path": "places/mineral-sandanski.webp",
+   "stage": 2,
+   "size": "320x320"
+  },
+  {
+   "id": "world-mineral-velingrad",
+   "original": "design/v5/world/world-mineral-velingrad.png",
+   "category": "world",
+   "status": "ready",
+   "path": "places/mineral-velingrad.webp",
+   "stage": 2,
+   "size": "320x320"
+  },
+  {
+   "id": "world-name-day-calendar",
+   "original": "design/v5/world/world-name-day-calendar.svg",
+   "category": "world",
+   "status": "ready",
+   "path": "places/name-day-calendar.svg",
+   "stage": 6
+  },
+  {
+   "id": "world-panagyurishte-treasure",
+   "original": "design/v5/world/world-panagyurishte-treasure.png",
+   "category": "world",
+   "status": "ready",
+   "path": "places/panagyurishte-treasure.webp",
+   "stage": 5,
+   "size": "320x320",
+   "check": "Формата да се сравни със снимка на истинския предмет (музей)."
+  },
+  {
+   "id": "world-rogozen-treasure",
+   "original": "design/v5/world/world-rogozen-treasure.png",
+   "category": "world",
+   "status": "ready",
+   "path": "places/rogozen-treasure.webp",
+   "stage": 5,
+   "size": "320x320",
+   "check": "Формата да се сравни със снимка на истинския предмет (музей)."
+  },
+  {
+   "id": "world-ski-bansko",
+   "original": "design/v5/world/world-ski-bansko.png",
+   "category": "world",
+   "status": "ready",
+   "path": "places/ski-bansko.webp",
+   "stage": 2,
+   "size": "320x320"
+  },
+  {
+   "id": "world-ski-borovets",
+   "original": "design/v5/world/world-ski-borovets.png",
+   "category": "world",
+   "status": "ready",
+   "path": "places/ski-borovets.webp",
+   "stage": 2,
+   "size": "640x472"
+  },
+  {
+   "id": "world-ski-pamporovo",
+   "original": "design/v5/world/world-ski-pamporovo.png",
+   "category": "world",
+   "status": "ready",
+   "path": "places/ski-pamporovo.webp",
+   "stage": 2,
+   "size": "320x320"
+  },
+  {
+   "id": "world-sports-football",
+   "original": "design/v5/world/world-sports-football.png",
+   "category": "world",
+   "status": "ready",
+   "path": "places/sports-football.webp",
+   "stage": 8,
+   "size": "640x464"
+  },
+  {
+   "id": "world-sports-high-jump",
+   "original": "design/v5/world/world-sports-high-jump.png",
+   "category": "world",
+   "status": "ready",
+   "path": "places/sports-high-jump.webp",
+   "stage": 8,
+   "size": "320x320"
+  },
+  {
+   "id": "world-sports-tennis",
+   "original": "design/v5/world/world-sports-tennis.png",
+   "category": "world",
+   "status": "ready",
+   "path": "places/sports-tennis.webp",
+   "stage": 8,
+   "size": "320x320"
+  },
+  {
+   "id": "world-sports-weightlifting",
+   "original": "design/v5/world/world-sports-weightlifting.png",
+   "category": "world",
+   "status": "ready",
+   "path": "places/sports-weightlifting.webp",
+   "stage": 8,
+   "size": "640x306"
+  },
+  {
+   "id": "world-transport-corridor",
+   "original": "design/v5/world/world-transport-corridor.png",
+   "category": "world",
+   "status": "ready",
+   "path": "places/transport-corridor.webp",
+   "stage": 8,
+   "size": "640x493"
+  },
+  {
+   "id": "world-valchitran-treasure",
+   "original": "design/v5/world/world-valchitran-treasure.png",
+   "category": "world",
+   "status": "ready",
+   "path": "places/valchitran-treasure.webp",
+   "stage": 5,
+   "size": "320x320",
+   "check": "Формата да се сравни със снимка на истинския предмет (музей)."
+  }
+ ]
+}

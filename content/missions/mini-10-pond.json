@@ -26,11 +26,12 @@
           "hero": "koren",
           "pose": "wave",
           "bg": "Да идем при езерцето!",
-          "en": "Let's go to the pond!"
+          "en": "Let's go to the pond!",
+          "img": "geo/lake.webp"
         },
         {
           "hero": "raya",
-          "pose": "point",
+          "pose": "nature",
           "bg": "Кой живее край водата? Намери го!",
           "en": "Who lives by the water? Find it!"
         }

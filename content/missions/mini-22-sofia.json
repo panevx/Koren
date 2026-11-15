@@ -26,11 +26,12 @@
           "hero": "raya",
           "pose": "wave",
           "bg": "София е столицата на България.",
-          "en": "Sofia is the capital of Bulgaria."
+          "en": "Sofia is the capital of Bulgaria.",
+          "img": "city/sofia.webp"
         },
         {
           "hero": "koren",
-          "pose": "point",
+          "pose": "map",
           "bg": "Там има голяма катедрала със златни куполи.",
           "en": "There is a big cathedral with golden domes there."
         }

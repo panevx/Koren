@@ -19,13 +19,13 @@
       "story": [
         {
           "hero": "koren",
-          "pose": "think",
+          "pose": "nature",
           "bg": "Някои животни живеят в гората, други – във водата.",
           "en": "Some animals live in the forest, others in the water."
         },
         {
           "hero": "raya",
-          "pose": "point",
+          "pose": "encourage",
           "bg": "Подреди ги в кутиите!",
           "en": "Sort them into the boxes!"
         }

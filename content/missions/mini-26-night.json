@@ -19,13 +19,13 @@
       "story": [
         {
           "hero": "raya",
-          "pose": "think",
+          "pose": "nature",
           "bg": "Някои животни спят денем и излизат нощем.",
           "en": "Some animals sleep in the day and come out at night."
         },
         {
           "hero": "koren",
-          "pose": "point",
+          "pose": "encourage",
           "bg": "Намери совата, таралежа и язовеца!",
           "en": "Find the owl, the hedgehog and the badger!"
         }

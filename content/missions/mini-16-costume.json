@@ -26,11 +26,12 @@
           "hero": "koren",
           "pose": "wave",
           "bg": "На празник обличаме народна носия.",
-          "en": "On holidays we wear a folk costume."
+          "en": "On holidays we wear a folk costume.",
+          "img": "culture/bulgarian-costume.webp"
         },
         {
           "hero": "raya",
-          "pose": "point",
+          "pose": "celebrate",
           "bg": "Сложи в сандъка частите на носията!",
           "en": "Put the parts of the costume in the chest!"
         }

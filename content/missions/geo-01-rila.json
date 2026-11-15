@@ -19,17 +19,19 @@
           "hero": "koren",
           "pose": "wave",
           "bg": "Да се качим на планината Рила!",
-          "en": "Let's climb the Rila mountains!"
+          "en": "Let's climb the Rila mountains!",
+          "img": "geo/rila.webp"
         },
         {
           "hero": "raya",
-          "pose": "point",
+          "pose": "explorer",
           "bg": "Там е най-високият връх – Мусала.",
-          "en": "The highest peak is there – Musala."
+          "en": "The highest peak is there – Musala.",
+          "img": "geo/musala.webp"
         },
         {
           "hero": "koren",
-          "pose": "point",
+          "pose": "map",
           "bg": "Намери езерата и манастира!",
           "en": "Find the lakes and the monastery!"
         }
@@ -94,17 +96,19 @@
           "hero": "raya",
           "pose": "wave",
           "bg": "Рила е най-високата планина в България и на целия Балкански полуостров.",
-          "en": "Rila is the highest mountain range in Bulgaria and on the whole Balkan Peninsula."
+          "en": "Rila is the highest mountain range in Bulgaria and on the whole Balkan Peninsula.",
+          "img": "geo/rila.webp"
         },
         {
           "hero": "koren",
-          "pose": "point",
+          "pose": "explorer",
           "bg": "Най-високият ѝ връх е Мусала – 2925 метра.",
-          "en": "Its highest peak is Musala – 2925 metres."
+          "en": "Its highest peak is Musala – 2925 metres.",
+          "img": "geo/musala.webp"
         },
         {
           "hero": "raya",
-          "pose": "point",
+          "pose": "map",
           "bg": "В Рила са Седемте рилски езера, а в една красива долина е Рилският манастир.",
           "en": "Rila has the Seven Rila Lakes, and the Rila Monastery stands in a beautiful valley."
         },
@@ -211,7 +215,8 @@
           "hero": "koren",
           "pose": "wave",
           "bg": "Рила е най-високата планина на Балканския полуостров. Връх Мусала се издига на 2925 м.",
-          "en": "Rila is the highest mountain range on the Balkan Peninsula. Musala Peak rises to 2925 m."
+          "en": "Rila is the highest mountain range on the Balkan Peninsula. Musala Peak rises to 2925 m.",
+          "img": "geo/musala.webp"
         },
         {
           "hero": "raya",
@@ -221,7 +226,7 @@
         },
         {
           "hero": "koren",
-          "pose": "point",
+          "pose": "map",
           "bg": "Седемте рилски езера са ледникови – образувани са от древни ледници.",
           "en": "The Seven Rila Lakes are glacial – they were formed by ancient glaciers."
         },

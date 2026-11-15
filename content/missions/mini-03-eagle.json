@@ -24,13 +24,13 @@
       "story": [
         {
           "hero": "raya",
-          "pose": "point",
+          "pose": "nature",
           "bg": "Орелът лети високо над планините.",
           "en": "The eagle flies high above the mountains."
         },
         {
           "hero": "koren",
-          "pose": "think",
+          "pose": "encourage",
           "bg": "Кои животни летят и кои ходят? Подреди ги!",
           "en": "Which animals fly and which walk? Sort them!"
         }
