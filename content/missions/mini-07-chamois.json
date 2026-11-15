@@ -1,0 +1,103 @@
+{
+  "id": "mini-07-chamois",
+  "subject": "geography",
+  "free": true,
+  "order": 24,
+  "ages": [
+    "small"
+  ],
+  "badge": {
+    "id": "mini-07-chamois",
+    "icon": "animals/chamois.webp"
+  },
+  "title": {
+    "bg": "Дивата коза",
+    "en": "The chamois"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Дивата коза живее високо в планината.",
+          "en": "The chamois lives high in the mountains."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Тя скача по скалите като истински катерач!",
+          "en": "It jumps over rocks like a real climber!"
+        }
+      ],
+      "game": {
+        "type": "sort",
+        "prompt": {
+          "bg": "Кой живее в планината и кой в гората?",
+          "en": "Who lives in the mountains and who in the forest?"
+        },
+        "bins": [
+          {
+            "bg": "Планина",
+            "en": "Mountains",
+            "img": "world/mountain-peak.webp"
+          },
+          {
+            "bg": "Гора",
+            "en": "Forest",
+            "img": "world/forest-bush.webp"
+          }
+        ],
+        "items": [
+          {
+            "bg": "Дива коза",
+            "en": "Chamois",
+            "img": "animals/chamois.webp",
+            "bin": 0
+          },
+          {
+            "bg": "Орел",
+            "en": "Eagle",
+            "img": "animals/eagle.webp",
+            "bin": 0
+          },
+          {
+            "bg": "Муфлон",
+            "en": "Mouflon",
+            "img": "animals/mouflon.webp",
+            "bin": 0
+          },
+          {
+            "bg": "Сърна",
+            "en": "Roe deer",
+            "img": "animals/roe-deer.webp",
+            "bin": 1
+          },
+          {
+            "bg": "Катерица",
+            "en": "Squirrel",
+            "img": "animals/squirrel.webp",
+            "bin": 1
+          },
+          {
+            "bg": "Кълвач",
+            "en": "Woodpecker",
+            "img": "animals/woodpecker.webp",
+            "bin": 1
+          }
+        ],
+        "hint": {
+          "bg": "Които обичат скалите – в планината.",
+          "en": "The ones that love rocks go to the mountains."
+        }
+      },
+      "check": []
+    }
+  },
+  "sources": [
+    "Червена книга на Република България, БАН, 2015",
+    "Енциклопедия „България“, БАН"
+  ],
+  "review": null,
+  "draft": true
+}

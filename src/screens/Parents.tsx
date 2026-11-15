@@ -7,6 +7,7 @@ import { AvatarPicker, ProfileAvatar, useProfileName } from '../components/Profi
 import { Button, Screen, TopBar } from '../components/ui'
 import { earnedCount } from '../content/badges'
 import { MISSIONS } from '../content/missions'
+import { forLevel } from '../content/forLevel'
 import { useLocalized } from '../content/useLocalized'
 import { LANGS } from '../i18n'
 import { useT } from '../i18n/useT'
@@ -199,7 +200,8 @@ function ProfileCard({ profile, index }: { profile: Profile; index: number }) {
   const { activeId, profiles, updateProfile, removeProfile } = useProfiles()
   const [editing, setEditing] = useState(false)
   const [armed, confirm] = useConfirm()
-  const total = MISSIONS.length
+  const mine = forLevel(MISSIONS, ageToLevel(profile.age))
+  const total = mine.length
 
   if (editing)
     return (
@@ -221,7 +223,7 @@ function ProfileCard({ profile, index }: { profile: Profile; index: number }) {
           <p className="text-lg font-black">{name(profile, index)}</p>
           <p className="text-sm font-semibold text-muted">
             {t('age.years', { n: profile.age })} · {t(`level.${ageToLevel(profile.age)}.short`)} ·{' '}
-            {t('profile.badges', { n: earnedCount(profile.badges, MISSIONS), total })}
+            {t('profile.badges', { n: earnedCount(profile.badges, mine), total })}
           </p>
           {profile.id === activeId && <p className="text-xs font-black text-green-dark uppercase">{t('profile.playing')}</p>}
         </div>
@@ -253,7 +255,7 @@ function Learns({ profile, index }: { profile: Profile; index: number }) {
   return (
     <div className="flex flex-col gap-2">
       <p className="font-black">
-        {name(profile, index)} — {t('parents.learnsDone', { n: played.length, total: MISSIONS.length })}
+        {name(profile, index)} — {t('parents.learnsDone', { n: played.length, total: forLevel(MISSIONS, ageToLevel(profile.age)).length })}
       </p>
       {played.length === 0 ? (
         <p className="text-sm text-muted">{t('parents.learnsNone')}</p>

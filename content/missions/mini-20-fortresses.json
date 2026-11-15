@@ -1,0 +1,60 @@
+{
+  "id": "mini-20-fortresses",
+  "subject": "history",
+  "free": true,
+  "order": 37,
+  "ages": [
+    "small"
+  ],
+  "badge": {
+    "id": "mini-20-fortresses",
+    "icon": "world/pliska.webp"
+  },
+  "title": {
+    "bg": "Двете крепости",
+    "en": "The two fortresses"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Плиска е първата столица на България.",
+          "en": "Pliska is the first capital of Bulgaria."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Царевец е в Търново. Сложи ги на картата!",
+          "en": "Tsarevets is in Tarnovo. Put them on the map!"
+        }
+      ],
+      "game": {
+        "type": "build",
+        "prompt": {
+          "bg": "Сложи крепостите на картата!",
+          "en": "Put the fortresses on the map!"
+        },
+        "labels": true,
+        "pieces": [
+          {
+            "place": "pliska",
+            "img": "world/pliska.webp"
+          },
+          {
+            "place": "veliko-tarnovo",
+            "img": "world/tsarevets-fortress.webp"
+          }
+        ]
+      },
+      "check": []
+    }
+  },
+  "sources": [
+    "Учебник „Околен свят“, 1–2 клас, МОН",
+    "Енциклопедия „България“, БАН"
+  ],
+  "review": null,
+  "draft": true
+}

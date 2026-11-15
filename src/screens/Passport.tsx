@@ -6,7 +6,7 @@ import { img } from '../components/Brand'
 import { Icon } from '../components/Icon'
 import { ProfileAvatar, useProfileName } from '../components/ProfileAvatar'
 import { Screen, TopBar } from '../components/ui'
-import { MISSIONS } from '../content/missions'
+import { useChildMissions } from '../content/useChildMissions'
 import { useLocalized } from '../content/useLocalized'
 import { useT } from '../i18n/useT'
 import { bouncy, m, stagger } from '../motion'
@@ -22,6 +22,7 @@ export function Passport() {
   const profiles = useProfiles((s) => s.profiles)
   const profile = useProfiles(activeProfile)
   const index = profiles.findIndex((p) => p.id === profile.id)
+  const MISSIONS = useChildMissions()
   const earned = MISSIONS.filter((mission) => profile.badges.includes(mission.badge.id))
   const total = MISSIONS.length
 

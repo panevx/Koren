@@ -3,6 +3,8 @@ import { Link, useNavigate } from 'react-router'
 import { ProfileAvatar, useProfileName } from '../components/ProfileAvatar'
 import { Screen, TopBar } from '../components/ui'
 import { MISSIONS } from '../content/missions'
+import { forLevel } from '../content/forLevel'
+import { ageToLevel } from '../theme/levels'
 import { useT } from '../i18n/useT'
 import { m, rise, stagger } from '../motion'
 import { useProfiles } from '../store/profiles'
@@ -45,7 +47,7 @@ export function WhoPlays() {
                     </span>
                   )}
                   <span className="text-sm font-semibold text-muted">
-                    {t('age.years', { n: p.age })} · {t('profile.badges', { n: earnedCount(p.badges, MISSIONS), total: MISSIONS.length })}
+                    {t('age.years', { n: p.age })} · {t('profile.badges', { n: earnedCount(p.badges, forLevel(MISSIONS, ageToLevel(p.age))), total: forLevel(MISSIONS, ageToLevel(p.age)).length })}
                   </span>
                 </span>
               </button>

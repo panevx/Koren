@@ -1,0 +1,91 @@
+{
+  "id": "mini-19-crown",
+  "subject": "history",
+  "free": true,
+  "order": 36,
+  "ages": [
+    "small"
+  ],
+  "badge": {
+    "id": "mini-19-crown",
+    "icon": "world/simeon-crown.webp"
+  },
+  "title": {
+    "bg": "Короната на царя",
+    "en": "The king’s crown"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Някога в крепостите живеели царе.",
+          "en": "Long ago kings lived in fortresses."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Царят е изгубил короната си. Помогни му!",
+          "en": "The king has lost his crown. Help him!"
+        }
+      ],
+      "game": {
+        "type": "find",
+        "prompt": {
+          "bg": "Намери короната и щита!",
+          "en": "Find the crown and the shield!"
+        },
+        "scene": "castle",
+        "items": [
+          {
+            "bg": "Корона",
+            "en": "Crown",
+            "img": "world/simeon-crown.webp",
+            "x": 26,
+            "y": 72,
+            "size": 18,
+            "target": true,
+            "under": "world/forest-bush.webp"
+          },
+          {
+            "bg": "Щит",
+            "en": "Shield",
+            "img": "world/asparuh-shield.webp",
+            "x": 64,
+            "y": 78,
+            "size": 18,
+            "target": true
+          },
+          {
+            "bg": "Крепост",
+            "en": "Fortress",
+            "img": "world/tsarevets-fortress.webp",
+            "x": 80,
+            "y": 36,
+            "size": 26
+          },
+          {
+            "bg": "Пеперуда",
+            "en": "Butterfly",
+            "img": "world/butterfly.webp",
+            "x": 16,
+            "y": 28,
+            "size": 10
+          }
+        ],
+        "hint": {
+          "bg": "Короната е под храста.",
+          "en": "The crown is under the bush."
+        }
+      },
+      "check": []
+    }
+  },
+  "sources": [
+    "Учебник „Околен свят“, 1–2 клас, МОН",
+    "Енциклопедия „България“, БАН"
+  ],
+  "review": null,
+  "draft": true
+}

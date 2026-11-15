@@ -1,0 +1,92 @@
+{
+  "id": "mini-16-costume",
+  "subject": "culture",
+  "free": true,
+  "order": 33,
+  "ages": [
+    "small"
+  ],
+  "unlock": {
+    "after": [
+      "mini-15-bread"
+    ]
+  },
+  "badge": {
+    "id": "mini-16-costume",
+    "icon": "world/traditional-belt.webp"
+  },
+  "title": {
+    "bg": "Облечи носията",
+    "en": "Dress up in the costume"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "На празник обличаме народна носия.",
+          "en": "On holidays we wear a folk costume."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Сложи в сандъка частите на носията!",
+          "en": "Put the parts of the costume in the chest!"
+        }
+      ],
+      "game": {
+        "type": "chest",
+        "prompt": {
+          "bg": "Кое е от носията?",
+          "en": "What is part of the costume?"
+        },
+        "items": [
+          {
+            "bg": "Пояс",
+            "en": "Belt",
+            "img": "world/traditional-belt.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Шевица",
+            "en": "Embroidery",
+            "img": "world/bulgarian-embroidery.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Фар",
+            "en": "Lighthouse",
+            "img": "world/black-sea-lighthouse.webp",
+            "belongs": false,
+            "why": {
+              "bg": "Фарът стои на брега – не се облича!",
+              "en": "A lighthouse stands on the shore – you cannot wear it!"
+            }
+          },
+          {
+            "bg": "Гъба",
+            "en": "Mushroom",
+            "img": "world/mushroom.webp",
+            "belongs": false,
+            "why": {
+              "bg": "Гъбата расте в гората.",
+              "en": "The mushroom grows in the forest."
+            }
+          }
+        ],
+        "reward": {
+          "bg": "Носията има пъстър пояс и риза с шевици.",
+          "en": "The costume has a colourful belt and a shirt with embroidery."
+        }
+      },
+      "check": []
+    }
+  },
+  "sources": [
+    "Етнографски музей към БАН – български обичаи",
+    "Енциклопедия „България“, БАН"
+  ],
+  "review": null,
+  "draft": true
+}

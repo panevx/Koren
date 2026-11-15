@@ -1,0 +1,80 @@
+{
+  "id": "mini-22-sofia",
+  "subject": "history",
+  "free": true,
+  "order": 39,
+  "ages": [
+    "small"
+  ],
+  "unlock": {
+    "after": [
+      "mini-21-scribe"
+    ]
+  },
+  "badge": {
+    "id": "mini-22-sofia",
+    "icon": "world/alexander-nevsky.webp"
+  },
+  "title": {
+    "bg": "Катедралата в София",
+    "en": "The cathedral in Sofia"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "София е столицата на България.",
+          "en": "Sofia is the capital of Bulgaria."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Там има голяма катедрала със златни куполи.",
+          "en": "There is a big cathedral with golden domes there."
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Коя е катедралата със златните куполи?",
+              "en": "Which is the cathedral with the golden domes?"
+            },
+            "options": [
+              {
+                "bg": "Катедрала",
+                "en": "Cathedral",
+                "img": "world/alexander-nevsky.webp"
+              },
+              {
+                "bg": "Къща",
+                "en": "House",
+                "img": "world/koprivshtitsa-house.webp"
+              },
+              {
+                "bg": "Фар",
+                "en": "Lighthouse",
+                "img": "world/black-sea-lighthouse.webp"
+              }
+            ],
+            "answer": 0,
+            "hint": {
+              "bg": "Търси златните куполи!",
+              "en": "Look for the golden domes!"
+            }
+          }
+        ]
+      },
+      "check": []
+    }
+  },
+  "sources": [
+    "Национален туристически регистър – 100 национални туристически обекта",
+    "Енциклопедия „България“, БАН"
+  ],
+  "review": null,
+  "draft": true
+}

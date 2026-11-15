@@ -1,0 +1,92 @@
+{
+  "id": "mini-12-lighthouse",
+  "subject": "geography",
+  "free": true,
+  "order": 29,
+  "ages": [
+    "small"
+  ],
+  "unlock": {
+    "after": [
+      "mini-11-river"
+    ]
+  },
+  "badge": {
+    "id": "mini-12-lighthouse",
+    "icon": "world/black-sea-lighthouse.webp"
+  },
+  "title": {
+    "bg": "Фарът край морето",
+    "en": "The lighthouse by the sea"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "На брега на Черно море свети фар.",
+          "en": "A lighthouse shines on the Black Sea shore."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Той показва пътя на корабите нощем.",
+          "en": "It shows the ships the way at night."
+        }
+      ],
+      "game": {
+        "type": "find",
+        "prompt": {
+          "bg": "Намери фара, делфина и пеликана!",
+          "en": "Find the lighthouse, the dolphin and the pelican!"
+        },
+        "scene": "sea",
+        "items": [
+          {
+            "bg": "Фар",
+            "en": "Lighthouse",
+            "img": "world/black-sea-lighthouse.webp",
+            "x": 82,
+            "y": 48,
+            "size": 20,
+            "target": true
+          },
+          {
+            "bg": "Делфин",
+            "en": "Dolphin",
+            "img": "animals/dolphin.webp",
+            "x": 32,
+            "y": 50,
+            "size": 20,
+            "target": true
+          },
+          {
+            "bg": "Пеликан",
+            "en": "Pelican",
+            "img": "animals/pelican.webp",
+            "x": 56,
+            "y": 80,
+            "size": 18,
+            "target": true
+          },
+          {
+            "bg": "Птичка",
+            "en": "Little bird",
+            "img": "world/bird.webp",
+            "x": 18,
+            "y": 24,
+            "size": 10
+          }
+        ]
+      },
+      "check": []
+    }
+  },
+  "sources": [
+    "Национален туристически регистър – 100 национални туристически обекта",
+    "Енциклопедия „България“, БАН"
+  ],
+  "review": null,
+  "draft": true
+}

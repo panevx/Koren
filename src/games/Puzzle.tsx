@@ -53,7 +53,7 @@ export function Puzzle({ game, onDone }: { game: PuzzleGame; onDone: () => void 
         <div className="min-w-0 flex-1">
           <Prompt>{l(game.prompt)}</Prompt>
         </div>
-        <img src={src} alt="" className="size-20 shrink-0 -rotate-3 rounded-[1.25rem] object-cover shadow-float ring-4 ring-white" aria-hidden="true" />
+        <img src={src} alt="" className="size-[min(5rem,17vw)] shrink-0 -rotate-3 rounded-[1.25rem] object-cover shadow-float ring-4 ring-white" aria-hidden="true" />
       </div>
 
       <div

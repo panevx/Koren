@@ -1,0 +1,75 @@
+{
+  "id": "mini-06-big-small",
+  "subject": "geography",
+  "free": true,
+  "order": 23,
+  "ages": [
+    "small"
+  ],
+  "unlock": {
+    "after": [
+      "mini-05-pheasant"
+    ]
+  },
+  "badge": {
+    "id": "mini-06-big-small",
+    "icon": "animals/hedgehog.webp"
+  },
+  "title": {
+    "bg": "Малко и голямо",
+    "en": "Small and big"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "В гората има малки и големи животни.",
+          "en": "There are small and big animals in the forest."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Подреди ги от най-малкото до най-голямото!",
+          "en": "Put them in order from the smallest to the biggest!"
+        }
+      ],
+      "game": {
+        "type": "order",
+        "prompt": {
+          "bg": "От най-малкото до най-голямото",
+          "en": "From the smallest to the biggest"
+        },
+        "items": [
+          {
+            "bg": "Таралеж",
+            "en": "Hedgehog",
+            "img": "animals/hedgehog.webp"
+          },
+          {
+            "bg": "Лисица",
+            "en": "Fox",
+            "img": "animals/fox.webp"
+          },
+          {
+            "bg": "Мечка",
+            "en": "Bear",
+            "img": "animals/bear.webp"
+          }
+        ],
+        "hint": {
+          "bg": "Таралежът е най-малък, мечката – най-голяма.",
+          "en": "The hedgehog is the smallest, the bear the biggest."
+        }
+      },
+      "check": []
+    }
+  },
+  "sources": [
+    "Червена книга на Република България, БАН, 2015",
+    "Енциклопедия „България“, БАН"
+  ],
+  "review": null,
+  "draft": true
+}

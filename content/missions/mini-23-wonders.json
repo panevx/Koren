@@ -1,0 +1,69 @@
+{
+  "id": "mini-23-wonders",
+  "subject": "geography",
+  "free": true,
+  "order": 40,
+  "ages": [
+    "small"
+  ],
+  "unlock": {
+    "after": [
+      "mini-22-sofia"
+    ]
+  },
+  "badge": {
+    "id": "mini-23-wonders",
+    "icon": "world/rila-monastery.webp"
+  },
+  "title": {
+    "bg": "Чудесата на България",
+    "en": "Wonders of Bulgaria"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Да сложим чудесата на картата!",
+          "en": "Let's put the wonders on the map!"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Пише къде е всяко. Ще се справиш!",
+          "en": "It says where each one goes. You can do it!"
+        }
+      ],
+      "game": {
+        "type": "build",
+        "prompt": {
+          "bg": "Сложи всяко чудо на мястото му!",
+          "en": "Put each wonder in its place!"
+        },
+        "labels": true,
+        "pieces": [
+          {
+            "place": "rila-monastery",
+            "img": "world/rila-monastery.webp"
+          },
+          {
+            "place": "varna",
+            "img": "world/black-sea-lighthouse.webp"
+          },
+          {
+            "place": "belogradchik",
+            "img": "world/belogradchik-rocks.webp"
+          }
+        ]
+      },
+      "check": []
+    }
+  },
+  "sources": [
+    "Национален туристически регистър – 100 национални туристически обекта",
+    "Енциклопедия „България“, БАН"
+  ],
+  "review": null,
+  "draft": true
+}

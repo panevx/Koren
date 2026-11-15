@@ -1,0 +1,103 @@
+{
+  "id": "mini-30-animal-or-thing",
+  "subject": "language",
+  "free": true,
+  "order": 47,
+  "ages": [
+    "small"
+  ],
+  "unlock": {
+    "after": [
+      "mini-29-letters"
+    ]
+  },
+  "badge": {
+    "id": "mini-30-animal-or-thing",
+    "icon": "world/sorting-box.webp"
+  },
+  "title": {
+    "bg": "Животно или предмет?",
+    "en": "Animal or thing?"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "Някои думи са за животни, други – за предмети.",
+          "en": "Some words are animals, others are things."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Подреди ги в кутиите!",
+          "en": "Sort them into the boxes!"
+        }
+      ],
+      "game": {
+        "type": "sort",
+        "prompt": {
+          "bg": "Животно или предмет?",
+          "en": "Animal or thing?"
+        },
+        "bins": [
+          {
+            "bg": "Животно",
+            "en": "Animal",
+            "img": "animals/fox.webp"
+          },
+          {
+            "bg": "Предмет",
+            "en": "Thing",
+            "img": "world/sorting-box.webp"
+          }
+        ],
+        "items": [
+          {
+            "bg": "Мечка",
+            "en": "Bear",
+            "img": "animals/bear.webp",
+            "bin": 0
+          },
+          {
+            "bg": "Орел",
+            "en": "Eagle",
+            "img": "animals/eagle.webp",
+            "bin": 0
+          },
+          {
+            "bg": "Гущер",
+            "en": "Lizard",
+            "img": "animals/lizard.webp",
+            "bin": 0
+          },
+          {
+            "bg": "Ключ",
+            "en": "Key",
+            "img": "world/mission-key.webp",
+            "bin": 1
+          },
+          {
+            "bg": "Корона",
+            "en": "Crown",
+            "img": "world/simeon-crown.webp",
+            "bin": 1
+          },
+          {
+            "bg": "Книга",
+            "en": "Book",
+            "img": "world/medieval-book.webp",
+            "bin": 1
+          }
+        ]
+      },
+      "check": []
+    }
+  },
+  "sources": [
+    "Буквар за 1 клас, МОН"
+  ],
+  "review": null,
+  "draft": true
+}

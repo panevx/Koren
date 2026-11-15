@@ -58,7 +58,7 @@ export function Memory({ game, onDone }: { game: MemoryGame; onDone: () => void 
   return (
     <div className="flex flex-1 flex-col gap-3">
       <Prompt>{l(game.prompt)}</Prompt>
-      <div role="group" aria-label={t('memory.board')} className={`grid gap-2.5 ${cols} [perspective:900px]`}>
+      <div role="group" aria-label={t('memory.board')} className={`mx-auto grid w-full gap-2.5 ${cols} [perspective:900px]`}>
         {cards.map((_, card) => {
           const up = open.includes(card) || matched.includes(pairOf(card))
           const done = matched.includes(pairOf(card))
@@ -89,10 +89,13 @@ export function Memory({ game, onDone }: { game: MemoryGame; onDone: () => void 
                     done ? 'bg-green-soft ring-[3px] ring-green' : 'bg-white'
                   }`}
                 >
-                  {f.img && <img src={img(f.img)} alt="" draggable={false} className="pop-3d size-[70%] object-contain" />}
-                  <span className={`leading-tight font-extrabold ${f.img ? 'text-[length:clamp(0.55rem,11cqw,0.95rem)]' : 'text-[length:clamp(0.7rem,15cqw,1.25rem)]'}`}>
-                    {l(f)}
-                  </span>
+                  {f.img && <img src={img(f.img)} alt="" draggable={false} className={`pop-3d object-contain ${game.pairs[pairOf(card)]!.b ? 'size-[70%]' : 'size-[88%]'}`} />}
+                  {/* Picture + picture (for children who cannot read yet): the picture alone, its name is the button's label. */}
+                  {(!f.img || game.pairs[pairOf(card)]!.b) && (
+                    <span className={`leading-tight font-extrabold ${f.img ? 'text-[length:clamp(0.55rem,11cqw,0.95rem)]' : 'text-[length:clamp(0.7rem,15cqw,1.25rem)]'}`}>
+                      {l(f)}
+                    </span>
+                  )}
                 </span>
               </m.span>
             </button>

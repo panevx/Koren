@@ -1,0 +1,97 @@
+{
+  "id": "mini-09-rila-friends",
+  "subject": "geography",
+  "free": true,
+  "order": 26,
+  "ages": [
+    "small"
+  ],
+  "unlock": {
+    "after": [
+      "mini-08-mouflon"
+    ]
+  },
+  "badge": {
+    "id": "mini-09-rila-friends",
+    "icon": "world/seven-rila-lakes.webp"
+  },
+  "title": {
+    "bg": "Приятелите от Рила",
+    "en": "Friends from Rila"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Да се качим на Рила!",
+          "en": "Let's climb Rila!"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Там има езера, орли и диви кози.",
+          "en": "There are lakes, eagles and chamois there."
+        }
+      ],
+      "game": {
+        "type": "find",
+        "prompt": {
+          "bg": "Намери езерата, орела и дивата коза!",
+          "en": "Find the lakes, the eagle and the chamois!"
+        },
+        "scene": "mountain",
+        "items": [
+          {
+            "bg": "Седемте рилски езера",
+            "en": "Seven Rila Lakes",
+            "img": "world/seven-rila-lakes.webp",
+            "x": 30,
+            "y": 68,
+            "size": 30,
+            "target": true
+          },
+          {
+            "bg": "Орел",
+            "en": "Eagle",
+            "img": "animals/eagle.webp",
+            "x": 72,
+            "y": 26,
+            "size": 16,
+            "target": true
+          },
+          {
+            "bg": "Дива коза",
+            "en": "Chamois",
+            "img": "animals/chamois.webp",
+            "x": 74,
+            "y": 70,
+            "size": 18,
+            "target": true,
+            "under": "world/forest-bush.webp"
+          },
+          {
+            "bg": "Птичка",
+            "en": "Little bird",
+            "img": "world/bird.webp",
+            "x": 18,
+            "y": 24,
+            "size": 10
+          }
+        ],
+        "hint": {
+          "bg": "Орелът е високо в небето.",
+          "en": "The eagle is high in the sky."
+        }
+      },
+      "check": []
+    }
+  },
+  "sources": [
+    "Червена книга на Република България, БАН, 2015",
+    "Енциклопедия „България“, БАН"
+  ],
+  "review": null,
+  "draft": true
+}

@@ -1,0 +1,107 @@
+{
+  "id": "mini-29-letters",
+  "subject": "language",
+  "free": true,
+  "order": 46,
+  "ages": [
+    "small"
+  ],
+  "unlock": {
+    "after": [
+      "mini-28-mountain-memory"
+    ]
+  },
+  "badge": {
+    "id": "mini-29-letters",
+    "icon": "world/medieval-book.webp"
+  },
+  "title": {
+    "bg": "Първите букви",
+    "en": "The first letters"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Всяка дума започва с буква.",
+          "en": "Every word begins with a letter."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "„Мечка“ започва с М. А коя дума започва с Р?",
+          "en": "“Mechka” (bear) begins with M. Which word begins with R?"
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Кое започва с буквата М?",
+              "en": "Which one begins with the letter M?"
+            },
+            "options": [
+              {
+                "bg": "Мечка",
+                "en": "Mechka (bear)",
+                "img": "animals/bear.webp"
+              },
+              {
+                "bg": "Лисица",
+                "en": "Lisitsa (fox)",
+                "img": "animals/fox.webp"
+              },
+              {
+                "bg": "Заек",
+                "en": "Zayek (hare)",
+                "img": "animals/hare.webp"
+              }
+            ],
+            "answer": 0,
+            "hint": {
+              "bg": "М-м-мечка!",
+              "en": "M-m-mechka!"
+            }
+          },
+          {
+            "q": {
+              "bg": "Кое започва с буквата Р?",
+              "en": "Which one begins with the letter R?"
+            },
+            "options": [
+              {
+                "bg": "Гъба",
+                "en": "Gaba (mushroom)",
+                "img": "world/mushroom.webp"
+              },
+              {
+                "bg": "Река",
+                "en": "Reka (river)",
+                "img": "world/river.webp"
+              },
+              {
+                "bg": "Ключ",
+                "en": "Klyuch (key)",
+                "img": "world/mission-key.webp"
+              }
+            ],
+            "answer": 1,
+            "hint": {
+              "bg": "Р-р-река!",
+              "en": "R-r-reka!"
+            }
+          }
+        ]
+      },
+      "check": []
+    }
+  },
+  "sources": [
+    "Буквар за 1 клас, МОН"
+  ],
+  "review": null,
+  "draft": true
+}

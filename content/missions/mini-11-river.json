@@ -1,0 +1,75 @@
+{
+  "id": "mini-11-river",
+  "subject": "geography",
+  "free": true,
+  "order": 28,
+  "ages": [
+    "small"
+  ],
+  "unlock": {
+    "after": [
+      "mini-10-pond"
+    ]
+  },
+  "badge": {
+    "id": "mini-11-river",
+    "icon": "world/river.webp"
+  },
+  "title": {
+    "bg": "Пътят на реката",
+    "en": "The river’s journey"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "Реките започват високо в планината.",
+          "en": "Rivers begin high in the mountains."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "После текат надолу и стигат до морето.",
+          "en": "Then they flow down and reach the sea."
+        }
+      ],
+      "game": {
+        "type": "order",
+        "prompt": {
+          "bg": "Откъде тръгва реката и докъде стига?",
+          "en": "Where does the river start and where does it end?"
+        },
+        "items": [
+          {
+            "bg": "Планина",
+            "en": "Mountain",
+            "img": "world/mountain-peak.webp"
+          },
+          {
+            "bg": "Река",
+            "en": "River",
+            "img": "world/river.webp"
+          },
+          {
+            "bg": "Море",
+            "en": "Sea",
+            "img": "world/black-sea-lighthouse.webp"
+          }
+        ],
+        "hint": {
+          "bg": "Първо е планината, последно е морето.",
+          "en": "The mountain comes first, the sea comes last."
+        }
+      },
+      "check": []
+    }
+  },
+  "sources": [
+    "Национален туристически регистър – 100 национални туристически обекта",
+    "Енциклопедия „България“, БАН"
+  ],
+  "review": null,
+  "draft": true
+}

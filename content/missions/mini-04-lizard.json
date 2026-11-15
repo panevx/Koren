@@ -1,0 +1,106 @@
+{
+  "id": "mini-04-lizard",
+  "subject": "geography",
+  "free": true,
+  "order": 21,
+  "ages": [
+    "small"
+  ],
+  "unlock": {
+    "after": [
+      "mini-03-eagle"
+    ]
+  },
+  "badge": {
+    "id": "mini-04-lizard",
+    "icon": "animals/lizard.webp"
+  },
+  "title": {
+    "bg": "Гущерът на слънце",
+    "en": "The lizard in the sun"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Гущерът обича да се пече на слънце.",
+          "en": "The lizard loves to bask in the sun."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Когато се уплаши, бързо се скрива. Намери го!",
+          "en": "When it is scared, it hides quickly. Find it!"
+        }
+      ],
+      "game": {
+        "type": "find",
+        "prompt": {
+          "bg": "Намери гущера, костенурката и жабата!",
+          "en": "Find the lizard, the tortoise and the frog!"
+        },
+        "scene": "meadow",
+        "items": [
+          {
+            "bg": "Гущер",
+            "en": "Lizard",
+            "img": "animals/lizard.webp",
+            "x": 30,
+            "y": 78,
+            "size": 18,
+            "target": true,
+            "under": "world/forest-bush.webp"
+          },
+          {
+            "bg": "Костенурка",
+            "en": "Tortoise",
+            "img": "animals/tortoise.webp",
+            "x": 70,
+            "y": 74,
+            "size": 18,
+            "target": true
+          },
+          {
+            "bg": "Жаба",
+            "en": "Frog",
+            "img": "animals/frog.webp",
+            "x": 50,
+            "y": 86,
+            "size": 13,
+            "target": true,
+            "under": "world/forest-bush.webp"
+          },
+          {
+            "bg": "Пеперуда",
+            "en": "Butterfly",
+            "img": "world/butterfly.webp",
+            "x": 80,
+            "y": 30,
+            "size": 11
+          },
+          {
+            "bg": "Птичка",
+            "en": "Little bird",
+            "img": "world/bird.webp",
+            "x": 18,
+            "y": 26,
+            "size": 11
+          }
+        ],
+        "hint": {
+          "bg": "Гущерът се е скрил в храста.",
+          "en": "The lizard is hiding in the bush."
+        }
+      },
+      "check": []
+    }
+  },
+  "sources": [
+    "Червена книга на Република България, БАН, 2015",
+    "Енциклопедия „България“, БАН"
+  ],
+  "review": null,
+  "draft": true
+}

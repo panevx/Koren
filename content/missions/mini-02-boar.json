@@ -1,0 +1,99 @@
+{
+  "id": "mini-02-boar",
+  "subject": "geography",
+  "free": true,
+  "order": 19,
+  "ages": [
+    "small"
+  ],
+  "badge": {
+    "id": "mini-02-boar",
+    "icon": "animals/boar.webp"
+  },
+  "title": {
+    "bg": "Глиганът",
+    "en": "The wild boar"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Това е глиган. Той е силен и космат.",
+          "en": "This is a wild boar. It is strong and hairy."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Глиганът рови в земята с муцуната си и търси жълъди.",
+          "en": "The boar digs in the ground with its snout, looking for acorns."
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Кой рови в земята с муцуната си?",
+              "en": "Who digs in the ground with its snout?"
+            },
+            "options": [
+              {
+                "bg": "Глиган",
+                "en": "Wild boar",
+                "img": "animals/boar.webp"
+              },
+              {
+                "bg": "Сърна",
+                "en": "Roe deer",
+                "img": "animals/roe-deer.webp"
+              },
+              {
+                "bg": "Катерица",
+                "en": "Squirrel",
+                "img": "animals/squirrel.webp"
+              }
+            ],
+            "answer": 0,
+            "hint": {
+              "bg": "Той има голяма муцуна и малки зъби-бивни.",
+              "en": "It has a big snout and small tusks."
+            }
+          },
+          {
+            "q": {
+              "bg": "Кой има бодли?",
+              "en": "Who has spikes?"
+            },
+            "options": [
+              {
+                "bg": "Глиган",
+                "en": "Wild boar",
+                "img": "animals/boar.webp"
+              },
+              {
+                "bg": "Таралеж",
+                "en": "Hedgehog",
+                "img": "animals/hedgehog.webp"
+              },
+              {
+                "bg": "Лисица",
+                "en": "Fox",
+                "img": "animals/fox.webp"
+              }
+            ],
+            "answer": 1
+          }
+        ]
+      },
+      "check": []
+    }
+  },
+  "sources": [
+    "Червена книга на Република България, БАН, 2015",
+    "Енциклопедия „България“, БАН"
+  ],
+  "review": null,
+  "draft": true
+}

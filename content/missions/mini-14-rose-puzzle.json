@@ -1,0 +1,51 @@
+{
+  "id": "mini-14-rose-puzzle",
+  "subject": "culture",
+  "free": true,
+  "order": 31,
+  "ages": [
+    "small"
+  ],
+  "badge": {
+    "id": "mini-14-rose-puzzle",
+    "icon": "world/rose-oil-bottle.webp"
+  },
+  "title": {
+    "bg": "Розата",
+    "en": "The rose"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "В България растат много рози.",
+          "en": "Many roses grow in Bulgaria."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "От тях правят розово масло. Сглоби розата!",
+          "en": "Rose oil is made from them. Put the rose together!"
+        }
+      ],
+      "game": {
+        "type": "puzzle",
+        "prompt": {
+          "bg": "Сглоби розата!",
+          "en": "Put the rose together!"
+        },
+        "img": "puzzles/rose.webp",
+        "pieces": 4
+      },
+      "check": []
+    }
+  },
+  "sources": [
+    "Етнографски музей към БАН – български обичаи",
+    "Енциклопедия „България“, БАН"
+  ],
+  "review": null,
+  "draft": true
+}

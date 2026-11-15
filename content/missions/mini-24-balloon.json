@@ -1,0 +1,65 @@
+{
+  "id": "mini-24-balloon",
+  "subject": "geography",
+  "free": true,
+  "order": 41,
+  "ages": [
+    "small"
+  ],
+  "unlock": {
+    "after": [
+      "mini-23-wonders"
+    ]
+  },
+  "badge": {
+    "id": "mini-24-balloon",
+    "icon": "world/hot-air-balloon.webp"
+  },
+  "title": {
+    "bg": "Полет с балон",
+    "en": "A balloon flight"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Летим с балон над България!",
+          "en": "We are flying over Bulgaria in a balloon!"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Балонът кацна до червените скали. Намери ги!",
+          "en": "The balloon landed by the red rocks. Find them!"
+        }
+      ],
+      "game": {
+        "type": "map",
+        "target": "belogradchik",
+        "choices": [
+          "belogradchik",
+          "varna",
+          "sofia"
+        ],
+        "prompt": {
+          "bg": "Къде са червените скали?",
+          "en": "Where are the red rocks?"
+        },
+        "hint": {
+          "bg": "Скалите са горе вляво.",
+          "en": "The rocks are at the top left."
+        },
+        "showIcons": true
+      },
+      "check": []
+    }
+  },
+  "sources": [
+    "Национален туристически регистър – 100 национални туристически обекта",
+    "Енциклопедия „България“, БАН"
+  ],
+  "review": null,
+  "draft": true
+}

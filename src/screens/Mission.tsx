@@ -4,7 +4,8 @@ import { BadgeArt } from '../components/BadgeArt'
 import { Avatar, img } from '../components/Brand'
 import { Icon } from '../components/Icon'
 import { Button, Screen, useTitle } from '../components/ui'
-import { MISSIONS, missionById, pickLevel } from '../content/missions'
+import { missionById, pickLevel } from '../content/missions'
+import { useChildMissions } from '../content/useChildMissions'
 import { isUnlocked, reachedMilestones, unlockedIds, type MilestoneId } from '../content/progress'
 import { earnedCount } from '../content/badges'
 import { UnlockInfo } from '../components/UnlockInfo'
@@ -27,8 +28,9 @@ export function Mission() {
   const mission = missionById(id)
   const age = useAge()
   const profile = useActiveProfile()
+  const missions = useChildMissions()
   if (!mission) return <Navigate to="/missions" replace />
-  if (!isUnlocked(mission, profile, MISSIONS)) return <Locked mission={mission} />
+  if (!isUnlocked(mission, profile, missions)) return <Locked mission={mission} />
   // The level is fixed when the mission starts, so changing age mid-game cannot reshuffle it.
   return <MissionRun key={mission.id} mission={mission} childLevel={ageToLevel(age)} />
 }
@@ -227,15 +229,16 @@ function Badge({ mission, level }: { mission: MissionData; level: Level }) {
   const takeBreak = useProfiles((s) => s.takeBreak)
   const streak = useProfiles((s) => s.streak)
   const profile = useActiveProfile()
+  const missions = useChildMissions()
   // What was open and which rewards were reached BEFORE this badge — the difference is celebrated below.
   const [before] = useState(() => {
     const p = activeProfile(useProfiles.getState())
-    return { open: unlockedIds(p, MISSIONS), rewards: reachedMilestones(earnedCount(p.badges, MISSIONS), MISSIONS) }
+    return { open: unlockedIds(p, missions), rewards: reachedMilestones(earnedCount(p.badges, missions), missions) }
   })
-  const opened = unlockedIds(profile, MISSIONS)
+  const opened = unlockedIds(profile, missions)
     .filter((id) => !before.open.includes(id))
     .map((id) => missionById(id)!)
-  const rewards = reachedMilestones(earnedCount(profile.badges, MISSIONS), MISSIONS).filter((r) => !before.rewards.includes(r))
+  const rewards = reachedMilestones(earnedCount(profile.badges, missions), missions).filter((r) => !before.rewards.includes(r))
   // Count the mission exactly once, even if React runs the effect twice (StrictMode).
   const counted = useRef(false)
   useEffect(() => {

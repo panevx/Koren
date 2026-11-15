@@ -1,0 +1,91 @@
+{
+  "id": "mini-17-old-house",
+  "subject": "culture",
+  "free": true,
+  "order": 34,
+  "ages": [
+    "small"
+  ],
+  "unlock": {
+    "after": [
+      "mini-16-costume"
+    ]
+  },
+  "badge": {
+    "id": "mini-17-old-house",
+    "icon": "world/koprivshtitsa-house.webp"
+  },
+  "title": {
+    "bg": "Старата къща",
+    "en": "The old house"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Това е стара българска къща.",
+          "en": "This is an old Bulgarian house."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "До нея има малко каменно мостче. Намери ги!",
+          "en": "Next to it there is a little stone bridge. Find them!"
+        }
+      ],
+      "game": {
+        "type": "find",
+        "prompt": {
+          "bg": "Намери къщата и мостчето!",
+          "en": "Find the house and the little bridge!"
+        },
+        "scene": "village",
+        "items": [
+          {
+            "bg": "Къща",
+            "en": "House",
+            "img": "world/koprivshtitsa-house.webp",
+            "x": 30,
+            "y": 56,
+            "size": 30,
+            "target": true
+          },
+          {
+            "bg": "Мостче",
+            "en": "Little bridge",
+            "img": "world/bridge.webp",
+            "x": 70,
+            "y": 80,
+            "size": 24,
+            "target": true
+          },
+          {
+            "bg": "Пеперуда",
+            "en": "Butterfly",
+            "img": "world/butterfly.webp",
+            "x": 82,
+            "y": 30,
+            "size": 10
+          },
+          {
+            "bg": "Птичка",
+            "en": "Little bird",
+            "img": "world/bird.webp",
+            "x": 56,
+            "y": 26,
+            "size": 10
+          }
+        ]
+      },
+      "check": []
+    }
+  },
+  "sources": [
+    "Етнографски музей към БАН – български обичаи",
+    "Енциклопедия „България“, БАН"
+  ],
+  "review": null,
+  "draft": true
+}

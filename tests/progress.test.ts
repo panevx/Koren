@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { MISSIONS } from '../src/content/missions'
+import { forLevel } from '../src/content/forLevel'
 import { PATH } from '../src/content/path'
 import { isUnlocked, reachedMilestones, statusOf, unlockedIds } from '../src/content/progress'
 import { PATH_ORDER } from '../src/content/pathOrder'
@@ -78,5 +79,34 @@ describe('adventure path (content/path.json)', () => {
   it('a stop never comes before the mission that opens it', () => {
     for (const m of MISSIONS)
       for (const id of m.unlock?.after ?? []) expect(PATH_ORDER.indexOf(id), `${id} before ${m.id}`).toBeLessThan(PATH_ORDER.indexOf(m.id))
+  })
+})
+
+describe('missions for 4–6 year olds only', () => {
+  const small = forLevel(MISSIONS, 'small')
+  const older = forLevel(MISSIONS, 'guard')
+
+  it('there are 30 of them, each with a small level only', () => {
+    const only = MISSIONS.filter((m) => m.ages?.length === 1 && m.ages[0] === 'small')
+    expect(only).toHaveLength(30)
+    for (const m of only) expect(Object.keys(m.levels), m.id).toEqual(['small'])
+  })
+
+  it('a 4–6 year old sees them; an older child does not', () => {
+    expect(small.length).toBe(older.length + 30)
+    expect(older.some((m) => m.ages)).toBe(false)
+  })
+
+  it('a small child starts with plenty to play, and can reach everything', () => {
+    expect(small.filter((m) => isUnlocked(m, fresh, small)).length).toBeGreaterThanOrEqual(12)
+    const done: string[] = []
+    for (let round = 0; round < small.length && done.length < small.length; round++)
+      for (const m of small) if (!done.includes(m.id) && isUnlocked(m, played(done), small)) done.push(m.id)
+    expect(done).toHaveLength(small.length)
+  })
+
+  it('the seven new animals are all used', () => {
+    const text = JSON.stringify(MISSIONS)
+    for (const a of ['roe-deer', 'boar', 'chamois', 'eagle', 'lizard', 'mouflon', 'pheasant']) expect(text, a).toContain(`animals/${a}.webp`)
   })
 })

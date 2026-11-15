@@ -1,0 +1,77 @@
+{
+  "id": "mini-27-sea-memory",
+  "subject": "language",
+  "free": true,
+  "order": 44,
+  "ages": [
+    "small"
+  ],
+  "unlock": {
+    "after": [
+      "mini-26-night"
+    ]
+  },
+  "badge": {
+    "id": "mini-27-sea-memory",
+    "icon": "animals/dolphin.webp"
+  },
+  "title": {
+    "bg": "Мемори на морето",
+    "en": "Sea memory"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Морето е пълно с приятели!",
+          "en": "The sea is full of friends!"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Намери еднаквите карти!",
+          "en": "Find the matching cards!"
+        }
+      ],
+      "game": {
+        "type": "memory",
+        "prompt": {
+          "bg": "Намери еднаквите карти!",
+          "en": "Find the matching cards!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Делфин",
+              "en": "Dolphin",
+              "img": "animals/dolphin.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Пеликан",
+              "en": "Pelican",
+              "img": "animals/pelican.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Фар",
+              "en": "Lighthouse",
+              "img": "world/black-sea-lighthouse.webp"
+            }
+          }
+        ]
+      },
+      "check": []
+    }
+  },
+  "sources": [
+    "Червена книга на Република България, БАН, 2015",
+    "Енциклопедия „България“, БАН"
+  ],
+  "review": null,
+  "draft": true
+}

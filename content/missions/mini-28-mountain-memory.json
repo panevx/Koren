@@ -1,0 +1,84 @@
+{
+  "id": "mini-28-mountain-memory",
+  "subject": "language",
+  "free": true,
+  "order": 45,
+  "ages": [
+    "small"
+  ],
+  "unlock": {
+    "after": [
+      "mini-27-sea-memory"
+    ]
+  },
+  "badge": {
+    "id": "mini-28-mountain-memory",
+    "icon": "world/belogradchik-rocks.webp"
+  },
+  "title": {
+    "bg": "Мемори на чудесата",
+    "en": "Wonders memory"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "България има красиви чудеса.",
+          "en": "Bulgaria has beautiful wonders."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Обърни картите и ги намери по две!",
+          "en": "Turn the cards and find them in pairs!"
+        }
+      ],
+      "game": {
+        "type": "memory",
+        "prompt": {
+          "bg": "Намери еднаквите карти!",
+          "en": "Find the matching cards!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Скали",
+              "en": "Rocks",
+              "img": "world/belogradchik-rocks.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Езера",
+              "en": "Lakes",
+              "img": "world/seven-rila-lakes.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Връх",
+              "en": "Peak",
+              "img": "world/mountain-peak.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Рози",
+              "en": "Roses",
+              "img": "world/rose-valley.webp"
+            }
+          }
+        ]
+      },
+      "check": []
+    }
+  },
+  "sources": [
+    "Национален туристически регистър – 100 национални туристически обекта",
+    "Енциклопедия „България“, БАН"
+  ],
+  "review": null,
+  "draft": true
+}

@@ -1,0 +1,104 @@
+{
+  "id": "mini-15-bread",
+  "subject": "culture",
+  "free": true,
+  "order": 32,
+  "ages": [
+    "small"
+  ],
+  "unlock": {
+    "after": [
+      "mini-14-rose-puzzle"
+    ]
+  },
+  "badge": {
+    "id": "mini-15-bread",
+    "icon": "world/traditional-bread.webp"
+  },
+  "title": {
+    "bg": "Погача за гости",
+    "en": "Bread for guests"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Когато дойдат гости, ги посрещаме с погача.",
+          "en": "When guests come, we welcome them with bread."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Погачата е кръгла и украсена.",
+          "en": "The bread is round and decorated."
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "С какво посрещаме гости?",
+              "en": "What do we welcome guests with?"
+            },
+            "options": [
+              {
+                "bg": "Корона",
+                "en": "Crown",
+                "img": "world/simeon-crown.webp"
+              },
+              {
+                "bg": "Погача",
+                "en": "Bread",
+                "img": "world/traditional-bread.webp"
+              },
+              {
+                "bg": "Ключ",
+                "en": "Key",
+                "img": "world/mission-key.webp"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Коя е шевицата?",
+              "en": "Which one is the embroidery?"
+            },
+            "options": [
+              {
+                "bg": "Шевица",
+                "en": "Embroidery",
+                "img": "world/bulgarian-embroidery.webp"
+              },
+              {
+                "bg": "Свитък",
+                "en": "Scroll",
+                "img": "world/old-scroll.webp"
+              },
+              {
+                "bg": "Сандък",
+                "en": "Chest",
+                "img": "world/treasure-chest-closed.webp"
+              }
+            ],
+            "answer": 0,
+            "hint": {
+              "bg": "Шевицата е пъстра – червена и зелена.",
+              "en": "The embroidery is colourful – red and green."
+            }
+          }
+        ]
+      },
+      "check": []
+    }
+  },
+  "sources": [
+    "Етнографски музей към БАН – български обичаи",
+    "Енциклопедия „България“, БАН"
+  ],
+  "review": null,
+  "draft": true
+}

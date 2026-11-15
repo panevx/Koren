@@ -1,0 +1,93 @@
+{
+  "id": "mini-26-night",
+  "subject": "language",
+  "free": true,
+  "order": 43,
+  "ages": [
+    "small"
+  ],
+  "badge": {
+    "id": "mini-26-night",
+    "icon": "animals/owl.webp"
+  },
+  "title": {
+    "bg": "Нощта в гората",
+    "en": "Night in the forest"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "Някои животни спят денем и излизат нощем.",
+          "en": "Some animals sleep in the day and come out at night."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Намери совата, таралежа и язовеца!",
+          "en": "Find the owl, the hedgehog and the badger!"
+        }
+      ],
+      "game": {
+        "type": "find",
+        "prompt": {
+          "bg": "Намери нощните животни!",
+          "en": "Find the night animals!"
+        },
+        "scene": "forest",
+        "items": [
+          {
+            "bg": "Сова",
+            "en": "Owl",
+            "img": "animals/owl.webp",
+            "x": 76,
+            "y": 40,
+            "size": 16,
+            "target": true
+          },
+          {
+            "bg": "Таралеж",
+            "en": "Hedgehog",
+            "img": "animals/hedgehog.webp",
+            "x": 30,
+            "y": 82,
+            "size": 15,
+            "target": true,
+            "under": "world/forest-bush.webp"
+          },
+          {
+            "bg": "Язовец",
+            "en": "Badger",
+            "img": "animals/badger.webp",
+            "x": 60,
+            "y": 74,
+            "size": 19,
+            "target": true,
+            "under": "world/forest-bush.webp"
+          },
+          {
+            "bg": "Пеперуда",
+            "en": "Butterfly",
+            "img": "world/butterfly.webp",
+            "x": 18,
+            "y": 30,
+            "size": 11
+          }
+        ],
+        "hint": {
+          "bg": "Таралежът и язовецът се крият в храстите.",
+          "en": "The hedgehog and the badger hide in the bushes."
+        }
+      },
+      "check": []
+    }
+  },
+  "sources": [
+    "Червена книга на Република България, БАН, 2015",
+    "Енциклопедия „България“, БАН"
+  ],
+  "review": null,
+  "draft": true
+}

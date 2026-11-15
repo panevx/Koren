@@ -1,0 +1,98 @@
+{
+  "id": "mini-21-scribe",
+  "subject": "history",
+  "free": true,
+  "order": 38,
+  "ages": [
+    "small"
+  ],
+  "unlock": {
+    "after": [
+      "mini-20-fortresses"
+    ]
+  },
+  "badge": {
+    "id": "mini-21-scribe",
+    "icon": "world/quill-ink.webp"
+  },
+  "title": {
+    "bg": "Писарят",
+    "en": "The scribe"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "Някога книгите се пишели на ръка.",
+          "en": "Long ago books were written by hand."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Какво му трябва на писаря? Сложи го в сандъка!",
+          "en": "What does the scribe need? Put it in the chest!"
+        }
+      ],
+      "game": {
+        "type": "chest",
+        "prompt": {
+          "bg": "Какво му трябва на писаря?",
+          "en": "What does the scribe need?"
+        },
+        "items": [
+          {
+            "bg": "Перо и мастило",
+            "en": "Quill and ink",
+            "img": "world/quill-ink.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Книга",
+            "en": "Book",
+            "img": "world/medieval-book.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Свитък",
+            "en": "Scroll",
+            "img": "world/old-scroll.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Гъба",
+            "en": "Mushroom",
+            "img": "world/mushroom.webp",
+            "belongs": false,
+            "why": {
+              "bg": "С гъба не се пише!",
+              "en": "You can't write with a mushroom!"
+            }
+          },
+          {
+            "bg": "Балон",
+            "en": "Balloon",
+            "img": "world/hot-air-balloon.webp",
+            "belongs": false,
+            "why": {
+              "bg": "Балонът лети в небето – не пише.",
+              "en": "The balloon flies in the sky – it does not write."
+            }
+          }
+        ],
+        "reward": {
+          "bg": "Писарят пише с перо и мастило – буква по буква.",
+          "en": "The scribe writes with a quill and ink – letter by letter."
+        }
+      },
+      "check": []
+    }
+  },
+  "sources": [
+    "Учебник „Околен свят“, 1–2 клас, МОН",
+    "Енциклопедия „България“, БАН"
+  ],
+  "review": null,
+  "draft": true
+}

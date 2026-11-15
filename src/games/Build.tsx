@@ -5,6 +5,7 @@ import type { BuildGame } from '../content/schema'
 import { useLocalized } from '../content/useLocalized'
 import { useT } from '../i18n/useT'
 import { BulgariaMap, type MapMarker } from '../map/BulgariaMap'
+import { MAP_W } from '../map/geo'
 import { bouncy, m } from '../motion'
 import { play } from '../sound'
 import { useDrag } from './drag'
@@ -65,7 +66,12 @@ export function Build({ game, onDone }: { game: BuildGame; onDone: () => void })
           className="relative grid size-11 place-items-center rounded-full border-[3px] border-dashed border-green-deep bg-white/70 transition-transform data-[over=true]:scale-125 data-[over=true]:bg-gold"
         >
           {game.labels && (
-            <span className="absolute top-full mt-0.5 rounded-full bg-white/90 px-1.5 text-[0.65rem] leading-tight font-extrabold whitespace-nowrap text-ink">
+            <span
+              className={`absolute top-full mt-0.5 rounded-full bg-white/90 px-1.5 text-[0.65rem] leading-tight font-extrabold whitespace-nowrap text-ink ${
+                // Near the edge of the map the name grows inwards, so it is never cut off.
+                place.x < MAP_W * 0.2 ? 'left-0' : place.x > MAP_W * 0.8 ? 'right-0' : ''
+              }`}
+            >
               {name(place.id)}
             </span>
           )}

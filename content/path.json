@@ -15,6 +15,20 @@
     },
     {
       "title": {
+        "bg": "Горски приятели",
+        "en": "Forest friends"
+      },
+      "missions": [
+        "mini-01-roe-deer",
+        "mini-02-boar",
+        "mini-03-eagle",
+        "mini-04-lizard",
+        "mini-05-pheasant",
+        "mini-06-big-small"
+      ]
+    },
+    {
+      "title": {
         "bg": "Към крепостите",
         "en": "To the fortresses"
       },
@@ -29,6 +43,34 @@
     },
     {
       "title": {
+        "bg": "Планини и вода",
+        "en": "Mountains and water"
+      },
+      "missions": [
+        "mini-07-chamois",
+        "mini-08-mouflon",
+        "mini-09-rila-friends",
+        "mini-10-pond",
+        "mini-11-river",
+        "mini-12-lighthouse"
+      ]
+    },
+    {
+      "title": {
+        "bg": "Празници и носии",
+        "en": "Holidays and costumes"
+      },
+      "missions": [
+        "mini-13-martenitsa-puzzle",
+        "mini-14-rose-puzzle",
+        "mini-15-bread",
+        "mini-16-costume",
+        "mini-17-old-house",
+        "mini-18-heroes-puzzle"
+      ]
+    },
+    {
+      "title": {
         "bg": "Големите открития",
         "en": "Great discoveries"
       },
@@ -39,6 +81,34 @@
         "geo-03-belogradchik",
         "hist-04-shipka",
         "geo-07-build"
+      ]
+    },
+    {
+      "title": {
+        "bg": "Царе и крепости",
+        "en": "Kings and fortresses"
+      },
+      "missions": [
+        "mini-19-crown",
+        "mini-20-fortresses",
+        "mini-21-scribe",
+        "mini-22-sofia",
+        "mini-23-wonders",
+        "mini-24-balloon"
+      ]
+    },
+    {
+      "title": {
+        "bg": "Думи и игри",
+        "en": "Words and games"
+      },
+      "missions": [
+        "mini-25-where-live",
+        "mini-26-night",
+        "mini-27-sea-memory",
+        "mini-28-mountain-memory",
+        "mini-29-letters",
+        "mini-30-animal-or-thing"
       ]
     }
   ]

@@ -1,0 +1,104 @@
+{
+  "id": "mini-05-pheasant",
+  "subject": "geography",
+  "free": true,
+  "order": 22,
+  "ages": [
+    "small"
+  ],
+  "unlock": {
+    "after": [
+      "mini-04-lizard"
+    ]
+  },
+  "badge": {
+    "id": "mini-05-pheasant",
+    "icon": "animals/pheasant.webp"
+  },
+  "title": {
+    "bg": "Пъстрият фазан",
+    "en": "The colourful pheasant"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Виж тази птица! Това е фазан.",
+          "en": "Look at this bird! It is a pheasant."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Мъжкият фазан има пъстри пера и дълга опашка.",
+          "en": "The male pheasant has colourful feathers and a long tail."
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Коя птица има дълга пъстра опашка?",
+              "en": "Which bird has a long colourful tail?"
+            },
+            "options": [
+              {
+                "bg": "Сова",
+                "en": "Owl",
+                "img": "animals/owl.webp"
+              },
+              {
+                "bg": "Фазан",
+                "en": "Pheasant",
+                "img": "animals/pheasant.webp"
+              },
+              {
+                "bg": "Лястовица",
+                "en": "Swallow",
+                "img": "animals/swallow.webp"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Коя птица чука по дърветата?",
+              "en": "Which bird taps on trees?"
+            },
+            "options": [
+              {
+                "bg": "Кълвач",
+                "en": "Woodpecker",
+                "img": "animals/woodpecker.webp"
+              },
+              {
+                "bg": "Фазан",
+                "en": "Pheasant",
+                "img": "animals/pheasant.webp"
+              },
+              {
+                "bg": "Орел",
+                "en": "Eagle",
+                "img": "animals/eagle.webp"
+              }
+            ],
+            "answer": 0,
+            "hint": {
+              "bg": "Тя има здрава човка като чук.",
+              "en": "It has a strong beak like a hammer."
+            }
+          }
+        ]
+      },
+      "check": []
+    }
+  },
+  "sources": [
+    "Червена книга на Република България, БАН, 2015",
+    "Енциклопедия „България“, БАН"
+  ],
+  "review": null,
+  "draft": true
+}

@@ -1,7 +1,7 @@
 import { Link } from 'react-router'
 import { missionById } from '../content/missions'
 import { earnedCount } from '../content/badges'
-import { MISSIONS } from '../content/missions'
+import { useChildMissions } from '../content/useChildMissions'
 import type { Mission } from '../content/schema'
 import { useLocalized } from '../content/useLocalized'
 import { useT } from '../i18n/useT'
@@ -17,7 +17,8 @@ export function UnlockInfo({ mission, className = '' }: { mission: Mission; clas
   const u = mission.unlock
   if (!u) return null
   const before = u.after?.map(missionById).find(Boolean)
-  const have = earnedCount(profile.badges, MISSIONS)
+  const missions = useChildMissions()
+  const have = earnedCount(profile.badges, missions)
   return (
     <div className={`flex flex-col gap-2 ${className}`}>
       {u.badges !== undefined && (

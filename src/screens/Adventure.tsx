@@ -5,7 +5,8 @@ import { img } from '../components/Brand'
 import { Icon } from '../components/Icon'
 import { UnlockInfo } from '../components/UnlockInfo'
 import { Screen, TopBar } from '../components/ui'
-import { MISSIONS, pickLevel } from '../content/missions'
+import { pickLevel } from '../content/missions'
+import { useChildMissions } from '../content/useChildMissions'
 import { pathChapters } from '../content/path'
 import { placeById } from '../content/places'
 import type { Mission } from '../content/schema'
@@ -36,8 +37,9 @@ function stopArt(mission: Mission, open: boolean): { src: string; badge: boolean
 export function Adventure() {
   const t = useT()
   const l = useLocalized()
-  const progress = useProgress(MISSIONS)
-  const chapters = pathChapters(MISSIONS)
+  const missions = useChildMissions()
+  const progress = useProgress(missions)
+  const chapters = pathChapters(missions)
   const ordered = chapters.flatMap((c) => c.missions)
   const next = progress.next(ordered)
   const played = ordered.filter((x) => progress.status(x) === 'done').length

@@ -73,8 +73,8 @@ export function DoneButton({ onClick, label }: { onClick: () => void; label?: st
 
 export function Prompt({ children }: { children: string }) {
   return (
-    <Card className="px-5 py-4">
-      <h3 className="text-center text-xl leading-snug font-extrabold">{children}</h3>
+    <Card className="px-[min(1.25rem,4vw)] py-4">
+      <h3 className="text-center text-[length:min(1.25rem,6vw)] leading-snug font-extrabold">{children}</h3>
     </Card>
   )
 }

@@ -1,0 +1,51 @@
+{
+  "id": "mini-13-martenitsa-puzzle",
+  "subject": "culture",
+  "free": true,
+  "order": 30,
+  "ages": [
+    "small"
+  ],
+  "badge": {
+    "id": "mini-13-martenitsa-puzzle",
+    "icon": "world/martenitsa-pizho-penda.webp"
+  },
+  "title": {
+    "bg": "Пижо и Пенда",
+    "en": "Pizho and Penda"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "На 1 март си подаряваме мартеници.",
+          "en": "On 1 March we give each other martenitsas."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Бялото и червеното носят здраве. Сглоби картинката!",
+          "en": "White and red bring health. Put the picture together!"
+        }
+      ],
+      "game": {
+        "type": "puzzle",
+        "prompt": {
+          "bg": "Сглоби мартеницата!",
+          "en": "Put the martenitsa together!"
+        },
+        "img": "puzzles/martenitsa.webp",
+        "pieces": 4
+      },
+      "check": []
+    }
+  },
+  "sources": [
+    "Етнографски музей към БАН – български обичаи",
+    "Енциклопедия „България“, БАН"
+  ],
+  "review": null,
+  "draft": true
+}

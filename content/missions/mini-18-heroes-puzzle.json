@@ -1,0 +1,56 @@
+{
+  "id": "mini-18-heroes-puzzle",
+  "subject": "culture",
+  "free": true,
+  "order": 35,
+  "ages": [
+    "small"
+  ],
+  "unlock": {
+    "after": [
+      "mini-17-old-house"
+    ]
+  },
+  "badge": {
+    "id": "mini-18-heroes-puzzle",
+    "icon": "heroes/raya-joy.webp"
+  },
+  "title": {
+    "bg": "Корен и Рая",
+    "en": "Koren and Raya"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Здравей! Аз съм Корен.",
+          "en": "Hello! I am Koren."
+        },
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "А аз съм Рая. Сглоби ни!",
+          "en": "And I am Raya. Put us together!"
+        }
+      ],
+      "game": {
+        "type": "puzzle",
+        "prompt": {
+          "bg": "Сглоби Корен и Рая!",
+          "en": "Put Koren and Raya together!"
+        },
+        "img": "puzzles/koren-raya.webp",
+        "pieces": 4
+      },
+      "check": []
+    }
+  },
+  "sources": [
+    "Етнографски музей към БАН – български обичаи",
+    "Енциклопедия „България“, БАН"
+  ],
+  "review": null,
+  "draft": true
+}

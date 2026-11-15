@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react'
+import { useMemo, type ReactNode } from 'react'
 import { Link } from 'react-router'
 import { BadgeArt } from '../components/BadgeArt'
 import { HeroFigure, Logo, Scenery } from '../components/Brand'
@@ -10,6 +10,7 @@ import { Screen, roundButton, useTitle } from '../components/ui'
 import { earnedCount } from '../content/badges'
 import { useLocalized } from '../content/useLocalized'
 import { useMissions } from '../content/useMissions'
+import { forLevel } from '../content/forLevel'
 import { useProgress } from '../content/useProgress'
 import { byPathOrder } from '../content/pathOrder'
 import { useT } from '../i18n/useT'
@@ -52,7 +53,9 @@ export function Home() {
   const name = useProfileName()
   const level = ageToLevel(profile.age)
   const { label, showDesc } = LAYOUT[level]
-  const missions = useMissions()
+  const all = useMissions()
+  // Missions for 4–6 year olds only appear for them.
+  const missions = useMemo(() => (all ? forLevel(all, level) : null), [all, level])
   useTitle(t('nav.home'))
   const progress = useProgress(missions)
   // The next stop on the adventure path that is open and not played yet.

@@ -1,0 +1,108 @@
+{
+  "id": "mini-03-eagle",
+  "subject": "geography",
+  "free": true,
+  "order": 20,
+  "ages": [
+    "small"
+  ],
+  "unlock": {
+    "after": [
+      "mini-02-boar"
+    ]
+  },
+  "badge": {
+    "id": "mini-03-eagle",
+    "icon": "animals/eagle.webp"
+  },
+  "title": {
+    "bg": "Орелът лети високо",
+    "en": "The eagle flies high"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Орелът лети високо над планините.",
+          "en": "The eagle flies high above the mountains."
+        },
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "Кои животни летят и кои ходят? Подреди ги!",
+          "en": "Which animals fly and which walk? Sort them!"
+        }
+      ],
+      "game": {
+        "type": "sort",
+        "prompt": {
+          "bg": "Кой лети и кой ходи?",
+          "en": "Who flies and who walks?"
+        },
+        "bins": [
+          {
+            "bg": "Лети",
+            "en": "Flies",
+            "img": "animals/eagle.webp"
+          },
+          {
+            "bg": "Ходи",
+            "en": "Walks",
+            "img": "animals/bear.webp"
+          }
+        ],
+        "items": [
+          {
+            "bg": "Орел",
+            "en": "Eagle",
+            "img": "animals/eagle.webp",
+            "bin": 0
+          },
+          {
+            "bg": "Лястовица",
+            "en": "Swallow",
+            "img": "animals/swallow.webp",
+            "bin": 0
+          },
+          {
+            "bg": "Щъркел",
+            "en": "Stork",
+            "img": "animals/stork.webp",
+            "bin": 0
+          },
+          {
+            "bg": "Мечка",
+            "en": "Bear",
+            "img": "animals/bear.webp",
+            "bin": 1
+          },
+          {
+            "bg": "Глиган",
+            "en": "Wild boar",
+            "img": "animals/boar.webp",
+            "bin": 1
+          },
+          {
+            "bg": "Таралеж",
+            "en": "Hedgehog",
+            "img": "animals/hedgehog.webp",
+            "bin": 1
+          }
+        ],
+        "hint": {
+          "bg": "Които имат крила – летят.",
+          "en": "The ones with wings fly."
+        }
+      },
+      "check": []
+    }
+  },
+  "sources": [
+    "Червена книга на Република България, БАН, 2015",
+    "Енциклопедия „България“, БАН"
+  ],
+  "review": null,
+  "draft": true
+}

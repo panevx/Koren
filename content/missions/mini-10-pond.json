@@ -1,0 +1,105 @@
+{
+  "id": "mini-10-pond",
+  "subject": "geography",
+  "free": true,
+  "order": 27,
+  "ages": [
+    "small"
+  ],
+  "unlock": {
+    "after": [
+      "mini-09-rila-friends"
+    ]
+  },
+  "badge": {
+    "id": "mini-10-pond",
+    "icon": "animals/frog.webp"
+  },
+  "title": {
+    "bg": "Край езерцето",
+    "en": "By the pond"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Да идем при езерцето!",
+          "en": "Let's go to the pond!"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Кой живее край водата? Намери го!",
+          "en": "Who lives by the water? Find it!"
+        }
+      ],
+      "game": {
+        "type": "find",
+        "prompt": {
+          "bg": "Намери жабата, видрата и щъркела!",
+          "en": "Find the frog, the otter and the stork!"
+        },
+        "scene": "village",
+        "items": [
+          {
+            "bg": "Река",
+            "en": "River",
+            "img": "world/river.webp",
+            "x": 50,
+            "y": 76,
+            "size": 36
+          },
+          {
+            "bg": "Жаба",
+            "en": "Frog",
+            "img": "animals/frog.webp",
+            "x": 40,
+            "y": 86,
+            "size": 13,
+            "target": true
+          },
+          {
+            "bg": "Видра",
+            "en": "Otter",
+            "img": "animals/otter.webp",
+            "x": 74,
+            "y": 70,
+            "size": 18,
+            "target": true,
+            "under": "world/forest-bush.webp"
+          },
+          {
+            "bg": "Щъркел",
+            "en": "Stork",
+            "img": "animals/stork.webp",
+            "x": 18,
+            "y": 66,
+            "size": 18,
+            "target": true
+          },
+          {
+            "bg": "Пеперуда",
+            "en": "Butterfly",
+            "img": "world/butterfly.webp",
+            "x": 80,
+            "y": 28,
+            "size": 10
+          }
+        ],
+        "hint": {
+          "bg": "Видрата се крие в храста.",
+          "en": "The otter is hiding in the bush."
+        }
+      },
+      "check": []
+    }
+  },
+  "sources": [
+    "Червена книга на Република България, БАН, 2015",
+    "Енциклопедия „България“, БАН"
+  ],
+  "review": null,
+  "draft": true
+}

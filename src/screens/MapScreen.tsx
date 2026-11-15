@@ -7,7 +7,7 @@ import { useProgress } from '../content/useProgress'
 import { ART } from '../world'
 import { TimelineLink } from '../components/TimelineLink'
 import { Card, Screen, TopBar } from '../components/ui'
-import { MISSIONS } from '../content/missions'
+import { useChildMissions } from '../content/useChildMissions'
 import { PLACES } from '../content/places'
 import { useLocalized } from '../content/useLocalized'
 import { useT } from '../i18n/useT'
@@ -21,10 +21,11 @@ export function MapScreen() {
   const t = useT()
   const l = useLocalized()
   const done = useActiveProfile().done
-  const progress = useProgress(MISSIONS)
+  const missions = useChildMissions()
+  const progress = useProgress(missions)
   const [selected, setSelected] = useState<string | null>(null)
 
-  const missionsAt = (placeId: string) => MISSIONS.filter((m) => m.place === placeId)
+  const missionsAt = (placeId: string) => missions.filter((m) => m.place === placeId)
   /** done (gold) · open (glows) · locked (grey, with a key) · none (no mission here yet). */
   const stateOf = (placeId: string) => {
     const here = missionsAt(placeId).map(progress.status)

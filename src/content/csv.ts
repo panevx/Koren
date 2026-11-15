@@ -69,6 +69,7 @@ export function missionsToCsv(missions: Mission[]): string {
     add({ mission: id, block: 'meta', kind: 'badge', bg: m.badge.id, img: m.badge.icon })
     add({ mission: id, block: 'meta', kind: 'draft', bg: String(m.draft) })
     if (m.unlock) add({ mission: id, block: 'meta', kind: 'unlock', bg: JSON.stringify(m.unlock) })
+    if (m.ages) add({ mission: id, block: 'meta', kind: 'ages', bg: m.ages.join(SEP) })
     for (const s of m.sources) add({ mission: id, block: 'source', bg: s })
     if (m.review) add({ mission: id, block: 'review', bg: m.review.by, en: m.review.date })
 
@@ -164,6 +165,7 @@ export function csvToMissions(text: string): ImportResult {
             case 'draft': draft.draft = v === 'true'; break
             case 'place': draft.place = v; break
             case 'badge': draft.badge = { id: v, icon: r.img }; break
+            case 'ages': draft.ages = split(v); break
             case 'unlock':
               try {
                 draft.unlock = JSON.parse(v)

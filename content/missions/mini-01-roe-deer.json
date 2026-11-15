@@ -1,0 +1,101 @@
+{
+  "id": "mini-01-roe-deer",
+  "subject": "geography",
+  "free": true,
+  "order": 18,
+  "ages": [
+    "small"
+  ],
+  "badge": {
+    "id": "mini-01-roe-deer",
+    "icon": "animals/roe-deer.webp"
+  },
+  "title": {
+    "bg": "Сърната в гората",
+    "en": "The roe deer in the forest"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Тихо! В гората живее сърна.",
+          "en": "Shh! A roe deer lives in the forest."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Тя се крие зад храстите. Намери я!",
+          "en": "She hides behind the bushes. Find her!"
+        }
+      ],
+      "game": {
+        "type": "find",
+        "prompt": {
+          "bg": "Намери сърната, заека и катерицата!",
+          "en": "Find the roe deer, the hare and the squirrel!"
+        },
+        "scene": "forest",
+        "items": [
+          {
+            "bg": "Сърна",
+            "en": "Roe deer",
+            "img": "animals/roe-deer.webp",
+            "x": 26,
+            "y": 66,
+            "size": 24,
+            "target": true,
+            "under": "world/forest-bush.webp"
+          },
+          {
+            "bg": "Заек",
+            "en": "Hare",
+            "img": "animals/hare.webp",
+            "x": 62,
+            "y": 80,
+            "size": 17,
+            "target": true
+          },
+          {
+            "bg": "Катерица",
+            "en": "Squirrel",
+            "img": "animals/squirrel.webp",
+            "x": 82,
+            "y": 60,
+            "size": 15,
+            "target": true,
+            "under": "world/forest-bush.webp"
+          },
+          {
+            "bg": "Гъба",
+            "en": "Mushroom",
+            "img": "world/mushroom.webp",
+            "x": 46,
+            "y": 86,
+            "size": 11
+          },
+          {
+            "bg": "Пеперуда",
+            "en": "Butterfly",
+            "img": "world/butterfly.webp",
+            "x": 16,
+            "y": 28,
+            "size": 11
+          }
+        ],
+        "hint": {
+          "bg": "Погледни под храстите!",
+          "en": "Look under the bushes!"
+        }
+      },
+      "check": []
+    }
+  },
+  "sources": [
+    "Червена книга на Република България, БАН, 2015",
+    "Енциклопедия „България“, БАН"
+  ],
+  "review": null,
+  "draft": true
+}

@@ -6,7 +6,8 @@ import { ART } from '../world'
 import { Icon } from '../components/Icon'
 import { TimelineLink } from '../components/TimelineLink'
 import { Screen, TopBar } from '../components/ui'
-import { MISSIONS, missionsBySubject } from '../content/missions'
+import { missionsBySubject } from '../content/missions'
+import { useChildMissions } from '../content/useChildMissions'
 import type { Subject } from '../content/schema'
 import { useLocalized } from '../content/useLocalized'
 import { useT } from '../i18n/useT'
@@ -39,12 +40,13 @@ export function MissionList({ topic }: { topic?: boolean }) {
   const l = useLocalized()
   const params = useParams()
   const done = useActiveProfile().done
-  const progress = useProgress(MISSIONS)
+  const visible = useChildMissions()
+  const progress = useProgress(visible)
 
   const section = topic ? sectionById(params.id) : sectionById('missions')
   const subject = topic && section ? TOPIC_SUBJECT[section.id] : undefined
   if (topic && !subject) return <ComingSoon />
-  const missions = missionsBySubject(subject)
+  const missions = missionsBySubject(subject).filter((m) => visible.includes(m))
   if (missions.length === 0) return topic ? <ComingSoon /> : <ComingSoon section="missions" />
 
   const played = missions.filter((mission) => done[mission.id]).length

@@ -245,6 +245,8 @@ export const Mission = z
     free: z.boolean(),
     order: z.number().int().min(1),
     place: z.string().optional(),
+    /** Only for these age levels (e.g. ["small"] = a mission for 4–6 year olds only). No field = for everybody. */
+    ages: z.array(z.enum(LEVEL_KEYS)).min(1).optional(),
     /**
      * Game progression (never a paywall): the mission opens when ANY mission in `after` is done,
      * or when the child has `badges` badges. No `unlock` = open from the start.

@@ -1,0 +1,72 @@
+{
+  "id": "mini-08-mouflon",
+  "subject": "geography",
+  "free": true,
+  "order": 25,
+  "ages": [
+    "small"
+  ],
+  "badge": {
+    "id": "mini-08-mouflon",
+    "icon": "animals/mouflon.webp"
+  },
+  "title": {
+    "bg": "Муфлонът с големите рога",
+    "en": "The mouflon with big horns"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Муфлонът има големи извити рога.",
+          "en": "The mouflon has big curly horns."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Обърни картите и намери еднаквите животни!",
+          "en": "Turn the cards and find the matching animals!"
+        }
+      ],
+      "game": {
+        "type": "memory",
+        "prompt": {
+          "bg": "Намери еднаквите карти!",
+          "en": "Find the matching cards!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Муфлон",
+              "en": "Mouflon",
+              "img": "animals/mouflon.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Дива коза",
+              "en": "Chamois",
+              "img": "animals/chamois.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Сърна",
+              "en": "Roe deer",
+              "img": "animals/roe-deer.webp"
+            }
+          }
+        ]
+      },
+      "check": []
+    }
+  },
+  "sources": [
+    "Червена книга на Република България, БАН, 2015",
+    "Енциклопедия „България“, БАН"
+  ],
+  "review": null,
+  "draft": true
+}
