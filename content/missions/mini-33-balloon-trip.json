@@ -1,0 +1,69 @@
+{
+  "id": "mini-33-balloon-trip",
+  "subject": "geography",
+  "free": true,
+  "order": 50,
+  "ages": [
+    "small"
+  ],
+  "unlock": {
+    "after": [
+      "mini-32-horns"
+    ]
+  },
+  "badge": {
+    "id": "mini-33-balloon-trip",
+    "icon": "world/hot-air-balloon.webp"
+  },
+  "title": {
+    "bg": "Пътешествие с балон",
+    "en": "A balloon trip"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Балонът ни носи над цяла България!",
+          "en": "The balloon carries us over all of Bulgaria!"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Пише къде да кацне всяка картинка. Помогни ни!",
+          "en": "It says where each picture lands. Help us!"
+        }
+      ],
+      "game": {
+        "type": "build",
+        "prompt": {
+          "bg": "Сложи картинките на картата!",
+          "en": "Put the pictures on the map!"
+        },
+        "labels": true,
+        "pieces": [
+          {
+            "place": "sofia",
+            "img": "world/alexander-nevsky.webp"
+          },
+          {
+            "place": "kazanlak",
+            "img": "world/rose-valley.webp"
+          },
+          {
+            "place": "srebarna",
+            "img": "animals/pelican.webp"
+          }
+        ]
+      },
+      "check": []
+    }
+  },
+  "sources": [
+    "Национален туристически регистър – 100 национални туристически обекта",
+    "Енциклопедия „България“, БАН"
+  ],
+  "review": null,
+  "draft": true
+}

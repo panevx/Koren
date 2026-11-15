@@ -1,0 +1,101 @@
+{
+  "id": "mini-31-treasure-key",
+  "subject": "history",
+  "free": true,
+  "order": 48,
+  "ages": [
+    "small"
+  ],
+  "badge": {
+    "id": "mini-31-treasure-key",
+    "icon": "world/treasure-chest-open.webp"
+  },
+  "title": {
+    "bg": "Ключът на съкровището",
+    "en": "The treasure key"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Рая е скрила сандък със съкровище!",
+          "en": "Raya has hidden a treasure chest!"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Първо намери ключа, после и сандъка!",
+          "en": "First find the key, then the chest!"
+        }
+      ],
+      "game": {
+        "type": "find",
+        "prompt": {
+          "bg": "Намери ключа, сандъка и скъпоценния камък!",
+          "en": "Find the key, the chest and the gem!"
+        },
+        "scene": "castle",
+        "items": [
+          {
+            "bg": "Ключ",
+            "en": "Key",
+            "img": "world/mission-key.webp",
+            "x": 22,
+            "y": 74,
+            "size": 15,
+            "target": true,
+            "under": "world/forest-bush.webp"
+          },
+          {
+            "bg": "Сандък",
+            "en": "Chest",
+            "img": "world/treasure-chest-closed.webp",
+            "x": 62,
+            "y": 78,
+            "size": 22,
+            "target": true,
+            "under": "world/forest-bush.webp"
+          },
+          {
+            "bg": "Скъпоценен камък",
+            "en": "Gem",
+            "img": "world/progress-gem-green.webp",
+            "x": 42,
+            "y": 62,
+            "size": 12,
+            "target": true
+          },
+          {
+            "bg": "Крепост",
+            "en": "Fortress",
+            "img": "world/tsarevets-fortress.webp",
+            "x": 82,
+            "y": 36,
+            "size": 26
+          },
+          {
+            "bg": "Пеперуда",
+            "en": "Butterfly",
+            "img": "world/butterfly.webp",
+            "x": 16,
+            "y": 28,
+            "size": 10
+          }
+        ],
+        "hint": {
+          "bg": "Ключът и сандъкът са под храстите.",
+          "en": "The key and the chest are under the bushes."
+        }
+      },
+      "check": []
+    }
+  },
+  "sources": [
+    "Учебник „Околен свят“, 1–2 клас, МОН",
+    "Енциклопедия „България“, БАН"
+  ],
+  "review": null,
+  "draft": true
+}

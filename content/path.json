@@ -110,6 +110,17 @@
         "mini-29-letters",
         "mini-30-animal-or-thing"
       ]
+    },
+    {
+      "title": {
+        "bg": "Голямото пътешествие",
+        "en": "The big journey"
+      },
+      "missions": [
+        "mini-31-treasure-key",
+        "mini-32-horns",
+        "mini-33-balloon-trip"
+      ]
     }
   ]
 }

@@ -1,0 +1,101 @@
+{
+  "id": "mini-32-horns",
+  "subject": "geography",
+  "free": true,
+  "order": 49,
+  "ages": [
+    "small"
+  ],
+  "badge": {
+    "id": "mini-32-horns",
+    "icon": "animals/chamois.webp"
+  },
+  "title": {
+    "bg": "Кой има рога?",
+    "en": "Who has horns?"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "Някои животни имат рога, а други – не.",
+          "en": "Some animals have horns and others do not."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Подреди ги в кутиите!",
+          "en": "Sort them into the boxes!"
+        }
+      ],
+      "game": {
+        "type": "sort",
+        "prompt": {
+          "bg": "С рога или без рога?",
+          "en": "With horns or without horns?"
+        },
+        "bins": [
+          {
+            "bg": "С рога",
+            "en": "With horns",
+            "img": "animals/mouflon.webp"
+          },
+          {
+            "bg": "Без рога",
+            "en": "No horns",
+            "img": "animals/fox.webp"
+          }
+        ],
+        "items": [
+          {
+            "bg": "Дива коза",
+            "en": "Chamois",
+            "img": "animals/chamois.webp",
+            "bin": 0
+          },
+          {
+            "bg": "Муфлон",
+            "en": "Mouflon",
+            "img": "animals/mouflon.webp",
+            "bin": 0
+          },
+          {
+            "bg": "Глиган",
+            "en": "Wild boar",
+            "img": "animals/boar.webp",
+            "bin": 1,
+            "why": {
+              "bg": "Глиганът има бивни – зъби, а не рога.",
+              "en": "The boar has tusks – teeth, not horns."
+            }
+          },
+          {
+            "bg": "Мечка",
+            "en": "Bear",
+            "img": "animals/bear.webp",
+            "bin": 1
+          },
+          {
+            "bg": "Лисица",
+            "en": "Fox",
+            "img": "animals/fox.webp",
+            "bin": 1
+          }
+        ],
+        "hint": {
+          "bg": "Рогата са на главата.",
+          "en": "Horns grow on the head."
+        }
+      },
+      "check": []
+    }
+  },
+  "sources": [
+    "Червена книга на Република България, БАН, 2015",
+    "Енциклопедия „България“, БАН"
+  ],
+  "review": null,
+  "draft": true
+}

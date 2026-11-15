@@ -86,14 +86,14 @@ describe('missions for 4–6 year olds only', () => {
   const small = forLevel(MISSIONS, 'small')
   const older = forLevel(MISSIONS, 'guard')
 
-  it('there are 30 of them, each with a small level only', () => {
+  it('there are 33 of them, each with a small level only', () => {
     const only = MISSIONS.filter((m) => m.ages?.length === 1 && m.ages[0] === 'small')
-    expect(only).toHaveLength(30)
+    expect(only).toHaveLength(33)
     for (const m of only) expect(Object.keys(m.levels), m.id).toEqual(['small'])
   })
 
   it('a 4–6 year old sees them; an older child does not', () => {
-    expect(small.length).toBe(older.length + 30)
+    expect(small.length).toBe(older.length + 33)
     expect(older.some((m) => m.ages)).toBe(false)
   })
 
