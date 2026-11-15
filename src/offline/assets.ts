@@ -4,6 +4,7 @@ import { ART, GAME_ART } from '../world'
 import { AVATARS } from '../store/profiles'
 import { avatarImg } from '../components/ProfileAvatar'
 import { SECTIONS, sectionIcon } from '../sections'
+import { MAP_IMAGES } from '../map/art'
 
 /** Images the interface itself uses (paths inside public/img). */
 export const UI_IMAGES: readonly string[] = [
@@ -20,6 +21,7 @@ export const UI_IMAGES: readonly string[] = [
   ...Object.values(ART),
   ...Object.values(GAME_ART),
   ...PLACES.flatMap((p) => (p.img ? [p.img] : [])),
+  ...MAP_IMAGES,
 ]
 
 /** Every image a mission can show: hero poses, badge and every picture named anywhere in its games. */

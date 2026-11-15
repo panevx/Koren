@@ -37,3 +37,24 @@ describe('map markers do not overlap', () => {
     for (const m of markers) expect(out[m.id]).toEqual({ x: m.x, y: m.y })
   })
 })
+
+describe('name chips (rivers, lakes) do not overlap either', () => {
+  it.each([
+    [358, 1],
+    [600, 1.45],
+  ])('map %i px wide, UI scale %f', async (w, scale) => {
+    const { RIVERS, LAKES } = await import('../src/content/layers')
+    const items = [...RIVERS, ...LAKES].map((r) => ({ id: r.id, x: r.lx, y: r.ly }))
+    // a chip ≈ 7.5 px per letter + padding, 26 px high (× the tablet/computer scale)
+    const sizes = Object.fromEntries([...RIVERS, ...LAKES].map((r) => [r.id, { w: (r.name.bg.length * 7.5 + 20) * scale, h: 26 * scale }]))
+    const ppu = w / MAP_W
+    const out = declutter(items, sizes, ppu)
+    for (const a of items)
+      for (const b of items) {
+        if (a.id >= b.id) continue
+        const ox = (sizes[a.id]!.w + sizes[b.id]!.w) / 2 - Math.abs(out[a.id]!.x - out[b.id]!.x) * ppu
+        const oy = (sizes[a.id]!.h + sizes[b.id]!.h) / 2 - Math.abs(out[a.id]!.y - out[b.id]!.y) * ppu
+        expect(ox <= 0.5 || oy <= 0.5, `${a.id} – ${b.id}`).toBe(true)
+      }
+  })
+})

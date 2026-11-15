@@ -180,8 +180,32 @@ describe('map screen', () => {
     fireEvent.click(await screen.findByRole('button', { name: 'Плиска' }))
     expect(screen.getByRole('heading', { name: 'Плиска' })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: /Хан Аспарух/ })).toHaveAttribute('href', `/mission/${ID}`)
+    // v0.15: cities have their own mode; a place without a mission says so and shows its fact.
+    fireEvent.click(screen.getByRole('button', { name: /Градове/ }))
     fireEvent.click(screen.getByRole('button', { name: 'Бургас' }))
     expect(screen.getByText('Скоро тук ще има мисия.')).toBeInTheDocument()
+    expect(screen.getByText(/Голям град и пристанище на Черно море/)).toBeInTheDocument()
+  })
+
+  it('map modes: provinces (with a keyboard list), mountains, rivers, neighbours, tourism', async () => {
+    renderAt('/map')
+    fireEvent.click(await screen.findByRole('button', { name: /Области/ }))
+    fireEvent.click(screen.getByRole('button', { name: 'Пловдив' }))
+    expect(screen.getByRole('heading', { name: 'Пловдив' })).toBeInTheDocument()
+    expect(screen.getByText('Областен център: Пловдив')).toBeInTheDocument()
+    fireEvent.click(screen.getByRole('button', { name: /Планини/ }))
+    fireEvent.click(screen.getByRole('button', { name: 'Мусала, 2925 м надморска височина' }))
+    expect(screen.getByText('Планина: Рила')).toBeInTheDocument()
+    fireEvent.click(screen.getByRole('button', { name: /Реки и езера/ }))
+    fireEvent.click(screen.getByRole('button', { name: 'Дунав' }))
+    expect(screen.getByText('Влива се в Черно море.')).toBeInTheDocument()
+    fireEvent.click(screen.getByRole('button', { name: /Съседи/ }))
+    fireEvent.click(screen.getByRole('button', { name: 'Гърция' }))
+    expect(screen.getByText('Столица: Атина')).toBeInTheDocument()
+    fireEvent.click(screen.getByRole('button', { name: /Туризъм/ }))
+    expect(screen.getByRole('button', { name: 'Боровец' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Деветашката пещера' })).toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: 'Плиска' })).not.toBeInTheDocument()
   })
 
   it('a place with a finished mission turns gold', async () => {

@@ -51,6 +51,9 @@ export const QuizGame = z.object({ type: z.literal('quiz'), questions: z.array(Q
 
 export const PLACE_ICONS = ['fortress', 'city', 'sea', 'monastery', 'mountain', 'rose', 'house', 'rock'] as const
 
+/** Which map modes show a place (v0.15): landmarks · cities · tourism (ski, spa, cave). */
+export const PLACE_TAGS = ['history', 'nature', 'city', 'ski', 'spa', 'cave'] as const
+
 /** A place on the map of Bulgaria (content/map/places.json). */
 export const Place = z
   .object({
@@ -63,6 +66,10 @@ export const Place = z
     img: ImgPath.optional(),
     /** false = too close to another place to show on the "Discover" map (still usable in games). */
     onMap: z.boolean().default(true),
+    /** Map modes that show the place. At least one. */
+    tags: z.array(z.enum(PLACE_TAGS)).min(1),
+    /** One short, checked fact shown in the map panel. */
+    info: Text.optional(),
   })
   .strict()
 

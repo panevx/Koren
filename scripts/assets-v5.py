@@ -167,6 +167,9 @@ def referenced() -> set[str]:
     files = sorted((ROOT / 'content/missions').glob('*.json'))
     text = ''.join(f.read_text() for f in files) + (ROOT / 'content/map/places.json').read_text()
     out = set(re.findall(r'"([a-z0-9/_-]+\.(?:webp|png|svg))"', text))
+    # pictures the code itself names (e.g. the Discover map: src/map/art.ts)
+    for f in (ROOT / 'src').rglob('*.ts*'):
+        out |= set(re.findall(r"'([a-z0-9/_-]+\.(?:webp|png|svg))'", f.read_text()))
     for f in files:  # story lines name a hero and a pose, not a path
         for level in json.loads(f.read_text())['levels'].values():
             out |= {f"poses/{line['hero']}-{line.get('pose', 'point')}.webp" for line in level['story']}

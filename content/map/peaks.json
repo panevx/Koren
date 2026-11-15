@@ -1,0 +1,8 @@
+[
+  {"id": "musala", "lat": 42.1797, "lon": 23.5853, "height": 2925, "range": "rila", "name": {"bg": "Мусала", "en": "Musala"}},
+  {"id": "vihren", "lat": 41.7675, "lon": 23.3992, "height": 2914, "range": "pirin", "name": {"bg": "Вихрен", "en": "Vihren"}},
+  {"id": "botev", "lat": 42.7175, "lon": 24.9172, "height": 2376, "range": "balkan", "name": {"bg": "Ботев", "en": "Botev"}},
+  {"id": "cherni-vrah", "lat": 42.5636, "lon": 23.2783, "height": 2290, "range": "vitosha", "name": {"bg": "Черни връх", "en": "Cherni Vrah"}},
+  {"id": "golyam-perelik", "lat": 41.6031, "lon": 24.5733, "height": 2191, "range": "rhodopes", "name": {"bg": "Голям Перелик", "en": "Golyam Perelik"}},
+  {"id": "midzhur", "lat": 43.3956, "lon": 22.6747, "height": 2168, "range": "balkan", "name": {"bg": "Миджур", "en": "Midzhur"}}
+]

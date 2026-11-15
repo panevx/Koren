@@ -1,9 +1,13 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { Icon } from '../components/Icon'
+import { img } from '../components/Brand'
+import { RELIEF } from './art'
 import { useT } from '../i18n/useT'
 import { BULGARIA_D, DANUBE_D, MAP_H, MAP_W, NEIGHBOURS_D } from './geo'
 
 export type MapMarker = {
+  /** false: the marker is a name, not an exact spot — no line to its true position when it moves aside. */
+  leader?: boolean
   id: string
   x: number
   y: number
@@ -14,9 +18,20 @@ export type MapMarker = {
   disabled?: boolean
 }
 
+/** A text on the map that is not a button (a range, a sea, a country): keeps its size at every zoom. */
+export type MapLabel = { id: string; x: number; y: number; text: string; className?: string }
+
 type Props = {
   markers: MapMarker[]
   onSelect: (id: string) => void
+  /** v0.15: shaded relief from real elevation data under the borders (the Discover map). Games keep the flat map. */
+  relief?: boolean
+  /** Extra SVG drawn in map units above the land (provinces, rivers, lakes). */
+  layer?: ReactNode
+  /** Texts that are not buttons. */
+  labels?: MapLabel[]
+  /** A tap where no marker is: the point in map units (e.g. "which province is here?"). */
+  onMapTap?: (x: number, y: number) => void
   /** Optional circle (map units) drawn under the markers, e.g. the hint area. */
   highlight?: { x: number; y: number; r: number }
   /** Accessible description of the map. */
@@ -37,36 +52,47 @@ const clamp = (v: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, v
  * nearest marker within HIT_RADIUS, so close places stay tappable when zoomed in.
  * Every marker is also a real <button> for keyboard and screen-reader users.
  */
-export function BulgariaMap({ markers, onSelect, highlight, label }: Props) {
+export function BulgariaMap({ markers, onSelect, highlight, label, relief = false, layer, labels = [], onMapTap }: Props) {
   const t = useT()
   const box = useRef<HTMLDivElement>(null)
   const markerRefs = useRef(new Map<string, HTMLElement>())
+  const labelRefs = useRef(new Map<string, HTMLElement>())
   const [view, setView] = useState<View>({ s: 1, tx: 0, ty: 0 })
   const viewRef = useRef(view)
   viewRef.current = view
 
   // ── declutter: markers that would cover each other move apart (with a line to the true spot) ──
   const [frameW, setFrameW] = useState(0)
-  const [sizes, setSizes] = useState<Record<string, number>>({})
+  const [sizes, setSizes] = useState<Record<string, Box>>({})
   useLayoutEffect(() => {
     const el = box.current
     if (!el) return
     const measure = () => {
       setFrameW(el.getBoundingClientRect().width)
-      const next: Record<string, number> = {}
-      markerRefs.current.forEach((m, id) => (next[id] = m.offsetWidth))
-      setSizes((old) => (Object.keys(next).length === Object.keys(old).length && Object.entries(next).every(([k, v]) => old[k] === v) ? old : next))
+      const next: Record<string, Box> = {}
+      markerRefs.current.forEach((m, id) => (next[id] = m.offsetWidth === m.offsetHeight ? m.offsetWidth : { w: m.offsetWidth, h: m.offsetHeight }))
+      // Labels take part too (as their real box), so a name never hides under a marker.
+      labelRefs.current.forEach((m, id) => (next[`label:${id}`] = { w: m.offsetWidth, h: m.offsetHeight }))
+      const same = (x: Box | undefined, y: Box) => JSON.stringify(x) === JSON.stringify(y)
+      setSizes((old) => (Object.keys(next).length === Object.keys(old).length && Object.entries(next).every(([k, v]) => same(old[k], v)) ? old : next))
     }
     measure()
     if (typeof ResizeObserver === 'undefined') return
     const ro = new ResizeObserver(measure)
     ro.observe(el)
     return () => ro.disconnect()
-  }, [markers])
+  }, [markers, labels])
   const shrink = markerShrink(frameW)
   const placed = useMemo(
-    () => declutter(markers, Object.fromEntries(Object.entries(sizes).map(([k, v]) => [k, v * shrink])), frameW > 0 ? (frameW * view.s) / MAP_W : 0),
-    [markers, sizes, frameW, view.s, shrink],
+    () =>
+      declutter(
+        [...markers, ...labels.map((l) => ({ id: `label:${l.id}`, x: l.x, y: l.y }))],
+        Object.fromEntries(
+          Object.entries(sizes).map(([k, v]) => [k, k.startsWith('label:') ? v : typeof v === 'number' ? v * shrink : { w: v.w * shrink, h: v.h * shrink }]),
+        ),
+        frameW > 0 ? (frameW * view.s) / MAP_W : 0,
+      ),
+    [markers, labels, sizes, frameW, view.s, shrink],
   )
 
   const size = () => {
@@ -162,6 +188,11 @@ export function BulgariaMap({ markers, onSelect, highlight, label }: Props) {
       if (d <= HIT_RADIUS && (!best || d < best.d)) best = { id: m.id, d }
     }
     if (best) onSelect(best.id)
+    else if (onMapTap) {
+      const { w, left, top } = size()
+      const v = viewRef.current
+      onMapTap((((x - left - v.tx) / v.s) * MAP_W) / w, (((y - top - v.ty) / v.s) * MAP_W) / w)
+    }
   }
 
   // Wheel zoom (desktop). Non-passive so the page does not scroll.
@@ -201,14 +232,16 @@ export function BulgariaMap({ markers, onSelect, highlight, label }: Props) {
           className="absolute inset-0 origin-top-left"
           style={{ transform: `translate(${view.tx}px, ${view.ty}px) scale(${view.s})` }}
         >
+          {/* Real relief (scripts/build-relief.py): the land is painted by the picture, the SVG keeps only the lines. */}
+          {relief && <img src={img(RELIEF)} alt="" draggable={false} className="pointer-events-none absolute inset-0 size-full" />}
           <svg viewBox={`0 0 ${MAP_W} ${MAP_H}`} className="absolute inset-0 size-full" aria-hidden="true">
-            <path d={NEIGHBOURS_D} fill="#F4EEE0" stroke="#DDD3BE" strokeWidth={1.5} vectorEffect="non-scaling-stroke" />
-            <path d={BULGARIA_D} fill="#8ED4A6" stroke="#0C6B3C" strokeWidth={3} strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
+            <path d={NEIGHBOURS_D} fill={relief ? 'none' : '#F4EEE0'} stroke="#DDD3BE" strokeWidth={1.5} vectorEffect="non-scaling-stroke" />
+            <path d={BULGARIA_D} fill={relief ? 'none' : '#8ED4A6'} stroke="#0C6B3C" strokeWidth={3} strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
             <path d={DANUBE_D} fill="none" stroke="#3D9FD1" strokeWidth={4} strokeLinecap="round" vectorEffect="non-scaling-stroke" />
             {/* where a marker had to move aside: a thin line and a dot at the real place */}
             {markers.map((m) => {
               const q = placed[m.id]
-              if (!q || Math.hypot(q.x - m.x, q.y - m.y) < 2) return null
+              if (!q || m.leader === false || Math.hypot(q.x - m.x, q.y - m.y) < 2) return null
               return (
                 <g key={`leader-${m.id}`}>
                   <line x1={m.x} y1={m.y} x2={q.x} y2={q.y} stroke="#0C6B3C" strokeWidth={2} strokeOpacity={0.7} vectorEffect="non-scaling-stroke" />
@@ -229,7 +262,22 @@ export function BulgariaMap({ markers, onSelect, highlight, label }: Props) {
                 vectorEffect="non-scaling-stroke"
               />
             )}
+            {layer}
           </svg>
+          {labels.map((l) => (
+            <span
+              key={l.id}
+              ref={(el) => {
+                if (el) labelRefs.current.set(l.id, el)
+                else labelRefs.current.delete(l.id)
+              }}
+              aria-hidden="true"
+              className={`pointer-events-none absolute w-max -translate-x-1/2 -translate-y-1/2 whitespace-nowrap ${l.className ?? ''}`}
+              style={{ left: pct(placed[`label:${l.id}`]?.x ?? l.x, MAP_W), top: pct(placed[`label:${l.id}`]?.y ?? l.y, MAP_H), scale: `${1 / view.s}` }}
+            >
+              {l.text}
+            </span>
+          ))}
           {markers.map((m) => (
             <button
               key={m.id}
@@ -298,22 +346,30 @@ export function markerShrink(frameW: number) {
   return frameW > 0 ? Math.min(1, Math.max(0.62, frameW / 460)) : 1
 }
 
+/** Size of a marker or label on screen: a number = a square (round markers), or the real box of a name. */
+export type Box = number | { w: number; h: number }
+
 /**
  * Moves markers apart so none covers another on screen. Works in screen pixels (markers keep their size
- * at every zoom): `ppu` = screen px per map unit. Pairs closer than their radii + a gap are pushed apart
- * a little at a time, with a soft pull back to the true spot, so a marker moves only as far as needed.
+ * at every zoom): `ppu` = screen px per map unit. Round markers (a number) are circles; names are their real box
+ * (width × height) — a name is pushed away along the axis where it overlaps least. Little at a time,
+ * with a soft pull back to the true spot, so an item moves only as far as needed. The frame edge is a wall.
  * Returns positions in map units. Without a measured frame (tests, first paint) nothing moves.
  */
-export function declutter(markers: readonly { id: string; x: number; y: number }[], sizes: Record<string, number>, ppu: number) {
+export function declutter(markers: readonly { id: string; x: number; y: number }[], sizes: Record<string, Box>, ppu: number) {
   const out: Record<string, { x: number; y: number }> = {}
   for (const m of markers) out[m.id] = { x: m.x, y: m.y }
   if (!ppu) return out
-  const pts = markers.map((m) => ({ id: m.id, ox: m.x * ppu, oy: m.y * ppu, x: m.x * ppu, y: m.y * ppu, r: (sizes[m.id] ?? 0) / 2 }))
-  const GAP = 3
+  const box = (id: string) => {
+    const b = sizes[id] ?? 0
+    return typeof b === 'number' ? { w: b, h: b } : b
+  }
+  const pts = markers.map((m) => ({ id: m.id, ox: m.x * ppu, oy: m.y * ppu, x: m.x * ppu, y: m.y * ppu, ...box(m.id) }))
+  const GAP = 4
   const W = MAP_W * ppu, H = MAP_H * ppu
   const inside = (p: (typeof pts)[number]) => {
-    p.x = Math.min(W - p.r, Math.max(p.r, p.x))
-    p.y = Math.min(H - p.r, Math.max(p.r, p.y))
+    p.x = Math.min(W - p.w / 2, Math.max(p.w / 2, p.x))
+    p.y = Math.min(H - p.h / 2, Math.max(p.h / 2, p.y))
   }
   // 80 rounds of "push apart + pull home", then up to 400 of pushing only, so the end result never overlaps.
   for (let it = 0; it < 480; it++) {
@@ -321,22 +377,43 @@ export function declutter(markers: readonly { id: string; x: number; y: number }
     for (let i = 0; i < pts.length; i++)
       for (let j = i + 1; j < pts.length; j++) {
         const a = pts[i]!, b = pts[j]!
-        if (!a.r || !b.r) continue
-        let dx = b.x - a.x, dy = b.y - a.y
-        let d = Math.hypot(dx, dy)
-        const need = a.r + b.r + GAP
-        if (d >= need) continue
-        if (d < 0.01) {
-          // same spot: separate along a fixed direction (deterministic)
-          dx = 1
-          dy = 0.35
-          d = Math.hypot(dx, dy)
+        if (!a.w || !b.w) continue
+        let dx = b.x - a.x
+        let dy = b.y - a.y
+        if (a.w === a.h && b.w === b.h) {
+          // two round markers: circles (they pack best, and the frame corners stay usable)
+          let d = Math.hypot(dx, dy)
+          const need = (a.w + b.w) / 2 + GAP
+          if (d >= need) continue
+          if (d < 0.01) {
+            dx = 1
+            dy = 0.35
+            d = Math.hypot(dx, dy)
+          }
+          const push = (need - d) / 2 + 0.01
+          a.x -= (dx / d) * push
+          a.y -= (dy / d) * push
+          b.x += (dx / d) * push
+          b.y += (dy / d) * push
+          moved = true
+          continue
         }
-        const push = (need - d) / 2 + 0.01
-        a.x -= (dx / d) * push
-        a.y -= (dy / d) * push
-        b.x += (dx / d) * push
-        b.y += (dy / d) * push
+        const ox = (a.w + b.w) / 2 + GAP - Math.abs(dx)
+        const oy = (a.h + b.h) / 2 + GAP - Math.abs(dy)
+        if (ox <= 0 || oy <= 0) continue
+        if (Math.abs(dx) < 0.01 && Math.abs(dy) < 0.01) {
+          dx = 1 // same spot: separate in a fixed direction (deterministic)
+          dy = 0.35
+        }
+        if (ox < oy) {
+          const push = ox / 2 + 0.01
+          a.x -= Math.sign(dx) * push
+          b.x += Math.sign(dx) * push
+        } else {
+          const push = oy / 2 + 0.01
+          a.y -= Math.sign(dy || 1) * push
+          b.y += Math.sign(dy || 1) * push
+        }
         moved = true
       }
     // the frame edge is a wall: a marker pushed against it makes its neighbour move instead

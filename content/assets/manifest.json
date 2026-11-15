@@ -2,8 +2,8 @@
  "version": "v5",
  "total": 300,
  "summary": {
-  "used": 37,
-  "ready": 197,
+  "used": 54,
+  "ready": 180,
   "source": 10,
   "duplicate": 49,
   "review": 7
@@ -223,9 +223,9 @@
    "id": "city-bansko",
    "original": "design/v5/city/city-bansko.png",
    "category": "city",
-   "status": "ready",
+   "status": "used",
    "path": "city/bansko.webp",
-   "stage": 2,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
@@ -241,18 +241,18 @@
    "id": "city-gabrovo",
    "original": "design/v5/city/city-gabrovo.png",
    "category": "city",
-   "status": "ready",
+   "status": "used",
    "path": "city/gabrovo.webp",
-   "stage": 2,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
    "id": "city-karlovo",
    "original": "design/v5/city/city-karlovo.png",
    "category": "city",
-   "status": "ready",
+   "status": "used",
    "path": "city/karlovo.webp",
-   "stage": 2,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
@@ -277,9 +277,9 @@
    "id": "city-ruse",
    "original": "design/v5/city/city-ruse.png",
    "category": "city",
-   "status": "ready",
+   "status": "used",
    "path": "city/ruse.webp",
-   "stage": 2,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
@@ -1181,9 +1181,9 @@
    "id": "landmark-baba-vida",
    "original": "design/v5/landmark/landmark-baba-vida.png",
    "category": "landmark",
-   "status": "ready",
+   "status": "used",
    "path": "landmarks/baba-vida.webp",
-   "stage": 5,
+   "usedIn": "мисии",
    "size": "640x463"
   },
   {
@@ -1197,27 +1197,27 @@
    "id": "landmark-devetashka-cave",
    "original": "design/v5/landmark/landmark-devetashka-cave.png",
    "category": "landmark",
-   "status": "ready",
+   "status": "used",
    "path": "landmarks/devetashka-cave.webp",
-   "stage": 2,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
    "id": "landmark-devils-throat",
    "original": "design/v5/landmark/landmark-devils-throat.png",
    "category": "landmark",
-   "status": "ready",
+   "status": "used",
    "path": "landmarks/devils-throat.webp",
-   "stage": 2,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
    "id": "landmark-madara-rider",
    "original": "design/v5/landmark/landmark-madara-rider.png",
    "category": "landmark",
-   "status": "ready",
+   "status": "used",
    "path": "landmarks/madara-rider.webp",
-   "stage": 5,
+   "usedIn": "мисии",
    "size": "320x320",
    "check": "Формата да се сравни със снимка на истинския предмет (музей)."
   },
@@ -1527,9 +1527,9 @@
    "id": "mountain-rhodopes",
    "original": "design/v5/mountain/mountain-rhodopes.png",
    "category": "mountain",
-   "status": "ready",
+   "status": "used",
    "path": "geo/rhodopes.webp",
-   "stage": 3,
+   "usedIn": "мисии",
    "size": "640x357"
   },
   {
@@ -1545,9 +1545,9 @@
    "id": "mountain-vitosha",
    "original": "design/v5/mountain/mountain-vitosha.png",
    "category": "mountain",
-   "status": "ready",
+   "status": "used",
    "path": "geo/vitosha.webp",
-   "stage": 3,
+   "usedIn": "мисии",
    "size": "640x393"
   },
   {
@@ -1597,9 +1597,9 @@
    "id": "peak-botev",
    "original": "design/v5/peak/peak-botev.png",
    "category": "peak",
-   "status": "ready",
+   "status": "used",
    "path": "geo/botev.webp",
-   "stage": 3,
+   "usedIn": "мисии",
    "size": "640x490",
    "check": "Силуетът на върха да се сравни със снимка."
   },
@@ -1617,9 +1617,9 @@
    "id": "peak-vihren",
    "original": "design/v5/peak/peak-vihren.png",
    "category": "peak",
-   "status": "ready",
+   "status": "used",
    "path": "geo/vihren.webp",
-   "stage": 3,
+   "usedIn": "мисии",
    "size": "640x474",
    "check": "Силуетът на върха да се сравни със снимка."
   },
@@ -2494,27 +2494,27 @@
    "id": "world-mineral-hisarya",
    "original": "design/v5/world/world-mineral-hisarya.png",
    "category": "world",
-   "status": "ready",
+   "status": "used",
    "path": "places/mineral-hisarya.webp",
-   "stage": 2,
+   "usedIn": "мисии",
    "size": "640x464"
   },
   {
    "id": "world-mineral-sandanski",
    "original": "design/v5/world/world-mineral-sandanski.png",
    "category": "world",
-   "status": "ready",
+   "status": "used",
    "path": "places/mineral-sandanski.webp",
-   "stage": 2,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
    "id": "world-mineral-velingrad",
    "original": "design/v5/world/world-mineral-velingrad.png",
    "category": "world",
-   "status": "ready",
+   "status": "used",
    "path": "places/mineral-velingrad.webp",
-   "stage": 2,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
@@ -2558,18 +2558,18 @@
    "id": "world-ski-borovets",
    "original": "design/v5/world/world-ski-borovets.png",
    "category": "world",
-   "status": "ready",
+   "status": "used",
    "path": "places/ski-borovets.webp",
-   "stage": 2,
+   "usedIn": "мисии",
    "size": "640x472"
   },
   {
    "id": "world-ski-pamporovo",
    "original": "design/v5/world/world-ski-pamporovo.png",
    "category": "world",
-   "status": "ready",
+   "status": "used",
    "path": "places/ski-pamporovo.webp",
-   "stage": 2,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
