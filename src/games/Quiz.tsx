@@ -75,10 +75,10 @@ function QuizQuestion({
   return (
     <div className="flex flex-1 flex-col gap-4">
       {title && <h2 className="text-center text-xl font-black text-green-dark">{title}</h2>}
-      <p className="text-center text-sm font-bold text-muted">{t('quiz.question', { n: number, total })}</p>
+      <p className="text-center text-sm font-bold text-muted short:sr-only">{t('quiz.question', { n: number, total })}</p>
       <Prompt>{l(question.q)}</Prompt>
 
-      <m.div variants={stagger} initial="hidden" animate="show" className={`grid gap-3 ${withImages ? 'grid-cols-2' : 'grid-cols-1'}`}>
+      <m.div variants={stagger} initial="hidden" animate="show" className={`grid gap-3 ${withImages ? 'grid-cols-2 side:grid-cols-[repeat(auto-fit,minmax(8rem,1fr))]' : 'grid-cols-1 side:grid-cols-2'}`}>
         {question.options.map((option, i) => {
           const isWrong = wrong.includes(i)
           const isRight = solved && i === question.answer
@@ -102,7 +102,7 @@ function QuizQuestion({
               }`}
             >
               {option.img ? (
-                <img src={img(option.img)} alt="" className="pop-3d size-20 object-contain" />
+                <img src={img(option.img)} alt="" className="pop-3d size-20 object-contain short:size-14" />
               ) : (
                 <span className={`size-3.5 shrink-0 rounded-full ${isWrong || (solved && !isRight) ? 'bg-muted/40' : DOTS[i % DOTS.length]}`} aria-hidden="true" />
               )}

@@ -51,7 +51,7 @@ export function WhoPlays() {
             </m.li>
           ))}
         </m.ul>
-        <Link to="/parents" className="mt-2 text-center text-sm font-semibold text-muted underline">
+        <Link to="/parents" className="tap press mt-2 flex items-center justify-center rounded-full px-4 py-2 text-center text-sm font-semibold text-muted underline">
           {t('profile.whoHint')}
         </Link>
       </div>

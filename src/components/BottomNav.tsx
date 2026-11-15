@@ -12,16 +12,17 @@ const ITEMS: readonly { to: string; label: TKey; icon: IconName }[] = [
 
 /**
  * Floating pill navigation. The active tab's icon sits in a raised green ball
- * that springs up (CSS transform only).
+ * that springs up (CSS transform only). On a phone held sideways it becomes a rail
+ * on the left, so it does not cover a fifth of the low screen.
  */
 export function BottomNav() {
   const t = useT()
   return (
     <nav
       aria-label={t('nav.main')}
-      className="pointer-events-none fixed inset-x-0 bottom-0 z-20 px-4 pb-[max(0.75rem,env(safe-area-inset-bottom))]"
+      className="pointer-events-none fixed inset-x-0 bottom-0 z-20 px-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] short:inset-y-0 short:right-auto short:flex short:items-center short:pr-0 short:pb-0 short:pl-[max(0.5rem,env(safe-area-inset-left))]"
     >
-      <ul className="pointer-events-auto mx-auto grid max-w-sm grid-cols-4 rounded-full bg-white px-2 py-1.5 shadow-float">
+      <ul className="pointer-events-auto mx-auto grid max-w-sm grid-cols-4 rounded-full bg-white px-2 py-1.5 shadow-float short:w-[4.75rem] short:grid-cols-1 short:gap-1 short:rounded-[2.25rem] short:px-1 short:py-2">
         {ITEMS.map(({ to, label, icon }) => (
           <li key={to}>
             <NavLink

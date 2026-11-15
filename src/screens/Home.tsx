@@ -159,7 +159,7 @@ export function Home() {
       </div>
 
       {/* Hero: Koren and Raya greet the child in front of the hills. */}
-      <section className="relative mx-4 mt-3 h-[15.5rem]">
+      <section className="relative mx-4 mt-3 h-[15.5rem] short:h-[12.5rem]">
         <Scenery className="absolute inset-0 rounded-[2rem] shadow-soft" />
         <div className="absolute top-3 left-3 rounded-full bg-white px-3.5 py-1.5 shadow-soft">
           <Logo size="sm" className="h-8" />
@@ -174,10 +174,10 @@ export function Home() {
         </m.p>
         <div className="absolute right-2 bottom-8 flex items-end" aria-hidden="true">
           <m.div initial={{ y: 36 }} animate={{ y: 0 }} transition={{ ...bouncy, delay: 0.1 }}>
-            <HeroFigure hero="raya" className="anim-bob h-[9.75rem]" />
+            <HeroFigure hero="raya" className="anim-bob h-[min(9.75rem,38vw)]" />
           </m.div>
           <m.div initial={{ y: 36 }} animate={{ y: 0 }} transition={{ ...bouncy, delay: 0.2 }} className="-ml-3">
-            <HeroFigure hero="koren" className="anim-bob-late h-[10.25rem]" />
+            <HeroFigure hero="koren" className="anim-bob-late h-[min(10.25rem,40vw)]" />
           </m.div>
         </div>
       </section>
@@ -205,7 +205,7 @@ export function Home() {
         )}
       </div>
 
-      <m.ul variants={stagger} initial="hidden" animate="show" className="mt-5 grid grid-cols-2 gap-x-3 gap-y-4 px-4 pb-32">
+      <m.ul variants={stagger} initial="hidden" animate="show" className="mt-5 grid grid-cols-2 gap-x-3 gap-y-4 px-4 pb-32 short:pb-8">
         {ORDER.map((id) => (
           <m.li key={id} variants={settle} className={modules[id].span}>
             {modules[id].body}

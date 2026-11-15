@@ -22,7 +22,7 @@ export function ComingSoon({ section }: { section?: SectionId }) {
   return (
     <Screen nav>
       <TopBar title={t(label)} onBack={() => navigate('/home')} />
-      <div className="flex flex-1 flex-col items-center justify-center gap-5 px-6 pb-32 text-center">
+      <div className="flex flex-1 flex-col items-center justify-center gap-5 px-6 pb-32 short:pb-8 text-center">
         <div className="relative mt-4 grid size-40 place-items-center rounded-full bg-white shadow-float">
           <SectionIcon id={id} className="pop-3d size-28" />
           <span className="absolute -top-1 -right-2 inline-flex items-center gap-1 rounded-full bg-gold px-3 py-1 text-sm font-black text-ink shadow-soft">

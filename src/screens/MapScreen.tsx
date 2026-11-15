@@ -49,7 +49,7 @@ export function MapScreen() {
   return (
     <Screen nav>
       <TopBar title={t('tile.discover')} />
-      <div className="flex flex-col gap-3 px-4 pb-32">
+      <div className="flex flex-col gap-3 px-4 pb-32 short:pb-8">
         <BulgariaMap label={t('map.label')} markers={markers} onSelect={setSelected} />
         <p className="text-center text-sm font-semibold text-muted">{t('map.zoomTip')}</p>
         {!place && <TimelineLink />}

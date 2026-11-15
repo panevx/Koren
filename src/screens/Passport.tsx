@@ -24,7 +24,7 @@ export function Passport() {
   return (
     <Screen nav>
       <TopBar title={t('passport.title')} />
-      <div className="flex flex-col gap-5 px-4 pb-32">
+      <div className="flex flex-col gap-5 px-4 pb-32 short:pb-8">
         {/* The passport cover */}
         <section className="relative overflow-hidden rounded-[2rem] bg-green-dark p-5 text-white shadow-float">
           <span className="absolute -top-16 -right-12 size-48 rounded-full bg-green" aria-hidden="true" />

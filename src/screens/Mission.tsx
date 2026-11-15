@@ -41,8 +41,9 @@ function MissionRun({ mission, childLevel }: { mission: MissionData; childLevel:
   const exit = () => navigate('/missions')
 
   return (
-    <Screen>
-      <header className="sticky top-0 z-10 flex items-center gap-3 bg-cream px-4 pt-4 pb-3">
+    // Wide landscape screen: a wider column, so the story can sit beside the hero.
+    <Screen className="side:max-w-3xl">
+      <header className="sticky top-0 z-10 flex items-center gap-3 bg-cream px-4 pt-4 pb-3 short:pt-2 short:pb-2">
         <button
           type="button"
           onClick={exit}
@@ -59,7 +60,7 @@ function MissionRun({ mission, childLevel }: { mission: MissionData; childLevel:
 
       <div className="flex flex-1 flex-col px-4 pb-6">
         {mission.draft && (
-          <p className="mb-3 self-center rounded-full bg-sand px-3 py-1 text-center text-xs font-bold text-ink">{t('missions.draft')}</p>
+          <p className="mb-3 self-center rounded-full bg-sand px-3 py-1 text-center text-xs font-bold text-ink short:mb-1">{t('missions.draft')}</p>
         )}
         {/* Each phase slides in like a new page. */}
         <m.div key={phase} initial={{ opacity: 0, x: 28 }} animate={{ opacity: 1, x: 0 }} className="flex flex-1 flex-col">
@@ -100,14 +101,14 @@ function Story({ lines, onDone }: { lines: StoryLine[]; onDone: () => void }) {
   const fromRight = line.hero === 'raya'
   return (
     <div className="flex flex-1 flex-col gap-3">
-      <p className="text-center text-sm font-bold text-muted">{t('mission.progress', { n: i + 1, total: lines.length })}</p>
-      <div className="relative flex flex-1 flex-col">
+      <p className="text-center text-sm font-bold text-muted short:sr-only">{t('mission.progress', { n: i + 1, total: lines.length })}</p>
+      <div className="relative flex flex-1 flex-col side:flex-row-reverse side:items-end side:gap-3">
         <m.p
           key={i}
           initial={{ opacity: 0, y: 12, scale: 0.96 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           aria-live="polite"
-          className={`relative z-10 rounded-[1.75rem] bg-white px-5 py-4 text-xl leading-snug font-bold shadow-soft ${
+          className={`relative z-10 rounded-[1.75rem] bg-white px-5 py-4 text-xl leading-snug font-bold shadow-soft side:min-w-0 side:flex-1 side:self-center ${
             fromRight ? 'rounded-br-md' : 'rounded-bl-md'
           }`}
         >
@@ -115,7 +116,7 @@ function Story({ lines, onDone }: { lines: StoryLine[]; onDone: () => void }) {
         </m.p>
         {line.img && <img src={img(line.img)} alt="" className="rounded-level mt-3 w-full object-cover shadow-soft" />}
         {/* The hero walks in from their side and stands on a soft "stage". */}
-        <div className={`relative mt-3 flex ${fromRight ? 'justify-end pr-3' : 'justify-start pl-3'}`}>
+        <div className={`relative mt-3 flex side:mt-0 side:shrink-0 ${fromRight ? 'justify-end pr-3' : 'justify-start pl-3'}`}>
           <span className="absolute bottom-0 h-[70%] w-[62%] rounded-[45%] bg-sky-soft" aria-hidden="true" />
           <span className="absolute bottom-1 h-4 w-[38%] rounded-[50%] bg-ink/15 blur-[3px]" aria-hidden="true" />
           <m.img
@@ -125,7 +126,7 @@ function Story({ lines, onDone }: { lines: StoryLine[]; onDone: () => void }) {
             initial={{ opacity: 0, x: fromRight ? 70 : -70, rotate: fromRight ? 8 : -8 }}
             animate={{ opacity: 1, x: 0, rotate: 0 }}
             transition={bouncy}
-            className="relative h-[34dvh] max-h-80 w-auto object-contain"
+            className="relative h-[34dvh] max-h-80 w-auto object-contain short:h-[44dvh]"
           />
         </div>
       </div>

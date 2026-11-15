@@ -27,9 +27,10 @@ export function Timeline() {
   const yearLabel = t('timeline.year', { year: epoch.year })
 
   return (
-    <Screen nav>
+    // Wide landscape screen: the map on the left (stays in view), the controls and the story on the right.
+    <Screen nav className="side:max-w-3xl">
       <TopBar title={t('timeline.title')} />
-      <div className="flex flex-col gap-3 px-4 pb-32">
+      <div className="flex flex-col gap-3 px-4 pb-32 side:grid side:grid-cols-2 side:items-start side:gap-x-4 short:pb-8 side:[&>*]:col-start-2">
         {/* Year + title, with earlier / later buttons */}
         <div className="flex items-center gap-3">
           <button type="button" onClick={() => go(index - 1)} disabled={index === 0} aria-label={t('timeline.prev')} className={`${roundButton} disabled:opacity-40`}>
@@ -41,7 +42,7 @@ export function Timeline() {
               initial={{ scale: 0.8, y: 4 }}
               animate={{ scale: 1, y: 0 }}
               transition={bouncy}
-              className="mx-auto w-fit rounded-full bg-coral px-5 py-1 text-[length:min(1.875rem,8vw)] font-black whitespace-nowrap text-coral-ink"
+              className="mx-auto w-fit rounded-full bg-coral px-5 py-1 text-[length:min(1.875rem,8vw)] font-black whitespace-nowrap side:px-4 side:text-[length:min(1.875rem,4vw)] text-coral-ink"
             >
               {yearLabel}
             </m.p>
@@ -55,7 +56,9 @@ export function Timeline() {
           {l(epoch.title)}
         </h2>
 
-        <TimelineMap epoch={epoch} label={`${t('timeline.mapLabel')} – ${yearLabel}`} />
+        <div className="side:sticky side:top-2 side:col-start-1! side:row-span-6 side:row-start-1">
+          <TimelineMap epoch={epoch} label={`${t('timeline.mapLabel')} – ${yearLabel}`} />
+        </div>
 
         {/* The slider: one stop per epoch */}
         <Card className="px-5 pt-1 pb-3">

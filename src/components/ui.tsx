@@ -12,7 +12,8 @@ import { Icon } from './Icon'
  */
 export function Screen({ children, className = '', nav = false }: { children: ReactNode; className?: string; nav?: boolean }) {
   return (
-    <div className="min-h-dvh overflow-x-clip bg-cream">
+    // Sideways phone: the column moves right to make room for the side rail.
+    <div className={`min-h-dvh overflow-x-clip bg-cream ${nav ? 'short:pl-[calc(5.25rem+env(safe-area-inset-left))]' : ''}`}>
       <m.main {...pageEnter} className={`mx-auto flex min-h-dvh w-full max-w-md flex-col ${className}`}>
         {children}
       </m.main>
@@ -73,7 +74,7 @@ export function TopBar({
     else navigate(fallback, { replace: true })
   }
   return (
-    <header className="flex items-center gap-3 px-4 pt-4 pb-3">
+    <header className="flex items-center gap-3 px-4 pt-4 pb-3 short:pt-2 short:pb-2">
       <button type="button" onClick={onBack ?? goBack} className={roundButton} aria-label={t('nav.back')}>
         <Icon name="back" />
       </button>
