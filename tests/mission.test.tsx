@@ -188,7 +188,9 @@ describe('map screen', () => {
     useProfiles.getState().complete(ID, 'young', 'asparuh')
     renderAt('/map')
     const pliska = await screen.findByRole('button', { name: 'Плиска' })
-    expect(pliska.firstElementChild).toHaveClass('bg-gold')
-    expect(screen.getByRole('button', { name: 'София' }).firstElementChild).not.toHaveClass('bg-gold')
+    expect(pliska.firstElementChild).toHaveAttribute('data-state', 'done')
+    expect(screen.getByRole('button', { name: 'София' }).firstElementChild).not.toHaveAttribute('data-state', 'done')
+    // Simeon's Preslav is locked until Asparuh is played — and Asparuh is played now, so it is open.
+    expect(screen.getByRole('button', { name: 'Велики Преслав' }).firstElementChild).toHaveAttribute('data-state', 'open')
   })
 })

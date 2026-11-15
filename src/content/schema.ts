@@ -57,6 +57,8 @@ export const Place = z
     name: Text,
     /** 3D landmark picture shown on the map and in games (optional). */
     img: ImgPath.optional(),
+    /** false = too close to another place to show on the "Discover" map (still usable in games). */
+    onMap: z.boolean().default(true),
   })
   .strict()
 

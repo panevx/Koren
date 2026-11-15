@@ -3,7 +3,7 @@
   "subject": "history",
   "free": true,
   "order": 15,
-  "place": "shipka",
+  "place": "kazanlak",
   "unlock": {
     "after": [
       "hist-03-tarnovo"

@@ -1,5 +1,7 @@
 import { Link } from 'react-router'
 import { BadgeArt } from '../components/BadgeArt'
+import { MILESTONES, milestoneNeed, type MilestoneId } from '../content/progress'
+import { ART } from '../world'
 import { img } from '../components/Brand'
 import { Icon } from '../components/Icon'
 import { ProfileAvatar, useProfileName } from '../components/ProfileAvatar'
@@ -11,6 +13,8 @@ import { bouncy, m, stagger } from '../motion'
 import { activeProfile, useProfiles } from '../store/profiles'
 
 /** "Traveller's passport": every badge — earned ones as gold medals, the rest as empty places. */
+const REWARD_ART: Record<MilestoneId, string> = { bronze: ART.bronze, silver: ART.silver, gold: ART.gold, trophy: ART.trophy }
+
 export function Passport() {
   const t = useT()
   const l = useLocalized()
@@ -46,6 +50,25 @@ export function Passport() {
           </div>
         </section>
 
+        {/* Rewards for collecting badges: bronze, silver, gold, and the cup for all of them. */}
+        <section aria-labelledby="rewards" className="rounded-[2rem] bg-white p-4 shadow-soft">
+          <h2 id="rewards" className="mb-2 text-lg font-black">{t('reward.title')}</h2>
+          <ul className="grid grid-cols-4 gap-2">
+            {MILESTONES.map(({ id }) => {
+              const need = milestoneNeed(id, MISSIONS)
+              const got = earned.length >= need
+              return (
+                <li key={id} className="flex flex-col items-center gap-1 text-center [container-type:inline-size]">
+                  <img src={img(REWARD_ART[id])} alt={t(`reward.${id}`)} className={`size-[min(4rem,17vw)] object-contain ${got ? 'pop-3d' : 'opacity-35 grayscale'}`} />
+                  <span className={`text-[length:clamp(0.6rem,13cqw,0.8rem)] leading-tight font-extrabold ${got ? 'text-green-dark' : 'text-muted'}`}>
+                    {got ? t(`reward.${id}.name`) : t('reward.need', { n: need - earned.length })}
+                  </span>
+                </li>
+              )
+            })}
+          </ul>
+        </section>
+
         {earned.length === 0 && <p className="text-center font-bold text-muted">{t('passport.empty')}</p>}
 
         {/* Medals stand directly on the page — no boxes around them. */}
@@ -58,7 +81,20 @@ export function Passport() {
                   to={`/mission/${mission.id}`}
                   className="press flex h-full flex-col items-center gap-2 rounded-[2rem] px-1 text-center"
                 >
-                  <BadgeArt icon={mission.badge.icon} earned={has} lazy={i >= 4} className={`size-[min(6.75rem,28vw)] ${has ? 'pop-3d' : ''}`} />
+                  <span className="relative">
+                    <BadgeArt icon={mission.badge.icon} earned={has} lazy={i >= 4} className={`size-[min(6.75rem,28vw)] ${has ? 'pop-3d' : ''}`} />
+                    {/* The passport stamp lands on each earned badge. */}
+                    {has && (
+                      <m.img
+                        src={img(ART.stamp)}
+                        alt=""
+                        initial={{ scale: 2.2, opacity: 0, rotate: -30 }}
+                        animate={{ scale: 1, opacity: 1, rotate: -12 }}
+                        transition={{ ...bouncy, delay: 0.25 + i * 0.05 }}
+                        className="absolute -right-2 -bottom-1 size-[38%]"
+                      />
+                    )}
+                  </span>
                   <span className="text-sm leading-tight font-extrabold">{l(mission.title)}</span>
                   <span className={`flex items-center gap-1 text-xs font-bold ${has ? 'text-green-dark' : 'text-muted'}`}>
                     {has && <Icon name="check" width="1em" height="1em" />}

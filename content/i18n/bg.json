@@ -269,5 +269,9 @@
   "game.memory": "Мемори",
   "game.chest": "Сандък",
   "game.build": "Построй България",
-  "game.guess": "Познай мястото"
+  "game.guess": "Познай мястото",
+  "reward.bronze.name": "Бронз",
+  "reward.silver.name": "Сребро",
+  "reward.gold.name": "Злато",
+  "reward.trophy.name": "Купа"
 }

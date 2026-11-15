@@ -90,7 +90,7 @@ export function Find({ game, onDone }: { game: FindGame; onDone: () => void }) {
                   aria-hidden={hidden ? undefined : true}
                   tabIndex={hidden ? undefined : -1}
                   initial={false}
-                  animate={hidden ? { x: 0, y: 0, rotate: 0, opacity: 1 } : { x: '55%', y: '-25%', rotate: 14, opacity: 0.35 }}
+                  animate={hidden ? { x: 0, y: 0, rotate: 0, opacity: 1 } : { x: '70%', y: '-30%', rotate: 14, opacity: 0.15 }}
                   transition={bouncy}
                   className={`absolute inset-[-28%] grid place-items-center ${hidden ? '' : 'pointer-events-none'}`}
                 >

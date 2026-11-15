@@ -1,4 +1,5 @@
-import { Avatar } from '../components/Brand'
+import { Avatar, img } from '../components/Brand'
+import { ART } from '../world'
 import { Icon } from '../components/Icon'
 import { Button, Card } from '../components/ui'
 import { useT } from '../i18n/useT'
@@ -19,9 +20,18 @@ export function Feedback({ correct, help, idle, nudge = 0 }: { correct?: string;
           <m.div
             initial={{ opacity: 0, scale: 0.4, rotate: -18 }}
             animate={{ opacity: 1, scale: 1, rotate: 0, y: [0, -14, 0] }}
+            className="relative shrink-0"
             transition={{ default: bouncy, y: { duration: 0.55, delay: 0.2, times: [0, 0.4, 1] } }}
           >
             <Avatar hero="koren" mood="joy" className="size-[min(4rem,15vw)]" />
+            <m.img
+              src={img(ART.star)}
+              alt=""
+              initial={{ scale: 0, rotate: -60 }}
+              animate={{ scale: 1, rotate: 0 }}
+              transition={{ ...bouncy, delay: 0.25 }}
+              className="absolute -top-2 -right-2 size-[45%]"
+            />
           </m.div>
           <m.p initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }} className={`${bubble} bg-green-soft font-extrabold text-green-dark`}>
             {correct}
@@ -32,9 +42,11 @@ export function Feedback({ correct, help, idle, nudge = 0 }: { correct?: string;
           <m.div
             initial={{ opacity: 0, scale: 0.6 }}
             animate={{ opacity: 1, scale: 1, rotate: [0, -9, 7, 0] }}
+            className="relative shrink-0"
             transition={{ default: bouncy, rotate: { duration: 0.6, delay: 0.15 } }}
           >
             <Avatar hero="raya" mood="thoughtful" className="size-[min(4rem,15vw)]" />
+            <img src={img(ART.heart)} alt="" className="absolute -right-1.5 -bottom-1 size-[40%]" />
           </m.div>
           <m.p initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }} className={`${bubble} bg-gold-soft font-bold text-ink`}>
             {help}

@@ -269,5 +269,9 @@
   "game.memory": "Memory",
   "game.chest": "Treasure chest",
   "game.build": "Build Bulgaria",
-  "game.guess": "Guess the place"
+  "game.guess": "Guess the place",
+  "reward.bronze.name": "Bronze",
+  "reward.silver.name": "Silver",
+  "reward.gold.name": "Gold",
+  "reward.trophy.name": "Cup"
 }
