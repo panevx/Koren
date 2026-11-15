@@ -1,0 +1,241 @@
+{
+  "id": "geo-17-ski",
+  "subject": "geography",
+  "free": true,
+  "order": 60,
+  "place": "borovets",
+  "unlock": {
+    "after": [
+      "geo-13-peaks"
+    ]
+  },
+  "badge": {
+    "id": "ski",
+    "icon": "places/ski-borovets.webp"
+  },
+  "title": {
+    "bg": "Ски курортите",
+    "en": "The ski resorts"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "winter",
+          "bg": "Зима е! Хайде да караме ски!",
+          "en": "It's winter! Let's go skiing!",
+          "img": "places/ski-pamporovo.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Къде има сняг за ски?",
+          "en": "Where is there snow for skiing?"
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Къде караме ски?",
+              "en": "Where do we ski?"
+            },
+            "options": [
+              {
+                "bg": "В планината",
+                "en": "In the mountains",
+                "img": "places/ski-borovets.webp"
+              },
+              {
+                "bg": "На плажа",
+                "en": "On the beach",
+                "img": "geo/coast.webp"
+              },
+              {
+                "bg": "На полето",
+                "en": "In the field",
+                "img": "geo/plain.webp"
+              }
+            ],
+            "answer": 0,
+            "hint": {
+              "bg": "Ски се карат там, където има много сняг.",
+              "en": "You ski where there is lots of snow."
+            }
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "winter",
+          "bg": "Трите най-известни ски курорта са в три различни планини.",
+          "en": "The three best-known ski resorts are in three different mountains.",
+          "img": "places/ski-bansko.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Свържи курорта с планината му.",
+          "en": "Match each resort with its mountain."
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "В коя планина е курортът?",
+          "en": "Which mountain is the resort in?"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Боровец",
+              "en": "Borovets",
+              "img": "places/ski-borovets.webp"
+            },
+            "b": {
+              "bg": "Рила",
+              "en": "Rila"
+            }
+          },
+          {
+            "a": {
+              "bg": "Банско",
+              "en": "Bansko",
+              "img": "places/ski-bansko.webp"
+            },
+            "b": {
+              "bg": "Пирин",
+              "en": "Pirin"
+            }
+          },
+          {
+            "a": {
+              "bg": "Пампорово",
+              "en": "Pamporovo",
+              "img": "places/ski-pamporovo.webp"
+            },
+            "b": {
+              "bg": "Родопи",
+              "en": "The Rhodopes"
+            }
+          }
+        ],
+        "hint": {
+          "bg": "Банско е под Вихрен, а Пампорово – близо до Смолян.",
+          "en": "Bansko is below Vihren, and Pamporovo is near Smolyan."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Под кой връх е Банско?",
+            "en": "Which peak is Bansko below?"
+          },
+          "options": [
+            {
+              "bg": "Вихрен",
+              "en": "Vihren"
+            },
+            {
+              "bg": "Ботев",
+              "en": "Botev"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "winter",
+          "bg": "Познай курорта по подсказките!",
+          "en": "Guess the resort from the clues!",
+          "img": "places/ski-pamporovo.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "compass",
+          "bg": "Подсказките идват една по една. Познай с колкото се може по-малко.",
+          "en": "The clues come one by one. Guess with as few as you can."
+        }
+      ],
+      "game": {
+        "type": "guess",
+        "prompt": {
+          "bg": "Кой ски курорт е това?",
+          "en": "Which ski resort is this?"
+        },
+        "clues": [
+          {
+            "bg": "В Родопите съм.",
+            "en": "I am in the Rhodopes.",
+            "img": "geo/rhodopes.webp"
+          },
+          {
+            "bg": "Близо съм до град Смолян.",
+            "en": "I am close to the town of Smolyan.",
+            "img": "world/wooden-sign.webp"
+          },
+          {
+            "bg": "Над мен е телевизионната кула на връх Снежанка.",
+            "en": "Above me is the TV tower on Snezhanka peak.",
+            "img": "world/mountain-peak.webp"
+          }
+        ],
+        "target": "pamporovo",
+        "choices": [
+          "pamporovo",
+          "borovets",
+          "plovdiv",
+          "kazanlak"
+        ],
+        "fact": {
+          "bg": "Пампорово е в Родопите, на около 15 км от Смолян.",
+          "en": "Pamporovo is in the Rhodopes, about 15 km from Smolyan."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кой е най-старият курорт в България (от 1896 г.)?",
+            "en": "Which is the oldest resort in Bulgaria (since 1896)?"
+          },
+          "options": [
+            {
+              "bg": "Боровец",
+              "en": "Borovets"
+            },
+            {
+              "bg": "Банско",
+              "en": "Bansko"
+            },
+            {
+              "bg": "Пампорово",
+              "en": "Pamporovo"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "bg": "Някога се казвал Чамкория и е в Рила.",
+            "en": "It used to be called Chamkoria and it is in Rila."
+          }
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Енциклопедия „България“, БАН",
+    "Министерство на туризма – Национален туристически регистър",
+    "Учебници по „Човекът и природата“ (4. кл.) и „География и икономика“ (5.–6. кл.), МОН"
+  ],
+  "review": null,
+  "draft": true
+}

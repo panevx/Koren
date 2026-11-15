@@ -1,0 +1,298 @@
+{
+  "id": "geo-16-neighbours",
+  "subject": "geography",
+  "free": true,
+  "order": 59,
+  "ages": [
+    "young",
+    "guard"
+  ],
+  "unlock": {
+    "after": [
+      "geo-15-provinces"
+    ]
+  },
+  "badge": {
+    "id": "neighbours",
+    "icon": "places/border-crossing.webp"
+  },
+  "title": {
+    "bg": "Съседите на България",
+    "en": "Bulgaria's neighbours"
+  },
+  "levels": {
+    "young": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "map",
+          "bg": "България има пет съседни държави, а на изток е Черно море.",
+          "en": "Bulgaria has five neighbouring countries, and the Black Sea is in the east.",
+          "img": "places/border-crossing.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Всяка държава има столица. Свържи ги!",
+          "en": "Every country has a capital. Match them!"
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи държавата със столицата ѝ!",
+          "en": "Match the country with its capital!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Румъния",
+              "en": "Romania"
+            },
+            "b": {
+              "bg": "Букурещ",
+              "en": "Bucharest"
+            }
+          },
+          {
+            "a": {
+              "bg": "Сърбия",
+              "en": "Serbia"
+            },
+            "b": {
+              "bg": "Белград",
+              "en": "Belgrade"
+            }
+          },
+          {
+            "a": {
+              "bg": "Северна Македония",
+              "en": "North Macedonia"
+            },
+            "b": {
+              "bg": "Скопие",
+              "en": "Skopje"
+            }
+          },
+          {
+            "a": {
+              "bg": "Гърция",
+              "en": "Greece"
+            },
+            "b": {
+              "bg": "Атина",
+              "en": "Athens"
+            }
+          },
+          {
+            "a": {
+              "bg": "Турция",
+              "en": "Türkiye"
+            },
+            "b": {
+              "bg": "Анкара",
+              "en": "Ankara"
+            }
+          }
+        ],
+        "hint": {
+          "bg": "Анкара е столицата на Турция, а Истанбул е най-големият ѝ град.",
+          "en": "Ankara is the capital of Türkiye; Istanbul is its biggest city."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Коя река е границата с Румъния?",
+            "en": "Which river is the border with Romania?"
+          },
+          "options": [
+            {
+              "bg": "Дунав",
+              "en": "The Danube"
+            },
+            {
+              "bg": "Марица",
+              "en": "The Maritsa"
+            },
+            {
+              "bg": "Искър",
+              "en": "The Iskar"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какво е на изток от България?",
+            "en": "What is to the east of Bulgaria?"
+          },
+          "options": [
+            {
+              "bg": "Черно море",
+              "en": "The Black Sea"
+            },
+            {
+              "bg": "Сърбия",
+              "en": "Serbia"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "map",
+          "bg": "Пет съседи, пет столици – и граници по реки и планини.",
+          "en": "Five neighbours, five capitals – and borders along rivers and mountains.",
+          "img": "places/border-crossing.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Първо столиците, после границите.",
+          "en": "First the capitals, then the borders."
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи държавата със столицата ѝ!",
+          "en": "Match the country with its capital!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Румъния",
+              "en": "Romania"
+            },
+            "b": {
+              "bg": "Букурещ",
+              "en": "Bucharest"
+            }
+          },
+          {
+            "a": {
+              "bg": "Сърбия",
+              "en": "Serbia"
+            },
+            "b": {
+              "bg": "Белград",
+              "en": "Belgrade"
+            }
+          },
+          {
+            "a": {
+              "bg": "Северна Македония",
+              "en": "North Macedonia"
+            },
+            "b": {
+              "bg": "Скопие",
+              "en": "Skopje"
+            }
+          },
+          {
+            "a": {
+              "bg": "Гърция",
+              "en": "Greece"
+            },
+            "b": {
+              "bg": "Атина",
+              "en": "Athens"
+            }
+          },
+          {
+            "a": {
+              "bg": "Турция",
+              "en": "Türkiye"
+            },
+            "b": {
+              "bg": "Анкара",
+              "en": "Ankara"
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "С коя съседка България има най-дълга граница?",
+            "en": "Which neighbour has the longest border with Bulgaria?"
+          },
+          "options": [
+            {
+              "bg": "Румъния",
+              "en": "Romania"
+            },
+            {
+              "bg": "Северна Македония",
+              "en": "North Macedonia"
+            },
+            {
+              "bg": "Турция",
+              "en": "Türkiye"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "bg": "Голяма част от тази граница е по Дунав.",
+            "en": "A big part of that border is along the Danube."
+          }
+        },
+        {
+          "q": {
+            "bg": "С коя съседка граничим в планината Странджа?",
+            "en": "Which neighbour do we share the Strandzha mountains with?"
+          },
+          "options": [
+            {
+              "bg": "Гърция",
+              "en": "Greece"
+            },
+            {
+              "bg": "Турция",
+              "en": "Türkiye"
+            },
+            {
+              "bg": "Сърбия",
+              "en": "Serbia"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "С коя съседка България има най-къса граница?",
+            "en": "Which neighbour has the shortest border with Bulgaria?"
+          },
+          "options": [
+            {
+              "bg": "Северна Македония",
+              "en": "North Macedonia"
+            },
+            {
+              "bg": "Гърция",
+              "en": "Greece"
+            },
+            {
+              "bg": "Румъния",
+              "en": "Romania"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Енциклопедия „България“, БАН",
+    "Учебници по „Човекът и природата“ (4. кл.) и „География и икономика“ (5.–6. кл.), МОН",
+    "Министерство на вътрешните работи – Гранична полиция (дължина на границите)",
+    "Natural Earth (граници, Дунав); Terrain Tiles / Mapzen (релеф и реки, проследени от височините)"
+  ],
+  "review": null,
+  "draft": true
+}

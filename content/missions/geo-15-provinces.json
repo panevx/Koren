@@ -1,0 +1,182 @@
+{
+  "id": "geo-15-provinces",
+  "subject": "geography",
+  "free": true,
+  "order": 58,
+  "ages": [
+    "young",
+    "guard"
+  ],
+  "badge": {
+    "id": "provinces",
+    "icon": "game/puzzle-red.webp"
+  },
+  "title": {
+    "bg": "Пъзел: 28-те области",
+    "en": "Puzzle: the 28 provinces"
+  },
+  "levels": {
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "map",
+          "bg": "България има 28 области. Всяка носи името на своя главен град.",
+          "en": "Bulgaria has 28 provinces. Each has the name of its main town."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Някои парчета от картата паднаха. Върни ги на мястото им!",
+          "en": "Some pieces fell off the map. Put them back!"
+        }
+      ],
+      "game": {
+        "type": "regions",
+        "prompt": {
+          "bg": "Върни областите на картата!",
+          "en": "Put the provinces back on the map!"
+        },
+        "regions": [
+          "BG-05",
+          "BG-03",
+          "BG-02",
+          "BG-16",
+          "BG-21",
+          "BG-18"
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Колко области има България?",
+            "en": "How many provinces does Bulgaria have?"
+          },
+          "options": [
+            {
+              "bg": "12",
+              "en": "12"
+            },
+            {
+              "bg": "28",
+              "en": "28"
+            },
+            {
+              "bg": "50",
+              "en": "50"
+            }
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "map",
+          "bg": "Цялата карта е разглобена – и 28-те области!",
+          "en": "The whole map is in pieces – all 28 provinces!"
+        },
+        {
+          "hero": "koren",
+          "pose": "compass",
+          "bg": "Започни от ъглите и от морето – те се познават най-лесно.",
+          "en": "Start with the corners and the sea – they are the easiest to recognise."
+        }
+      ],
+      "game": {
+        "type": "regions",
+        "prompt": {
+          "bg": "Сглоби картата от 28-те области!",
+          "en": "Put the map together from all 28 provinces!"
+        },
+        "regions": [
+          "BG-01",
+          "BG-02",
+          "BG-03",
+          "BG-04",
+          "BG-05",
+          "BG-06",
+          "BG-07",
+          "BG-08",
+          "BG-09",
+          "BG-10",
+          "BG-11",
+          "BG-12",
+          "BG-13",
+          "BG-14",
+          "BG-15",
+          "BG-16",
+          "BG-17",
+          "BG-18",
+          "BG-19",
+          "BG-20",
+          "BG-21",
+          "BG-22",
+          "BG-23",
+          "BG-24",
+          "BG-25",
+          "BG-26",
+          "BG-27",
+          "BG-28"
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кой град е център на ДВЕ области?",
+            "en": "Which town is the centre of TWO provinces?"
+          },
+          "options": [
+            {
+              "bg": "Пловдив",
+              "en": "Plovdiv"
+            },
+            {
+              "bg": "София",
+              "en": "Sofia"
+            },
+            {
+              "bg": "Варна",
+              "en": "Varna"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "bg": "Едната е самата столица, другата е областта около нея.",
+            "en": "One is the capital itself, the other is the province around it."
+          }
+        },
+        {
+          "q": {
+            "bg": "Коя от тези области има бряг на Черно море?",
+            "en": "Which of these provinces has a Black Sea coast?"
+          },
+          "options": [
+            {
+              "bg": "Шумен",
+              "en": "Shumen"
+            },
+            {
+              "bg": "Добрич",
+              "en": "Dobrich"
+            },
+            {
+              "bg": "Сливен",
+              "en": "Sliven"
+            }
+          ],
+          "answer": 1
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Закон за административно-териториалното устройство на Република България",
+    "Natural Earth (граници, Дунав); Terrain Tiles / Mapzen (релеф и реки, проследени от височините)",
+    "Учебници по „Човекът и природата“ (4. кл.) и „География и икономика“ (5.–6. кл.), МОН"
+  ],
+  "review": null,
+  "draft": true
+}

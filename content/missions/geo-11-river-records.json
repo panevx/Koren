@@ -1,0 +1,366 @@
+{
+  "id": "geo-11-river-records",
+  "subject": "geography",
+  "free": true,
+  "order": 54,
+  "unlock": {
+    "after": [
+      "geo-10-maritsa"
+    ]
+  },
+  "badge": {
+    "id": "river-records",
+    "icon": "geo/river.webp"
+  },
+  "title": {
+    "bg": "Рекордите на реките",
+    "en": "River records"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Вода има навсякъде – в реки, езера и в морето.",
+          "en": "There is water everywhere – in rivers, lakes and the sea.",
+          "img": "geo/river.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Покажи ми коя е реката и кое е езерото!",
+          "en": "Show me which is the river and which is the lake!"
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Покажи реката!",
+              "en": "Show the river!"
+            },
+            "options": [
+              {
+                "bg": "Река",
+                "en": "River",
+                "img": "geo/river.webp"
+              },
+              {
+                "bg": "Море",
+                "en": "Sea",
+                "img": "geo/coast.webp"
+              },
+              {
+                "bg": "Планина",
+                "en": "Mountain",
+                "img": "geo/mountain.webp"
+              }
+            ],
+            "answer": 0,
+            "hint": {
+              "bg": "Реката е дълга и се вие като змийка.",
+              "en": "The river is long and winds like a little snake."
+            }
+          },
+          {
+            "q": {
+              "bg": "Покажи езерото!",
+              "en": "Show the lake!"
+            },
+            "options": [
+              {
+                "bg": "Поле",
+                "en": "Field",
+                "img": "geo/plain.webp"
+              },
+              {
+                "bg": "Езеро",
+                "en": "Lake",
+                "img": "geo/lake.webp"
+              },
+              {
+                "bg": "Пещера",
+                "en": "Cave",
+                "img": "geo/cave.webp"
+              }
+            ],
+            "answer": 1,
+            "hint": {
+              "bg": "Езерото е вода, заградена от брегове.",
+              "en": "A lake is water with shores all around."
+            }
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "Някои реки текат само в България, а други минават и през съседите ни.",
+          "en": "Some rivers flow only in Bulgaria; others also flow through our neighbours."
+        },
+        {
+          "hero": "koren",
+          "pose": "map",
+          "bg": "Подреди ги в двете кутии!",
+          "en": "Sort them into the two boxes!",
+          "img": "geo/river.webp"
+        }
+      ],
+      "game": {
+        "type": "sort",
+        "prompt": {
+          "bg": "Тече само в България или и в други държави?",
+          "en": "Only in Bulgaria, or in other countries too?"
+        },
+        "bins": [
+          {
+            "bg": "Тече само в България",
+            "en": "Flows only in Bulgaria"
+          },
+          {
+            "bg": "Тече и в други държави",
+            "en": "Also flows in other countries"
+          }
+        ],
+        "items": [
+          {
+            "bg": "Искър",
+            "en": "Iskar",
+            "bin": 0,
+            "why": {
+              "bg": "Искър тече от Рила до Дунав – само у нас.",
+              "en": "The Iskar flows from Rila to the Danube – only in Bulgaria."
+            }
+          },
+          {
+            "bg": "Янтра",
+            "en": "Yantra",
+            "bin": 0,
+            "why": {
+              "bg": "Янтра тече от Стара планина до Дунав – само у нас.",
+              "en": "The Yantra flows from the Balkan Mountains to the Danube – only in Bulgaria."
+            }
+          },
+          {
+            "bg": "Камчия",
+            "en": "Kamchia",
+            "bin": 0,
+            "why": {
+              "bg": "Камчия се влива в Черно море – цялата е у нас.",
+              "en": "The Kamchia flows into the Black Sea – it is all in Bulgaria."
+            }
+          },
+          {
+            "bg": "Осъм",
+            "en": "Osam",
+            "bin": 0,
+            "why": {
+              "bg": "Осъм тече от Стара планина до Дунав – само у нас.",
+              "en": "The Osam flows from the Balkan Mountains to the Danube – only in Bulgaria."
+            }
+          },
+          {
+            "bg": "Дунав",
+            "en": "Danube",
+            "bin": 1,
+            "why": {
+              "bg": "Дунав минава през 10 държави.",
+              "en": "The Danube flows through 10 countries."
+            }
+          },
+          {
+            "bg": "Марица",
+            "en": "Maritsa",
+            "bin": 1,
+            "why": {
+              "bg": "Марица продължава между Гърция и Турция.",
+              "en": "The Maritsa goes on between Greece and Türkiye."
+            }
+          },
+          {
+            "bg": "Струма",
+            "en": "Struma",
+            "bin": 1,
+            "why": {
+              "bg": "Струма извира у нас и продължава в Гърция.",
+              "en": "The Struma springs in Bulgaria and goes on into Greece."
+            }
+          },
+          {
+            "bg": "Тунджа",
+            "en": "Tundzha",
+            "bin": 1,
+            "why": {
+              "bg": "Тунджа продължава в Турция.",
+              "en": "The Tundzha goes on into Türkiye."
+            }
+          },
+          {
+            "bg": "Арда",
+            "en": "Arda",
+            "bin": 1,
+            "why": {
+              "bg": "Арда продължава в Гърция.",
+              "en": "The Arda goes on into Greece."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Коя е най-дългата река, която тече САМО в България?",
+            "en": "Which is the longest river that flows ONLY in Bulgaria?"
+          },
+          "options": [
+            {
+              "bg": "Искър",
+              "en": "The Iskar"
+            },
+            {
+              "bg": "Янтра",
+              "en": "The Yantra"
+            },
+            {
+              "bg": "Камчия",
+              "en": "The Kamchia"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "„Най-дългата река“ – зависи от правилото! Цялата дължина или само тази в България?",
+          "en": "\"The longest river\" – it depends on the rule! The whole length, or only the part in Bulgaria?"
+        },
+        {
+          "hero": "koren",
+          "pose": "reading",
+          "bg": "Подреди реките по цялата им дължина – от най-дългата.",
+          "en": "Put the rivers in order of their whole length – the longest first.",
+          "img": "geo/river.webp"
+        }
+      ],
+      "game": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди по цялата дължина – от най-дългата!",
+          "en": "Order by whole length – the longest first!"
+        },
+        "items": [
+          {
+            "bg": "Дунав",
+            "en": "The Danube",
+            "img": "geo/danube.webp"
+          },
+          {
+            "bg": "Марица",
+            "en": "The Maritsa",
+            "img": "geo/maritsa.webp"
+          },
+          {
+            "bg": "Искър",
+            "en": "The Iskar",
+            "img": "geo/iskar.webp"
+          },
+          {
+            "bg": "Янтра",
+            "en": "The Yantra",
+            "img": "geo/yantra.webp"
+          }
+        ],
+        "hint": {
+          "bg": "Дунав ~2850 км, Марица ~470 км, Искър 368 км, Янтра 285 км.",
+          "en": "Danube ~2,850 km, Maritsa ~470 km, Iskar 368 km, Yantra 285 km."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Коя е най-дългата река, която минава през България (цялата ѝ дължина)?",
+            "en": "Which is the longest river that flows through Bulgaria (its whole length)?"
+          },
+          "options": [
+            {
+              "bg": "Дунав",
+              "en": "The Danube"
+            },
+            {
+              "bg": "Искър",
+              "en": "The Iskar"
+            },
+            {
+              "bg": "Марица",
+              "en": "The Maritsa"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Коя е най-дългата река, която тече САМО в България?",
+            "en": "Which is the longest river that flows ONLY in Bulgaria?"
+          },
+          "options": [
+            {
+              "bg": "Марица",
+              "en": "The Maritsa"
+            },
+            {
+              "bg": "Искър",
+              "en": "The Iskar"
+            },
+            {
+              "bg": "Тунджа",
+              "en": "The Tundzha"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "bg": "Марица и Тунджа продължават в съседни държави.",
+            "en": "The Maritsa and the Tundzha go on into neighbouring countries."
+          }
+        },
+        {
+          "q": {
+            "bg": "Сред реките, които ИЗВИРАТ в България, коя носи най-много вода?",
+            "en": "Of the rivers that SPRING in Bulgaria, which carries the most water?"
+          },
+          "options": [
+            {
+              "bg": "Марица",
+              "en": "The Maritsa"
+            },
+            {
+              "bg": "Искър",
+              "en": "The Iskar"
+            },
+            {
+              "bg": "Камчия",
+              "en": "The Kamchia"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Енциклопедия „България“, БАН",
+    "Учебници по „Човекът и природата“ (4. кл.) и „География и икономика“ (5.–6. кл.), МОН",
+    "НСИ – Статистически годишник, раздел „Географски данни“ (реки, върхове)"
+  ],
+  "review": null,
+  "draft": true
+}

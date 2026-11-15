@@ -222,8 +222,43 @@ export const GuessGame = z
   .refine((g) => g.choices.includes(g.target), { message: 'choices must include the target', path: ['choices'] })
   .refine((g) => new Set(g.choices).size === g.choices.length, { message: 'choices must be unique', path: ['choices'] })
 
+/** A stop on a river: a town or a place the river passes, in order from the source. `say` = what Koren tells there. */
+export const RiverStop = Text.extend({ lat: z.number().min(40.9).max(44.3), lon: z.number().min(22).max(29), say: Text.optional() }).strict()
+
 /**
- * One entry per game template (11 since v0.12). A new template is added here
+ * Follow the river (v0.16): the child leads a water drop with a finger along a REAL river line
+ * (content/map/layers.json → `t`, from the source to the mouth) past its `stops`, to `end`. The button
+ * "to the next stop" does the same for a keyboard, a screen reader or a child who cannot drag yet.
+ */
+export const TraceGame = z
+  .object({
+    type: z.literal('trace'),
+    prompt: Text,
+    river: z.string(),
+    /** Where it starts (the source) and where the water goes at the end. */
+    start: Text,
+    end: Text,
+    stops: z.array(RiverStop).max(5).default([]),
+    /** Said when the drop reaches the end. */
+    fact: Text,
+  })
+  .strict()
+
+/**
+ * The provinces puzzle (v0.16): the shapes of `regions` (ISO codes BG-01…BG-28) wait in a tray; the other provinces
+ * are already in place. The child drags each shape to its hole (or taps it, then the hole). Up to all 28.
+ */
+export const RegionsGame = z
+  .object({
+    type: z.literal('regions'),
+    prompt: Text,
+    regions: z.array(z.string().regex(/^BG-(0[1-9]|1\d|2[0-8])$/)).min(2).max(28),
+  })
+  .strict()
+  .refine((g) => new Set(g.regions).size === g.regions.length, { message: 'every province only once', path: ['regions'] })
+
+/**
+ * One entry per game template (11 since v0.12, 13 since v0.16). A new template is added here
  * and in src/games without touching the mission screen.
  */
 export const Game = z.discriminatedUnion('type', [
@@ -238,6 +273,8 @@ export const Game = z.discriminatedUnion('type', [
   ChestGame,
   BuildGame,
   GuessGame,
+  TraceGame,
+  RegionsGame,
 ])
 
 export const LevelContent = z
@@ -299,6 +336,8 @@ export type MemoryGame = z.infer<typeof MemoryGame>
 export type ChestGame = z.infer<typeof ChestGame>
 export type BuildGame = z.infer<typeof BuildGame>
 export type GuessGame = z.infer<typeof GuessGame>
+export type TraceGame = z.infer<typeof TraceGame>
+export type RegionsGame = z.infer<typeof RegionsGame>
 export type Thing = z.infer<typeof Thing>
 export type SceneId = (typeof SCENES)[number]
 export type Option = z.infer<typeof Option>

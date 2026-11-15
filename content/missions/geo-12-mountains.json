@@ -1,0 +1,311 @@
+{
+  "id": "geo-12-mountains",
+  "subject": "geography",
+  "free": true,
+  "order": 55,
+  "badge": {
+    "id": "mountains",
+    "icon": "geo/balkan.webp"
+  },
+  "title": {
+    "bg": "Планините на България",
+    "en": "The mountains of Bulgaria"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "В България има много планини!",
+          "en": "There are many mountains in Bulgaria!",
+          "img": "geo/rila.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "nature",
+          "bg": "Обърни картите и намери еднаквите планини.",
+          "en": "Turn the cards and find the matching mountains."
+        }
+      ],
+      "game": {
+        "type": "memory",
+        "prompt": {
+          "bg": "Намери двете еднакви планини!",
+          "en": "Find the two matching mountains!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Рила",
+              "en": "Rila",
+              "img": "geo/rila.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Пирин",
+              "en": "Pirin",
+              "img": "geo/pirin.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Родопи",
+              "en": "Rhodopes",
+              "img": "geo/rhodopes.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Витоша",
+              "en": "Vitosha",
+              "img": "geo/vitosha.webp"
+            }
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "explorer",
+          "bg": "Всяка планина си има най-висок връх.",
+          "en": "Every mountain has a highest peak.",
+          "img": "geo/mountain.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Свържи планината с нейния най-висок връх.",
+          "en": "Match each mountain with its highest peak."
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи планината с най-високия ѝ връх!",
+          "en": "Match the mountain with its highest peak!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Рила",
+              "en": "Rila",
+              "img": "geo/rila.webp"
+            },
+            "b": {
+              "bg": "Мусала",
+              "en": "Musala"
+            }
+          },
+          {
+            "a": {
+              "bg": "Пирин",
+              "en": "Pirin",
+              "img": "geo/pirin.webp"
+            },
+            "b": {
+              "bg": "Вихрен",
+              "en": "Vihren"
+            }
+          },
+          {
+            "a": {
+              "bg": "Стара планина",
+              "en": "Balkan Mountains",
+              "img": "geo/balkan.webp"
+            },
+            "b": {
+              "bg": "Ботев",
+              "en": "Botev"
+            }
+          },
+          {
+            "a": {
+              "bg": "Витоша",
+              "en": "Vitosha",
+              "img": "geo/vitosha.webp"
+            },
+            "b": {
+              "bg": "Черни връх",
+              "en": "Cherni Vrah"
+            }
+          },
+          {
+            "a": {
+              "bg": "Родопи",
+              "en": "Rhodopes",
+              "img": "geo/rhodopes.webp"
+            },
+            "b": {
+              "bg": "Голям Перелик",
+              "en": "Golyam Perelik"
+            }
+          }
+        ],
+        "hint": {
+          "bg": "Ботев носи името на поета, а Черни връх е над София.",
+          "en": "Botev is named after the poet, and Cherni Vrah is above Sofia."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Коя планина е точно до София?",
+            "en": "Which mountain is right next to Sofia?"
+          },
+          "options": [
+            {
+              "bg": "Витоша",
+              "en": "Vitosha"
+            },
+            {
+              "bg": "Пирин",
+              "en": "Pirin"
+            },
+            {
+              "bg": "Странджа",
+              "en": "Strandzha"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Всяка наша планина има с какво да се похвали.",
+          "en": "Each of our mountains has something to be proud of.",
+          "img": "geo/mountain.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "compass",
+          "bg": "Свържи планината с нейния рекорд.",
+          "en": "Match each mountain with its record."
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи планината с това, с което е известна!",
+          "en": "Match the mountain with what it is known for!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Рила",
+              "en": "Rila",
+              "img": "geo/rila.webp"
+            },
+            "b": {
+              "bg": "Най-високата на Балканите",
+              "en": "The highest in the Balkans"
+            }
+          },
+          {
+            "a": {
+              "bg": "Пирин",
+              "en": "Pirin",
+              "img": "geo/pirin.webp"
+            },
+            "b": {
+              "bg": "Национален парк в списъка на ЮНЕСКО",
+              "en": "A national park on the UNESCO list"
+            }
+          },
+          {
+            "a": {
+              "bg": "Родопи",
+              "en": "Rhodopes",
+              "img": "geo/rhodopes.webp"
+            },
+            "b": {
+              "bg": "Най-голямата по площ у нас",
+              "en": "The largest by area in Bulgaria"
+            }
+          },
+          {
+            "a": {
+              "bg": "Стара планина",
+              "en": "Balkan Mountains",
+              "img": "geo/balkan.webp"
+            },
+            "b": {
+              "bg": "Дава името на Балканския полуостров",
+              "en": "Gives its name to the Balkan Peninsula"
+            }
+          },
+          {
+            "a": {
+              "bg": "Витоша",
+              "en": "Vitosha",
+              "img": "geo/vitosha.webp"
+            },
+            "b": {
+              "bg": "Първият природен парк на Балканите (1934)",
+              "en": "The first nature park in the Balkans (1934)"
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Коя е най-дългата планина в България?",
+            "en": "Which is the longest mountain range in Bulgaria?"
+          },
+          "options": [
+            {
+              "bg": "Стара планина",
+              "en": "The Balkan Mountains"
+            },
+            {
+              "bg": "Витоша",
+              "en": "Vitosha"
+            },
+            {
+              "bg": "Рила",
+              "en": "Rila"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "В коя планина е Мусала?",
+            "en": "Which mountain is Musala in?"
+          },
+          "options": [
+            {
+              "bg": "Пирин",
+              "en": "Pirin"
+            },
+            {
+              "bg": "Рила",
+              "en": "Rila"
+            },
+            {
+              "bg": "Родопи",
+              "en": "The Rhodopes"
+            }
+          ],
+          "answer": 1
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Енциклопедия „България“, БАН",
+    "Учебници по „Човекът и природата“ (4. кл.) и „География и икономика“ (5.–6. кл.), МОН",
+    "Дирекции на НП „Рила“, НП „Пирин“, ПП „Витоша“; ЮНЕСКО – Pirin National Park"
+  ],
+  "review": null,
+  "draft": true
+}

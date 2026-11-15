@@ -1,0 +1,336 @@
+{
+  "id": "geo-10-maritsa",
+  "subject": "geography",
+  "free": true,
+  "order": 53,
+  "place": "plovdiv",
+  "unlock": {
+    "after": [
+      "geo-09-iskar"
+    ]
+  },
+  "badge": {
+    "id": "maritsa",
+    "icon": "geo/maritsa.webp"
+  },
+  "title": {
+    "bg": "Марица и Тракия",
+    "en": "The Maritsa and Thrace"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Река Марица тече през равното и топло поле.",
+          "en": "The river Maritsa flows through a flat, warm land.",
+          "img": "geo/maritsa.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Поведи капката през Пловдив!",
+          "en": "Lead the drop through Plovdiv!"
+        }
+      ],
+      "game": {
+        "type": "trace",
+        "prompt": {
+          "bg": "Поведи капката по Марица!",
+          "en": "Lead the drop along the Maritsa!"
+        },
+        "river": "maritsa",
+        "start": {
+          "bg": "Рила",
+          "en": "Rila"
+        },
+        "end": {
+          "bg": "към Бяло море",
+          "en": "to the Aegean"
+        },
+        "stops": [
+          {
+            "bg": "Пловдив",
+            "en": "Plovdiv",
+            "lat": 42.15,
+            "lon": 24.75
+          }
+        ],
+        "fact": {
+          "bg": "Марица тече през Пловдив и стига до Бяло море.",
+          "en": "The Maritsa flows through Plovdiv and reaches the Aegean Sea."
+        }
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "explorer",
+          "bg": "Марица извира от Рила, близо до Мусала.",
+          "en": "The Maritsa springs in Rila, near Musala.",
+          "img": "geo/maritsa.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "map",
+          "bg": "После тече през Горнотракийската низина – там зреят плодове и зеленчуци.",
+          "en": "Then it flows through the Upper Thracian Lowland – where fruit and vegetables grow.",
+          "img": "nature/thracian-lowland.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Проследи я до границата.",
+          "en": "Follow it to the border."
+        }
+      ],
+      "game": {
+        "type": "trace",
+        "prompt": {
+          "bg": "Проследи Марица през Тракия!",
+          "en": "Follow the Maritsa through Thrace!"
+        },
+        "river": "maritsa",
+        "start": {
+          "bg": "Рила",
+          "en": "Rila"
+        },
+        "end": {
+          "bg": "към Бяло море",
+          "en": "to the Aegean"
+        },
+        "stops": [
+          {
+            "bg": "Пазарджик",
+            "en": "Pazardzhik",
+            "lat": 42.192,
+            "lon": 24.333
+          },
+          {
+            "bg": "Пловдив",
+            "en": "Plovdiv",
+            "lat": 42.15,
+            "lon": 24.75
+          },
+          {
+            "bg": "Димитровград",
+            "en": "Dimitrovgrad",
+            "lat": 42.056,
+            "lon": 25.594
+          },
+          {
+            "bg": "Свиленград",
+            "en": "Svilengrad",
+            "lat": 41.766,
+            "lon": 26.199
+          }
+        ],
+        "fact": {
+          "bg": "След Свиленград Марица става граница между Гърция и Турция и се влива в Бяло море.",
+          "en": "After Svilengrad the Maritsa becomes the border between Greece and Türkiye and flows into the Aegean Sea."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Откъде извира Марица?",
+            "en": "Where does the Maritsa spring from?"
+          },
+          "options": [
+            {
+              "bg": "От Рила",
+              "en": "Rila"
+            },
+            {
+              "bg": "От Витоша",
+              "en": "Vitosha"
+            },
+            {
+              "bg": "От Странджа",
+              "en": "Strandzha"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "В кое море се влива Марица?",
+            "en": "Which sea does the Maritsa flow into?"
+          },
+          "options": [
+            {
+              "bg": "В Черно море",
+              "en": "The Black Sea"
+            },
+            {
+              "bg": "В Бяло (Егейско) море",
+              "en": "The Aegean Sea"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "bg": "Тя тече на юг и на изток – към Гърция и Турция.",
+            "en": "It flows south and east – towards Greece and Türkiye."
+          }
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "explorer",
+          "bg": "Марица тече около 320 км в България и общо около 470 км.",
+          "en": "The Maritsa flows about 320 km in Bulgaria and about 470 km in all.",
+          "img": "geo/maritsa.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "map",
+          "bg": "Тя събира водата на много притоци – от Рила, Родопите и Стара планина.",
+          "en": "It gathers the water of many tributaries – from Rila, the Rhodopes and the Balkan Mountains."
+        },
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "Затова сред реките, които извират у нас, тя носи най-много вода.",
+          "en": "That is why, of the rivers that spring in Bulgaria, it carries the most water."
+        }
+      ],
+      "game": {
+        "type": "trace",
+        "prompt": {
+          "bg": "Проследи Марица от Рила до границата!",
+          "en": "Follow the Maritsa from Rila to the border!"
+        },
+        "river": "maritsa",
+        "start": {
+          "bg": "Рила",
+          "en": "Rila"
+        },
+        "end": {
+          "bg": "към Бяло море",
+          "en": "to the Aegean"
+        },
+        "stops": [
+          {
+            "bg": "Пазарджик",
+            "en": "Pazardzhik",
+            "lat": 42.192,
+            "lon": 24.333
+          },
+          {
+            "bg": "Пловдив",
+            "en": "Plovdiv",
+            "lat": 42.15,
+            "lon": 24.75,
+            "say": {
+              "bg": "Вторият по големина град в България.",
+              "en": "The second-largest city in Bulgaria."
+            }
+          },
+          {
+            "bg": "Димитровград",
+            "en": "Dimitrovgrad",
+            "lat": 42.056,
+            "lon": 25.594
+          },
+          {
+            "bg": "Свиленград",
+            "en": "Svilengrad",
+            "lat": 41.766,
+            "lon": 26.199,
+            "say": {
+              "bg": "Тук Марица напуска България.",
+              "en": "Here the Maritsa leaves Bulgaria."
+            }
+          }
+        ],
+        "fact": {
+          "bg": "Тунджа и Арда се вливат в Марица отвъд границата, край Одрин.",
+          "en": "The Tundzha and the Arda join the Maritsa beyond the border, near Edirne."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Сред реките, които ИЗВИРАТ в България, коя носи най-много вода?",
+            "en": "Of the rivers that SPRING in Bulgaria, which carries the most water?"
+          },
+          "options": [
+            {
+              "bg": "Искър",
+              "en": "The Iskar"
+            },
+            {
+              "bg": "Марица",
+              "en": "The Maritsa"
+            },
+            {
+              "bg": "Янтра",
+              "en": "The Yantra"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "bg": "Правилото е „най-много вода“, не „най-дълга“. Помисли за реката с най-много притоци.",
+            "en": "The rule is \"most water\", not \"longest\". Think of the river with the most tributaries."
+          }
+        },
+        {
+          "q": {
+            "bg": "През коя низина тече Марица?",
+            "en": "Which lowland does the Maritsa flow through?"
+          },
+          "options": [
+            {
+              "bg": "Горнотракийската",
+              "en": "The Upper Thracian Lowland"
+            },
+            {
+              "bg": "Дунавската равнина",
+              "en": "The Danubian Plain"
+            },
+            {
+              "bg": "Софийската котловина",
+              "en": "The Sofia Valley"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кои реки се вливат в Марица?",
+            "en": "Which rivers flow into the Maritsa?"
+          },
+          "options": [
+            {
+              "bg": "Тунджа и Арда",
+              "en": "The Tundzha and the Arda"
+            },
+            {
+              "bg": "Вит и Осъм",
+              "en": "The Vit and the Osam"
+            },
+            {
+              "bg": "Струма и Места",
+              "en": "The Struma and the Mesta"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Енциклопедия „България“, БАН",
+    "Учебници по „Човекът и природата“ (4. кл.) и „География и икономика“ (5.–6. кл.), МОН",
+    "НСИ – Статистически годишник, раздел „Географски данни“ (реки, върхове)",
+    "Natural Earth (граници, Дунав); Terrain Tiles / Mapzen (релеф и реки, проследени от височините)"
+  ],
+  "review": null,
+  "draft": true
+}

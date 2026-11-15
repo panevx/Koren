@@ -43,4 +43,6 @@ export const GAME_ART: Record<string, string> = {
   chest: ART.chestClosed,
   build: 'world/bridge.webp',
   guess: ART.lantern,
+  trace: 'minigame/river-route.webp',
+  regions: 'game/puzzle-blue.webp',
 }

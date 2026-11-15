@@ -4,12 +4,13 @@ import { insidePolygon, project } from '../map/projection'
 
 /**
  * Data layers of the Discover map (v0.15), generated from real data by scripts/build-layers.py
- * (Natural Earth; OpenStreetMap where Natural Earth has no river) — already in the app's projection.
+ * (Natural Earth; rivers traced from the elevation data by scripts/build-rivers-dem.py) — already in the app's projection.
  * Peaks: content/map/peaks.json (coordinates checked against the elevation data by scripts/build-relief.py).
  */
 type Text = { bg: string; en: string }
 export type Province = { id: string; name: Text; centre: Text; d: string; lx: number; ly: number; color: number }
-export type River = { id: string; name: Text; into: Text; d: string; lx: number; ly: number }
+/** `t` (v0.16): one line from the source to the mouth (the part on the map) — for the "follow the river" game. */
+export type River = { id: string; name: Text; into: Text; d: string; lx: number; ly: number; t?: [number, number][] }
 export type Lake = { id: string; name: Text; d: string; lx: number; ly: number }
 export type Neighbour = { id: string; name: Text; capital: Text; at: [number, number] }
 export type Range = { id: string; name: Text; at: [number, number] }
@@ -51,3 +52,18 @@ export function provinceAt(x: number, y: number): Province | undefined {
 
 /** Soft fill colours of the provinces (neighbours never share one — build-layers.py). */
 export const PROVINCE_FILL = ['#ffd35a', '#72c8f5', '#ff9c8f', '#8ed4a6', '#c9b6f2', '#f5b971'] as const
+
+/** Bounding box of a province in map units (for drawing its shape on its own). */
+export function provinceBox(id: string): { x: number; y: number; w: number; h: number } {
+  const pts = RINGS.get(id)!.flat()
+  const xs = pts.map((p) => p[0])
+  const ys = pts.map((p) => p[1])
+  const x = Math.min(...xs)
+  const y = Math.min(...ys)
+  return { x, y, w: Math.max(...xs) - x, h: Math.max(...ys) - y }
+}
+
+/** Is the point inside this province (even-odd, like provinceAt)? */
+export function insideProvince(id: string, x: number, y: number): boolean {
+  return (RINGS.get(id) ?? []).filter((r) => insidePolygon(x, y, r)).length % 2 === 1
+}

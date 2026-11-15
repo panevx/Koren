@@ -5,7 +5,8 @@ import { LAKES, NEIGHBOURS, PEAKS, PROVINCES, RANGES, RIVERS, provinceAt } from 
 import { PLACES } from '../src/content/places'
 import { MAP_IMAGES } from '../src/map/art'
 import { BULGARIA_OUTLINE, MAP_H, MAP_W } from '../src/map/geo'
-import { insidePolygon } from '../src/map/projection'
+import { MISSIONS } from '../src/content/missions'
+import { UNITS_PER_KM, insidePolygon, project } from '../src/map/projection'
 
 /** v0.15: the layers of the Discover map are real data in the app's projection (scripts/build-layers.py, build-relief.py). */
 describe('map layers', () => {
@@ -23,7 +24,7 @@ describe('map layers', () => {
     const expected: Record<string, string> = {
       sofia: 'BG-22', plovdiv: 'BG-16', varna: 'BG-03', burgas: 'BG-02', ruse: 'BG-18', 'veliko-tarnovo': 'BG-04', karlovo: 'BG-16',
       gabrovo: 'BG-07', bansko: 'BG-01', 'baba-vida': 'BG-05', madara: 'BG-27', kazanlak: 'BG-24', srebarna: 'BG-19', 'rila-monastery': 'BG-10',
-      belogradchik: 'BG-05', pliska: 'BG-27', velingrad: 'BG-13', sandanski: 'BG-01', hisarya: 'BG-16', devetashka: 'BG-11', 'devils-throat': 'BG-21',
+      belogradchik: 'BG-05', pliska: 'BG-27', velingrad: 'BG-13', sandanski: 'BG-01', hisarya: 'BG-16', 'sapareva-banya': 'BG-10', devetashka: 'BG-11', 'devils-throat': 'BG-21',
     }
     for (const [place, province] of Object.entries(expected)) {
       const p = PLACES.find((x) => x.id === place)!
@@ -39,7 +40,7 @@ describe('map layers', () => {
 
   it('has the main rivers, each drawn across the map, and the reservoirs', () => {
     const ids = RIVERS.map((r) => r.id)
-    for (const r of ['danube', 'maritsa', 'struma', 'mesta', 'yantra', 'tundzha', 'arda', 'kamchia']) expect(ids, r).toContain(r)
+    for (const r of ['danube', 'iskar', 'vit', 'osam', 'maritsa', 'struma', 'mesta', 'yantra', 'tundzha', 'arda', 'kamchia']) expect(ids, r).toContain(r)
     for (const r of RIVERS) {
       expect(r.d, r.id).toMatch(/^M/)
       expect(r.into.bg && r.into.en, r.id).toBeTruthy()
@@ -70,5 +71,66 @@ describe('map layers', () => {
   it('every map picture exists and the relief is small enough for phones', () => {
     for (const p of MAP_IMAGES) expect(existsSync(resolve(__dirname, '../public/img', p)), p).toBe(true)
     expect(statSync(resolve(__dirname, '../public/img/map/relief.webp')).size).toBeLessThanOrEqual(150 * 1024)
+  })
+})
+
+/** v0.16: the rivers of the "follow the river" game — one line from the source to the mouth, through the towns on them. */
+describe('river lines (scripts/build-rivers-dem.py)', () => {
+  const line = (id: string) => RIVERS.find((r) => r.id === id)!.t!
+  const dist = (id: string, lat: number, lon: number) => {
+    const { x, y } = project(lat, lon)
+    const t = line(id)
+    let best = Infinity
+    for (let i = 0; i < t.length - 1; i++) {
+      const [ax, ay] = t[i]!
+      const [bx, by] = t[i + 1]!
+      const l2 = (bx - ax) ** 2 + (by - ay) ** 2 || 1
+      const k = Math.max(0, Math.min(1, ((x - ax) * (bx - ax) + (y - ay) * (by - ay)) / l2))
+      best = Math.min(best, Math.hypot(ax + k * (bx - ax) - x, ay + k * (by - ay) - y))
+    }
+    return best / UNITS_PER_KM
+  }
+
+  it('the traced rivers pass their towns (≤ 3 km) and flow the right way', () => {
+    const towns: [string, string, number, number][] = [
+      ['iskar', 'Самоков', 42.337, 23.556], ['iskar', 'Своге', 42.961, 23.35], ['iskar', 'Мездра', 43.14, 23.708],
+      ['vit', 'Тетевен', 42.918, 24.262], ['osam', 'Ловеч', 43.135, 24.716], ['maritsa', 'Пловдив', 42.15, 24.75],
+      ['maritsa', 'Свиленград', 41.766, 26.199], ['struma', 'Перник', 42.605, 23.038], ['struma', 'Кресна', 41.725, 23.15],
+      ['tundzha', 'Ямбол', 42.484, 26.503], ['arda', 'Кърджали', 41.65, 25.37], ['mesta', 'Якоруда', 42.025, 23.685],
+      ['danube', 'Видин', 43.996, 22.877], ['danube', 'Русе', 43.849, 25.954],
+    ]
+    for (const [r, town, lat, lon] of towns) expect(dist(r, lat, lon), `${r} – ${town}`).toBeLessThan(3)
+    // into the Danube: the mouth is north of the source; the Danube runs west → east
+    for (const r of ['iskar', 'vit', 'osam']) expect(line(r).at(-1)![1], r).toBeLessThan(line(r)[0]![1] - 100)
+    expect(line('danube').at(-1)![0]).toBeGreaterThan(line('danube')[0]![0] + 500)
+    // the Iskar ends at the Danube, not further along it (west of the Vit)
+    expect(line('iskar').at(-1)![0]).toBeLessThan(line('vit').at(-1)![0])
+  })
+
+  it('every "follow the river" mission uses a river with a line and stops that lie on it, in order', () => {
+    for (const m of MISSIONS)
+      for (const [level, c] of Object.entries(m.levels)) {
+        const g = c!.game
+        if (g.type !== 'trace') continue
+        expect(RIVERS.find((r) => r.id === g.river)?.t, `${m.id} ${level}: ${g.river}`).toBeTruthy()
+        const t = line(g.river)
+        let last = -1
+        for (const s of g.stops) {
+          expect(dist(g.river, s.lat, s.lon), `${m.id} ${level}: ${s.bg}`).toBeLessThan(4)
+          const { x, y } = project(s.lat, s.lon)
+          const at = t.reduce((b, p, i) => (Math.hypot(p[0] - x, p[1] - y) < Math.hypot(t[b]![0] - x, t[b]![1] - y) ? i : b), 0)
+          expect(at, `${m.id} ${level}: ${s.bg} comes after the stop before it`).toBeGreaterThanOrEqual(last)
+          last = at
+        }
+      }
+  })
+
+  it('the provinces puzzle: only real provinces; tiny provinces are not so close that a drop could count for the wrong one', () => {
+    const ids = new Set(PROVINCES.map((p) => p.id))
+    for (const m of MISSIONS)
+      for (const c of Object.values(m.levels)) if (c!.game.type === 'regions') for (const r of c!.game.regions) expect(ids.has(r), r).toBe(true)
+    // Regions.tsx forgives a drop within 24 map units of a province's middle: no two middles may be that close.
+    for (const a of PROVINCES)
+      for (const b of PROVINCES) if (a.id < b.id) expect(Math.hypot(a.lx - b.lx, a.ly - b.ly), `${a.id} – ${b.id}`).toBeGreaterThan(24)
   })
 })

@@ -2,8 +2,8 @@
  "version": "v5",
  "total": 300,
  "summary": {
-  "used": 54,
-  "ready": 180,
+  "used": 78,
+  "ready": 156,
   "source": 10,
   "duplicate": 49,
   "review": 7
@@ -304,9 +304,9 @@
    "id": "city-veliko-tarnovo",
    "original": "design/v5/city/city-veliko-tarnovo.png",
    "category": "city",
-   "status": "ready",
+   "status": "used",
    "path": "city/veliko-tarnovo.webp",
-   "stage": 2,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
@@ -559,9 +559,9 @@
    "id": "game-puzzle-blue",
    "original": "design/v5/game/game-puzzle-blue.png",
    "category": "game",
-   "status": "ready",
+   "status": "used",
    "path": "game/puzzle-blue.webp",
-   "stage": 9,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
@@ -575,9 +575,9 @@
    "id": "game-puzzle-red",
    "original": "design/v5/game/game-puzzle-red.png",
    "category": "game",
-   "status": "ready",
+   "status": "used",
    "path": "game/puzzle-red.webp",
-   "stage": 9,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
@@ -1086,9 +1086,9 @@
    "id": "koren-compass",
    "original": "design/v5/koren/koren-compass.png",
    "category": "koren",
-   "status": "ready",
+   "status": "used",
    "path": "poses/koren-compass.webp",
-   "stage": 5,
+   "usedIn": "мисии с ориентиране",
    "size": "404x900"
   },
   {
@@ -1491,9 +1491,9 @@
    "id": "minigame-river-route",
    "original": "design/v5/minigame/minigame-river-route.png",
    "category": "minigame",
-   "status": "ready",
+   "status": "used",
    "path": "minigame/river-route.webp",
-   "stage": 3,
+   "usedIn": "мисии",
    "size": "640x429"
   },
   {
@@ -1518,9 +1518,9 @@
    "id": "mountain-pirin",
    "original": "design/v5/mountain/mountain-pirin.png",
    "category": "mountain",
-   "status": "ready",
+   "status": "used",
    "path": "geo/pirin.webp",
-   "stage": 3,
+   "usedIn": "мисии",
    "size": "640x471"
   },
   {
@@ -1563,9 +1563,9 @@
    "id": "nature-danube-plain",
    "original": "design/v5/nature/nature-danube-plain.png",
    "category": "nature",
-   "status": "ready",
+   "status": "used",
    "path": "nature/danube-plain.webp",
-   "stage": 3,
+   "usedIn": "мисии",
    "size": "640x238"
   },
   {
@@ -1588,9 +1588,9 @@
    "id": "nature-thracian-lowland",
    "original": "design/v5/nature/nature-thracian-lowland.png",
    "category": "nature",
-   "status": "ready",
+   "status": "used",
    "path": "nature/thracian-lowland.webp",
-   "stage": 3,
+   "usedIn": "мисии",
    "size": "640x215"
   },
   {
@@ -1735,9 +1735,9 @@
    "id": "raya-winter",
    "original": "design/v5/raya/raya-winter.png",
    "category": "raya",
-   "status": "ready",
+   "status": "used",
    "path": "poses/raya-winter.webp",
-   "stage": 5,
+   "usedIn": "мисия „Баба Марта“",
    "size": "490x900"
   },
   {
@@ -1786,36 +1786,36 @@
    "id": "river-danube",
    "original": "design/v5/river/river-danube.png",
    "category": "river",
-   "status": "ready",
+   "status": "used",
    "path": "geo/danube.webp",
-   "stage": 3,
+   "usedIn": "мисии",
    "size": "640x367"
   },
   {
    "id": "river-iskar",
    "original": "design/v5/river/river-iskar.png",
    "category": "river",
-   "status": "ready",
+   "status": "used",
    "path": "geo/iskar.webp",
-   "stage": 3,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
    "id": "river-maritsa",
    "original": "design/v5/river/river-maritsa.png",
    "category": "river",
-   "status": "ready",
+   "status": "used",
    "path": "geo/maritsa.webp",
-   "stage": 3,
+   "usedIn": "мисии",
    "size": "640x417"
   },
   {
    "id": "river-struma",
    "original": "design/v5/river/river-struma.png",
    "category": "river",
-   "status": "ready",
+   "status": "used",
    "path": "geo/struma.webp",
-   "stage": 3,
+   "usedIn": "мисии",
    "size": "640x510"
   },
   {
@@ -1831,9 +1831,9 @@
    "id": "river-yantra",
    "original": "design/v5/river/river-yantra.png",
    "category": "river",
-   "status": "ready",
+   "status": "used",
    "path": "geo/yantra.webp",
-   "stage": 3,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
@@ -2012,27 +2012,27 @@
    "id": "terrain-cave",
    "original": "design/v5/terrain/terrain-cave.png",
    "category": "terrain",
-   "status": "ready",
+   "status": "used",
    "path": "geo/cave.webp",
-   "stage": 3,
+   "usedIn": "мисии",
    "size": "640x507"
   },
   {
    "id": "terrain-coast",
    "original": "design/v5/terrain/terrain-coast.png",
    "category": "terrain",
-   "status": "ready",
+   "status": "used",
    "path": "geo/coast.webp",
-   "stage": 3,
+   "usedIn": "мисии",
    "size": "640x363"
   },
   {
    "id": "terrain-forest",
    "original": "design/v5/terrain/terrain-forest.png",
    "category": "terrain",
-   "status": "ready",
+   "status": "used",
    "path": "geo/forest.webp",
-   "stage": 3,
+   "usedIn": "мисии",
    "size": "640x485"
   },
   {
@@ -2048,36 +2048,36 @@
    "id": "terrain-lowland",
    "original": "design/v5/terrain/terrain-lowland.png",
    "category": "terrain",
-   "status": "ready",
+   "status": "used",
    "path": "geo/lowland.webp",
-   "stage": 3,
+   "usedIn": "мисии",
    "size": "640x302"
   },
   {
    "id": "terrain-mountain",
    "original": "design/v5/terrain/terrain-mountain.png",
    "category": "terrain",
-   "status": "ready",
+   "status": "used",
    "path": "geo/mountain.webp",
-   "stage": 3,
+   "usedIn": "мисии",
    "size": "640x507"
   },
   {
    "id": "terrain-plain",
    "original": "design/v5/terrain/terrain-plain.png",
    "category": "terrain",
-   "status": "ready",
+   "status": "used",
    "path": "geo/plain.webp",
-   "stage": 3,
+   "usedIn": "мисии",
    "size": "640x334"
   },
   {
    "id": "terrain-plateau",
    "original": "design/v5/terrain/terrain-plateau.png",
    "category": "terrain",
-   "status": "ready",
+   "status": "used",
    "path": "geo/plateau.webp",
-   "stage": 3,
+   "usedIn": "мисии",
    "size": "640x446"
   },
   {
@@ -2093,9 +2093,9 @@
    "id": "terrain-valley",
    "original": "design/v5/terrain/terrain-valley.png",
    "category": "terrain",
-   "status": "ready",
+   "status": "used",
    "path": "geo/valley.webp",
-   "stage": 3,
+   "usedIn": "мисии",
    "size": "640x371"
   },
   {
@@ -2450,9 +2450,9 @@
    "id": "world-border-crossing",
    "original": "design/v5/world/world-border-crossing.png",
    "category": "world",
-   "status": "ready",
+   "status": "used",
    "path": "places/border-crossing.webp",
-   "stage": 8,
+   "usedIn": "мисии",
    "size": "640x452"
   },
   {
@@ -2549,9 +2549,9 @@
    "id": "world-ski-bansko",
    "original": "design/v5/world/world-ski-bansko.png",
    "category": "world",
-   "status": "ready",
+   "status": "used",
    "path": "places/ski-bansko.webp",
-   "stage": 2,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {

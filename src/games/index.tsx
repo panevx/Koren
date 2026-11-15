@@ -8,8 +8,10 @@ import { Match } from './Match'
 import { Memory } from './Memory'
 import { Order } from './Order'
 import { Puzzle } from './Puzzle'
+import { Regions } from './Regions'
 import { Quiz } from './Quiz'
 import { Sort } from './Sort'
+import { Trace } from './Trace'
 
 /**
  * Game templates by type. Adding a template = a component here + a schema entry
@@ -39,5 +41,9 @@ export function GameView({ game, onDone }: { game: Game; onDone: () => void }) {
       return <Build game={game} onDone={onDone} />
     case 'guess':
       return <Guess game={game} onDone={onDone} />
+    case 'trace':
+      return <Trace game={game} onDone={onDone} />
+    case 'regions':
+      return <Regions game={game} onDone={onDone} />
   }
 }

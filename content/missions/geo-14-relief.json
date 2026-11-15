@@ -1,0 +1,313 @@
+{
+  "id": "geo-14-relief",
+  "subject": "geography",
+  "free": true,
+  "order": 57,
+  "unlock": {
+    "after": [
+      "geo-13-peaks"
+    ]
+  },
+  "badge": {
+    "id": "relief",
+    "icon": "geo/valley.webp"
+  },
+  "title": {
+    "bg": "Равнина, низина, плато, долина",
+    "en": "Plain, lowland, plateau, valley"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Земята не е навсякъде еднаква.",
+          "en": "The land is not the same everywhere.",
+          "img": "geo/plain.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Кое е високо и кое е равно? Сложи го в кутията.",
+          "en": "What is high and what is flat? Put it in the box."
+        }
+      ],
+      "game": {
+        "type": "sort",
+        "prompt": {
+          "bg": "Високо или равно?",
+          "en": "High or flat?"
+        },
+        "bins": [
+          {
+            "bg": "Високо",
+            "en": "High",
+            "img": "geo/mountain.webp"
+          },
+          {
+            "bg": "Равно",
+            "en": "Flat",
+            "img": "geo/plain.webp"
+          }
+        ],
+        "items": [
+          {
+            "bg": "Планина",
+            "en": "Mountain",
+            "img": "geo/mountain.webp",
+            "bin": 0
+          },
+          {
+            "bg": "Рила",
+            "en": "Rila",
+            "img": "geo/rila.webp",
+            "bin": 0
+          },
+          {
+            "bg": "Връх",
+            "en": "Peak",
+            "img": "geo/musala.webp",
+            "bin": 0
+          },
+          {
+            "bg": "Поле",
+            "en": "Field",
+            "img": "geo/plain.webp",
+            "bin": 1
+          },
+          {
+            "bg": "Низина",
+            "en": "Lowland",
+            "img": "geo/lowland.webp",
+            "bin": 1
+          },
+          {
+            "bg": "Плаж",
+            "en": "Beach",
+            "img": "geo/coast.webp",
+            "bin": 1
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Има равнини, низини, плата и долини. Всяко има свое име.",
+          "en": "There are plains, lowlands, plateaus and valleys. Each has its own name.",
+          "img": "geo/plateau.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Свържи картинката с това, което означава.",
+          "en": "Match the picture with what it means."
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи формата на земята с обяснението!",
+          "en": "Match the landform with what it means!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Равнина",
+              "en": "Plain",
+              "img": "geo/plain.webp"
+            },
+            "b": {
+              "bg": "Голяма равна земя",
+              "en": "A wide, flat land"
+            }
+          },
+          {
+            "a": {
+              "bg": "Низина",
+              "en": "Lowland",
+              "img": "geo/lowland.webp"
+            },
+            "b": {
+              "bg": "Равна земя ниско – до 200 м",
+              "en": "Flat land down low – up to 200 m"
+            }
+          },
+          {
+            "a": {
+              "bg": "Плато",
+              "en": "Plateau",
+              "img": "geo/plateau.webp"
+            },
+            "b": {
+              "bg": "Равно отгоре, стръмно отстрани",
+              "en": "Flat on top, steep on the sides"
+            }
+          },
+          {
+            "a": {
+              "bg": "Долина",
+              "en": "Valley",
+              "img": "geo/valley.webp"
+            },
+            "b": {
+              "bg": "Ниско между планини, често с река",
+              "en": "Low ground between mountains, often with a river"
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Коя е най-голямата равнина в България?",
+            "en": "Which is the largest plain in Bulgaria?"
+          },
+          "options": [
+            {
+              "bg": "Дунавската равнина",
+              "en": "The Danubian Plain"
+            },
+            {
+              "bg": "Софийското поле",
+              "en": "The Sofia Field"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "map",
+          "bg": "На картата на България има всички тези форми.",
+          "en": "The map of Bulgaria has all of these landforms.",
+          "img": "nature/danube-plain.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "compass",
+          "bg": "Свържи всяка форма с пример от България.",
+          "en": "Match each landform with an example in Bulgaria."
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи формата с пример от България!",
+          "en": "Match the landform with an example in Bulgaria!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Равнина",
+              "en": "Plain",
+              "img": "geo/plain.webp"
+            },
+            "b": {
+              "bg": "Дунавската равнина",
+              "en": "The Danubian Plain"
+            }
+          },
+          {
+            "a": {
+              "bg": "Низина",
+              "en": "Lowland",
+              "img": "geo/lowland.webp"
+            },
+            "b": {
+              "bg": "Горнотракийската низина",
+              "en": "The Upper Thracian Lowland"
+            }
+          },
+          {
+            "a": {
+              "bg": "Плато",
+              "en": "Plateau",
+              "img": "geo/plateau.webp"
+            },
+            "b": {
+              "bg": "Лудогорското плато",
+              "en": "The Ludogorie Plateau"
+            }
+          },
+          {
+            "a": {
+              "bg": "Котловина",
+              "en": "Basin",
+              "img": "geo/valley.webp"
+            },
+            "b": {
+              "bg": "Софийската котловина",
+              "en": "The Sofia Basin"
+            }
+          },
+          {
+            "a": {
+              "bg": "Планина",
+              "en": "Mountain",
+              "img": "geo/mountain.webp"
+            },
+            "b": {
+              "bg": "Рила",
+              "en": "Rila"
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Защо в Горнотракийската низина има толкова ниви и градини?",
+            "en": "Why are there so many fields and gardens in the Upper Thracian Lowland?"
+          },
+          "options": [
+            {
+              "bg": "Равна, топла и с вода от Марица",
+              "en": "It is flat, warm and has water from the Maritsa"
+            },
+            {
+              "bg": "Висока и студена",
+              "en": "It is high and cold"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какво е плато?",
+            "en": "What is a plateau?"
+          },
+          "options": [
+            {
+              "bg": "Високо и равно отгоре",
+              "en": "High and flat on top"
+            },
+            {
+              "bg": "Дълбока пещера",
+              "en": "A deep cave"
+            },
+            {
+              "bg": "Остър връх",
+              "en": "A sharp peak"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Учебници по „Човекът и природата“ (4. кл.) и „География и икономика“ (5.–6. кл.), МОН",
+    "Енциклопедия „България“, БАН",
+    "Атлас „География на България“ (за 5.–10. клас)"
+  ],
+  "review": null,
+  "draft": true
+}

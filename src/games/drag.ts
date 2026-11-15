@@ -6,9 +6,10 @@ import { useRef, type PointerEvent, type MouseEvent } from 'react'
  * - A plain tap is NOT a drag: it reaches the element's own onClick (tap-to-select, then tap a target),
  *   so every game also works with one finger, a keyboard or a screen reader.
  * Only `transform` is changed while dragging (smooth on phones). The drop target under the finger gets
- * `data-over="true"` so it can light up.
+ * `data-over="true"` so it can light up. `onDrop` also gets the screen point where the finger let go
+ * (the provinces puzzle forgives a drop just next to a tiny province).
  */
-export function useDrag(onDrop: (id: string, target: string) => void) {
+export function useDrag(onDrop: (id: string, target: string, at: { x: number; y: number }) => void) {
   const state = useRef<{ id: string; el: HTMLElement; x: number; y: number; dragging: boolean; over: Element | null } | null>(null)
   const justDragged = useRef(false)
 
@@ -29,7 +30,7 @@ export function useDrag(onDrop: (id: string, target: string) => void) {
     justDragged.current = true
     setTimeout(() => (justDragged.current = false), 0)
     const id = target?.getAttribute('data-drop')
-    if (id) onDrop(s.id, id)
+    if (id) onDrop(s.id, id, { x: e.clientX, y: e.clientY })
   }
 
   return (id: string, enabled = true) =>

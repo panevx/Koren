@@ -1,0 +1,214 @@
+{
+  "id": "geo-18-springs",
+  "subject": "geography",
+  "free": true,
+  "order": 61,
+  "place": "velingrad",
+  "unlock": {
+    "after": [
+      "geo-17-ski"
+    ]
+  },
+  "badge": {
+    "id": "springs",
+    "icon": "places/mineral-velingrad.webp"
+  },
+  "title": {
+    "bg": "Минералните извори",
+    "en": "The mineral springs"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Някъде от земята блика топла вода!",
+          "en": "Somewhere warm water bubbles out of the ground!",
+          "img": "places/mineral-hisarya.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Покажи ми извора.",
+          "en": "Show me the spring."
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Покажи извора с топла вода!",
+              "en": "Show the spring with warm water!"
+            },
+            "options": [
+              {
+                "bg": "Гора",
+                "en": "Forest",
+                "img": "geo/forest.webp"
+              },
+              {
+                "bg": "Извор",
+                "en": "Spring",
+                "img": "places/mineral-velingrad.webp"
+              },
+              {
+                "bg": "Пещера",
+                "en": "Cave",
+                "img": "geo/cave.webp"
+              }
+            ],
+            "answer": 1,
+            "hint": {
+              "bg": "Търси водата, от която излиза пара.",
+              "en": "Look for the water with steam coming out."
+            }
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "explorer",
+          "bg": "В България има стотици минерални извори. Някои са топли, други – горещи!",
+          "en": "Bulgaria has hundreds of mineral springs. Some are warm, some are hot!",
+          "img": "places/mineral-hisarya.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "map",
+          "bg": "Хисаря е град на изворите – на север от Пловдив.",
+          "en": "Hisarya is a town of springs – north of Plovdiv."
+        }
+      ],
+      "game": {
+        "type": "map",
+        "target": "hisarya",
+        "choices": [
+          "hisarya",
+          "sandanski",
+          "velingrad",
+          "ruse"
+        ],
+        "prompt": {
+          "bg": "Намери Хисаря на картата!",
+          "en": "Find Hisarya on the map!"
+        },
+        "hint": {
+          "bg": "Хисаря е в средата на страната, на север от Пловдив.",
+          "en": "Hisarya is in the middle of the country, north of Plovdiv."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "В Сапарева баня блика най-горещата вода у нас. Колко е гореща?",
+            "en": "The hottest water in Bulgaria springs in Sapareva Banya. How hot is it?"
+          },
+          "options": [
+            {
+              "bg": "около 30 °C",
+              "en": "about 30 °C"
+            },
+            {
+              "bg": "около 103 °C",
+              "en": "about 103 °C"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "bg": "Толкова е гореща, че от нея излиза пара – по-гореща от кипяща вода!",
+            "en": "It is so hot that steam rises from it – hotter than boiling water!"
+          }
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "explorer",
+          "bg": "Минералната вода идва дълбоко от земята и носи разтворени минерали.",
+          "en": "Mineral water comes from deep in the ground and carries dissolved minerals.",
+          "img": "places/mineral-sandanski.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "compass",
+          "bg": "Познай града по подсказките.",
+          "en": "Guess the town from the clues."
+        }
+      ],
+      "game": {
+        "type": "guess",
+        "prompt": {
+          "bg": "Кой град с минерални извори е това?",
+          "en": "Which spa town is this?"
+        },
+        "clues": [
+          {
+            "bg": "Аз съм в долината на река Струма.",
+            "en": "I am in the valley of the river Struma.",
+            "img": "geo/struma.webp"
+          },
+          {
+            "bg": "Над мен се издига Пирин.",
+            "en": "Pirin rises above me.",
+            "img": "geo/pirin.webp"
+          },
+          {
+            "bg": "Тук е топло и слънчево, а изворите ми са топли.",
+            "en": "It is warm and sunny here, and my springs are warm.",
+            "img": "places/mineral-sandanski.webp"
+          }
+        ],
+        "target": "sandanski",
+        "choices": [
+          "sandanski",
+          "velingrad",
+          "hisarya",
+          "kazanlak",
+          "varna"
+        ],
+        "fact": {
+          "bg": "Сандански е в югозападна България, в подножието на Пирин.",
+          "en": "Sandanski is in south-west Bulgaria, at the foot of Pirin."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Къде блика най-горещата минерална вода в България (около 103 °C)?",
+            "en": "Where does the hottest mineral water in Bulgaria spring (about 103 °C)?"
+          },
+          "options": [
+            {
+              "bg": "В Сапарева баня",
+              "en": "Sapareva Banya"
+            },
+            {
+              "bg": "В Хисаря",
+              "en": "Hisarya"
+            },
+            {
+              "bg": "В Сандански",
+              "en": "Sandanski"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Енциклопедия „България“, БАН",
+    "Министерство на околната среда и водите – Регистър на находищата на минерални води",
+    "Учебници по „Човекът и природата“ (4. кл.) и „География и икономика“ (5.–6. кл.), МОН"
+  ],
+  "review": null,
+  "draft": true
+}

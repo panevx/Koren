@@ -3,6 +3,7 @@ import { MemoryRouter } from 'react-router'
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import { AppRoutes } from '../src/App'
 import { MISSIONS } from '../src/content/missions'
+import { PROVINCES } from '../src/content/layers'
 import { placeById } from '../src/content/places'
 import type { Game, Question } from '../src/content/schema'
 import { shuffledIndexes } from '../src/games/shuffle'
@@ -92,6 +93,21 @@ async function solveGame(game: Game) {
     case 'guess':
       fireEvent.click(screen.getByRole('button', { name: `Точка ${game.choices.indexOf(game.target) + 1}` }))
       return next()
+    case 'trace':
+      // the keyboard way: "to the next place" for every stop, then "to <the end>"
+      for (let i = 0; i < game.stops.length; i++) fireEvent.click(screen.getByRole('button', { name: 'Към следващото място' }))
+      fireEvent.click(screen.getByRole('button', { name: `Към ${game.end.bg}` }))
+      return next()
+    case 'regions': {
+      const holes = PROVINCES.filter((p) => game.regions.includes(p.id)).map((p) => p.id)
+      for (const k of shuffledIndexes(game.regions.length, game.prompt.bg)) {
+        const id = game.regions[k]!
+        const name = PROVINCES.find((p) => p.id === id)!.name.bg
+        fireEvent.click(within(screen.getByRole('list', { name: 'Области за поставяне' })).getByRole('button', { name }))
+        fireEvent.click(screen.getByRole('button', { name: `Празна област ${holes.indexOf(id) + 1}` }))
+      }
+      return next()
+    }
   }
 }
 
@@ -158,13 +174,13 @@ describe('a break after 3 missions in a row', () => {
   })
 })
 
-describe('there is at least one mission per subject and all 11 templates are used', () => {
+describe('there is at least one mission per subject and all 13 templates are used', () => {
   it('subjects', () => {
     expect(new Set(MISSIONS.map((m) => m.subject))).toEqual(new Set(['history', 'culture', 'language', 'geography']))
   })
   it('templates', () => {
     const used = new Set(MISSIONS.flatMap((m) => Object.values(m.levels).map((l) => l!.game.type)))
-    expect(used).toEqual(new Set(['quiz', 'map', 'match', 'order', 'puzzle', 'find', 'sort', 'memory', 'chest', 'build', 'guess']))
+    expect(used).toEqual(new Set(['quiz', 'map', 'match', 'order', 'puzzle', 'find', 'sort', 'memory', 'chest', 'build', 'guess', 'trace', 'regions']))
   })
 })
 

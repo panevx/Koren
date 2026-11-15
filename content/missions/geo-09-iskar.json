@@ -1,0 +1,355 @@
+{
+  "id": "geo-09-iskar",
+  "subject": "geography",
+  "free": true,
+  "order": 52,
+  "place": "sofia",
+  "unlock": {
+    "after": [
+      "geo-08-danube"
+    ]
+  },
+  "badge": {
+    "id": "iskar",
+    "icon": "geo/iskar.webp"
+  },
+  "title": {
+    "bg": "Искър пробива планината",
+    "en": "The Iskar cuts through the mountains"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Това е река Искър. Тя се ражда високо в Рила.",
+          "en": "This is the river Iskar. It is born high up in Rila.",
+          "img": "geo/iskar.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Поведи капката от планината до Дунав!",
+          "en": "Lead the drop from the mountain down to the Danube!"
+        }
+      ],
+      "game": {
+        "type": "trace",
+        "prompt": {
+          "bg": "Поведи капката по Искър!",
+          "en": "Lead the drop along the Iskar!"
+        },
+        "river": "iskar",
+        "start": {
+          "bg": "Рила",
+          "en": "Rila"
+        },
+        "end": {
+          "bg": "Дунав",
+          "en": "the Danube"
+        },
+        "stops": [
+          {
+            "bg": "край София",
+            "en": "near Sofia",
+            "lat": 42.596,
+            "lon": 23.412
+          }
+        ],
+        "fact": {
+          "bg": "Искър извира от Рила и се влива в Дунав.",
+          "en": "The Iskar springs in Rila and flows into the Danube."
+        }
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "explorer",
+          "bg": "Искър извира от Рила и минава край София.",
+          "en": "The Iskar springs in Rila and passes Sofia.",
+          "img": "geo/iskar.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "map",
+          "bg": "После прави нещо смело – пробива цялата Стара планина!",
+          "en": "Then it does something bold – it cuts right through the Balkan Mountains!",
+          "img": "geo/balkan.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Проследи го от извора до Дунав.",
+          "en": "Follow it from the spring to the Danube."
+        }
+      ],
+      "game": {
+        "type": "trace",
+        "prompt": {
+          "bg": "Проследи Искър от Рила до Дунав!",
+          "en": "Follow the Iskar from Rila to the Danube!"
+        },
+        "river": "iskar",
+        "start": {
+          "bg": "Рила",
+          "en": "Rila"
+        },
+        "end": {
+          "bg": "Дунав",
+          "en": "the Danube"
+        },
+        "stops": [
+          {
+            "bg": "Самоков",
+            "en": "Samokov",
+            "lat": 42.337,
+            "lon": 23.556
+          },
+          {
+            "bg": "край София",
+            "en": "near Sofia",
+            "lat": 42.596,
+            "lon": 23.412
+          },
+          {
+            "bg": "Своге",
+            "en": "Svoge",
+            "lat": 42.961,
+            "lon": 23.35,
+            "say": {
+              "bg": "Тук реката е в Искърското дефиле.",
+              "en": "Here the river is in the Iskar Gorge."
+            }
+          },
+          {
+            "bg": "Мездра",
+            "en": "Mezdra",
+            "lat": 43.14,
+            "lon": 23.708
+          }
+        ],
+        "fact": {
+          "bg": "Искър е най-дългата река, която тече само в България.",
+          "en": "The Iskar is the longest river that flows only in Bulgaria."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Коя е най-дългата река, която тече САМО в България?",
+            "en": "Which is the longest river that flows ONLY in Bulgaria?"
+          },
+          "options": [
+            {
+              "bg": "Марица",
+              "en": "The Maritsa"
+            },
+            {
+              "bg": "Искър",
+              "en": "The Iskar"
+            },
+            {
+              "bg": "Дунав",
+              "en": "The Danube"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "bg": "Марица и Дунав текат и в други държави.",
+            "en": "The Maritsa and the Danube also flow in other countries."
+          }
+        },
+        {
+          "q": {
+            "bg": "Как се казва мястото, където Искър минава през Стара планина?",
+            "en": "What is the place where the Iskar goes through the Balkan Mountains called?"
+          },
+          "options": [
+            {
+              "bg": "Искърското дефиле",
+              "en": "The Iskar Gorge"
+            },
+            {
+              "bg": "Розовата долина",
+              "en": "The Rose Valley"
+            },
+            {
+              "bg": "Дунавската равнина",
+              "en": "The Danubian Plain"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "explorer",
+          "bg": "Искър е дълъг 368 км и тече изцяло в България.",
+          "en": "The Iskar is 368 km long and flows entirely in Bulgaria.",
+          "img": "geo/iskar.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "map",
+          "bg": "Той е единствената река, която пресича цялата Стара планина.",
+          "en": "It is the only river that crosses the whole of the Balkan Mountains.",
+          "img": "geo/balkan.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "compass",
+          "bg": "По пътя пълни и най-големия ни язовир – „Искър“.",
+          "en": "On the way it fills our biggest reservoir – Iskar."
+        }
+      ],
+      "game": {
+        "type": "trace",
+        "prompt": {
+          "bg": "Проследи Искър през Стара планина!",
+          "en": "Follow the Iskar through the Balkan Mountains!"
+        },
+        "river": "iskar",
+        "start": {
+          "bg": "Рила",
+          "en": "Rila"
+        },
+        "end": {
+          "bg": "Дунав",
+          "en": "the Danube"
+        },
+        "stops": [
+          {
+            "bg": "Самоков",
+            "en": "Samokov",
+            "lat": 42.337,
+            "lon": 23.556
+          },
+          {
+            "bg": "Панчарево",
+            "en": "Pancharevo",
+            "lat": 42.596,
+            "lon": 23.412,
+            "say": {
+              "bg": "Квартал на София – столицата е на Искър.",
+              "en": "A district of Sofia – the capital is on the Iskar."
+            }
+          },
+          {
+            "bg": "Своге",
+            "en": "Svoge",
+            "lat": 42.961,
+            "lon": 23.35,
+            "say": {
+              "bg": "Вече си в Искърското дефиле.",
+              "en": "Now you are in the Iskar Gorge."
+            }
+          },
+          {
+            "bg": "Мездра",
+            "en": "Mezdra",
+            "lat": 43.14,
+            "lon": 23.708,
+            "say": {
+              "bg": "Планината остава зад теб.",
+              "en": "The mountains are behind you."
+            }
+          },
+          {
+            "bg": "Червен бряг",
+            "en": "Cherven Bryag",
+            "lat": 43.268,
+            "lon": 24.09
+          }
+        ],
+        "fact": {
+          "bg": "Искър извира от Рила, пресича Стара планина и се влива в Дунав – 368 км само в България.",
+          "en": "The Iskar springs in Rila, crosses the Balkan Mountains and flows into the Danube – 368 km, all in Bulgaria."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Коя река пресича цялата Стара планина?",
+            "en": "Which river crosses the whole of the Balkan Mountains?"
+          },
+          "options": [
+            {
+              "bg": "Янтра",
+              "en": "The Yantra"
+            },
+            {
+              "bg": "Тунджа",
+              "en": "The Tundzha"
+            },
+            {
+              "bg": "Искър",
+              "en": "The Iskar"
+            }
+          ],
+          "answer": 2
+        },
+        {
+          "q": {
+            "bg": "Кой е най-големият язовир в България?",
+            "en": "Which is the biggest reservoir in Bulgaria?"
+          },
+          "options": [
+            {
+              "bg": "„Искър“",
+              "en": "Iskar"
+            },
+            {
+              "bg": "„Батак“",
+              "en": "Batak"
+            },
+            {
+              "bg": "„Жребчево“",
+              "en": "Zhrebchevo"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "bg": "Той носи името на реката от тази мисия.",
+            "en": "It has the name of the river in this mission."
+          }
+        },
+        {
+          "q": {
+            "bg": "Колко е дълъг Искър?",
+            "en": "How long is the Iskar?"
+          },
+          "options": [
+            {
+              "bg": "68 км",
+              "en": "68 km"
+            },
+            {
+              "bg": "368 км",
+              "en": "368 km"
+            },
+            {
+              "bg": "2850 км",
+              "en": "2,850 km"
+            }
+          ],
+          "answer": 1
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Енциклопедия „България“, БАН",
+    "Учебници по „Човекът и природата“ (4. кл.) и „География и икономика“ (5.–6. кл.), МОН",
+    "НСИ – Статистически годишник, раздел „Географски данни“ (реки, върхове)",
+    "Natural Earth (граници, Дунав); Terrain Tiles / Mapzen (релеф и реки, проследени от височините)"
+  ],
+  "review": null,
+  "draft": true
+}

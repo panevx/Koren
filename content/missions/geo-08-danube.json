@@ -1,0 +1,363 @@
+{
+  "id": "geo-08-danube",
+  "subject": "geography",
+  "free": true,
+  "order": 51,
+  "place": "ruse",
+  "badge": {
+    "id": "danube",
+    "icon": "geo/danube.webp"
+  },
+  "title": {
+    "bg": "Дунав – голямата река",
+    "en": "The Danube – the great river"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Виж колко вода! Това е река Дунав.",
+          "en": "Look at all that water! This is the river Danube.",
+          "img": "geo/danube.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "map",
+          "bg": "Тя тече по края на България, на север.",
+          "en": "It flows along the edge of Bulgaria, in the north."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Сложи пръст на капката и я поведи по реката!",
+          "en": "Put your finger on the drop and lead it along the river!"
+        }
+      ],
+      "game": {
+        "type": "trace",
+        "prompt": {
+          "bg": "Поведи капката по Дунав!",
+          "en": "Lead the drop along the Danube!"
+        },
+        "river": "danube",
+        "start": {
+          "bg": "от Сърбия",
+          "en": "from Serbia"
+        },
+        "end": {
+          "bg": "Силистра",
+          "en": "Silistra"
+        },
+        "stops": [
+          {
+            "bg": "Видин",
+            "en": "Vidin",
+            "lat": 43.996,
+            "lon": 22.877
+          },
+          {
+            "bg": "Русе",
+            "en": "Ruse",
+            "lat": 43.849,
+            "lon": 25.954
+          }
+        ],
+        "fact": {
+          "bg": "Браво! Дунав тече още дълго и стига чак до Черно море.",
+          "en": "Well done! The Danube flows on and on, all the way to the Black Sea."
+        }
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Дунав е най-голямата река, която минава през България.",
+          "en": "The Danube is the biggest river that flows through Bulgaria.",
+          "img": "geo/danube.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "map",
+          "bg": "На север тя е границата ни с Румъния.",
+          "en": "In the north it is our border with Romania."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Да я проследим от Видин до Силистра!",
+          "en": "Let's follow it from Vidin to Silistra!"
+        }
+      ],
+      "game": {
+        "type": "trace",
+        "prompt": {
+          "bg": "Проследи Дунав от Видин до Силистра!",
+          "en": "Follow the Danube from Vidin to Silistra!"
+        },
+        "river": "danube",
+        "start": {
+          "bg": "от Сърбия",
+          "en": "from Serbia"
+        },
+        "end": {
+          "bg": "Силистра",
+          "en": "Silistra"
+        },
+        "stops": [
+          {
+            "bg": "Видин",
+            "en": "Vidin",
+            "lat": 43.996,
+            "lon": 22.877
+          },
+          {
+            "bg": "Свищов",
+            "en": "Svishtov",
+            "lat": 43.621,
+            "lon": 25.35
+          },
+          {
+            "bg": "Русе",
+            "en": "Ruse",
+            "lat": 43.849,
+            "lon": 25.954,
+            "say": {
+              "bg": "Тук Дунав мост свързва България и Румъния.",
+              "en": "Here the Danube Bridge joins Bulgaria and Romania."
+            }
+          }
+        ],
+        "fact": {
+          "bg": "След Силистра Дунав тече през Румъния и се влива в Черно море.",
+          "en": "After Silistra the Danube flows through Romania into the Black Sea."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "С коя държава е границата по Дунав?",
+            "en": "Which country is across the Danube from us?"
+          },
+          "options": [
+            {
+              "bg": "Румъния",
+              "en": "Romania"
+            },
+            {
+              "bg": "Гърция",
+              "en": "Greece"
+            },
+            {
+              "bg": "Турция",
+              "en": "Türkiye"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "bg": "Тя е на север – от другата страна на реката.",
+            "en": "It is in the north – on the other side of the river."
+          }
+        },
+        {
+          "q": {
+            "bg": "Кой от тези градове е на Дунав?",
+            "en": "Which of these towns is on the Danube?"
+          },
+          "options": [
+            {
+              "bg": "Пловдив",
+              "en": "Plovdiv"
+            },
+            {
+              "bg": "Русе",
+              "en": "Ruse"
+            },
+            {
+              "bg": "Сливен",
+              "en": "Sliven"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "bg": "Спомни си Дунав мост.",
+            "en": "Remember the Danube Bridge."
+          }
+        },
+        {
+          "q": {
+            "bg": "Къде се влива Дунав?",
+            "en": "Where does the Danube flow into?"
+          },
+          "options": [
+            {
+              "bg": "В Черно море",
+              "en": "The Black Sea"
+            },
+            {
+              "bg": "В Бяло море",
+              "en": "The Aegean Sea"
+            },
+            {
+              "bg": "В езеро",
+              "en": "A lake"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "explorer",
+          "bg": "Дунав е втората по дължина река в Европа – около 2850 км.",
+          "en": "The Danube is the second-longest river in Europe – about 2,850 km.",
+          "img": "geo/danube.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "map",
+          "bg": "Тече през 10 държави – повече от всяка друга река на света.",
+          "en": "It flows through 10 countries – more than any other river in the world."
+        },
+        {
+          "hero": "koren",
+          "pose": "compass",
+          "bg": "Проследи българския ѝ участък и спри на пристанищата.",
+          "en": "Follow the Bulgarian part and stop at the river ports."
+        }
+      ],
+      "game": {
+        "type": "trace",
+        "prompt": {
+          "bg": "Проследи българския участък на Дунав!",
+          "en": "Follow the Bulgarian part of the Danube!"
+        },
+        "river": "danube",
+        "start": {
+          "bg": "от Сърбия",
+          "en": "from Serbia"
+        },
+        "end": {
+          "bg": "Силистра",
+          "en": "Silistra"
+        },
+        "stops": [
+          {
+            "bg": "Видин",
+            "en": "Vidin",
+            "lat": 43.996,
+            "lon": 22.877
+          },
+          {
+            "bg": "Свищов",
+            "en": "Svishtov",
+            "lat": 43.621,
+            "lon": 25.35,
+            "say": {
+              "bg": "Тук е най-южната точка на целия Дунав.",
+              "en": "Here is the southernmost point of the whole Danube."
+            }
+          },
+          {
+            "bg": "Русе",
+            "en": "Ruse",
+            "lat": 43.849,
+            "lon": 25.954,
+            "say": {
+              "bg": "Най-големият ни град на Дунав.",
+              "en": "Our biggest town on the Danube."
+            }
+          }
+        ],
+        "fact": {
+          "bg": "При река Тимок Дунав става граница с Румъния; след Силистра продължава към Черно море.",
+          "en": "At the Timok the Danube becomes the border with Romania; after Silistra it goes on to the Black Sea."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Коя е най-дългата река в Европа?",
+            "en": "Which is the longest river in Europe?"
+          },
+          "options": [
+            {
+              "bg": "Волга",
+              "en": "The Volga"
+            },
+            {
+              "bg": "Дунав",
+              "en": "The Danube"
+            },
+            {
+              "bg": "Рейн",
+              "en": "The Rhine"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "bg": "Дунав е втора. Първата тече в Русия.",
+            "en": "The Danube is second. The first flows in Russia."
+          }
+        },
+        {
+          "q": {
+            "bg": "През колко държави тече Дунав?",
+            "en": "How many countries does the Danube flow through?"
+          },
+          "options": [
+            {
+              "bg": "4",
+              "en": "4"
+            },
+            {
+              "bg": "10",
+              "en": "10"
+            },
+            {
+              "bg": "20",
+              "en": "20"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Кой град е на най-южната точка на Дунав?",
+            "en": "Which town is at the southernmost point of the Danube?"
+          },
+          "options": [
+            {
+              "bg": "Видин",
+              "en": "Vidin"
+            },
+            {
+              "bg": "Свищов",
+              "en": "Svishtov"
+            },
+            {
+              "bg": "Силистра",
+              "en": "Silistra"
+            }
+          ],
+          "answer": 1
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Енциклопедия „България“, БАН",
+    "Учебници по „Човекът и природата“ (4. кл.) и „География и икономика“ (5.–6. кл.), МОН",
+    "Natural Earth (граници, Дунав); Terrain Tiles / Mapzen (релеф и реки, проследени от височините)",
+    "Международна комисия за опазване на р. Дунав (ICPDR) – Danube Basin facts"
+  ],
+  "review": null,
+  "draft": true
+}

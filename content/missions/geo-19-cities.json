@@ -1,0 +1,269 @@
+{
+  "id": "geo-19-cities",
+  "subject": "geography",
+  "free": true,
+  "order": 62,
+  "place": "plovdiv",
+  "unlock": {
+    "after": [
+      "geo-18-springs"
+    ]
+  },
+  "badge": {
+    "id": "cities",
+    "icon": "city/sofia.webp"
+  },
+  "title": {
+    "bg": "Градовете на България",
+    "en": "The cities of Bulgaria"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Да построим четири града на картата!",
+          "en": "Let's build four cities on the map!",
+          "img": "city/sofia.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Плъзни всеки град на мястото му.",
+          "en": "Drag each city to its place."
+        }
+      ],
+      "game": {
+        "type": "build",
+        "prompt": {
+          "bg": "Сложи градовете на картата!",
+          "en": "Put the cities on the map!"
+        },
+        "labels": true,
+        "pieces": [
+          {
+            "place": "sofia",
+            "img": "city/sofia.webp"
+          },
+          {
+            "place": "plovdiv",
+            "img": "city/plovdiv.webp"
+          },
+          {
+            "place": "varna",
+            "img": "city/varna.webp"
+          },
+          {
+            "place": "ruse",
+            "img": "city/ruse.webp"
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "map",
+          "bg": "Морето, Дунав и планините помагат да намериш градовете.",
+          "en": "The sea, the Danube and the mountains help you find the cities.",
+          "img": "city/varna.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Този път без надписи!",
+          "en": "This time without labels!"
+        }
+      ],
+      "game": {
+        "type": "build",
+        "prompt": {
+          "bg": "Построй градовете на България!",
+          "en": "Build the cities of Bulgaria!"
+        },
+        "pieces": [
+          {
+            "place": "sofia",
+            "img": "city/sofia.webp",
+            "hint": {
+              "bg": "Столицата е на запад, до Витоша.",
+              "en": "The capital is in the west, by Vitosha."
+            }
+          },
+          {
+            "place": "plovdiv",
+            "img": "city/plovdiv.webp",
+            "hint": {
+              "bg": "Пловдив е в средата на юг, на Марица.",
+              "en": "Plovdiv is in the middle of the south, on the Maritsa."
+            }
+          },
+          {
+            "place": "varna",
+            "img": "city/varna.webp",
+            "hint": {
+              "bg": "Варна е на морето – северно от Бургас.",
+              "en": "Varna is by the sea – north of Burgas."
+            }
+          },
+          {
+            "place": "burgas",
+            "img": "city/burgas.webp",
+            "hint": {
+              "bg": "Бургас е на морето – южно от Варна.",
+              "en": "Burgas is by the sea – south of Varna."
+            }
+          },
+          {
+            "place": "ruse",
+            "img": "city/ruse.webp",
+            "hint": {
+              "bg": "Русе е на Дунав, на север.",
+              "en": "Ruse is on the Danube, in the north."
+            }
+          },
+          {
+            "place": "veliko-tarnovo",
+            "img": "city/veliko-tarnovo.webp",
+            "hint": {
+              "bg": "Търново е в средата на север, на река Янтра.",
+              "en": "Tarnovo is in the middle of the north, on the Yantra."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кой град наричат „морската столица“?",
+            "en": "Which city is called the \"sea capital\"?"
+          },
+          "options": [
+            {
+              "bg": "Варна",
+              "en": "Varna"
+            },
+            {
+              "bg": "Русе",
+              "en": "Ruse"
+            },
+            {
+              "bg": "Пловдив",
+              "en": "Plovdiv"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Някои градове са по-стари от цели държави.",
+          "en": "Some cities are older than whole countries.",
+          "img": "city/plovdiv.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "compass",
+          "bg": "Познай града по подсказките.",
+          "en": "Guess the city from the clues."
+        }
+      ],
+      "game": {
+        "type": "guess",
+        "prompt": {
+          "bg": "Кой град е това?",
+          "en": "Which city is this?"
+        },
+        "clues": [
+          {
+            "bg": "Построен съм на хълмове – тепета.",
+            "en": "I am built on hills – the tepeta.",
+            "img": "world/mountain-peak.webp"
+          },
+          {
+            "bg": "През мен тече Марица.",
+            "en": "The Maritsa flows through me.",
+            "img": "geo/maritsa.webp"
+          },
+          {
+            "bg": "Имам древен римски театър, който и днес работи.",
+            "en": "I have an ancient Roman theatre that is still used today.",
+            "img": "world/old-scroll.webp"
+          }
+        ],
+        "target": "plovdiv",
+        "choices": [
+          "plovdiv",
+          "sofia",
+          "varna",
+          "veliko-tarnovo",
+          "ruse",
+          "burgas"
+        ],
+        "fact": {
+          "bg": "Пловдив е един от най-старите непрекъснато обитавани градове в Европа.",
+          "en": "Plovdiv is one of the oldest continuously inhabited cities in Europe."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кой град е бил столица на Второто българско царство?",
+            "en": "Which city was the capital of the Second Bulgarian Empire?"
+          },
+          "options": [
+            {
+              "bg": "Търново",
+              "en": "Tarnovo"
+            },
+            {
+              "bg": "Варна",
+              "en": "Varna"
+            },
+            {
+              "bg": "Бургас",
+              "en": "Burgas"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кой е най-големият български град на Дунав?",
+            "en": "Which is the biggest Bulgarian city on the Danube?"
+          },
+          "options": [
+            {
+              "bg": "Видин",
+              "en": "Vidin"
+            },
+            {
+              "bg": "Русе",
+              "en": "Ruse"
+            },
+            {
+              "bg": "Силистра",
+              "en": "Silistra"
+            }
+          ],
+          "answer": 1
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Енциклопедия „България“, БАН",
+    "НСИ – Население по градове",
+    "Национален туристически регистър – 100 национални туристически обекта",
+    "Учебници по „Човекът и природата“ (4. кл.) и „География и икономика“ (5.–6. кл.), МОН"
+  ],
+  "review": null,
+  "draft": true
+}

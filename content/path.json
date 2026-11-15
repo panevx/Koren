@@ -121,6 +121,42 @@
         "mini-32-horns",
         "mini-33-balloon-trip"
       ]
+    },
+    {
+      "title": {
+        "bg": "Реките на България",
+        "en": "The rivers of Bulgaria"
+      },
+      "missions": [
+        "geo-08-danube",
+        "geo-09-iskar",
+        "geo-10-maritsa",
+        "geo-11-river-records"
+      ]
+    },
+    {
+      "title": {
+        "bg": "Планини и върхове",
+        "en": "Mountains and peaks"
+      },
+      "missions": [
+        "geo-12-mountains",
+        "geo-13-peaks",
+        "geo-14-relief",
+        "geo-17-ski"
+      ]
+    },
+    {
+      "title": {
+        "bg": "Из цяла България",
+        "en": "All over Bulgaria"
+      },
+      "missions": [
+        "geo-15-provinces",
+        "geo-16-neighbours",
+        "geo-18-springs",
+        "geo-19-cities"
+      ]
     }
   ]
 }

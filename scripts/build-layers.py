@@ -6,6 +6,13 @@ Sources (downloaded once; nothing is fetched while the app runs):
     https://github.com/nvkelso/natural-earth-vector/tree/master/geojson
   - OpenStreetMap (© OpenStreetMap contributors, ODbL) via the Overpass API — rivers missing from Natural Earth
     (Iskar, Vit, Osam). Optional file rivers-osm.json in the same folder.
+  - rivers-dem.json from scripts/build-rivers-dem.py — the Iskar, Vit, Osam (missing from Natural Earth) and the
+    Maritsa, Struma, Tundzha, Arda, Mesta traced from the REAL elevation data (Terrain Tiles), checked against the
+    towns on each river. They replace Natural Earth's lines (and OSM's) for those rivers.
+
+Rivers traced from the elevation data (and the Danube) also get `t`: ONE continuous line from the source to the mouth
+(the part inside the map), for the "follow the river" game. The Danube's Natural Earth pieces are chained end to end
+and turned by FLOWS (the way the water goes). Natural Earth's other rivers come in pieces that cannot be trusted to chain.
 
   python3 scripts/build-layers.py <folder with the geojson files>
 
@@ -148,6 +155,58 @@ RANGES = [  # label position (lat, lon) — roughly the middle of each range, ch
 SEA = ('black-sea', 42.95, 28.55, ('Черно море', 'Black Sea'))
 
 
+# Which way the water goes on the map: the mouth end is further in this direction (x grows east, y grows south).
+FLOWS = {'danube': (1, 0), 'iskar': (0, -1), 'vit': (0, -1), 'osam': (0, -1), 'ogosta': (1, -1), 'yantra': (0, -1),
+         'maritsa': (1, 1), 'tundzha': (0, 1), 'arda': (1, 0), 'struma': (0, 1), 'mesta': (0, 1), 'kamchia': (1, 0)}
+
+
+def chain(segs):
+    """Join line pieces into one line. Pieces that repeat a kept piece (the two Natural Earth files overlap) are dropped;
+    then, from the longest, keep adding the piece whose end is nearest."""
+    d = lambda a, b: math.hypot(a[0] - b[0], a[1] - b[1])
+    kept = []
+    for seg in sorted((list(x) for x in segs), key=len, reverse=True):
+        pts = [p for k in kept for p in k]
+        if pts and sum(min(d(q, p) for p in pts) < 3 for q in seg) >= 0.8 * len(seg):
+            continue
+        kept.append(seg)
+    line = kept.pop(0)
+    while kept:
+        options = []
+        for i, sg in enumerate(kept):
+            options += [(d(line[-1], sg[0]), i, False, True), (d(line[-1], sg[-1]), i, True, True),
+                        (d(line[0], sg[-1]), i, False, False), (d(line[0], sg[0]), i, True, False)]
+        _, i, flip, at_end = min(options)
+        sg = kept.pop(i)
+        if flip:
+            sg = sg[::-1]
+        line = line + sg if at_end else sg + line
+    return line
+
+
+def trace_line(rid, segs, from_dem):
+    pts = chain([[proj(x, y) for x, y in s] for s in segs])
+    # only the part on the map (the Danube runs off the top before Vidin and after Silistra): the longest run inside
+    runs, run = [], []
+    for p in pts:
+        if 0 <= p[0] <= MAP_W and 0 <= p[1] <= MAP_H:
+            run.append(p)
+        elif run:
+            runs.append(run); run = []
+    runs.append(run)
+    pts = max(runs, key=len)
+    if rid == 'danube':  # the Bulgarian Danube: from the mouth of the Timok (border with Serbia) to Silistra
+        a = min(range(len(pts)), key=lambda i: math.dist(pts[i], proj(22.676, 44.217)))
+        b = min(range(len(pts)), key=lambda i: math.dist(pts[i], proj(27.262, 44.118)))
+        pts = pts[a:b + 1]
+    if not from_dem:  # the DEM line is already source → mouth
+        fx, fy = FLOWS[rid]
+        if (pts[-1][0] - pts[0][0]) * fx + (pts[-1][1] - pts[0][1]) * fy < 0:
+            pts = pts[::-1]
+    keep = [p for p in simplify(pts, 1.2)]
+    return [[round(x, 1), round(y, 1)] for x, y in keep]
+
+
 def in_frame(x, y, m=40):
     return -m <= x <= MAP_W + m and -m <= y <= MAP_H + m
 
@@ -210,6 +269,17 @@ def main():
             lines = [[(pt['lon'], pt['lat']) for pt in m['geometry']] for m in e.get('members', []) if m.get('type') == 'way' and m.get('role') in ('', 'main_stream') and m.get('geometry')]
             rivers[rid] = (RIVERS[name], lines)
             sources.add('OpenStreetMap')
+    dem = SRC / 'rivers-dem.json'
+    from_dem = set()
+    if dem.exists():
+        # The traced rivers WIN over Natural Earth: they are one line from the source to the mouth, checked against the
+        # towns on them, while Natural Earth's pieces of the Maritsa and the Struma include parts of tributaries.
+        by_bg = {meta[1]: meta for meta in RIVERS.values()}
+        for r in json.loads(dem.read_text())['rivers']:
+            meta = by_bg[r['name']]
+            rivers[meta[0]] = (meta, [r['line']])
+            from_dem.add(meta[0])
+            sources.add('Terrain Tiles')
     out_rivers = []
     for rid, (meta, lines) in rivers.items():
         segs = []
@@ -223,7 +293,8 @@ def main():
         inside_bg = [p for p in pts if 0 <= p[0] <= MAP_W and 0 <= p[1] <= MAP_H]
         mid = inside_bg[len(inside_bg) // 2] if inside_bg else pts[len(pts) // 2]
         out_rivers.append({'id': rid, 'name': {'bg': meta[1], 'en': meta[2]}, 'into': {'bg': meta[3], 'en': meta[4]},
-                           'd': path(segs, False, 0.8), 'lx': round(mid[0], 1), 'ly': round(mid[1], 1)})
+                           'd': path(segs, False, 0.8), 'lx': round(mid[0], 1), 'ly': round(mid[1], 1),
+                           **({'t': trace_line(rid, segs, rid in from_dem)} if rid in from_dem or rid == 'danube' else {})})
     out_rivers.sort(key=lambda r: r['id'])
 
     # lakes (reservoirs)

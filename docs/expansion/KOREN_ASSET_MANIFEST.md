@@ -4,14 +4,14 @@
 
 | Статус | Брой |
 |---|---:|
-| В приложението сега (`used`) | 54 |
-| Готови за следващ етап (`ready`) | 180 |
+| В приложението сега (`used`) | 78 |
+| Готови за следващ етап (`ready`) | 156 |
 | Данни (оригинал за препроектиране) (`source`) | 10 |
 | Дубликати на съществуващи картинки (`duplicate`) | 49 |
 | Чакат проверка (не се публикуват) (`review`) | 7 |
 | **Общо** | **300** |
 
-## В приложението сега — 54
+## В приложението сега — 78
 
 | ID | Оригинал | Път в `public/img` / същото като | Етап | Бележка / проверка |
 |---|---|---|---|---|
@@ -23,6 +23,9 @@
 | `city-ruse` | `design/v5/city/city-ruse.png` | `city/ruse.webp` |  | мисии |
 | `city-sofia` | `design/v5/city/city-sofia.png` | `city/sofia.webp` |  | Катедралата в София (история) |
 | `city-varna` | `design/v5/city/city-varna.png` | `city/varna.webp` |  | карта: Варна; Черно море (история) |
+| `city-veliko-tarnovo` | `design/v5/city/city-veliko-tarnovo.png` | `city/veliko-tarnovo.webp` |  | мисии |
+| `game-puzzle-blue` | `design/v5/game/game-puzzle-blue.png` | `game/puzzle-blue.webp` |  | мисии |
+| `game-puzzle-red` | `design/v5/game/game-puzzle-red.png` | `game/puzzle-red.webp` |  | мисии |
 | `hero-kliment-ohridski` | `design/v5/hero/hero-kliment-ohridski.png` | `people/kliment-ohridski.webp` |  | Азбуката на Кирил и Методий (история) · Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста. |
 | `hero-paisiy` | `design/v5/hero/hero-paisiy.png` | `people/paisiy.webp` |  | Паисий (история) · Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста. |
 | `history-asparuh` | `design/v5/history/history-asparuh.png` | `history/asparuh.webp` |  | Хан Аспарух (история) · Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста. |
@@ -32,6 +35,7 @@
 | `history-simeon` | `design/v5/history/history-simeon.png` | `history/simeon.webp` |  | Цар Симеон (история) · Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста. |
 | `koren-celebrate` | `design/v5/koren/koren-celebrate.png` | `poses/koren-celebrate.webp` |  | истории на мисиите (поза celebrate) |
 | `koren-chef` | `design/v5/koren/koren-chef.png` | `poses/koren-chef.webp` |  | мисия „Погача за гости“ |
+| `koren-compass` | `design/v5/koren/koren-compass.png` | `poses/koren-compass.webp` |  | мисии с ориентиране |
 | `koren-encourage` | `design/v5/koren/koren-encourage.png` | `poses/koren-encourage.webp` |  | истории (последната реплика преди играта) |
 | `koren-explorer` | `design/v5/koren/koren-explorer.png` | `poses/koren-explorer.webp` |  | географски мисии |
 | `koren-map` | `design/v5/koren/koren-map.png` | `poses/koren-map.webp` |  | мисии с карта |
@@ -44,11 +48,15 @@
 | `landmark-devils-throat` | `design/v5/landmark/landmark-devils-throat.png` | `landmarks/devils-throat.webp` |  | мисии |
 | `landmark-madara-rider` | `design/v5/landmark/landmark-madara-rider.png` | `landmarks/madara-rider.webp` |  | мисии · Формата да се сравни със снимка на истинския предмет (музей). |
 | `landmark-nessebar` | `design/v5/landmark/landmark-nessebar.png` | `landmarks/nessebar.webp` |  | карта: Несебър; Черно море (история) |
+| `minigame-river-route` | `design/v5/minigame/minigame-river-route.png` | `minigame/river-route.webp` |  | мисии |
 | `mountain-balkan` | `design/v5/mountain/mountain-balkan.png` | `geo/balkan.webp` |  | Шипка (история) |
+| `mountain-pirin` | `design/v5/mountain/mountain-pirin.png` | `geo/pirin.webp` |  | мисии |
 | `mountain-rhodopes` | `design/v5/mountain/mountain-rhodopes.png` | `geo/rhodopes.webp` |  | мисии |
 | `mountain-rila` | `design/v5/mountain/mountain-rila.png` | `geo/rila.webp` |  | Рила; Приятелите от Рила (история) |
 | `mountain-vitosha` | `design/v5/mountain/mountain-vitosha.png` | `geo/vitosha.webp` |  | мисии |
 | `nature-black-sea` | `design/v5/nature/nature-black-sea.png` | `nature/black-sea.webp` |  | Черно море (история) |
+| `nature-danube-plain` | `design/v5/nature/nature-danube-plain.png` | `nature/danube-plain.webp` |  | мисии |
+| `nature-thracian-lowland` | `design/v5/nature/nature-thracian-lowland.png` | `nature/thracian-lowland.webp` |  | мисии |
 | `peak-botev` | `design/v5/peak/peak-botev.png` | `geo/botev.webp` |  | мисии · Силуетът на върха да се сравни със снимка. |
 | `peak-musala` | `design/v5/peak/peak-musala.png` | `geo/musala.webp` |  | карта: Мусала; Рила (история) · Силуетът на върха да се сравни със снимка. |
 | `peak-vihren` | `design/v5/peak/peak-vihren.png` | `geo/vihren.webp` |  | мисии · Силуетът на върха да се сравни със снимка. |
@@ -60,17 +68,33 @@
 | `raya-nature` | `design/v5/raya/raya-nature.png` | `poses/raya-nature.webp` |  | мисии за животни и природа |
 | `raya-reading` | `design/v5/raya/raya-reading.png` | `poses/raya-reading.webp` |  | мисии за история и език |
 | `raya-treasure` | `design/v5/raya/raya-treasure.png` | `poses/raya-treasure.webp` |  | мисии със съкровища |
+| `raya-winter` | `design/v5/raya/raya-winter.png` | `poses/raya-winter.webp` |  | мисия „Баба Марта“ |
+| `river-danube` | `design/v5/river/river-danube.png` | `geo/danube.webp` |  | мисии |
+| `river-iskar` | `design/v5/river/river-iskar.png` | `geo/iskar.webp` |  | мисии |
+| `river-maritsa` | `design/v5/river/river-maritsa.png` | `geo/maritsa.webp` |  | мисии |
+| `river-struma` | `design/v5/river/river-struma.png` | `geo/struma.webp` |  | мисии |
+| `river-yantra` | `design/v5/river/river-yantra.png` | `geo/yantra.webp` |  | мисии |
 | `science-rose-distillation` | `design/v5/science/science-rose-distillation.png` | `science/rose-distillation.webp` |  | Долината на розите (история) |
+| `terrain-cave` | `design/v5/terrain/terrain-cave.png` | `geo/cave.webp` |  | мисии |
+| `terrain-coast` | `design/v5/terrain/terrain-coast.png` | `geo/coast.webp` |  | мисии |
+| `terrain-forest` | `design/v5/terrain/terrain-forest.png` | `geo/forest.webp` |  | мисии |
 | `terrain-lake` | `design/v5/terrain/terrain-lake.png` | `geo/lake.webp` |  | Край езерцето (история) |
+| `terrain-lowland` | `design/v5/terrain/terrain-lowland.png` | `geo/lowland.webp` |  | мисии |
+| `terrain-mountain` | `design/v5/terrain/terrain-mountain.png` | `geo/mountain.webp` |  | мисии |
+| `terrain-plain` | `design/v5/terrain/terrain-plain.png` | `geo/plain.webp` |  | мисии |
+| `terrain-plateau` | `design/v5/terrain/terrain-plateau.png` | `geo/plateau.webp` |  | мисии |
 | `terrain-river` | `design/v5/terrain/terrain-river.png` | `geo/river.webp` |  | Пътят на реката (история) |
+| `terrain-valley` | `design/v5/terrain/terrain-valley.png` | `geo/valley.webp` |  | мисии |
 | `tradition-bulgarian-costume` | `design/v5/tradition/tradition-bulgarian-costume.png` | `culture/bulgarian-costume.webp` |  | Копривщица и носията; Облечи носията (история) |
+| `world-border-crossing` | `design/v5/world/world-border-crossing.png` | `places/border-crossing.webp` |  | мисии |
 | `world-mineral-hisarya` | `design/v5/world/world-mineral-hisarya.png` | `places/mineral-hisarya.webp` |  | мисии |
 | `world-mineral-sandanski` | `design/v5/world/world-mineral-sandanski.png` | `places/mineral-sandanski.webp` |  | мисии |
 | `world-mineral-velingrad` | `design/v5/world/world-mineral-velingrad.png` | `places/mineral-velingrad.webp` |  | мисии |
+| `world-ski-bansko` | `design/v5/world/world-ski-bansko.png` | `places/ski-bansko.webp` |  | мисии |
 | `world-ski-borovets` | `design/v5/world/world-ski-borovets.png` | `places/ski-borovets.webp` |  | мисии |
 | `world-ski-pamporovo` | `design/v5/world/world-ski-pamporovo.png` | `places/ski-pamporovo.webp` |  | мисии |
 
-## Готови за следващ етап — 180
+## Готови за следващ етап — 156
 
 | ID | Оригинал | Път в `public/img` / същото като | Етап | Бележка / проверка |
 |---|---|---|---|---|
@@ -86,7 +110,6 @@
 | `avatar-rose-accessory` | `design/v5/avatar/avatar-rose-accessory.png` | `avatar/rose-accessory.webp` | 9 |  |
 | `avatar-traditional-belt` | `design/v5/avatar/avatar-traditional-belt.png` | `avatar/traditional-belt.webp` | 9 |  |
 | `city-koprivshtitsa` | `design/v5/city/city-koprivshtitsa.png` | `city/koprivshtitsa.webp` | 2 |  |
-| `city-veliko-tarnovo` | `design/v5/city/city-veliko-tarnovo.png` | `city/veliko-tarnovo.webp` | 2 |  |
 | `currency-coin-bag` | `design/v5/currency/currency-coin-bag.png` | `currency/coin-bag.webp` | 9 |  |
 | `currency-coin-stack` | `design/v5/currency/currency-coin-stack.png` | `currency/coin-stack.webp` | 9 |  |
 | `currency-gold-coin` | `design/v5/currency/currency-gold-coin.png` | `currency/gold-coin.webp` | 9 |  |
@@ -112,8 +135,6 @@
 | `game-mission-complete` | `design/v5/game/game-mission-complete.png` | `game/mission-complete.webp` | 9 |  |
 | `game-paint-bucket` | `design/v5/game/game-paint-bucket.png` | `game/paint-bucket.webp` | 6 |  |
 | `game-paintbrush` | `design/v5/game/game-paintbrush.png` | `game/paintbrush.webp` | 6 |  |
-| `game-puzzle-blue` | `design/v5/game/game-puzzle-blue.png` | `game/puzzle-blue.webp` | 9 |  |
-| `game-puzzle-red` | `design/v5/game/game-puzzle-red.png` | `game/puzzle-red.webp` | 9 |  |
 | `game-timer` | `design/v5/game/game-timer.png` | `game/timer.webp` | 9 |  |
 | `game-true-false-false` | `design/v5/game/game-true-false-false.svg` | `game/true-false-false.svg` | 9 |  |
 | `game-true-false-true` | `design/v5/game/game-true-false-true.svg` | `game/true-false-true.svg` | 9 |  |
@@ -150,7 +171,6 @@
 | `ingredient-pepper` | `design/v5/ingredient/ingredient-pepper.png` | `food/pepper.webp` | 6 |  |
 | `ingredient-tomato` | `design/v5/ingredient/ingredient-tomato.png` | `food/tomato.webp` | 6 |  |
 | `ingredient-yogurt` | `design/v5/ingredient/ingredient-yogurt.png` | `food/yogurt.webp` | 6 |  |
-| `koren-compass` | `design/v5/koren/koren-compass.png` | `poses/koren-compass.webp` | 5 |  |
 | `koren-treasure` | `design/v5/koren/koren-treasure.png` | `poses/koren-treasure.webp` | 5 |  |
 | `minigame-beach-trash` | `design/v5/minigame/minigame-beach-trash.png` | `minigame/beach-trash.webp` | 4 |  |
 | `minigame-bulgaria-flag` | `design/v5/minigame/minigame-bulgaria-flag.svg` | `minigame/bulgaria-flag.svg` | 3 | Цветовете да се сравнят с официалните (бяло, зелено #00966E, червено #D62612). |
@@ -167,23 +187,13 @@
 | `minigame-hidden-object-scene` | `design/v5/minigame/minigame-hidden-object-scene.png` | `minigame/hidden-object-scene.webp` | 7 |  |
 | `minigame-pottery-wheel` | `design/v5/minigame/minigame-pottery-wheel.png` | `minigame/pottery-wheel.webp` | 6 |  |
 | `minigame-recycling-bin` | `design/v5/minigame/minigame-recycling-bin.png` | `minigame/recycling-bin.webp` | 4 |  |
-| `minigame-river-route` | `design/v5/minigame/minigame-river-route.png` | `minigame/river-route.webp` | 3 |  |
 | `minigame-woodcarving-board` | `design/v5/minigame/minigame-woodcarving-board.png` | `minigame/woodcarving-board.webp` | 6 |  |
-| `mountain-pirin` | `design/v5/mountain/mountain-pirin.png` | `geo/pirin.webp` | 3 |  |
-| `nature-danube-plain` | `design/v5/nature/nature-danube-plain.png` | `nature/danube-plain.webp` | 3 |  |
 | `nature-red-book` | `design/v5/nature/nature-red-book.png` | `nature/red-book.webp` | 4 |  |
-| `nature-thracian-lowland` | `design/v5/nature/nature-thracian-lowland.png` | `nature/thracian-lowland.webp` | 3 |  |
 | `plant-edelweiss` | `design/v5/plant/plant-edelweiss.png` | `nature/edelweiss.webp` | 4 |  |
 | `plant-pirin-tea` | `design/v5/plant/plant-pirin-tea.png` | `nature/pirin-tea.webp` | 4 |  |
 | `plant-rhodope-haberlea` | `design/v5/plant/plant-rhodope-haberlea.png` | `nature/rhodope-haberlea.webp` | 4 |  |
 | `raya-chef` | `design/v5/raya/raya-chef.png` | `poses/raya-chef.webp` | 5 |  |
-| `raya-winter` | `design/v5/raya/raya-winter.png` | `poses/raya-winter.webp` | 5 |  |
-| `river-danube` | `design/v5/river/river-danube.png` | `geo/danube.webp` | 3 |  |
-| `river-iskar` | `design/v5/river/river-iskar.png` | `geo/iskar.webp` | 3 |  |
-| `river-maritsa` | `design/v5/river/river-maritsa.png` | `geo/maritsa.webp` | 3 |  |
-| `river-struma` | `design/v5/river/river-struma.png` | `geo/struma.webp` | 3 |  |
 | `river-tundzha` | `design/v5/river/river-tundzha.png` | `geo/tundzha.webp` | 3 |  |
-| `river-yantra` | `design/v5/river/river-yantra.png` | `geo/yantra.webp` | 3 |  |
 | `science-atanasoff-computer` | `design/v5/science/science-atanasoff-computer.png` | `science/atanasoff-computer.webp` | 8 | Формата да се сравни със снимка на истинския предмет (музей). |
 | `science-bulgarian-yogurt` | `design/v5/science/science-bulgarian-yogurt.png` | `science/bulgarian-yogurt.webp` | 8 |  |
 | `science-computer` | `design/v5/science/science-computer.png` | `science/computer.webp` | 8 |  |
@@ -198,14 +208,6 @@
 | `space-food` | `design/v5/space/space-food.png` | `space/food.webp` | 8 |  |
 | `space-rocket` | `design/v5/space/space-rocket.png` | `space/rocket.webp` | 8 |  |
 | `space-satellite` | `design/v5/space/space-satellite.png` | `space/satellite.webp` | 8 |  |
-| `terrain-cave` | `design/v5/terrain/terrain-cave.png` | `geo/cave.webp` | 3 |  |
-| `terrain-coast` | `design/v5/terrain/terrain-coast.png` | `geo/coast.webp` | 3 |  |
-| `terrain-forest` | `design/v5/terrain/terrain-forest.png` | `geo/forest.webp` | 3 |  |
-| `terrain-lowland` | `design/v5/terrain/terrain-lowland.png` | `geo/lowland.webp` | 3 |  |
-| `terrain-mountain` | `design/v5/terrain/terrain-mountain.png` | `geo/mountain.webp` | 3 |  |
-| `terrain-plain` | `design/v5/terrain/terrain-plain.png` | `geo/plain.webp` | 3 |  |
-| `terrain-plateau` | `design/v5/terrain/terrain-plateau.png` | `geo/plateau.webp` | 3 |  |
-| `terrain-valley` | `design/v5/terrain/terrain-valley.png` | `geo/valley.webp` | 3 |  |
 | `tradition-christmas-bread` | `design/v5/tradition/tradition-christmas-bread.png` | `culture/christmas-bread.webp` | 6 |  |
 | `tradition-easter-basket` | `design/v5/tradition/tradition-easter-basket.png` | `culture/easter-basket.webp` | 6 |  |
 | `tradition-easter-eggs` | `design/v5/tradition/tradition-easter-eggs.png` | `culture/easter-eggs.webp` | 6 |  |
@@ -239,7 +241,6 @@
 | `ui-settings` | `design/v5/ui/ui-settings.png` | `ui/settings.webp` | 9 |  |
 | `ui-sound` | `design/v5/ui/ui-sound.png` | `ui/sound.webp` | 9 |  |
 | `ui-unlock` | `design/v5/ui/ui-unlock.png` | `ui/unlock.webp` | 9 |  |
-| `world-border-crossing` | `design/v5/world/world-border-crossing.png` | `places/border-crossing.webp` | 8 |  |
 | `world-bulgaria-granary` | `design/v5/world/world-bulgaria-granary.png` | `places/bulgaria-granary.webp` | 3 |  |
 | `world-car-license-plate` | `design/v5/world/world-car-license-plate.svg` | `places/car-license-plate.svg` | 8 |  |
 | `world-customs` | `design/v5/world/world-customs.png` | `places/customs.webp` | 8 |  |
@@ -247,7 +248,6 @@
 | `world-name-day-calendar` | `design/v5/world/world-name-day-calendar.svg` | `places/name-day-calendar.svg` | 6 |  |
 | `world-panagyurishte-treasure` | `design/v5/world/world-panagyurishte-treasure.png` | `places/panagyurishte-treasure.webp` | 5 | Формата да се сравни със снимка на истинския предмет (музей). |
 | `world-rogozen-treasure` | `design/v5/world/world-rogozen-treasure.png` | `places/rogozen-treasure.webp` | 5 | Формата да се сравни със снимка на истинския предмет (музей). |
-| `world-ski-bansko` | `design/v5/world/world-ski-bansko.png` | `places/ski-bansko.webp` | 2 |  |
 | `world-sports-football` | `design/v5/world/world-sports-football.png` | `places/sports-football.webp` | 8 |  |
 | `world-sports-high-jump` | `design/v5/world/world-sports-high-jump.png` | `places/sports-high-jump.webp` | 8 |  |
 | `world-sports-tennis` | `design/v5/world/world-sports-tennis.png` | `places/sports-tennis.webp` | 8 |  |

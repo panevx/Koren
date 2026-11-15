@@ -1,0 +1,298 @@
+{
+  "id": "geo-13-peaks",
+  "subject": "geography",
+  "free": true,
+  "order": 56,
+  "unlock": {
+    "after": [
+      "geo-12-mountains"
+    ]
+  },
+  "badge": {
+    "id": "peaks",
+    "icon": "geo/musala.webp"
+  },
+  "title": {
+    "bg": "Към върха!",
+    "en": "To the top!"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "winter",
+          "bg": "Да се качим високо, високо – на върха!",
+          "en": "Let's climb high, high up – to the top!",
+          "img": "geo/musala.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Кое е високо и кое е ниско?",
+          "en": "What is high and what is low?"
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Кое е по-високо?",
+              "en": "Which is higher?"
+            },
+            "options": [
+              {
+                "bg": "Поле",
+                "en": "Field",
+                "img": "geo/plain.webp"
+              },
+              {
+                "bg": "Планина",
+                "en": "Mountain",
+                "img": "geo/mountain.webp"
+              }
+            ],
+            "answer": 1,
+            "hint": {
+              "bg": "Високото стига до облаците.",
+              "en": "High things reach the clouds."
+            }
+          },
+          {
+            "q": {
+              "bg": "Най-високият връх у нас е Мусала. Покажи го!",
+              "en": "Our highest peak is Musala. Show it!"
+            },
+            "options": [
+              {
+                "bg": "Плаж",
+                "en": "Beach",
+                "img": "geo/coast.webp"
+              },
+              {
+                "bg": "Мусала",
+                "en": "Musala",
+                "img": "geo/musala.webp"
+              },
+              {
+                "bg": "Езеро",
+                "en": "Lake",
+                "img": "geo/lake.webp"
+              }
+            ],
+            "answer": 1
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "explorer",
+          "bg": "Мусала е най-високият връх в България – 2925 метра.",
+          "en": "Musala is the highest peak in Bulgaria – 2,925 metres.",
+          "img": "geo/musala.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "map",
+          "bg": "Вихрен е само 11 метра по-нисък!",
+          "en": "Vihren is only 11 metres lower!",
+          "img": "geo/vihren.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Подреди върховете от най-високия.",
+          "en": "Put the peaks in order, the highest first."
+        }
+      ],
+      "game": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди върховете – от най-високия!",
+          "en": "Order the peaks – the highest first!"
+        },
+        "items": [
+          {
+            "bg": "Мусала",
+            "en": "Musala",
+            "img": "geo/musala.webp"
+          },
+          {
+            "bg": "Вихрен",
+            "en": "Vihren",
+            "img": "geo/vihren.webp"
+          },
+          {
+            "bg": "Ботев",
+            "en": "Botev",
+            "img": "geo/botev.webp"
+          },
+          {
+            "bg": "Черни връх",
+            "en": "Cherni Vrah",
+            "img": "geo/vitosha.webp"
+          }
+        ],
+        "hint": {
+          "bg": "Мусала 2925 м, Вихрен 2914 м, Ботев 2376 м, Черни връх 2290 м.",
+          "en": "Musala 2,925 m, Vihren 2,914 m, Botev 2,376 m, Cherni Vrah 2,290 m."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Колко висок е Мусала?",
+            "en": "How high is Musala?"
+          },
+          "options": [
+            {
+              "bg": "925 м",
+              "en": "925 m"
+            },
+            {
+              "bg": "2925 м",
+              "en": "2,925 m"
+            },
+            {
+              "bg": "9225 м",
+              "en": "9,225 m"
+            }
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "explorer",
+          "bg": "Мусала (2925 м) е най-високият връх на целия Балкански полуостров.",
+          "en": "Musala (2,925 m) is the highest peak of the whole Balkan Peninsula.",
+          "img": "geo/musala.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "compass",
+          "bg": "Подреди петте върха – най-високите в своите планини.",
+          "en": "Order the five peaks – each the highest of its mountain."
+        }
+      ],
+      "game": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди върховете – от най-високия!",
+          "en": "Order the peaks – the highest first!"
+        },
+        "items": [
+          {
+            "bg": "Мусала",
+            "en": "Musala",
+            "img": "geo/musala.webp"
+          },
+          {
+            "bg": "Вихрен",
+            "en": "Vihren",
+            "img": "geo/vihren.webp"
+          },
+          {
+            "bg": "Ботев",
+            "en": "Botev",
+            "img": "geo/botev.webp"
+          },
+          {
+            "bg": "Черни връх",
+            "en": "Cherni Vrah",
+            "img": "geo/vitosha.webp"
+          },
+          {
+            "bg": "Голям Перелик",
+            "en": "Golyam Perelik",
+            "img": "geo/rhodopes.webp"
+          }
+        ],
+        "hint": {
+          "bg": "Рила и Пирин са най-високи; после Стара планина, Витоша и Родопите.",
+          "en": "Rila and Pirin are the highest; then the Balkan Mountains, Vitosha and the Rhodopes."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Мусала е най-високият връх на…",
+            "en": "Musala is the highest peak of…"
+          },
+          "options": [
+            {
+              "bg": "Балканския полуостров",
+              "en": "the Balkan Peninsula"
+            },
+            {
+              "bg": "Европа",
+              "en": "Europe"
+            },
+            {
+              "bg": "света",
+              "en": "the world"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "В коя планина е Вихрен?",
+            "en": "Which mountain is Vihren in?"
+          },
+          "options": [
+            {
+              "bg": "Рила",
+              "en": "Rila"
+            },
+            {
+              "bg": "Пирин",
+              "en": "Pirin"
+            },
+            {
+              "bg": "Витоша",
+              "en": "Vitosha"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Ботев е най-високият връх на…",
+            "en": "Botev is the highest peak of…"
+          },
+          "options": [
+            {
+              "bg": "Стара планина",
+              "en": "the Balkan Mountains"
+            },
+            {
+              "bg": "Родопите",
+              "en": "the Rhodopes"
+            },
+            {
+              "bg": "Странджа",
+              "en": "Strandzha"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Енциклопедия „България“, БАН",
+    "НСИ – Статистически годишник, раздел „Географски данни“ (реки, върхове)",
+    "Учебници по „Човекът и природата“ (4. кл.) и „География и икономика“ (5.–6. кл.), МОН"
+  ],
+  "review": null,
+  "draft": true
+}

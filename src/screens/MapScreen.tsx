@@ -28,8 +28,10 @@ type Selection = { kind: 'place' | 'province' | 'river' | 'lake' | 'peak' | 'nei
 const placesFor = (mode: Mode, missions: readonly Mission[]): MapPlace[] => {
   const has = (p: MapPlace, ...tags: string[]) => p.tags.some((t) => tags.includes(t))
   const withMission = (p: MapPlace) => missions.some((x) => x.place === p.id)
+  // Landmarks: history and nature, plus a city with a mission. A resort or a spa with a mission (v0.16) stays in
+  // "tourism" — on a small map for 4–6 year olds every extra marker crowds the others.
   return PLACES.filter((p) => p.onMap).filter((p) =>
-    mode === 'cities' ? has(p, 'city') : mode === 'tourism' ? has(p, 'ski', 'spa', 'cave') : mode === 'landmarks' ? has(p, 'history', 'nature') || withMission(p) : false,
+    mode === 'cities' ? has(p, 'city') : mode === 'tourism' ? has(p, 'ski', 'spa', 'cave') : mode === 'landmarks' ? has(p, 'history', 'nature') || (withMission(p) && has(p, 'city')) : false,
   )
 }
 
