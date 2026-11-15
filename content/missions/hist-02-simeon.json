@@ -30,27 +30,39 @@
         {
           "hero": "koren",
           "pose": "point",
-          "bg": "Намери крепостта на картата!",
-          "en": "Find the fortress on the map!"
+          "bg": "Намери еднаквите карти!",
+          "en": "Find the matching cards!"
         }
       ],
       "game": {
-        "type": "map",
-        "target": "veliki-preslav",
-        "choices": [
-          "veliki-preslav",
-          "musala",
-          "varna"
-        ],
+        "type": "memory",
         "prompt": {
-          "bg": "Намери крепостта!",
-          "en": "Find the fortress!"
+          "bg": "Обърни картите и намери еднаквите!",
+          "en": "Turn the cards and find the matching ones!"
         },
-        "hint": {
-          "bg": "Крепостта е вдясно, далеч от планината.",
-          "en": "The fortress is on the right, far from the mountain."
-        },
-        "showIcons": true
+        "pairs": [
+          {
+            "a": {
+              "bg": "Корона",
+              "en": "Crown",
+              "img": "world/simeon-crown.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Книга",
+              "en": "Book",
+              "img": "world/medieval-book.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Перо",
+              "en": "Quill",
+              "img": "world/quill-ink.webp"
+            }
+          }
+        ]
       },
       "check": []
     },
@@ -294,5 +306,10 @@
     "[учебник/помагало – издателство и страница: попълва учителят]"
   ],
   "review": null,
-  "draft": true
+  "draft": true,
+  "unlock": {
+    "after": [
+      "hist-01-asparuh"
+    ]
+  }
 }

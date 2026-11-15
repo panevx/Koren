@@ -55,6 +55,8 @@ export const Place = z
     lat: z.number().min(41).max(44.3),
     lon: z.number().min(22.3).max(28.7),
     name: Text,
+    /** 3D landmark picture shown on the map and in games (optional). */
+    img: ImgPath.optional(),
   })
   .strict()
 
@@ -109,11 +111,121 @@ export const PuzzleGame = z
   })
   .strict()
 
+/** A picture with a name in both languages (the picture is required). */
+export const Thing = z.object({ bg: nonEmpty, en: nonEmpty, img: ImgPath }).strict()
+
+export const SCENES = ['forest', 'mountain', 'sea', 'village', 'castle', 'meadow'] as const
+
 /**
- * One entry per game template (all 5 since v0.5). A new template is added here
+ * "Find the hidden": an illustrated scene; the child finds every `target` item.
+ * An item with `under` is hidden behind that picture (a bush, a rock…) until tapped.
+ * x, y = centre in % of the scene; size = width in % of the scene.
+ */
+export const FindGame = z
+  .object({
+    type: z.literal('find'),
+    prompt: Text,
+    scene: z.enum(SCENES),
+    items: z
+      .array(
+        Thing.extend({
+          x: z.number().min(5).max(95),
+          y: z.number().min(8).max(92),
+          size: z.number().min(10).max(40),
+          target: z.boolean().default(false),
+          under: ImgPath.optional(),
+        }).strict(),
+      )
+      .min(2)
+      .max(12),
+    hint: Text.optional(),
+  })
+  .strict()
+  .refine((g) => g.items.some((i) => i.target), { message: 'at least one target', path: ['items'] })
+
+/** Sort into boxes: every item belongs to one of 2–3 bins. */
+export const SortGame = z
+  .object({
+    type: z.literal('sort'),
+    prompt: Text,
+    bins: z.array(Option).min(2).max(3),
+    items: z.array(Option.extend({ bin: z.number().int().min(0), why: Text.optional() }).strict()).min(3).max(9),
+    hint: Text.optional(),
+  })
+  .strict()
+  .refine((g) => g.items.every((i) => i.bin < g.bins.length), { message: 'bin must point to an existing box', path: ['items'] })
+  .refine((g) => distinct(g.items), { message: 'items must be different', path: ['items'] })
+
+/** Memory: flip two cards at a time. Without `b` both cards show the same picture. */
+export const MemoryGame = z
+  .object({ type: z.literal('memory'), prompt: Text, pairs: z.array(z.object({ a: Thing, b: Option.optional() }).strict()).min(2).max(8) })
+  .strict()
+  .refine((g) => distinct(g.pairs.map((p) => p.a)), { message: 'pairs must be different', path: ['pairs'] })
+
+/**
+ * Treasure chest: put only the things that belong to `goal` in the chest.
+ * A wrong thing jumps back out and Raya explains `why`. When all are in, the chest opens and shows `reward`.
+ */
+export const ChestGame = z
+  .object({
+    type: z.literal('chest'),
+    prompt: Text,
+    items: z.array(Thing.extend({ belongs: z.boolean(), why: Text.optional() }).strict()).min(3).max(8),
+    reward: Text,
+  })
+  .strict()
+  .refine((g) => g.items.some((i) => i.belongs) && g.items.some((i) => !i.belongs), {
+    message: 'the chest needs things that belong and things that do not',
+    path: ['items'],
+  })
+
+/** Build Bulgaria: put each piece on its place on the map. `decoys` are empty spots that fit nothing. */
+export const BuildGame = z
+  .object({
+    type: z.literal('build'),
+    prompt: Text,
+    pieces: z.array(z.object({ place: z.string(), img: ImgPath, hint: Text.optional() }).strict()).min(2).max(6),
+    decoys: z.array(z.string()).max(4).default([]),
+    /** Show place names next to the empty spots (for younger children). */
+    labels: z.boolean().default(false),
+  })
+  .strict()
+  .refine((g) => new Set([...g.pieces.map((p) => p.place), ...g.decoys]).size === g.pieces.length + g.decoys.length, {
+    message: 'every place may be used only once',
+    path: ['pieces'],
+  })
+
+/** Guess the place: clues are shown one by one; the child taps the place on the map. */
+export const GuessGame = z
+  .object({
+    type: z.literal('guess'),
+    prompt: Text,
+    clues: z.array(Thing).min(2).max(4),
+    target: z.string(),
+    choices: z.array(z.string()).min(3).max(8),
+    fact: Text,
+  })
+  .strict()
+  .refine((g) => g.choices.includes(g.target), { message: 'choices must include the target', path: ['choices'] })
+  .refine((g) => new Set(g.choices).size === g.choices.length, { message: 'choices must be unique', path: ['choices'] })
+
+/**
+ * One entry per game template (11 since v0.12). A new template is added here
  * and in src/games without touching the mission screen.
  */
-export const Game = z.discriminatedUnion('type', [QuizGame, MapGame, MatchGame, OrderGame, PuzzleGame])
+export const Game = z.discriminatedUnion('type', [
+  QuizGame,
+  MapGame,
+  MatchGame,
+  OrderGame,
+  PuzzleGame,
+  FindGame,
+  SortGame,
+  MemoryGame,
+  ChestGame,
+  BuildGame,
+  GuessGame,
+])
 
 export const LevelContent = z
   .object({
@@ -131,6 +243,15 @@ export const Mission = z
     free: z.boolean(),
     order: z.number().int().min(1),
     place: z.string().optional(),
+    /**
+     * Game progression (never a paywall): the mission opens when ANY mission in `after` is done,
+     * or when the child has `badges` badges. No `unlock` = open from the start.
+     */
+    unlock: z
+      .object({ after: z.array(z.string()).min(1).optional(), badges: z.number().int().min(1).optional() })
+      .strict()
+      .refine((u) => u.after || u.badges, 'unlock needs "after" or "badges"')
+      .optional(),
     badge: z.object({ id: z.string().regex(/^[a-z0-9-]+$/), icon: ImgPath }).strict(),
     title: Text,
     levels: z
@@ -157,6 +278,14 @@ export type MapGame = z.infer<typeof MapGame>
 export type MatchGame = z.infer<typeof MatchGame>
 export type OrderGame = z.infer<typeof OrderGame>
 export type PuzzleGame = z.infer<typeof PuzzleGame>
+export type FindGame = z.infer<typeof FindGame>
+export type SortGame = z.infer<typeof SortGame>
+export type MemoryGame = z.infer<typeof MemoryGame>
+export type ChestGame = z.infer<typeof ChestGame>
+export type BuildGame = z.infer<typeof BuildGame>
+export type GuessGame = z.infer<typeof GuessGame>
+export type Thing = z.infer<typeof Thing>
+export type SceneId = (typeof SCENES)[number]
 export type Option = z.infer<typeof Option>
 export type Place = z.infer<typeof Place>
 export type PlaceIcon = (typeof PLACE_ICONS)[number]

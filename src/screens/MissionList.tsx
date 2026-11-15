@@ -1,9 +1,12 @@
 import { Link, useParams } from 'react-router'
 import { BadgeArt } from '../components/BadgeArt'
+import { img } from '../components/Brand'
+import { useProgress } from '../content/useProgress'
+import { ART } from '../world'
 import { Icon } from '../components/Icon'
 import { TimelineLink } from '../components/TimelineLink'
 import { Screen, TopBar } from '../components/ui'
-import { missionsBySubject } from '../content/missions'
+import { MISSIONS, missionsBySubject } from '../content/missions'
 import type { Subject } from '../content/schema'
 import { useLocalized } from '../content/useLocalized'
 import { useT } from '../i18n/useT'
@@ -36,6 +39,7 @@ export function MissionList({ topic }: { topic?: boolean }) {
   const l = useLocalized()
   const params = useParams()
   const done = useActiveProfile().done
+  const progress = useProgress(MISSIONS)
 
   const section = topic ? sectionById(params.id) : sectionById('missions')
   const subject = topic && section ? TOPIC_SUBJECT[section.id] : undefined
@@ -66,6 +70,7 @@ export function MissionList({ topic }: { topic?: boolean }) {
         <m.ul variants={stagger} initial="hidden" animate="show" className="flex flex-col gap-3">
           {missions.map((mission, i) => {
             const isDone = Boolean(done[mission.id])
+            const locked = progress.status(mission) === 'locked'
             return (
               <m.li key={mission.id} variants={rise}>
                 <Link to={`/mission/${mission.id}`} className="press rounded-level flex items-center gap-3 bg-white p-2.5 shadow-soft">
@@ -75,6 +80,8 @@ export function MissionList({ topic }: { topic?: boolean }) {
                       <span className={`rounded-full px-2.5 py-0.5 text-xs font-black tracking-wide whitespace-nowrap text-ink uppercase ${SUBJECT_TINT[mission.subject]}`}>
                         {t(`subject.${mission.subject}`)}
                       </span>
+                      {locked && <span className="rounded-full bg-sand px-2.5 py-0.5 text-xs font-bold whitespace-nowrap text-ink">{t('path.locked')}</span>}
+                      {progress.isNew(mission) && <span className="rounded-full bg-coral px-2.5 py-0.5 text-xs font-black whitespace-nowrap text-coral-ink">{t('unlock.new')}</span>}
                       {mission.draft && <span className="rounded-full bg-sand px-2.5 py-0.5 text-xs font-bold whitespace-nowrap text-ink">{t('missions.draftShort')}</span>}
                     </span>
                     <span className="text-[length:min(1.125rem,5.4vw)] leading-tight font-extrabold">{l(mission.title)}</span>
@@ -85,14 +92,18 @@ export function MissionList({ topic }: { topic?: boolean }) {
                       </span>
                     )}
                   </span>
-                  <span
-                    className={`puck grid size-[min(3rem,12vw)] shrink-0 place-items-center rounded-full ${
-                      isDone ? 'bg-green text-white [--edge:var(--color-green-deep)]' : 'bg-coral text-coral-ink [--edge:var(--color-coral-deep)]'
-                    }`}
-                    aria-hidden="true"
-                  >
-                    <Icon name={isDone ? 'refresh' : 'play'} width="1.3em" height="1.3em" />
-                  </span>
+                  {locked ? (
+                    <img src={img(ART.key)} alt="" className="size-[min(3rem,12vw)] shrink-0 object-contain" />
+                  ) : (
+                    <span
+                      className={`puck grid size-[min(3rem,12vw)] shrink-0 place-items-center rounded-full ${
+                        isDone ? 'bg-green text-white [--edge:var(--color-green-deep)]' : 'bg-coral text-coral-ink [--edge:var(--color-coral-deep)]'
+                      }`}
+                      aria-hidden="true"
+                    >
+                      <Icon name={isDone ? 'refresh' : 'play'} width="1.3em" height="1.3em" />
+                    </span>
+                  )}
                 </Link>
               </m.li>
             )

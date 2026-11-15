@@ -1,0 +1,236 @@
+{
+  "id": "geo-07-build",
+  "subject": "geography",
+  "free": true,
+  "order": 17,
+  "unlock": {
+    "badges": 6
+  },
+  "badge": {
+    "id": "builder",
+    "icon": "world/bridge.webp"
+  },
+  "title": {
+    "bg": "Построй България",
+    "en": "Build Bulgaria"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Да построим България!",
+          "en": "Let's build Bulgaria!"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Сложи всяка забележителност на нейното място.",
+          "en": "Put each landmark in its place."
+        }
+      ],
+      "game": {
+        "type": "build",
+        "prompt": {
+          "bg": "Сложи забележителностите на картата!",
+          "en": "Put the landmarks on the map!"
+        },
+        "labels": true,
+        "pieces": [
+          {
+            "place": "veliko-tarnovo",
+            "img": "world/tsarevets-fortress.webp"
+          },
+          {
+            "place": "varna",
+            "img": "world/black-sea-lighthouse.webp",
+            "hint": {
+              "bg": "Фарът е на брега на морето – вдясно.",
+              "en": "The lighthouse is on the seashore – on the right."
+            }
+          },
+          {
+            "place": "rila-monastery",
+            "img": "world/rila-monastery.webp",
+            "hint": {
+              "bg": "Манастирът е в планината – долу вляво.",
+              "en": "The monastery is in the mountains – bottom left."
+            }
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Пет места, пет чудеса на България!",
+          "en": "Five places, five wonders of Bulgaria!"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Без надписи е по-трудно. Помисли къде е морето, къде са планините и къде е столицата.",
+          "en": "Without labels it is harder. Think where the sea is, where the mountains are and where the capital is."
+        }
+      ],
+      "game": {
+        "type": "build",
+        "prompt": {
+          "bg": "Построй България – сложи всяка забележителност на мястото ѝ!",
+          "en": "Build Bulgaria – put every landmark in its place!"
+        },
+        "pieces": [
+          {
+            "place": "sofia",
+            "img": "world/alexander-nevsky.webp",
+            "hint": {
+              "bg": "Катедралата „Св. Александър Невски“ е в столицата – на запад.",
+              "en": "The Alexander Nevsky Cathedral is in the capital – in the west."
+            }
+          },
+          {
+            "place": "kazanlak",
+            "img": "world/rose-valley.webp",
+            "hint": {
+              "bg": "Розовата долина е в средата на страната, под Стара планина.",
+              "en": "The Rose Valley is in the middle of the country, below the Balkan Mountains."
+            }
+          },
+          {
+            "place": "varna",
+            "img": "world/black-sea-lighthouse.webp",
+            "hint": {
+              "bg": "Фарът е на брега на Черно море.",
+              "en": "The lighthouse is on the Black Sea coast."
+            }
+          },
+          {
+            "place": "belogradchik",
+            "img": "world/belogradchik-rocks.webp",
+            "hint": {
+              "bg": "Скалите са в северозападния ъгъл.",
+              "en": "The rocks are in the north-west corner."
+            }
+          },
+          {
+            "place": "srebarna",
+            "img": "animals/pelican.webp",
+            "hint": {
+              "bg": "Езерото Сребърна е до река Дунав – на север.",
+              "en": "Lake Srebarna is next to the Danube – in the north."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Коя забележителност е край морето?",
+            "en": "Which landmark is by the sea?"
+          },
+          "options": [
+            {
+              "bg": "Фарът",
+              "en": "The lighthouse"
+            },
+            {
+              "bg": "Царевец",
+              "en": "Tsarevets"
+            },
+            {
+              "bg": "Рилският манастир",
+              "en": "The Rila Monastery"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "Майсторско изпитание: има и празни места-капани.",
+          "en": "A master challenge: there are trap spots too."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Само шест места са верни. Мисли за реки, планини и морето!",
+          "en": "Only six spots are right. Think of rivers, mountains and the sea!"
+        }
+      ],
+      "game": {
+        "type": "build",
+        "prompt": {
+          "bg": "Сложи шестте забележителности – внимавай за капаните!",
+          "en": "Place the six landmarks – watch out for the traps!"
+        },
+        "pieces": [
+          {
+            "place": "pliska",
+            "img": "world/pliska.webp"
+          },
+          {
+            "place": "veliko-tarnovo",
+            "img": "world/tsarevets-fortress.webp"
+          },
+          {
+            "place": "belogradchik",
+            "img": "world/belogradchik-rocks.webp"
+          },
+          {
+            "place": "seven-lakes",
+            "img": "world/seven-rila-lakes.webp"
+          },
+          {
+            "place": "koprivshtitsa",
+            "img": "world/koprivshtitsa-house.webp"
+          },
+          {
+            "place": "srebarna",
+            "img": "animals/pelican.webp"
+          }
+        ],
+        "decoys": [
+          "burgas",
+          "balchik"
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Коя е първата столица на България?",
+            "en": "Which was the first capital of Bulgaria?"
+          },
+          "options": [
+            {
+              "bg": "Плиска",
+              "en": "Pliska"
+            },
+            {
+              "bg": "Велико Търново",
+              "en": "Veliko Tarnovo"
+            },
+            {
+              "bg": "Пловдив",
+              "en": "Plovdiv"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Национален туристически регистър – 100 национални туристически обекта",
+    "Енциклопедия „България“, БАН"
+  ],
+  "review": null,
+  "draft": true
+}

@@ -72,56 +72,54 @@
         }
       ],
       "game": {
-        "type": "match",
+        "type": "chest",
         "prompt": {
-          "bg": "Свържи всяко нещо с неговата двойка!",
-          "en": "Match each thing with its pair!"
+          "bg": "Събери в сандъка всичко, свързано с Баба Марта!",
+          "en": "Put everything that belongs to Baba Marta in the chest!"
         },
-        "pairs": [
+        "items": [
           {
-            "a": {
-              "bg": "1 март",
-              "en": "1 March"
-            },
-            "b": {
-              "bg": "Баба Марта",
-              "en": "Baba Marta"
+            "bg": "Мартеница",
+            "en": "Martenitsa",
+            "img": "world/martenitsa-pizho-penda.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Щъркел",
+            "en": "Stork",
+            "img": "animals/stork.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Лястовица",
+            "en": "Swallow",
+            "img": "animals/swallow.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Погача",
+            "en": "Bread",
+            "img": "world/traditional-bread.webp",
+            "belongs": false,
+            "why": {
+              "bg": "Погачата месим за гости и празници като Коледа – тя не е част от Баба Марта.",
+              "en": "We bake bread for guests and holidays like Christmas – it is not part of Baba Marta."
             }
           },
           {
-            "a": {
-              "bg": "Пижо и Пенда",
-              "en": "Pizho and Penda"
-            },
-            "b": {
-              "bg": "Мартенички момче и момиче",
-              "en": "Martenitsa boy and girl"
-            }
-          },
-          {
-            "a": {
-              "bg": "Щъркел или лястовица",
-              "en": "A stork or a swallow"
-            },
-            "b": {
-              "bg": "Време е да свалим мартеницата",
-              "en": "Time to take the martenitsa off"
-            }
-          },
-          {
-            "a": {
-              "bg": "Цъфнало дърво",
-              "en": "A tree in blossom"
-            },
-            "b": {
-              "bg": "Там закачаме мартеницата",
-              "en": "Where we hang the martenitsa"
+            "bg": "Корона",
+            "en": "Crown",
+            "img": "world/simeon-crown.webp",
+            "belongs": false,
+            "why": {
+              "bg": "Короната е на царя. Мартеницата носят всички!",
+              "en": "The crown belongs to a king. Everybody wears a martenitsa!"
             }
           }
         ],
-        "hint": {
-          "bg": "Спомни си какво разказаха Корен и Рая.",
-          "en": "Remember what Koren and Raya told you."
+        "reward": {
+          "bg": "Носим мартеницата, докато видим щъркел или лястовица – първите вестители на пролетта. После я закачаме на цъфнало дърво.",
+          "en": "We wear the martenitsa until we see a stork or a swallow – the first signs of spring. Then we hang it on a blossoming tree."
         }
       },
       "check": [

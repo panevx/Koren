@@ -6,6 +6,9 @@ import { PLACES } from '../src/content/places'
 import { Mission, POSES } from '../src/content/schema'
 import { BULGARIA_OUTLINE } from '../src/map/geo'
 import { insidePolygon, project } from '../src/map/projection'
+import { missionImages } from '../src/offline/assets'
+
+const IMG = resolve(__dirname, '../public/img')
 
 const DIR = resolve(__dirname, '../content/missions')
 const PUBLIC_IMG = resolve(__dirname, '../public/img')
@@ -140,12 +143,6 @@ describe('content/map/places.json', () => {
   })
 })
 
-describe('map controls never cover a place', () => {
-  it('no place is in the bottom-left corner where the zoom buttons sit', () => {
-    // Buttons: 3 × 48 px + gaps ≈ 170 × 60 px on a ~360 px wide map → 47% × 24% of the map.
-    for (const p of PLACES) expect(p.x < 1000 * 0.47 && p.y > 690 * 0.76, p.id).toBe(false)
-  })
-})
 
 describe('map games are fair for younger children', () => {
   // ~1 km per 0.009° latitude; good enough at Bulgaria's size.
@@ -163,5 +160,24 @@ describe('map games are fair for younger children', () => {
             expect(km(pts[i]!, pts[j]!), `${m.id} ${level}: ${pts[i]!.id} – ${pts[j]!.id}`).toBeGreaterThan(50)
       }
     }
+  })
+
+  it('"Build Bulgaria" and "Guess the place": spots are far enough apart not to overlap on a phone', () => {
+    // Empty spots are ~44 px on a ~330 px map (≈ 1 px per 2.3 km): at least 75 km, so circles barely touch.
+    for (const m of MISSIONS) {
+      for (const [level, content] of Object.entries(m.levels)) {
+        const g = content?.game
+        const ids = g?.type === 'build' ? [...g.pieces.map((p) => p.place), ...g.decoys] : g?.type === 'guess' ? g.choices : []
+        const pts = ids.map((id) => PLACES.find((p) => p.id === id))
+        expect(pts.every(Boolean), `${m.id} ${level}: unknown place`).toBe(true)
+        for (let i = 0; i < pts.length; i++)
+          for (let j = i + 1; j < pts.length; j++)
+            expect(km(pts[i]!, pts[j]!), `${m.id} ${level}: ${pts[i]!.id} – ${pts[j]!.id}`).toBeGreaterThan(g?.type === 'build' ? 75 : 50)
+      }
+    }
+  })
+
+  it('every picture in a scene, a piece or a clue exists', () => {
+    for (const m of MISSIONS) for (const path of missionImages(m)) expect(existsSync(join(IMG, path)), `${m.id}: ${path}`).toBe(true)
   })
 })

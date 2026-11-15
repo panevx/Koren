@@ -87,7 +87,7 @@ describe('mission Хан Аспарух (young)', () => {
     expect(JSON.parse(localStorage.getItem(PROFILES_KEY)!).state.profiles[0].badges).toEqual(['asparuh'])
 
     fireEvent.click(screen.getByRole('button', { name: 'Още мисии' }))
-    expect(await screen.findByText('Изиграна')).toBeInTheDocument()
+    expect(await screen.findByRole('button', { name: /Хан Аспарух.*Изиграна/ })).toBeInTheDocument()
   })
 
   it('the Exit button is visible in every phase and leaves without a badge', async () => {
@@ -98,7 +98,7 @@ describe('mission Хан Аспарух (young)', () => {
     // In the middle of the game, one tap only asks — a second tap leaves.
     fireEvent.click(screen.getByRole('button', { name: /Изход/ }))
     fireEvent.click(await screen.findByRole('button', { name: /Докосни пак/ }))
-    expect(await screen.findByRole('link', { name: /Хан Аспарух/ })).toBeInTheDocument()
+    expect(await screen.findByRole('heading', { name: 'Пътят на приключенията' })).toBeInTheDocument()
     expect(activeProfile(useProfiles.getState()).badges).toEqual([])
   })
 
@@ -152,7 +152,14 @@ describe('mission Хан Аспарух (young)', () => {
 
   it('an unknown mission id goes back to the list', async () => {
     renderAt('/mission/nope-99-x')
-    expect(await screen.findByRole('link', { name: /Хан Аспарух/ })).toBeInTheDocument()
+    expect(await screen.findByRole('button', { name: /Хан Аспарух/ })).toBeInTheDocument()
+  })
+
+  it('a locked mission explains how it opens and links to the mission before it', async () => {
+    renderAt('/mission/hist-02-simeon')
+    expect(await screen.findByText('Заключена мисия')).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /Хан Аспарух/ })).toHaveAttribute('href', `/mission/${ID}`)
+    expect(screen.queryByRole('button', { name: /Напред/ })).not.toBeInTheDocument()
   })
 
   it('the History topic lists its missions', async () => {

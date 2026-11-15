@@ -294,5 +294,10 @@
     "[учебник/помагало – издателство и страница: попълва учителят]"
   ],
   "review": null,
-  "draft": true
+  "draft": true,
+  "unlock": {
+    "after": [
+      "cult-01-baba-marta"
+    ]
+  }
 }

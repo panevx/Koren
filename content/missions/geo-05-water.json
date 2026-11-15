@@ -35,93 +35,69 @@
         }
       ],
       "game": {
-        "type": "quiz",
-        "questions": [
+        "type": "find",
+        "prompt": {
+          "bg": "Намери делфина, пеликана и щъркела!",
+          "en": "Find the dolphin, the pelican and the stork!"
+        },
+        "scene": "sea",
+        "items": [
           {
-            "q": {
-              "bg": "Къде е щъркелът?",
-              "en": "Where is the stork?"
-            },
-            "options": [
-              {
-                "bg": "Жаба",
-                "en": "Frog",
-                "img": "animals/frog.webp"
-              },
-              {
-                "bg": "Щъркел",
-                "en": "Stork",
-                "img": "animals/stork.webp"
-              },
-              {
-                "bg": "Костенурка",
-                "en": "Tortoise",
-                "img": "animals/tortoise.webp"
-              }
-            ],
-            "answer": 1,
-            "hint": {
-              "bg": "Той има дълги червени крака.",
-              "en": "It has long red legs."
-            }
+            "bg": "Делфин",
+            "en": "Dolphin",
+            "img": "animals/dolphin.webp",
+            "x": 30,
+            "y": 50,
+            "size": 22,
+            "target": true
           },
           {
-            "q": {
-              "bg": "Къде е жабата?",
-              "en": "Where is the frog?"
-            },
-            "options": [
-              {
-                "bg": "Жаба",
-                "en": "Frog",
-                "img": "animals/frog.webp"
-              },
-              {
-                "bg": "Лястовица",
-                "en": "Swallow",
-                "img": "animals/swallow.webp"
-              },
-              {
-                "bg": "Делфин",
-                "en": "Dolphin",
-                "img": "animals/dolphin.webp"
-              }
-            ],
-            "answer": 0,
-            "hint": {
-              "bg": "Тя е зелена и скача.",
-              "en": "It is green and it jumps."
-            }
+            "bg": "Пеликан",
+            "en": "Pelican",
+            "img": "animals/pelican.webp",
+            "x": 70,
+            "y": 78,
+            "size": 20,
+            "target": true
           },
           {
-            "q": {
-              "bg": "Къде е делфинът?",
-              "en": "Where is the dolphin?"
-            },
-            "options": [
-              {
-                "bg": "Пеликан",
-                "en": "Pelican",
-                "img": "animals/pelican.webp"
-              },
-              {
-                "bg": "Видра",
-                "en": "Otter",
-                "img": "animals/otter.webp"
-              },
-              {
-                "bg": "Делфин",
-                "en": "Dolphin",
-                "img": "animals/dolphin.webp"
-              }
-            ],
-            "answer": 2,
-            "hint": {
-              "bg": "Той живее в морето.",
-              "en": "It lives in the sea."
-            }
+            "bg": "Щъркел",
+            "en": "Stork",
+            "img": "animals/stork.webp",
+            "x": 14,
+            "y": 80,
+            "size": 18,
+            "target": true
+          },
+          {
+            "bg": "Фар",
+            "en": "Lighthouse",
+            "img": "world/black-sea-lighthouse.webp",
+            "x": 86,
+            "y": 42,
+            "size": 17
+          },
+          {
+            "bg": "Пеперуда",
+            "en": "Butterfly",
+            "img": "world/butterfly.webp",
+            "x": 50,
+            "y": 22,
+            "size": 11
+          },
+          {
+            "bg": "Птичка",
+            "en": "Little bird",
+            "img": "world/bird.webp",
+            "x": 44,
+            "y": 82,
+            "size": 13
           }
-        ]
+        ],
+        "hint": {
+          "bg": "Делфинът плува в морето.",
+          "en": "The dolphin swims in the sea."
+        }
       },
       "check": []
     },
@@ -153,10 +129,10 @@
         }
       ],
       "game": {
-        "type": "match",
+        "type": "memory",
         "prompt": {
-          "bg": "Свържи животното с това, което знаеш за него!",
-          "en": "Match each animal with what you know about it!"
+          "bg": "Намери двойките: животно и какво знаем за него.",
+          "en": "Find the pairs: an animal and what we know about it."
         },
         "pairs": [
           {
@@ -177,8 +153,8 @@
               "img": "animals/swallow.webp"
             },
             "b": {
-              "bg": "Прави гнездо от кал",
-              "en": "Builds a nest of mud"
+              "bg": "Гнездо от кал",
+              "en": "A nest of mud"
             }
           },
           {
@@ -188,26 +164,22 @@
               "img": "animals/dolphin.webp"
             },
             "b": {
-              "bg": "Бозайник, който живее в морето",
-              "en": "A mammal that lives in the sea"
+              "bg": "Бозайник в морето",
+              "en": "A mammal in the sea"
             }
           },
           {
             "a": {
-              "bg": "Жаба",
-              "en": "Frog",
-              "img": "animals/frog.webp"
+              "bg": "Пеликан",
+              "en": "Pelican",
+              "img": "animals/pelican.webp"
             },
             "b": {
-              "bg": "Зелена е и скача",
-              "en": "It is green and jumps"
+              "bg": "Гнезди в Сребърна",
+              "en": "Nests at Srebarna"
             }
           }
-        ],
-        "hint": {
-          "bg": "Спомни си какво разказаха Корен и Рая.",
-          "en": "Remember what Koren and Raya told you."
-        }
+        ]
       },
       "check": [
         {
@@ -403,5 +375,10 @@
     "[учебник/помагало – издателство и страница: попълва учителят]"
   ],
   "review": null,
-  "draft": true
+  "draft": true,
+  "unlock": {
+    "after": [
+      "geo-04-forest"
+    ]
+  }
 }

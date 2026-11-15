@@ -25,6 +25,8 @@ export type Profile = {
   avatar: AvatarId
   done: Record<string, Done>
   badges: string[]
+  /** Unlocked missions the child has already opened (newly unlocked ones show "New!"). */
+  seen: string[]
 }
 
 type State = {
@@ -39,6 +41,7 @@ type State = {
   setAge: (age: number) => void
   setAvatar: (avatar: AvatarId) => void
   complete: (missionId: string, level: Level, badgeId: string) => void
+  markSeen: (missionId: string) => void
   takeBreak: () => void
   reset: () => void
 }
@@ -75,6 +78,7 @@ export function sanitizeProfile(raw: unknown): Profile | null {
     avatar: AVATARS.includes(r.avatar as AvatarId) ? (r.avatar as AvatarId) : 'bear',
     done: sanitizeDone(r.done),
     badges: sanitizeBadges(r.badges),
+    seen: sanitizeBadges(r.seen),
   }
 }
 
@@ -110,6 +114,7 @@ function initialProfiles(): Pick<State, 'profiles' | 'activeId'> {
     avatar: 'bear',
     done: sanitizeDone(legacy?.done),
     badges: sanitizeBadges(legacy?.badges),
+    seen: [],
   }
   return { profiles: [profile], activeId: profile.id }
 }
@@ -126,7 +131,7 @@ export const useProfiles = create<State>()(
           if (get().profiles.length >= MAX_PROFILES) return null
           const id = newId()
           set((s) => ({
-            profiles: [...s.profiles, { id, nickname: cleanNickname(nickname), age: clampAge(age), avatar, done: {}, badges: [] }],
+            profiles: [...s.profiles, { id, nickname: cleanNickname(nickname), age: clampAge(age), avatar, done: {}, badges: [], seen: [] }],
           }))
           return id
         },
@@ -160,9 +165,10 @@ export const useProfiles = create<State>()(
           }))
           set((s) => ({ streak: s.streak + 1 }))
         },
+        markSeen: (missionId) => patchActive((p) => (p.seen.includes(missionId) ? p : { ...p, seen: [...p.seen, missionId] })),
         takeBreak: () => set({ streak: 0 }),
         reset: () => {
-          const fresh: Profile = { id: 'p1', nickname: '', age: DEFAULT_AGE, avatar: 'bear', done: {}, badges: [] }
+          const fresh: Profile = { id: 'p1', nickname: '', age: DEFAULT_AGE, avatar: 'bear', done: {}, badges: [], seen: [] }
           set({ profiles: [fresh], activeId: fresh.id, streak: 0 })
         },
       }

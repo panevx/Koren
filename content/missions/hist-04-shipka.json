@@ -1,0 +1,319 @@
+{
+  "id": "hist-04-shipka",
+  "subject": "history",
+  "free": true,
+  "order": 15,
+  "place": "shipka",
+  "unlock": {
+    "after": [
+      "hist-03-tarnovo"
+    ]
+  },
+  "badge": {
+    "id": "shipka",
+    "icon": "world/shipka-monument.webp"
+  },
+  "title": {
+    "bg": "Шипка и Освобождението",
+    "en": "Shipka and the Liberation"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Да се качим на връх Шипка!",
+          "en": "Let's climb Shipka Peak!"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Там има голям каменен паметник.",
+          "en": "There is a big stone monument there."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Той ни напомня за свободата на България. Намери го!",
+          "en": "It reminds us of Bulgaria's freedom. Find it!"
+        }
+      ],
+      "game": {
+        "type": "find",
+        "prompt": {
+          "bg": "Намери паметника и птичката!",
+          "en": "Find the monument and the little bird!"
+        },
+        "scene": "mountain",
+        "items": [
+          {
+            "bg": "Паметник",
+            "en": "Monument",
+            "img": "world/shipka-monument.webp",
+            "x": 60,
+            "y": 50,
+            "size": 34,
+            "target": true
+          },
+          {
+            "bg": "Птичка",
+            "en": "Little bird",
+            "img": "world/bird.webp",
+            "x": 22,
+            "y": 72,
+            "size": 14,
+            "target": true,
+            "under": "world/forest-bush.webp"
+          },
+          {
+            "bg": "Пеперуда",
+            "en": "Butterfly",
+            "img": "world/butterfly.webp",
+            "x": 84,
+            "y": 26,
+            "size": 11
+          },
+          {
+            "bg": "Гъба",
+            "en": "Mushroom",
+            "img": "world/mushroom.webp",
+            "x": 86,
+            "y": 84,
+            "size": 11
+          }
+        ],
+        "hint": {
+          "bg": "Птичката се е скрила в храста.",
+          "en": "The little bird is hiding in the bush."
+        }
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Връх Шипка е в Стара планина, близо до Казанлък.",
+          "en": "Shipka Peak is in the Balkan Mountains, near Kazanlak."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "През 1877 г. тук се водят тежки боеве в Руско-турската освободителна война.",
+          "en": "In 1877 heavy battles were fought here in the Russo-Turkish War of Liberation."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Българските опълченци и руските войници защитават прохода и не го дават.",
+          "en": "Bulgarian volunteers and Russian soldiers defended the pass and held it."
+        },
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "На върха днес стои Паметникът на свободата.",
+          "en": "Today the Monument to Freedom stands on the peak."
+        }
+      ],
+      "game": {
+        "type": "guess",
+        "prompt": {
+          "bg": "Познай мястото по подсказките!",
+          "en": "Guess the place from the clues!"
+        },
+        "clues": [
+          {
+            "bg": "Паметник на свободата",
+            "en": "Monument to Freedom",
+            "img": "world/shipka-monument.webp"
+          },
+          {
+            "bg": "Стара планина",
+            "en": "The Balkan Mountains",
+            "img": "world/mountain-peak.webp"
+          },
+          {
+            "bg": "Розовата долина наблизо",
+            "en": "The Rose Valley nearby",
+            "img": "world/rose-valley.webp"
+          }
+        ],
+        "target": "shipka",
+        "choices": [
+          "shipka",
+          "musala",
+          "belogradchik",
+          "varna",
+          "pliska",
+          "sofia"
+        ],
+        "fact": {
+          "bg": "През август 1877 г. на връх Шипка опълченци и руски войници удържат прохода. Паметникът на свободата е открит през 1934 г.",
+          "en": "In August 1877 volunteers and Russian soldiers held the pass at Shipka Peak. The Monument to Freedom was opened in 1934."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "В коя планина е връх Шипка?",
+            "en": "Which mountains is Shipka Peak in?"
+          },
+          "options": [
+            {
+              "bg": "Стара планина",
+              "en": "The Balkan Mountains"
+            },
+            {
+              "bg": "Рила",
+              "en": "Rila"
+            },
+            {
+              "bg": "Родопи",
+              "en": "The Rhodopes"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кой защитава прохода заедно с руските войници?",
+            "en": "Who defended the pass together with the Russian soldiers?"
+          },
+          "options": [
+            {
+              "bg": "Траките",
+              "en": "The Thracians"
+            },
+            {
+              "bg": "Българските опълченци",
+              "en": "The Bulgarian volunteers"
+            },
+            {
+              "bg": "Войската на хан Аспарух",
+              "en": "Khan Asparuh’s army"
+            }
+          ],
+          "answer": 1,
+          "hint": {
+            "bg": "Опълченците са българи доброволци.",
+            "en": "The volunteers were Bulgarians who chose to fight."
+          }
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "През април 1876 г. избухва Априлското въстание. Светът научава за страданията на българите.",
+          "en": "In April 1876 the April Uprising broke out. The world learned how the Bulgarians suffered."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "На 24 април 1877 г. Русия обявява война на Османската империя.",
+          "en": "On 24 April 1877 Russia declared war on the Ottoman Empire."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "През август 1877 г. опълченци и руски войници удържат връх Шипка срещу много по-голяма армия.",
+          "en": "In August 1877 volunteers and Russian soldiers held Shipka Peak against a much larger army."
+        },
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "На 3 март 1878 г. е подписан Санстефанският мирен договор – днес това е националният ни празник.",
+          "en": "On 3 March 1878 the Treaty of San Stefano was signed – today this is our national holiday."
+        }
+      ],
+      "game": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди събитията от най-ранното до най-късното.",
+          "en": "Put the events in order, from the earliest to the latest."
+        },
+        "items": [
+          {
+            "bg": "Априлско въстание (1876)",
+            "en": "April Uprising (1876)"
+          },
+          {
+            "bg": "Русия обявява война (април 1877)",
+            "en": "Russia declares war (April 1877)"
+          },
+          {
+            "bg": "Боевете на Шипка (август 1877)",
+            "en": "Battles of Shipka (August 1877)"
+          },
+          {
+            "bg": "Санстефански мирен договор (3 март 1878)",
+            "en": "Treaty of San Stefano (3 March 1878)"
+          },
+          {
+            "bg": "Търновска конституция (1879)",
+            "en": "Tarnovo Constitution (1879)"
+          }
+        ],
+        "hint": {
+          "bg": "Гледай годините в скобите.",
+          "en": "Look at the years in brackets."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кой ден е националният празник на България?",
+            "en": "Which day is the national holiday of Bulgaria?"
+          },
+          "options": [
+            {
+              "bg": "24 май",
+              "en": "24 May"
+            },
+            {
+              "bg": "3 март",
+              "en": "3 March"
+            },
+            {
+              "bg": "6 септември",
+              "en": "6 September"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Какво стои днес на връх Шипка?",
+            "en": "What stands on Shipka Peak today?"
+          },
+          "options": [
+            {
+              "bg": "Паметникът на свободата",
+              "en": "The Monument to Freedom"
+            },
+            {
+              "bg": "Рилският манастир",
+              "en": "The Rila Monastery"
+            },
+            {
+              "bg": "Крепостта Царевец",
+              "en": "Tsarevets Fortress"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Национален парк-музей „Шипка-Бузлуджа“",
+    "Енциклопедия „България“, БАН",
+    "Учебник „История и цивилизации“, 5–7 клас, МОН"
+  ],
+  "review": null,
+  "draft": true
+}

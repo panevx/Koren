@@ -30,27 +30,61 @@
         {
           "hero": "koren",
           "pose": "point",
-          "bg": "Намери планината на картата!",
-          "en": "Find the mountain on the map!"
+          "bg": "Намери езерата и манастира!",
+          "en": "Find the lakes and the monastery!"
         }
       ],
       "game": {
-        "type": "map",
-        "target": "musala",
-        "choices": [
-          "musala",
-          "varna",
-          "pliska"
-        ],
+        "type": "find",
         "prompt": {
-          "bg": "Намери планината!",
-          "en": "Find the mountain!"
+          "bg": "Намери езерата и манастира!",
+          "en": "Find the lakes and the monastery!"
         },
-        "hint": {
-          "bg": "Планината е долу, вляво.",
-          "en": "The mountain is down, on the left."
-        },
-        "showIcons": true
+        "scene": "mountain",
+        "items": [
+          {
+            "bg": "Седемте рилски езера",
+            "en": "Seven Rila Lakes",
+            "img": "world/seven-rila-lakes.webp",
+            "x": 28,
+            "y": 64,
+            "size": 32,
+            "target": true
+          },
+          {
+            "bg": "Рилски манастир",
+            "en": "Rila Monastery",
+            "img": "world/rila-monastery.webp",
+            "x": 74,
+            "y": 68,
+            "size": 30,
+            "target": true
+          },
+          {
+            "bg": "Връх",
+            "en": "Peak",
+            "img": "world/mountain-peak.webp",
+            "x": 52,
+            "y": 30,
+            "size": 26
+          },
+          {
+            "bg": "Птичка",
+            "en": "Little bird",
+            "img": "world/bird.webp",
+            "x": 16,
+            "y": 24,
+            "size": 11
+          },
+          {
+            "bg": "Храст",
+            "en": "Bush",
+            "img": "world/forest-bush.webp",
+            "x": 90,
+            "y": 88,
+            "size": 14
+          }
+        ]
       },
       "check": []
     },
@@ -82,23 +116,41 @@
         }
       ],
       "game": {
-        "type": "map",
-        "target": "rila-monastery",
-        "choices": [
-          "rila-monastery",
-          "plovdiv",
-          "veliko-tarnovo",
-          "belogradchik"
-        ],
+        "type": "guess",
         "prompt": {
-          "bg": "Намери Рилския манастир на картата!",
-          "en": "Find the Rila Monastery on the map!"
+          "bg": "Къде сме? Разгледай подсказките и намери мястото!",
+          "en": "Where are we? Look at the clues and find the place!"
         },
-        "hint": {
-          "bg": "Търси в планините на югозапад, южно от София.",
-          "en": "Look in the mountains in the south-west, south of Sofia."
-        },
-        "showIcons": false
+        "clues": [
+          {
+            "bg": "Седем езера",
+            "en": "Seven lakes",
+            "img": "world/seven-rila-lakes.webp"
+          },
+          {
+            "bg": "Стар манастир",
+            "en": "An old monastery",
+            "img": "world/rila-monastery.webp"
+          },
+          {
+            "bg": "Най-високият връх",
+            "en": "The highest peak",
+            "img": "world/mountain-peak.webp"
+          }
+        ],
+        "target": "musala",
+        "choices": [
+          "musala",
+          "belogradchik",
+          "varna",
+          "pliska",
+          "kazanlak",
+          "sofia"
+        ],
+        "fact": {
+          "bg": "Мусала (2925 м) в Рила е най-високият връх в България и на Балканския полуостров.",
+          "en": "Musala (2,925 m) in Rila is the highest peak in Bulgaria and on the Balkan Peninsula."
+        }
       },
       "check": [
         {

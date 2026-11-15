@@ -82,57 +82,57 @@
         }
       ],
       "game": {
-        "type": "match",
+        "type": "memory",
         "prompt": {
-          "bg": "Свържи името на скалата с това, на което прилича!",
-          "en": "Match each rock's name with what it looks like!"
+          "bg": "Намери двойките: природно чудо и описание.",
+          "en": "Find the pairs: a natural wonder and its description."
         },
         "pairs": [
           {
             "a": {
-              "bg": "Мадоната",
-              "en": "The Madonna"
+              "bg": "Белоградчишки скали",
+              "en": "Belogradchik Rocks",
+              "img": "world/belogradchik-rocks.webp"
             },
             "b": {
-              "bg": "Жена с дете",
-              "en": "A woman with a child"
+              "bg": "Скали като хора и животни",
+              "en": "Rocks like people and animals"
             }
           },
           {
             "a": {
-              "bg": "Конникът",
-              "en": "The Horseman"
+              "bg": "Седемте рилски езера",
+              "en": "Seven Rila Lakes",
+              "img": "world/seven-rila-lakes.webp"
             },
             "b": {
-              "bg": "Човек на кон",
-              "en": "A man on a horse"
+              "bg": "Езера високо в Рила",
+              "en": "Lakes high in Rila"
             }
           },
           {
             "a": {
-              "bg": "Монасите",
-              "en": "The Monks"
+              "bg": "Розовата долина",
+              "en": "Rose Valley",
+              "img": "world/rose-valley.webp"
             },
             "b": {
-              "bg": "Редица монаси",
-              "en": "A row of monks"
+              "bg": "Рози за розово масло",
+              "en": "Roses for rose oil"
             }
           },
           {
             "a": {
-              "bg": "Адам и Ева",
-              "en": "Adam and Eve"
+              "bg": "Мусала",
+              "en": "Musala",
+              "img": "world/mountain-peak.webp"
             },
             "b": {
-              "bg": "Двама души един до друг",
-              "en": "Two people side by side"
+              "bg": "Най-високият връх",
+              "en": "The highest peak"
             }
           }
-        ],
-        "hint": {
-          "bg": "Името подсказва формата.",
-          "en": "The name tells you the shape."
-        }
+        ]
       },
       "check": [
         {
@@ -329,5 +329,10 @@
     "[учебник/помагало – издателство и страница: попълва учителят]"
   ],
   "review": null,
-  "draft": true
+  "draft": true,
+  "unlock": {
+    "after": [
+      "geo-02-black-sea"
+    ]
+  }
 }

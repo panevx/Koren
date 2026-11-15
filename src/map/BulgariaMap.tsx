@@ -218,8 +218,8 @@ export function BulgariaMap({ markers, onSelect, highlight, label }: Props) {
         </div>
       </div>
 
-      {/* Bottom-left lies over Greece / North Macedonia, where no place marker can be — controls never hide a target. */}
-      <div className="absolute bottom-2 left-2 flex gap-2" data-map-control>
+      {/* Under the map (not on it): the controls can never hide a place, a spot or a hint. */}
+      <div className="mt-2 flex justify-end gap-2" data-map-control>
         <MapButton label={t('map.zoomIn')} onClick={() => zoomButton(1.6)} disabled={view.s >= MAX_SCALE}>
           +
         </MapButton>

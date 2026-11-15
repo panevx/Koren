@@ -82,56 +82,60 @@
         }
       ],
       "game": {
-        "type": "match",
+        "type": "chest",
         "prompt": {
-          "bg": "Свържи частта от носията с това, което е!",
-          "en": "Match each part of the costume with what it is!"
+          "bg": "Какво ще видиш в Копривщица? Сложи го в сандъка!",
+          "en": "What will you see in Koprivshtitsa? Put it in the chest!"
         },
-        "pairs": [
+        "items": [
           {
-            "a": {
-              "bg": "Пафти",
-              "en": "Pafti"
-            },
-            "b": {
-              "bg": "Голяма метална тока за колана",
-              "en": "A big metal belt buckle"
+            "bg": "Възрожденска къща",
+            "en": "Revival house",
+            "img": "world/koprivshtitsa-house.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Шевица",
+            "en": "Embroidery",
+            "img": "world/bulgarian-embroidery.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Пояс от носия",
+            "en": "Costume belt",
+            "img": "world/traditional-belt.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Каменно мостче",
+            "en": "Stone bridge",
+            "img": "world/bridge.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Фар",
+            "en": "Lighthouse",
+            "img": "world/black-sea-lighthouse.webp",
+            "belongs": false,
+            "why": {
+              "bg": "Фарът е на брега на морето, а Копривщица е в планината.",
+              "en": "A lighthouse stands on the seashore, but Koprivshtitsa is in the mountains."
             }
           },
           {
-            "a": {
-              "bg": "Шевица",
-              "en": "Shevitsa"
-            },
-            "b": {
-              "bg": "Бродерия по ризата",
-              "en": "Embroidery on the shirt"
-            }
-          },
-          {
-            "a": {
-              "bg": "Престилка",
-              "en": "Apron"
-            },
-            "b": {
-              "bg": "Носи се отпред върху сукмана",
-              "en": "Worn in front over the dress"
-            }
-          },
-          {
-            "a": {
-              "bg": "Калпак",
-              "en": "Kalpak"
-            },
-            "b": {
-              "bg": "Мъжка шапка от агнешка кожа",
-              "en": "A man's lambskin hat"
+            "bg": "Щит",
+            "en": "Shield",
+            "img": "world/asparuh-shield.webp",
+            "belongs": false,
+            "why": {
+              "bg": "Щитът е от времето на хан Аспарух – много по-стар от къщите в Копривщица.",
+              "en": "The shield is from the time of Khan Asparuh – much older than the houses in Koprivshtitsa."
             }
           }
         ],
-        "hint": {
-          "bg": "Пафтите блестят на кръста.",
-          "en": "The pafti shine at the waist."
+        "reward": {
+          "bg": "Копривщица е град-музей: къщите, носиите с шевици и каменните мостчета пазят духа на Възраждането.",
+          "en": "Koprivshtitsa is a museum town: its houses, embroidered costumes and stone bridges keep the spirit of the National Revival."
         }
       },
       "check": [
@@ -215,84 +219,41 @@
         }
       ],
       "game": {
-        "type": "quiz",
-        "questions": [
+        "type": "guess",
+        "prompt": {
+          "bg": "Познай мястото по подсказките!",
+          "en": "Guess the place from the clues!"
+        },
+        "clues": [
           {
-            "q": {
-              "bg": "Кога избухва Априлското въстание в Копривщица?",
-              "en": "When does the April Uprising break out in Koprivshtitsa?"
-            },
-            "options": [
-              {
-                "bg": "20 април 1876 г.",
-                "en": "20 April 1876"
-              },
-              {
-                "bg": "3 март 1878 г.",
-                "en": "3 March 1878"
-              },
-              {
-                "bg": "24 май 1885 г.",
-                "en": "24 May 1885"
-              }
-            ],
-            "answer": 0,
-            "hint": {
-              "bg": "Въстанието носи името на месеца.",
-              "en": "The uprising is named after the month."
-            }
+            "bg": "Къщи от Възраждането",
+            "en": "Revival houses",
+            "img": "world/koprivshtitsa-house.webp"
           },
           {
-            "q": {
-              "bg": "Кой пише „кървавото писмо“?",
-              "en": "Who wrote the “bloody letter”?"
-            },
-            "options": [
-              {
-                "bg": "Христо Ботев",
-                "en": "Hristo Botev"
-              },
-              {
-                "bg": "Тодор Каблешков",
-                "en": "Todor Kableshkov"
-              },
-              {
-                "bg": "Иван Вазов",
-                "en": "Ivan Vazov"
-              }
-            ],
-            "answer": 1,
-            "hint": {
-              "bg": "Той е от Копривщица.",
-              "en": "He is from Koprivshtitsa."
-            }
+            "bg": "Шевици",
+            "en": "Embroidery",
+            "img": "world/bulgarian-embroidery.webp"
           },
           {
-            "q": {
-              "bg": "От коя епоха са къщите в Копривщица?",
-              "en": "From which era are the houses in Koprivshtitsa?"
-            },
-            "options": [
-              {
-                "bg": "Античността",
-                "en": "Antiquity"
-              },
-              {
-                "bg": "Каменната епоха",
-                "en": "The Stone Age"
-              },
-              {
-                "bg": "Възраждането",
-                "en": "The National Revival"
-              }
-            ],
-            "answer": 2,
-            "hint": {
-              "bg": "Тогава българите се „събуждат“ за своята история и култура.",
-              "en": "That is when Bulgarians “woke up” to their history and culture."
-            }
+            "bg": "Народна носия",
+            "en": "Folk costume",
+            "img": "world/traditional-belt.webp"
           }
-        ]
+        ],
+        "target": "koprivshtitsa",
+        "choices": [
+          "koprivshtitsa",
+          "plovdiv",
+          "varna",
+          "belogradchik",
+          "pliska",
+          "veliko-tarnovo"
+        ],
+        "fact": {
+          "bg": "Копривщица пази над 300 възрожденски къщи. Тук на 20 април 1876 г. започва Априлското въстание.",
+          "en": "Koprivshtitsa keeps over 300 Revival houses. The April Uprising began here on 20 April 1876."
+        }
       },
       "check": [
         {
@@ -329,5 +290,10 @@
     "[учебник/помагало – издателство и страница: попълва учителят]"
   ],
   "review": null,
-  "draft": true
+  "draft": true,
+  "unlock": {
+    "after": [
+      "cult-02-roses"
+    ]
+  }
 }

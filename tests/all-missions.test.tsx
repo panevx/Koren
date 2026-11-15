@@ -3,6 +3,7 @@ import { MemoryRouter } from 'react-router'
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import { AppRoutes } from '../src/App'
 import { MISSIONS } from '../src/content/missions'
+import { placeById } from '../src/content/places'
 import type { Game, Question } from '../src/content/schema'
 import { shuffledIndexes } from '../src/games/shuffle'
 import { activeProfile, useProfiles } from '../src/store/profiles'
@@ -23,7 +24,9 @@ function solveQuestions(questions: Question[]) {
   }
 }
 
-function solveGame(game: Game) {
+const finish = async () => fireEvent.click(await screen.findByRole('button', { name: 'Готово' }, { timeout: 3000 }))
+
+async function solveGame(game: Game) {
   switch (game.type) {
     case 'quiz':
       return solveQuestions(game.questions)
@@ -50,7 +53,53 @@ function solveGame(game: Game) {
       }
       return next()
     }
+    case 'find':
+      game.items.forEach((item, i) => {
+        if (!item.target) return
+        if (item.under) fireEvent.click(screen.getByRole('button', { name: `Надникни отдолу (${i + 1})` }))
+        fireEvent.click(screen.getByRole('button', { name: item.bg }))
+      })
+      return next()
+    case 'sort':
+      for (const item of game.items) {
+        fireEvent.click(within(screen.getByRole('list', { name: 'Неща за подреждане' })).getByRole('button', { name: item.bg }))
+        fireEvent.click(screen.getByRole('button', { name: `Сложи в кутия ${game.bins[item.bin]!.bg}` }))
+      }
+      return next()
+    case 'memory': {
+      const cards = shuffledIndexes(game.pairs.length * 2, game.prompt.bg)
+      for (let pair = 0; pair < game.pairs.length; pair++) {
+        const [x, y] = cards.flatMap((k, pos) => (Math.floor(k / 2) === pair ? [pos] : []))
+        fireEvent.click(screen.getByRole('button', { name: `Карта ${x! + 1}` }))
+        fireEvent.click(screen.getByRole('button', { name: `Карта ${y! + 1}` }))
+      }
+      return next()
+    }
+    case 'chest':
+      for (const item of game.items) if (item.belongs) fireEvent.click(screen.getByRole('button', { name: item.bg }))
+      return finish()
+    case 'build': {
+      const spots = [...game.pieces.map((p) => p.place), ...game.decoys]
+      const order = shuffledIndexes(spots.length, `${game.prompt.bg}-spots`)
+      for (const piece of game.pieces) {
+        const name = placeById(piece.place)!.name.bg
+        fireEvent.click(within(screen.getByRole('list', { name: 'Забележителности' })).getByRole('button', { name }))
+        const n = order.findIndex((k) => spots[k] === piece.place)
+        fireEvent.click(screen.getByRole('button', { name: game.labels ? `Празно място: ${name}` : `Празно място ${n + 1}` }))
+      }
+      return next()
+    }
+    case 'guess':
+      fireEvent.click(screen.getByRole('button', { name: `Точка ${game.choices.indexOf(game.target) + 1}` }))
+      return next()
   }
+}
+
+/** Every mission is reachable in the test: its prerequisites count as done. */
+function unlockAllBut(id: string) {
+  const done = Object.fromEntries(MISSIONS.filter((m) => m.id !== id).map((m) => [m.id, { level: 'young' as const, at: '2026-01-01' }]))
+  const badges = MISSIONS.filter((m) => m.id !== id).map((m) => m.badge.id)
+  useProfiles.setState((s) => ({ profiles: s.profiles.map((p) => ({ ...p, done, badges })) }))
 }
 
 beforeEach(() => {
@@ -65,6 +114,7 @@ describe('every mission can be finished on every level', () => {
     for (const level of Object.keys(m.levels) as Level[]) {
       it(`${m.id} · ${level}`, async () => {
         useProfiles.getState().setAge(LEVEL_DEFAULT_AGE[level])
+        unlockAllBut(m.id)
         render(
           <MemoryRouter initialEntries={[`/mission/${m.id}`]}>
             <AppRoutes />
@@ -73,7 +123,7 @@ describe('every mission can be finished on every level', () => {
         const content = m.levels[level]!
         await screen.findByText(content.story[0]!.bg)
         for (let i = 0; i < content.story.length; i++) fireEvent.click(screen.getByRole('button', { name: /Напред/ }))
-        solveGame(content.game)
+        await solveGame(content.game)
         if (content.check.length) solveQuestions(content.check)
         expect(screen.getByRole('heading', { name: 'Спечели значка!' })).toBeInTheDocument()
         expect(activeProfile(useProfiles.getState()).done[m.id]?.level).toBe(level)
@@ -96,7 +146,7 @@ describe('a break after 3 missions in a row', () => {
       const content = m.levels.young!
       await screen.findByText(content.story[0]!.bg)
       for (let k = 0; k < content.story.length; k++) fireEvent.click(screen.getByRole('button', { name: /Напред/ }))
-      solveGame(content.game)
+      await solveGame(content.game)
       if (content.check.length) solveQuestions(content.check)
       const pause = screen.queryByRole('heading', { name: 'Време за почивка!' })
       if (i < 2) expect(pause).not.toBeInTheDocument()
@@ -108,13 +158,13 @@ describe('a break after 3 missions in a row', () => {
   })
 })
 
-describe('there is at least one mission per subject and all 5 templates are used', () => {
+describe('there is at least one mission per subject and all 11 templates are used', () => {
   it('subjects', () => {
     expect(new Set(MISSIONS.map((m) => m.subject))).toEqual(new Set(['history', 'culture', 'language', 'geography']))
   })
   it('templates', () => {
     const used = new Set(MISSIONS.flatMap((m) => Object.values(m.levels).map((l) => l!.game.type)))
-    expect(used).toEqual(new Set(['quiz', 'map', 'match', 'order', 'puzzle']))
+    expect(used).toEqual(new Set(['quiz', 'map', 'match', 'order', 'puzzle', 'find', 'sort', 'memory', 'chest', 'build', 'guess']))
   })
 })
 

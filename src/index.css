@@ -78,6 +78,8 @@
   --accent-soft: var(--color-green-soft);
   /* Base size per level, gently smaller on very narrow phones (320 px) so text always has room. */
   --root-fs: clamp(15px, 4.6vw, 17px);
+  /* Height of one stop on the adventure path. */
+  --path-row: 8.75rem;
   /* Tablets and computers: the whole UI (rem sizes, --tap) grows, so it is not a tiny phone in the middle. */
   --scale: 1;
   font-size: calc(var(--root-fs) * var(--scale));
@@ -263,6 +265,24 @@ body {
   .anim-bob-late { animation: bob 3.6s ease-in-out -1.5s infinite; }
   .anim-drift { animation: drift 14s ease-in-out infinite alternate; }
   .anim-spin-slow { animation: spin-slow 18s linear infinite; }
+  @keyframes glow {
+    0%, 100% { transform: scale(0.85); opacity: 0.55; }
+    50% { transform: scale(1.1); opacity: 1; }
+  }
+  /* Hint glow around a thing that is still missing (a soft gold halo). */
+  .anim-glow { animation: glow 1.4s ease-in-out infinite; }
+  @keyframes wiggle {
+    0%, 100% { transform: rotate(0); }
+    25% { transform: rotate(-6deg); }
+    75% { transform: rotate(6deg); }
+  }
+  .anim-wiggle { animation: wiggle 0.45s ease-in-out 2; }
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(-2deg); }
+    50% { transform: translateY(-8px) rotate(2deg); }
+  }
+  /* The hot-air balloon on the adventure path. */
+  .anim-float { animation: float 4.5s ease-in-out infinite; }
 }
 
 @media (prefers-reduced-motion: reduce) {

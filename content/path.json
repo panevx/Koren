@@ -1,0 +1,45 @@
+{
+  "chapters": [
+    {
+      "title": {
+        "bg": "Първи стъпки",
+        "en": "First steps"
+      },
+      "missions": [
+        "hist-01-asparuh",
+        "geo-04-forest",
+        "cult-01-baba-marta",
+        "lang-01-azbuka",
+        "geo-01-rila"
+      ]
+    },
+    {
+      "title": {
+        "bg": "Към крепостите",
+        "en": "To the fortresses"
+      },
+      "missions": [
+        "hist-02-simeon",
+        "geo-05-water",
+        "cult-02-roses",
+        "lang-02-words",
+        "geo-02-black-sea",
+        "hist-05-treasures"
+      ]
+    },
+    {
+      "title": {
+        "bg": "Големите открития",
+        "en": "Great discoveries"
+      },
+      "missions": [
+        "hist-03-tarnovo",
+        "cult-03-koprivshtitsa",
+        "lang-03-paisiy",
+        "geo-03-belogradchik",
+        "hist-04-shipka",
+        "geo-07-build"
+      ]
+    }
+  ]
+}

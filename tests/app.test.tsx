@@ -103,13 +103,19 @@ describe('hub navigation', () => {
     renderAt('/home')
     fireEvent.click(screen.getByRole('link', { name: /Открий България/ }))
     expect(await screen.findByRole('group', { name: 'Карта на България' })).toBeInTheDocument()
-    for (const name of ['История', 'Култура и традиции', 'Български език', 'Мисии и игри']) {
+    for (const name of ['История', 'Култура и традиции', 'Български език']) {
       cleanup()
       renderAt('/home')
       fireEvent.click(screen.getByRole('link', { name: new RegExp(name) }))
       expect(await screen.findByRole('heading', { name })).toBeInTheDocument()
       expect(screen.getAllByRole('link', { name: /Хан Аспарух|Баба Марта|Азбуката/ }).length).toBeGreaterThan(0)
     }
+    // "Missions and games" opens the adventure path: every mission is a stop on it.
+    cleanup()
+    renderAt('/home')
+    fireEvent.click(screen.getByRole('link', { name: /Мисии и игри/ }))
+    expect(await screen.findByRole('heading', { name: 'Пътят на приключенията' })).toBeInTheDocument()
+    expect(screen.getAllByRole('button', { name: /Хан Аспарух|Баба Марта|Азбуката/ }).length).toBeGreaterThan(0)
   })
 
   it('unknown topics and routes fall back safely', async () => {

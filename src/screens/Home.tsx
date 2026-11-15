@@ -10,6 +10,8 @@ import { Screen, roundButton, useTitle } from '../components/ui'
 import { earnedCount } from '../content/badges'
 import { useLocalized } from '../content/useLocalized'
 import { useMissions } from '../content/useMissions'
+import { useProgress } from '../content/useProgress'
+import { byPathOrder } from '../content/pathOrder'
 import { useT } from '../i18n/useT'
 import { bouncy, m, settle, stagger } from '../motion'
 import { sectionById, type SectionId } from '../sections'
@@ -52,7 +54,9 @@ export function Home() {
   const { label, showDesc } = LAYOUT[level]
   const missions = useMissions()
   useTitle(t('nav.home'))
-  const next = missions?.find((mission) => !profile.done[mission.id])
+  const progress = useProgress(missions)
+  // The next stop on the adventure path that is open and not played yet.
+  const next = missions ? progress.next(byPathOrder(missions)) : undefined
   const played = missions?.filter((mission) => profile.done[mission.id]).length ?? 0
 
   const section = (id: SectionId) => sectionById(id)!

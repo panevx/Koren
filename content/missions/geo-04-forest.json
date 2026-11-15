@@ -34,93 +34,71 @@
         }
       ],
       "game": {
-        "type": "quiz",
-        "questions": [
+        "type": "find",
+        "prompt": {
+          "bg": "Намери мечката, лисицата и таралежа!",
+          "en": "Find the bear, the fox and the hedgehog!"
+        },
+        "scene": "forest",
+        "items": [
           {
-            "q": {
-              "bg": "Къде е мечката?",
-              "en": "Where is the bear?"
-            },
-            "options": [
-              {
-                "bg": "Лисица",
-                "en": "Fox",
-                "img": "animals/fox.webp"
-              },
-              {
-                "bg": "Мечка",
-                "en": "Bear",
-                "img": "animals/bear.webp"
-              },
-              {
-                "bg": "Заек",
-                "en": "Hare",
-                "img": "animals/hare.webp"
-              }
-            ],
-            "answer": 1,
-            "hint": {
-              "bg": "Тя е голяма и кафява.",
-              "en": "It is big and brown."
-            }
+            "bg": "Мечка",
+            "en": "Bear",
+            "img": "animals/bear.webp",
+            "x": 24,
+            "y": 66,
+            "size": 26,
+            "target": true,
+            "under": "world/forest-bush.webp"
           },
           {
-            "q": {
-              "bg": "Къде е таралежът?",
-              "en": "Where is the hedgehog?"
-            },
-            "options": [
-              {
-                "bg": "Таралеж",
-                "en": "Hedgehog",
-                "img": "animals/hedgehog.webp"
-              },
-              {
-                "bg": "Катерица",
-                "en": "Squirrel",
-                "img": "animals/squirrel.webp"
-              },
-              {
-                "bg": "Вълк",
-                "en": "Wolf",
-                "img": "animals/wolf.webp"
-              }
-            ],
-            "answer": 0,
-            "hint": {
-              "bg": "Той има бодли.",
-              "en": "It has spines."
-            }
+            "bg": "Лисица",
+            "en": "Fox",
+            "img": "animals/fox.webp",
+            "x": 72,
+            "y": 72,
+            "size": 20,
+            "target": true
           },
           {
-            "q": {
-              "bg": "Къде е катерицата?",
-              "en": "Where is the squirrel?"
-            },
-            "options": [
-              {
-                "bg": "Язовец",
-                "en": "Badger",
-                "img": "animals/badger.webp"
-              },
-              {
-                "bg": "Елен",
-                "en": "Red deer",
-                "img": "animals/red-deer.webp"
-              },
-              {
-                "bg": "Катерица",
-                "en": "Squirrel",
-                "img": "animals/squirrel.webp"
-              }
-            ],
-            "answer": 2,
-            "hint": {
-              "bg": "Тя има пухкава опашка.",
-              "en": "It has a fluffy tail."
-            }
+            "bg": "Таралеж",
+            "en": "Hedgehog",
+            "img": "animals/hedgehog.webp",
+            "x": 50,
+            "y": 82,
+            "size": 16,
+            "target": true,
+            "under": "world/forest-bush.webp"
+          },
+          {
+            "bg": "Сова",
+            "en": "Owl",
+            "img": "animals/owl.webp",
+            "x": 80,
+            "y": 40,
+            "size": 14
+          },
+          {
+            "bg": "Гъба",
+            "en": "Mushroom",
+            "img": "world/mushroom.webp",
+            "x": 88,
+            "y": 86,
+            "size": 11
+          },
+          {
+            "bg": "Пеперуда",
+            "en": "Butterfly",
+            "img": "world/butterfly.webp",
+            "x": 16,
+            "y": 28,
+            "size": 12
           }
-        ]
+        ],
+        "hint": {
+          "bg": "Погледни под храстите!",
+          "en": "Look under the bushes!"
+        }
       },
       "check": []
     },
@@ -152,60 +130,86 @@
         }
       ],
       "game": {
-        "type": "match",
+        "type": "sort",
         "prompt": {
-          "bg": "Свържи животното с това, което прави!",
-          "en": "Match each animal with what it does!"
+          "bg": "Кой живее в гората и кой – край водата?",
+          "en": "Who lives in the forest and who lives by the water?"
         },
-        "pairs": [
+        "bins": [
           {
-            "a": {
-              "bg": "Мечка",
-              "en": "Bear",
-              "img": "animals/bear.webp"
-            },
-            "b": {
-              "bg": "Зимува в бърлога",
-              "en": "Spends winter in a den"
+            "bg": "Гора",
+            "en": "Forest",
+            "img": "world/forest-bush.webp"
+          },
+          {
+            "bg": "Вода",
+            "en": "Water",
+            "img": "world/river.webp"
+          }
+        ],
+        "items": [
+          {
+            "bg": "Мечка",
+            "en": "Bear",
+            "img": "animals/bear.webp",
+            "bin": 0
+          },
+          {
+            "bg": "Катерица",
+            "en": "Squirrel",
+            "img": "animals/squirrel.webp",
+            "bin": 0
+          },
+          {
+            "bg": "Кълвач",
+            "en": "Woodpecker",
+            "img": "animals/woodpecker.webp",
+            "bin": 0,
+            "why": {
+              "bg": "Кълвачът чука по дърветата – той живее в гората.",
+              "en": "The woodpecker taps on trees – it lives in the forest."
             }
           },
           {
-            "a": {
-              "bg": "Катерица",
-              "en": "Squirrel",
-              "img": "animals/squirrel.webp"
-            },
-            "b": {
-              "bg": "Събира ядки за зимата",
-              "en": "Gathers nuts for winter"
+            "bg": "Сова",
+            "en": "Owl",
+            "img": "animals/owl.webp",
+            "bin": 0
+          },
+          {
+            "bg": "Жаба",
+            "en": "Frog",
+            "img": "animals/frog.webp",
+            "bin": 1,
+            "why": {
+              "bg": "Жабата снася яйцата си във водата.",
+              "en": "The frog lays its eggs in water."
             }
           },
           {
-            "a": {
-              "bg": "Таралеж",
-              "en": "Hedgehog",
-              "img": "animals/hedgehog.webp"
-            },
-            "b": {
-              "bg": "Свива се на бодливо кълбо",
-              "en": "Curls into a spiny ball"
+            "bg": "Видра",
+            "en": "Otter",
+            "img": "animals/otter.webp",
+            "bin": 1,
+            "why": {
+              "bg": "Видрата плува отлично и лови риба в реките.",
+              "en": "The otter is a great swimmer and catches fish in rivers."
             }
           },
           {
-            "a": {
-              "bg": "Кълвач",
-              "en": "Woodpecker",
-              "img": "animals/woodpecker.webp"
-            },
-            "b": {
-              "bg": "Чука по дърветата",
-              "en": "Taps on trees"
+            "bg": "Пеликан",
+            "en": "Pelican",
+            "img": "animals/pelican.webp",
+            "bin": 1,
+            "why": {
+              "bg": "Пеликанът лови риба в езера като Сребърна.",
+              "en": "The pelican catches fish in lakes like Srebarna."
             }
           }
         ],
         "hint": {
-          "bg": "Спомни си какво разказаха Корен и Рая.",
-          "en": "Remember what Koren and Raya told you."
+          "bg": "Мисли къде животното си намира храна.",
+          "en": "Think about where the animal finds its food."
         }
       },
       "check": [

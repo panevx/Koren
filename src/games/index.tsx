@@ -1,9 +1,15 @@
 import type { Game } from '../content/schema'
+import { Build } from './Build'
+import { Chest } from './Chest'
+import { Find } from './Find'
+import { Guess } from './Guess'
 import { MapFind } from './MapFind'
 import { Match } from './Match'
+import { Memory } from './Memory'
 import { Order } from './Order'
 import { Puzzle } from './Puzzle'
 import { Quiz } from './Quiz'
+import { Sort } from './Sort'
 
 /**
  * Game templates by type. Adding a template = a component here + a schema entry
@@ -21,5 +27,17 @@ export function GameView({ game, onDone }: { game: Game; onDone: () => void }) {
       return <Order game={game} onDone={onDone} />
     case 'puzzle':
       return <Puzzle game={game} onDone={onDone} />
+    case 'find':
+      return <Find game={game} onDone={onDone} />
+    case 'sort':
+      return <Sort game={game} onDone={onDone} />
+    case 'memory':
+      return <Memory game={game} onDone={onDone} />
+    case 'chest':
+      return <Chest game={game} onDone={onDone} />
+    case 'build':
+      return <Build game={game} onDone={onDone} />
+    case 'guess':
+      return <Guess game={game} onDone={onDone} />
   }
 }

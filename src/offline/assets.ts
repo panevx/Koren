@@ -1,4 +1,6 @@
 import type { Mission } from '../content/schema'
+import { PLACES } from '../content/places'
+import { ART } from '../world'
 import { AVATARS } from '../store/profiles'
 import { avatarImg } from '../components/ProfileAvatar'
 import { SECTIONS, sectionIcon } from '../sections'
@@ -15,27 +17,25 @@ export const UI_IMAGES: readonly string[] = [
   ...['koren', 'raya'].flatMap((h) => ['joy', 'thoughtful', 'surprise', 'determination', 'laughter'].map((m) => `heroes/${h}-${m}.webp`)),
   ...SECTIONS.map((s) => sectionIcon(s.id)),
   ...AVATARS.map(avatarImg),
+  ...Object.values(ART),
+  ...PLACES.flatMap((p) => (p.img ? [p.img] : [])),
 ]
 
-/** Every image a mission can show: hero poses, badge, puzzle picture, picture answers. */
+/** Every image a mission can show: hero poses, badge and every picture named anywhere in its games. */
 export function missionImages(m: Mission): string[] {
   const out = [m.badge.icon]
   for (const level of Object.values(m.levels)) {
     if (!level) continue
-    for (const s of level.story) {
-      out.push(`poses/${s.hero}-${s.pose}.webp`)
-      if (s.img) out.push(s.img)
-    }
-    const g = level.game
-    if (g.type === 'puzzle') out.push(g.img)
-    const options = [
-      ...(g.type === 'quiz' ? g.questions.flatMap((q) => q.options) : []),
-      ...(g.type === 'match' ? g.pairs.flatMap((p) => [p.a, p.b]) : []),
-      ...(g.type === 'order' ? g.items : []),
-      ...level.check.flatMap((q) => q.options),
-    ]
-    for (const o of options) if (o.img) out.push(o.img)
+    for (const s of level.story) out.push(`poses/${s.hero}-${s.pose}.webp`)
   }
+  // Any "folder/name.webp" string inside the mission (story pictures, answers, scene objects, covers…).
+  const walk = (v: unknown): void => {
+    if (typeof v === 'string') {
+      if (/^[a-z0-9/_-]+\.(webp|png|svg)$/.test(v)) out.push(v)
+    } else if (Array.isArray(v)) v.forEach(walk)
+    else if (v && typeof v === 'object') Object.values(v).forEach(walk)
+  }
+  walk(m.levels)
   return out
 }
 

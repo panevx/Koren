@@ -4,7 +4,11 @@ import { BadgeArt } from '../components/BadgeArt'
 import { Avatar, img } from '../components/Brand'
 import { Icon } from '../components/Icon'
 import { Button, Screen, useTitle } from '../components/ui'
-import { missionById, pickLevel } from '../content/missions'
+import { MISSIONS, missionById, pickLevel } from '../content/missions'
+import { isUnlocked, reachedMilestones, unlockedIds, type MilestoneId } from '../content/progress'
+import { earnedCount } from '../content/badges'
+import { UnlockInfo } from '../components/UnlockInfo'
+import { ART } from '../world'
 import type { Mission as MissionData, StoryLine } from '../content/schema'
 import { useLocalized } from '../content/useLocalized'
 import { GameView } from '../games'
@@ -13,7 +17,7 @@ import type { TKey } from '../i18n'
 import { useT } from '../i18n/useT'
 import { bouncy, m } from '../motion'
 import { play } from '../sound'
-import { BREAK_AFTER, useAge, useProfiles } from '../store/profiles'
+import { BREAK_AFTER, activeProfile, useActiveProfile, useAge, useProfiles } from '../store/profiles'
 import { ageToLevel, type Level } from '../theme/levels'
 
 type Phase = 'story' | 'game' | 'check' | 'badge'
@@ -22,9 +26,45 @@ export function Mission() {
   const { id } = useParams()
   const mission = missionById(id)
   const age = useAge()
+  const profile = useActiveProfile()
   if (!mission) return <Navigate to="/missions" replace />
+  if (!isUnlocked(mission, profile, MISSIONS)) return <Locked mission={mission} />
   // The level is fixed when the mission starts, so changing age mid-game cannot reshuffle it.
   return <MissionRun key={mission.id} mission={mission} childLevel={ageToLevel(age)} />
+}
+
+/** A locked mission opened from a link: say kindly how it opens. Never a dead end. */
+function Locked({ mission }: { mission: MissionData }) {
+  const t = useT()
+  const l = useLocalized()
+  const navigate = useNavigate()
+  useTitle(l(mission.title))
+  return (
+    <Screen>
+      <div className="flex flex-1 flex-col items-center justify-center gap-4 px-6 py-8 text-center">
+        <m.img
+          src={img(ART.key)}
+          alt=""
+          initial={{ rotate: -30, scale: 0.6 }}
+          animate={{ rotate: 0, scale: 1 }}
+          transition={bouncy}
+          className="pop-3d size-28"
+        />
+        <h1 className="text-2xl font-black">{l(mission.title)}</h1>
+        <p className="rounded-full bg-sand px-4 py-1 text-sm font-extrabold">{t('unlock.locked')}</p>
+        <div className="rounded-level flex w-full items-start gap-3 bg-white p-4 text-left shadow-soft">
+          <Avatar hero="raya" mood="determination" className="size-14 shrink-0" />
+          <div className="min-w-0 flex-1">
+            <p className="mb-1 font-semibold text-muted">{t('unlock.lockedText')}</p>
+            <UnlockInfo mission={mission} />
+          </div>
+        </div>
+        <Button variant="accent" className="w-full" onClick={() => navigate('/missions')}>
+          {t('unlock.toPath')}
+        </Button>
+      </div>
+    </Screen>
+  )
 }
 
 function MissionRun({ mission, childLevel }: { mission: MissionData; childLevel: Level }) {
@@ -37,6 +77,8 @@ function MissionRun({ mission, childLevel }: { mission: MissionData; childLevel:
     [content],
   )
   useTitle(l(mission.title))
+  const markSeen = useProfiles((s) => s.markSeen)
+  useEffect(() => markSeen(mission.id), [markSeen, mission.id])
   // Each phase is its own history entry: the phone's "back" gesture goes one step back
   // (game → story) instead of throwing the child out of the mission.
   const location = useLocation()
@@ -184,6 +226,16 @@ function Badge({ mission, level }: { mission: MissionData; level: Level }) {
   const complete = useProfiles((s) => s.complete)
   const takeBreak = useProfiles((s) => s.takeBreak)
   const streak = useProfiles((s) => s.streak)
+  const profile = useActiveProfile()
+  // What was open and which rewards were reached BEFORE this badge — the difference is celebrated below.
+  const [before] = useState(() => {
+    const p = activeProfile(useProfiles.getState())
+    return { open: unlockedIds(p, MISSIONS), rewards: reachedMilestones(earnedCount(p.badges, MISSIONS), MISSIONS) }
+  })
+  const opened = unlockedIds(profile, MISSIONS)
+    .filter((id) => !before.open.includes(id))
+    .map((id) => missionById(id)!)
+  const rewards = reachedMilestones(earnedCount(profile.badges, MISSIONS), MISSIONS).filter((r) => !before.rewards.includes(r))
   // Count the mission exactly once, even if React runs the effect twice (StrictMode).
   const counted = useRef(false)
   useEffect(() => {
@@ -238,6 +290,8 @@ function Badge({ mission, level }: { mission: MissionData; level: Level }) {
       </div>
 
       <p className="text-xl font-extrabold">{l(mission.title)}</p>
+
+      {(opened.length > 0 || rewards.length > 0) && <Unlocked missions={opened} rewards={rewards} />}
 
       {needsBreak ? (
         // After 3 missions in a row Koren and Raya suggest a pause — a suggestion, never a lock.
@@ -294,5 +348,54 @@ function Badge({ mission, level }: { mission: MissionData; level: Level }) {
         </>
       )}
     </div>
+  )
+}
+
+const REWARD_ART: Record<MilestoneId, string> = { bronze: ART.bronze, silver: ART.silver, gold: ART.gold, trophy: ART.trophy }
+
+/** After a badge: newly opened missions (with a key) and new medals, each popping in after the badge. */
+function Unlocked({ missions, rewards }: { missions: MissionData[]; rewards: MilestoneId[] }) {
+  const t = useT()
+  const l = useLocalized()
+  const navigate = useNavigate()
+  return (
+    <m.ul
+      initial="hidden"
+      animate="show"
+      variants={{ hidden: {}, show: { transition: { delayChildren: 1.2, staggerChildren: 0.25 } } }}
+      className="flex w-full flex-col gap-2.5"
+      aria-live="polite"
+    >
+      {rewards.map((r) => (
+        <m.li key={r} variants={{ hidden: { opacity: 0, scale: 0.6 }, show: { opacity: 1, scale: 1 } }} transition={bouncy}>
+          <div className="rounded-level flex items-center gap-3 bg-gold-soft p-3 text-left shadow-soft">
+            <img src={img(REWARD_ART[r])} alt="" className="pop-3d size-14 shrink-0 object-contain" />
+            <span className="min-w-0 flex-1">
+              <span className="block text-xs font-black tracking-wide text-coral-dark uppercase">{t('reward.new')}</span>
+              <span className="block font-extrabold">{t(`reward.${r}`)}</span>
+            </span>
+          </div>
+        </m.li>
+      ))}
+      {missions.map((mission) => (
+        <m.li key={mission.id} variants={{ hidden: { opacity: 0, y: 16 }, show: { opacity: 1, y: 0 } }} transition={bouncy}>
+          <button
+            type="button"
+            onClick={() => navigate(`/mission/${mission.id}`)}
+            className="tap press rounded-level flex w-full items-center gap-3 bg-sky-soft p-3 text-left shadow-soft"
+          >
+            <span className="relative grid size-14 shrink-0 place-items-center">
+              <img src={img(ART.burst)} alt="" className="anim-spin-slow absolute inset-0 size-full" />
+              <img src={img(ART.key)} alt="" className="relative size-9" />
+            </span>
+            <span className="min-w-0 flex-1">
+              <span className="block text-xs font-black tracking-wide text-ink uppercase">{t('unlock.opened')}</span>
+              <span className="block font-extrabold">{l(mission.title)}</span>
+            </span>
+            <Icon name="chevron" className="shrink-0" />
+          </button>
+        </m.li>
+      ))}
+    </m.ul>
   )
 }

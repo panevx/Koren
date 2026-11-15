@@ -1,0 +1,314 @@
+{
+  "id": "hist-05-treasures",
+  "subject": "history",
+  "free": true,
+  "order": 16,
+  "unlock": {
+    "badges": 3
+  },
+  "badge": {
+    "id": "treasures",
+    "icon": "world/treasure-chest-open.webp"
+  },
+  "title": {
+    "bg": "Изгубените съкровища",
+    "en": "The lost treasures"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Корен е скрил съкровища около крепостта!",
+          "en": "Koren has hidden treasures around the fortress!"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Това е игра. Ще ги намериш ли?",
+          "en": "It's a game. Can you find them?"
+        }
+      ],
+      "game": {
+        "type": "find",
+        "prompt": {
+          "bg": "Намери щита, короната и книгата!",
+          "en": "Find the shield, the crown and the book!"
+        },
+        "scene": "castle",
+        "items": [
+          {
+            "bg": "Щит",
+            "en": "Shield",
+            "img": "world/asparuh-shield.webp",
+            "x": 22,
+            "y": 68,
+            "size": 20,
+            "target": true,
+            "under": "world/forest-bush.webp"
+          },
+          {
+            "bg": "Корона",
+            "en": "Crown",
+            "img": "world/simeon-crown.webp",
+            "x": 56,
+            "y": 40,
+            "size": 18,
+            "target": true
+          },
+          {
+            "bg": "Книга",
+            "en": "Book",
+            "img": "world/medieval-book.webp",
+            "x": 78,
+            "y": 76,
+            "size": 18,
+            "target": true,
+            "under": "world/forest-bush.webp"
+          },
+          {
+            "bg": "Крепост",
+            "en": "Fortress",
+            "img": "world/tsarevets-fortress.webp",
+            "x": 82,
+            "y": 36,
+            "size": 28
+          },
+          {
+            "bg": "Пеперуда",
+            "en": "Butterfly",
+            "img": "world/butterfly.webp",
+            "x": 14,
+            "y": 28,
+            "size": 11
+          },
+          {
+            "bg": "Гъба",
+            "en": "Mushroom",
+            "img": "world/mushroom.webp",
+            "x": 46,
+            "y": 86,
+            "size": 11
+          }
+        ],
+        "hint": {
+          "bg": "Две съкровища са под храстите.",
+          "en": "Two treasures are under the bushes."
+        }
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Корен е скрил пет съкровища от историята на България!",
+          "en": "Koren has hidden five treasures from the history of Bulgaria!"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Щитът напомня за хан Аспарух, а короната – за цар Симеон.",
+          "en": "The shield reminds us of Khan Asparuh, and the crown of Tsar Simeon."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Книгата и перото са от Златния век на българската книжовност. Търси навсякъде!",
+          "en": "The book and the quill come from the Golden Age of Bulgarian writing. Look everywhere!"
+        }
+      ],
+      "game": {
+        "type": "find",
+        "prompt": {
+          "bg": "Намери петте съкровища!",
+          "en": "Find the five treasures!"
+        },
+        "scene": "castle",
+        "items": [
+          {
+            "bg": "Щит",
+            "en": "Shield",
+            "img": "world/asparuh-shield.webp",
+            "x": 18,
+            "y": 72,
+            "size": 18,
+            "target": true,
+            "under": "world/forest-bush.webp"
+          },
+          {
+            "bg": "Корона",
+            "en": "Crown",
+            "img": "world/simeon-crown.webp",
+            "x": 62,
+            "y": 82,
+            "size": 16,
+            "target": true,
+            "under": "world/forest-bush.webp"
+          },
+          {
+            "bg": "Книга",
+            "en": "Book",
+            "img": "world/medieval-book.webp",
+            "x": 50,
+            "y": 62,
+            "size": 15,
+            "target": true
+          },
+          {
+            "bg": "Перо и мастило",
+            "en": "Quill and ink",
+            "img": "world/quill-ink.webp",
+            "x": 86,
+            "y": 70,
+            "size": 14,
+            "target": true,
+            "under": "world/forest-bush.webp"
+          },
+          {
+            "bg": "Свитък",
+            "en": "Scroll",
+            "img": "world/old-scroll.webp",
+            "x": 34,
+            "y": 66,
+            "size": 13,
+            "target": true
+          },
+          {
+            "bg": "Крепост",
+            "en": "Fortress",
+            "img": "world/tsarevets-fortress.webp",
+            "x": 76,
+            "y": 34,
+            "size": 26
+          },
+          {
+            "bg": "Гъба",
+            "en": "Mushroom",
+            "img": "world/mushroom.webp",
+            "x": 48,
+            "y": 86,
+            "size": 10
+          },
+          {
+            "bg": "Птичка",
+            "en": "Little bird",
+            "img": "world/bird.webp",
+            "x": 12,
+            "y": 24,
+            "size": 10
+          }
+        ],
+        "hint": {
+          "bg": "Три съкровища се крият под храстите.",
+          "en": "Three treasures are hiding under the bushes."
+        }
+      },
+      "check": []
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Голямото изпитание: в сандъка влизат само съкровища от българското Средновековие.",
+          "en": "The big challenge: only treasures from the Bulgarian Middle Ages go in the chest."
+        },
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "Средновековна България трае от 681 г. до края на 14 век. Внимавай с по-новите неща!",
+          "en": "Medieval Bulgaria lasted from 681 to the end of the 14th century. Watch out for newer things!"
+        }
+      ],
+      "game": {
+        "type": "chest",
+        "prompt": {
+          "bg": "Сложи в сандъка само съкровищата от Средновековието!",
+          "en": "Put only the treasures from the Middle Ages in the chest!"
+        },
+        "items": [
+          {
+            "bg": "Щит",
+            "en": "Shield",
+            "img": "world/asparuh-shield.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Корона",
+            "en": "Crown",
+            "img": "world/simeon-crown.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Ръкописна книга",
+            "en": "Handwritten book",
+            "img": "world/medieval-book.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Перо и мастило",
+            "en": "Quill and ink",
+            "img": "world/quill-ink.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Балон",
+            "en": "Hot-air balloon",
+            "img": "world/hot-air-balloon.webp",
+            "belongs": false,
+            "why": {
+              "bg": "Балонът с горещ въздух е изобретен през 1783 г. – много след Средновековието.",
+              "en": "The hot-air balloon was invented in 1783 – long after the Middle Ages."
+            }
+          },
+          {
+            "bg": "Розово масло",
+            "en": "Rose oil",
+            "img": "world/rose-oil-bottle.webp",
+            "belongs": false,
+            "why": {
+              "bg": "Розовото масло в България се прави от около 17 век – след Средновековието.",
+              "en": "Rose oil has been made in Bulgaria since about the 17th century – after the Middle Ages."
+            }
+          }
+        ],
+        "reward": {
+          "bg": "Щитът напомня за хан Аспарух (681 г.), короната – за цар Симеон Велики, а книгата и перото – за Златния век на българската книжовност.",
+          "en": "The shield recalls Khan Asparuh (681), the crown Tsar Simeon the Great, and the book and quill the Golden Age of Bulgarian writing."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кой цар е свързан със Златния век?",
+            "en": "Which tsar is linked with the Golden Age?"
+          },
+          "options": [
+            {
+              "bg": "Цар Симеон",
+              "en": "Tsar Simeon"
+            },
+            {
+              "bg": "Цар Борис III",
+              "en": "Tsar Boris III"
+            },
+            {
+              "bg": "Хан Крум",
+              "en": "Khan Krum"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Енциклопедия „България“, БАН",
+    "Учебник „История и цивилизации“, 5–7 клас, МОН"
+  ],
+  "review": null,
+  "draft": true
+}

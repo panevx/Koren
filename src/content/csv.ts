@@ -68,6 +68,7 @@ export function missionsToCsv(missions: Mission[]): string {
     if (m.place) add({ mission: id, block: 'meta', kind: 'place', bg: m.place })
     add({ mission: id, block: 'meta', kind: 'badge', bg: m.badge.id, img: m.badge.icon })
     add({ mission: id, block: 'meta', kind: 'draft', bg: String(m.draft) })
+    if (m.unlock) add({ mission: id, block: 'meta', kind: 'unlock', bg: JSON.stringify(m.unlock) })
     for (const s of m.sources) add({ mission: id, block: 'source', bg: s })
     if (m.review) add({ mission: id, block: 'review', bg: m.review.by, en: m.review.date })
 
@@ -100,6 +101,9 @@ export function missionsToCsv(missions: Mission[]): string {
         case 'puzzle':
           head('puzzle', { bg: g.prompt.bg, en: g.prompt.en, img: g.img, answer: String(g.pieces) })
           break
+        default:
+          // The scene games (find, sort, memory, chest, build, guess) have nested data: one row, the game as JSON.
+          head('json', { bg: JSON.stringify(g) })
       }
       for (const q of c.check) question(id, level, 'check', q)
     }
@@ -160,6 +164,13 @@ export function csvToMissions(text: string): ImportResult {
             case 'draft': draft.draft = v === 'true'; break
             case 'place': draft.place = v; break
             case 'badge': draft.badge = { id: v, icon: r.img }; break
+            case 'unlock':
+              try {
+                draft.unlock = JSON.parse(v)
+              } catch {
+                errors.push(`${at(r)}: „unlock“ не е валиден JSON`)
+              }
+              break
             default: errors.push(`${at(r)}: непознато meta „${r.kind}“`)
           }
         } else errors.push(`${at(r)}: ред без „level“ трябва да е title, meta, source или review`)
@@ -201,8 +212,15 @@ export function csvToMissions(text: string): ImportResult {
           case 'puzzle':
             L.game = { type: 'puzzle', prompt: { bg: r.bg, en: r.en }, img: r.img, pieces: Number(r.answer) }
             break
+          case 'json':
+            try {
+              L.game = JSON.parse(r.bg)
+            } catch {
+              errors.push(`${at(r)}: колоната bg не е валиден JSON за играта`)
+            }
+            break
           default:
-            errors.push(`${at(r)}: непознат вид игра „${r.kind}“ (quiz, question, map, map:icons, match, pair, order, item, puzzle)`)
+            errors.push(`${at(r)}: непознат вид игра „${r.kind}“ (quiz, question, map, map:icons, match, pair, order, item, puzzle, json)`)
         }
       } else errors.push(`${at(r)}: „block“ трябва да е story, game или check`)
     }

@@ -106,72 +106,71 @@
         },
         {
           "hero": "raya",
-          "pose": "think",
-          "bg": "Свържи българската дума с английската!",
-          "en": "Match the Bulgarian word with the English one!"
+          "pose": "point",
+          "bg": "Кога казваме всяка дума? Подреди ги в кутиите!",
+          "en": "When do we say each word? Sort them into the boxes!"
         }
       ],
       "game": {
-        "type": "match",
+        "type": "sort",
         "prompt": {
-          "bg": "Свържи българската дума с английската!",
-          "en": "Match the Bulgarian word with the English one!"
+          "bg": "Кога казваме тези думи?",
+          "en": "When do we say these words?"
         },
-        "pairs": [
+        "bins": [
           {
-            "a": {
-              "bg": "Здравей",
-              "en": "Здравей"
-            },
-            "b": {
-              "bg": "Hello",
-              "en": "Hello"
-            }
+            "bg": "Като се срещнем",
+            "en": "When we meet"
           },
           {
-            "a": {
-              "bg": "Благодаря",
-              "en": "Благодаря"
-            },
-            "b": {
-              "bg": "Thank you",
-              "en": "Thank you"
-            }
+            "bg": "Като си тръгваме",
+            "en": "When we leave"
           },
           {
-            "a": {
-              "bg": "Довиждане",
-              "en": "Довиждане"
-            },
-            "b": {
-              "bg": "Goodbye",
-              "en": "Goodbye"
-            }
+            "bg": "Като сме учтиви",
+            "en": "When we are polite"
+          }
+        ],
+        "items": [
+          {
+            "bg": "Здравей!",
+            "en": "Hello! (Zdravey)",
+            "bin": 0
           },
           {
-            "a": {
-              "bg": "Моля",
-              "en": "Моля"
-            },
-            "b": {
-              "bg": "Please",
-              "en": "Please"
-            }
+            "bg": "Добро утро!",
+            "en": "Good morning! (Dobro utro)",
+            "bin": 0
           },
           {
-            "a": {
-              "bg": "Добро утро",
-              "en": "Добро утро"
-            },
-            "b": {
-              "bg": "Good morning",
-              "en": "Good morning"
-            }
+            "bg": "Добър ден!",
+            "en": "Good day! (Dobar den)",
+            "bin": 0
+          },
+          {
+            "bg": "Довиждане!",
+            "en": "Goodbye! (Dovizhdane)",
+            "bin": 1
+          },
+          {
+            "bg": "Лека нощ!",
+            "en": "Good night! (Leka nosht)",
+            "bin": 1
+          },
+          {
+            "bg": "Моля!",
+            "en": "Please! (Molya)",
+            "bin": 2
+          },
+          {
+            "bg": "Благодаря!",
+            "en": "Thank you! (Blagodarya)",
+            "bin": 2
           }
         ],
         "hint": {
-          "bg": "„Добро утро“ казваме сутрин.",
-          "en": "We say “Добро утро” in the morning."
+          "bg": "„Довиждане“ казваме, когато си тръгваме.",
+          "en": "We say “Dovizhdane” when we leave."
         }
       },
       "check": [
@@ -393,5 +392,10 @@
     "[учебник/помагало – издателство и страница: попълва учителят]"
   ],
   "review": null,
-  "draft": true
+  "draft": true,
+  "unlock": {
+    "after": [
+      "lang-01-azbuka"
+    ]
+  }
 }
