@@ -1,6 +1,6 @@
 import type { Mission } from '../content/schema'
 import { PLACES } from '../content/places'
-import { ART } from '../world'
+import { ART, GAME_ART } from '../world'
 import { AVATARS } from '../store/profiles'
 import { avatarImg } from '../components/ProfileAvatar'
 import { SECTIONS, sectionIcon } from '../sections'
@@ -18,6 +18,7 @@ export const UI_IMAGES: readonly string[] = [
   ...SECTIONS.map((s) => sectionIcon(s.id)),
   ...AVATARS.map(avatarImg),
   ...Object.values(ART),
+  ...Object.values(GAME_ART),
   ...PLACES.flatMap((p) => (p.img ? [p.img] : [])),
 ]
 
