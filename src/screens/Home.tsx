@@ -85,7 +85,7 @@ export function Home() {
         <UpdateBanner />
       </div>
 
-      <div className="px-4 pb-32 short:pb-8 wide:grid wide:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] wide:items-start wide:gap-6 wide:pb-10 side:short:grid side:short:grid-cols-2 side:short:gap-4">
+      <div className="px-4 pb-32 short:pb-8 wide:grid wide:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] wide:items-start wide:gap-6 wide:pb-10">
         <div>
           {/* 1. Koren and Raya greet the child. */}
           <section className="relative mt-3 h-[min(14rem,58vw)] short:h-[12rem] wide:h-[17rem]">
@@ -191,7 +191,7 @@ function AdventureCard({ next, missions, done }: { next: Mission | undefined; mi
             )}
           </span>
           <span className="min-w-0 flex-1">
-            <span className="text-label inline-block rounded-full bg-green-deep/70 px-2.5 py-1 text-white">
+            <span className="text-label inline-block rounded-full bg-green-deep/70 px-2.5 py-1 text-[length:min(0.75rem,3.2vw)] text-white">
               {next ? t('home.next') : t('home.allDone.caption')}
             </span>
             <span className="text-title mt-1.5 line-clamp-3 block">{next ? l(next.title) : t('home.allDone')}</span>

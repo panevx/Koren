@@ -213,7 +213,7 @@ function Story({ lines, onDone }: { lines: StoryLine[]; onDone: () => void }) {
     <div className="flex flex-1 flex-col gap-3">
       <p className="sr-only">{t('mission.progress', { n: i + 1, total: lines.length })}</p>
       {line.img && <img src={img(line.img)} alt="" className="rounded-level w-full object-cover shadow-soft" />}
-      <div className="relative flex min-h-[min(27rem,62dvh)] flex-1 flex-col overflow-hidden rounded-[var(--radius-stage)] shadow-soft short:min-h-[calc(100dvh-8rem)] side:flex-row-reverse side:items-end">
+      <div className="relative flex min-h-[min(27rem,62dvh)] flex-1 flex-col overflow-hidden rounded-[var(--radius-stage)] shadow-soft short:min-h-0 side:flex-row-reverse side:items-end">
         <Scenery className="absolute inset-0" />
         {/* the speech bubble */}
         <m.p
@@ -243,7 +243,7 @@ function Story({ lines, onDone }: { lines: StoryLine[]; onDone: () => void }) {
             initial={{ opacity: 0, x: fromRight ? 70 : -70, rotate: fromRight ? 8 : -8 }}
             animate={{ opacity: 1, x: 0, rotate: 0 }}
             transition={bouncy}
-            className="relative h-[min(17rem,36dvh)] w-auto object-contain short:h-[52dvh]"
+            className="relative h-[min(17rem,36dvh)] w-auto object-contain short:h-[40dvh]"
           />
         </div>
         {/* which line we are on: small stones on the stage */}

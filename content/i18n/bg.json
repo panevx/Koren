@@ -292,5 +292,10 @@
   "map.pick": "Докосни забележителност на картата!",
   "map.missionsHere": "Мисии тук",
   "reward.modal.title": "Нов медал!",
-  "reward.modal.close": "Супер!"
+  "reward.modal.close": "Супер!",
+  "passport.earnedTitle": "Спечелени значки",
+  "passport.toFind": "Още за откриване",
+  "passport.stat.badges": "значки",
+  "passport.stat.rewards": "медала",
+  "passport.stat.places": "места"
 }

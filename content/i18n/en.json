@@ -292,5 +292,10 @@
   "map.pick": "Tap a landmark on the map!",
   "map.missionsHere": "Missions here",
   "reward.modal.title": "A new medal!",
-  "reward.modal.close": "Great!"
+  "reward.modal.close": "Great!",
+  "passport.earnedTitle": "Badges you earned",
+  "passport.toFind": "Still to discover",
+  "passport.stat.badges": "badges",
+  "passport.stat.rewards": "medals",
+  "passport.stat.places": "places"
 }
