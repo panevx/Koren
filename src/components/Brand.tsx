@@ -14,8 +14,9 @@ export function Logo({ size = 'lg', className = '' }: { size?: 'sm' | 'lg'; clas
 /**
  * Toy-like backdrop: sky, a sun, drifting clouds, rounded hills and a small fortress.
  * Pure vector in the KOREN palette — sharp on every screen and costs no download.
+ * `castle={false}` where Koren and Raya stand on the right: the fortress would peek out between their legs.
  */
-export function Scenery({ className = '' }: { className?: string }) {
+export function Scenery({ className = '', castle = true }: { className?: string; castle?: boolean }) {
   return (
     <div className={`overflow-hidden bg-gradient-to-b from-sky to-sky-soft ${className}`} aria-hidden="true">
       {/* sun with a soft halo */}
@@ -44,6 +45,7 @@ export function Scenery({ className = '' }: { className?: string }) {
           </radialGradient>
         </defs>
         <ellipse cx="320" cy="150" rx="210" ry="96" fill="url(#hill-far)" />
+        {castle && (
         <g transform="translate(286 34)">
           <path d="M3 42c8 3 24 3 32 0" stroke="#000" strokeOpacity=".12" strokeWidth="5" strokeLinecap="round" fill="none" />
           <path d="M0 40V14h7v6h8v-6h8v6h8v-6h7v26Z" fill="#FFF7E3" />
@@ -52,6 +54,7 @@ export function Scenery({ className = '' }: { className?: string }) {
           <path d="M19 14V-6" stroke="#4A1410" strokeWidth="2" strokeLinecap="round" />
           <path d="M19-6h14l-4 5 4 5H19Z" fill="#FF655C" />
         </g>
+        )}
         <ellipse cx="70" cy="158" rx="230" ry="92" fill="url(#hill-mid)" />
         <ellipse cx="250" cy="176" rx="280" ry="84" fill="url(#hill-near)" />
       </svg>

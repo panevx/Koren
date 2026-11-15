@@ -18,7 +18,7 @@ export function Welcome() {
     // Wide landscape screen: the scene on the left, the buttons on the right.
     <Screen className="side:max-w-3xl side:flex-row side:items-center side:gap-2 side:py-3">
       <div className="relative h-[54dvh] min-h-72 shrink-0 side:h-[calc(100dvh-1.5rem)] side:min-h-0 side:w-1/2">
-        <Scenery className="absolute inset-0 rounded-b-[2.5rem] side:rounded-[2rem]" />
+        <Scenery castle={false} className="absolute inset-0 rounded-b-[2.5rem] side:rounded-[2rem]" />
         <div className="relative flex h-full flex-col items-center px-6 pt-5 side:pt-3">
           <m.div
             initial={{ opacity: 0, y: -24, scale: 0.9 }}

@@ -89,7 +89,7 @@ export function Home() {
         <div>
           {/* 1. Koren and Raya greet the child. */}
           <section className="relative mt-3 h-[min(14rem,58vw)] short:h-[12rem] wide:h-[17rem]">
-            <Scenery className="absolute inset-0 rounded-[var(--radius-stage)] shadow-soft" />
+            <Scenery castle={false} className="absolute inset-0 rounded-[var(--radius-stage)] shadow-soft" />
             <div className="absolute top-3 left-3 rounded-full bg-white px-3.5 py-1.5 shadow-soft wide:hidden">
               <Logo size="sm" className="h-7" />
             </div>
@@ -112,7 +112,7 @@ export function Home() {
           </section>
 
           {/* 2. The adventure card. Its height is kept while the missions load, so nothing jumps. */}
-          <div className="relative z-10 -mt-9 min-h-[15rem] px-2 short:-mt-6">
+          <div className="relative z-10 -mt-9 min-h-[15rem] short:-mt-6">
             {missions && <AdventureCard next={next} missions={missions} done={profile.done} />}
           </div>
 
