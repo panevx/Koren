@@ -45,10 +45,11 @@ export function Find({ game, onDone }: { game: FindGame; onDone: () => void }) {
   }
 
   return (
-    <div className="flex flex-1 flex-col gap-3">
+    // Wide landscape screen: the task and the tray on the left, the scene on the right — as big as the screen allows.
+    <div className="flex flex-1 flex-col gap-3 side:grid side:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] side:content-start side:gap-x-4 side:[&>*]:col-start-1">
       <Prompt>{l(game.prompt)}</Prompt>
 
-      <div role="group" aria-label={t('find.scene')} className="relative aspect-[4/3] w-full overflow-hidden rounded-[2rem] shadow-soft">
+      <div role="group" aria-label={t('find.scene')} className="relative mx-auto aspect-[4/3] w-full overflow-hidden rounded-[2rem] shadow-soft side:col-start-2! side:row-span-4 side:row-start-1 side:w-[min(100%,calc((100dvh-6.5rem)*4/3))]">
         <SceneBackdrop scene={game.scene} className="absolute inset-0 size-full" />
         {game.items.map((item, i) => {
           const hidden = item.under && !lifted.includes(i)
