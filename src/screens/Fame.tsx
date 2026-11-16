@@ -27,7 +27,7 @@ export function Fame() {
     <Screen nav wide>
       <TopBar title={t('fame.title')} />
       <div className="flex flex-col gap-5 px-4 pb-32 short:pb-8 wide:pb-10">
-        <p className="rounded-[var(--radius-card)] bg-gold-soft px-4 py-3 text-center font-bold">{t('fame.intro', { n: lit, total: people.length })}</p>
+        <p className="rounded-[var(--radius-card)] bg-gold-soft px-4 py-3 text-center font-bold">{people.length ? t('fame.intro', { n: lit, total: people.length }) : t('empty.text')}</p>
         {FIELDS.map((field) => {
           const list = people.filter((p) => p.field === field)
           if (!list.length) return null
@@ -36,7 +36,7 @@ export function Fame() {
               <h2 id={`fame-${field}`} className="text-title px-1">
                 {t(`fame.field.${field}`)}
               </h2>
-              <ul className="grid grid-cols-2 gap-3 wide:grid-cols-[repeat(auto-fill,minmax(13rem,1fr))]">
+              <ul className="grid grid-cols-2 gap-3 wide:grid-cols-[repeat(auto-fill,minmax(min(13rem,100%),1fr))]">
                 {list.map((p) => {
                   const on = Boolean(done[p.mission])
                   const mission = missions.find((x) => x.id === p.mission)!

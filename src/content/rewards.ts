@@ -1,5 +1,7 @@
 import type { Profile } from '../store/profiles'
 import { localDay, shopItem, type ShopItem } from './shop'
+import { LEVELS } from '../theme/levels'
+import { forLevel } from './forLevel'
 import { pathChapters } from './path'
 import type { Mission } from './schema'
 
@@ -15,16 +17,30 @@ export const COINS_PER_DAY = 5
 export { SHOP, SLOTS, shopItem, type ShopItem, type Slot } from './shop'
 
 
-/** Chapters of the path where every mission this child can see is played. */
-export function finishedChapters(profile: Pick<Profile, 'done'>, missions: readonly Mission[]) {
-  return pathChapters(missions).filter((c) => c.missions.length > 0 && c.missions.every((m) => profile.done[m.id])).length
+/**
+ * Chapters of the path the child has finished — at ANY age: a chapter counts when every mission of it that a child of
+ * some level sees is played. So the pendant of a chapter finished at 6 is kept at 7 (the little ones' missions are then
+ * hidden, but they were played).
+ */
+export function finishedChapters(profile: Pick<Profile, 'done'>, all: readonly Mission[]) {
+  const finished = new Set<string>()
+  for (const level of LEVELS) {
+    pathChapters(forLevel(all, level)).forEach((c) => {
+      if (c.missions.length > 0 && c.missions.every((m) => profile.done[m.id])) finished.add(c.title.en)
+    })
+  }
+  return finished.size
 }
 
-export function wallet(profile: Pick<Profile, 'done' | 'days' | 'owned'>, missions: readonly Mission[]) {
-  const ids = new Set(missions.map((m) => m.id))
+/**
+ * The purse. `all` = EVERY mission of this build, not only the ones the child's age shows: what was earned is never taken
+ * away (a child who turns 7 keeps the coins of the little ones' missions; a parent who changes the age by mistake too).
+ */
+export function wallet(profile: Pick<Profile, 'done' | 'days' | 'owned'>, all: readonly Mission[]) {
+  const ids = new Set(all.map((m) => m.id))
   const played = Object.keys(profile.done).filter((id) => ids.has(id)).length
   const earnedCoins = played * COINS_PER_MISSION + profile.days.length * COINS_PER_DAY
-  const earnedPendars = finishedChapters(profile, missions)
+  const earnedPendars = finishedChapters(profile, all)
   const spent = (c: ShopItem['currency']) => profile.owned.map(shopItem).reduce((sum, i) => sum + (i && i.currency === c ? i.price : 0), 0)
   return { coins: Math.max(0, earnedCoins - spent('coin')), pendars: Math.max(0, earnedPendars - spent('pendar')), earnedCoins, earnedPendars }
 }

@@ -113,3 +113,26 @@ describe('sound setting', () => {
     expect(useSettings.getState().sound).toBe(false)
   })
 })
+
+describe('find: the finger areas of things never overlap (v0.23.1)', () => {
+  it('reach is at most 12 px and at most half the gap to the nearest thing', async () => {
+    const { reachOf, REACH } = await import('../src/games/Find')
+    const { MISSIONS } = await import('../src/content/missions')
+    for (const m of MISSIONS)
+      for (const level of Object.values(m.levels)) {
+        if (level?.game.type !== 'find') continue
+        const items = level.game.items
+        const r = reachOf(items)
+        items.forEach((a, i) =>
+          items.forEach((b, j) => {
+            if (i >= j) return
+            const d = Math.hypot(a.x - b.x, (a.y - b.y) * 0.75)
+            const pictures = (a.size + b.size) / 2
+            // the two areas (picture + reach) do not reach further into each other than the pictures already do
+            expect(r[i]! + r[j]!, `${m.id} ${i}/${j}`).toBeLessThanOrEqual(Math.max(0, d - pictures) + 1e-9)
+            expect(r[i]!).toBeLessThanOrEqual(REACH)
+          }),
+        )
+      }
+  })
+})

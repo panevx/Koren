@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useMemo, useState, type CSSProperties } from 'react'
 import { img } from '../components/Brand'
 import { ART } from '../world'
 import { SceneBackdrop } from '../components/Scene'
@@ -14,9 +14,28 @@ import { DoneButton, Feedback, Prompt } from './Feedback'
  * and appear when it is tapped. The tray below shows what to find; found things light up there.
  * After two taps on the wrong thing a lantern glows next to one that is still missing.
  */
+/** About 12 px on a phone: the most the finger area of a thing reaches beyond its picture (in % of the scene width). */
+export const REACH = 3.4
+/**
+ * How far each thing's finger area may reach beyond its picture (in % of the scene width): REACH, but at most half the gap to
+ * the nearest other thing — so two areas never overlap. The scene is 4:3, so y (in % of its height) counts 3/4.
+ */
+export function reachOf(items: readonly { x: number; y: number; size: number }[]) {
+  return items.map((a, i) => {
+    let r = REACH
+    items.forEach((b, j) => {
+      if (i === j) return
+      const gap = Math.hypot(a.x - b.x, (a.y - b.y) * 0.75) - (a.size + b.size) / 2
+      r = Math.min(r, Math.max(0, gap / 2))
+    })
+    return r
+  })
+}
+
 export function Find({ game, onDone }: { game: FindGame; onDone: () => void }) {
   const t = useT()
   const l = useLocalized()
+  const reach = useMemo(() => reachOf(game.items), [game.items])
   const [lifted, setLifted] = useState<number[]>([])
   const [found, setFound] = useState<number[]>([])
   const [misses, setMisses] = useState(0)
@@ -62,7 +81,7 @@ export function Find({ game, onDone }: { game: FindGame; onDone: () => void }) {
         {game.items.map((item, i) => {
           const hidden = item.under && !lifted.includes(i)
           const isFound = found.includes(i)
-          const pos = { left: `${item.x}%`, top: `${item.y}%`, width: `${item.size}%` }
+          const pos = { left: `${item.x}%`, top: `${item.y}%`, width: `${item.size}%`, '--reach': `${(reach[i]! / item.size) * 100}%` } as CSSProperties
           return (
             <div key={i} className="absolute aspect-square -translate-x-1/2 -translate-y-1/2" style={pos}>
               {/* The thing itself (under its cover until the cover is lifted). */}
@@ -76,8 +95,8 @@ export function Find({ game, onDone }: { game: FindGame; onDone: () => void }) {
                 initial={false}
                 animate={hidden ? { scale: 0.5, opacity: 0 } : isFound ? { scale: [1, 1.25, 1.1], opacity: 1 } : { scale: 1, opacity: 1 }}
                 transition={bouncy}
-                // the finger area reaches 12 px beyond the picture (small hidden things are still easy to tap)
-                className="absolute inset-0 grid place-items-center rounded-full before:absolute before:-inset-3 before:rounded-full before:content-['']"
+                // the finger area reaches a little beyond the picture (small hidden things are still easy to tap) — never into a neighbour's
+                className="absolute inset-0 grid place-items-center rounded-full before:absolute before:[inset:calc(var(--reach)*-1)] before:rounded-full before:content-['']"
               >
                 <img src={img(item.img)} alt="" draggable={false} className="pop-3d size-full object-contain" />
                 {isFound && (

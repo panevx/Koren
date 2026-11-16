@@ -13,6 +13,9 @@ type Props = {
   /** Optional heading above the questions (e.g. "Check what you learned"). */
   title?: string
   onDone: () => void
+  /** Resume at this question (after a reload), and report each new one (the mission keeps it in the history entry). */
+  start?: number
+  onIndex?: (index: number) => void
 }
 
 /** A different colour for each answer's marker, so the list is not four identical rows. */
@@ -23,8 +26,12 @@ const DOTS = ['bg-sky', 'bg-gold', 'bg-coral', 'bg-mint']
  * A wrong answer is gently set aside and Raya gives a hint — never a red screen.
  * The child moves on only after finding the right answer.
  */
-export function Quiz({ questions, title, onDone }: Props) {
-  const [index, setIndex] = useState(0)
+export function Quiz({ questions, title, onDone, start = 0, onIndex }: Props) {
+  const [index, setIndexState] = useState(() => Math.min(Math.max(0, start), questions.length - 1))
+  const setIndex = (n: number) => {
+    setIndexState(n)
+    onIndex?.(n)
+  }
   const question = questions[index]!
   const last = index === questions.length - 1
   return (

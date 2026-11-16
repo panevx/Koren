@@ -143,6 +143,16 @@
     --scale: 1.45;
   }
 }
+/*
+ * Wide layout (rail + two columns) needs about 60 rem across. On a 1024 px iPad in landscape the ×1.3 scale left the columns
+ * so narrow that words broke in the middle ("Следва-ща мисия"). So in the wide layout the root size is also capped by the
+ * screen width: 17 px at 1024 (still physically bigger than a phone), unchanged from about 1366 px up.
+ */
+@media (min-width: 1024px) and (min-height: 600px) {
+  :root {
+    font-size: min(calc(var(--root-fs) * var(--scale)), 1.66vw);
+  }
+}
 :root[data-level='small'] {
   --tap: calc(64px * var(--scale));
   --radius: 2rem;

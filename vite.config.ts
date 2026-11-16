@@ -5,16 +5,21 @@ import { defineConfig, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { VitePWA } from 'vite-plugin-pwa'
+import { IMAGE_CACHE } from './src/offline/imageCache'
 
 // GitHub Pages serves the app from /<repo>/ and has no SPA fallback, but it does answer
 // "/home" with "home.html". So every known address gets its own copy of index.html → HTTP 200
 // (no 404 in the console, indexable). 404.html still catches anything unknown.
 function spaRoutes(): Plugin {
+  let out = resolve(__dirname, 'dist')
   return {
     name: 'koren-spa-routes',
     apply: 'build',
+    // the real output folder (`vite build --outDir …` must not write the pages into dist/)
+    configResolved(config) {
+      out = resolve(config.root, config.build.outDir)
+    },
     closeBundle() {
-      const out = resolve(__dirname, 'dist')
       const index = resolve(out, 'index.html')
       const missions = readdirSync(resolve(__dirname, 'content/missions'))
         .filter((f) => f.endsWith('.json'))
@@ -87,7 +92,7 @@ export default defineConfig({
             urlPattern: ({ url }) => url.pathname.includes('/img/'),
             // Shown from the cache at once, refreshed in the background when online — a replaced picture with the same name still arrives.
             handler: 'StaleWhileRevalidate',
-            options: { cacheName: 'koren-img', expiration: { maxEntries: 400 } },
+            options: { cacheName: IMAGE_CACHE, expiration: { maxEntries: 400 } },
           },
         ],
       },

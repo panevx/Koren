@@ -113,10 +113,10 @@ export function Home() {
 
           {/* 2. The adventure card. Its height is kept while the missions load, so nothing jumps. */}
           <div className="relative z-10 -mt-9 min-h-[15rem] short:-mt-6">
-            {missions && <AdventureCard next={next} missions={missions} done={profile.done} />}
+            {missions && (missions.length ? <AdventureCard next={next} missions={missions} done={profile.done} /> : <NoMissionsCard />)}
           </div>
 
-          {missions && (
+          {missions && missions.length > 0 && (
             <Link
               to="/missions"
               className="press mt-3 flex items-center gap-3 rounded-full bg-white py-1.5 pr-3 pl-2 shadow-soft"
@@ -137,7 +137,7 @@ export function Home() {
 
         <div className="mt-5 flex flex-col gap-5 wide:mt-3">
           {/* 3. The next reward. */}
-          {missions && <RewardStrip badges={badges} total={missions.length} />}
+          {missions && missions.length > 0 && <RewardStrip badges={badges} total={missions.length} />}
 
           {/* 4. Worlds to explore. */}
           <section aria-labelledby="worlds" className="flex flex-col gap-2.5">
@@ -160,6 +160,27 @@ export function Home() {
         </div>
       </div>
     </Screen>
+  )
+}
+
+/**
+ * No missions in this build yet (the families' build shows only missions a teacher has checked): say so honestly —
+ * never "you played everything!" — and send the child to the map and the timeline, which work without missions.
+ */
+function NoMissionsCard() {
+  const t = useT()
+  return (
+    <m.div initial={{ opacity: 0, y: 24, scale: 0.97 }} animate={{ opacity: 1, y: 0, scale: 1 }} transition={bouncy}>
+      <Link to="/map" className="press bg-stage-green relative block overflow-hidden rounded-[var(--radius-stage)] p-4 pb-5 text-white shadow-stage">
+        <span className="text-label inline-block rounded-full bg-green-deep/70 px-2.5 py-1 text-[length:min(0.75rem,3.2vw)] text-white">{t('empty.caption')}</span>
+        <span className="text-title mt-1.5 block">{t('empty.title')}</span>
+        <span className="mt-1.5 block text-sm leading-snug font-extrabold text-white/90">{t('empty.text')}</span>
+        <span className="mt-3 inline-flex items-center gap-1 rounded-full bg-white px-4 py-2 font-black text-green-dark">
+          {t('empty.map')}
+          <Icon name="chevron" />
+        </span>
+      </Link>
+    </m.div>
   )
 }
 

@@ -84,9 +84,16 @@ export function Adventure() {
   return (
     <Screen nav wide>
       <TopBar title={t('path.title')} />
-      <div className="px-4 pb-32 short:pb-8 wide:grid wide:grid-cols-[minmax(0,1fr)_minmax(0,19rem)] wide:items-start wide:gap-8 wide:pb-10">
+      <div className="px-4 pb-32 short:pb-8 wide:grid wide:grid-cols-[minmax(0,1fr)_minmax(0,min(19rem,50%))] wide:items-start wide:gap-8 wide:pb-10">
         <div className="flex flex-col gap-3 wide:mx-auto wide:w-full wide:max-w-[30rem]">
+          {ordered.length === 0 && (
+            <p className="rounded-[var(--radius-card)] bg-gold-soft p-4 text-center font-bold">
+              <span className="text-title block">{t('empty.title')}</span>
+              {t('empty.text')}
+            </p>
+          )}
           {/* Progress: gems for played missions (on a computer it is in the side panel). */}
+          {ordered.length > 0 && (
           <Link to="/collection" className="press flex items-center gap-3 rounded-full bg-white py-2 pr-4 pl-2 shadow-soft wide:hidden">
             <img src={img(ART.gemGreen)} alt="" className="pop-3d size-11 shrink-0" />
             <span className="min-w-0 flex-1">
@@ -95,6 +102,7 @@ export function Adventure() {
             </span>
             <Icon name="chevron" className="shrink-0 text-muted" />
           </Link>
+          )}
 
           <div className="relative" style={{ height: `calc(${rows.length} * var(--path-row))` }}>
             {/* The lands of the chapters. */}
@@ -154,6 +162,7 @@ export function Adventure() {
         </div>
 
         {/* Computer: progress, the next stop and the medals stay in view while the road scrolls. */}
+        {ordered.length > 0 && (
         <aside className="sticky top-4 hidden flex-col gap-4 wide:flex" aria-label={t('path.rewards')}>
           <section className="rounded-[var(--radius-card)] bg-white p-4 shadow-soft">
             <p className="font-black">{t('path.progress', { done: played, total: ordered.length })}</p>
@@ -186,6 +195,7 @@ export function Adventure() {
             </ul>
           </section>
         </aside>
+        )}
       </div>
       {open && <StopSheet mission={open} status={progress.status(open)} onClose={() => setOpen(null)} />}
     </Screen>

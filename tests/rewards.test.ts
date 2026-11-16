@@ -2,6 +2,7 @@ import { beforeEach, describe, expect, it } from 'vitest'
 import { MISSIONS } from '../src/content/missions'
 import { COINS_PER_DAY, COINS_PER_MISSION, SHOP, adventureDays, finishedChapters, wallet } from '../src/content/rewards'
 import { pathChapters } from '../src/content/path'
+import { forLevel } from '../src/content/forLevel'
 import { localDay } from '../src/content/shop'
 import { activeProfile, sanitizeProfile, useProfiles } from '../src/store/profiles'
 import { useSettings } from '../src/store/settings'
@@ -44,6 +45,21 @@ describe('coins (v0.22) — calculated from progress, never real money', () => {
     expect(localDay(new Date(2026, 10, 16, 23, 30))).toBe('2026-11-16')
     expect(localDay(new Date(2026, 10, 17, 0, 15))).toBe('2026-11-17')
     expect(localDay(new Date(2026, 0, 5))).toBe('2026-01-05')
+  })
+
+  it('a child who turns 7 keeps every coin and pendant (nothing earned is taken away)', () => {
+    const small = forLevel(MISSIONS, 'small')
+    const minis = small.filter((m) => m.id.startsWith('mini-'))
+    expect(minis.length).toBeGreaterThan(5)
+    const done = Object.fromEntries(minis.map((m) => [m.id, { level: 'small' as const, at: '2026-11-01' }]))
+    const p = { done, days: ['2026-11-01', '2026-11-02'], owned: ['vest', 'kalpak'] }
+    const before = wallet(p, MISSIONS)
+    expect(before.earnedCoins).toBe(minis.length * COINS_PER_MISSION + 2 * COINS_PER_DAY)
+    expect(before.earnedPendars).toBeGreaterThan(0) // the little ones' chapters are finished
+    // the same profile after the birthday: the purse is the same (it does not depend on what the age shows now)
+    expect(wallet(p, MISSIONS)).toEqual(before)
+    const after = wallet({ ...p, done: { ...done, 'hist-01-asparuh': { level: 'young', at: '2026-11-03' } }, days: [...p.days, '2026-11-03'] }, MISSIONS)
+    expect(after.coins).toBe(before.coins + COINS_PER_MISSION + COINS_PER_DAY)
   })
 
   it('buys and wears only real stall items, each in its own slot', () => {

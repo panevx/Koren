@@ -1,7 +1,9 @@
 import { img } from '../components/Brand'
 
+import { IMAGE_CACHE } from './imageCache'
+
 /** Same cache the service worker uses for images (see workbox runtimeCaching in vite.config.ts). */
-export const IMAGE_CACHE = 'koren-img'
+export { IMAGE_CACHE }
 
 export const offlineSupported = () => typeof window !== 'undefined' && 'caches' in window && 'serviceWorker' in navigator
 

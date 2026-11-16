@@ -114,3 +114,10 @@ describe('missions for 4–6 year olds only', () => {
     for (const a of ['roe-deer', 'boar', 'chamois', 'eagle', 'lizard', 'mouflon', 'pheasant']) expect(text, a).toContain(`animals/${a}.webp`)
   })
 })
+
+describe('a build without missions (families, before a teacher checks any)', () => {
+  it('reaches no medal with 0 of 0 — and never says "you have everything"', async () => {
+    const { reachedMilestones } = await import('../src/content/progress')
+    expect(reachedMilestones(0, [])).toEqual([])
+  })
+})

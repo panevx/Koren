@@ -89,7 +89,10 @@ export function TopBar({
       <button type="button" onClick={onBack ?? goBack} className={roundButton} aria-label={t('nav.back')}>
         <Icon name="back" />
       </button>
-      <h1 className="min-w-0 flex-1 text-center text-[length:min(1.5rem,6.4vw)] leading-tight font-black">{title}</h1>
+      {/* Also capped by its own width: between two 64 px buttons on a 280 px folding phone "пътешественика" broke in two. */}
+      <h1 className="min-w-0 flex-1 text-center leading-tight font-black [container-type:inline-size]">
+        <span className="block text-[length:min(1.5rem,6.4vw,12cqw)]">{title}</span>
+      </h1>
       <div className="tap grid shrink-0 place-items-center">{right}</div>
     </header>
   )

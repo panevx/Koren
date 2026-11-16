@@ -17,7 +17,7 @@ export function ComingSoon({ section }: { section?: SectionId }) {
   const found = sectionById(section ?? params.id)
   // Only real topics are valid; /topic/anything-else goes home.
   if (!found || (!section && !found.path.startsWith('/topic/'))) return <Navigate to="/home" replace />
-  const { id, label, arrives, host } = found
+  const { id, label, host } = found
 
   return (
     <Screen nav>
@@ -33,7 +33,7 @@ export function ComingSoon({ section }: { section?: SectionId }) {
         <div className="flex max-w-sm items-end gap-3 text-left">
           <Avatar hero={host} mood="thoughtful" className="size-[min(4rem,15vw)]" />
           <p className="relative rounded-[1.5rem] rounded-bl-md bg-white px-4 py-3 text-lg font-semibold text-ink shadow-soft">
-            {t('soon.text', { version: arrives })}
+            {t('soon.text')}
           </p>
         </div>
         <Button variant="accent" onClick={() => navigate('/home')}>

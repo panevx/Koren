@@ -41,6 +41,8 @@ export type MilestoneId = (typeof MILESTONES)[number]['id']
 
 export function milestoneNeed(id: MilestoneId, all: readonly Mission[]): number {
   const n = MILESTONES.find((x) => x.id === id)!.badges
+  // No missions (a families' build before any is checked): no medal can be "reached" with 0 of 0.
+  if (all.length === 0) return Infinity
   return n === 'all' ? all.length : Math.min(n, all.length)
 }
 

@@ -8,6 +8,7 @@ import { Screen, TopBar } from '../components/ui'
 import { MILESTONES, milestoneNeed, type MilestoneId } from '../content/progress'
 import { wallet } from '../content/rewards'
 import type { Mission } from '../content/schema'
+import { MISSIONS as ALL_MISSIONS } from '../content/missions'
 import { useChildMissions } from '../content/useChildMissions'
 import { useLocalized } from '../content/useLocalized'
 import { useT } from '../i18n/useT'
@@ -40,7 +41,7 @@ export function Passport() {
   return (
     <Screen nav wide>
       <TopBar title={t('passport.title')} />
-      <div className="flex flex-col gap-5 px-4 pb-32 short:pb-8 wide:grid wide:grid-cols-[minmax(0,19rem)_minmax(0,1fr)] wide:items-start wide:gap-8 wide:pb-10">
+      <div className="flex flex-col gap-5 px-4 pb-32 short:pb-8 wide:grid wide:grid-cols-[minmax(0,min(19rem,50%))_minmax(0,1fr)] wide:items-start wide:gap-8 wide:pb-10">
         <div className="flex flex-col gap-5 wide:sticky wide:top-4">
           {/* The passport cover */}
           <section className="bg-stage-night relative overflow-hidden rounded-[var(--radius-stage)] p-5 text-white shadow-stage">
@@ -80,7 +81,7 @@ export function Passport() {
             <span className="min-w-0 flex-1 text-[length:min(1.125rem,5vw)] leading-tight">{t('shop.title')}</span>
             <span className="flex items-center gap-1 rounded-full bg-gold-soft px-2.5 py-1 text-sm">
               <img src={img(ART.coin)} alt="" className="size-5" />
-              {wallet(profile, MISSIONS).coins}
+              {wallet(profile, ALL_MISSIONS).coins}
             </span>
           </Link>
 
@@ -92,6 +93,8 @@ export function Passport() {
           </Link>
 
           {/* The reward track: one line, four medals. */}
+          {/* No missions in this build yet: no medal track (it would say "0 of 0"). */}
+          {MISSIONS.length > 0 && (
           <section aria-labelledby="rewards" className="rounded-[var(--radius-card)] bg-white p-4 shadow-soft">
             <h2 id="rewards" className="mb-3 text-lg font-black">
               {t('reward.title')}
@@ -128,17 +131,18 @@ export function Passport() {
               </ul>
             </div>
           </section>
+          )}
         </div>
 
         <div className="flex flex-col gap-5">
           {earned.length === 0 ? (
-            <p className="rounded-[var(--radius-card)] bg-gold-soft p-4 text-center font-bold">{t('passport.empty')}</p>
+            <p className="rounded-[var(--radius-card)] bg-gold-soft p-4 text-center font-bold">{MISSIONS.length ? t('passport.empty') : t('empty.text')}</p>
           ) : (
             <section aria-labelledby="earned" className="flex flex-col gap-3">
               <h2 id="earned" className="text-title px-1">
                 {t('passport.earnedTitle')}
               </h2>
-              <m.ul variants={stagger} initial="hidden" animate="show" className="grid grid-cols-2 gap-x-3 gap-y-5 wide:grid-cols-[repeat(auto-fill,minmax(9rem,1fr))]">
+              <m.ul variants={stagger} initial="hidden" animate="show" className="grid grid-cols-2 gap-x-3 gap-y-5 wide:grid-cols-[repeat(auto-fill,minmax(min(9rem,100%),1fr))]">
                 {earned.map((mission, i) => (
                   <BadgeItem key={mission.id} mission={mission} has i={i} />
                 ))}
@@ -151,7 +155,7 @@ export function Passport() {
               <h2 id="to-find" className="text-title px-1">
                 {t('passport.toFind')}
               </h2>
-              <ul className="grid grid-cols-3 gap-x-2 gap-y-4 wide:grid-cols-[repeat(auto-fill,minmax(7rem,1fr))]">
+              <ul className="grid grid-cols-3 gap-x-2 gap-y-4 wide:grid-cols-[repeat(auto-fill,minmax(min(7rem,100%),1fr))]">
                 {missing.map((mission, i) => (
                   <BadgeItem key={mission.id} mission={mission} has={false} i={i} />
                 ))}

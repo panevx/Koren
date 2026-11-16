@@ -1,10 +1,10 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { Navigate, useLocation, useNavigate, useParams } from 'react-router'
+import { Navigate, useLocation, useNavigate, useNavigationType, useParams } from 'react-router'
 import { BadgeArt } from '../components/BadgeArt'
 import { Avatar, img, Scenery } from '../components/Brand'
 import { Icon } from '../components/Icon'
 import { Button, Screen, useTitle } from '../components/ui'
-import { missionById, pickLevel } from '../content/missions'
+import { MISSIONS, missionById, pickLevel } from '../content/missions'
 import { useChildMissions } from '../content/useChildMissions'
 import { isUnlocked, reachedMilestones, unlockedIds, type MilestoneId } from '../content/progress'
 import { earnedCount } from '../content/badges'
@@ -93,6 +93,15 @@ function MissionRun({ mission, childLevel }: { mission: MissionData; childLevel:
     // The badge replaces the last step, so "back" from the badge cannot replay the quiz and count it twice.
     navigate(location.pathname, { state: { phase: to }, replace: to === 'badge' })
   }
+  // "Back" from the badge would land in the game just finished (the badge replaced the check entry). A mission finished in
+  // this tab is left instead: going back into its game or check goes to the path. Starting it again (the story) clears it.
+  const navType = useNavigationType()
+  const finishedKey = `koren:finished:${mission.id}`
+  useEffect(() => {
+    if (phase === 'badge') session.set(finishedKey)
+    else if (phase === 'story') session.clear(finishedKey)
+  }, [phase, finishedKey])
+  const backIntoFinished = navType === 'POP' && (phase === 'game' || phase === 'check') && session.has(finishedKey)
   // Leaving in the middle of a game asks once more ("tap again to leave") — no lost progress by accident.
   const [confirming, setConfirming] = useState(false)
   useEffect(() => {
@@ -104,6 +113,8 @@ function MissionRun({ mission, childLevel }: { mission: MissionData; childLevel:
     if (phase === 'story' || phase === 'badge' || confirming) navigate('/missions')
     else setConfirming(true)
   }
+
+  if (backIntoFinished) return <Navigate to="/missions" replace />
 
   return (
     // Wide landscape screen: a wider column, so the story can sit beside the hero.
@@ -126,7 +137,16 @@ function MissionRun({ mission, childLevel }: { mission: MissionData; childLevel:
         <m.div key={phase} initial={{ opacity: 0, x: 28 }} animate={{ opacity: 1, x: 0 }} className="flex flex-1 flex-col">
           {phase === 'story' && <Story lines={content.story} onDone={next} />}
           {phase === 'game' && <GameView game={content.game} onDone={next} />}
-          {phase === 'check' && <Quiz questions={content.check} title={t('check.title')} onDone={next} />}
+          {phase === 'check' && (
+            <Quiz
+              questions={content.check}
+              title={t('check.title')}
+              onDone={next}
+              // a reload goes on from the same question, not from the first one
+              start={(location.state as { q?: number } | null)?.q ?? 0}
+              onIndex={(q) => navigate(location.pathname, { state: { phase: 'check', q }, replace: true })}
+            />
+          )}
           {phase === 'badge' && <Badge mission={mission} level={level} />}
         </m.div>
       </div>
@@ -309,11 +329,11 @@ function Badge({ mission, level }: { mission: MissionData; level: Level }) {
   // What was open and which rewards were reached BEFORE this badge — the difference is celebrated below.
   const [before] = useState(() => {
     const p = activeProfile(useProfiles.getState())
-    const w = wallet(p, missions)
+    const w = wallet(p, MISSIONS)
     return { open: unlockedIds(p, missions), rewards: reachedMilestones(earnedCount(p.badges, missions), missions), coins: w.earnedCoins, pendars: w.earnedPendars }
   })
   // v0.22: what this badge brought to the purse (a replayed mission brings nothing new — and says nothing)
-  const purse = wallet(profile, missions)
+  const purse = wallet(profile, MISSIONS)
   const gotCoins = purse.earnedCoins - before.coins
   const gotPendars = purse.earnedPendars - before.pendars
   const opened = unlockedIds(profile, missions)
@@ -517,4 +537,29 @@ function Unlocked({ missions, rewards }: { missions: MissionData[]; rewards: Mil
       ))}
     </m.ul>
   )
+}
+
+/** sessionStorage that never throws (private mode, blocked storage): this tab only, nothing about the child. */
+const session = {
+  has: (k: string) => {
+    try {
+      return window.sessionStorage.getItem(k) === '1'
+    } catch {
+      return false
+    }
+  },
+  set: (k: string) => {
+    try {
+      window.sessionStorage.setItem(k, '1')
+    } catch {
+      /* not stored: back from the badge then simply shows the game */
+    }
+  },
+  clear: (k: string) => {
+    try {
+      window.sessionStorage.removeItem(k)
+    } catch {
+      /* nothing to clear */
+    }
+  },
 }

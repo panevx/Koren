@@ -3,7 +3,7 @@ import { img } from '../components/Brand'
 import { ProfileAvatar } from '../components/ProfileAvatar'
 import { Screen, TopBar } from '../components/ui'
 import { COINS_PER_DAY, COINS_PER_MISSION, SHOP, SLOTS, adventureDays, shopItem, wallet, type ShopItem } from '../content/rewards'
-import { useChildMissions } from '../content/useChildMissions'
+import { MISSIONS } from '../content/missions'
 import { useLocalized } from '../content/useLocalized'
 import { useT } from '../i18n/useT'
 import { bouncy, m } from '../motion'
@@ -22,10 +22,9 @@ const PENDAR = ART.pendar
 export function Shop() {
   const t = useT()
   const l = useLocalized()
-  const missions = useChildMissions()
   const profile = useActiveProfile()
   const { buy, wear, takeOff } = useProfiles.getState()
-  const purse = wallet(profile, missions)
+  const purse = wallet(profile, MISSIONS)
   const days = adventureDays(profile.days)
   const [asking, setAsking] = useState<string | null>(null)
   const [just, setJust] = useState<string | null>(null)
@@ -47,7 +46,7 @@ export function Shop() {
   return (
     <Screen nav wide>
       <TopBar title={t('shop.title')} />
-      <div className="flex flex-col gap-5 px-4 pb-32 short:pb-8 wide:grid wide:grid-cols-[minmax(0,19rem)_minmax(0,1fr)] wide:items-start wide:gap-8 wide:pb-10">
+      <div className="flex flex-col gap-5 px-4 pb-32 short:pb-8 wide:grid wide:grid-cols-[minmax(0,min(19rem,50%))_minmax(0,1fr)] wide:items-start wide:gap-8 wide:pb-10">
         <div className="flex flex-col gap-4 wide:sticky wide:top-4">
           {/* The purse */}
           <section aria-labelledby="purse" className="bg-stage-night relative rounded-[var(--radius-stage)] p-5 text-white shadow-stage">
@@ -100,7 +99,7 @@ export function Shop() {
         {/* The stall */}
         <section aria-labelledby="stall" className="flex flex-col gap-3">
           <h2 id="stall" className="text-title px-1">{t('shop.stall')}</h2>
-          <ul className="grid grid-cols-2 gap-3 wide:grid-cols-[repeat(auto-fill,minmax(11rem,1fr))]">
+          <ul className="grid grid-cols-2 gap-3 wide:grid-cols-[repeat(auto-fill,minmax(min(11rem,100%),1fr))]">
             {SHOP.map((i) => {
               const owned = profile.owned.includes(i.id)
               const on = profile.outfit[i.slot] === i.id
