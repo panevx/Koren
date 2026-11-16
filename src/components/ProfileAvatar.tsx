@@ -2,7 +2,7 @@ import type { TKey } from '../i18n'
 import { useT } from '../i18n/useT'
 import { AVATARS, type AvatarId, type Profile } from '../store/profiles'
 import { img } from './Brand'
-import { shopItem } from '../content/rewards'
+import { shopItem } from '../content/shop'
 
 /** Children pick a painted sign, never a photo. */
 const AVATAR_IMG: Record<AvatarId, string> = {

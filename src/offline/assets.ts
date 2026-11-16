@@ -5,7 +5,7 @@ import { AVATARS } from '../store/profiles'
 import { avatarImg } from '../components/ProfileAvatar'
 import { SECTIONS, sectionIcon } from '../sections'
 import { MAP_IMAGES } from '../map/art'
-import { SHOP } from '../content/rewards'
+import { SHOP } from '../content/shop'
 import { FAME } from '../content/fame'
 
 /** Images the interface itself uses (paths inside public/img). */

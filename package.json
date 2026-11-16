@@ -1,7 +1,7 @@
 {
   "name": "koren",
   "private": true,
-  "version": "0.22.0",
+  "version": "0.23.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,7 +10,8 @@
     "typecheck": "tsc",
     "test": "vitest run",
     "import-content": "node scripts/import-content.mjs",
-    "export-content": "node scripts/export-content.mjs"
+    "export-content": "node scripts/export-content.mjs",
+    "review-list": "node scripts/review-list.mjs"
   },
   "dependencies": {
     "@fontsource-variable/nunito": "^5.3.0",

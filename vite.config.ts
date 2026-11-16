@@ -47,6 +47,8 @@ export default defineConfig({
     VitePWA({
       // "prompt": a new version waits until the child is on the hub — never a reload mid-mission.
       registerType: 'prompt',
+      // The icons are already in globPatterns — without this they are stored twice.
+      includeManifestIcons: false,
       injectRegister: false,
       manifest: {
         name: 'KOREN — Далеч от България. Близо до корените си.',

@@ -2,6 +2,7 @@ import { beforeEach, describe, expect, it } from 'vitest'
 import { MISSIONS } from '../src/content/missions'
 import { COINS_PER_DAY, COINS_PER_MISSION, SHOP, adventureDays, finishedChapters, wallet } from '../src/content/rewards'
 import { pathChapters } from '../src/content/path'
+import { localDay } from '../src/content/shop'
 import { activeProfile, sanitizeProfile, useProfiles } from '../src/store/profiles'
 import { useSettings } from '../src/store/settings'
 import { existsSync } from 'node:fs'
@@ -33,6 +34,27 @@ describe('coins (v0.22) — calculated from progress, never real money', () => {
     expect(adventureDays(['2026-11-10', '2026-11-11', '2026-11-12'], '2026-11-12')).toEqual({ total: 3, row: 3 })
     expect(adventureDays(['2026-11-10', '2026-11-11'], '2026-11-12')).toEqual({ total: 2, row: 2 }) // today not played yet: still a row
     expect(adventureDays(['2026-11-01', '2026-11-11'], '2026-11-20')).toEqual({ total: 2, row: 0 })
+    // across a month end and the October summer-time change
+    expect(adventureDays(['2026-10-24', '2026-10-25', '2026-10-26', '2026-10-31', '2026-11-01'], '2026-11-01')).toEqual({ total: 5, row: 2 })
+    expect(adventureDays(['2026-10-24', '2026-10-25', '2026-10-26'], '2026-10-26')).toEqual({ total: 3, row: 3 })
+  })
+
+  it("uses the child's own calendar day, not UTC", () => {
+    // 23:30 on 16 Nov local time is still the 16th (in UTC it may already be the 17th, or still the 16th)
+    expect(localDay(new Date(2026, 10, 16, 23, 30))).toBe('2026-11-16')
+    expect(localDay(new Date(2026, 10, 17, 0, 15))).toBe('2026-11-17')
+    expect(localDay(new Date(2026, 0, 5))).toBe('2026-01-05')
+  })
+
+  it('buys and wears only real stall items, each in its own slot', () => {
+    const s = useProfiles.getState()
+    s.buy('no-such-thing', 'head')
+    s.buy('kalpak', 'pin') // a wrong slot from the caller is ignored
+    s.wear('rose', 'pin') // not owned
+    const p = activeProfile(useProfiles.getState())
+    expect(p.owned).toEqual(['kalpak'])
+    expect(p.outfit).toEqual({ head: 'kalpak' })
+    expect(sanitizeProfile({ ...p, outfit: { head: 'rose', pin: 'rose', feet: 'nope' } })?.outfit).toEqual({ pin: 'rose' })
   })
 
   it('finishing a mission records the day once; buying, wearing and taking off are kept', () => {

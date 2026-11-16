@@ -76,7 +76,8 @@ export function Find({ game, onDone }: { game: FindGame; onDone: () => void }) {
                 initial={false}
                 animate={hidden ? { scale: 0.5, opacity: 0 } : isFound ? { scale: [1, 1.25, 1.1], opacity: 1 } : { scale: 1, opacity: 1 }}
                 transition={bouncy}
-                className="absolute inset-0 grid place-items-center rounded-full"
+                // the finger area reaches 12 px beyond the picture (small hidden things are still easy to tap)
+                className="absolute inset-0 grid place-items-center rounded-full before:absolute before:-inset-3 before:rounded-full before:content-['']"
               >
                 <img src={img(item.img)} alt="" draggable={false} className="pop-3d size-full object-contain" />
                 {isFound && (

@@ -9,11 +9,23 @@ import { useRef, type PointerEvent, type MouseEvent } from 'react'
  * `data-over="true"` so it can light up. `onDrop` also gets the screen point where the finger let go
  * (the provinces puzzle forgives a drop just next to a tiny province).
  */
+/** Small targets (spots on a map) marked `data-drop-reach` also take a drop that lands just next to them. */
+export const DROP_REACH_PX = 30
+function nearTarget(x: number, y: number) {
+  let best: { el: Element; d: number } | null = null
+  for (const el of document.querySelectorAll('[data-drop][data-drop-reach]')) {
+    const r = el.getBoundingClientRect()
+    const d = Math.hypot(Math.max(r.left - x, 0, x - r.right), Math.max(r.top - y, 0, y - r.bottom))
+    if (d <= DROP_REACH_PX && (!best || d < best.d)) best = { el, d }
+  }
+  return best?.el ?? null
+}
+
 export function useDrag(onDrop: (id: string, target: string, at: { x: number; y: number }) => void) {
   const state = useRef<{ id: string; el: HTMLElement; x: number; y: number; dragging: boolean; over: Element | null } | null>(null)
   const justDragged = useRef(false)
 
-  const targetAt = (x: number, y: number) => document.elementFromPoint(x, y)?.closest('[data-drop]') ?? null
+  const targetAt = (x: number, y: number) => document.elementFromPoint(x, y)?.closest('[data-drop]') ?? nearTarget(x, y)
 
   const end = (e: PointerEvent<HTMLElement>, cancelled: boolean) => {
     const s = state.current

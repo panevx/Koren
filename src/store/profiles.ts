@@ -1,6 +1,7 @@
 import { create } from 'zustand'
 import { createJSONStorage, persist } from 'zustand/middleware'
 import { DEFAULT_AGE, LEVELS, clampAge, type Level } from '../theme/levels'
+import { localDay, shopItem } from '../content/shop'
 import { STORAGE_KEY as SETTINGS_KEY, safeLocalStorage, useSettings } from './settings'
 
 /**
@@ -48,8 +49,8 @@ type State = {
   complete: (missionId: string, level: Level, badgeId: string) => void
   markSeen: (missionId: string) => void
   /** Buy a thing (the price check is done by the shop with the wallet; this only records it, once). */
-  buy: (itemId: string, slot: string) => void
-  wear: (itemId: string, slot: string) => void
+  buy: (itemId: string, slot?: string) => void
+  wear: (itemId: string, slot?: string) => void
   takeOff: (slot: string) => void
   takeBreak: () => void
   reset: () => void
@@ -97,7 +98,8 @@ export function sanitizeProfile(raw: unknown): Profile | null {
 function sanitizeOutfit(raw: unknown): Partial<Record<string, string>> {
   const out: Partial<Record<string, string>> = {}
   if (!raw || typeof raw !== 'object') return out
-  for (const [slot, id] of Object.entries(raw as Record<string, unknown>)) if (typeof id === 'string' && /^[a-z-]+$/.test(slot)) out[slot] = id
+  // only real stall items, each in its own slot
+  for (const [slot, id] of Object.entries(raw as Record<string, unknown>)) if (typeof id === 'string' && shopItem(id)?.slot === slot) out[slot] = id
   return out
 }
 
@@ -180,7 +182,7 @@ export const useProfiles = create<State>()(
         setAge: (age) => patchActive((p) => ({ ...p, age: clampAge(age) })),
         setAvatar: (avatar) => patchActive((p) => ({ ...p, avatar })),
         complete: (missionId, level, badgeId) => {
-          const today = new Date().toISOString().slice(0, 10)
+          const today = localDay()
           patchActive((p) => ({
             ...p,
             done: { ...p.done, [missionId]: { level, at: today } },
@@ -189,8 +191,15 @@ export const useProfiles = create<State>()(
           }))
           set((s) => ({ streak: s.streak + 1 }))
         },
-        buy: (itemId, slot) => patchActive((p) => (p.owned.includes(itemId) ? p : { ...p, owned: [...p.owned, itemId], outfit: { ...p.outfit, [slot]: itemId } })),
-        wear: (itemId, slot) => patchActive((p) => (p.owned.includes(itemId) ? { ...p, outfit: { ...p.outfit, [slot]: itemId } } : p)),
+        // Only real stall items, always in their own slot (the screen checks the purse; this keeps the profile clean).
+        buy: (itemId) => {
+          const item = shopItem(itemId)
+          if (item) patchActive((p) => (p.owned.includes(item.id) ? p : { ...p, owned: [...p.owned, item.id], outfit: { ...p.outfit, [item.slot]: item.id } }))
+        },
+        wear: (itemId) => {
+          const item = shopItem(itemId)
+          if (item) patchActive((p) => (p.owned.includes(item.id) ? { ...p, outfit: { ...p.outfit, [item.slot]: item.id } } : p))
+        },
         takeOff: (slot) =>
           patchActive((p) => {
             const outfit = { ...p.outfit }

@@ -63,6 +63,7 @@ export function Build({ game, onDone }: { game: BuildGame; onDone: () => void })
       ) : (
         <span
           data-drop={place.id}
+          data-drop-reach
           className="relative grid size-11 place-items-center rounded-full border-[3px] border-dashed border-green-deep bg-white/70 transition-transform data-[over=true]:scale-125 data-[over=true]:bg-gold"
         >
           {game.labels && (
