@@ -4,14 +4,14 @@
 
 | Статус | Брой |
 |---|---:|
-| В приложението сега (`used`) | 150 |
-| Готови за следващ етап (`ready`) | 84 |
+| В приложението сега (`used`) | 152 |
+| Готови за следващ етап (`ready`) | 82 |
 | Данни (оригинал за препроектиране) (`source`) | 10 |
 | Дубликати на съществуващи картинки (`duplicate`) | 49 |
 | Чакат проверка (не се публикуват) (`review`) | 7 |
 | **Общо** | **300** |
 
-## В приложението сега — 150
+## В приложението сега — 152
 
 | ID | Оригинал | Път в `public/img` / същото като | Етап | Бележка / проверка |
 |---|---|---|---|---|
@@ -39,6 +39,7 @@
 | `game-paintbrush` | `design/v5/game/game-paintbrush.png` | `game/paintbrush.webp` |  | мисии |
 | `game-puzzle-blue` | `design/v5/game/game-puzzle-blue.png` | `game/puzzle-blue.webp` |  | мисии |
 | `game-puzzle-red` | `design/v5/game/game-puzzle-red.png` | `game/puzzle-red.webp` |  | мисии |
+| `game-word-tile` | `design/v5/game/game-word-tile.png` | `game/word-tile.webp` |  | мисии |
 | `hero-budenie-book` | `design/v5/hero/hero-budenie-book.png` | `people/budenie-book.webp` |  | мисии |
 | `hero-georgi-rakovski` | `design/v5/hero/hero-georgi-rakovski.png` | `people/georgi-rakovski.webp` |  | мисии · Условен образ — сравни чертите със запазен портрет/снимка (историк). |
 | `hero-hristo-botev` | `design/v5/hero/hero-hristo-botev.png` | `people/hristo-botev.webp` |  | мисии · Условен образ — сравни чертите със запазен портрет/снимка (историк). |
@@ -91,6 +92,7 @@
 | `minigame-cooking-pot` | `design/v5/minigame/minigame-cooking-pot.png` | `minigame/cooking-pot.webp` |  | мисии |
 | `minigame-easter-egg-blank` | `design/v5/minigame/minigame-easter-egg-blank.png` | `minigame/easter-egg-blank.webp` |  | мисии |
 | `minigame-easter-egg-decorated` | `design/v5/minigame/minigame-easter-egg-decorated.png` | `minigame/easter-egg-decorated.webp` |  | мисии |
+| `minigame-fairytale-golden-apple` | `design/v5/minigame/minigame-fairytale-golden-apple.png` | `minigame/fairytale-golden-apple.webp` |  | мисии |
 | `minigame-fortress-gate` | `design/v5/minigame/minigame-fortress-gate.png` | `minigame/fortress-gate.webp` |  | мисии |
 | `minigame-fortress-tower` | `design/v5/minigame/minigame-fortress-tower.png` | `minigame/fortress-tower.webp` |  | мисии |
 | `minigame-fortress-wall` | `design/v5/minigame/minigame-fortress-wall.png` | `minigame/fortress-wall.webp` |  | мисии |
@@ -166,7 +168,7 @@
 | `world-ski-pamporovo` | `design/v5/world/world-ski-pamporovo.png` | `places/ski-pamporovo.webp` |  | мисии |
 | `world-valchitran-treasure` | `design/v5/world/world-valchitran-treasure.png` | `places/valchitran-treasure.webp` |  | мисии · Формата да се сравни със снимка на истинския предмет (музей). |
 
-## Готови за следващ етап — 84
+## Готови за следващ етап — 82
 
 | ID | Оригинал | Път в `public/img` / същото като | Етап | Бележка / проверка |
 |---|---|---|---|---|
@@ -197,7 +199,6 @@
 | `game-timer` | `design/v5/game/game-timer.png` | `game/timer.webp` | 9 |  |
 | `game-true-false-false` | `design/v5/game/game-true-false-false.svg` | `game/true-false-false.svg` | 9 |  |
 | `game-true-false-true` | `design/v5/game/game-true-false-true.svg` | `game/true-false-true.svg` | 9 |  |
-| `game-word-tile` | `design/v5/game/game-word-tile.png` | `game/word-tile.webp` | 7 |  |
 | `hero-elin-pelin` | `design/v5/hero/hero-elin-pelin.png` | `people/elin-pelin.webp` | 5 | Условен образ — сравни чертите със запазен портрет/снимка (историк). |
 | `hero-kiril` | `design/v5/hero/hero-kiril.png` | `people/kiril.webp` | 5 | history/kiril-metodiy.webp (показва се в „Азбуката на Кирил и Методий“) · Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста. |
 | `hero-metodiy` | `design/v5/hero/hero-metodiy.png` | `people/metodiy.webp` | 5 | history/kiril-metodiy.webp (показва се в „Азбуката на Кирил и Методий“) · Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста. |
@@ -209,7 +210,6 @@
 | `minigame-beach-trash` | `design/v5/minigame/minigame-beach-trash.png` | `minigame/beach-trash.webp` | 4 |  |
 | `minigame-embroidery-board` | `design/v5/minigame/minigame-embroidery-board.png` | `minigame/embroidery-board.webp` | 6 |  |
 | `minigame-fairytale-flute` | `design/v5/minigame/minigame-fairytale-flute.png` | `minigame/fairytale-flute.webp` | 7 |  |
-| `minigame-fairytale-golden-apple` | `design/v5/minigame/minigame-fairytale-golden-apple.png` | `minigame/fairytale-golden-apple.webp` | 7 |  |
 | `minigame-hidden-object-scene` | `design/v5/minigame/minigame-hidden-object-scene.png` | `minigame/hidden-object-scene.webp` | 7 |  |
 | `river-tundzha` | `design/v5/river/river-tundzha.png` | `geo/tundzha.webp` | 3 |  |
 | `science-atanasoff-computer` | `design/v5/science/science-atanasoff-computer.png` | `science/atanasoff-computer.webp` | 8 | Формата да се сравни със снимка на истинския предмет (музей). |

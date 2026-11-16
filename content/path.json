@@ -231,6 +231,31 @@
         "cult-12-banitsa-lyutenitsa",
         "cult-13-food-map"
       ]
+    },
+    {
+      "title": {
+        "bg": "Букви и тайни писма",
+        "en": "Letters and secret writing"
+      },
+      "missions": [
+        "lang-04-glagolitic",
+        "lang-05-two-alphabets",
+        "lang-06-proverbs",
+        "lang-07-sentences",
+        "lang-12-old-words"
+      ]
+    },
+    {
+      "title": {
+        "bg": "Приказки и гатанки",
+        "en": "Tales and riddles"
+      },
+      "missions": [
+        "lang-08-riddles",
+        "lang-09-tale-order",
+        "lang-10-tale-objects",
+        "lang-11-hitar-petar"
+      ]
     }
   ]
 }

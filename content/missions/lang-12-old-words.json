@@ -1,0 +1,221 @@
+{
+  "id": "lang-12-old-words",
+  "subject": "language",
+  "free": true,
+  "order": 97,
+  "ages": [
+    "young",
+    "guard"
+  ],
+  "unlock": {
+    "after": [
+      "lang-07-sentences"
+    ]
+  },
+  "badge": {
+    "id": "old-words",
+    "icon": "world/old-scroll.webp"
+  },
+  "title": {
+    "bg": "Преводач на стари думи",
+    "en": "Old words translator"
+  },
+  "levels": {
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "В народните песни и приказки има думи, които днес казваме иначе.",
+          "en": "Folk songs and tales have words that we say differently today.",
+          "img": "world/old-scroll.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Преведи ги на днешен език!",
+          "en": "Translate them into today's language!"
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи старата дума с днешната!",
+          "en": "Match the old word with today's word!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "мома",
+              "en": "moma"
+            },
+            "b": {
+              "bg": "момиче",
+              "en": "girl"
+            }
+          },
+          {
+            "a": {
+              "bg": "чедо",
+              "en": "chedo"
+            },
+            "b": {
+              "bg": "дете",
+              "en": "child"
+            }
+          },
+          {
+            "a": {
+              "bg": "пенджер",
+              "en": "pendzher"
+            },
+            "b": {
+              "bg": "прозорец",
+              "en": "window"
+            }
+          },
+          {
+            "a": {
+              "bg": "сокак",
+              "en": "sokak"
+            },
+            "b": {
+              "bg": "улица",
+              "en": "street"
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Какво значи „Мома седи на пенджера“?",
+            "en": "What does \"Moma sedi na pendzhera\" mean?"
+          },
+          "options": [
+            {
+              "bg": "Момиче седи на прозореца",
+              "en": "A girl sits at the window"
+            },
+            {
+              "bg": "Котка спи",
+              "en": "A cat sleeps"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Много стари думи идват от турски или гръцки и още живеят в селата и в песните.",
+          "en": "Many old words come from Turkish or Greek and still live in the villages and in songs.",
+          "img": "world/old-scroll.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "compass",
+          "bg": "Преведи шест думи.",
+          "en": "Translate six words."
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи старата дума с днешната!",
+          "en": "Match the old word with today's word!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "либе",
+              "en": "libe"
+            },
+            "b": {
+              "bg": "любим човек",
+              "en": "sweetheart"
+            }
+          },
+          {
+            "a": {
+              "bg": "кюприя",
+              "en": "kyupriya"
+            },
+            "b": {
+              "bg": "мост",
+              "en": "bridge"
+            }
+          },
+          {
+            "a": {
+              "bg": "аргат",
+              "en": "argat"
+            },
+            "b": {
+              "bg": "наемен работник",
+              "en": "hired worker"
+            }
+          },
+          {
+            "a": {
+              "bg": "кандисвам",
+              "en": "kandisvam"
+            },
+            "b": {
+              "bg": "съгласявам се",
+              "en": "to agree"
+            }
+          },
+          {
+            "a": {
+              "bg": "чедо",
+              "en": "chedo"
+            },
+            "b": {
+              "bg": "дете",
+              "en": "child"
+            }
+          },
+          {
+            "a": {
+              "bg": "сокак",
+              "en": "sokak"
+            },
+            "b": {
+              "bg": "улица",
+              "en": "street"
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Защо в песните има стари думи?",
+            "en": "Why are there old words in songs?"
+          },
+          "options": [
+            {
+              "bg": "Песните са се предавали от поколение на поколение",
+              "en": "Songs were passed down from generation to generation"
+            },
+            {
+              "bg": "Някой ги е объркал",
+              "en": "Someone mixed them up"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Български тълковен речник; Речник на чуждите думи в българския език, БАН",
+    "Институт за етнология и фолклористика с Етнографски музей – БАН; „Български народни приказки“ (сборници)"
+  ],
+  "review": null,
+  "draft": true
+}

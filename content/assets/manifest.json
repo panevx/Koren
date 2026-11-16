@@ -2,8 +2,8 @@
  "version": "v5",
  "total": 300,
  "summary": {
-  "used": 150,
-  "ready": 84,
+  "used": 152,
+  "ready": 82,
   "source": 10,
   "duplicate": 49,
   "review": 7
@@ -649,9 +649,9 @@
    "id": "game-word-tile",
    "original": "design/v5/game/game-word-tile.png",
    "category": "game",
-   "status": "ready",
+   "status": "used",
    "path": "game/word-tile.webp",
-   "stage": 7,
+   "usedIn": "мисии",
    "size": "640x295"
   },
   {
@@ -1433,9 +1433,9 @@
    "id": "minigame-fairytale-golden-apple",
    "original": "design/v5/minigame/minigame-fairytale-golden-apple.png",
    "category": "minigame",
-   "status": "ready",
+   "status": "used",
    "path": "minigame/fairytale-golden-apple.webp",
-   "stage": 7,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {

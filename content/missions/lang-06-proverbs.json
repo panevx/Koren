@@ -1,0 +1,326 @@
+{
+  "id": "lang-06-proverbs",
+  "subject": "language",
+  "free": true,
+  "order": 91,
+  "ages": [
+    "young",
+    "guard"
+  ],
+  "unlock": {
+    "after": [
+      "lang-02-words"
+    ]
+  },
+  "badge": {
+    "id": "proverbs",
+    "icon": "game/word-tile.webp"
+  },
+  "title": {
+    "bg": "Довърши поговорката",
+    "en": "Finish the proverb"
+  },
+  "levels": {
+    "young": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "reading",
+          "bg": "Поговорките са кратка народна мъдрост. Баба ги знае наизуст!",
+          "en": "Proverbs are short folk wisdom. Grandma knows them by heart!",
+          "img": "game/word-tile.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Плъзни липсващата дума на мястото ѝ.",
+          "en": "Drag the missing word into its place."
+        }
+      ],
+      "game": {
+        "type": "fill",
+        "prompt": {
+          "bg": "Довърши поговорките!",
+          "en": "Finish the proverbs!"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Капка по капка – ___ става.",
+              "en": "Drop by drop, a ___ is made."
+            },
+            "options": [
+              {
+                "bg": "вир",
+                "en": "pool"
+              },
+              {
+                "bg": "облак",
+                "en": "cloud"
+              },
+              {
+                "bg": "пясък",
+                "en": "sand"
+              }
+            ],
+            "answer": 0,
+            "hint": {
+              "bg": "Много капки на едно място…",
+              "en": "Many drops in one place…"
+            }
+          },
+          {
+            "text": {
+              "bg": "Бързата работа – ___ за майстора.",
+              "en": "Hasty work is a ___ to the master."
+            },
+            "options": [
+              {
+                "bg": "радост",
+                "en": "joy"
+              },
+              {
+                "bg": "срам",
+                "en": "shame"
+              },
+              {
+                "bg": "хляб",
+                "en": "bread"
+              }
+            ],
+            "answer": 1,
+            "hint": {
+              "bg": "Добрият майстор не бърза.",
+              "en": "A good master does not hurry."
+            }
+          },
+          {
+            "text": {
+              "bg": "Сговорна дружина ___ повдига.",
+              "en": "A united band lifts a ___."
+            },
+            "options": [
+              {
+                "bg": "камък",
+                "en": "stone"
+              },
+              {
+                "bg": "планина",
+                "en": "mountain"
+              },
+              {
+                "bg": "перо",
+                "en": "feather"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "text": {
+              "bg": "Каквото посееш, това ще ___.",
+              "en": "What you sow, you will ___."
+            },
+            "options": [
+              {
+                "bg": "пожънеш",
+                "en": "reap"
+              },
+              {
+                "bg": "продадеш",
+                "en": "sell"
+              },
+              {
+                "bg": "забравиш",
+                "en": "forget"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Какво значи „Капка по капка – вир става“?",
+            "en": "What does \"Drop by drop, a pool is made\" mean?"
+          },
+          "options": [
+            {
+              "bg": "Малко по малко се постига много",
+              "en": "Little by little you achieve a lot"
+            },
+            {
+              "bg": "Вали дъжд",
+              "en": "It is raining"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Някои поговорки звучат като гатанки. Помисли какво значат!",
+          "en": "Some proverbs sound like riddles. Think what they mean!",
+          "img": "game/word-tile.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "compass",
+          "bg": "Пет поговорки, пет липсващи думи.",
+          "en": "Five proverbs, five missing words."
+        }
+      ],
+      "game": {
+        "type": "fill",
+        "prompt": {
+          "bg": "Довърши поговорките!",
+          "en": "Finish the proverbs!"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Не казвай „хоп“, докато не ___.",
+              "en": "Don't say \"hop\" until you have ___."
+            },
+            "options": [
+              {
+                "bg": "си прескочил",
+                "en": "jumped over"
+              },
+              {
+                "bg": "си седнал",
+                "en": "sat down"
+              },
+              {
+                "bg": "си заспал",
+                "en": "fallen asleep"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "text": {
+              "bg": "Тиха вода брегове ___.",
+              "en": "Quiet water ___ the banks."
+            },
+            "options": [
+              {
+                "bg": "рони",
+                "en": "wears away"
+              },
+              {
+                "bg": "пази",
+                "en": "guards"
+              },
+              {
+                "bg": "мие",
+                "en": "washes"
+              }
+            ],
+            "answer": 0,
+            "hint": {
+              "bg": "Тихото понякога е най-силно.",
+              "en": "Quiet things are sometimes the strongest."
+            }
+          },
+          {
+            "text": {
+              "bg": "Ден година ___.",
+              "en": "A single day ___ a whole year."
+            },
+            "options": [
+              {
+                "bg": "храни",
+                "en": "feeds"
+              },
+              {
+                "bg": "гони",
+                "en": "chases"
+              },
+              {
+                "bg": "крие",
+                "en": "hides"
+              }
+            ],
+            "answer": 0,
+            "hint": {
+              "bg": "Става дума за деня, в който се жъне или сее.",
+              "en": "It is about the day of sowing or harvest."
+            }
+          },
+          {
+            "text": {
+              "bg": "Който рано рани, две ___ сполучва.",
+              "en": "Who rises early gains two ___."
+            },
+            "options": [
+              {
+                "bg": "сполуки",
+                "en": "successes"
+              },
+              {
+                "bg": "тревоги",
+                "en": "worries"
+              },
+              {
+                "bg": "ябълки",
+                "en": "apples"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "text": {
+              "bg": "Нова метла – чисто ___.",
+              "en": "A new broom ___ clean."
+            },
+            "options": [
+              {
+                "bg": "мете",
+                "en": "sweeps"
+              },
+              {
+                "bg": "стои",
+                "en": "stands"
+              },
+              {
+                "bg": "пее",
+                "en": "sings"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Какво значи „Тиха вода брегове рони“?",
+            "en": "What does \"Quiet water wears away the banks\" mean?"
+          },
+          "options": [
+            {
+              "bg": "Тихите хора също могат много",
+              "en": "Quiet people can also do a lot"
+            },
+            {
+              "bg": "Реките са тихи",
+              "en": "Rivers are quiet"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Сборници „Български пословици и поговорки“ (напр. Стоян Ватев)",
+    "Учебници по „Български език и литература“ (2.–7. кл.), МОН"
+  ],
+  "review": null,
+  "draft": true
+}

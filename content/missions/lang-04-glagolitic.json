@@ -1,0 +1,151 @@
+{
+  "id": "lang-04-glagolitic",
+  "subject": "language",
+  "free": true,
+  "order": 89,
+  "ages": [
+    "young",
+    "guard"
+  ],
+  "unlock": {
+    "after": [
+      "lang-01-azbuka"
+    ]
+  },
+  "badge": {
+    "id": "glagolitic",
+    "icon": "world/old-scroll.webp"
+  },
+  "title": {
+    "bg": "Тайните букви: глаголицата",
+    "en": "The secret letters: Glagolitic"
+  },
+  "levels": {
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Преди кирилицата Кирил и Методий създали друга азбука – глаголицата.",
+          "en": "Before Cyrillic, Cyril and Methodius created another alphabet – Glagolitic.",
+          "img": "world/old-scroll.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "Намерих послание на глаголица! Помогни ми да го прочета с ключа.",
+          "en": "I found a message in Glagolitic! Help me read it with the key."
+        }
+      ],
+      "game": {
+        "type": "cipher",
+        "prompt": {
+          "bg": "Разчети посланието!",
+          "en": "Read the message!"
+        },
+        "message": {
+          "bg": "АЗ БУКИ ВЕДИ",
+          "en": "I know the letters"
+        },
+        "hint": {
+          "bg": "Това са имената на първите три букви.",
+          "en": "These are the names of the first three letters."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кой създава глаголицата?",
+            "en": "Who created Glagolitic?"
+          },
+          "options": [
+            {
+              "bg": "Кирил и Методий",
+              "en": "Cyril and Methodius"
+            },
+            {
+              "bg": "Хан Аспарух",
+              "en": "Khan Asparuh"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Глаголицата е създадена около 863 г. Буквите ѝ са кръгчета, триъгълници и кръстчета.",
+          "en": "Glagolitic was created around 863. Its letters are made of little circles, triangles and crosses.",
+          "img": "world/old-scroll.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "compass",
+          "bg": "По-дълго послание – стара мъдрост.",
+          "en": "A longer message – an old saying."
+        }
+      ],
+      "game": {
+        "type": "cipher",
+        "prompt": {
+          "bg": "Разчети старата мъдрост!",
+          "en": "Read the old saying!"
+        },
+        "message": {
+          "bg": "УЧЕНИЕТО Е СВЕТЛИНА",
+          "en": "Learning is light"
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Как се казва първата буква на глаголицата?",
+            "en": "What is the name of the first Glagolitic letter?"
+          },
+          "options": [
+            {
+              "bg": "Аз",
+              "en": "Az"
+            },
+            {
+              "bg": "Буки",
+              "en": "Buki"
+            },
+            {
+              "bg": "Глаголи",
+              "en": "Glagoli"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Защо азбуката се казва „глаголица“?",
+            "en": "Why is the alphabet called \"Glagolitic\"?"
+          },
+          "options": [
+            {
+              "bg": "От „глагол“ – дума, говоря",
+              "en": "From \"glagol\" – word, to speak"
+            },
+            {
+              "bg": "От името на град",
+              "en": "From the name of a town"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Кирило-Методиевски научен център при БАН",
+    "Учебници по „Български език и литература“ (2.–7. кл.), МОН",
+    "Глаголицата е показана с шрифта Noto Sans Glagolitic (SIL OFL); съответствието буква–знак е опростено за деца"
+  ],
+  "review": null,
+  "draft": true
+}

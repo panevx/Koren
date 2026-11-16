@@ -1,0 +1,192 @@
+{
+  "id": "lang-05-two-alphabets",
+  "subject": "language",
+  "free": true,
+  "order": 90,
+  "ages": [
+    "young",
+    "guard"
+  ],
+  "unlock": {
+    "after": [
+      "lang-04-glagolitic"
+    ]
+  },
+  "badge": {
+    "id": "two-alphabets",
+    "icon": "world/medieval-book.webp"
+  },
+  "title": {
+    "bg": "Кирилица и глаголица",
+    "en": "Cyrillic and Glagolitic"
+  },
+  "levels": {
+    "young": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "reading",
+          "bg": "Кирилицата е създадена по-късно, в Преслав. Нейните букви приличат на гръцките.",
+          "en": "Cyrillic was created later, in Preslav. Its letters look like Greek ones.",
+          "img": "world/medieval-book.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Коя буква от коя азбука е? Подреди ги!",
+          "en": "Which letter is from which alphabet? Sort them!"
+        }
+      ],
+      "game": {
+        "type": "sort",
+        "prompt": {
+          "bg": "Глаголица или кирилица?",
+          "en": "Glagolitic or Cyrillic?"
+        },
+        "bins": [
+          {
+            "bg": "Глаголица",
+            "en": "Glagolitic"
+          },
+          {
+            "bg": "Кирилица",
+            "en": "Cyrillic"
+          }
+        ],
+        "items": [
+          {
+            "bg": "Ⰰ",
+            "en": "Ⰰ",
+            "bin": 0
+          },
+          {
+            "bg": "Ⰱ",
+            "en": "Ⰱ",
+            "bin": 0
+          },
+          {
+            "bg": "Ⱎ",
+            "en": "Ⱎ",
+            "bin": 0
+          },
+          {
+            "bg": "Ⰴ",
+            "en": "Ⰴ",
+            "bin": 0
+          },
+          {
+            "bg": "А",
+            "en": "А",
+            "bin": 1
+          },
+          {
+            "bg": "Б",
+            "en": "Б",
+            "bin": 1
+          },
+          {
+            "bg": "Ш",
+            "en": "Ш",
+            "bin": 1
+          },
+          {
+            "bg": "Д",
+            "en": "Д",
+            "bin": 1
+          }
+        ],
+        "hint": {
+          "bg": "Глаголическите букви са с кръгчета и завъртулки.",
+          "en": "Glagolitic letters have little circles and curls."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Коя азбука ползваме днес?",
+            "en": "Which alphabet do we use today?"
+          },
+          "options": [
+            {
+              "bg": "Кирилицата",
+              "en": "Cyrillic"
+            },
+            {
+              "bg": "Глаголицата",
+              "en": "Glagolitic"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Днес кирилицата се пише от над 250 милиона души, а от 2007 г. е и официална азбука на Европейския съюз.",
+          "en": "Today more than 250 million people write in Cyrillic, and since 2007 it has been an official alphabet of the European Union.",
+          "img": "world/medieval-book.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "compass",
+          "bg": "Подреди историята на нашите букви.",
+          "en": "Put the story of our letters in order."
+        }
+      ],
+      "game": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди историята на буквите!",
+          "en": "Put the story of the letters in order!"
+        },
+        "items": [
+          {
+            "bg": "Кирил и Методий създават глаголицата (около 863 г.)",
+            "en": "Cyril and Methodius create Glagolitic (around 863)"
+          },
+          {
+            "bg": "Учениците им идват в България (886 г.)",
+            "en": "Their pupils come to Bulgaria (886)"
+          },
+          {
+            "bg": "В Преслав се създава кирилицата (края на 9 век)",
+            "en": "Cyrillic is created in Preslav (end of the 9th century)"
+          },
+          {
+            "bg": "Кирилицата става азбука на ЕС (2007 г.)",
+            "en": "Cyrillic becomes an EU alphabet (2007)"
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Какво празнуваме на 24 май?",
+            "en": "What do we celebrate on 24 May?"
+          },
+          "options": [
+            {
+              "bg": "Деня на българската просвета и култура и на славянската писменост",
+              "en": "The Day of Bulgarian Education and Culture and of Slavonic Writing"
+            },
+            {
+              "bg": "Освобождението",
+              "en": "The Liberation"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Кирило-Методиевски научен център при БАН",
+    "Учебници по „Български език и литература“ (2.–7. кл.), МОН",
+    "Глаголицата е показана с шрифта Noto Sans Glagolitic (SIL OFL); съответствието буква–знак е опростено за деца"
+  ],
+  "review": null,
+  "draft": true
+}

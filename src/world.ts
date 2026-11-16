@@ -49,4 +49,6 @@ export const GAME_ART: Record<string, string> = {
   riddle: 'game/letter-tile.webp',
   cook: 'minigame/cooking-pot.webp',
   paint: 'game/paintbrush.webp',
+  cipher: 'world/old-scroll.webp',
+  fill: 'game/word-tile.webp',
 }

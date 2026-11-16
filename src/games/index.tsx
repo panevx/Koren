@@ -2,7 +2,9 @@ import type { Game } from '../content/schema'
 import { Assemble } from './Assemble'
 import { Build } from './Build'
 import { Chest } from './Chest'
+import { Cipher } from './Cipher'
 import { Cook } from './Cook'
+import { Fill } from './Fill'
 import { Find } from './Find'
 import { Guess } from './Guess'
 import { MapFind } from './MapFind'
@@ -57,5 +59,9 @@ export function GameView({ game, onDone }: { game: Game; onDone: () => void }) {
       return <Cook game={game} onDone={onDone} />
     case 'paint':
       return <Paint game={game} onDone={onDone} />
+    case 'cipher':
+      return <Cipher game={game} onDone={onDone} />
+    case 'fill':
+      return <Fill game={game} onDone={onDone} />
   }
 }

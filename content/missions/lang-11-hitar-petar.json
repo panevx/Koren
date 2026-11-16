@@ -1,0 +1,188 @@
+{
+  "id": "lang-11-hitar-petar",
+  "subject": "language",
+  "free": true,
+  "order": 96,
+  "ages": [
+    "young",
+    "guard"
+  ],
+  "unlock": {
+    "after": [
+      "lang-10-tale-objects"
+    ]
+  },
+  "badge": {
+    "id": "hitar-petar",
+    "icon": "world/hint-lantern.webp"
+  },
+  "title": {
+    "bg": "Открий Хитър Петър",
+    "en": "Find Clever Peter"
+  },
+  "levels": {
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "В народните разкази има един весел селянин, който надхитрява всички.",
+          "en": "In the folk stories there is a cheerful villager who outwits everyone.",
+          "img": "world/hint-lantern.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "Кой е той? Открий го по подсказките!",
+          "en": "Who is he? Find him from the clues!"
+        }
+      ],
+      "game": {
+        "type": "riddle",
+        "prompt": {
+          "bg": "Кой е героят?",
+          "en": "Who is the hero?"
+        },
+        "clues": [
+          {
+            "bg": "Аз съм обикновен селянин, но надхитрявам и богаташи, и съдии.",
+            "en": "I am a simple villager, but I outwit both rich men and judges."
+          },
+          {
+            "bg": "Обичам да се смея и измислям хитрини.",
+            "en": "I love to laugh and to think up tricks."
+          },
+          {
+            "bg": "Името ми казва какъв съм.",
+            "en": "My name tells you what I am like."
+          }
+        ],
+        "options": [
+          {
+            "bg": "Хитър Петър",
+            "en": "Clever Peter"
+          },
+          {
+            "bg": "Настрадин Ходжа",
+            "en": "Nasreddin Hodja"
+          },
+          {
+            "bg": "Кумчо Вълчо",
+            "en": "Godfather Wolf",
+            "img": "animals/wolf.webp"
+          },
+          {
+            "bg": "Крали Марко",
+            "en": "Prince Marko"
+          }
+        ],
+        "answer": 0,
+        "fact": {
+          "bg": "Хитър Петър – героят на стотици весели народни разкази.",
+          "en": "Clever Peter – the hero of hundreds of funny folk stories."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "С кого често се надпреварва Хитър Петър?",
+            "en": "Who does Clever Peter often compete with?"
+          },
+          "options": [
+            {
+              "bg": "С Настрадин Ходжа",
+              "en": "Nasreddin Hodja"
+            },
+            {
+              "bg": "С Хан Аспарух",
+              "en": "Khan Asparuh"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Хитър Петър се смее на алчните и надутите – с ум, не със сила.",
+          "en": "Clever Peter laughs at the greedy and the pompous – with wit, not force.",
+          "img": "world/hint-lantern.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "Само две подсказки този път!",
+          "en": "Only two clues this time!"
+        }
+      ],
+      "game": {
+        "type": "riddle",
+        "prompt": {
+          "bg": "Кой е героят?",
+          "en": "Who is the hero?"
+        },
+        "clues": [
+          {
+            "bg": "Побеждавам с ум, не със сила.",
+            "en": "I win with wit, not strength."
+          },
+          {
+            "bg": "Често спорим с един ходжа – кой е по-хитър.",
+            "en": "I often argue with a hodja about who is cleverer."
+          }
+        ],
+        "options": [
+          {
+            "bg": "Хитър Петър",
+            "en": "Clever Peter"
+          },
+          {
+            "bg": "Настрадин Ходжа",
+            "en": "Nasreddin Hodja"
+          },
+          {
+            "bg": "Кумчо Вълчо",
+            "en": "Godfather Wolf",
+            "img": "animals/wolf.webp"
+          },
+          {
+            "bg": "Крали Марко",
+            "en": "Prince Marko"
+          }
+        ],
+        "answer": 0,
+        "fact": {
+          "bg": "Разказите за Хитър Петър и Настрадин Ходжа са познати в цяла България.",
+          "en": "The stories of Clever Peter and Nasreddin Hodja are known all over Bulgaria."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кой е юнакът от народните песни, а не хитрецът?",
+            "en": "Who is the hero of the folk songs, not the trickster?"
+          },
+          "options": [
+            {
+              "bg": "Крали Марко",
+              "en": "Prince Marko"
+            },
+            {
+              "bg": "Хитър Петър",
+              "en": "Clever Peter"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Институт за етнология и фолклористика с Етнографски музей – БАН; „Български народни приказки“ (сборници)"
+  ],
+  "review": null,
+  "draft": true
+}

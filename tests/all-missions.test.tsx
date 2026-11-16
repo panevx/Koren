@@ -122,6 +122,12 @@ async function solveGame(game: Game) {
       for (const ing of game.ingredients) if (ing.belongs) fireEvent.click(within(screen.getByRole('list', { name: 'Съставки' })).getByRole('button', { name: ing.bg }))
       for (const s of game.steps) fireEvent.click(within(screen.getByRole('list', { name: 'Стъпки за подреждане' })).getByRole('button', { name: s.bg }))
       return next()
+    case 'cipher':
+      for (const c of game.message.bg.replace(/ /g, '')) fireEvent.click(within(screen.getByRole('list', { name: 'Днешни букви' })).getByRole('button', { name: c }))
+      return next()
+    case 'fill':
+      for (const it of game.items) fireEvent.click(within(screen.getByRole('list', { name: 'Думи' })).getByRole('button', { name: it.options[it.answer]!.bg }))
+      return next()
     case 'paint':
       partsOf(game.rows).forEach((part, p) => {
         fireEvent.click(within(screen.getByRole('list', { name: 'Цветове' })).getByRole('button', { name: game.palette[part.letter.charCodeAt(0) - 97]!.bg }))
@@ -194,13 +200,13 @@ describe('a break after 3 missions in a row', () => {
   })
 })
 
-describe('there is at least one mission per subject and all 17 templates are used', () => {
+describe('there is at least one mission per subject and all 19 templates are used', () => {
   it('subjects', () => {
     expect(new Set(MISSIONS.map((m) => m.subject))).toEqual(new Set(['history', 'culture', 'language', 'geography']))
   })
   it('templates', () => {
     const used = new Set(MISSIONS.flatMap((m) => Object.values(m.levels).map((l) => l!.game.type)))
-    expect(used).toEqual(new Set(['quiz', 'map', 'match', 'order', 'puzzle', 'find', 'sort', 'memory', 'chest', 'build', 'guess', 'trace', 'regions', 'assemble', 'riddle', 'cook', 'paint']))
+    expect(used).toEqual(new Set(['quiz', 'map', 'match', 'order', 'puzzle', 'find', 'sort', 'memory', 'chest', 'build', 'guess', 'trace', 'regions', 'assemble', 'riddle', 'cook', 'paint', 'cipher', 'fill']))
   })
 })
 

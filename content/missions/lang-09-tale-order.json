@@ -1,0 +1,204 @@
+{
+  "id": "lang-09-tale-order",
+  "subject": "language",
+  "free": true,
+  "order": 94,
+  "unlock": {
+    "after": [
+      "lang-08-riddles"
+    ]
+  },
+  "badge": {
+    "id": "tale-order",
+    "icon": "world/traditional-bread.webp"
+  },
+  "title": {
+    "bg": "Житената питка",
+    "en": "The Wheat Loaf"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Бабата опекла питка, а питката… избягала! Търкулнала се по пътя.",
+          "en": "Grandma baked a loaf, and the loaf… ran away! It rolled down the road.",
+          "img": "world/traditional-bread.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Кого среща питката? Подреди ги!",
+          "en": "Whom does the loaf meet? Put them in order!"
+        }
+      ],
+      "game": {
+        "type": "order",
+        "prompt": {
+          "bg": "Кого среща питката по ред?",
+          "en": "Whom does the loaf meet, in order?"
+        },
+        "items": [
+          {
+            "bg": "Заек",
+            "en": "Hare",
+            "img": "animals/hare.webp"
+          },
+          {
+            "bg": "Вълк",
+            "en": "Wolf",
+            "img": "animals/wolf.webp"
+          },
+          {
+            "bg": "Мечка",
+            "en": "Bear",
+            "img": "animals/bear.webp"
+          },
+          {
+            "bg": "Лисица",
+            "en": "Fox",
+            "img": "animals/fox.webp"
+          }
+        ],
+        "hint": {
+          "bg": "Най-накрая е хитрата лисица.",
+          "en": "At the very end comes the clever fox."
+        }
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "В приказката „Житената питка“ питката пее песничка и бяга от всички.",
+          "en": "In the tale \"The Wheat Loaf\" the loaf sings a little song and runs away from everyone.",
+          "img": "world/traditional-bread.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Подреди приказката!",
+          "en": "Put the tale in order!"
+        }
+      ],
+      "game": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди приказката!",
+          "en": "Put the tale in order!"
+        },
+        "items": [
+          {
+            "bg": "Бабата меси питка",
+            "en": "Grandma kneads a loaf"
+          },
+          {
+            "bg": "Питката избягва и се търкаля",
+            "en": "The loaf escapes and rolls away"
+          },
+          {
+            "bg": "Бяга от заека, вълка и мечката",
+            "en": "It runs from the hare, the wolf and the bear"
+          },
+          {
+            "bg": "Лисицата я хитрува и я изяжда",
+            "en": "The fox tricks it and eats it"
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Как лисицата хваща питката?",
+            "en": "How does the fox catch the loaf?"
+          },
+          "options": [
+            {
+              "bg": "С хитрост",
+              "en": "With a trick"
+            },
+            {
+              "bg": "Тича по-бързо",
+              "en": "She runs faster"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Приказките често се повтарят по три пъти – и накрая идва обрат.",
+          "en": "Tales often repeat things three times – and then comes a twist.",
+          "img": "world/traditional-bread.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "compass",
+          "bg": "Подреди частите на приказката, както ги учим в час.",
+          "en": "Put the parts of the tale in order, as we learn in class."
+        }
+      ],
+      "game": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди частите на приказката!",
+          "en": "Put the parts of the tale in order!"
+        },
+        "items": [
+          {
+            "bg": "Начало: „Имало едно време дядо и баба…“",
+            "en": "Beginning: \"Once upon a time there were a grandpa and a grandma…\""
+          },
+          {
+            "bg": "Завръзка: питката избягва",
+            "en": "Rising action: the loaf escapes"
+          },
+          {
+            "bg": "Повторения: заек, вълк, мечка",
+            "en": "Repetition: hare, wolf, bear"
+          },
+          {
+            "bg": "Кулминация: срещата с лисицата",
+            "en": "Climax: meeting the fox"
+          },
+          {
+            "bg": "Край: поуката за самохвалството",
+            "en": "Ending: the lesson about boasting"
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Каква е поуката на приказката?",
+            "en": "What is the lesson of the tale?"
+          },
+          "options": [
+            {
+              "bg": "Не се хвали и не вярвай на ласкателства",
+              "en": "Do not boast and do not trust flattery"
+            },
+            {
+              "bg": "Питките са вкусни",
+              "en": "Loaves are tasty"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Институт за етнология и фолклористика с Етнографски музей – БАН; „Български народни приказки“ (сборници)",
+    "Учебници по „Български език и литература“ (2.–7. кл.), МОН"
+  ],
+  "review": null,
+  "draft": true
+}

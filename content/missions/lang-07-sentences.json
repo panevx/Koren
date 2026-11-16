@@ -1,0 +1,309 @@
+{
+  "id": "lang-07-sentences",
+  "subject": "language",
+  "free": true,
+  "order": 92,
+  "ages": [
+    "young",
+    "guard"
+  ],
+  "unlock": {
+    "after": [
+      "lang-06-proverbs"
+    ]
+  },
+  "badge": {
+    "id": "sentences",
+    "icon": "game/letter-tile.webp"
+  },
+  "title": {
+    "bg": "Допълни изречението",
+    "en": "Complete the sentence"
+  },
+  "levels": {
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Думите в изречението трябва да си пасват – като парченца от пъзел.",
+          "en": "The words in a sentence must fit together – like puzzle pieces.",
+          "img": "game/letter-tile.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Коя дума пасва?",
+          "en": "Which word fits?"
+        }
+      ],
+      "game": {
+        "type": "fill",
+        "prompt": {
+          "bg": "Сложи думата, която пасва!",
+          "en": "Put in the word that fits!"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Аз ___ книга.",
+              "en": "I ___ a book."
+            },
+            "options": [
+              {
+                "bg": "чета",
+                "en": "read"
+              },
+              {
+                "bg": "чете",
+                "en": "reads"
+              },
+              {
+                "bg": "четем",
+                "en": "reading"
+              }
+            ],
+            "answer": 0,
+            "hint": {
+              "bg": "„Аз“ – значи говоря за себе си.",
+              "en": "\"I\" – I am talking about myself."
+            }
+          },
+          {
+            "text": {
+              "bg": "Котката ___ мляко.",
+              "en": "The cat ___ milk."
+            },
+            "options": [
+              {
+                "bg": "пия",
+                "en": "drink"
+              },
+              {
+                "bg": "пие",
+                "en": "drinks"
+              },
+              {
+                "bg": "пием",
+                "en": "drinking"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "text": {
+              "bg": "Ние ___ в парка.",
+              "en": "We ___ in the park."
+            },
+            "options": [
+              {
+                "bg": "играе",
+                "en": "plays"
+              },
+              {
+                "bg": "играя",
+                "en": "playing"
+              },
+              {
+                "bg": "играем",
+                "en": "play"
+              }
+            ],
+            "answer": 2
+          },
+          {
+            "text": {
+              "bg": "Децата са ___.",
+              "en": "The children are ___."
+            },
+            "options": [
+              {
+                "bg": "весели",
+                "en": "happy"
+              },
+              {
+                "bg": "весел",
+                "en": "happily"
+              },
+              {
+                "bg": "весела",
+                "en": "happiness"
+              }
+            ],
+            "answer": 0,
+            "hint": {
+              "bg": "Децата са много – думата също.",
+              "en": "There are many children – the word too."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Коя дума е глагол – казва какво се прави?",
+            "en": "Which word is a verb – says what is done?"
+          },
+          "options": [
+            {
+              "bg": "тичам",
+              "en": "run"
+            },
+            {
+              "bg": "маса",
+              "en": "table"
+            },
+            {
+              "bg": "зелен",
+              "en": "green"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Пълен или кратък член? Подлогът е с пълен член: „Градът е голям.“",
+          "en": "Full or short article? The subject takes the full article: \"Градът е голям.\"",
+          "img": "game/letter-tile.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "compass",
+          "bg": "Изречения с капани!",
+          "en": "Sentences with traps!"
+        }
+      ],
+      "game": {
+        "type": "fill",
+        "prompt": {
+          "bg": "Избери правилната форма!",
+          "en": "Pick the right form!"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "___ е голям и шумен.",
+              "en": "___ is big and noisy."
+            },
+            "options": [
+              {
+                "bg": "Градът",
+                "en": "The town"
+              },
+              {
+                "bg": "Града",
+                "en": "Town"
+              }
+            ],
+            "answer": 0,
+            "hint": {
+              "bg": "Кой е голям? Градът – той е подлог, затова пълен член.",
+              "en": "Who is big? The town – the subject, so the full article."
+            }
+          },
+          {
+            "text": {
+              "bg": "Видях ___ от прозореца.",
+              "en": "I saw ___ from the window."
+            },
+            "options": [
+              {
+                "bg": "градът",
+                "en": "the town is"
+              },
+              {
+                "bg": "града",
+                "en": "the town"
+              }
+            ],
+            "answer": 1,
+            "hint": {
+              "bg": "Тук градът не върши действието – кратък член.",
+              "en": "Here the town does nothing – short article."
+            }
+          },
+          {
+            "text": {
+              "bg": "Той ___ вчера.",
+              "en": "He ___ yesterday."
+            },
+            "options": [
+              {
+                "bg": "дойде",
+                "en": "came"
+              },
+              {
+                "bg": "ще дойде",
+                "en": "will come"
+              },
+              {
+                "bg": "идва",
+                "en": "comes"
+              }
+            ],
+            "answer": 0,
+            "hint": {
+              "bg": "„Вчера“ – значи в миналото.",
+              "en": "\"Yesterday\" – that means in the past."
+            }
+          },
+          {
+            "text": {
+              "bg": "Утре ___ на море.",
+              "en": "Tomorrow we ___ to the seaside."
+            },
+            "options": [
+              {
+                "bg": "ходихме",
+                "en": "went"
+              },
+              {
+                "bg": "ще ходим",
+                "en": "will go"
+              },
+              {
+                "bg": "ходим",
+                "en": "go"
+              }
+            ],
+            "answer": 1
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кое е написано правилно?",
+            "en": "Which is written correctly?"
+          },
+          "options": [
+            {
+              "bg": "Ученикът чете.",
+              "en": "Ученикът чете."
+            },
+            {
+              "bg": "Ученика чете.",
+              "en": "Ученика чете."
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "bg": "Ученикът е подлог – пълен член.",
+            "en": "The pupil is the subject – full article."
+          }
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Учебници по „Български език и литература“ (2.–7. кл.), МОН",
+    "Официален правописен речник на българския език, БАН"
+  ],
+  "review": null,
+  "draft": true
+}

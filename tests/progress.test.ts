@@ -93,9 +93,9 @@ describe('missions for 4–6 year olds only', () => {
   })
 
   it('a 4–6 year old sees them; an older child does not', () => {
-    // v0.16–0.19: four missions are for 7–14 only (provinces puzzle, neighbours, national parks, fire dancers) — reading is the game.
+    // v0.16–0.20: these missions are for 7–14 only — reading (names, sentences, letters) is the game itself.
     const notSmall = MISSIONS.filter((m) => m.ages && !m.ages.includes('small'))
-    expect(notSmall.map((m) => m.id).sort()).toEqual(['cult-06-nestinari', 'geo-15-provinces', 'geo-16-neighbours', 'nat-03-parks'])
+    expect(notSmall.map((m) => m.id).sort()).toEqual(['cult-06-nestinari', 'geo-15-provinces', 'geo-16-neighbours', 'lang-04-glagolitic', 'lang-05-two-alphabets', 'lang-06-proverbs', 'lang-07-sentences', 'lang-10-tale-objects', 'lang-11-hitar-petar', 'lang-12-old-words', 'nat-03-parks'])
     expect(small.length).toBe(older.length - notSmall.length + 33)
     expect(older.some((m) => m.ages?.includes('small'))).toBe(false)
     for (const m of notSmall) expect(Object.keys(m.levels), m.id).not.toContain('small')

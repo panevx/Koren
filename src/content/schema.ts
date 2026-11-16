@@ -341,7 +341,39 @@ export const PaintGame = z
   .refine((g) => g.rows.join('').split('').every((c) => c === ' ' || c === '.' || c.charCodeAt(0) - 97 < g.palette.length), { message: 'a letter has no colour in the palette', path: ['rows'] })
 
 /**
- * One entry per game template (11 since v0.12, 13 since v0.16, 15 since v0.18, 17 since v0.19). A new template is added here
+ * Cipher (v0.20 — "Read the Glagolitic"): `message.bg` (Bulgarian, capital letters and spaces, only letters that have a
+ * Glagolitic counterpart — src/content/glagolitic.ts) is shown in Glagolitic with a key; the child taps the Cyrillic
+ * letters one by one. `message.en` is the English meaning, shown at the end. `hint` = what the message is about.
+ */
+export const CipherGame = z
+  .object({
+    type: z.literal('cipher'),
+    prompt: Text,
+    message: z.object({ bg: z.string().regex(/^[А-ЪЬЮ ]+$/, 'capital letters and spaces'), en: nonEmpty }).strict(),
+    hint: Text.optional(),
+  })
+  .strict()
+
+/** One sentence with a gap ("___" exactly once in each language) and 2–4 words for it. */
+const Gap = Text.refine((t) => t.bg.split('___').length === 2 && t.en.split('___').length === 2, { message: 'write "___" once in each language' })
+
+/**
+ * Fill the gap (v0.20 — proverbs, sentences): drag (or tap) the right word into the gap of each sentence in turn.
+ * A wrong word jumps back; Raya gives the `hint` of that sentence.
+ */
+export const FillGame = z
+  .object({
+    type: z.literal('fill'),
+    prompt: Text,
+    items: z
+      .array(z.object({ text: Gap, options: z.array(Option).min(2).max(4), answer: z.number().int().min(0), hint: Text.optional() }).strict().refine((i) => i.answer < i.options.length && distinct(i.options), { message: 'answer must exist; options must differ' }))
+      .min(1)
+      .max(5),
+  })
+  .strict()
+
+/**
+ * One entry per game template (11 since v0.12, 13 since v0.16, 15 since v0.18, 17 since v0.19, 19 since v0.20). A new template is added here
  * and in src/games without touching the mission screen.
  */
 export const Game = z.discriminatedUnion('type', [
@@ -362,6 +394,8 @@ export const Game = z.discriminatedUnion('type', [
   RiddleGame,
   CookGame,
   PaintGame,
+  CipherGame,
+  FillGame,
 ])
 
 export const LevelContent = z
@@ -429,6 +463,8 @@ export type AssembleGame = z.infer<typeof AssembleGame>
 export type RiddleGame = z.infer<typeof RiddleGame>
 export type CookGame = z.infer<typeof CookGame>
 export type PaintGame = z.infer<typeof PaintGame>
+export type CipherGame = z.infer<typeof CipherGame>
+export type FillGame = z.infer<typeof FillGame>
 export type Thing = z.infer<typeof Thing>
 export type SceneId = (typeof SCENES)[number]
 export type Option = z.infer<typeof Option>

@@ -1,0 +1,265 @@
+{
+  "id": "lang-08-riddles",
+  "subject": "language",
+  "free": true,
+  "order": 93,
+  "unlock": {
+    "after": [
+      "lang-02-words"
+    ]
+  },
+  "badge": {
+    "id": "riddles",
+    "icon": "world/hint-lantern.webp"
+  },
+  "title": {
+    "bg": "Народни гатанки",
+    "en": "Folk riddles"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "Баба ми каза гатанка: „Зиме и лете – все едно облечено.“",
+          "en": "Grandma told me a riddle: \"Winter and summer – always dressed the same.\"",
+          "img": "world/hint-lantern.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Какво е това? Подсказките ще ти помогнат.",
+          "en": "What is it? The clues will help you."
+        }
+      ],
+      "game": {
+        "type": "riddle",
+        "prompt": {
+          "bg": "Какво е това?",
+          "en": "What is it?"
+        },
+        "clues": [
+          {
+            "bg": "Зиме и лете – все едно облечено.",
+            "en": "Winter and summer – always dressed the same."
+          },
+          {
+            "bg": "Расте в гората.",
+            "en": "It grows in the forest."
+          },
+          {
+            "bg": "Иглите му са зелени и през зимата.",
+            "en": "Its needles stay green in winter too."
+          }
+        ],
+        "options": [
+          {
+            "bg": "Бор",
+            "en": "Pine tree",
+            "img": "geo/forest.webp"
+          },
+          {
+            "bg": "Мечка",
+            "en": "Bear",
+            "img": "animals/bear.webp"
+          },
+          {
+            "bg": "Краставица",
+            "en": "Cucumber",
+            "img": "food/cucumber.webp"
+          }
+        ],
+        "answer": 0,
+        "fact": {
+          "bg": "Борът и елата са вечнозелени – зелени и през зимата!",
+          "en": "Pines and firs are evergreen – green even in winter!"
+        }
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "Гатанките са стари игри с думи. Казват нещо, без да го назовават.",
+          "en": "Riddles are old word games. They describe something without naming it.",
+          "img": "world/hint-lantern.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Познай!",
+          "en": "Guess!"
+        }
+      ],
+      "game": {
+        "type": "riddle",
+        "prompt": {
+          "bg": "Какво е това?",
+          "en": "What is it?"
+        },
+        "clues": [
+          {
+            "bg": "Хвърчи без крила, плаче без очи.",
+            "en": "It flies without wings, it cries without eyes."
+          },
+          {
+            "bg": "Виждаш го в небето.",
+            "en": "You see it in the sky."
+          },
+          {
+            "bg": "Когато „плаче“, вали дъжд.",
+            "en": "When it \"cries\", it rains."
+          }
+        ],
+        "options": [
+          {
+            "bg": "Облак",
+            "en": "Cloud"
+          },
+          {
+            "bg": "Птица",
+            "en": "Bird",
+            "img": "world/bird.webp"
+          },
+          {
+            "bg": "Пеперуда",
+            "en": "Butterfly",
+            "img": "world/butterfly.webp"
+          }
+        ],
+        "answer": 0,
+        "fact": {
+          "bg": "Облакът „плаче“ с дъжд!",
+          "en": "The cloud \"cries\" with rain!"
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "„Сто ризи облякло, без копче на тях.“ Какво е?",
+            "en": "\"Dressed in a hundred shirts, not one has a button.\" What is it?"
+          },
+          "options": [
+            {
+              "bg": "Зелка",
+              "en": "Cabbage"
+            },
+            {
+              "bg": "Палто",
+              "en": "Coat"
+            },
+            {
+              "bg": "Лук",
+              "en": "Onion"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "bg": "Листата му са като ризи.",
+            "en": "Its leaves are like shirts."
+          }
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "Сега по-трудна гатанка.",
+          "en": "Now a harder riddle.",
+          "img": "world/hint-lantern.webp"
+        }
+      ],
+      "game": {
+        "type": "riddle",
+        "prompt": {
+          "bg": "Какво е това?",
+          "en": "What is it?"
+        },
+        "clues": [
+          {
+            "bg": "Една майка – дванайсет деца.",
+            "en": "One mother – twelve children."
+          },
+          {
+            "bg": "Всяко дете има по трийсетина внучета.",
+            "en": "Each child has some thirty grandchildren."
+          },
+          {
+            "bg": "Майката се сменя всеки януари.",
+            "en": "The mother changes every January."
+          }
+        ],
+        "options": [
+          {
+            "bg": "Годината",
+            "en": "The year"
+          },
+          {
+            "bg": "Кокошката",
+            "en": "The hen"
+          },
+          {
+            "bg": "Часовникът",
+            "en": "The clock"
+          }
+        ],
+        "answer": 0,
+        "fact": {
+          "bg": "Годината (майката) има 12 месеца (деца), а те – по около 30 дни (внучета).",
+          "en": "The year (mother) has 12 months (children), each with about 30 days (grandchildren)."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "„Без ръце, без брадва мост направи.“ Кой?",
+            "en": "\"With no hands and no axe, it built a bridge.\" Who?"
+          },
+          "options": [
+            {
+              "bg": "Мразът – прави лед на реката",
+              "en": "Frost – it makes ice on the river"
+            },
+            {
+              "bg": "Бобърът",
+              "en": "The beaver"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "„Сто ризи облякло, без копче на тях.“ Какво е?",
+            "en": "\"Dressed in a hundred shirts, not one has a button.\" What is it?"
+          },
+          "options": [
+            {
+              "bg": "Зелка",
+              "en": "Cabbage"
+            },
+            {
+              "bg": "Палто",
+              "en": "Coat"
+            },
+            {
+              "bg": "Лук",
+              "en": "Onion"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Институт за етнология и фолклористика с Етнографски музей – БАН; „Български народни приказки“ (сборници)",
+    "Сборници „Български народни гатанки“"
+  ],
+  "review": null,
+  "draft": true
+}
