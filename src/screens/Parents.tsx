@@ -13,14 +13,19 @@ import { LANGS } from '../i18n'
 import { useT } from '../i18n/useT'
 import { MAX_PROFILES, NICKNAME_MAX, useProfiles, type AvatarId, type Profile } from '../store/profiles'
 import { useSettings } from '../store/settings'
+import { TESTER_CODE, TESTER_TOOLS } from '../content/tester'
+import { useChildMissions } from '../content/useChildMissions'
 import { DEFAULT_AGE, MAX_AGE, MIN_AGE, ageToLevel, clampAge } from '../theme/levels'
 
 // ── Gate ─────────────────────────────────────────────────────────────
 /** Once solved, the gate stays open for a few minutes so a parent can move around. */
 const UNLOCK_MS = 10 * 60 * 1000
 let unlockedAt = 0
+/** The testers' code was used: the parents' area shows the testing section (until the app is closed). */
+let testerOpened = false
 export const lockParents = () => {
   unlockedAt = 0
+  testerOpened = false
 }
 
 function newSum() {
@@ -36,6 +41,13 @@ function Gate({ onPass }: { onPass: () => void }) {
   const [wrong, setWrong] = useState(false)
 
   const submit = () => {
+    // Demo build only: the testers' code opens the area too (whatever the sum) — see src/content/tester.ts.
+    if (TESTER_TOOLS && input === TESTER_CODE) {
+      testerOpened = true
+      unlockedAt = Date.now()
+      onPass()
+      return
+    }
     if (Number(input) === sum.a * sum.b) {
       unlockedAt = Date.now()
       onPass()
@@ -47,7 +59,7 @@ function Gate({ onPass }: { onPass: () => void }) {
   }
   const key = (k: string) => {
     setWrong(false)
-    setInput((v) => (k === '⌫' ? v.slice(0, -1) : (v + k).slice(0, 3)))
+    setInput((v) => (k === '⌫' ? v.slice(0, -1) : (v + k).slice(0, TESTER_TOOLS ? TESTER_CODE.length : 3)))
   }
 
   return (
@@ -61,7 +73,7 @@ function Gate({ onPass }: { onPass: () => void }) {
         <div
           aria-live="polite"
           aria-atomic="true"
-          className="grid h-16 w-44 place-items-center rounded-full bg-white text-3xl font-black tracking-widest shadow-[inset_0_3px_6px_rgb(28_43_35/0.14)] ring-2 ring-sand"
+          className="grid h-16 min-w-44 place-items-center rounded-full px-5 bg-white text-3xl font-black tracking-widest shadow-[inset_0_3px_6px_rgb(28_43_35/0.14)] ring-2 ring-sand"
         >
           <span className="sr-only">{t('gate.answer')}: </span>
           {input || ' '}
@@ -94,6 +106,34 @@ function Gate({ onPass }: { onPass: () => void }) {
 export function Parents() {
   const [open, setOpen] = useState(() => Date.now() - unlockedAt < UNLOCK_MS)
   return open ? <ParentsArea /> : <Gate onPass={() => setOpen(true)} />
+}
+
+/** Testers only (demo build): every mission open, and a random mission to test. */
+function TesterSection() {
+  const t = useT()
+  const navigate = useNavigate()
+  const unlockAll = useSettings((s) => s.unlockAll)
+  const setUnlockAll = useSettings((s) => s.setUnlockAll)
+  const missions = useChildMissions()
+  const random = () => {
+    const m = missions[Math.floor(Math.random() * missions.length)]
+    if (!m) return
+    setUnlockAll(true)
+    navigate(`/mission/${m.id}`)
+  }
+  return (
+    <Section icon="star" title={t('tester.title')}>
+      <p className="mb-3 text-sm text-muted">{t('tester.text')}</p>
+      <div className="flex flex-col gap-3">
+        <p className="font-bold">{t('tester.unlockAll')}</p>
+        <SwitchRow label={t('tester.unlockAll')} hint={t('tester.unlockAll.hint')} checked={unlockAll} onChange={setUnlockAll} />
+        <Button variant="accent" onClick={random} disabled={!missions.length}>
+          <Icon name="play" />
+          {t('tester.random')}
+        </Button>
+      </div>
+    </Section>
+  )
 }
 
 function Section({ icon, title, children }: { icon: IconName; title: string; children: ReactNode }) {
@@ -278,6 +318,7 @@ function Learns({ profile, index }: { profile: Profile; index: number }) {
 
 function ParentsArea() {
   const t = useT()
+  const unlockAllOn = useSettings((st) => st.unlockAll)
   const navigate = useNavigate()
   const { lang, remember, sound, setLang, setRemember, setSound } = useSettings()
   const { profiles, addProfile } = useProfiles()
@@ -298,6 +339,7 @@ function ParentsArea() {
     <Screen>
       <TopBar title={t('parents.title')} onBack={() => navigate('/home')} />
       <div className="flex flex-col gap-4 px-4 pb-10">
+        {TESTER_TOOLS && (testerOpened || unlockAllOn) && <TesterSection />}
         <Section icon="users" title={t('parents.profiles')}>
           <p className="mb-3 text-sm text-muted">{t('parents.profilesHint')}</p>
           <ul className="flex flex-col gap-3">

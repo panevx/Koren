@@ -14,7 +14,7 @@ import { byPathOrder, chapterOf } from '../content/pathOrder'
 import type { Mission, Subject } from '../content/schema'
 import { useLocalized } from '../content/useLocalized'
 import { useMissions } from '../content/useMissions'
-import { useProgress } from '../content/useProgress'
+import { useProgress, useUnlockAll } from '../content/useProgress'
 import type { TKey } from '../i18n'
 import { useT } from '../i18n/useT'
 import { bouncy, m, settle, stagger } from '../motion'
@@ -59,6 +59,7 @@ export function Home() {
   const missions = useMemo(() => (all ? forLevel(all, level) : null), [all, level])
   useTitle(t('nav.home'))
   const progress = useProgress(missions)
+  const testing = useUnlockAll()
   const next = missions ? progress.next(byPathOrder(missions)) : undefined
   const played = missions?.filter((mission) => profile.done[mission.id]).length ?? 0
   const badges = missions ? earnedCount(profile.badges, missions) : 0
@@ -115,6 +116,12 @@ export function Home() {
           <div className="relative z-10 -mt-9 min-h-[15rem] short:-mt-6">
             {missions && (missions.length ? <AdventureCard next={next} missions={missions} done={profile.done} /> : <NoMissionsCard />)}
           </div>
+          {/* Testers' switch on (demo build only): say so, so nobody forgets it before a presentation. */}
+          {testing && (
+            <Link to="/parents" className="mx-auto mt-3 block w-max max-w-full rounded-full bg-coral px-3 py-1 text-sm font-black text-coral-ink shadow-soft">
+              {t('tester.chip')}
+            </Link>
+          )}
 
           {missions && missions.length > 0 && (
             <Link

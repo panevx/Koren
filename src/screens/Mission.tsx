@@ -6,6 +6,7 @@ import { Icon } from '../components/Icon'
 import { Button, Screen, useTitle } from '../components/ui'
 import { MISSIONS, missionById, pickLevel } from '../content/missions'
 import { useChildMissions } from '../content/useChildMissions'
+import { useUnlockAll } from '../content/useProgress'
 import { isUnlocked, reachedMilestones, unlockedIds, type MilestoneId } from '../content/progress'
 import { earnedCount } from '../content/badges'
 import { UnlockInfo } from '../components/UnlockInfo'
@@ -31,8 +32,9 @@ export function Mission() {
   const age = useAge()
   const profile = useActiveProfile()
   const missions = useChildMissions()
+  const unlockAll = useUnlockAll()
   if (!mission) return <Navigate to="/missions" replace />
-  if (!isUnlocked(mission, profile, missions)) return <Locked mission={mission} />
+  if (!isUnlocked(mission, { ...profile, unlockAll }, missions)) return <Locked mission={mission} />
   // The level is fixed when the mission starts, so changing age mid-game cannot reshuffle it.
   return <MissionRun key={mission.id} mission={mission} childLevel={ageToLevel(age)} />
 }

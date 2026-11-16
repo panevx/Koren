@@ -1,5 +1,6 @@
 import type { Level } from '../theme/levels'
 import { Mission, type LevelContent, type Subject } from './schema'
+import { TESTER_TOOLS } from './tester'
 
 /**
  * Every JSON file in content/missions becomes a mission — no registration needed.
@@ -11,7 +12,7 @@ const files = import.meta.glob<unknown>('../../content/missions/*.json', { eager
  * Drafts (no teacher review yet) are visible in development and on the demo build
  * (VITE_SHOW_DRAFTS=1); a production build for families hides them.
  */
-export const SHOW_DRAFTS = import.meta.env.DEV || import.meta.env.VITE_SHOW_DRAFTS === '1'
+export const SHOW_DRAFTS = TESTER_TOOLS
 
 export function parseMissions(raw: Record<string, unknown>, showDrafts = SHOW_DRAFTS): Mission[] {
   const out: Mission[] = []

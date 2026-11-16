@@ -456,5 +456,11 @@
   "empty.caption": "Coming soon",
   "empty.title": "Missions are coming soon",
   "empty.text": "A teacher is checking the first missions. As soon as they are ready, they will appear here. Until then, explore the map and the timeline!",
-  "empty.map": "Go to the map"
+  "empty.map": "Go to the map",
+  "tester.title": "Testing mode",
+  "tester.text": "Demo build only, for the team. Badges, coins and the passport stay real – nothing is recorded as played.",
+  "tester.unlockAll": "Unlock all missions",
+  "tester.unlockAll.hint": "Every mission is open without playing the ones before it.",
+  "tester.random": "Random mission",
+  "tester.chip": "Test: all missions unlocked"
 }

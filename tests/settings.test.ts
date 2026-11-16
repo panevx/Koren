@@ -24,7 +24,7 @@ describe('settings store (device-wide)', () => {
     const s = useSettings.getState()
     s.setLang('en')
     s.completeOnboarding()
-    expect(stored()).toEqual({ lang: 'en', onboarded: true, remember: true, sound: true })
+    expect(stored()).toEqual({ lang: 'en', onboarded: true, remember: true, sound: true, unlockAll: false })
   })
 
   it('writes nothing but the flag when "remember" is off', () => {

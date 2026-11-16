@@ -11,10 +11,11 @@ import type { Mission } from './schema'
  */
 export type Status = 'locked' | 'open' | 'done'
 
-type Progress = { done: Record<string, unknown>; badges: readonly string[] }
+/** `unlockAll`: the testers' switch (demo build only, see tester.ts) — every mission open, progress itself untouched. */
+type Progress = { done: Record<string, unknown>; badges: readonly string[]; unlockAll?: boolean }
 
 export function isUnlocked(m: Mission, p: Progress, all: readonly Mission[]): boolean {
-  if (p.done[m.id] || !m.unlock) return true
+  if (p.unlockAll || p.done[m.id] || !m.unlock) return true
   const { after, badges } = m.unlock
   if (badges !== undefined && earnedCount(p.badges, all) >= badges) return true
   if (after?.some((id) => p.done[id] || !all.some((x) => x.id === id))) return true

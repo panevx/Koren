@@ -11,17 +11,20 @@ type Persisted = {
   remember: boolean
   /** Sound effects on/off. */
   sound: boolean
+  /** Testers only (demo build): every mission open. Ignored in a families' build (src/content/tester.ts). */
+  unlockAll: boolean
 }
 
 type SettingsState = Persisted & {
   setLang: (lang: Lang) => void
   setRemember: (remember: boolean) => void
   setSound: (sound: boolean) => void
+  setUnlockAll: (unlockAll: boolean) => void
   completeOnboarding: () => void
   reset: () => void
 }
 
-const DEFAULTS: Persisted = { lang: 'bg', onboarded: false, remember: true, sound: true }
+const DEFAULTS: Persisted = { lang: 'bg', onboarded: false, remember: true, sound: true, unlockAll: false }
 
 /**
  * localStorage can throw (Safari private mode, full quota, blocked site data).
@@ -60,6 +63,7 @@ export function sanitize(raw: unknown): Partial<Persisted> {
   if (typeof r.onboarded === 'boolean') out.onboarded = r.onboarded
   if (typeof r.remember === 'boolean') out.remember = r.remember
   if (typeof r.sound === 'boolean') out.sound = r.sound
+  if (typeof r.unlockAll === 'boolean') out.unlockAll = r.unlockAll
   return out
 }
 
@@ -70,6 +74,7 @@ export const useSettings = create<SettingsState>()(
       setLang: (lang) => set({ lang }),
       setRemember: (remember) => set({ remember }),
       setSound: (sound) => set({ sound }),
+      setUnlockAll: (unlockAll) => set({ unlockAll }),
       completeOnboarding: () => set({ onboarded: true }),
       reset: () => set({ ...DEFAULTS }),
     }),
@@ -79,7 +84,7 @@ export const useSettings = create<SettingsState>()(
       storage: createJSONStorage(() => safeLocalStorage),
       partialize: (s): Partial<Persisted> =>
         s.remember
-          ? { lang: s.lang, onboarded: s.onboarded, remember: true, sound: s.sound }
+          ? { lang: s.lang, onboarded: s.onboarded, remember: true, sound: s.sound, unlockAll: s.unlockAll }
           : { remember: false },
       merge: (persisted, current) => ({ ...current, ...sanitize(persisted) }),
       // Unknown or older shapes: keep whatever still validates.

@@ -157,6 +157,40 @@ describe('parents section', () => {
     expect(screen.getByRole('heading', { name: 'За родители' })).toBeInTheDocument()
   })
 
+  it('testers (demo build): the code 6812007 opens the area whatever the sum, and unlocks every mission', async () => {
+    useSettings.getState().completeOnboarding()
+    renderAt('/parents')
+    await screen.findByRole('heading', { name: 'Само за родители' })
+    solveGate('6812008') // a long wrong number is just wrong
+    expect(screen.getByRole('status')).toHaveTextContent('Не е вярно')
+    expect(screen.queryByRole('heading', { name: 'Режим за тестване' })).not.toBeInTheDocument()
+    solveGate('6812007')
+    expect(screen.getByRole('heading', { name: 'За родители' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Режим за тестване' })).toBeInTheDocument()
+    // a locked mission (it needs another one first) opens without playing anything
+    const locked = forLevel(MISSIONS, 'young').find((m) => m.unlock?.after)!
+    fireEvent.click(screen.getByRole('switch', { name: 'Отключи всички мисии' }))
+    expect(useSettings.getState().unlockAll).toBe(true)
+    cleanup()
+    renderAt(`/mission/${locked.id}`)
+    expect(await screen.findByRole('button', { name: /^Напред/ })).toBeInTheDocument()
+    expect(screen.queryByText(/Заключена мисия/)).not.toBeInTheDocument()
+    // nothing is recorded as played
+    expect(activeProfile(useProfiles.getState()).done).toEqual({})
+    // the hub says the switch is on
+    cleanup()
+    renderAt('/home')
+    expect(await screen.findByRole('link', { name: 'Тест: всички мисии са отворени' })).toBeInTheDocument()
+  })
+
+  it('the parents\' section has no testing part when opened with the sum', async () => {
+    renderAt('/parents')
+    await screen.findByRole('heading', { name: 'Само за родители' })
+    solveGate()
+    expect(screen.getByRole('heading', { name: 'За родители' })).toBeInTheDocument()
+    expect(screen.queryByRole('heading', { name: 'Режим за тестване' })).not.toBeInTheDocument()
+  })
+
   it('/settings (old address) also goes through the gate', async () => {
     renderAt('/settings')
     expect(await screen.findByRole('heading', { name: 'Само за родители' })).toBeInTheDocument()
