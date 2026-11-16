@@ -280,6 +280,17 @@
         "ach-07-plates",
         "ach-08-borders"
       ]
+    },
+    {
+      "title": {
+        "bg": "Игри и предизвикателства",
+        "en": "Games and challenges"
+      },
+      "missions": [
+        "play-01-true-false",
+        "play-02-blitz",
+        "play-03-hidden"
+      ]
     }
   ]
 }

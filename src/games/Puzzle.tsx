@@ -5,6 +5,7 @@ import { useLocalized } from '../content/useLocalized'
 import { useT } from '../i18n/useT'
 import { play } from '../sound'
 import { DoneButton, Feedback, Prompt } from './Feedback'
+import { useDrag } from './drag'
 import { shuffledIndexes } from './shuffle'
 
 const GRID: Record<PuzzleGame['pieces'], { cols: number; rows: number }> = {
@@ -15,6 +16,7 @@ const GRID: Record<PuzzleGame['pieces'], { cols: number; rows: number }> = {
 
 /**
  * Picture puzzle for small fingers: big pieces, tap one, then tap where it goes — they swap.
+ * v0.22: a piece can also be dragged onto another one (they swap).
  * A piece in its right place locks. The finished picture is always shown small as a guide.
  */
 export function Puzzle({ game, onDone }: { game: PuzzleGame; onDone: () => void }) {
@@ -39,13 +41,20 @@ export function Puzzle({ game, onDone }: { game: PuzzleGame; onDone: () => void 
       setSelected(null)
       return
     }
+    swap(selected, pos)
+  }
+
+  /** Swap the pieces at two places (tap, tap — or v0.22: drag one onto the other). */
+  const swap = (a: number, b: number) => {
+    if (a === b || solved || order[a] === a || order[b] === b) return
     const next = [...order]
-    ;[next[selected], next[pos]] = [next[pos]!, next[selected]!]
+    ;[next[a], next[b]] = [next[b]!, next[a]!]
     setOrder(next)
     setSelected(null)
     if (next.every((p, i) => p === i)) play('correct')
-    else if (next[pos] === pos || next[selected] === selected) play('tap')
+    else if (next[a] === a || next[b] === b) play('tap')
   }
+  const drag = useDrag((from, to) => swap(Number(from), Number(to)))
 
   return (
     <div className="flex flex-1 flex-col gap-4">
@@ -71,6 +80,8 @@ export function Puzzle({ game, onDone }: { game: PuzzleGame; onDone: () => void 
             <button
               key={pos}
               type="button"
+              {...drag(String(pos), !done && !solved)}
+              data-drop={pos}
               onClick={() => tap(pos)}
               disabled={done && !solved}
               aria-pressed={active}

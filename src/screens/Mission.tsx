@@ -10,6 +10,7 @@ import { isUnlocked, reachedMilestones, unlockedIds, type MilestoneId } from '..
 import { earnedCount } from '../content/badges'
 import { UnlockInfo } from '../components/UnlockInfo'
 import { RewardModal } from '../components/RewardModal'
+import { wallet } from '../content/rewards'
 import { ART, GAME_ART } from '../world'
 import type { Mission as MissionData, StoryLine } from '../content/schema'
 import { useLocalized } from '../content/useLocalized'
@@ -308,8 +309,13 @@ function Badge({ mission, level }: { mission: MissionData; level: Level }) {
   // What was open and which rewards were reached BEFORE this badge — the difference is celebrated below.
   const [before] = useState(() => {
     const p = activeProfile(useProfiles.getState())
-    return { open: unlockedIds(p, missions), rewards: reachedMilestones(earnedCount(p.badges, missions), missions) }
+    const w = wallet(p, missions)
+    return { open: unlockedIds(p, missions), rewards: reachedMilestones(earnedCount(p.badges, missions), missions), coins: w.earnedCoins, pendars: w.earnedPendars }
   })
+  // v0.22: what this badge brought to the purse (a replayed mission brings nothing new — and says nothing)
+  const purse = wallet(profile, missions)
+  const gotCoins = purse.earnedCoins - before.coins
+  const gotPendars = purse.earnedPendars - before.pendars
   const opened = unlockedIds(profile, missions)
     .filter((id) => !before.open.includes(id))
     .map((id) => missionById(id)!)
@@ -377,6 +383,23 @@ function Badge({ mission, level }: { mission: MissionData; level: Level }) {
       </div>
 
       <p className="text-xl font-extrabold">{l(mission.title)}</p>
+      {(gotCoins > 0 || gotPendars > 0) && (
+        <m.p
+          initial={{ scale: 0.5, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ ...bouncy, delay: 0.9 }}
+          className="flex items-center gap-2 rounded-full bg-gold-soft px-4 py-1.5 font-black text-ink"
+        >
+          <img src={img(ART.coin)} alt="" className="size-7" />
+          {t('badge.coins', { n: gotCoins })}
+          {gotPendars > 0 && (
+            <>
+              <img src={img(ART.pendar)} alt="" className="ml-1 size-7" />
+              {t('badge.pendar', { n: gotPendars })}
+            </>
+          )}
+        </m.p>
+      )}
       {shown && !closed && (
         <RewardModal
           reward={shown}

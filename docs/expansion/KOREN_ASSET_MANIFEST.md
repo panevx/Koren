@@ -4,18 +4,28 @@
 
 | Статус | Брой |
 |---|---:|
-| В приложението сега (`used`) | 175 |
-| Готови за следващ етап (`ready`) | 59 |
+| В приложението сега (`used`) | 193 |
+| Готови за следващ етап (`ready`) | 41 |
 | Данни (оригинал за препроектиране) (`source`) | 10 |
 | Дубликати на съществуващи картинки (`duplicate`) | 49 |
 | Чакат проверка (не се публикуват) (`review`) | 7 |
 | **Общо** | **300** |
 
-## В приложението сега — 175
+## В приложението сега — 193
 
 | ID | Оригинал | Път в `public/img` / същото като | Етап | Бележка / проверка |
 |---|---|---|---|---|
 | `animal-imperial-eagle` | `design/v5/animal/animal-imperial-eagle.png` | `animals/imperial-eagle.webp` |  | мисии |
+| `avatar-embroidered-vest` | `design/v5/avatar/avatar-embroidered-vest.png` | `avatar/embroidered-vest.webp` |  | мисии |
+| `avatar-explorer-backpack` | `design/v5/avatar/avatar-explorer-backpack.png` | `avatar/explorer-backpack.webp` |  | мисии |
+| `avatar-explorer-hat` | `design/v5/avatar/avatar-explorer-hat.png` | `avatar/explorer-hat.webp` |  | мисии |
+| `avatar-flower-crown` | `design/v5/avatar/avatar-flower-crown.png` | `avatar/flower-crown.webp` |  | мисии |
+| `avatar-folk-bag` | `design/v5/avatar/avatar-folk-bag.png` | `avatar/folk-bag.webp` |  | мисии |
+| `avatar-folk-hat` | `design/v5/avatar/avatar-folk-hat.png` | `avatar/folk-hat.webp` |  | мисии |
+| `avatar-leather-boots` | `design/v5/avatar/avatar-leather-boots.png` | `avatar/leather-boots.webp` |  | мисии |
+| `avatar-martenitsa-accessory` | `design/v5/avatar/avatar-martenitsa-accessory.png` | `avatar/martenitsa-accessory.webp` |  | мисии |
+| `avatar-rose-accessory` | `design/v5/avatar/avatar-rose-accessory.png` | `avatar/rose-accessory.webp` |  | мисии |
+| `avatar-traditional-belt` | `design/v5/avatar/avatar-traditional-belt.png` | `avatar/traditional-belt.webp` |  | мисии |
 | `city-bansko` | `design/v5/city/city-bansko.png` | `city/bansko.webp` |  | мисии |
 | `city-burgas` | `design/v5/city/city-burgas.png` | `city/burgas.webp` |  | карта: Бургас |
 | `city-gabrovo` | `design/v5/city/city-gabrovo.png` | `city/gabrovo.webp` |  | мисии |
@@ -25,6 +35,9 @@
 | `city-sofia` | `design/v5/city/city-sofia.png` | `city/sofia.webp` |  | Катедралата в София (история) |
 | `city-varna` | `design/v5/city/city-varna.png` | `city/varna.webp` |  | карта: Варна; Черно море (история) |
 | `city-veliko-tarnovo` | `design/v5/city/city-veliko-tarnovo.png` | `city/veliko-tarnovo.webp` |  | мисии |
+| `currency-coin-bag` | `design/v5/currency/currency-coin-bag.png` | `currency/coin-bag.webp` |  | мисии |
+| `currency-gold-coin` | `design/v5/currency/currency-gold-coin.png` | `currency/gold-coin.webp` |  | мисии |
+| `currency-pendar` | `design/v5/currency/currency-pendar.png` | `currency/pendar.webp` |  | мисии |
 | `food-banitsa` | `design/v5/food/food-banitsa.png` | `food/banitsa.webp` |  | мисии |
 | `food-bob-chorba` | `design/v5/food/food-bob-chorba.png` | `food/bob-chorba.webp` |  | мисии |
 | `food-kiselo-mlyako` | `design/v5/food/food-kiselo-mlyako.png` | `food/kiselo-mlyako.webp` |  | мисии |
@@ -40,6 +53,9 @@
 | `game-paintbrush` | `design/v5/game/game-paintbrush.png` | `game/paintbrush.webp` |  | мисии |
 | `game-puzzle-blue` | `design/v5/game/game-puzzle-blue.png` | `game/puzzle-blue.webp` |  | мисии |
 | `game-puzzle-red` | `design/v5/game/game-puzzle-red.png` | `game/puzzle-red.webp` |  | мисии |
+| `game-timer` | `design/v5/game/game-timer.png` | `game/timer.webp` |  | мисии |
+| `game-true-false-false` | `design/v5/game/game-true-false-false.svg` | `game/true-false-false.svg` |  | мисии |
+| `game-true-false-true` | `design/v5/game/game-true-false-true.svg` | `game/true-false-true.svg` |  | мисии |
 | `game-word-tile` | `design/v5/game/game-word-tile.png` | `game/word-tile.webp` |  | мисии |
 | `hero-budenie-book` | `design/v5/hero/hero-budenie-book.png` | `people/budenie-book.webp` |  | мисии |
 | `hero-georgi-rakovski` | `design/v5/hero/hero-georgi-rakovski.png` | `people/georgi-rakovski.webp` |  | мисии · Условен образ — сравни чертите със запазен портрет/снимка (историк). |
@@ -97,6 +113,7 @@
 | `minigame-fortress-gate` | `design/v5/minigame/minigame-fortress-gate.png` | `minigame/fortress-gate.webp` |  | мисии |
 | `minigame-fortress-tower` | `design/v5/minigame/minigame-fortress-tower.png` | `minigame/fortress-tower.webp` |  | мисии |
 | `minigame-fortress-wall` | `design/v5/minigame/minigame-fortress-wall.png` | `minigame/fortress-wall.webp` |  | мисии |
+| `minigame-hidden-object-scene` | `design/v5/minigame/minigame-hidden-object-scene.png` | `minigame/hidden-object-scene.webp` |  | мисии |
 | `minigame-pottery-wheel` | `design/v5/minigame/minigame-pottery-wheel.png` | `minigame/pottery-wheel.webp` |  | мисии |
 | `minigame-recycling-bin` | `design/v5/minigame/minigame-recycling-bin.png` | `minigame/recycling-bin.webp` |  | мисии |
 | `minigame-river-route` | `design/v5/minigame/minigame-river-route.png` | `minigame/river-route.webp` |  | мисии |
@@ -175,6 +192,7 @@
 | `world-border-crossing` | `design/v5/world/world-border-crossing.png` | `places/border-crossing.webp` |  | мисии |
 | `world-car-license-plate` | `design/v5/world/world-car-license-plate.svg` | `places/car-license-plate.svg` |  | мисии |
 | `world-customs` | `design/v5/world/world-customs.png` | `places/customs.webp` |  | мисии |
+| `world-daily-streak` | `design/v5/world/world-daily-streak.png` | `places/daily-streak.webp` |  | мисии |
 | `world-mineral-hisarya` | `design/v5/world/world-mineral-hisarya.png` | `places/mineral-hisarya.webp` |  | мисии |
 | `world-mineral-sandanski` | `design/v5/world/world-mineral-sandanski.png` | `places/mineral-sandanski.webp` |  | мисии |
 | `world-mineral-velingrad` | `design/v5/world/world-mineral-velingrad.png` | `places/mineral-velingrad.webp` |  | мисии |
@@ -191,25 +209,12 @@
 | `world-transport-corridor` | `design/v5/world/world-transport-corridor.png` | `places/transport-corridor.webp` |  | мисии |
 | `world-valchitran-treasure` | `design/v5/world/world-valchitran-treasure.png` | `places/valchitran-treasure.webp` |  | мисии · Формата да се сравни със снимка на истинския предмет (музей). |
 
-## Готови за следващ етап — 59
+## Готови за следващ етап — 41
 
 | ID | Оригинал | Път в `public/img` / същото като | Етап | Бележка / проверка |
 |---|---|---|---|---|
-| `avatar-embroidered-vest` | `design/v5/avatar/avatar-embroidered-vest.png` | `avatar/embroidered-vest.webp` | 9 |  |
-| `avatar-explorer-backpack` | `design/v5/avatar/avatar-explorer-backpack.png` | `avatar/explorer-backpack.webp` | 9 |  |
-| `avatar-explorer-hat` | `design/v5/avatar/avatar-explorer-hat.png` | `avatar/explorer-hat.webp` | 9 |  |
-| `avatar-flower-crown` | `design/v5/avatar/avatar-flower-crown.png` | `avatar/flower-crown.webp` | 9 |  |
-| `avatar-folk-bag` | `design/v5/avatar/avatar-folk-bag.png` | `avatar/folk-bag.webp` | 9 |  |
-| `avatar-folk-hat` | `design/v5/avatar/avatar-folk-hat.png` | `avatar/folk-hat.webp` | 9 |  |
-| `avatar-leather-boots` | `design/v5/avatar/avatar-leather-boots.png` | `avatar/leather-boots.webp` | 9 |  |
-| `avatar-martenitsa-accessory` | `design/v5/avatar/avatar-martenitsa-accessory.png` | `avatar/martenitsa-accessory.webp` | 9 |  |
-| `avatar-rose-accessory` | `design/v5/avatar/avatar-rose-accessory.png` | `avatar/rose-accessory.webp` | 9 |  |
-| `avatar-traditional-belt` | `design/v5/avatar/avatar-traditional-belt.png` | `avatar/traditional-belt.webp` | 9 |  |
 | `city-koprivshtitsa` | `design/v5/city/city-koprivshtitsa.png` | `city/koprivshtitsa.webp` | 2 |  |
-| `currency-coin-bag` | `design/v5/currency/currency-coin-bag.png` | `currency/coin-bag.webp` | 9 |  |
 | `currency-coin-stack` | `design/v5/currency/currency-coin-stack.png` | `currency/coin-stack.webp` | 9 |  |
-| `currency-gold-coin` | `design/v5/currency/currency-gold-coin.png` | `currency/gold-coin.webp` | 9 |  |
-| `currency-pendar` | `design/v5/currency/currency-pendar.png` | `currency/pendar.webp` | 9 |  |
 | `food-kavarma` | `design/v5/food/food-kavarma.png` | `food/kavarma.webp` | 6 |  |
 | `food-kebapche` | `design/v5/food/food-kebapche.png` | `food/kebapche.webp` | 6 |  |
 | `food-kyufte` | `design/v5/food/food-kyufte.png` | `food/kyufte.webp` | 6 |  |
@@ -218,9 +223,6 @@
 | `game-drop-target` | `design/v5/game/game-drop-target.png` | `game/drop-target.webp` | 9 |  |
 | `game-mission-complete` | `design/v5/game/game-mission-complete.png` | `game/mission-complete.webp` | 9 |  |
 | `game-paint-bucket` | `design/v5/game/game-paint-bucket.png` | `game/paint-bucket.webp` | 6 |  |
-| `game-timer` | `design/v5/game/game-timer.png` | `game/timer.webp` | 9 |  |
-| `game-true-false-false` | `design/v5/game/game-true-false-false.svg` | `game/true-false-false.svg` | 9 |  |
-| `game-true-false-true` | `design/v5/game/game-true-false-true.svg` | `game/true-false-true.svg` | 9 |  |
 | `hero-elin-pelin` | `design/v5/hero/hero-elin-pelin.png` | `people/elin-pelin.webp` | 5 | Условен образ — сравни чертите със запазен портрет/снимка (историк). |
 | `hero-kiril` | `design/v5/hero/hero-kiril.png` | `people/kiril.webp` | 5 | history/kiril-metodiy.webp (показва се в „Азбуката на Кирил и Методий“) · Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста. |
 | `hero-metodiy` | `design/v5/hero/hero-metodiy.png` | `people/metodiy.webp` | 5 | history/kiril-metodiy.webp (показва се в „Азбуката на Кирил и Методий“) · Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста. |
@@ -232,7 +234,6 @@
 | `minigame-beach-trash` | `design/v5/minigame/minigame-beach-trash.png` | `minigame/beach-trash.webp` | 4 |  |
 | `minigame-embroidery-board` | `design/v5/minigame/minigame-embroidery-board.png` | `minigame/embroidery-board.webp` | 6 |  |
 | `minigame-fairytale-flute` | `design/v5/minigame/minigame-fairytale-flute.png` | `minigame/fairytale-flute.webp` | 7 |  |
-| `minigame-hidden-object-scene` | `design/v5/minigame/minigame-hidden-object-scene.png` | `minigame/hidden-object-scene.webp` | 7 |  |
 | `river-tundzha` | `design/v5/river/river-tundzha.png` | `geo/tundzha.webp` | 3 |  |
 | `space-food` | `design/v5/space/space-food.png` | `space/food.webp` | 8 |  |
 | `tradition-elbetitsa` | `design/v5/tradition/tradition-elbetitsa.png` | `culture/elbetitsa.webp` | 6 |  |
@@ -253,7 +254,6 @@
 | `ui-sound` | `design/v5/ui/ui-sound.png` | `ui/sound.webp` | 9 |  |
 | `ui-unlock` | `design/v5/ui/ui-unlock.png` | `ui/unlock.webp` | 9 |  |
 | `world-bulgaria-granary` | `design/v5/world/world-bulgaria-granary.png` | `places/bulgaria-granary.webp` | 3 |  |
-| `world-daily-streak` | `design/v5/world/world-daily-streak.png` | `places/daily-streak.webp` | 9 |  |
 
 ## Данни (оригинал за препроектиране) — 10
 

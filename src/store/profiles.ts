@@ -27,6 +27,11 @@ export type Profile = {
   badges: string[]
   /** Unlocked missions the child has already opened (newly unlocked ones show "New!"). */
   seen: string[]
+  /** v0.22: days with a finished mission (YYYY-MM-DD, at most the last 400) — for "days of adventure" and coins. */
+  days: string[]
+  /** v0.22: things bought at the fair stall (src/content/rewards.ts) and what is worn now, per slot. */
+  owned: string[]
+  outfit: Partial<Record<string, string>>
 }
 
 type State = {
@@ -42,6 +47,10 @@ type State = {
   setAvatar: (avatar: AvatarId) => void
   complete: (missionId: string, level: Level, badgeId: string) => void
   markSeen: (missionId: string) => void
+  /** Buy a thing (the price check is done by the shop with the wallet; this only records it, once). */
+  buy: (itemId: string, slot: string) => void
+  wear: (itemId: string, slot: string) => void
+  takeOff: (slot: string) => void
   takeBreak: () => void
   reset: () => void
 }
@@ -79,7 +88,17 @@ export function sanitizeProfile(raw: unknown): Profile | null {
     done: sanitizeDone(r.done),
     badges: sanitizeBadges(r.badges),
     seen: sanitizeBadges(r.seen),
+    days: sanitizeBadges(r.days).filter((d) => /^\d{4}-\d{2}-\d{2}$/.test(d)).slice(-400),
+    owned: sanitizeBadges(r.owned),
+    outfit: sanitizeOutfit(r.outfit),
   }
+}
+
+function sanitizeOutfit(raw: unknown): Partial<Record<string, string>> {
+  const out: Partial<Record<string, string>> = {}
+  if (!raw || typeof raw !== 'object') return out
+  for (const [slot, id] of Object.entries(raw as Record<string, unknown>)) if (typeof id === 'string' && /^[a-z-]+$/.test(slot)) out[slot] = id
+  return out
 }
 
 export function sanitizeProfiles(raw: unknown): Pick<State, 'profiles' | 'activeId'> | null {
@@ -115,6 +134,9 @@ function initialProfiles(): Pick<State, 'profiles' | 'activeId'> {
     done: sanitizeDone(legacy?.done),
     badges: sanitizeBadges(legacy?.badges),
     seen: [],
+    days: [],
+    owned: [],
+    outfit: {},
   }
   return { profiles: [profile], activeId: profile.id }
 }
@@ -131,7 +153,7 @@ export const useProfiles = create<State>()(
           if (get().profiles.length >= MAX_PROFILES) return null
           const id = newId()
           set((s) => ({
-            profiles: [...s.profiles, { id, nickname: cleanNickname(nickname), age: clampAge(age), avatar, done: {}, badges: [], seen: [] }],
+            profiles: [...s.profiles, { id, nickname: cleanNickname(nickname), age: clampAge(age), avatar, done: {}, badges: [], seen: [], days: [], owned: [], outfit: {} }],
           }))
           return id
         },
@@ -158,17 +180,27 @@ export const useProfiles = create<State>()(
         setAge: (age) => patchActive((p) => ({ ...p, age: clampAge(age) })),
         setAvatar: (avatar) => patchActive((p) => ({ ...p, avatar })),
         complete: (missionId, level, badgeId) => {
+          const today = new Date().toISOString().slice(0, 10)
           patchActive((p) => ({
             ...p,
-            done: { ...p.done, [missionId]: { level, at: new Date().toISOString().slice(0, 10) } },
+            done: { ...p.done, [missionId]: { level, at: today } },
             badges: p.badges.includes(badgeId) ? p.badges : [...p.badges, badgeId],
+            days: p.days.includes(today) ? p.days : [...p.days, today].slice(-400),
           }))
           set((s) => ({ streak: s.streak + 1 }))
         },
+        buy: (itemId, slot) => patchActive((p) => (p.owned.includes(itemId) ? p : { ...p, owned: [...p.owned, itemId], outfit: { ...p.outfit, [slot]: itemId } })),
+        wear: (itemId, slot) => patchActive((p) => (p.owned.includes(itemId) ? { ...p, outfit: { ...p.outfit, [slot]: itemId } } : p)),
+        takeOff: (slot) =>
+          patchActive((p) => {
+            const outfit = { ...p.outfit }
+            delete outfit[slot]
+            return { ...p, outfit }
+          }),
         markSeen: (missionId) => patchActive((p) => (p.seen.includes(missionId) ? p : { ...p, seen: [...p.seen, missionId] })),
         takeBreak: () => set({ streak: 0 }),
         reset: () => {
-          const fresh: Profile = { id: 'p1', nickname: '', age: DEFAULT_AGE, avatar: 'bear', done: {}, badges: [], seen: [] }
+          const fresh: Profile = { id: 'p1', nickname: '', age: DEFAULT_AGE, avatar: 'bear', done: {}, badges: [], seen: [], days: [], owned: [], outfit: {} }
           set({ profiles: [fresh], activeId: fresh.id, streak: 0 })
         },
       }

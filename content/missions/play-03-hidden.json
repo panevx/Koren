@@ -1,0 +1,276 @@
+{
+  "id": "play-03-hidden",
+  "subject": "culture",
+  "free": true,
+  "order": 108,
+  "badge": {
+    "id": "hidden",
+    "icon": "minigame/hidden-object-scene.webp"
+  },
+  "title": {
+    "bg": "Тайните на площада",
+    "en": "Secrets of the village square"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "На площада в старото село някой е скрил три неща!",
+          "en": "Someone has hidden three things on the old village square!",
+          "img": "minigame/hidden-object-scene.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Надникни под храстите!",
+          "en": "Peek under the bushes!"
+        }
+      ],
+      "game": {
+        "type": "find",
+        "prompt": {
+          "bg": "Намери ключа, жълтицата и мартеницата!",
+          "en": "Find the key, the coin and the martenitsa!"
+        },
+        "scene": "village",
+        "backdrop": "minigame/hidden-object-scene.webp",
+        "items": [
+          {
+            "bg": "Ключ",
+            "en": "Key",
+            "img": "world/mission-key.webp",
+            "x": 30,
+            "y": 72,
+            "size": 11,
+            "target": true,
+            "under": "world/forest-bush.webp"
+          },
+          {
+            "bg": "Жълтица",
+            "en": "Gold coin",
+            "img": "currency/gold-coin.webp",
+            "x": 55,
+            "y": 80,
+            "size": 10,
+            "target": true
+          },
+          {
+            "bg": "Мартеница",
+            "en": "Martenitsa",
+            "img": "avatar/martenitsa-accessory.webp",
+            "x": 74,
+            "y": 70,
+            "size": 11,
+            "target": true,
+            "under": "world/forest-bush.webp"
+          },
+          {
+            "bg": "Пеперуда",
+            "en": "Butterfly",
+            "img": "world/butterfly.webp",
+            "x": 46,
+            "y": 52,
+            "size": 10,
+            "target": false
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "explorer",
+          "bg": "Пет неща се крият на площада – някои под храстите.",
+          "en": "Five things are hiding on the square – some under the bushes.",
+          "img": "minigame/hidden-object-scene.webp"
+        }
+      ],
+      "game": {
+        "type": "find",
+        "prompt": {
+          "bg": "Намери петте скрити неща!",
+          "en": "Find the five hidden things!"
+        },
+        "scene": "village",
+        "backdrop": "minigame/hidden-object-scene.webp",
+        "items": [
+          {
+            "bg": "Ключ",
+            "en": "Key",
+            "img": "world/mission-key.webp",
+            "x": 24,
+            "y": 74,
+            "size": 10,
+            "target": true,
+            "under": "world/forest-bush.webp"
+          },
+          {
+            "bg": "Жълтица",
+            "en": "Gold coin",
+            "img": "currency/gold-coin.webp",
+            "x": 50,
+            "y": 82,
+            "size": 10,
+            "target": true
+          },
+          {
+            "bg": "Мартеница",
+            "en": "Martenitsa",
+            "img": "avatar/martenitsa-accessory.webp",
+            "x": 76,
+            "y": 72,
+            "size": 10,
+            "target": true,
+            "under": "world/forest-bush.webp"
+          },
+          {
+            "bg": "Перо и мастило",
+            "en": "Quill and ink",
+            "img": "world/quill-ink.webp",
+            "x": 62,
+            "y": 58,
+            "size": 10,
+            "target": true
+          },
+          {
+            "bg": "Пендар",
+            "en": "Pendant",
+            "img": "currency/pendar.webp",
+            "x": 38,
+            "y": 62,
+            "size": 10,
+            "target": true,
+            "under": "world/forest-bush.webp"
+          },
+          {
+            "bg": "Пеперуда",
+            "en": "Butterfly",
+            "img": "world/butterfly.webp",
+            "x": 46,
+            "y": 46,
+            "size": 10,
+            "target": false
+          },
+          {
+            "bg": "Птичка",
+            "en": "Bird",
+            "img": "world/bird.webp",
+            "x": 20,
+            "y": 30,
+            "size": 10,
+            "target": false
+          }
+        ]
+      },
+      "check": []
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "compass",
+          "bg": "Шест съкровища и много храсти. Търси навсякъде!",
+          "en": "Six treasures and many bushes. Search everywhere!",
+          "img": "minigame/hidden-object-scene.webp"
+        }
+      ],
+      "game": {
+        "type": "find",
+        "prompt": {
+          "bg": "Намери шестте скрити неща!",
+          "en": "Find the six hidden things!"
+        },
+        "scene": "village",
+        "backdrop": "minigame/hidden-object-scene.webp",
+        "items": [
+          {
+            "bg": "Ключ",
+            "en": "Key",
+            "img": "world/mission-key.webp",
+            "x": 22,
+            "y": 74,
+            "size": 10,
+            "target": true,
+            "under": "world/forest-bush.webp"
+          },
+          {
+            "bg": "Жълтица",
+            "en": "Gold coin",
+            "img": "currency/gold-coin.webp",
+            "x": 48,
+            "y": 84,
+            "size": 10,
+            "target": true,
+            "under": "world/forest-bush.webp"
+          },
+          {
+            "bg": "Мартеница",
+            "en": "Martenitsa",
+            "img": "avatar/martenitsa-accessory.webp",
+            "x": 78,
+            "y": 74,
+            "size": 10,
+            "target": true,
+            "under": "world/forest-bush.webp"
+          },
+          {
+            "bg": "Перо и мастило",
+            "en": "Quill and ink",
+            "img": "world/quill-ink.webp",
+            "x": 64,
+            "y": 60,
+            "size": 10,
+            "target": true
+          },
+          {
+            "bg": "Пендар",
+            "en": "Pendant",
+            "img": "currency/pendar.webp",
+            "x": 36,
+            "y": 60,
+            "size": 10,
+            "target": true,
+            "under": "world/forest-bush.webp"
+          },
+          {
+            "bg": "Розичка",
+            "en": "Little rose",
+            "img": "avatar/rose-accessory.webp",
+            "x": 86,
+            "y": 50,
+            "size": 10,
+            "target": true
+          },
+          {
+            "bg": "Пеперуда",
+            "en": "Butterfly",
+            "img": "world/butterfly.webp",
+            "x": 46,
+            "y": 44,
+            "size": 10,
+            "target": false
+          },
+          {
+            "bg": "Гъба",
+            "en": "Mushroom",
+            "img": "world/mushroom.webp",
+            "x": 14,
+            "y": 58,
+            "size": 10,
+            "target": false
+          }
+        ]
+      },
+      "check": []
+    }
+  },
+  "sources": [
+    "Игра за наблюдателност – без факти за проверка"
+  ],
+  "review": null,
+  "draft": true
+}

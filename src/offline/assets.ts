@@ -5,6 +5,8 @@ import { AVATARS } from '../store/profiles'
 import { avatarImg } from '../components/ProfileAvatar'
 import { SECTIONS, sectionIcon } from '../sections'
 import { MAP_IMAGES } from '../map/art'
+import { SHOP } from '../content/rewards'
+import { FAME } from '../content/fame'
 
 /** Images the interface itself uses (paths inside public/img). */
 export const UI_IMAGES: readonly string[] = [
@@ -22,6 +24,9 @@ export const UI_IMAGES: readonly string[] = [
   ...Object.values(GAME_ART),
   ...PLACES.flatMap((p) => (p.img ? [p.img] : [])),
   ...MAP_IMAGES,
+  // v0.21–0.22: the Hall of Fame and the fair stall
+  ...FAME.map((p) => p.img),
+  ...SHOP.map((i) => i.img),
 ]
 
 /** Every image a mission can show: hero poses, badge and every picture named anywhere in its games. */

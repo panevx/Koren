@@ -1,0 +1,350 @@
+{
+  "id": "play-02-blitz",
+  "subject": "history",
+  "free": true,
+  "order": 107,
+  "badge": {
+    "id": "blitz",
+    "icon": "game/timer.webp"
+  },
+  "title": {
+    "bg": "Блиц: колко знаеш?",
+    "en": "Blitz: how much do you know?"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Бързи въпроси! Таймерът е само ако искаш.",
+          "en": "Quick questions! The timer is only if you want it.",
+          "img": "game/timer.webp"
+        }
+      ],
+      "game": {
+        "type": "blitz",
+        "prompt": {
+          "bg": "Покажи бързо!",
+          "en": "Show it quickly!"
+        },
+        "seconds": 20,
+        "questions": [
+          {
+            "q": {
+              "bg": "Покажи мечката!",
+              "en": "Show the bear!"
+            },
+            "options": [
+              {
+                "bg": "Мечка",
+                "en": "Bear",
+                "img": "animals/bear.webp"
+              },
+              {
+                "bg": "Лисица",
+                "en": "Fox",
+                "img": "animals/fox.webp"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Покажи морето!",
+              "en": "Show the sea!"
+            },
+            "options": [
+              {
+                "bg": "Планина",
+                "en": "Mountain",
+                "img": "geo/mountain.webp"
+              },
+              {
+                "bg": "Море",
+                "en": "Sea",
+                "img": "geo/coast.webp"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Покажи баницата!",
+              "en": "Show the banitsa!"
+            },
+            "options": [
+              {
+                "bg": "Баница",
+                "en": "Banitsa",
+                "img": "food/banitsa.webp"
+              },
+              {
+                "bg": "Домат",
+                "en": "Tomato",
+                "img": "food/tomato.webp"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Блиц! Пет бързи въпроса. Включи таймера, ако искаш предизвикателство.",
+          "en": "Blitz! Five quick questions. Turn on the timer if you want a challenge.",
+          "img": "game/timer.webp"
+        }
+      ],
+      "game": {
+        "type": "blitz",
+        "prompt": {
+          "bg": "Отговаряй бързо!",
+          "en": "Answer quickly!"
+        },
+        "questions": [
+          {
+            "q": {
+              "bg": "Коя е столицата на България?",
+              "en": "What is the capital of Bulgaria?"
+            },
+            "options": [
+              {
+                "bg": "София",
+                "en": "Sofia"
+              },
+              {
+                "bg": "Пловдив",
+                "en": "Plovdiv"
+              },
+              {
+                "bg": "Варна",
+                "en": "Varna"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Кое море е на изток?",
+              "en": "Which sea is to the east?"
+            },
+            "options": [
+              {
+                "bg": "Черно",
+                "en": "Black"
+              },
+              {
+                "bg": "Бяло",
+                "en": "Aegean"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Кой е първият български хан?",
+              "en": "Who was the first Bulgarian khan?"
+            },
+            "options": [
+              {
+                "bg": "Аспарух",
+                "en": "Asparuh"
+              },
+              {
+                "bg": "Крум",
+                "en": "Krum"
+              },
+              {
+                "bg": "Борис",
+                "en": "Boris"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Какъв цвят е първото великденско яйце?",
+              "en": "What colour is the first Easter egg?"
+            },
+            "options": [
+              {
+                "bg": "Червено",
+                "en": "Red"
+              },
+              {
+                "bg": "Синьо",
+                "en": "Blue"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Колко области има България?",
+              "en": "How many provinces does Bulgaria have?"
+            },
+            "options": [
+              {
+                "bg": "28",
+                "en": "28"
+              },
+              {
+                "bg": "12",
+                "en": "12"
+              },
+              {
+                "bg": "50",
+                "en": "50"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "check": []
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "compass",
+          "bg": "Шест трудни въпроса от всички светове на KOREN.",
+          "en": "Six hard questions from all the worlds of KOREN.",
+          "img": "game/timer.webp"
+        }
+      ],
+      "game": {
+        "type": "blitz",
+        "prompt": {
+          "bg": "Отговаряй бързо!",
+          "en": "Answer quickly!"
+        },
+        "seconds": 12,
+        "questions": [
+          {
+            "q": {
+              "bg": "Кой построява компютъра ABC?",
+              "en": "Who built the ABC computer?"
+            },
+            "options": [
+              {
+                "bg": "Джон Атанасов",
+                "en": "John Atanasoff"
+              },
+              {
+                "bg": "Стамен Григоров",
+                "en": "Stamen Grigorov"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Коя бактерия носи името на България?",
+              "en": "Which bacterium is named after Bulgaria?"
+            },
+            "options": [
+              {
+                "bg": "Lactobacillus bulgaricus",
+                "en": "Lactobacillus bulgaricus"
+              },
+              {
+                "bg": "Streptococcus thermophilus",
+                "en": "Streptococcus thermophilus"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Коя река пресича цялата Стара планина?",
+              "en": "Which river crosses the whole Balkan range?"
+            },
+            "options": [
+              {
+                "bg": "Искър",
+                "en": "Iskar"
+              },
+              {
+                "bg": "Янтра",
+                "en": "Yantra"
+              },
+              {
+                "bg": "Марица",
+                "en": "Maritsa"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Кога е Денят на народните будители?",
+              "en": "When is the Day of the National Enlighteners?"
+            },
+            "options": [
+              {
+                "bg": "1 ноември",
+                "en": "1 November"
+              },
+              {
+                "bg": "24 май",
+                "en": "24 May"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Кой е вторият по височина връх у нас?",
+              "en": "Which is our second-highest peak?"
+            },
+            "options": [
+              {
+                "bg": "Вихрен",
+                "en": "Vihren"
+              },
+              {
+                "bg": "Ботев",
+                "en": "Botev"
+              },
+              {
+                "bg": "Черни връх",
+                "en": "Cherni Vrah"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Колко национални парка има България?",
+              "en": "How many national parks does Bulgaria have?"
+            },
+            "options": [
+              {
+                "bg": "3",
+                "en": "3"
+              },
+              {
+                "bg": "11",
+                "en": "11"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "check": []
+    }
+  },
+  "sources": [
+    "Фактите са от мисиите на KOREN (виж техните източници); Енциклопедия „България“, БАН"
+  ],
+  "review": null,
+  "draft": true
+}

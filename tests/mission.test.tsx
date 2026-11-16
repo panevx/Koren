@@ -234,3 +234,22 @@ describe('Hall of Fame (v0.21)', () => {
     expect(screen.getByText(/Първият български космонавт/)).toBeInTheDocument()
   })
 })
+
+describe('Fair stall (v0.22) — game coins only', () => {
+  it('buying takes two taps; a bought thing is worn and can be taken off; the sign wears it', async () => {
+    const s = useProfiles.getState()
+    s.complete('hist-01-asparuh', 'young', 'asparuh')
+    s.complete('geo-01-rila', 'young', 'rila')
+    s.complete('cult-01-baba-marta', 'young', 'baba-marta') // 3 missions + 1 day = 35 coins
+    renderAt('/shop')
+    expect(await screen.findByText('35')).toBeInTheDocument()
+    expect(screen.getByText('Още 15 жълтици')).toBeInTheDocument() // the vest costs 50: says what is missing, never "no"
+    fireEvent.click(screen.getByRole('button', { name: /Купи за 20/ }))
+    fireEvent.click(screen.getByRole('button', { name: /Сигурен ли си/ }))
+    expect(activeProfile(useProfiles.getState()).outfit.pin).toBe('martenitsa')
+    expect(screen.getByText('15')).toBeInTheDocument()
+    fireEvent.click(screen.getByRole('button', { name: 'Свали: Мартеница' }))
+    expect(activeProfile(useProfiles.getState()).outfit.pin).toBeUndefined()
+    expect(screen.getByText(/само в играта/)).toBeInTheDocument()
+  })
+})

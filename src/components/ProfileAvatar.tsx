@@ -2,6 +2,7 @@ import type { TKey } from '../i18n'
 import { useT } from '../i18n/useT'
 import { AVATARS, type AvatarId, type Profile } from '../store/profiles'
 import { img } from './Brand'
+import { shopItem } from '../content/rewards'
 
 /** Children pick a painted sign, never a photo. */
 const AVATAR_IMG: Record<AvatarId, string> = {
@@ -16,10 +17,18 @@ const AVATAR_IMG: Record<AvatarId, string> = {
 }
 export const avatarImg = (a: AvatarId) => AVATAR_IMG[a]
 
-export function ProfileAvatar({ avatar, className = 'size-12' }: { avatar: AvatarId; className?: string }) {
+/**
+ * The child's sign. v0.22: with `outfit`, what the child wears from the fair stall shows on it —
+ * the hat on top, the pin on the side (the rest is listed in the shop's wardrobe).
+ */
+export function ProfileAvatar({ avatar, className = 'size-12', outfit }: { avatar: AvatarId; className?: string; outfit?: Partial<Record<string, string>> }) {
+  const head = outfit?.head && shopItem(outfit.head)
+  const pin = outfit?.pin && shopItem(outfit.pin)
   return (
-    <span className={`grid shrink-0 place-items-center rounded-full bg-white shadow-soft ${className}`} aria-hidden="true">
+    <span className={`relative grid shrink-0 place-items-center rounded-full bg-white shadow-soft ${className}`} aria-hidden="true">
       <img src={img(AVATAR_IMG[avatar])} alt="" className="size-[76%] object-contain" />
+      {head && <img src={img(head.img)} alt="" className="pop-3d absolute -top-[38%] left-1/2 w-[78%] -translate-x-1/2 object-contain" />}
+      {pin && <img src={img(pin.img)} alt="" className="pop-3d absolute -right-[12%] -bottom-[8%] w-[42%] object-contain" />}
     </span>
   )
 }

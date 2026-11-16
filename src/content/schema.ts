@@ -139,6 +139,8 @@ export const FindGame = z
     type: z.literal('find'),
     prompt: Text,
     scene: z.enum(SCENES),
+    /** v0.22: a painted picture instead of the drawn scene (e.g. minigame/hidden-object-scene.webp). */
+    backdrop: ImgPath.optional(),
     items: z
       .array(
         Thing.extend({
@@ -386,7 +388,33 @@ export const PlateGame = z
   .refine((g) => new Set(g.plates.map((p) => p.code)).size === g.plates.length, { message: 'every code only once', path: ['plates'] })
 
 /**
- * One entry per game template (11 since v0.12, 13 since v0.16, 15 since v0.18, 17 since v0.19, 19 since v0.20, 20 since v0.21). A new template is added here
+ * True or false (v0.22): one statement at a time; the child taps "true" or "not true". Either way Raya or Koren tells
+ * `why` — a wrong answer is a chance to learn, never a loss.
+ */
+export const TrueFalseGame = z
+  .object({
+    type: z.literal('truefalse'),
+    prompt: Text,
+    items: z.array(z.object({ text: Text, answer: z.boolean(), why: Text, img: ImgPath.optional() }).strict()).min(3).max(8),
+  })
+  .strict()
+  .refine((g) => g.items.some((i) => i.answer) && g.items.some((i) => !i.answer), { message: 'mix true and false statements', path: ['items'] })
+
+/**
+ * Blitz (v0.22): quick questions one after another. The timer is OPTIONAL and OFF by default — the child turns it on;
+ * when the time is up nothing is lost: the question simply stays, without the clock.
+ */
+export const BlitzGame = z
+  .object({
+    type: z.literal('blitz'),
+    prompt: Text,
+    questions: z.array(Question).min(3).max(8),
+    seconds: z.number().int().min(5).max(30).default(15),
+  })
+  .strict()
+
+/**
+ * One entry per game template (11 since v0.12, 13 since v0.16, 15 since v0.18, 17 since v0.19, 19 since v0.20, 20 since v0.21, 22 since v0.22). A new template is added here
  * and in src/games without touching the mission screen.
  */
 export const Game = z.discriminatedUnion('type', [
@@ -410,6 +438,8 @@ export const Game = z.discriminatedUnion('type', [
   CipherGame,
   FillGame,
   PlateGame,
+  TrueFalseGame,
+  BlitzGame,
 ])
 
 export const LevelContent = z
@@ -480,6 +510,8 @@ export type PaintGame = z.infer<typeof PaintGame>
 export type CipherGame = z.infer<typeof CipherGame>
 export type FillGame = z.infer<typeof FillGame>
 export type PlateGame = z.infer<typeof PlateGame>
+export type TrueFalseGame = z.infer<typeof TrueFalseGame>
+export type BlitzGame = z.infer<typeof BlitzGame>
 export type Thing = z.infer<typeof Thing>
 export type SceneId = (typeof SCENES)[number]
 export type Option = z.infer<typeof Option>

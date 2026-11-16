@@ -122,6 +122,15 @@ async function solveGame(game: Game) {
       for (const ing of game.ingredients) if (ing.belongs) fireEvent.click(within(screen.getByRole('list', { name: 'Съставки' })).getByRole('button', { name: ing.bg }))
       for (const s of game.steps) fireEvent.click(within(screen.getByRole('list', { name: 'Стъпки за подреждане' })).getByRole('button', { name: s.bg }))
       return next()
+    case 'truefalse':
+      game.items.forEach((it, i) => {
+        fireEvent.click(screen.getByRole('button', { name: it.answer ? 'Вярно' : 'Не е вярно' }))
+        if (i < game.items.length - 1) fireEvent.click(screen.getByRole('button', { name: 'Нататък' }))
+      })
+      return next()
+    case 'blitz':
+      for (const q of game.questions) fireEvent.click(within(screen.getByRole('list', { name: 'Отговори' })).getByRole('button', { name: q.options[q.answer]!.bg }))
+      return next()
     case 'plate':
       for (const p of game.plates) fireEvent.click(screen.getByRole('button', { name: PROVINCES.find((x) => x.id === p.region)!.name.bg }))
       return next()
@@ -203,13 +212,13 @@ describe('a break after 3 missions in a row', () => {
   })
 })
 
-describe('there is at least one mission per subject and all 20 templates are used', () => {
+describe('there is at least one mission per subject and all 22 templates are used', () => {
   it('subjects', () => {
     expect(new Set(MISSIONS.map((m) => m.subject))).toEqual(new Set(['history', 'culture', 'language', 'geography']))
   })
   it('templates', () => {
     const used = new Set(MISSIONS.flatMap((m) => Object.values(m.levels).map((l) => l!.game.type)))
-    expect(used).toEqual(new Set(['quiz', 'map', 'match', 'order', 'puzzle', 'find', 'sort', 'memory', 'chest', 'build', 'guess', 'trace', 'regions', 'assemble', 'riddle', 'cook', 'paint', 'cipher', 'fill', 'plate']))
+    expect(used).toEqual(new Set(['quiz', 'map', 'match', 'order', 'puzzle', 'find', 'sort', 'memory', 'chest', 'build', 'guess', 'trace', 'regions', 'assemble', 'riddle', 'cook', 'paint', 'cipher', 'fill', 'plate', 'truefalse', 'blitz']))
   })
 })
 

@@ -6,6 +6,14 @@
 export const ART = {
   /** v0.21: the blank number plate (the code and digits are text on top). */
   plate: 'places/car-license-plate.svg',
+  /** v0.22: days of adventure, coins. */
+  streak: 'places/daily-streak.webp',
+  coins: 'currency/coin-bag.webp',
+  coin: 'currency/gold-coin.webp',
+  pendar: 'currency/pendar.webp',
+  yes: 'game/true-false-true.svg',
+  no: 'game/true-false-false.svg',
+  timer: 'game/timer.webp',
   star: 'world/correct-star.webp',
   heart: 'world/try-again-heart.webp',
   lantern: 'world/hint-lantern.webp',
@@ -54,4 +62,6 @@ export const GAME_ART: Record<string, string> = {
   cipher: 'world/old-scroll.webp',
   fill: 'game/word-tile.webp',
   plate: 'places/transport-corridor.webp',
+  truefalse: 'game/true-false-true.svg',
+  blitz: 'game/timer.webp',
 }

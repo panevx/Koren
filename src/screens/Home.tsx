@@ -73,7 +73,7 @@ export function Home() {
           className="tap press flex max-w-[70%] min-w-0 items-center gap-2 rounded-full bg-white py-1 pr-4 pl-1 shadow-soft"
           aria-label={`${t('profile.who')} ${name(profile, profiles.indexOf(profile))}`}
         >
-          <ProfileAvatar avatar={profile.avatar} className="size-11 bg-green-soft shadow-none" />
+          <ProfileAvatar avatar={profile.avatar} outfit={profile.outfit} className="size-11 bg-green-soft shadow-none" />
           <span className="truncate font-extrabold">{name(profile, profiles.indexOf(profile))}</span>
         </Link>
         <Link to="/parents" className={roundButton} aria-label={t('parents.title')}>

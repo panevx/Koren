@@ -1,0 +1,251 @@
+{
+  "id": "play-01-true-false",
+  "subject": "geography",
+  "free": true,
+  "order": 106,
+  "badge": {
+    "id": "true-false",
+    "icon": "game/true-false-true.svg"
+  },
+  "title": {
+    "bg": "Вярно или не?",
+    "en": "True or not?"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Ще ти казвам неща – някои са верни, други не!",
+          "en": "I'll tell you things – some are true, some are not!"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Ако е вярно – зеленото. Ако не е – червеното.",
+          "en": "If it is true – the green one. If not – the red one."
+        }
+      ],
+      "game": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно ли е?",
+          "en": "Is it true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Мечката живее в гората.",
+              "en": "The bear lives in the forest."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да! Мечката живее в гората и в планината.",
+              "en": "Yes! The bear lives in the forest and in the mountains."
+            },
+            "img": "animals/bear.webp"
+          },
+          {
+            "text": {
+              "bg": "Делфинът живее в гората.",
+              "en": "The dolphin lives in the forest."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – делфинът живее в морето.",
+              "en": "No – the dolphin lives in the sea."
+            },
+            "img": "animals/dolphin.webp"
+          },
+          {
+            "text": {
+              "bg": "Мартеницата е бяла и червена.",
+              "en": "The martenitsa is white and red."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да! Бяло и червено – за здраве.",
+              "en": "Yes! White and red – for good health."
+            },
+            "img": "world/martenitsa-pizho-penda.webp"
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "Вярно или не? Внимавай – някои твърдения звучат почти вярно!",
+          "en": "True or not? Careful – some statements sound almost true!"
+        }
+      ],
+      "game": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно ли е?",
+          "en": "Is it true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Мусала е най-високият връх в България.",
+              "en": "Musala is the highest peak in Bulgaria."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Вярно – Мусала е 2925 м.",
+              "en": "True – Musala is 2,925 m."
+            },
+            "img": "geo/musala.webp"
+          },
+          {
+            "text": {
+              "bg": "Дунав е границата ни с Гърция.",
+              "en": "The Danube is our border with Greece."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – Дунав е границата с Румъния.",
+              "en": "No – the Danube is the border with Romania."
+            },
+            "img": "geo/danube.webp"
+          },
+          {
+            "text": {
+              "bg": "Кирилицата е създадена в Преслав.",
+              "en": "Cyrillic was created in Preslav."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Вярно – в края на 9 век, в Преслав.",
+              "en": "True – at the end of the 9th century, in Preslav."
+            }
+          },
+          {
+            "text": {
+              "bg": "В шопската салата има кисело мляко.",
+              "en": "Shopska salad has yogurt in it."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – в нея има сирене. Киселото мляко е за таратора.",
+              "en": "No – it has white cheese. Yogurt is for tarator."
+            },
+            "img": "food/shopska-salad.webp"
+          },
+          {
+            "text": {
+              "bg": "Къдроглавите пеликани живеят в Сребърна.",
+              "en": "Dalmatian pelicans live at Srebarna."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Вярно – Сребърна е в списъка на ЮНЕСКО заради тях.",
+              "en": "True – Srebarna is on the UNESCO list because of them."
+            },
+            "img": "animals/pelican.webp"
+          }
+        ]
+      },
+      "check": []
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "compass",
+          "bg": "Само за знаещи: всяко твърдение има капан.",
+          "en": "For experts only: every statement has a trap."
+        }
+      ],
+      "game": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно ли е?",
+          "en": "Is it true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Искър е най-дългата река, която тече само в България.",
+              "en": "The Iskar is the longest river that flows only in Bulgaria."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Вярно – 368 км.",
+              "en": "True – 368 km."
+            }
+          },
+          {
+            "text": {
+              "bg": "Хан Крум покръства българите.",
+              "en": "Khan Krum made the Bulgarians Christian."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – това прави княз Борис I (864 г.).",
+              "en": "No – Prince Boris I did (864)."
+            }
+          },
+          {
+            "text": {
+              "bg": "Царевец е в Пловдив.",
+              "en": "Tsarevets is in Plovdiv."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – Царевец е във Велико Търново.",
+              "en": "No – Tsarevets is in Veliko Tarnovo."
+            },
+            "img": "world/tsarevets-fortress.webp"
+          },
+          {
+            "text": {
+              "bg": "Розовото масло се добива чрез дестилация.",
+              "en": "Rose oil is made by distillation."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Вярно – с пара в голям казан.",
+              "en": "True – with steam in a big still."
+            },
+            "img": "science/rose-distillation.webp"
+          },
+          {
+            "text": {
+              "bg": "В Червената книга има само животни.",
+              "en": "The Red Book lists only animals."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – в нея има и растения, гъби и местообитания.",
+              "en": "No – it also has plants, fungi and habitats."
+            },
+            "img": "nature/red-book.webp"
+          },
+          {
+            "text": {
+              "bg": "Кирилицата е официална азбука на ЕС от 2007 г.",
+              "en": "Cyrillic has been an official EU alphabet since 2007."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Вярно – откакто България е в ЕС.",
+              "en": "True – since Bulgaria joined the EU."
+            }
+          }
+        ]
+      },
+      "check": []
+    }
+  },
+  "sources": [
+    "Фактите са от мисиите на KOREN (виж техните източници); Енциклопедия „България“, БАН"
+  ],
+  "review": null,
+  "draft": true
+}

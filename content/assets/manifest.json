@@ -2,8 +2,8 @@
  "version": "v5",
  "total": 300,
  "summary": {
-  "used": 175,
-  "ready": 59,
+  "used": 193,
+  "ready": 41,
   "source": 10,
   "duplicate": 49,
   "review": 7
@@ -145,90 +145,90 @@
    "id": "avatar-embroidered-vest",
    "original": "design/v5/avatar/avatar-embroidered-vest.png",
    "category": "avatar",
-   "status": "ready",
+   "status": "used",
    "path": "avatar/embroidered-vest.webp",
-   "stage": 9,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
    "id": "avatar-explorer-backpack",
    "original": "design/v5/avatar/avatar-explorer-backpack.png",
    "category": "avatar",
-   "status": "ready",
+   "status": "used",
    "path": "avatar/explorer-backpack.webp",
-   "stage": 9,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
    "id": "avatar-explorer-hat",
    "original": "design/v5/avatar/avatar-explorer-hat.png",
    "category": "avatar",
-   "status": "ready",
+   "status": "used",
    "path": "avatar/explorer-hat.webp",
-   "stage": 9,
+   "usedIn": "мисии",
    "size": "640x404"
   },
   {
    "id": "avatar-flower-crown",
    "original": "design/v5/avatar/avatar-flower-crown.png",
    "category": "avatar",
-   "status": "ready",
+   "status": "used",
    "path": "avatar/flower-crown.webp",
-   "stage": 9,
+   "usedIn": "мисии",
    "size": "640x485"
   },
   {
    "id": "avatar-folk-bag",
    "original": "design/v5/avatar/avatar-folk-bag.png",
    "category": "avatar",
-   "status": "ready",
+   "status": "used",
    "path": "avatar/folk-bag.webp",
-   "stage": 9,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
    "id": "avatar-folk-hat",
    "original": "design/v5/avatar/avatar-folk-hat.png",
    "category": "avatar",
-   "status": "ready",
+   "status": "used",
    "path": "avatar/folk-hat.webp",
-   "stage": 9,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
    "id": "avatar-leather-boots",
    "original": "design/v5/avatar/avatar-leather-boots.png",
    "category": "avatar",
-   "status": "ready",
+   "status": "used",
    "path": "avatar/leather-boots.webp",
-   "stage": 9,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
    "id": "avatar-martenitsa-accessory",
    "original": "design/v5/avatar/avatar-martenitsa-accessory.png",
    "category": "avatar",
-   "status": "ready",
+   "status": "used",
    "path": "avatar/martenitsa-accessory.webp",
-   "stage": 9,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
    "id": "avatar-rose-accessory",
    "original": "design/v5/avatar/avatar-rose-accessory.png",
    "category": "avatar",
-   "status": "ready",
+   "status": "used",
    "path": "avatar/rose-accessory.webp",
-   "stage": 9,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
    "id": "avatar-traditional-belt",
    "original": "design/v5/avatar/avatar-traditional-belt.png",
    "category": "avatar",
-   "status": "ready",
+   "status": "used",
    "path": "avatar/traditional-belt.webp",
-   "stage": 9,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
@@ -325,9 +325,9 @@
    "id": "currency-coin-bag",
    "original": "design/v5/currency/currency-coin-bag.png",
    "category": "currency",
-   "status": "ready",
+   "status": "used",
    "path": "currency/coin-bag.webp",
-   "stage": 9,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
@@ -343,18 +343,18 @@
    "id": "currency-gold-coin",
    "original": "design/v5/currency/currency-gold-coin.png",
    "category": "currency",
-   "status": "ready",
+   "status": "used",
    "path": "currency/gold-coin.webp",
-   "stage": 9,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
    "id": "currency-pendar",
    "original": "design/v5/currency/currency-pendar.png",
    "category": "currency",
-   "status": "ready",
+   "status": "used",
    "path": "currency/pendar.webp",
-   "stage": 9,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
@@ -610,9 +610,9 @@
    "id": "game-timer",
    "original": "design/v5/game/game-timer.png",
    "category": "game",
-   "status": "ready",
+   "status": "used",
    "path": "game/timer.webp",
-   "stage": 9,
+   "usedIn": "мисии",
    "size": "192x192"
   },
   {
@@ -633,17 +633,17 @@
    "id": "game-true-false-false",
    "original": "design/v5/game/game-true-false-false.svg",
    "category": "game",
-   "status": "ready",
+   "status": "used",
    "path": "game/true-false-false.svg",
-   "stage": 9
+   "usedIn": "мисии"
   },
   {
    "id": "game-true-false-true",
    "original": "design/v5/game/game-true-false-true.svg",
    "category": "game",
-   "status": "ready",
+   "status": "used",
    "path": "game/true-false-true.svg",
-   "stage": 9
+   "usedIn": "мисии"
   },
   {
    "id": "game-word-tile",
@@ -1476,9 +1476,9 @@
    "id": "minigame-hidden-object-scene",
    "original": "design/v5/minigame/minigame-hidden-object-scene.png",
    "category": "minigame",
-   "status": "ready",
+   "status": "used",
    "path": "minigame/hidden-object-scene.webp",
-   "stage": 7,
+   "usedIn": "мисии",
    "size": "640x405"
   },
   {
@@ -2497,9 +2497,9 @@
    "id": "world-daily-streak",
    "original": "design/v5/world/world-daily-streak.png",
    "category": "world",
-   "status": "ready",
+   "status": "used",
    "path": "places/daily-streak.webp",
-   "stage": 9,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {

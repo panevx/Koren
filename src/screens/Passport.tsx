@@ -6,6 +6,7 @@ import { Icon } from '../components/Icon'
 import { ProfileAvatar, useProfileName } from '../components/ProfileAvatar'
 import { Screen, TopBar } from '../components/ui'
 import { MILESTONES, milestoneNeed, type MilestoneId } from '../content/progress'
+import { wallet } from '../content/rewards'
 import type { Mission } from '../content/schema'
 import { useChildMissions } from '../content/useChildMissions'
 import { useLocalized } from '../content/useLocalized'
@@ -47,7 +48,7 @@ export function Passport() {
             <img src={img("ornaments/right.png")} alt="" className="kid-deco absolute top-4 right-4 size-9 opacity-40" />
             <div className="relative flex items-center gap-3">
               <span className="grid size-[min(4.5rem,18vw)] shrink-0 place-items-center rounded-full bg-gold shadow-[inset_0_3px_0_rgb(255_255_255/0.5),0_5px_0_var(--color-gold-deep)]">
-                <ProfileAvatar avatar={profile.avatar} className="size-[82%] shadow-none" />
+                <ProfileAvatar avatar={profile.avatar} outfit={profile.outfit} className="size-[82%] shadow-none" />
               </span>
               <div className="min-w-0 flex-1">
                 <img src={img('logo/koren-white.svg')} alt="" className="mb-1.5 h-6 w-auto" />
@@ -72,6 +73,16 @@ export function Passport() {
               <ProgressBar value={earned.length} max={total} tone="gold" track="bg-white/20" height="h-3.5" />
             </div>
           </section>
+
+          {/* v0.22: the fair stall — coins, days of adventure, folk costume for the sign */}
+          <Link to="/shop" className="press tap flex items-center gap-2 rounded-[var(--radius-card)] bg-white px-3 py-3 font-extrabold text-ink shadow-soft">
+            <img src={img(ART.coins)} alt="" className="pop-3d size-[min(3rem,12vw)] shrink-0" />
+            <span className="min-w-0 flex-1 text-[length:min(1.125rem,5vw)] leading-tight">{t('shop.title')}</span>
+            <span className="flex items-center gap-1 rounded-full bg-gold-soft px-2.5 py-1 text-sm">
+              <img src={img(ART.coin)} alt="" className="size-5" />
+              {wallet(profile, MISSIONS).coins}
+            </span>
+          </Link>
 
           {/* v0.21: the Hall of Fame — people the child meets in the missions */}
           <Link to="/fame" className="press tap flex items-center gap-3 rounded-[var(--radius-card)] bg-stage-gold px-4 py-3 font-extrabold text-ink shadow-soft">
