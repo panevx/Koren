@@ -45,4 +45,6 @@ export const GAME_ART: Record<string, string> = {
   guess: ART.lantern,
   trace: 'minigame/river-route.webp',
   regions: 'game/puzzle-blue.webp',
+  assemble: 'minigame/fortress-tower.webp',
+  riddle: 'game/letter-tile.webp',
 }

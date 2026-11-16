@@ -19,6 +19,10 @@ export const Epoch = z
     text: z.object({ small: Text, young: Text, guard: Text }).strict(),
     /** Place id from content/map/places.json. */
     capital: z.string().optional(),
+    /** v0.18: who ruled or acted then (picture + name) — only where it is true for the whole epoch. */
+    people: z.array(z.object({ bg: z.string().min(1), en: z.string().min(1), img: z.string().regex(/^[a-z0-9/_-]+\.webp$/) }).strict()).max(2).optional(),
+    /** v0.18: the mission about this epoch (opens from the timeline). */
+    mission: z.string().optional(),
     shape: z
       .object({
         /** Start from today's borders… */

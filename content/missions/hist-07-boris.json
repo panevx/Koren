@@ -1,0 +1,251 @@
+{
+  "id": "hist-07-boris",
+  "subject": "history",
+  "free": true,
+  "order": 71,
+  "place": "veliki-preslav",
+  "unlock": {
+    "after": [
+      "hist-06-krum-omurtag"
+    ]
+  },
+  "badge": {
+    "id": "boris",
+    "icon": "history/boris-first.webp"
+  },
+  "title": {
+    "bg": "Княз Борис I и буквите",
+    "en": "Prince Boris I and the letters"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Княз Борис посрещнал учениците на Кирил и Методий. Те донесли книги!",
+          "en": "Prince Boris welcomed the pupils of Cyril and Methodius. They brought books!",
+          "img": "history/boris-first.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Намери книгите, свитъка и перото!",
+          "en": "Find the books, the scroll and the quill!"
+        }
+      ],
+      "game": {
+        "type": "find",
+        "prompt": {
+          "bg": "Намери книгата, свитъка и перото!",
+          "en": "Find the book, the scroll and the quill!"
+        },
+        "scene": "castle",
+        "items": [
+          {
+            "bg": "Книга",
+            "en": "Book",
+            "img": "world/medieval-book.webp",
+            "x": 22,
+            "y": 70,
+            "size": 18,
+            "target": true,
+            "under": "world/forest-bush.webp"
+          },
+          {
+            "bg": "Свитък",
+            "en": "Scroll",
+            "img": "world/old-scroll.webp",
+            "x": 52,
+            "y": 78,
+            "size": 16,
+            "target": true
+          },
+          {
+            "bg": "Перо и мастило",
+            "en": "Quill and ink",
+            "img": "world/quill-ink.webp",
+            "x": 80,
+            "y": 66,
+            "size": 16,
+            "target": true,
+            "under": "world/forest-bush.webp"
+          },
+          {
+            "bg": "Птичка",
+            "en": "Bird",
+            "img": "world/bird.webp",
+            "x": 30,
+            "y": 26,
+            "size": 11
+          },
+          {
+            "bg": "Пеперуда",
+            "en": "Butterfly",
+            "img": "world/butterfly.webp",
+            "x": 66,
+            "y": 36,
+            "size": 11
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Княз Борис I покръстил българите и приел учениците на Кирил и Методий.",
+          "en": "Prince Boris I made the Bulgarians Christian and welcomed the pupils of Cyril and Methodius.",
+          "img": "history/boris-first.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Подреди събитията по ред.",
+          "en": "Put the events in order."
+        }
+      ],
+      "game": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди по реда, в който са станали!",
+          "en": "Put them in the order they happened!"
+        },
+        "items": [
+          {
+            "bg": "Покръстването (864 г.)",
+            "en": "The Christianisation (864)"
+          },
+          {
+            "bg": "Пристигат Климент и Наум (886 г.)",
+            "en": "Kliment and Naum arrive (886)"
+          },
+          {
+            "bg": "Борис отива в манастир (889 г.)",
+            "en": "Boris goes to a monastery (889)"
+          },
+          {
+            "bg": "Съборът в Преслав (893 г.)",
+            "en": "The Council of Preslav (893)"
+          }
+        ],
+        "hint": {
+          "bg": "Годините помагат: от по-малката към по-голямата.",
+          "en": "The years help: from the smaller to the bigger."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кои ученици на Кирил и Методий посреща Борис?",
+            "en": "Which pupils of Cyril and Methodius did Boris welcome?"
+          },
+          "options": [
+            {
+              "bg": "Климент, Наум и Ангеларий",
+              "en": "Kliment, Naum and Angelariy"
+            },
+            {
+              "bg": "Паисий и Софроний",
+              "en": "Paisiy and Sofroniy"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Покръстването обединило славяни и прабългари в един народ с обща вяра.",
+          "en": "The Christianisation united Slavs and Bulgars into one people with one faith.",
+          "img": "history/boris-first.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "Познай владетеля!",
+          "en": "Guess the ruler!"
+        }
+      ],
+      "game": {
+        "type": "riddle",
+        "prompt": {
+          "bg": "Кой съм аз?",
+          "en": "Who am I?"
+        },
+        "clues": [
+          {
+            "bg": "Приех християнството за себе си и за народа си.",
+            "en": "I accepted Christianity for myself and my people."
+          },
+          {
+            "bg": "В моята държава намериха дом Климент, Наум и Ангеларий.",
+            "en": "Kliment, Naum and Angelariy found a home in my state."
+          },
+          {
+            "bg": "Синът ми Симеон стана цар.",
+            "en": "My son Simeon became tsar."
+          }
+        ],
+        "options": [
+          {
+            "bg": "Княз Борис I",
+            "en": "Prince Boris I",
+            "img": "history/boris-first.webp"
+          },
+          {
+            "bg": "Цар Симеон",
+            "en": "Tsar Simeon",
+            "img": "history/simeon.webp"
+          },
+          {
+            "bg": "Хан Крум",
+            "en": "Khan Krum",
+            "img": "history/krum.webp"
+          },
+          {
+            "bg": "Хан Омуртаг",
+            "en": "Khan Omurtag",
+            "img": "history/omurtag.webp"
+          }
+        ],
+        "answer": 0,
+        "fact": {
+          "bg": "Княз Борис I (852–889). Църквата го почита като свети Борис-Михаил.",
+          "en": "Prince Boris I (852–889). The Church honours him as Saint Boris-Michael."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Какво решава Съборът в Преслав (893 г.)?",
+            "en": "What did the Council of Preslav (893) decide?"
+          },
+          "options": [
+            {
+              "bg": "Столицата става Преслав, а богослужението – на старобългарски",
+              "en": "Preslav becomes the capital, and church services are in Old Bulgarian"
+            },
+            {
+              "bg": "България става империя",
+              "en": "Bulgaria becomes an empire"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "История на България в 14 тома, БАН",
+    "Учебници по „История и цивилизации“ (5.–7. кл.) и „Човекът и обществото“ (3.–4. кл.), МОН",
+    "Образите на владетелите и будителите са условни (няма запазени портрети или са рисувани по снимки) – казва се на децата"
+  ],
+  "review": null,
+  "draft": true
+}

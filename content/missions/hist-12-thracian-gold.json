@@ -1,0 +1,265 @@
+{
+  "id": "hist-12-thracian-gold",
+  "subject": "history",
+  "free": true,
+  "order": 78,
+  "unlock": {
+    "after": [
+      "hist-05-treasures"
+    ]
+  },
+  "badge": {
+    "id": "thracian-gold",
+    "icon": "places/panagyurishte-treasure.webp"
+  },
+  "title": {
+    "bg": "Златото на траките",
+    "en": "The gold of the Thracians"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "treasure",
+          "bg": "Под земята в България са намерени истински съкровища!",
+          "en": "Real treasures have been found under the ground in Bulgaria!",
+          "img": "places/panagyurishte-treasure.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Надникни под храстите и ги намери!",
+          "en": "Peek under the bushes and find them!"
+        }
+      ],
+      "game": {
+        "type": "find",
+        "prompt": {
+          "bg": "Намери трите съкровища!",
+          "en": "Find the three treasures!"
+        },
+        "scene": "meadow",
+        "items": [
+          {
+            "bg": "Панагюрско съкровище",
+            "en": "Panagyurishte Treasure",
+            "img": "places/panagyurishte-treasure.webp",
+            "x": 22,
+            "y": 70,
+            "size": 20,
+            "target": true,
+            "under": "world/forest-bush.webp"
+          },
+          {
+            "bg": "Рогозенско съкровище",
+            "en": "Rogozen Treasure",
+            "img": "places/rogozen-treasure.webp",
+            "x": 54,
+            "y": 78,
+            "size": 20,
+            "target": true,
+            "under": "world/forest-bush.webp"
+          },
+          {
+            "bg": "Вълчитрънско съкровище",
+            "en": "Valchitran Treasure",
+            "img": "places/valchitran-treasure.webp",
+            "x": 82,
+            "y": 68,
+            "size": 20,
+            "target": true
+          },
+          {
+            "bg": "Гъба",
+            "en": "Mushroom",
+            "img": "world/mushroom.webp",
+            "x": 38,
+            "y": 52,
+            "size": 10
+          },
+          {
+            "bg": "Пеперуда",
+            "en": "Butterfly",
+            "img": "world/butterfly.webp",
+            "x": 70,
+            "y": 30,
+            "size": 11
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "treasure",
+          "bg": "Траките живели по нашите земи преди повече от 2000 години. Били майстори на златото.",
+          "en": "The Thracians lived in our lands more than 2,000 years ago. They were masters of gold.",
+          "img": "places/panagyurishte-treasure.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Свържи съкровището с неговия рекорд.",
+          "en": "Match each treasure with its record."
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи съкровището с това, с което е известно!",
+          "en": "Match the treasure with what it is famous for!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Панагюрско съкровище",
+              "en": "Panagyurishte Treasure",
+              "img": "places/panagyurishte-treasure.webp"
+            },
+            "b": {
+              "bg": "9 златни съда",
+              "en": "9 golden vessels"
+            }
+          },
+          {
+            "a": {
+              "bg": "Вълчитрънско съкровище",
+              "en": "Valchitran Treasure",
+              "img": "places/valchitran-treasure.webp"
+            },
+            "b": {
+              "bg": "Най-тежкото – около 12,5 кг злато",
+              "en": "The heaviest – about 12.5 kg of gold"
+            }
+          },
+          {
+            "a": {
+              "bg": "Рогозенско съкровище",
+              "en": "Rogozen Treasure",
+              "img": "places/rogozen-treasure.webp"
+            },
+            "b": {
+              "bg": "165 сребърни съда",
+              "en": "165 silver vessels"
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Как е намерено Панагюрското съкровище (1949 г.)?",
+            "en": "How was the Panagyurishte Treasure found (1949)?"
+          },
+          "options": [
+            {
+              "bg": "Трима братя копаели глина",
+              "en": "Three brothers were digging clay"
+            },
+            {
+              "bg": "Морето го изхвърлило",
+              "en": "The sea washed it ashore"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Вълчитрънското съкровище е от бронзовата епоха – на повече от 3000 години.",
+          "en": "The Valchitran Treasure is from the Bronze Age – more than 3,000 years old.",
+          "img": "places/valchitran-treasure.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "compass",
+          "bg": "Подреди съкровищата по възраст – от най-старото.",
+          "en": "Order the treasures by age – the oldest first."
+        }
+      ],
+      "game": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди по възраст – от най-старото!",
+          "en": "Order by age – the oldest first!"
+        },
+        "items": [
+          {
+            "bg": "Вълчитрънско съкровище",
+            "en": "Valchitran Treasure",
+            "img": "places/valchitran-treasure.webp"
+          },
+          {
+            "bg": "Рогозенско съкровище",
+            "en": "Rogozen Treasure",
+            "img": "places/rogozen-treasure.webp"
+          },
+          {
+            "bg": "Панагюрско съкровище",
+            "en": "Panagyurishte Treasure",
+            "img": "places/panagyurishte-treasure.webp"
+          }
+        ],
+        "hint": {
+          "bg": "Вълчитрън – бронзова епоха; Рогозен – 5–4 век пр.Хр.; Панагюрище – 4–3 век пр.Хр.",
+          "en": "Valchitran – Bronze Age; Rogozen – 5th–4th c. BC; Panagyurishte – 4th–3rd c. BC."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кой народ е направил Панагюрското и Рогозенското съкровище?",
+            "en": "Which people made the Panagyurishte and Rogozen treasures?"
+          },
+          "options": [
+            {
+              "bg": "Траките",
+              "en": "The Thracians"
+            },
+            {
+              "bg": "Римляните",
+              "en": "The Romans"
+            },
+            {
+              "bg": "Викингите",
+              "en": "The Vikings"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Защо съкровищата са в музей, а не у тези, които са ги намерили?",
+            "en": "Why are the treasures in a museum and not with those who found them?"
+          },
+          "options": [
+            {
+              "bg": "Те са наследство на всички",
+              "en": "They are a heritage for everyone"
+            },
+            {
+              "bg": "Защото са тежки",
+              "en": "Because they are heavy"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Национален исторически музей – описания на Панагюрското, Вълчитрънското и Рогозенското съкровище",
+    "История на България в 14 тома, БАН",
+    "Учебници по „История и цивилизации“ (5.–7. кл.) и „Човекът и обществото“ (3.–4. кл.), МОН",
+    "Формата на картинките е условна – да се сравни със снимките в музея"
+  ],
+  "review": null,
+  "draft": true
+}

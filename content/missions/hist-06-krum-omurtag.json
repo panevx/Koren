@@ -1,0 +1,292 @@
+{
+  "id": "hist-06-krum-omurtag",
+  "subject": "history",
+  "free": true,
+  "order": 70,
+  "place": "pliska",
+  "unlock": {
+    "after": [
+      "hist-01-asparuh"
+    ]
+  },
+  "badge": {
+    "id": "krum-omurtag",
+    "icon": "history/krum.webp"
+  },
+  "title": {
+    "bg": "Хан Крум и хан Омуртаг",
+    "en": "Khan Krum and Khan Omurtag"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Хан Крум бил строг, но справедлив. Той написал първите закони.",
+          "en": "Khan Krum was strict but fair. He wrote the first laws.",
+          "img": "history/krum.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "А хан Омуртаг строил красиви дворци.",
+          "en": "And Khan Omurtag built beautiful palaces.",
+          "img": "history/omurtag.webp"
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Законите се пишат на свитък. Покажи свитъка!",
+              "en": "Laws are written on a scroll. Show the scroll!"
+            },
+            "options": [
+              {
+                "bg": "Свитък",
+                "en": "Scroll",
+                "img": "world/old-scroll.webp"
+              },
+              {
+                "bg": "Щит",
+                "en": "Shield",
+                "img": "world/asparuh-shield.webp"
+              },
+              {
+                "bg": "Корона",
+                "en": "Crown",
+                "img": "world/simeon-crown.webp"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Омуртаг строил дворци. Покажи сградата!",
+              "en": "Omurtag built palaces. Show the building!"
+            },
+            "options": [
+              {
+                "bg": "Лисица",
+                "en": "Fox",
+                "img": "animals/fox.webp"
+              },
+              {
+                "bg": "Порта на дворец",
+                "en": "Palace gate",
+                "img": "history/medieval-gate.webp"
+              },
+              {
+                "bg": "Птичка",
+                "en": "Bird",
+                "img": "world/bird.webp"
+              }
+            ],
+            "answer": 1
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "reading",
+          "bg": "След Аспарух България растяла. Хан Крум написал първите закони – еднакви за всички.",
+          "en": "After Asparuh, Bulgaria grew. Khan Krum wrote the first laws – the same for everyone.",
+          "img": "history/krum.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "explorer",
+          "bg": "Синът му Омуртаг сключил мир с Византия за 30 години и строил.",
+          "en": "His son Omurtag made a 30-year peace with Byzantium and built.",
+          "img": "history/omurtag.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Свържи хана с това, което е направил.",
+          "en": "Match each khan with what he did."
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи хана с делото му!",
+          "en": "Match the khan with his deed!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Хан Аспарух",
+              "en": "Khan Asparuh",
+              "img": "history/asparuh.webp"
+            },
+            "b": {
+              "bg": "Основава България (681 г.)",
+              "en": "Founds Bulgaria (681)"
+            }
+          },
+          {
+            "a": {
+              "bg": "Хан Крум",
+              "en": "Khan Krum",
+              "img": "history/krum.webp"
+            },
+            "b": {
+              "bg": "Пише първите закони",
+              "en": "Writes the first laws"
+            }
+          },
+          {
+            "a": {
+              "bg": "Хан Омуртаг",
+              "en": "Khan Omurtag",
+              "img": "history/omurtag.webp"
+            },
+            "b": {
+              "bg": "Мир за 30 години и нови дворци",
+              "en": "A 30-year peace and new palaces"
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кой управлява след хан Крум?",
+            "en": "Who ruled after Khan Krum?"
+          },
+          "options": [
+            {
+              "bg": "Хан Омуртаг",
+              "en": "Khan Omurtag"
+            },
+            {
+              "bg": "Хан Аспарух",
+              "en": "Khan Asparuh"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "reading",
+          "bg": "През 811 г. хан Крум разбил армията на византийския император Никифор I.",
+          "en": "In 811 Khan Krum defeated the army of the Byzantine emperor Nikephoros I.",
+          "img": "history/krum.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "Сега загадка: кой хан оставил думи, издълбани в камък?",
+          "en": "Now a riddle: which khan left words carved in stone?",
+          "img": "history/omurtag.webp"
+        }
+      ],
+      "game": {
+        "type": "riddle",
+        "prompt": {
+          "bg": "Кой съм аз?",
+          "en": "Who am I?"
+        },
+        "clues": [
+          {
+            "bg": "Управлявам след баща си, хан Крум.",
+            "en": "I rule after my father, Khan Krum."
+          },
+          {
+            "bg": "Сключих мир с Византия за 30 години.",
+            "en": "I made a peace with Byzantium for 30 years."
+          },
+          {
+            "bg": "На колона от моето време пише: „Човек и добре да живее, умира, и друг се ражда…“",
+            "en": "A column from my time says: \"Even if a man lives well, he dies, and another is born…\""
+          }
+        ],
+        "options": [
+          {
+            "bg": "Хан Омуртаг",
+            "en": "Khan Omurtag",
+            "img": "history/omurtag.webp"
+          },
+          {
+            "bg": "Хан Крум",
+            "en": "Khan Krum",
+            "img": "history/krum.webp"
+          },
+          {
+            "bg": "Хан Аспарух",
+            "en": "Khan Asparuh",
+            "img": "history/asparuh.webp"
+          },
+          {
+            "bg": "Княз Борис I",
+            "en": "Prince Boris I",
+            "img": "history/boris-first.webp"
+          }
+        ],
+        "answer": 0,
+        "fact": {
+          "bg": "Хан Омуртаг (814–831) – строител и мъдър владетел.",
+          "en": "Khan Omurtag (814–831) – a builder and a wise ruler."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кой византийски император побеждава хан Крум през 811 г.?",
+            "en": "Which Byzantine emperor did Khan Krum defeat in 811?"
+          },
+          "options": [
+            {
+              "bg": "Никифор I",
+              "en": "Nikephoros I"
+            },
+            {
+              "bg": "Юстиниан",
+              "en": "Justinian"
+            },
+            {
+              "bg": "Василий II",
+              "en": "Basil II"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "С какво е известен хан Крум?",
+            "en": "What is Khan Krum known for?"
+          },
+          "options": [
+            {
+              "bg": "Първите писани закони",
+              "en": "The first written laws"
+            },
+            {
+              "bg": "Покръстването",
+              "en": "The Christianisation"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "История на България в 14 тома, БАН",
+    "Учебници по „История и цивилизации“ (5.–7. кл.) и „Човекът и обществото“ (3.–4. кл.), МОН",
+    "Образите на владетелите и будителите са условни (няма запазени портрети или са рисувани по снимки) – казва се на децата"
+  ],
+  "review": null,
+  "draft": true
+}

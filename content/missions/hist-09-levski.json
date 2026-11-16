@@ -1,0 +1,233 @@
+{
+  "id": "hist-09-levski",
+  "subject": "history",
+  "free": true,
+  "order": 76,
+  "place": "karlovo",
+  "unlock": {
+    "after": [
+      "hist-11-enlighteners"
+    ]
+  },
+  "badge": {
+    "id": "levski",
+    "icon": "people/vasil-levski.webp"
+  },
+  "title": {
+    "bg": "Васил Левски и Карлово",
+    "en": "Vasil Levski and Karlovo"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Васил Левски е роден в град Карлово. Той мечтаел България да е свободна.",
+          "en": "Vasil Levski was born in the town of Karlovo. He dreamed of a free Bulgaria.",
+          "img": "people/vasil-levski.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "map",
+          "bg": "Покажи Карлово на картата!",
+          "en": "Show Karlovo on the map!",
+          "img": "city/karlovo.webp"
+        }
+      ],
+      "game": {
+        "type": "map",
+        "target": "karlovo",
+        "choices": [
+          "karlovo",
+          "varna",
+          "ruse"
+        ],
+        "showIcons": true,
+        "prompt": {
+          "bg": "Къде е Карлово?",
+          "en": "Where is Karlovo?"
+        },
+        "hint": {
+          "bg": "Карлово е в средата на България, под Стара планина.",
+          "en": "Karlovo is in the middle of Bulgaria, below the Balkan Mountains."
+        }
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Някои хора са толкова важни, че ги познаваме по няколко думи.",
+          "en": "Some people are so important that a few words are enough to know them.",
+          "img": "city/karlovo.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "Познай кой е!",
+          "en": "Guess who it is!"
+        }
+      ],
+      "game": {
+        "type": "riddle",
+        "prompt": {
+          "bg": "Кой съм аз?",
+          "en": "Who am I?"
+        },
+        "clues": [
+          {
+            "bg": "Роден съм в Карлово през 1837 г.",
+            "en": "I was born in Karlovo in 1837."
+          },
+          {
+            "bg": "Наричат ме Апостола на свободата.",
+            "en": "They call me the Apostle of Freedom."
+          },
+          {
+            "bg": "Мечтаех за „чиста и свята република“.",
+            "en": "I dreamed of a \"pure and sacred republic\"."
+          }
+        ],
+        "options": [
+          {
+            "bg": "Васил Левски",
+            "en": "Vasil Levski",
+            "img": "people/vasil-levski.webp"
+          },
+          {
+            "bg": "Христо Ботев",
+            "en": "Hristo Botev",
+            "img": "people/hristo-botev.webp"
+          },
+          {
+            "bg": "Георги Раковски",
+            "en": "Georgi Rakovski",
+            "img": "people/georgi-rakovski.webp"
+          },
+          {
+            "bg": "Любен Каравелов",
+            "en": "Lyuben Karavelov",
+            "img": "people/lyuben-karavelov.webp"
+          }
+        ],
+        "answer": 0,
+        "fact": {
+          "bg": "Васил Левски обикалял България и създавал тайни комитети за свободата.",
+          "en": "Vasil Levski travelled across Bulgaria and set up secret committees for freedom."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "В кой град е роден Левски?",
+            "en": "Which town was Levski born in?"
+          },
+          "options": [
+            {
+              "bg": "Карлово",
+              "en": "Karlovo"
+            },
+            {
+              "bg": "Калофер",
+              "en": "Kalofer"
+            },
+            {
+              "bg": "Котел",
+              "en": "Kotel"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Истинското му име е Васил Иванов Кунчев. Бил е и монах – затова го наричат Дякона.",
+          "en": "His real name was Vasil Ivanov Kunchev. He was also a monk – that is why he is called the Deacon.",
+          "img": "people/vasil-levski.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "compass",
+          "bg": "Подреди живота му по ред.",
+          "en": "Put his life in order."
+        }
+      ],
+      "game": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди живота на Левски!",
+          "en": "Put Levski's life in order!"
+        },
+        "items": [
+          {
+            "bg": "Роден в Карлово (1837 г.)",
+            "en": "Born in Karlovo (1837)"
+          },
+          {
+            "bg": "Става монах – Дякона",
+            "en": "Becomes a monk – the Deacon"
+          },
+          {
+            "bg": "Създава революционни комитети",
+            "en": "Sets up revolutionary committees"
+          },
+          {
+            "bg": "Загива в София (1873 г.)",
+            "en": "Dies in Sofia (1873)"
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Какво значи „Апостол на свободата“?",
+            "en": "What does \"Apostle of Freedom\" mean?"
+          },
+          "options": [
+            {
+              "bg": "Човек, който носи идеята за свобода на всички",
+              "en": "Someone who carries the idea of freedom to everyone"
+            },
+            {
+              "bg": "Цар",
+              "en": "A king"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Как се казва истински Левски?",
+            "en": "What was Levski's real name?"
+          },
+          "options": [
+            {
+              "bg": "Васил Иванов Кунчев",
+              "en": "Vasil Ivanov Kunchev"
+            },
+            {
+              "bg": "Христо Ботьов Петков",
+              "en": "Hristo Botyov Petkov"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "История на България в 14 тома, БАН",
+    "Учебници по „История и цивилизации“ (5.–7. кл.) и „Човекът и обществото“ (3.–4. кл.), МОН",
+    "Образите на владетелите и будителите са условни (няма запазени портрети или са рисувани по снимки) – казва се на децата",
+    "Национален музей „Васил Левски“, Карлово"
+  ],
+  "review": null,
+  "draft": true
+}

@@ -54,7 +54,7 @@ describe('unlocking (game progression, never a paywall)', () => {
   it('newly unlocked missions can be found by comparing before and after', () => {
     const before = unlockedIds(fresh, MISSIONS)
     const after = unlockedIds(played(['hist-01-asparuh']), MISSIONS)
-    expect(after.filter((id) => !before.includes(id))).toEqual(['hist-02-simeon'])
+    expect(after.filter((id) => !before.includes(id))).toEqual(['hist-02-simeon', 'hist-06-krum-omurtag'])
   })
 
   it('medals: bronze at 3 badges, trophy only with all', () => {

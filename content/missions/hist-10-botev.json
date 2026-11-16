@@ -1,0 +1,251 @@
+{
+  "id": "hist-10-botev",
+  "subject": "history",
+  "free": true,
+  "order": 77,
+  "unlock": {
+    "after": [
+      "hist-09-levski"
+    ]
+  },
+  "badge": {
+    "id": "botev",
+    "icon": "people/hristo-botev.webp"
+  },
+  "title": {
+    "bg": "Христо Ботев",
+    "en": "Hristo Botev"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Христо Ботев бил поет. Той пишел стихове за свободата.",
+          "en": "Hristo Botev was a poet. He wrote poems about freedom.",
+          "img": "people/hristo-botev.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "С какво пише поетът?",
+          "en": "What does a poet write with?"
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "С какво е писал Ботев?",
+              "en": "What did Botev write with?"
+            },
+            "options": [
+              {
+                "bg": "Щит",
+                "en": "Shield",
+                "img": "world/asparuh-shield.webp"
+              },
+              {
+                "bg": "Перо и мастило",
+                "en": "Quill and ink",
+                "img": "world/quill-ink.webp"
+              },
+              {
+                "bg": "Гъба",
+                "en": "Mushroom",
+                "img": "world/mushroom.webp"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Най-високият връх на Стара планина носи името му. Покажи планината!",
+              "en": "The highest peak of the Balkan Mountains is named after him. Show the mountain!"
+            },
+            "options": [
+              {
+                "bg": "Връх Ботев",
+                "en": "Botev peak",
+                "img": "geo/botev.webp"
+              },
+              {
+                "bg": "Море",
+                "en": "Sea",
+                "img": "geo/coast.webp"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "reading",
+          "bg": "Слушай подсказките и познай героя.",
+          "en": "Listen to the clues and guess the hero.",
+          "img": "people/hristo-botev.webp"
+        }
+      ],
+      "game": {
+        "type": "riddle",
+        "prompt": {
+          "bg": "Кой съм аз?",
+          "en": "Who am I?"
+        },
+        "clues": [
+          {
+            "bg": "Роден съм в Калофер.",
+            "en": "I was born in Kalofer."
+          },
+          {
+            "bg": "Пишех стихове и издавах вестници.",
+            "en": "I wrote poems and published newspapers."
+          },
+          {
+            "bg": "През 1876 г. четата ми слезе от кораба „Радецки“.",
+            "en": "In 1876 my band came ashore from the ship Radetzky."
+          }
+        ],
+        "options": [
+          {
+            "bg": "Христо Ботев",
+            "en": "Hristo Botev",
+            "img": "people/hristo-botev.webp"
+          },
+          {
+            "bg": "Васил Левски",
+            "en": "Vasil Levski",
+            "img": "people/vasil-levski.webp"
+          },
+          {
+            "bg": "Иван Вазов",
+            "en": "Ivan Vazov",
+            "img": "people/ivan-vazov.webp"
+          },
+          {
+            "bg": "Паисий Хилендарски",
+            "en": "Paisiy of Hilendar",
+            "img": "people/paisiy.webp"
+          }
+        ],
+        "answer": 0,
+        "fact": {
+          "bg": "Христо Ботев – поет и революционер. На 2 юни в 12 часа почитаме него и всички загинали за свободата.",
+          "en": "Hristo Botev – poet and revolutionary. On 2 June at noon we honour him and all who died for freedom."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Какво става на 2 юни в 12 часа?",
+            "en": "What happens on 2 June at noon?"
+          },
+          "options": [
+            {
+              "bg": "Сирените свирят и почитаме загиналите за свободата",
+              "en": "Sirens sound and we honour those who died for freedom"
+            },
+            {
+              "bg": "Започва ваканцията",
+              "en": "The holidays begin"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Ботев учил в Одеса, а после живял в Румъния, където издавал вестници.",
+          "en": "Botev studied in Odessa and later lived in Romania, where he published newspapers.",
+          "img": "people/hristo-botev.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "compass",
+          "bg": "Подреди пътя му.",
+          "en": "Put his path in order."
+        }
+      ],
+      "game": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди живота на Ботев!",
+          "en": "Put Botev's life in order!"
+        },
+        "items": [
+          {
+            "bg": "Роден в Калофер",
+            "en": "Born in Kalofer"
+          },
+          {
+            "bg": "Учи в Одеса",
+            "en": "Studies in Odessa"
+          },
+          {
+            "bg": "Издава вестници в Румъния",
+            "en": "Publishes newspapers in Romania"
+          },
+          {
+            "bg": "Четата слиза от „Радецки“ (1876 г.)",
+            "en": "His band lands from the Radetzky (1876)"
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кой връх носи неговото име?",
+            "en": "Which peak bears his name?"
+          },
+          "options": [
+            {
+              "bg": "Ботев – най-високият в Стара планина",
+              "en": "Botev – the highest in the Balkan Mountains"
+            },
+            {
+              "bg": "Мусала",
+              "en": "Musala"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какво празнуваме на 2 юни?",
+            "en": "What do we mark on 2 June?"
+          },
+          "options": [
+            {
+              "bg": "Деня на Ботев и на загиналите за свободата",
+              "en": "The day of Botev and of those who died for freedom"
+            },
+            {
+              "bg": "Освобождението",
+              "en": "The Liberation"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "История на България в 14 тома, БАН",
+    "Учебници по „История и цивилизации“ (5.–7. кл.) и „Човекът и обществото“ (3.–4. кл.), МОН",
+    "Образите на владетелите и будителите са условни (няма запазени портрети или са рисувани по снимки) – казва се на децата",
+    "Национален музей „Христо Ботев“, Калофер"
+  ],
+  "review": null,
+  "draft": true
+}

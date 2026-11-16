@@ -258,7 +258,46 @@ export const RegionsGame = z
   .refine((g) => new Set(g.regions).size === g.regions.length, { message: 'every province only once', path: ['regions'] })
 
 /**
- * One entry per game template (11 since v0.12, 13 since v0.16). A new template is added here
+ * Put it together (v0.18 — "Build a fortress"): each part has its place in a scene (x, y = centre in %, size = width in %).
+ * The child drags a part to its place (or taps the part, then the place). Parts with the same picture can swap places.
+ * `ghost`: the empty places show a faint shadow of their part (younger children); without it, only a dashed frame.
+ * `decoys`: things that do not belong; Raya says `why`.
+ */
+export const AssembleGame = z
+  .object({
+    type: z.literal('assemble'),
+    prompt: Text,
+    scene: z.enum(SCENES),
+    parts: z
+      .array(Thing.extend({ x: z.number().min(5).max(95), y: z.number().min(8).max(92), size: z.number().min(10).max(45), hint: Text.optional() }).strict())
+      .min(2)
+      .max(7),
+    decoys: z.array(Thing.extend({ why: Text }).strict()).max(3).default([]),
+    ghost: z.boolean().default(true),
+    done: Text,
+  })
+  .strict()
+  .refine((g) => distinct([...g.parts, ...g.decoys]), { message: 'every part needs its own name (e.g. "left tower", "right tower")', path: ['parts'] })
+
+/**
+ * A riddle "Who am I?" / "What am I?" (v0.18): clues are opened one by one; the child may answer at any time.
+ * A wrong answer opens the next clue. `fact` is said at the end.
+ */
+export const RiddleGame = z
+  .object({
+    type: z.literal('riddle'),
+    prompt: Text,
+    clues: z.array(Text).min(2).max(5),
+    options: z.array(Option).min(2).max(4),
+    answer: z.number().int().min(0),
+    fact: Text,
+  })
+  .strict()
+  .refine((g) => g.answer < g.options.length, { message: 'answer must point to an option', path: ['answer'] })
+  .refine((g) => distinct(g.options), { message: 'options must be different', path: ['options'] })
+
+/**
+ * One entry per game template (11 since v0.12, 13 since v0.16, 15 since v0.18). A new template is added here
  * and in src/games without touching the mission screen.
  */
 export const Game = z.discriminatedUnion('type', [
@@ -275,6 +314,8 @@ export const Game = z.discriminatedUnion('type', [
   GuessGame,
   TraceGame,
   RegionsGame,
+  AssembleGame,
+  RiddleGame,
 ])
 
 export const LevelContent = z
@@ -338,6 +379,8 @@ export type BuildGame = z.infer<typeof BuildGame>
 export type GuessGame = z.infer<typeof GuessGame>
 export type TraceGame = z.infer<typeof TraceGame>
 export type RegionsGame = z.infer<typeof RegionsGame>
+export type AssembleGame = z.infer<typeof AssembleGame>
+export type RiddleGame = z.infer<typeof RiddleGame>
 export type Thing = z.infer<typeof Thing>
 export type SceneId = (typeof SCENES)[number]
 export type Option = z.infer<typeof Option>

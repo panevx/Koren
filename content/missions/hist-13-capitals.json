@@ -1,0 +1,233 @@
+{
+  "id": "hist-13-capitals",
+  "subject": "history",
+  "free": true,
+  "order": 72,
+  "place": "veliko-tarnovo",
+  "unlock": {
+    "after": [
+      "hist-07-boris"
+    ]
+  },
+  "badge": {
+    "id": "capitals",
+    "icon": "world/tsarevets-fortress.webp"
+  },
+  "title": {
+    "bg": "Плиска, Преслав и Царевец",
+    "en": "Pliska, Preslav and Tsarevets"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Българските царе живели в големи крепости.",
+          "en": "The Bulgarian rulers lived in big fortresses.",
+          "img": "world/tsarevets-fortress.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Намери двете еднакви крепости!",
+          "en": "Find the two matching fortresses!"
+        }
+      ],
+      "game": {
+        "type": "memory",
+        "prompt": {
+          "bg": "Намери двете еднакви крепости!",
+          "en": "Find the two matching fortresses!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Плиска",
+              "en": "Pliska",
+              "img": "world/pliska.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Преслав",
+              "en": "Preslav",
+              "img": "history/preslav.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Царевец",
+              "en": "Tsarevets",
+              "img": "world/tsarevets-fortress.webp"
+            }
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "map",
+          "bg": "Първата столица е Плиска, после Велики Преслав, а след това – Търново.",
+          "en": "The first capital was Pliska, then Veliki Preslav, and later Tarnovo.",
+          "img": "world/pliska.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Подреди столиците от най-старата.",
+          "en": "Put the capitals in order, the oldest first."
+        }
+      ],
+      "game": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди столиците – от най-старата!",
+          "en": "Order the capitals – the oldest first!"
+        },
+        "items": [
+          {
+            "bg": "Плиска",
+            "en": "Pliska",
+            "img": "world/pliska.webp"
+          },
+          {
+            "bg": "Велики Преслав",
+            "en": "Veliki Preslav",
+            "img": "history/preslav.webp"
+          },
+          {
+            "bg": "Търново (Царевец)",
+            "en": "Tarnovo (Tsarevets)",
+            "img": "world/tsarevets-fortress.webp"
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "През коя година столицата става Преслав?",
+            "en": "In which year did Preslav become the capital?"
+          },
+          "options": [
+            {
+              "bg": "893 г.",
+              "en": "893"
+            },
+            {
+              "bg": "1185 г.",
+              "en": "1185"
+            },
+            {
+              "bg": "681 г.",
+              "en": "681"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "map",
+          "bg": "Всяка столица разказва за своето време.",
+          "en": "Each capital tells about its own time.",
+          "img": "world/tsarevets-fortress.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "compass",
+          "bg": "Свържи столицата с нейното време.",
+          "en": "Match each capital with its time."
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи столицата с нейното време!",
+          "en": "Match the capital with its time!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Плиска",
+              "en": "Pliska",
+              "img": "world/pliska.webp"
+            },
+            "b": {
+              "bg": "Първата столица (681–893)",
+              "en": "The first capital (681–893)"
+            }
+          },
+          {
+            "a": {
+              "bg": "Велики Преслав",
+              "en": "Veliki Preslav",
+              "img": "history/preslav.webp"
+            },
+            "b": {
+              "bg": "Златният век на Симеон",
+              "en": "Simeon's Golden Age"
+            }
+          },
+          {
+            "a": {
+              "bg": "Охрид",
+              "en": "Ohrid"
+            },
+            "b": {
+              "bg": "Столица на цар Самуил",
+              "en": "Tsar Samuil's capital"
+            }
+          },
+          {
+            "a": {
+              "bg": "Търново",
+              "en": "Tarnovo",
+              "img": "world/tsarevets-fortress.webp"
+            },
+            "b": {
+              "bg": "Второто царство (1185–1393)",
+              "en": "The Second Empire (1185–1393)"
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Над коя река е хълмът Царевец?",
+            "en": "Which river flows below Tsarevets hill?"
+          },
+          "options": [
+            {
+              "bg": "Янтра",
+              "en": "The Yantra"
+            },
+            {
+              "bg": "Искър",
+              "en": "The Iskar"
+            },
+            {
+              "bg": "Марица",
+              "en": "The Maritsa"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "История на България в 14 тома, БАН",
+    "Учебници по „История и цивилизации“ (5.–7. кл.) и „Човекът и обществото“ (3.–4. кл.), МОН",
+    "Национален историко-археологически резерват „Плиска“ / „Велики Преслав“ / „Царевец“"
+  ],
+  "review": null,
+  "draft": true
+}

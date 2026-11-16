@@ -1,4 +1,5 @@
 import type { Game } from '../content/schema'
+import { Assemble } from './Assemble'
 import { Build } from './Build'
 import { Chest } from './Chest'
 import { Find } from './Find'
@@ -9,6 +10,7 @@ import { Memory } from './Memory'
 import { Order } from './Order'
 import { Puzzle } from './Puzzle'
 import { Regions } from './Regions'
+import { Riddle } from './Riddle'
 import { Quiz } from './Quiz'
 import { Sort } from './Sort'
 import { Trace } from './Trace'
@@ -45,5 +47,9 @@ export function GameView({ game, onDone }: { game: Game; onDone: () => void }) {
       return <Trace game={game} onDone={onDone} />
     case 'regions':
       return <Regions game={game} onDone={onDone} />
+    case 'assemble':
+      return <Assemble game={game} onDone={onDone} />
+    case 'riddle':
+      return <Riddle game={game} onDone={onDone} />
   }
 }

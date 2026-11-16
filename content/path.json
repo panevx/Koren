@@ -172,6 +172,31 @@
         "nat-06-habitats",
         "nat-07-eco-hike"
       ]
+    },
+    {
+      "title": {
+        "bg": "Ханове и царе",
+        "en": "Khans and tsars"
+      },
+      "missions": [
+        "hist-06-krum-omurtag",
+        "hist-07-boris",
+        "hist-13-capitals",
+        "hist-08-tsars",
+        "hist-14-fortress"
+      ]
+    },
+    {
+      "title": {
+        "bg": "Будители и герои",
+        "en": "Enlighteners and heroes"
+      },
+      "missions": [
+        "hist-11-enlighteners",
+        "hist-09-levski",
+        "hist-10-botev",
+        "hist-12-thracian-gold"
+      ]
     }
   ]
 }

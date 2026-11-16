@@ -190,3 +190,15 @@ describe('timeline screen', () => {
     expect(screen.queryByRole('link', { name: /Линия на времето/ })).not.toBeInTheDocument()
   })
 })
+
+describe('timeline people and missions (v0.18)', () => {
+  it('every linked mission exists and every portrait is a real file', async () => {
+    const { MISSIONS } = await import('../src/content/missions')
+    const { existsSync } = await import('node:fs')
+    for (const e of EPOCHS) {
+      if (e.mission) expect(MISSIONS.some((m) => m.id === e.mission), `${e.id}: ${e.mission}`).toBe(true)
+      for (const p of e.people ?? []) expect(existsSync(`public/img/${p.img}`), p.img).toBe(true)
+    }
+    expect(EPOCHS.filter((e) => e.mission).length).toBeGreaterThanOrEqual(6)
+  })
+})

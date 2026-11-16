@@ -1,0 +1,246 @@
+{
+  "id": "hist-08-tsars",
+  "subject": "history",
+  "free": true,
+  "order": 73,
+  "place": "veliko-tarnovo",
+  "unlock": {
+    "after": [
+      "hist-13-capitals"
+    ]
+  },
+  "badge": {
+    "id": "tsars",
+    "icon": "history/ivan-asen-second.webp"
+  },
+  "title": {
+    "bg": "Самуил, Калоян и Иван Асен II",
+    "en": "Samuil, Kaloyan and Ivan Asen II"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Ето трима смели български царе!",
+          "en": "Here are three brave Bulgarian tsars!",
+          "img": "history/kaloyan.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Обърни картите и намери двойките.",
+          "en": "Turn the cards and find the pairs."
+        }
+      ],
+      "game": {
+        "type": "memory",
+        "prompt": {
+          "bg": "Намери двата еднакви царя!",
+          "en": "Find the two matching tsars!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Цар Самуил",
+              "en": "Tsar Samuil",
+              "img": "history/samuil.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Цар Калоян",
+              "en": "Tsar Kaloyan",
+              "img": "history/kaloyan.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Цар Иван Асен II",
+              "en": "Tsar Ivan Asen II",
+              "img": "history/ivan-asen-second.webp"
+            }
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "reading",
+          "bg": "Цар Самуил бранил държавата дълги години. Цар Калоян победил рицарите при Одрин.",
+          "en": "Tsar Samuil defended the state for many years. Tsar Kaloyan defeated the knights at Adrianople.",
+          "img": "history/samuil.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "map",
+          "bg": "При Иван Асен II България стигала до три морета!",
+          "en": "Under Ivan Asen II Bulgaria reached three seas!",
+          "img": "history/ivan-asen-second.webp"
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи царя с това, с което го помним!",
+          "en": "Match the tsar with what we remember him for!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Цар Самуил",
+              "en": "Tsar Samuil",
+              "img": "history/samuil.webp"
+            },
+            "b": {
+              "bg": "Столица в Охрид",
+              "en": "A capital in Ohrid"
+            }
+          },
+          {
+            "a": {
+              "bg": "Цар Калоян",
+              "en": "Tsar Kaloyan",
+              "img": "history/kaloyan.webp"
+            },
+            "b": {
+              "bg": "Победа при Одрин (1205 г.)",
+              "en": "Victory at Adrianople (1205)"
+            }
+          },
+          {
+            "a": {
+              "bg": "Цар Иван Асен II",
+              "en": "Tsar Ivan Asen II",
+              "img": "history/ivan-asen-second.webp"
+            },
+            "b": {
+              "bg": "България на три морета",
+              "en": "Bulgaria on three seas"
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кои са трите морета при Иван Асен II?",
+            "en": "Which are the three seas under Ivan Asen II?"
+          },
+          "options": [
+            {
+              "bg": "Черно, Бяло и Адриатическо",
+              "en": "The Black, the Aegean and the Adriatic"
+            },
+            {
+              "bg": "Черно, Червено и Балтийско",
+              "en": "The Black, the Red and the Baltic"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "reading",
+          "bg": "Подреди царете по времето, когато са управлявали.",
+          "en": "Put the tsars in the order they ruled.",
+          "img": "history/ivan-shishman.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "Иван Шишман е последният търновски цар.",
+          "en": "Ivan Shishman is the last tsar of Tarnovo."
+        }
+      ],
+      "game": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди царете – от най-ранния!",
+          "en": "Order the tsars – the earliest first!"
+        },
+        "items": [
+          {
+            "bg": "Цар Самуил",
+            "en": "Tsar Samuil",
+            "img": "history/samuil.webp"
+          },
+          {
+            "bg": "Цар Калоян",
+            "en": "Tsar Kaloyan",
+            "img": "history/kaloyan.webp"
+          },
+          {
+            "bg": "Цар Иван Асен II",
+            "en": "Tsar Ivan Asen II",
+            "img": "history/ivan-asen-second.webp"
+          },
+          {
+            "bg": "Цар Иван Шишман",
+            "en": "Tsar Ivan Shishman",
+            "img": "history/ivan-shishman.webp"
+          }
+        ],
+        "hint": {
+          "bg": "Самуил – около 1000 г.; Калоян – около 1200 г.; Иван Асен II – 1230 г.; Шишман – края на 14 век.",
+          "en": "Samuil – around 1000; Kaloyan – around 1200; Ivan Asen II – 1230; Shishman – end of the 14th century."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кого пленява Калоян в битката при Одрин (1205 г.)?",
+            "en": "Whom did Kaloyan capture at the battle of Adrianople (1205)?"
+          },
+          "options": [
+            {
+              "bg": "Латинския император Балдуин",
+              "en": "The Latin emperor Baldwin"
+            },
+            {
+              "bg": "Василий II",
+              "en": "Basil II"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Коя битка печели Иван Асен II през 1230 г.?",
+            "en": "Which battle did Ivan Asen II win in 1230?"
+          },
+          "options": [
+            {
+              "bg": "При Клокотница",
+              "en": "Klokotnitsa"
+            },
+            {
+              "bg": "При Одрин",
+              "en": "Adrianople"
+            },
+            {
+              "bg": "При Беласица",
+              "en": "Belasitsa"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "История на България в 14 тома, БАН",
+    "Учебници по „История и цивилизации“ (5.–7. кл.) и „Човекът и обществото“ (3.–4. кл.), МОН",
+    "Образите на владетелите и будителите са условни (няма запазени портрети или са рисувани по снимки) – казва се на децата"
+  ],
+  "review": null,
+  "draft": true
+}

@@ -1,0 +1,336 @@
+{
+  "id": "hist-14-fortress",
+  "subject": "history",
+  "free": true,
+  "order": 74,
+  "place": "veliko-tarnovo",
+  "badge": {
+    "id": "fortress",
+    "icon": "minigame/fortress-tower.webp"
+  },
+  "title": {
+    "bg": "Построй крепост",
+    "en": "Build a fortress"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Да построим крепост като Царевец!",
+          "en": "Let's build a fortress like Tsarevets!",
+          "img": "world/tsarevets-fortress.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Всяка част си има място. Гледай сенките!",
+          "en": "Every part has its place. Look at the shadows!"
+        }
+      ],
+      "game": {
+        "type": "assemble",
+        "prompt": {
+          "bg": "Сложи кулите и портата!",
+          "en": "Put up the towers and the gate!"
+        },
+        "scene": "castle",
+        "parts": [
+          {
+            "bg": "Лява кула",
+            "en": "Left tower",
+            "img": "minigame/fortress-tower.webp",
+            "x": 24,
+            "y": 55,
+            "size": 26
+          },
+          {
+            "bg": "Порта",
+            "en": "Gate",
+            "img": "minigame/fortress-gate.webp",
+            "x": 50,
+            "y": 60,
+            "size": 26
+          },
+          {
+            "bg": "Дясна кула",
+            "en": "Right tower",
+            "img": "minigame/fortress-tower.webp",
+            "x": 76,
+            "y": 55,
+            "size": 26
+          }
+        ],
+        "done": {
+          "bg": "Крепостта е готова! Стражите вече пазят.",
+          "en": "The fortress is ready! The guards are on watch."
+        }
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "explorer",
+          "bg": "Средновековната крепост има кули, стени и порта.",
+          "en": "A medieval fortress has towers, walls and a gate.",
+          "img": "world/tsarevets-fortress.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Внимавай: в купчината има и неща, които не са от Средновековието!",
+          "en": "Careful: the pile has things that are not from the Middle Ages!"
+        }
+      ],
+      "game": {
+        "type": "assemble",
+        "prompt": {
+          "bg": "Построй крепостта!",
+          "en": "Build the fortress!"
+        },
+        "scene": "castle",
+        "parts": [
+          {
+            "bg": "Лява кула",
+            "en": "Left tower",
+            "img": "minigame/fortress-tower.webp",
+            "x": 13,
+            "y": 55,
+            "size": 22,
+            "hint": {
+              "bg": "Кулите са в двата края – оттам стражите виждат надалеч.",
+              "en": "The towers stand at both ends – from there the guards see far."
+            }
+          },
+          {
+            "bg": "Лява стена",
+            "en": "Left wall",
+            "img": "minigame/fortress-wall.webp",
+            "x": 32,
+            "y": 60,
+            "size": 22,
+            "hint": {
+              "bg": "Стените свързват кулите с портата.",
+              "en": "The walls join the towers to the gate."
+            }
+          },
+          {
+            "bg": "Порта",
+            "en": "Gate",
+            "img": "minigame/fortress-gate.webp",
+            "x": 50,
+            "y": 58,
+            "size": 22,
+            "hint": {
+              "bg": "Портата е в средата – там се влиза.",
+              "en": "The gate is in the middle – that is the way in."
+            }
+          },
+          {
+            "bg": "Дясна стена",
+            "en": "Right wall",
+            "img": "minigame/fortress-wall.webp",
+            "x": 68,
+            "y": 60,
+            "size": 22,
+            "hint": {
+              "bg": "Стените свързват кулите с портата.",
+              "en": "The walls join the towers to the gate."
+            }
+          },
+          {
+            "bg": "Дясна кула",
+            "en": "Right tower",
+            "img": "minigame/fortress-tower.webp",
+            "x": 87,
+            "y": 55,
+            "size": 22,
+            "hint": {
+              "bg": "Кулите са в двата края.",
+              "en": "The towers stand at both ends."
+            }
+          }
+        ],
+        "decoys": [
+          {
+            "bg": "Балон",
+            "en": "Hot-air balloon",
+            "img": "world/hot-air-balloon.webp",
+            "why": {
+              "bg": "Балоните се появяват едва през 18 век – много след Средновековието.",
+              "en": "Balloons appeared only in the 18th century – long after the Middle Ages."
+            }
+          }
+        ],
+        "done": {
+          "bg": "Крепостта стои! Царевец имал и три порти, и стени около целия хълм.",
+          "en": "The fortress stands! Tsarevets even had three gates and walls around the whole hill."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Защо крепостите се строят на хълмове?",
+            "en": "Why were fortresses built on hills?"
+          },
+          "options": [
+            {
+              "bg": "Отгоре се вижда надалеч и се брани по-лесно",
+              "en": "From above you see far and defend more easily"
+            },
+            {
+              "bg": "Защото е по-топло",
+              "en": "Because it is warmer"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "compass",
+          "bg": "Сега без сенки – само рамките показват местата.",
+          "en": "Now without shadows – only frames show the places.",
+          "img": "world/tsarevets-fortress.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "Две неща в купчината са от много по-късно време. Не ги слагай!",
+          "en": "Two things in the pile are from a much later time. Do not use them!"
+        }
+      ],
+      "game": {
+        "type": "assemble",
+        "prompt": {
+          "bg": "Построй крепостта – без сенки!",
+          "en": "Build the fortress – no shadows!"
+        },
+        "scene": "castle",
+        "parts": [
+          {
+            "bg": "Лява кула",
+            "en": "Left tower",
+            "img": "minigame/fortress-tower.webp",
+            "x": 13,
+            "y": 55,
+            "size": 22,
+            "hint": {
+              "bg": "Кулите са в двата края – оттам стражите виждат надалеч.",
+              "en": "The towers stand at both ends – from there the guards see far."
+            }
+          },
+          {
+            "bg": "Лява стена",
+            "en": "Left wall",
+            "img": "minigame/fortress-wall.webp",
+            "x": 32,
+            "y": 60,
+            "size": 22,
+            "hint": {
+              "bg": "Стените свързват кулите с портата.",
+              "en": "The walls join the towers to the gate."
+            }
+          },
+          {
+            "bg": "Порта",
+            "en": "Gate",
+            "img": "minigame/fortress-gate.webp",
+            "x": 50,
+            "y": 58,
+            "size": 22,
+            "hint": {
+              "bg": "Портата е в средата – там се влиза.",
+              "en": "The gate is in the middle – that is the way in."
+            }
+          },
+          {
+            "bg": "Дясна стена",
+            "en": "Right wall",
+            "img": "minigame/fortress-wall.webp",
+            "x": 68,
+            "y": 60,
+            "size": 22,
+            "hint": {
+              "bg": "Стените свързват кулите с портата.",
+              "en": "The walls join the towers to the gate."
+            }
+          },
+          {
+            "bg": "Дясна кула",
+            "en": "Right tower",
+            "img": "minigame/fortress-tower.webp",
+            "x": 87,
+            "y": 55,
+            "size": 22,
+            "hint": {
+              "bg": "Кулите са в двата края.",
+              "en": "The towers stand at both ends."
+            }
+          }
+        ],
+        "decoys": [
+          {
+            "bg": "Балон",
+            "en": "Hot-air balloon",
+            "img": "world/hot-air-balloon.webp",
+            "why": {
+              "bg": "Балоните се появяват едва през 18 век – много след Средновековието.",
+              "en": "Balloons appeared only in the 18th century – long after the Middle Ages."
+            }
+          },
+          {
+            "bg": "Трибагреник",
+            "en": "Tricolour flag",
+            "img": "minigame/bulgaria-flag.svg",
+            "why": {
+              "bg": "Трибагреникът е знаме от 1879 г. – средновековните царе имали други знамена.",
+              "en": "The tricolour dates from 1879 – medieval tsars had other banners."
+            }
+          }
+        ],
+        "ghost": false,
+        "done": {
+          "bg": "Браво, строителю! Царевец бил обграден от река Янтра от три страни.",
+          "en": "Well done, builder! Tsarevets was surrounded by the Yantra on three sides."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "От коя година е трибагреникът?",
+            "en": "When does the tricolour flag date from?"
+          },
+          "options": [
+            {
+              "bg": "1879 г.",
+              "en": "1879"
+            },
+            {
+              "bg": "681 г.",
+              "en": "681"
+            },
+            {
+              "bg": "1185 г.",
+              "en": "1185"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "История на България в 14 тома, БАН",
+    "Национален историко-археологически резерват „Царевец“",
+    "Закон за държавния печат и националното знаме (знамето от 1879 г.)"
+  ],
+  "review": null,
+  "draft": true
+}

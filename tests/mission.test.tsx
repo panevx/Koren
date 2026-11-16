@@ -179,7 +179,10 @@ describe('map screen', () => {
     renderAt('/map')
     fireEvent.click(await screen.findByRole('button', { name: 'Плиска' }))
     expect(screen.getByRole('heading', { name: 'Плиска' })).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: /Хан Аспарух/ })).toHaveAttribute('href', `/mission/${ID}`)
+    // v0.18: Pliska has two missions now (Asparuh; Krum and Omurtag)
+    // Krum is still locked: it says so and links to what opens it (Asparuh) — so Asparuh's link appears twice.
+    for (const a of screen.getAllByRole('link', { name: /^Хан Аспарух и новата държава/ })) expect(a).toHaveAttribute('href', `/mission/${ID}`)
+    expect(screen.getByText('Хан Крум и хан Омуртаг')).toBeInTheDocument()
     // v0.15: cities have their own mode; a place without a mission says so and shows its fact.
     fireEvent.click(screen.getByRole('button', { name: /Градове/ }))
     fireEvent.click(screen.getByRole('button', { name: 'Габрово' }))

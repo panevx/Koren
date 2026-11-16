@@ -108,6 +108,15 @@ async function solveGame(game: Game) {
       }
       return next()
     }
+    case 'assemble':
+      game.parts.forEach((part, k) => {
+        fireEvent.click(within(screen.getByRole('list', { name: 'Части за поставяне' })).getByRole('button', { name: part.bg }))
+        fireEvent.click(screen.getByRole('button', { name: `Празно място ${k + 1}` }))
+      })
+      return next()
+    case 'riddle':
+      fireEvent.click(within(screen.getByRole('list', { name: 'Отговори' })).getByRole('button', { name: game.options[game.answer]!.bg }))
+      return next()
   }
 }
 
@@ -174,13 +183,13 @@ describe('a break after 3 missions in a row', () => {
   })
 })
 
-describe('there is at least one mission per subject and all 13 templates are used', () => {
+describe('there is at least one mission per subject and all 15 templates are used', () => {
   it('subjects', () => {
     expect(new Set(MISSIONS.map((m) => m.subject))).toEqual(new Set(['history', 'culture', 'language', 'geography']))
   })
   it('templates', () => {
     const used = new Set(MISSIONS.flatMap((m) => Object.values(m.levels).map((l) => l!.game.type)))
-    expect(used).toEqual(new Set(['quiz', 'map', 'match', 'order', 'puzzle', 'find', 'sort', 'memory', 'chest', 'build', 'guess', 'trace', 'regions']))
+    expect(used).toEqual(new Set(['quiz', 'map', 'match', 'order', 'puzzle', 'find', 'sort', 'memory', 'chest', 'build', 'guess', 'trace', 'regions', 'assemble', 'riddle']))
   })
 })
 

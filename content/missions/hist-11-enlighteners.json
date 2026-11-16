@@ -1,0 +1,302 @@
+{
+  "id": "hist-11-enlighteners",
+  "subject": "history",
+  "free": true,
+  "order": 75,
+  "unlock": {
+    "after": [
+      "lang-03-paisiy"
+    ]
+  },
+  "badge": {
+    "id": "enlighteners",
+    "icon": "people/budenie-book.webp"
+  },
+  "title": {
+    "bg": "Будителите",
+    "en": "The enlighteners"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Будителите събуждали хората с книги и училища.",
+          "en": "The enlighteners woke people up with books and schools.",
+          "img": "people/old-school.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Намери двата еднакви портрета!",
+          "en": "Find the two matching portraits!"
+        }
+      ],
+      "game": {
+        "type": "memory",
+        "prompt": {
+          "bg": "Намери двата еднакви портрета!",
+          "en": "Find the two matching portraits!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Паисий Хилендарски",
+              "en": "Paisiy of Hilendar",
+              "img": "people/paisiy.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Софроний Врачански",
+              "en": "Sofroniy of Vratsa",
+              "img": "people/sofroniy.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Петър Берон",
+              "en": "Petar Beron",
+              "img": "people/petar-beron.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Неофит Рилски",
+              "en": "Neofit Rilski",
+              "img": "people/neofit-rilski.webp"
+            }
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "На 1 ноември празнуваме Деня на народните будители.",
+          "en": "On 1 November we celebrate the Day of the National Enlighteners.",
+          "img": "people/budenie-book.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Свържи будителя с неговата книга.",
+          "en": "Match each enlightener with his book."
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи будителя с делото му!",
+          "en": "Match the enlightener with his work!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Паисий Хилендарски",
+              "en": "Paisiy of Hilendar",
+              "img": "people/paisiy.webp"
+            },
+            "b": {
+              "bg": "„История славянобългарска“ (1762 г.)",
+              "en": "\"Slavonic-Bulgarian History\" (1762)"
+            }
+          },
+          {
+            "a": {
+              "bg": "Софроний Врачански",
+              "en": "Sofroniy of Vratsa",
+              "img": "people/sofroniy.webp"
+            },
+            "b": {
+              "bg": "„Неделник“ – първата печатна книга на новобългарски",
+              "en": "\"Nedelnik\" – the first printed book in modern Bulgarian"
+            }
+          },
+          {
+            "a": {
+              "bg": "Петър Берон",
+              "en": "Petar Beron",
+              "img": "people/petar-beron.webp"
+            },
+            "b": {
+              "bg": "„Рибният буквар“ (1824 г.)",
+              "en": "The \"Fish Primer\" (1824)"
+            }
+          },
+          {
+            "a": {
+              "bg": "Неофит Рилски",
+              "en": "Neofit Rilski",
+              "img": "people/neofit-rilski.webp"
+            },
+            "b": {
+              "bg": "Първата българска граматика (1835 г.)",
+              "en": "The first Bulgarian grammar (1835)"
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кога е Денят на народните будители?",
+            "en": "When is the Day of the National Enlighteners?"
+          },
+          "options": [
+            {
+              "bg": "1 ноември",
+              "en": "1 November"
+            },
+            {
+              "bg": "3 март",
+              "en": "3 March"
+            },
+            {
+              "bg": "24 май",
+              "en": "24 May"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "map",
+          "bg": "Будителите идват от много краища на България.",
+          "en": "The enlighteners came from many corners of Bulgaria.",
+          "img": "people/old-school.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "compass",
+          "bg": "Свържи будителя с родния му град.",
+          "en": "Match each one with their home town."
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи с родния град!",
+          "en": "Match with the home town!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Георги Раковски",
+              "en": "Georgi Rakovski",
+              "img": "people/georgi-rakovski.webp"
+            },
+            "b": {
+              "bg": "Котел",
+              "en": "Kotel"
+            }
+          },
+          {
+            "a": {
+              "bg": "Неофит Рилски",
+              "en": "Neofit Rilski",
+              "img": "people/neofit-rilski.webp"
+            },
+            "b": {
+              "bg": "Банско",
+              "en": "Bansko"
+            }
+          },
+          {
+            "a": {
+              "bg": "Любен Каравелов",
+              "en": "Lyuben Karavelov",
+              "img": "people/lyuben-karavelov.webp"
+            },
+            "b": {
+              "bg": "Копривщица",
+              "en": "Koprivshtitsa"
+            }
+          },
+          {
+            "a": {
+              "bg": "Райна Княгиня",
+              "en": "Rayna Knyaginya",
+              "img": "people/rayna-knyaginya.webp"
+            },
+            "b": {
+              "bg": "Панагюрище",
+              "en": "Panagyurishte"
+            }
+          },
+          {
+            "a": {
+              "bg": "Христо Ботев",
+              "en": "Hristo Botev",
+              "img": "people/hristo-botev.webp"
+            },
+            "b": {
+              "bg": "Калофер",
+              "en": "Kalofer"
+            }
+          }
+        ],
+        "hint": {
+          "bg": "Котел дал на България Софроний, Петър Берон и Раковски.",
+          "en": "Kotel gave Bulgaria Sofroniy, Petar Beron and Rakovski."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Какво ушила Райна Княгиня за Априлското въстание (1876 г.)?",
+            "en": "What did Rayna Knyaginya sew for the April Uprising (1876)?"
+          },
+          "options": [
+            {
+              "bg": "Знамето на въстанието",
+              "en": "The flag of the uprising"
+            },
+            {
+              "bg": "Носия за сватба",
+              "en": "A wedding costume"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кой град е родно място на Софроний, Петър Берон и Раковски?",
+            "en": "Which town is the birthplace of Sofroniy, Petar Beron and Rakovski?"
+          },
+          "options": [
+            {
+              "bg": "Котел",
+              "en": "Kotel"
+            },
+            {
+              "bg": "Габрово",
+              "en": "Gabrovo"
+            },
+            {
+              "bg": "Русе",
+              "en": "Ruse"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "История на България в 14 тома, БАН",
+    "Учебници по „История и цивилизации“ (5.–7. кл.) и „Човекът и обществото“ (3.–4. кл.), МОН",
+    "Образите на владетелите и будителите са условни (няма запазени портрети или са рисувани по снимки) – казва се на децата",
+    "Закон за празниците – 1 ноември, Ден на народните будители"
+  ],
+  "review": null,
+  "draft": true
+}

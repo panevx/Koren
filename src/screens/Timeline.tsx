@@ -1,9 +1,11 @@
 import { useState, type CSSProperties } from 'react'
-import { Avatar } from '../components/Brand'
+import { Link } from 'react-router'
+import { Avatar, img } from '../components/Brand'
 import { Icon } from '../components/Icon'
 import { Card, Screen, TopBar, roundButton } from '../components/ui'
 import { placeById } from '../content/places'
 import { EPOCHS, TIMELINE, hasState } from '../content/timeline'
+import { useChildMissions } from '../content/useChildMissions'
 import { useLocalized } from '../content/useLocalized'
 import { useT } from '../i18n/useT'
 import { TimelineMap } from '../map/TimelineMap'
@@ -25,6 +27,9 @@ export function Timeline() {
   const capital = placeById(epoch.capital)
   const go = (i: number) => setIndex(Math.min(last, Math.max(0, i)))
   const yearLabel = t('timeline.year', { year: epoch.year })
+  // the mission link only for a mission this child can see (drafts are hidden in the family build)
+  const missions = useChildMissions()
+  const mission = missions.some((x) => x.id === epoch.mission) ? epoch.mission : undefined
 
   return (
     // Wide landscape screen: the map on the left (stays in view), the controls and the story on the right.
@@ -88,6 +93,23 @@ export function Timeline() {
           <m.div key={epoch.id} initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }} className="min-w-0 flex-1 rounded-[1.5rem] rounded-tl-md bg-white px-4 py-3 shadow-soft">
             <p className="text-lg leading-snug font-bold">{l(epoch.text[level])}</p>
             {capital && <p className="mt-1 text-sm font-extrabold text-green-dark">{t('timeline.capital', { name: l(capital.name) })}</p>}
+            {/* v0.18: who ruled then, and the mission about it */}
+            {(epoch.people || mission) && (
+              <div className="mt-2 flex flex-wrap items-center gap-2">
+                {epoch.people?.map((p) => (
+                  <span key={p.img} className="flex min-w-0 items-center gap-1.5 rounded-full bg-gold-soft py-0.5 pr-3 pl-0.5 text-sm font-extrabold">
+                    <img src={img(p.img)} alt="" className="size-9 shrink-0 rounded-full bg-white object-contain" />
+                    <span className="min-w-0">{l(p)}</span>
+                  </span>
+                ))}
+                {mission && (
+                  <Link to={`/mission/${mission}`} className="press tap flex items-center gap-1 rounded-full bg-green-dark px-4 py-1.5 text-sm font-extrabold text-white">
+                    {t('timeline.toMission')}
+                    <Icon name="chevron" width="0.9em" height="0.9em" />
+                  </Link>
+                )}
+              </div>
+            )}
           </m.div>
         </div>
 

@@ -4,14 +4,14 @@
 
 | Статус | Брой |
 |---|---:|
-| В приложението сега (`used`) | 84 |
-| Готови за следващ етап (`ready`) | 150 |
+| В приложението сега (`used`) | 112 |
+| Готови за следващ етап (`ready`) | 122 |
 | Данни (оригинал за препроектиране) (`source`) | 10 |
 | Дубликати на съществуващи картинки (`duplicate`) | 49 |
 | Чакат проверка (не се публикуват) (`review`) | 7 |
 | **Общо** | **300** |
 
-## В приложението сега — 84
+## В приложението сега — 112
 
 | ID | Оригинал | Път в `public/img` / същото като | Етап | Бележка / проверка |
 |---|---|---|---|---|
@@ -25,14 +25,34 @@
 | `city-sofia` | `design/v5/city/city-sofia.png` | `city/sofia.webp` |  | Катедралата в София (история) |
 | `city-varna` | `design/v5/city/city-varna.png` | `city/varna.webp` |  | карта: Варна; Черно море (история) |
 | `city-veliko-tarnovo` | `design/v5/city/city-veliko-tarnovo.png` | `city/veliko-tarnovo.webp` |  | мисии |
+| `game-letter-tile` | `design/v5/game/game-letter-tile.png` | `game/letter-tile.webp` |  | мисии |
 | `game-puzzle-blue` | `design/v5/game/game-puzzle-blue.png` | `game/puzzle-blue.webp` |  | мисии |
 | `game-puzzle-red` | `design/v5/game/game-puzzle-red.png` | `game/puzzle-red.webp` |  | мисии |
+| `hero-budenie-book` | `design/v5/hero/hero-budenie-book.png` | `people/budenie-book.webp` |  | мисии |
+| `hero-georgi-rakovski` | `design/v5/hero/hero-georgi-rakovski.png` | `people/georgi-rakovski.webp` |  | мисии · Условен образ — сравни чертите със запазен портрет/снимка (историк). |
+| `hero-hristo-botev` | `design/v5/hero/hero-hristo-botev.png` | `people/hristo-botev.webp` |  | мисии · Условен образ — сравни чертите със запазен портрет/снимка (историк). |
+| `hero-ivan-vazov` | `design/v5/hero/hero-ivan-vazov.png` | `people/ivan-vazov.webp` |  | мисии · Условен образ — сравни чертите със запазен портрет/снимка (историк). |
 | `hero-kliment-ohridski` | `design/v5/hero/hero-kliment-ohridski.png` | `people/kliment-ohridski.webp` |  | Азбуката на Кирил и Методий (история) · Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста. |
+| `hero-lyuben-karavelov` | `design/v5/hero/hero-lyuben-karavelov.png` | `people/lyuben-karavelov.webp` |  | мисии · Условен образ — сравни чертите със запазен портрет/снимка (историк). |
+| `hero-neofit-rilski` | `design/v5/hero/hero-neofit-rilski.png` | `people/neofit-rilski.webp` |  | мисии · Условен образ — сравни чертите със запазен портрет/снимка (историк). |
+| `hero-old-school` | `design/v5/hero/hero-old-school.png` | `people/old-school.webp` |  | мисии |
 | `hero-paisiy` | `design/v5/hero/hero-paisiy.png` | `people/paisiy.webp` |  | Паисий (история) · Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста. |
+| `hero-petar-beron` | `design/v5/hero/hero-petar-beron.png` | `people/petar-beron.webp` |  | мисии · Условен образ — сравни чертите със запазен портрет/снимка (историк). |
+| `hero-rayna-knyaginya` | `design/v5/hero/hero-rayna-knyaginya.png` | `people/rayna-knyaginya.webp` |  | мисии · Условен образ — сравни чертите със запазен портрет/снимка (историк). |
+| `hero-sofroniy` | `design/v5/hero/hero-sofroniy.png` | `people/sofroniy.webp` |  | мисии · Условен образ — сравни чертите със запазен портрет/снимка (историк). |
+| `hero-vasil-levski` | `design/v5/hero/hero-vasil-levski.png` | `people/vasil-levski.webp` |  | мисии · Условен образ — сравни чертите със запазен портрет/снимка (историк). |
 | `history-asparuh` | `design/v5/history/history-asparuh.png` | `history/asparuh.webp` |  | Хан Аспарух (история) · Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста. |
+| `history-boris-first` | `design/v5/history/history-boris-first.png` | `history/boris-first.webp` |  | мисии · Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста. |
+| `history-ivan-asen-second` | `design/v5/history/history-ivan-asen-second.png` | `history/ivan-asen-second.webp` |  | мисии · Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста. |
+| `history-ivan-shishman` | `design/v5/history/history-ivan-shishman.png` | `history/ivan-shishman.webp` |  | мисии · Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста. |
+| `history-kaloyan` | `design/v5/history/history-kaloyan.png` | `history/kaloyan.webp` |  | мисии · Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста. |
+| `history-krum` | `design/v5/history/history-krum.png` | `history/krum.webp` |  | мисии · Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста. |
 | `history-medieval-fortress` | `design/v5/history/history-medieval-fortress.png` | `history/medieval-fortress.webp` |  | Короната на царя (история) |
+| `history-medieval-gate` | `design/v5/history/history-medieval-gate.png` | `history/medieval-gate.webp` |  | мисии |
 | `history-medieval-throne` | `design/v5/history/history-medieval-throne.png` | `history/medieval-throne.webp` |  | Царевец (история) |
+| `history-omurtag` | `design/v5/history/history-omurtag.png` | `history/omurtag.webp` |  | мисии · Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста. |
 | `history-preslav` | `design/v5/history/history-preslav.png` | `history/preslav.webp` |  | карта: Велики Преслав; Цар Симеон (история) |
+| `history-samuil` | `design/v5/history/history-samuil.png` | `history/samuil.webp` |  | мисии · Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста. |
 | `history-simeon` | `design/v5/history/history-simeon.png` | `history/simeon.webp` |  | Цар Симеон (история) · Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста. |
 | `koren-celebrate` | `design/v5/koren/koren-celebrate.png` | `poses/koren-celebrate.webp` |  | истории на мисиите (поза celebrate) |
 | `koren-chef` | `design/v5/koren/koren-chef.png` | `poses/koren-chef.webp` |  | мисия „Погача за гости“ |
@@ -42,6 +62,7 @@
 | `koren-map` | `design/v5/koren/koren-map.png` | `poses/koren-map.webp` |  | мисии с карта |
 | `koren-nature` | `design/v5/koren/koren-nature.png` | `poses/koren-nature.webp` |  | мисии за животни и природа |
 | `koren-reading` | `design/v5/koren/koren-reading.png` | `poses/koren-reading.webp` |  | мисии за история и език |
+| `koren-treasure` | `design/v5/koren/koren-treasure.png` | `poses/koren-treasure.webp` |  | мисии със съкровища |
 | `koren-winter` | `design/v5/koren/koren-winter.png` | `poses/koren-winter.webp` |  | мисия „Баба Марта“ |
 | `lake-srebarna` | `design/v5/lake/lake-srebarna.png` | `geo/srebarna.webp` |  | карта: Сребърна; Край водата (история) |
 | `landmark-baba-vida` | `design/v5/landmark/landmark-baba-vida.png` | `landmarks/baba-vida.webp` |  | мисии |
@@ -49,6 +70,10 @@
 | `landmark-devils-throat` | `design/v5/landmark/landmark-devils-throat.png` | `landmarks/devils-throat.webp` |  | мисии |
 | `landmark-madara-rider` | `design/v5/landmark/landmark-madara-rider.png` | `landmarks/madara-rider.webp` |  | мисии · Формата да се сравни със снимка на истинския предмет (музей). |
 | `landmark-nessebar` | `design/v5/landmark/landmark-nessebar.png` | `landmarks/nessebar.webp` |  | карта: Несебър; Черно море (история) |
+| `minigame-bulgaria-flag` | `design/v5/minigame/minigame-bulgaria-flag.svg` | `minigame/bulgaria-flag.svg` |  | мисии · Цветовете да се сравнят с официалните (бяло, зелено #00966E, червено #D62612). |
+| `minigame-fortress-gate` | `design/v5/minigame/minigame-fortress-gate.png` | `minigame/fortress-gate.webp` |  | мисии |
+| `minigame-fortress-tower` | `design/v5/minigame/minigame-fortress-tower.png` | `minigame/fortress-tower.webp` |  | мисии |
+| `minigame-fortress-wall` | `design/v5/minigame/minigame-fortress-wall.png` | `minigame/fortress-wall.webp` |  | мисии |
 | `minigame-recycling-bin` | `design/v5/minigame/minigame-recycling-bin.png` | `minigame/recycling-bin.webp` |  | мисии |
 | `minigame-river-route` | `design/v5/minigame/minigame-river-route.png` | `minigame/river-route.webp` |  | мисии |
 | `mountain-balkan` | `design/v5/mountain/mountain-balkan.png` | `geo/balkan.webp` |  | Шипка (история) |
@@ -96,11 +121,14 @@
 | `world-mineral-hisarya` | `design/v5/world/world-mineral-hisarya.png` | `places/mineral-hisarya.webp` |  | мисии |
 | `world-mineral-sandanski` | `design/v5/world/world-mineral-sandanski.png` | `places/mineral-sandanski.webp` |  | мисии |
 | `world-mineral-velingrad` | `design/v5/world/world-mineral-velingrad.png` | `places/mineral-velingrad.webp` |  | мисии |
+| `world-panagyurishte-treasure` | `design/v5/world/world-panagyurishte-treasure.png` | `places/panagyurishte-treasure.webp` |  | мисии · Формата да се сравни със снимка на истинския предмет (музей). |
+| `world-rogozen-treasure` | `design/v5/world/world-rogozen-treasure.png` | `places/rogozen-treasure.webp` |  | мисии · Формата да се сравни със снимка на истинския предмет (музей). |
 | `world-ski-bansko` | `design/v5/world/world-ski-bansko.png` | `places/ski-bansko.webp` |  | мисии |
 | `world-ski-borovets` | `design/v5/world/world-ski-borovets.png` | `places/ski-borovets.webp` |  | мисии |
 | `world-ski-pamporovo` | `design/v5/world/world-ski-pamporovo.png` | `places/ski-pamporovo.webp` |  | мисии |
+| `world-valchitran-treasure` | `design/v5/world/world-valchitran-treasure.png` | `places/valchitran-treasure.webp` |  | мисии · Формата да се сравни със снимка на истинския предмет (музей). |
 
-## Готови за следващ етап — 150
+## Готови за следващ етап — 122
 
 | ID | Оригинал | Път в `public/img` / същото като | Етап | Бележка / проверка |
 |---|---|---|---|---|
@@ -136,7 +164,6 @@
 | `food-tikvenik` | `design/v5/food/food-tikvenik.png` | `food/tikvenik.webp` | 6 |  |
 | `game-drag-handle` | `design/v5/game/game-drag-handle.png` | `game/drag-handle.webp` | 9 |  |
 | `game-drop-target` | `design/v5/game/game-drop-target.png` | `game/drop-target.webp` | 9 |  |
-| `game-letter-tile` | `design/v5/game/game-letter-tile.png` | `game/letter-tile.webp` | 7 |  |
 | `game-mission-complete` | `design/v5/game/game-mission-complete.png` | `game/mission-complete.webp` | 9 |  |
 | `game-paint-bucket` | `design/v5/game/game-paint-bucket.png` | `game/paint-bucket.webp` | 6 |  |
 | `game-paintbrush` | `design/v5/game/game-paintbrush.png` | `game/paintbrush.webp` | 6 |  |
@@ -144,41 +171,20 @@
 | `game-true-false-false` | `design/v5/game/game-true-false-false.svg` | `game/true-false-false.svg` | 9 |  |
 | `game-true-false-true` | `design/v5/game/game-true-false-true.svg` | `game/true-false-true.svg` | 9 |  |
 | `game-word-tile` | `design/v5/game/game-word-tile.png` | `game/word-tile.webp` | 7 |  |
-| `hero-budenie-book` | `design/v5/hero/hero-budenie-book.png` | `people/budenie-book.webp` | 5 |  |
 | `hero-elin-pelin` | `design/v5/hero/hero-elin-pelin.png` | `people/elin-pelin.webp` | 5 | Условен образ — сравни чертите със запазен портрет/снимка (историк). |
-| `hero-georgi-rakovski` | `design/v5/hero/hero-georgi-rakovski.png` | `people/georgi-rakovski.webp` | 5 | Условен образ — сравни чертите със запазен портрет/снимка (историк). |
-| `hero-hristo-botev` | `design/v5/hero/hero-hristo-botev.png` | `people/hristo-botev.webp` | 5 | Условен образ — сравни чертите със запазен портрет/снимка (историк). |
-| `hero-ivan-vazov` | `design/v5/hero/hero-ivan-vazov.png` | `people/ivan-vazov.webp` | 5 | Условен образ — сравни чертите със запазен портрет/снимка (историк). |
 | `hero-kiril` | `design/v5/hero/hero-kiril.png` | `people/kiril.webp` | 5 | history/kiril-metodiy.webp (показва се в „Азбуката на Кирил и Методий“) · Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста. |
-| `hero-lyuben-karavelov` | `design/v5/hero/hero-lyuben-karavelov.png` | `people/lyuben-karavelov.webp` | 5 | Условен образ — сравни чертите със запазен портрет/снимка (историк). |
 | `hero-metodiy` | `design/v5/hero/hero-metodiy.png` | `people/metodiy.webp` | 5 | history/kiril-metodiy.webp (показва се в „Азбуката на Кирил и Методий“) · Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста. |
 | `hero-naum` | `design/v5/hero/hero-naum.png` | `people/naum.webp` | 5 | Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста. |
-| `hero-neofit-rilski` | `design/v5/hero/hero-neofit-rilski.png` | `people/neofit-rilski.webp` | 5 | Условен образ — сравни чертите със запазен портрет/снимка (историк). |
-| `hero-old-school` | `design/v5/hero/hero-old-school.png` | `people/old-school.webp` | 5 |  |
-| `hero-petar-beron` | `design/v5/hero/hero-petar-beron.png` | `people/petar-beron.webp` | 5 | Условен образ — сравни чертите със запазен портрет/снимка (историк). |
-| `hero-rayna-knyaginya` | `design/v5/hero/hero-rayna-knyaginya.png` | `people/rayna-knyaginya.webp` | 5 | Условен образ — сравни чертите със запазен портрет/снимка (историк). |
-| `hero-sofroniy` | `design/v5/hero/hero-sofroniy.png` | `people/sofroniy.webp` | 5 | Условен образ — сравни чертите със запазен портрет/снимка (историк). |
-| `hero-vasil-levski` | `design/v5/hero/hero-vasil-levski.png` | `people/vasil-levski.webp` | 5 | Условен образ — сравни чертите със запазен портрет/снимка (историк). |
 | `hero-yordan-yovkov` | `design/v5/hero/hero-yordan-yovkov.png` | `people/yordan-yovkov.webp` | 5 | Условен образ — сравни чертите със запазен портрет/снимка (историк). |
 | `hero-zahari-stoyanov` | `design/v5/hero/hero-zahari-stoyanov.png` | `people/zahari-stoyanov.webp` | 5 | Условен образ — сравни чертите със запазен портрет/снимка (историк). |
-| `history-boris-first` | `design/v5/history/history-boris-first.png` | `history/boris-first.webp` | 5 | Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста. |
-| `history-ivan-asen-second` | `design/v5/history/history-ivan-asen-second.png` | `history/ivan-asen-second.webp` | 5 | Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста. |
-| `history-ivan-shishman` | `design/v5/history/history-ivan-shishman.png` | `history/ivan-shishman.webp` | 5 | Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста. |
-| `history-kaloyan` | `design/v5/history/history-kaloyan.png` | `history/kaloyan.webp` | 5 | Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста. |
-| `history-krum` | `design/v5/history/history-krum.png` | `history/krum.webp` | 5 | Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста. |
-| `history-medieval-gate` | `design/v5/history/history-medieval-gate.png` | `history/medieval-gate.webp` | 5 |  |
 | `history-medieval-tower` | `design/v5/history/history-medieval-tower.png` | `history/medieval-tower.webp` | 5 |  |
-| `history-omurtag` | `design/v5/history/history-omurtag.png` | `history/omurtag.webp` | 5 | Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста. |
 | `history-petar-first` | `design/v5/history/history-petar-first.png` | `history/petar-first.webp` | 5 | Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста. |
-| `history-samuil` | `design/v5/history/history-samuil.png` | `history/samuil.webp` | 5 | Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста. |
 | `ingredient-cheese` | `design/v5/ingredient/ingredient-cheese.png` | `food/cheese.webp` | 6 |  |
 | `ingredient-cucumber` | `design/v5/ingredient/ingredient-cucumber.png` | `food/cucumber.webp` | 6 |  |
 | `ingredient-pepper` | `design/v5/ingredient/ingredient-pepper.png` | `food/pepper.webp` | 6 |  |
 | `ingredient-tomato` | `design/v5/ingredient/ingredient-tomato.png` | `food/tomato.webp` | 6 |  |
 | `ingredient-yogurt` | `design/v5/ingredient/ingredient-yogurt.png` | `food/yogurt.webp` | 6 |  |
-| `koren-treasure` | `design/v5/koren/koren-treasure.png` | `poses/koren-treasure.webp` | 5 |  |
 | `minigame-beach-trash` | `design/v5/minigame/minigame-beach-trash.png` | `minigame/beach-trash.webp` | 4 |  |
-| `minigame-bulgaria-flag` | `design/v5/minigame/minigame-bulgaria-flag.svg` | `minigame/bulgaria-flag.svg` | 3 | Цветовете да се сравнят с официалните (бяло, зелено #00966E, червено #D62612). |
 | `minigame-clay-pot` | `design/v5/minigame/minigame-clay-pot.png` | `minigame/clay-pot.webp` | 6 |  |
 | `minigame-cooking-pot` | `design/v5/minigame/minigame-cooking-pot.png` | `minigame/cooking-pot.webp` | 6 |  |
 | `minigame-easter-egg-blank` | `design/v5/minigame/minigame-easter-egg-blank.png` | `minigame/easter-egg-blank.webp` | 6 |  |
@@ -186,9 +192,6 @@
 | `minigame-embroidery-board` | `design/v5/minigame/minigame-embroidery-board.png` | `minigame/embroidery-board.webp` | 6 |  |
 | `minigame-fairytale-flute` | `design/v5/minigame/minigame-fairytale-flute.png` | `minigame/fairytale-flute.webp` | 7 |  |
 | `minigame-fairytale-golden-apple` | `design/v5/minigame/minigame-fairytale-golden-apple.png` | `minigame/fairytale-golden-apple.webp` | 7 |  |
-| `minigame-fortress-gate` | `design/v5/minigame/minigame-fortress-gate.png` | `minigame/fortress-gate.webp` | 5 |  |
-| `minigame-fortress-tower` | `design/v5/minigame/minigame-fortress-tower.png` | `minigame/fortress-tower.webp` | 5 |  |
-| `minigame-fortress-wall` | `design/v5/minigame/minigame-fortress-wall.png` | `minigame/fortress-wall.webp` | 5 |  |
 | `minigame-hidden-object-scene` | `design/v5/minigame/minigame-hidden-object-scene.png` | `minigame/hidden-object-scene.webp` | 7 |  |
 | `minigame-pottery-wheel` | `design/v5/minigame/minigame-pottery-wheel.png` | `minigame/pottery-wheel.webp` | 6 |  |
 | `minigame-woodcarving-board` | `design/v5/minigame/minigame-woodcarving-board.png` | `minigame/woodcarving-board.webp` | 6 |  |
@@ -246,14 +249,11 @@
 | `world-customs` | `design/v5/world/world-customs.png` | `places/customs.webp` | 8 |  |
 | `world-daily-streak` | `design/v5/world/world-daily-streak.png` | `places/daily-streak.webp` | 9 |  |
 | `world-name-day-calendar` | `design/v5/world/world-name-day-calendar.svg` | `places/name-day-calendar.svg` | 6 |  |
-| `world-panagyurishte-treasure` | `design/v5/world/world-panagyurishte-treasure.png` | `places/panagyurishte-treasure.webp` | 5 | Формата да се сравни със снимка на истинския предмет (музей). |
-| `world-rogozen-treasure` | `design/v5/world/world-rogozen-treasure.png` | `places/rogozen-treasure.webp` | 5 | Формата да се сравни със снимка на истинския предмет (музей). |
 | `world-sports-football` | `design/v5/world/world-sports-football.png` | `places/sports-football.webp` | 8 |  |
 | `world-sports-high-jump` | `design/v5/world/world-sports-high-jump.png` | `places/sports-high-jump.webp` | 8 |  |
 | `world-sports-tennis` | `design/v5/world/world-sports-tennis.png` | `places/sports-tennis.webp` | 8 |  |
 | `world-sports-weightlifting` | `design/v5/world/world-sports-weightlifting.png` | `places/sports-weightlifting.webp` | 8 |  |
 | `world-transport-corridor` | `design/v5/world/world-transport-corridor.png` | `places/transport-corridor.webp` | 8 |  |
-| `world-valchitran-treasure` | `design/v5/world/world-valchitran-treasure.png` | `places/valchitran-treasure.webp` | 5 | Формата да се сравни със снимка на истинския предмет (музей). |
 
 ## Данни (оригинал за препроектиране) — 10
 
