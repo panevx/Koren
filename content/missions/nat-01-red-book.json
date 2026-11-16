@@ -1,0 +1,294 @@
+{
+  "id": "nat-01-red-book",
+  "subject": "geography",
+  "free": true,
+  "order": 63,
+  "place": "srebarna",
+  "badge": {
+    "id": "red-book",
+    "icon": "nature/red-book.webp"
+  },
+  "title": {
+    "bg": "Червената книга",
+    "en": "The Red Book"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "nature",
+          "bg": "Това е Червената книга. В нея пише кои животни трябва да пазим.",
+          "en": "This is the Red Book. It says which animals we must look after.",
+          "img": "nature/red-book.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Обърни картите и намери двойките!",
+          "en": "Turn the cards and find the pairs!"
+        }
+      ],
+      "game": {
+        "type": "memory",
+        "prompt": {
+          "bg": "Намери двете еднакви животни!",
+          "en": "Find the two matching animals!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Царски орел",
+              "en": "Imperial eagle",
+              "img": "animals/imperial-eagle.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Пеликан",
+              "en": "Pelican",
+              "img": "animals/pelican.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Костенурка",
+              "en": "Tortoise",
+              "img": "animals/tortoise.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Видра",
+              "en": "Otter",
+              "img": "animals/otter.webp"
+            }
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "В Червената книга на България са редките растения и животни, които може да изчезнат.",
+          "en": "Bulgaria's Red Book lists the rare plants and animals that could disappear.",
+          "img": "nature/red-book.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "nature",
+          "bg": "Събери само редките. Лисицата и заекът са много – тях ги няма в книгата.",
+          "en": "Collect only the rare ones. Foxes and hares are many – they are not in the book."
+        }
+      ],
+      "game": {
+        "type": "chest",
+        "prompt": {
+          "bg": "Кои са в Червената книга? Сложи ги в сандъка!",
+          "en": "Which ones are in the Red Book? Put them in the chest!"
+        },
+        "items": [
+          {
+            "bg": "Царски орел",
+            "en": "Imperial eagle",
+            "img": "animals/imperial-eagle.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Къдроглав пеликан",
+            "en": "Dalmatian pelican",
+            "img": "animals/pelican.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Видра",
+            "en": "Otter",
+            "img": "animals/otter.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Еделвайс",
+            "en": "Edelweiss",
+            "img": "nature/edelweiss.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Лисица",
+            "en": "Fox",
+            "img": "animals/fox.webp",
+            "belongs": false,
+            "why": {
+              "bg": "Лисиците у нас са много – не са застрашени.",
+              "en": "There are many foxes in Bulgaria – they are not endangered."
+            }
+          },
+          {
+            "bg": "Заек",
+            "en": "Hare",
+            "img": "animals/hare.webp",
+            "belongs": false,
+            "why": {
+              "bg": "Заекът е често срещан – не е в Червената книга.",
+              "en": "The hare is common – it is not in the Red Book."
+            }
+          }
+        ],
+        "reward": {
+          "bg": "Книгата е пълна – сега знаеш кого да пазиш!",
+          "en": "The book is full – now you know whom to protect!"
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Защо пишем животни в Червената книга?",
+            "en": "Why do we write animals in the Red Book?"
+          },
+          "options": [
+            {
+              "bg": "За да ги пазим",
+              "en": "To protect them"
+            },
+            {
+              "bg": "За да ги ловим",
+              "en": "To hunt them"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Червената книга на България (2011) има три тома: растения и гъби, животни, природни местообитания.",
+          "en": "Bulgaria's Red Book (2011) has three volumes: plants and fungi, animals, natural habitats.",
+          "img": "nature/red-book.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "compass",
+          "bg": "Всеки вид има „оценка“ – колко е застрашен. Свържи вида с причината да е рядък.",
+          "en": "Every species has a rating – how endangered it is. Match each one with why it is rare."
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи вида с това, което го заплашва!",
+          "en": "Match the species with what threatens it!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Царски орел",
+              "en": "Imperial eagle",
+              "img": "animals/imperial-eagle.webp"
+            },
+            "b": {
+              "bg": "Токов удар по стълбовете, отрови",
+              "en": "Electrocution on power poles, poison"
+            }
+          },
+          {
+            "a": {
+              "bg": "Къдроглав пеликан",
+              "en": "Dalmatian pelican",
+              "img": "animals/pelican.webp"
+            },
+            "b": {
+              "bg": "Пресушаване на блатата",
+              "en": "Draining of the wetlands"
+            }
+          },
+          {
+            "a": {
+              "bg": "Видра",
+              "en": "Otter",
+              "img": "animals/otter.webp"
+            },
+            "b": {
+              "bg": "Мръсни реки",
+              "en": "Polluted rivers"
+            }
+          },
+          {
+            "a": {
+              "bg": "Еделвайс",
+              "en": "Edelweiss",
+              "img": "nature/edelweiss.webp"
+            },
+            "b": {
+              "bg": "Късане „за спомен“",
+              "en": "Picking it \"as a souvenir\""
+            }
+          }
+        ],
+        "hint": {
+          "bg": "Помисли къде живее всеки вид.",
+          "en": "Think where each species lives."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Колко двойки царски орли гнездят днес в България?",
+            "en": "How many pairs of imperial eagles nest in Bulgaria today?"
+          },
+          "options": [
+            {
+              "bg": "Няколко десетки",
+              "en": "A few dozen"
+            },
+            {
+              "bg": "Хиляди",
+              "en": "Thousands"
+            },
+            {
+              "bg": "Нито една",
+              "en": "None"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "bg": "Много малко са – затова всяко гнездо се пази.",
+            "en": "Very few – that is why every nest is guarded."
+          }
+        },
+        {
+          "q": {
+            "bg": "Кой резерват е в списъка на ЮНЕСКО заради пеликаните?",
+            "en": "Which reserve is on the UNESCO list because of the pelicans?"
+          },
+          "options": [
+            {
+              "bg": "Сребърна",
+              "en": "Srebarna"
+            },
+            {
+              "bg": "Витоша",
+              "en": "Vitosha"
+            },
+            {
+              "bg": "Странджа",
+              "en": "Strandzha"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Червена книга на Република България, т. 1–3, БАН и МОСВ, 2011 (e-ecodb.bas.bg/rdb)",
+    "Закон за биологичното разнообразие, Приложение № 3 (защитени видове)",
+    "Българско дружество за защита на птиците (BSPB) – царски орел"
+  ],
+  "review": null,
+  "draft": true
+}

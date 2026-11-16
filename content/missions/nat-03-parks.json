@@ -1,0 +1,245 @@
+{
+  "id": "nat-03-parks",
+  "subject": "geography",
+  "free": true,
+  "order": 65,
+  "ages": [
+    "young",
+    "guard"
+  ],
+  "unlock": {
+    "after": [
+      "nat-02-rare-plants"
+    ]
+  },
+  "badge": {
+    "id": "parks",
+    "icon": "world/seven-rila-lakes.webp"
+  },
+  "title": {
+    "bg": "Националните паркове",
+    "en": "The national parks"
+  },
+  "levels": {
+    "young": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "explorer",
+          "bg": "В България има три национални парка: Рила, Пирин и Централен Балкан.",
+          "en": "Bulgaria has three national parks: Rila, Pirin and Central Balkan.",
+          "img": "world/seven-rila-lakes.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Свържи парка с неговото чудо.",
+          "en": "Match each park with its wonder."
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи парка с неговото чудо!",
+          "en": "Match the park with its wonder!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Рила",
+              "en": "Rila",
+              "img": "world/seven-rila-lakes.webp"
+            },
+            "b": {
+              "bg": "Седемте рилски езера",
+              "en": "The Seven Rila Lakes"
+            }
+          },
+          {
+            "a": {
+              "bg": "Пирин",
+              "en": "Pirin",
+              "img": "geo/vihren.webp"
+            },
+            "b": {
+              "bg": "Връх Вихрен",
+              "en": "Vihren peak"
+            }
+          },
+          {
+            "a": {
+              "bg": "Централен Балкан",
+              "en": "Central Balkan",
+              "img": "geo/botev.webp"
+            },
+            "b": {
+              "bg": "Връх Ботев",
+              "en": "Botev peak"
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Колко национални парка има в България?",
+            "en": "How many national parks does Bulgaria have?"
+          },
+          "options": [
+            {
+              "bg": "3",
+              "en": "3"
+            },
+            {
+              "bg": "10",
+              "en": "10"
+            },
+            {
+              "bg": "1",
+              "en": "1"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какво правим в национален парк?",
+            "en": "What do we do in a national park?"
+          },
+          "options": [
+            {
+              "bg": "Пазим всичко, както е",
+              "en": "We keep everything as it is"
+            },
+            {
+              "bg": "Взимаме камъчета и цветя",
+              "en": "We take stones and flowers"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "explorer",
+          "bg": "Националните паркове пазят цели планини – гори, езера, животни и растения.",
+          "en": "National parks protect whole mountains – forests, lakes, animals and plants.",
+          "img": "geo/pirin.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Освен тях има 11 природни парка, например Витоша и Странджа.",
+          "en": "There are also 11 nature parks, for example Vitosha and Strandzha."
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи парка с неговия рекорд!",
+          "en": "Match the park with its record!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Рила",
+              "en": "Rila",
+              "img": "world/seven-rila-lakes.webp"
+            },
+            "b": {
+              "bg": "Най-големият национален парк",
+              "en": "The largest national park"
+            }
+          },
+          {
+            "a": {
+              "bg": "Пирин",
+              "en": "Pirin",
+              "img": "geo/vihren.webp"
+            },
+            "b": {
+              "bg": "В списъка на ЮНЕСКО от 1983 г.",
+              "en": "On the UNESCO list since 1983"
+            }
+          },
+          {
+            "a": {
+              "bg": "Централен Балкан",
+              "en": "Central Balkan",
+              "img": "geo/botev.webp"
+            },
+            "b": {
+              "bg": "Най-високата част на Стара планина",
+              "en": "The highest part of the Balkan Mountains"
+            }
+          },
+          {
+            "a": {
+              "bg": "Витоша",
+              "en": "Vitosha",
+              "img": "geo/vitosha.webp"
+            },
+            "b": {
+              "bg": "Най-старият природен парк на Балканите",
+              "en": "The oldest nature park in the Balkans"
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Какво е разликата между национален и природен парк?",
+            "en": "What is the difference between a national and a nature park?"
+          },
+          "options": [
+            {
+              "bg": "В националния опазването е по-строго",
+              "en": "In a national park protection is stricter"
+            },
+            {
+              "bg": "Няма разлика",
+              "en": "There is none"
+            },
+            {
+              "bg": "В природния не живеят животни",
+              "en": "No animals live in a nature park"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Колко природни парка има в България?",
+            "en": "How many nature parks does Bulgaria have?"
+          },
+          "options": [
+            {
+              "bg": "11",
+              "en": "11"
+            },
+            {
+              "bg": "3",
+              "en": "3"
+            },
+            {
+              "bg": "28",
+              "en": "28"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Министерство на околната среда и водите – Национални и природни паркове",
+    "ЮНЕСКО – Pirin National Park (1983)",
+    "Дирекции на НП „Рила“, НП „Пирин“, НП „Централен Балкан“"
+  ],
+  "review": null,
+  "draft": true
+}

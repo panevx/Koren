@@ -162,6 +162,41 @@ def export(src: Path, out: Path, name: str) -> tuple[int, int]:
     return im.size
 
 
+# Pictures that hold several things are cut into one picture per thing (v0.17): the parts go into the games,
+# the whole picture stays "ready" unless something shows it as it is. Parts are cut at the empty columns between the things.
+PARTS = {
+    'minigame/beach-trash.webp': ['minigame/trash-bottle.webp', 'minigame/trash-can.webp', 'minigame/trash-wrapper.webp'],
+    'minigame/recycling-bin.webp': ['minigame/bin-yellow.webp', 'minigame/bin-green.webp', 'minigame/bin-blue.webp'],
+}
+
+
+def cut_parts(whole: str, parts: list[str]) -> None:
+    im = Image.open(PUB / whole).convert('RGBA')
+    alpha = im.getchannel('A')
+    cols = [any(alpha.getpixel((x, y)) > 20 for y in range(0, im.height, 2)) for x in range(im.width)]
+    runs, start = [], None
+    for x, on in enumerate(cols + [False]):
+        if on and start is None:
+            start = x
+        elif not on and start is not None:
+            if x - start > im.width * 0.08:  # ignore specks
+                runs.append((start, x))
+            start = None
+    if len(runs) == 1 and len(parts) > 1:
+        # the things touch (the three bins stand side by side): equal slices, each trimmed to its own picture
+        x0, x1 = runs[0]
+        w = (x1 - x0) / len(parts)
+        runs = [(round(x0 + i * w + (w * 0.03 if i else 0)), round(x0 + (i + 1) * w - (w * 0.03 if i < len(parts) - 1 else 0))) for i in range(len(parts))]  # a thin margin: no sliver of the neighbour
+    assert len(runs) == len(parts), f'{whole}: found {len(runs)} things, expected {len(parts)}'
+    for (x0, x1), part in zip(runs, parts):
+        piece = im.crop((x0, 0, x1, im.height))
+        piece = piece.crop(piece.getchannel('A').getbbox())
+        side = round(max(piece.size) * 1.08)
+        sq = Image.new('RGBA', (side, side), (0, 0, 0, 0))
+        sq.alpha_composite(piece, ((side - piece.width) // 2, (side - piece.height) // 2))
+        sq.resize((256, 256), Image.LANCZOS).save(PUB / part, 'WEBP', quality=82, method=6)
+
+
 def referenced() -> set[str]:
     """Every image path the content shows (missions, map places) — what really counts as "used"."""
     files = sorted((ROOT / 'content/missions').glob('*.json'))
@@ -234,11 +269,14 @@ def main() -> None:
     (PUB / 'history').mkdir(exist_ok=True)
     canvas.save(PUB / 'history/kiril-metodiy.webp', 'WEBP', quality=82, method=6)
 
+    for whole, parts in PARTS.items():
+        cut_parts(whole, parts)
+
     paths = [e['path'] for e in entries if 'path' in e]
     assert len(paths) == len(set(paths)), 'two assets export to the same file'
     OUT_JSON.parent.mkdir(parents=True, exist_ok=True)
     summary = {s: sum(1 for e in entries if e['status'] == s) for s in ('used', 'ready', 'source', 'duplicate', 'review')}
-    OUT_JSON.write_text(json.dumps({'version': 'v5', 'total': len(entries), 'summary': summary, 'composites': {'history/kiril-metodiy.webp': ['hero-kiril', 'hero-metodiy']}, 'assets': entries}, ensure_ascii=False, indent=1) + '\n')
+    OUT_JSON.write_text(json.dumps({'version': 'v5', 'total': len(entries), 'summary': summary, 'composites': {'history/kiril-metodiy.webp': ['hero-kiril', 'hero-metodiy']}, 'parts': PARTS, 'assets': entries}, ensure_ascii=False, indent=1) + '\n')
     write_doc(entries, summary)
     print(len(entries), summary)
 

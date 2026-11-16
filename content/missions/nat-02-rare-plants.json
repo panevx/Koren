@@ -1,0 +1,277 @@
+{
+  "id": "nat-02-rare-plants",
+  "subject": "geography",
+  "free": true,
+  "order": 64,
+  "unlock": {
+    "after": [
+      "nat-01-red-book"
+    ]
+  },
+  "badge": {
+    "id": "rare-plants",
+    "icon": "nature/edelweiss.webp"
+  },
+  "title": {
+    "bg": "Редките растения",
+    "en": "Rare plants"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "nature",
+          "bg": "Високо в планината растат редки цветя. Само ги гледаме – не ги късаме!",
+          "en": "Rare flowers grow high in the mountains. We only look – we do not pick them!",
+          "img": "nature/edelweiss.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Намери еднаквите цветя.",
+          "en": "Find the matching flowers."
+        }
+      ],
+      "game": {
+        "type": "memory",
+        "prompt": {
+          "bg": "Намери двете еднакви цветя!",
+          "en": "Find the two matching flowers!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Еделвайс",
+              "en": "Edelweiss",
+              "img": "nature/edelweiss.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Пирински чай",
+              "en": "Pirin tea",
+              "img": "nature/pirin-tea.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Родопски силивряк",
+              "en": "Rhodope haberlea",
+              "img": "nature/rhodope-haberlea.webp"
+            }
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "explorer",
+          "bg": "Всяко от тези растения си има свой дом в планините ни.",
+          "en": "Each of these plants has its own home in our mountains.",
+          "img": "nature/rhodope-haberlea.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Свържи растението с това, което е интересно за него.",
+          "en": "Match each plant with what is special about it."
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи растението с неговата тайна!",
+          "en": "Match the plant with its secret!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Еделвайс",
+              "en": "Edelweiss",
+              "img": "nature/edelweiss.webp"
+            },
+            "b": {
+              "bg": "Расте високо по скалите на Пирин",
+              "en": "Grows high on the rocks of Pirin"
+            }
+          },
+          {
+            "a": {
+              "bg": "Пирински чай",
+              "en": "Pirin tea",
+              "img": "nature/pirin-tea.webp"
+            },
+            "b": {
+              "bg": "Не се бере в планината – отглежда се в градини",
+              "en": "Not picked in the wild – it is grown in gardens"
+            }
+          },
+          {
+            "a": {
+              "bg": "Родопски силивряк",
+              "en": "Rhodope haberlea",
+              "img": "nature/rhodope-haberlea.webp"
+            },
+            "b": {
+              "bg": "Изсъхва и пак оживява след дъжд",
+              "en": "Dries up and comes back to life after rain"
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Видя еделвайс в планината. Какво правиш?",
+            "en": "You see an edelweiss in the mountains. What do you do?"
+          },
+          "options": [
+            {
+              "bg": "Снимам го",
+              "en": "I take a photo"
+            },
+            {
+              "bg": "Откъсвам го",
+              "en": "I pick it"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "bg": "Еделвайсът е защитен – остава в планината за всички.",
+            "en": "The edelweiss is protected – it stays in the mountains for everyone."
+          }
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Родопският силивряк е реликт – растял е тук още преди ледниковия период.",
+          "en": "The Rhodope haberlea is a relict – it grew here even before the Ice Age.",
+          "img": "nature/rhodope-haberlea.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "compass",
+          "bg": "Какво пази природата и какво ѝ вреди? Подреди в двете кутии.",
+          "en": "What protects nature and what harms it? Sort into the two boxes."
+        }
+      ],
+      "game": {
+        "type": "sort",
+        "prompt": {
+          "bg": "Пази ли природата или ѝ вреди?",
+          "en": "Does it protect nature or harm it?"
+        },
+        "bins": [
+          {
+            "bg": "Пази",
+            "en": "Protects"
+          },
+          {
+            "bg": "Вреди",
+            "en": "Harms"
+          }
+        ],
+        "items": [
+          {
+            "bg": "Снимам редкото цвете",
+            "en": "I photograph the rare flower",
+            "bin": 0
+          },
+          {
+            "bg": "Вървя по маркираната пътека",
+            "en": "I walk on the marked path",
+            "bin": 0
+          },
+          {
+            "bg": "Купувам пирински чай, отгледан в градина",
+            "en": "I buy Pirin tea grown in a garden",
+            "bin": 0,
+            "why": {
+              "bg": "Отгледаният чай не взима растения от планината.",
+              "en": "Grown tea takes no plants from the mountains."
+            }
+          },
+          {
+            "bg": "Нося боклука си обратно",
+            "en": "I carry my litter back home",
+            "bin": 0
+          },
+          {
+            "bg": "Късам еделвайс за спомен",
+            "en": "I pick an edelweiss as a souvenir",
+            "bin": 1,
+            "why": {
+              "bg": "Еделвайсът е защитен – късането е забранено.",
+              "en": "The edelweiss is protected – picking it is forbidden."
+            }
+          },
+          {
+            "bg": "Бера пирински чай от склона",
+            "en": "I pick Pirin tea on the slope",
+            "bin": 1,
+            "why": {
+              "bg": "Дивият пирински чай е защитен – бере се само отгледан.",
+              "en": "Wild Pirin tea is protected – only the grown kind is picked."
+            }
+          },
+          {
+            "bg": "Паля огън в гората",
+            "en": "I light a fire in the forest",
+            "bin": 1,
+            "why": {
+              "bg": "Огън извън определените места може да подпали гората.",
+              "en": "A fire outside the allowed places can set the forest alight."
+            }
+          },
+          {
+            "bg": "Изкопавам силивряк за вкъщи",
+            "en": "I dig up a haberlea to take home",
+            "bin": 1,
+            "why": {
+              "bg": "Силивряк е защитен – расте само на своите скали.",
+              "en": "The haberlea is protected – it lives only on its own rocks."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Какво е особеното на родопския силивряк?",
+            "en": "What is special about the Rhodope haberlea?"
+          },
+          "options": [
+            {
+              "bg": "Изсъхва и пак оживява",
+              "en": "It dries up and comes back to life"
+            },
+            {
+              "bg": "Цъфти само през зимата",
+              "en": "It flowers only in winter"
+            },
+            {
+              "bg": "Расте в морето",
+              "en": "It grows in the sea"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Червена книга на Република България, т. 1–3, БАН и МОСВ, 2011 (e-ecodb.bas.bg/rdb)",
+    "Закон за биологичното разнообразие, Приложение № 3 (защитени видове)",
+    "Учебници по „Околен свят“ (1.–2. кл.) и „Човекът и природата“ (3.–6. кл.), МОН"
+  ],
+  "review": null,
+  "draft": true
+}

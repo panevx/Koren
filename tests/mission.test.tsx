@@ -182,9 +182,9 @@ describe('map screen', () => {
     expect(screen.getByRole('link', { name: /Хан Аспарух/ })).toHaveAttribute('href', `/mission/${ID}`)
     // v0.15: cities have their own mode; a place without a mission says so and shows its fact.
     fireEvent.click(screen.getByRole('button', { name: /Градове/ }))
-    fireEvent.click(screen.getByRole('button', { name: 'Бургас' }))
+    fireEvent.click(screen.getByRole('button', { name: 'Габрово' }))
     expect(screen.getByText('Скоро тук ще има мисия.')).toBeInTheDocument()
-    expect(screen.getByText(/Голям град и пристанище на Черно море/)).toBeInTheDocument()
+    expect(screen.getByText(/Градът на хумора и сатирата/)).toBeInTheDocument()
   })
 
   it('map modes: provinces (with a keyboard list), mountains, rivers, neighbours, tourism', async () => {

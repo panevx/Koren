@@ -4,17 +4,18 @@
 
 | Статус | Брой |
 |---|---:|
-| В приложението сега (`used`) | 78 |
-| Готови за следващ етап (`ready`) | 156 |
+| В приложението сега (`used`) | 84 |
+| Готови за следващ етап (`ready`) | 150 |
 | Данни (оригинал за препроектиране) (`source`) | 10 |
 | Дубликати на съществуващи картинки (`duplicate`) | 49 |
 | Чакат проверка (не се публикуват) (`review`) | 7 |
 | **Общо** | **300** |
 
-## В приложението сега — 78
+## В приложението сега — 84
 
 | ID | Оригинал | Път в `public/img` / същото като | Етап | Бележка / проверка |
 |---|---|---|---|---|
+| `animal-imperial-eagle` | `design/v5/animal/animal-imperial-eagle.png` | `animals/imperial-eagle.webp` |  | мисии |
 | `city-bansko` | `design/v5/city/city-bansko.png` | `city/bansko.webp` |  | мисии |
 | `city-burgas` | `design/v5/city/city-burgas.png` | `city/burgas.webp` |  | карта: Бургас |
 | `city-gabrovo` | `design/v5/city/city-gabrovo.png` | `city/gabrovo.webp` |  | мисии |
@@ -48,6 +49,7 @@
 | `landmark-devils-throat` | `design/v5/landmark/landmark-devils-throat.png` | `landmarks/devils-throat.webp` |  | мисии |
 | `landmark-madara-rider` | `design/v5/landmark/landmark-madara-rider.png` | `landmarks/madara-rider.webp` |  | мисии · Формата да се сравни със снимка на истинския предмет (музей). |
 | `landmark-nessebar` | `design/v5/landmark/landmark-nessebar.png` | `landmarks/nessebar.webp` |  | карта: Несебър; Черно море (история) |
+| `minigame-recycling-bin` | `design/v5/minigame/minigame-recycling-bin.png` | `minigame/recycling-bin.webp` |  | мисии |
 | `minigame-river-route` | `design/v5/minigame/minigame-river-route.png` | `minigame/river-route.webp` |  | мисии |
 | `mountain-balkan` | `design/v5/mountain/mountain-balkan.png` | `geo/balkan.webp` |  | Шипка (история) |
 | `mountain-pirin` | `design/v5/mountain/mountain-pirin.png` | `geo/pirin.webp` |  | мисии |
@@ -56,10 +58,14 @@
 | `mountain-vitosha` | `design/v5/mountain/mountain-vitosha.png` | `geo/vitosha.webp` |  | мисии |
 | `nature-black-sea` | `design/v5/nature/nature-black-sea.png` | `nature/black-sea.webp` |  | Черно море (история) |
 | `nature-danube-plain` | `design/v5/nature/nature-danube-plain.png` | `nature/danube-plain.webp` |  | мисии |
+| `nature-red-book` | `design/v5/nature/nature-red-book.png` | `nature/red-book.webp` |  | мисии |
 | `nature-thracian-lowland` | `design/v5/nature/nature-thracian-lowland.png` | `nature/thracian-lowland.webp` |  | мисии |
 | `peak-botev` | `design/v5/peak/peak-botev.png` | `geo/botev.webp` |  | мисии · Силуетът на върха да се сравни със снимка. |
 | `peak-musala` | `design/v5/peak/peak-musala.png` | `geo/musala.webp` |  | карта: Мусала; Рила (история) · Силуетът на върха да се сравни със снимка. |
 | `peak-vihren` | `design/v5/peak/peak-vihren.png` | `geo/vihren.webp` |  | мисии · Силуетът на върха да се сравни със снимка. |
+| `plant-edelweiss` | `design/v5/plant/plant-edelweiss.png` | `nature/edelweiss.webp` |  | мисии |
+| `plant-pirin-tea` | `design/v5/plant/plant-pirin-tea.png` | `nature/pirin-tea.webp` |  | мисии |
+| `plant-rhodope-haberlea` | `design/v5/plant/plant-rhodope-haberlea.png` | `nature/rhodope-haberlea.webp` |  | мисии |
 | `raya-celebrate` | `design/v5/raya/raya-celebrate.png` | `poses/raya-celebrate.webp` |  | истории на мисиите (поза celebrate) |
 | `raya-compass` | `design/v5/raya/raya-compass.png` | `poses/raya-compass.webp` |  | мисии с ориентиране |
 | `raya-encourage` | `design/v5/raya/raya-encourage.png` | `poses/raya-encourage.webp` |  | истории (последната реплика преди играта) |
@@ -94,11 +100,10 @@
 | `world-ski-borovets` | `design/v5/world/world-ski-borovets.png` | `places/ski-borovets.webp` |  | мисии |
 | `world-ski-pamporovo` | `design/v5/world/world-ski-pamporovo.png` | `places/ski-pamporovo.webp` |  | мисии |
 
-## Готови за следващ етап — 156
+## Готови за следващ етап — 150
 
 | ID | Оригинал | Път в `public/img` / същото като | Етап | Бележка / проверка |
 |---|---|---|---|---|
-| `animal-imperial-eagle` | `design/v5/animal/animal-imperial-eagle.png` | `animals/imperial-eagle.webp` | 4 |  |
 | `avatar-embroidered-vest` | `design/v5/avatar/avatar-embroidered-vest.png` | `avatar/embroidered-vest.webp` | 9 |  |
 | `avatar-explorer-backpack` | `design/v5/avatar/avatar-explorer-backpack.png` | `avatar/explorer-backpack.webp` | 9 |  |
 | `avatar-explorer-hat` | `design/v5/avatar/avatar-explorer-hat.png` | `avatar/explorer-hat.webp` | 9 |  |
@@ -186,12 +191,7 @@
 | `minigame-fortress-wall` | `design/v5/minigame/minigame-fortress-wall.png` | `minigame/fortress-wall.webp` | 5 |  |
 | `minigame-hidden-object-scene` | `design/v5/minigame/minigame-hidden-object-scene.png` | `minigame/hidden-object-scene.webp` | 7 |  |
 | `minigame-pottery-wheel` | `design/v5/minigame/minigame-pottery-wheel.png` | `minigame/pottery-wheel.webp` | 6 |  |
-| `minigame-recycling-bin` | `design/v5/minigame/minigame-recycling-bin.png` | `minigame/recycling-bin.webp` | 4 |  |
 | `minigame-woodcarving-board` | `design/v5/minigame/minigame-woodcarving-board.png` | `minigame/woodcarving-board.webp` | 6 |  |
-| `nature-red-book` | `design/v5/nature/nature-red-book.png` | `nature/red-book.webp` | 4 |  |
-| `plant-edelweiss` | `design/v5/plant/plant-edelweiss.png` | `nature/edelweiss.webp` | 4 |  |
-| `plant-pirin-tea` | `design/v5/plant/plant-pirin-tea.png` | `nature/pirin-tea.webp` | 4 |  |
-| `plant-rhodope-haberlea` | `design/v5/plant/plant-rhodope-haberlea.png` | `nature/rhodope-haberlea.webp` | 4 |  |
 | `raya-chef` | `design/v5/raya/raya-chef.png` | `poses/raya-chef.webp` | 5 |  |
 | `river-tundzha` | `design/v5/river/river-tundzha.png` | `geo/tundzha.webp` | 3 |  |
 | `science-atanasoff-computer` | `design/v5/science/science-atanasoff-computer.png` | `science/atanasoff-computer.webp` | 8 | Формата да се сравни със снимка на истинския предмет (музей). |

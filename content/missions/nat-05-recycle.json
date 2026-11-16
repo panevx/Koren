@@ -1,0 +1,330 @@
+{
+  "id": "nat-05-recycle",
+  "subject": "geography",
+  "free": true,
+  "order": 67,
+  "unlock": {
+    "after": [
+      "nat-04-sea-rescue"
+    ]
+  },
+  "badge": {
+    "id": "recycle",
+    "icon": "minigame/bin-green.webp"
+  },
+  "title": {
+    "bg": "Разделно събиране",
+    "en": "Sorting the rubbish"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Цветните кошчета искат различни неща!",
+          "en": "The coloured bins want different things!",
+          "img": "minigame/bin-yellow.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Жълтото – за бутилки и кенчета. Зеленото – за стъкло. Синьото – за хартия.",
+          "en": "Yellow – for bottles and cans. Green – for glass. Blue – for paper."
+        }
+      ],
+      "game": {
+        "type": "sort",
+        "prompt": {
+          "bg": "Сложи всяко нещо в неговото кошче!",
+          "en": "Put each thing in its bin!"
+        },
+        "bins": [
+          {
+            "bg": "Жълт – пластмаса и метал",
+            "en": "Yellow – plastic and metal",
+            "img": "minigame/bin-yellow.webp"
+          },
+          {
+            "bg": "Зелен – стъкло",
+            "en": "Green – glass",
+            "img": "minigame/bin-green.webp"
+          },
+          {
+            "bg": "Син – хартия",
+            "en": "Blue – paper",
+            "img": "minigame/bin-blue.webp"
+          }
+        ],
+        "items": [
+          {
+            "bg": "Пластмасова бутилка",
+            "en": "Plastic bottle",
+            "img": "minigame/trash-bottle.webp",
+            "bin": 0
+          },
+          {
+            "bg": "Метално кенче",
+            "en": "Metal can",
+            "img": "minigame/trash-can.webp",
+            "bin": 0
+          },
+          {
+            "bg": "Стъклено шишенце",
+            "en": "Glass bottle",
+            "img": "world/rose-oil-bottle.webp",
+            "bin": 1
+          },
+          {
+            "bg": "Стара хартия",
+            "en": "Old paper",
+            "img": "world/old-scroll.webp",
+            "bin": 2
+          }
+        ],
+        "hint": {
+          "bg": "Гледай цвета на кошчето.",
+          "en": "Look at the colour of the bin."
+        }
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "nature",
+          "bg": "Когато събираме отпадъците разделно, от тях се правят нови неща.",
+          "en": "When we sort our rubbish, new things are made from it.",
+          "img": "minigame/recycling-bin.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Жълт, зелен или син? Подреди!",
+          "en": "Yellow, green or blue? Sort them!"
+        }
+      ],
+      "game": {
+        "type": "sort",
+        "prompt": {
+          "bg": "В кой контейнер?",
+          "en": "Which container?"
+        },
+        "bins": [
+          {
+            "bg": "Жълт – пластмаса и метал",
+            "en": "Yellow – plastic and metal",
+            "img": "minigame/bin-yellow.webp"
+          },
+          {
+            "bg": "Зелен – стъкло",
+            "en": "Green – glass",
+            "img": "minigame/bin-green.webp"
+          },
+          {
+            "bg": "Син – хартия",
+            "en": "Blue – paper",
+            "img": "minigame/bin-blue.webp"
+          }
+        ],
+        "items": [
+          {
+            "bg": "Пластмасова бутилка",
+            "en": "Plastic bottle",
+            "img": "minigame/trash-bottle.webp",
+            "bin": 0
+          },
+          {
+            "bg": "Метално кенче",
+            "en": "Metal can",
+            "img": "minigame/trash-can.webp",
+            "bin": 0
+          },
+          {
+            "bg": "Опаковка от вафла",
+            "en": "Wafer wrapper",
+            "img": "minigame/trash-wrapper.webp",
+            "bin": 0
+          },
+          {
+            "bg": "Буркан",
+            "en": "Jar",
+            "bin": 1
+          },
+          {
+            "bg": "Стъклено шишенце",
+            "en": "Glass bottle",
+            "img": "world/rose-oil-bottle.webp",
+            "bin": 1
+          },
+          {
+            "bg": "Вестник",
+            "en": "Newspaper",
+            "bin": 2
+          },
+          {
+            "bg": "Кашон",
+            "en": "Cardboard box",
+            "bin": 2
+          }
+        ],
+        "hint": {
+          "bg": "Пластмаса и метал – жълт; стъкло – зелен; хартия и картон – син.",
+          "en": "Plastic and metal – yellow; glass – green; paper and cardboard – blue."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Какво става с разделените отпадъци?",
+            "en": "What happens to sorted rubbish?"
+          },
+          "options": [
+            {
+              "bg": "От тях се правят нови неща",
+              "en": "New things are made from it"
+            },
+            {
+              "bg": "Хвърлят се в морето",
+              "en": "It is thrown in the sea"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Рециклирането пести суровини и енергия: от старо стъкло става ново стъкло – отново и отново.",
+          "en": "Recycling saves materials and energy: old glass becomes new glass – again and again.",
+          "img": "minigame/recycling-bin.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "compass",
+          "bg": "Внимание: някои опаковки са хитри!",
+          "en": "Careful: some packages are tricky!"
+        }
+      ],
+      "game": {
+        "type": "sort",
+        "prompt": {
+          "bg": "В кой контейнер?",
+          "en": "Which container?"
+        },
+        "bins": [
+          {
+            "bg": "Жълт – пластмаса и метал",
+            "en": "Yellow – plastic and metal",
+            "img": "minigame/bin-yellow.webp"
+          },
+          {
+            "bg": "Зелен – стъкло",
+            "en": "Green – glass",
+            "img": "minigame/bin-green.webp"
+          },
+          {
+            "bg": "Син – хартия",
+            "en": "Blue – paper",
+            "img": "minigame/bin-blue.webp"
+          }
+        ],
+        "items": [
+          {
+            "bg": "Пластмасова бутилка",
+            "en": "Plastic bottle",
+            "img": "minigame/trash-bottle.webp",
+            "bin": 0
+          },
+          {
+            "bg": "Метално кенче",
+            "en": "Metal can",
+            "img": "minigame/trash-can.webp",
+            "bin": 0
+          },
+          {
+            "bg": "Кутия от сок",
+            "en": "Juice carton",
+            "bin": 0,
+            "why": {
+              "bg": "Кутиите от мляко и сок (комбинирани опаковки) отиват в жълтия.",
+              "en": "Milk and juice cartons (mixed packaging) go in the yellow one."
+            }
+          },
+          {
+            "bg": "Метална консерва",
+            "en": "Tin can",
+            "bin": 0,
+            "why": {
+              "bg": "Металът е в жълтия, заедно с пластмасата.",
+              "en": "Metal goes in the yellow one, together with plastic."
+            }
+          },
+          {
+            "bg": "Буркан",
+            "en": "Jar",
+            "bin": 1
+          },
+          {
+            "bg": "Стъклено шишенце",
+            "en": "Glass bottle",
+            "img": "world/rose-oil-bottle.webp",
+            "bin": 1
+          },
+          {
+            "bg": "Вестник",
+            "en": "Newspaper",
+            "bin": 2
+          },
+          {
+            "bg": "Кашон",
+            "en": "Cardboard box",
+            "bin": 2,
+            "why": {
+              "bg": "Картонът е хартия – в синия.",
+              "en": "Cardboard is paper – the blue one."
+            }
+          },
+          {
+            "bg": "Стара тетрадка",
+            "en": "Old notebook",
+            "bin": 2
+          }
+        ],
+        "hint": {
+          "bg": "Кутията от сок е от картон, пластмаса и алуминий – и все пак е опаковка за жълтия.",
+          "en": "A juice carton is cardboard, plastic and aluminium – still, it goes in the yellow one."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Колко пъти може да се рециклира стъклото?",
+            "en": "How many times can glass be recycled?"
+          },
+          "options": [
+            {
+              "bg": "Отново и отново",
+              "en": "Again and again"
+            },
+            {
+              "bg": "Само веднъж",
+              "en": "Only once"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Закон за управление на отпадъците; „Екопак България“ – цветовете на контейнерите",
+    "Учебници по „Околен свят“ (1.–2. кл.) и „Човекът и природата“ (3.–6. кл.), МОН"
+  ],
+  "review": null,
+  "draft": true
+}

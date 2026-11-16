@@ -1,0 +1,292 @@
+{
+  "id": "nat-07-eco-hike",
+  "subject": "geography",
+  "free": true,
+  "order": 69,
+  "unlock": {
+    "after": [
+      "nat-06-habitats"
+    ]
+  },
+  "badge": {
+    "id": "eco-hike",
+    "icon": "world/forest-bush.webp"
+  },
+  "title": {
+    "bg": "Поход в чиста гора",
+    "en": "A hike in a clean forest"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "explorer",
+          "bg": "Тръгваме на поход в гората!",
+          "en": "We're off on a hike in the forest!",
+          "img": "geo/forest.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "nature",
+          "bg": "Някой е скрил боклук под храстите. Надникни и го намери!",
+          "en": "Somebody has hidden litter under the bushes. Peek and find it!"
+        }
+      ],
+      "game": {
+        "type": "find",
+        "prompt": {
+          "bg": "Надникни под храстите и намери боклука!",
+          "en": "Peek under the bushes and find the litter!"
+        },
+        "scene": "forest",
+        "items": [
+          {
+            "bg": "Пластмасова бутилка",
+            "en": "Plastic bottle",
+            "img": "minigame/trash-bottle.webp",
+            "x": 20,
+            "y": 72,
+            "size": 13,
+            "target": true,
+            "under": "world/forest-bush.webp"
+          },
+          {
+            "bg": "Опаковка от вафла",
+            "en": "Wafer wrapper",
+            "img": "minigame/trash-wrapper.webp",
+            "x": 58,
+            "y": 78,
+            "size": 13,
+            "target": true,
+            "under": "world/forest-bush.webp"
+          },
+          {
+            "bg": "Метално кенче",
+            "en": "Metal can",
+            "img": "minigame/trash-can.webp",
+            "x": 84,
+            "y": 66,
+            "size": 12,
+            "target": true
+          },
+          {
+            "bg": "Таралеж",
+            "en": "Hedgehog",
+            "img": "animals/hedgehog.webp",
+            "x": 40,
+            "y": 60,
+            "size": 14
+          },
+          {
+            "bg": "Катерица",
+            "en": "Squirrel",
+            "img": "animals/squirrel.webp",
+            "x": 70,
+            "y": 34,
+            "size": 14
+          },
+          {
+            "bg": "Гъба",
+            "en": "Mushroom",
+            "img": "world/mushroom.webp",
+            "x": 34,
+            "y": 84,
+            "size": 10
+          }
+        ],
+        "hint": {
+          "bg": "Докосни храстите – боклукът се крие под тях.",
+          "en": "Tap the bushes – the litter hides under them."
+        }
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "explorer",
+          "bg": "Добрият турист оставя гората по-чиста, отколкото я е намерил.",
+          "en": "A good hiker leaves the forest cleaner than they found it.",
+          "img": "geo/forest.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Какво взимаме на поход?",
+          "en": "What do we take on a hike?"
+        }
+      ],
+      "game": {
+        "type": "chest",
+        "prompt": {
+          "bg": "Сложи в сандъка с припаси нещата за добър поход!",
+          "en": "Put the things for a good hike in the supplies chest!"
+        },
+        "items": [
+          {
+            "bg": "Торбичка за боклука",
+            "en": "A bag for litter",
+            "img": "world/sorting-box.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Карта",
+            "en": "A map",
+            "img": "world/old-scroll.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Фенерче",
+            "en": "A torch",
+            "img": "world/hint-lantern.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Лупа за букашки",
+            "en": "A magnifier for bugs",
+            "img": "world/discovery-magnifier.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Откъснато цвете",
+            "en": "A picked flower",
+            "img": "nature/edelweiss.webp",
+            "belongs": false,
+            "why": {
+              "bg": "Цветята остават в гората – снимай ги!",
+              "en": "Flowers stay in the forest – take a photo!"
+            }
+          },
+          {
+            "bg": "Гъба от гората",
+            "en": "A mushroom from the forest",
+            "img": "world/mushroom.webp",
+            "belongs": false,
+            "why": {
+              "bg": "Непознатите гъби може да са отровни – само ги гледаме.",
+              "en": "Unknown mushrooms may be poisonous – we only look at them."
+            }
+          }
+        ],
+        "reward": {
+          "bg": "Готов си за поход!",
+          "en": "You are ready for the hike!"
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Къде оставяме празната си бутилка?",
+            "en": "Where do we leave our empty bottle?"
+          },
+          "options": [
+            {
+              "bg": "Носим я до кошче",
+              "en": "We carry it to a bin"
+            },
+            {
+              "bg": "Под храста",
+              "en": "Under a bush"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Горските пожари често започват от човешка небрежност – от непогасен огън или фас.",
+          "en": "Forest fires often start from human carelessness – an unattended fire or a cigarette end.",
+          "img": "geo/forest.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "compass",
+          "bg": "Подреди правилните стъпки, ако видиш дим в гората.",
+          "en": "Put the right steps in order if you see smoke in the forest."
+        }
+      ],
+      "game": {
+        "type": "order",
+        "prompt": {
+          "bg": "Видя дим в гората. Какво правиш – по ред?",
+          "en": "You see smoke in the forest. What do you do – in order?"
+        },
+        "items": [
+          {
+            "bg": "Отдалечавам се от дима",
+            "en": "I move away from the smoke"
+          },
+          {
+            "bg": "Казвам на възрастен",
+            "en": "I tell an adult"
+          },
+          {
+            "bg": "Звъним на 112",
+            "en": "We call 112"
+          },
+          {
+            "bg": "Казваме точно къде е димът",
+            "en": "We say exactly where the smoke is"
+          }
+        ],
+        "hint": {
+          "bg": "Първо – твоята безопасност. После – помощ.",
+          "en": "First – your safety. Then – help."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кой е единният номер за спешни случаи в България?",
+            "en": "What is the single emergency number in Bulgaria?"
+          },
+          "options": [
+            {
+              "bg": "112",
+              "en": "112"
+            },
+            {
+              "bg": "911",
+              "en": "911"
+            },
+            {
+              "bg": "100",
+              "en": "100"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Защо не бива да оставяме стъклени бутилки в гората?",
+            "en": "Why must we not leave glass bottles in the forest?"
+          },
+          "options": [
+            {
+              "bg": "На слънце могат да подпалят суха трева",
+              "en": "In the sun they can set dry grass alight"
+            },
+            {
+              "bg": "Нищо не правят",
+              "en": "They do nothing"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Главна дирекция „Пожарна безопасност и защита на населението“ – съвети при горски пожар",
+    "Национална система 112",
+    "Учебници по „Околен свят“ (1.–2. кл.) и „Човекът и природата“ (3.–6. кл.), МОН"
+  ],
+  "review": null,
+  "draft": true
+}

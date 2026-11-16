@@ -1,0 +1,311 @@
+{
+  "id": "nat-04-sea-rescue",
+  "subject": "geography",
+  "free": true,
+  "order": 66,
+  "place": "burgas",
+  "unlock": {
+    "after": [
+      "nat-01-red-book"
+    ]
+  },
+  "badge": {
+    "id": "sea-rescue",
+    "icon": "animals/dolphin.webp"
+  },
+  "title": {
+    "bg": "Морски спасител",
+    "en": "Sea rescuer"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Ох! Някой е оставил боклук на плажа.",
+          "en": "Oh! Somebody has left litter on the beach.",
+          "img": "nature/black-sea.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "nature",
+          "bg": "Делфините имат нужда от чисто море. Събери боклука!",
+          "en": "The dolphins need a clean sea. Pick up the litter!"
+        }
+      ],
+      "game": {
+        "type": "find",
+        "prompt": {
+          "bg": "Намери боклука на плажа!",
+          "en": "Find the litter on the beach!"
+        },
+        "scene": "sea",
+        "items": [
+          {
+            "bg": "Пластмасова бутилка",
+            "en": "Plastic bottle",
+            "img": "minigame/trash-bottle.webp",
+            "x": 22,
+            "y": 72,
+            "size": 13,
+            "target": true
+          },
+          {
+            "bg": "Метално кенче",
+            "en": "Metal can",
+            "img": "minigame/trash-can.webp",
+            "x": 52,
+            "y": 80,
+            "size": 12,
+            "target": true
+          },
+          {
+            "bg": "Опаковка от вафла",
+            "en": "Wafer wrapper",
+            "img": "minigame/trash-wrapper.webp",
+            "x": 80,
+            "y": 70,
+            "size": 13,
+            "target": true
+          },
+          {
+            "bg": "Делфин",
+            "en": "Dolphin",
+            "img": "animals/dolphin.webp",
+            "x": 62,
+            "y": 38,
+            "size": 24
+          },
+          {
+            "bg": "Пеликан",
+            "en": "Pelican",
+            "img": "animals/pelican.webp",
+            "x": 24,
+            "y": 34,
+            "size": 18
+          }
+        ],
+        "hint": {
+          "bg": "Боклукът е на пясъка, долу.",
+          "en": "The litter is on the sand, down below."
+        }
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "explorer",
+          "bg": "В Черно море живеят три вида делфини.",
+          "en": "Three kinds of dolphins live in the Black Sea.",
+          "img": "animals/dolphin.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "nature",
+          "bg": "Пластмасата в морето ги разболява. Помогни да почистим!",
+          "en": "Plastic in the sea makes them ill. Help us clean up!"
+        }
+      ],
+      "game": {
+        "type": "sort",
+        "prompt": {
+          "bg": "В кошчето или обратно в морето?",
+          "en": "Into the bin or back into the sea?"
+        },
+        "bins": [
+          {
+            "bg": "В кошчето",
+            "en": "Into the bin",
+            "img": "minigame/bin-yellow.webp"
+          },
+          {
+            "bg": "Обратно в морето",
+            "en": "Back into the sea",
+            "img": "nature/black-sea.webp"
+          }
+        ],
+        "items": [
+          {
+            "bg": "Пластмасова бутилка",
+            "en": "Plastic bottle",
+            "img": "minigame/trash-bottle.webp",
+            "bin": 0
+          },
+          {
+            "bg": "Метално кенче",
+            "en": "Metal can",
+            "img": "minigame/trash-can.webp",
+            "bin": 0
+          },
+          {
+            "bg": "Опаковка от вафла",
+            "en": "Wafer wrapper",
+            "img": "minigame/trash-wrapper.webp",
+            "bin": 0
+          },
+          {
+            "bg": "Делфин",
+            "en": "Dolphin",
+            "img": "animals/dolphin.webp",
+            "bin": 1,
+            "why": {
+              "bg": "Делфинът живее в морето – връщаме го там!",
+              "en": "The dolphin lives in the sea – it goes back there!"
+            }
+          },
+          {
+            "bg": "Пеликан",
+            "en": "Pelican",
+            "img": "animals/pelican.webp",
+            "bin": 1,
+            "why": {
+              "bg": "Пеликанът лови риба в морето и в езерата.",
+              "en": "The pelican catches fish in the sea and in lakes."
+            }
+          }
+        ],
+        "hint": {
+          "bg": "Боклукът – в кошчето. Животните – у дома, в морето.",
+          "en": "Litter – in the bin. Animals – home, in the sea."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Колко вида делфини живеят в Черно море?",
+            "en": "How many kinds of dolphins live in the Black Sea?"
+          },
+          "options": [
+            {
+              "bg": "3",
+              "en": "3"
+            },
+            {
+              "bg": "1",
+              "en": "1"
+            },
+            {
+              "bg": "10",
+              "en": "10"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Колко време остава в морето една пластмасова бутилка?",
+            "en": "How long does a plastic bottle stay in the sea?"
+          },
+          "options": [
+            {
+              "bg": "Стотици години",
+              "en": "Hundreds of years"
+            },
+            {
+              "bg": "Една седмица",
+              "en": "One week"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "explorer",
+          "bg": "Афалината, обикновеният делфин и муткурът са защитени у нас.",
+          "en": "The bottlenose dolphin, the common dolphin and the harbour porpoise are protected in Bulgaria.",
+          "img": "animals/dolphin.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "reading",
+          "bg": "Боклукът не изчезва – разпада се бавно. Подреди: кое изчезва най-бързо?",
+          "en": "Litter does not vanish – it breaks down slowly. Order them: which goes fastest?"
+        }
+      ],
+      "game": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди: от най-бързо до най-бавно разпадащото се!",
+          "en": "Order: from the fastest to the slowest to break down!"
+        },
+        "items": [
+          {
+            "bg": "Хартия",
+            "en": "Paper",
+            "img": "world/old-scroll.webp"
+          },
+          {
+            "bg": "Метално кенче",
+            "en": "Metal can",
+            "img": "minigame/trash-can.webp"
+          },
+          {
+            "bg": "Пластмасова бутилка",
+            "en": "Plastic bottle",
+            "img": "minigame/trash-bottle.webp"
+          },
+          {
+            "bg": "Стъклена бутилка",
+            "en": "Glass bottle",
+            "img": "world/rose-oil-bottle.webp"
+          }
+        ],
+        "hint": {
+          "bg": "Хартия – седмици; кенче – около 200 години; пластмасова бутилка – около 450; стъклото – много хиляди години.",
+          "en": "Paper – weeks; a can – about 200 years; a plastic bottle – about 450; glass – many thousands of years."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Как вредят изгубените рибарски мрежи?",
+            "en": "How do lost fishing nets cause harm?"
+          },
+          "options": [
+            {
+              "bg": "Делфините се заплитат в тях",
+              "en": "Dolphins get caught in them"
+            },
+            {
+              "bg": "Не вредят",
+              "en": "They do no harm"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кой от тези делфини е най-малкият в Черно море?",
+            "en": "Which of these is the smallest in the Black Sea?"
+          },
+          "options": [
+            {
+              "bg": "Муткур",
+              "en": "Harbour porpoise"
+            },
+            {
+              "bg": "Афалина",
+              "en": "Bottlenose dolphin"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Червена книга на Република България, т. 1–3, БАН и МОСВ, 2011 (e-ecodb.bas.bg/rdb)",
+    "Закон за биологичното разнообразие, Приложение № 3 (защитени видове)",
+    "NOAA / Woods Hole Sea Grant – „Колко време се разпада боклукът в морето“ (приблизителни оценки)",
+    "Министерство на земеделието – Черноморски делфини"
+  ],
+  "review": null,
+  "draft": true
+}

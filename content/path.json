@@ -157,6 +157,21 @@
         "geo-18-springs",
         "geo-19-cities"
       ]
+    },
+    {
+      "title": {
+        "bg": "Пазители на природата",
+        "en": "Guardians of nature"
+      },
+      "missions": [
+        "nat-01-red-book",
+        "nat-02-rare-plants",
+        "nat-03-parks",
+        "nat-04-sea-rescue",
+        "nat-05-recycle",
+        "nat-06-habitats",
+        "nat-07-eco-hike"
+      ]
     }
   ]
 }
