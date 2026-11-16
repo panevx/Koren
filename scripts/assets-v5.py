@@ -200,7 +200,7 @@ def cut_parts(whole: str, parts: list[str]) -> None:
 def referenced() -> set[str]:
     """Every image path the content shows (missions, map places) — what really counts as "used"."""
     files = sorted((ROOT / 'content/missions').glob('*.json'))
-    text = ''.join(f.read_text() for f in files) + (ROOT / 'content/map/places.json').read_text()
+    text = ''.join(f.read_text() for f in files) + (ROOT / 'content/map/places.json').read_text() + (ROOT / 'content/fame.json').read_text()
     out = set(re.findall(r'"([a-z0-9/_-]+\.(?:webp|png|svg))"', text))
     # pictures the code itself names (e.g. the Discover map: src/map/art.ts)
     for f in (ROOT / 'src').rglob('*.ts*'):

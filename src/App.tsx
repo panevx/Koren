@@ -31,6 +31,7 @@ const WhoPlays = lazy(() => import('./screens/WhoPlays').then((m) => ({ default:
 const Parents = lazy(() => import('./screens/Parents').then((m) => ({ default: m.Parents })))
 const Passport = lazy(() => import('./screens/Passport').then((m) => ({ default: m.Passport })))
 const Timeline = lazy(() => import('./screens/Timeline').then((m) => ({ default: m.Timeline })))
+const Fame = lazy(() => import('./screens/Fame').then((m) => ({ default: m.Fame })))
 const Adventure = lazy(() => import('./screens/Adventure').then((m) => ({ default: m.Adventure })))
 const MissionList = lazy(() => import('./screens/MissionList').then((m) => ({ default: m.MissionList })))
 
@@ -60,6 +61,7 @@ export function AppRoutes() {
         <Route path="/missions" element={<Adventure />} />
         <Route path="/mission/:id" element={<Mission />} />
         <Route path="/collection" element={<Passport />} />
+        <Route path="/fame" element={<Fame />} />
         <Route path="/topic/:id" element={<MissionList topic />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

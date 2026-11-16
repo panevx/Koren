@@ -1,0 +1,156 @@
+{
+  "id": "ach-07-plates",
+  "subject": "geography",
+  "free": true,
+  "order": 104,
+  "ages": [
+    "young",
+    "guard"
+  ],
+  "badge": {
+    "id": "plates",
+    "icon": "places/car-license-plate.svg"
+  },
+  "title": {
+    "bg": "Регистрационните номера",
+    "en": "Number plates"
+  },
+  "levels": {
+    "young": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "map",
+          "bg": "Всяка кола има номер. Буквите отпред казват от коя област е!",
+          "en": "Every car has a number plate. The letters at the front tell which province it is from!",
+          "img": "places/car-license-plate.svg"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Познай областта и я докосни на картата.",
+          "en": "Guess the province and tap it on the map."
+        }
+      ],
+      "game": {
+        "type": "plate",
+        "prompt": {
+          "bg": "От коя област е колата?",
+          "en": "Which province is the car from?"
+        },
+        "plates": [
+          {
+            "code": "СА",
+            "region": "BG-22"
+          },
+          {
+            "code": "В",
+            "region": "BG-03"
+          },
+          {
+            "code": "А",
+            "region": "BG-02"
+          },
+          {
+            "code": "РВ",
+            "region": "BG-16"
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Какво пише на синята ивичка на номера?",
+            "en": "What is written on the blue strip of the plate?"
+          },
+          "options": [
+            {
+              "bg": "BG – България",
+              "en": "BG – Bulgaria"
+            },
+            {
+              "bg": "Името на шофьора",
+              "en": "The driver's name"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "map",
+          "bg": "Някои кодове са хитри – идват от старо име на града.",
+          "en": "Some codes are tricky – they come from an old name of the town.",
+          "img": "places/car-license-plate.svg"
+        },
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "Добрич е „ТХ“, защото някога градът се е казвал Толбухин.",
+          "en": "Dobrich is \"ТХ\" because the town was once called Tolbukhin."
+        }
+      ],
+      "game": {
+        "type": "plate",
+        "prompt": {
+          "bg": "От коя област е колата?",
+          "en": "Which province is the car from?"
+        },
+        "plates": [
+          {
+            "code": "ЕН",
+            "region": "BG-15"
+          },
+          {
+            "code": "ТХ",
+            "region": "BG-08"
+          },
+          {
+            "code": "Н",
+            "region": "BG-27"
+          },
+          {
+            "code": "Е",
+            "region": "BG-01"
+          },
+          {
+            "code": "ВТ",
+            "region": "BG-04"
+          },
+          {
+            "code": "У",
+            "region": "BG-28"
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Защо по номерата има само букви като А, В, Е, К, М, Н, О, Р, С, Т, У, Х?",
+            "en": "Why do plates only use letters like А, В, Е, К, М, Н, О, Р, С, Т, У, Х?"
+          },
+          "options": [
+            {
+              "bg": "Те изглеждат еднакво на кирилица и на латиница",
+              "en": "They look the same in Cyrillic and Latin"
+            },
+            {
+              "bg": "Те са най-красиви",
+              "en": "They are the prettiest"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Наредба за регистриране на моторни превозни средства (кодове на областите), МВР",
+    "Образецът на номера е учебен – не е истински номер"
+  ],
+  "review": null,
+  "draft": true
+}

@@ -1,0 +1,278 @@
+{
+  "id": "ach-06-sport",
+  "subject": "culture",
+  "free": true,
+  "order": 103,
+  "badge": {
+    "id": "sport",
+    "icon": "places/sports-football.webp"
+  },
+  "title": {
+    "bg": "Спортни легенди",
+    "en": "Sport legends"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "celebrate",
+          "bg": "Тичаме, скачаме, ритаме топка – спортът е радост!",
+          "en": "We run, we jump, we kick a ball – sport is joy!",
+          "img": "places/sports-football.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Намери еднаквите спортове.",
+          "en": "Find the matching sports."
+        }
+      ],
+      "game": {
+        "type": "memory",
+        "prompt": {
+          "bg": "Намери двете еднакви картинки!",
+          "en": "Find the two matching pictures!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Футбол",
+              "en": "Football",
+              "img": "places/sports-football.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Тенис",
+              "en": "Tennis",
+              "img": "places/sports-tennis.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Висок скок",
+              "en": "High jump",
+              "img": "places/sports-high-jump.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Вдигане на тежести",
+              "en": "Weightlifting",
+              "img": "places/sports-weightlifting.webp"
+            }
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "celebrate",
+          "bg": "Българските спортисти са печелили световни титли и рекорди.",
+          "en": "Bulgarian athletes have won world titles and records.",
+          "img": "places/sports-high-jump.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Свържи спортиста със спорта му.",
+          "en": "Match each athlete with their sport."
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Кой какъв спорт играе?",
+          "en": "Who plays which sport?"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Стефка Костадинова",
+              "en": "Stefka Kostadinova"
+            },
+            "b": {
+              "bg": "Висок скок",
+              "en": "High jump",
+              "img": "places/sports-high-jump.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Христо Стоичков",
+              "en": "Hristo Stoichkov"
+            },
+            "b": {
+              "bg": "Футбол",
+              "en": "Football",
+              "img": "places/sports-football.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Григор Димитров",
+              "en": "Grigor Dimitrov"
+            },
+            "b": {
+              "bg": "Тенис",
+              "en": "Tennis",
+              "img": "places/sports-tennis.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "„Златните момичета“",
+              "en": "The \"Golden Girls\""
+            },
+            "b": {
+              "bg": "Художествена гимнастика",
+              "en": "Rhythmic gymnastics"
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кое е най-важното в спорта?",
+            "en": "What matters most in sport?"
+          },
+          "options": [
+            {
+              "bg": "Да се стараеш и да играеш честно",
+              "en": "To try hard and play fair"
+            },
+            {
+              "bg": "Само да победиш",
+              "en": "Only to win"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Някои български рекорди стоят от десетилетия.",
+          "en": "Some Bulgarian records have stood for decades.",
+          "img": "places/sports-high-jump.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "compass",
+          "bg": "Довърши изреченията.",
+          "en": "Finish the sentences."
+        }
+      ],
+      "game": {
+        "type": "fill",
+        "prompt": {
+          "bg": "Довърши изреченията!",
+          "en": "Finish the sentences!"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Световният рекорд на Стефка Костадинова в скока на височина е ___ м.",
+              "en": "Stefka Kostadinova's world record in the high jump is ___ m."
+            },
+            "options": [
+              {
+                "bg": "2,09",
+                "en": "2.09"
+              },
+              {
+                "bg": "1,59",
+                "en": "1.59"
+              },
+              {
+                "bg": "2,45",
+                "en": "2.45"
+              }
+            ],
+            "answer": 0,
+            "hint": {
+              "bg": "2,45 м е рекордът при мъжете.",
+              "en": "2.45 m is the men's record."
+            }
+          },
+          {
+            "text": {
+              "bg": "Стоичков печели „Златната топка“ през ___ г.",
+              "en": "Stoichkov won the Ballon d'Or in ___."
+            },
+            "options": [
+              {
+                "bg": "1994",
+                "en": "1994"
+              },
+              {
+                "bg": "1984",
+                "en": "1984"
+              },
+              {
+                "bg": "2004",
+                "en": "2004"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "text": {
+              "bg": "На Световното първенство по футбол през 1994 г. България е ___.",
+              "en": "At the 1994 World Cup Bulgaria finished ___."
+            },
+            "options": [
+              {
+                "bg": "четвърта",
+                "en": "fourth"
+              },
+              {
+                "bg": "първа",
+                "en": "first"
+              },
+              {
+                "bg": "десета",
+                "en": "tenth"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кой спечели финалния турнир ATP Finals през 2017 г.?",
+            "en": "Who won the ATP Finals in 2017?"
+          },
+          "options": [
+            {
+              "bg": "Григор Димитров",
+              "en": "Grigor Dimitrov"
+            },
+            {
+              "bg": "Христо Стоичков",
+              "en": "Hristo Stoichkov"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Енциклопедия „България“, БАН",
+    "Министерство на младежта и спорта; World Athletics – световни рекорди",
+    "Без лица на живи хора: космонавтите и спортистите са с общи картинки"
+  ],
+  "review": null,
+  "draft": true
+}

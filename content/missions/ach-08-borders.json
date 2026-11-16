@@ -1,0 +1,218 @@
+{
+  "id": "ach-08-borders",
+  "subject": "geography",
+  "free": true,
+  "order": 105,
+  "place": "ruse",
+  "ages": [
+    "young",
+    "guard"
+  ],
+  "unlock": {
+    "after": [
+      "ach-07-plates"
+    ]
+  },
+  "badge": {
+    "id": "borders",
+    "icon": "places/customs.webp"
+  },
+  "title": {
+    "bg": "Граници, митници и пътища",
+    "en": "Borders, customs and routes"
+  },
+  "levels": {
+    "young": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "explorer",
+          "bg": "На границата показваме паспорт или лична карта, а на митницата проверяват какво носим.",
+          "en": "At the border we show a passport or an ID card, and at customs they check what we carry.",
+          "img": "places/border-crossing.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Какво се проверява къде?",
+          "en": "What is checked where?"
+        }
+      ],
+      "game": {
+        "type": "sort",
+        "prompt": {
+          "bg": "На границата или на митницата?",
+          "en": "At the border or at customs?"
+        },
+        "bins": [
+          {
+            "bg": "Граница – кой си ти",
+            "en": "Border – who you are",
+            "img": "places/border-crossing.webp"
+          },
+          {
+            "bg": "Митница – какво носиш",
+            "en": "Customs – what you carry",
+            "img": "places/customs.webp"
+          }
+        ],
+        "items": [
+          {
+            "bg": "Паспорт",
+            "en": "Passport",
+            "img": "ui/passport.webp",
+            "bin": 0
+          },
+          {
+            "bg": "Лична карта",
+            "en": "ID card",
+            "bin": 0
+          },
+          {
+            "bg": "Куфар с подаръци",
+            "en": "A suitcase of presents",
+            "bin": 1
+          },
+          {
+            "bg": "Камион със стоки",
+            "en": "A lorry full of goods",
+            "bin": 1
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Какво ни трябва, за да пътуваме в друга държава?",
+            "en": "What do we need to travel to another country?"
+          },
+          "options": [
+            {
+              "bg": "Паспорт или лична карта",
+              "en": "A passport or an ID card"
+            },
+            {
+              "bg": "Билет за кино",
+              "en": "A cinema ticket"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "map",
+          "bg": "През България минават пет паневропейски транспортни коридора – пътища, железници и Дунав.",
+          "en": "Five Pan-European transport corridors cross Bulgaria – roads, railways and the Danube.",
+          "img": "places/transport-corridor.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "compass",
+          "bg": "Свържи коридора с неговия път.",
+          "en": "Match each corridor with its route."
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи коридора с пътя му!",
+          "en": "Match the corridor with its route!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Коридор VII",
+              "en": "Corridor VII",
+              "img": "geo/danube.webp"
+            },
+            "b": {
+              "bg": "Река Дунав",
+              "en": "The Danube"
+            }
+          },
+          {
+            "a": {
+              "bg": "Коридор IV",
+              "en": "Corridor IV"
+            },
+            "b": {
+              "bg": "Видин – София – Кулата",
+              "en": "Vidin – Sofia – Kulata"
+            }
+          },
+          {
+            "a": {
+              "bg": "Коридор VIII",
+              "en": "Corridor VIII"
+            },
+            "b": {
+              "bg": "От Адриатическо до Черно море",
+              "en": "From the Adriatic to the Black Sea"
+            }
+          },
+          {
+            "a": {
+              "bg": "Коридор IX",
+              "en": "Corridor IX"
+            },
+            "b": {
+              "bg": "Русе – Димитровград (от север на юг)",
+              "en": "Ruse – Dimitrovgrad (north to south)"
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кой мост свързва Видин и Калафат (2013 г.)?",
+            "en": "Which bridge links Vidin and Calafat (2013)?"
+          },
+          "options": [
+            {
+              "bg": "Дунав мост 2",
+              "en": "Danube Bridge 2"
+            },
+            {
+              "bg": "Мостът на Искър",
+              "en": "The Iskar bridge"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Колко паневропейски коридора минават през България?",
+            "en": "How many Pan-European corridors cross Bulgaria?"
+          },
+          "options": [
+            {
+              "bg": "5",
+              "en": "5"
+            },
+            {
+              "bg": "1",
+              "en": "1"
+            },
+            {
+              "bg": "12",
+              "en": "12"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Министерство на регионалното развитие – Паневропейски транспортни коридори",
+    "Гранична полиция и Агенция „Митници“ – информация за пътуващи",
+    "Енциклопедия „България“, БАН"
+  ],
+  "review": null,
+  "draft": true
+}

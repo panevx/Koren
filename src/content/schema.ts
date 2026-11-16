@@ -373,7 +373,20 @@ export const FillGame = z
   .strict()
 
 /**
- * One entry per game template (11 since v0.12, 13 since v0.16, 15 since v0.18, 17 since v0.19, 19 since v0.20). A new template is added here
+ * Number plates (v0.21): a car number plate with a province code is shown; the child taps the province on the map.
+ * One plate after another. `code` = the Cyrillic letters at the start of Bulgarian plates (e.g. "СА", "РВ", "В").
+ */
+export const PlateGame = z
+  .object({
+    type: z.literal('plate'),
+    prompt: Text,
+    plates: z.array(z.object({ code: z.string().regex(/^[АВЕКМНОРСТУХ]{1,2}$/), region: z.string().regex(/^BG-(0[1-9]|1\d|2[0-8])$/) }).strict()).min(2).max(6),
+  })
+  .strict()
+  .refine((g) => new Set(g.plates.map((p) => p.code)).size === g.plates.length, { message: 'every code only once', path: ['plates'] })
+
+/**
+ * One entry per game template (11 since v0.12, 13 since v0.16, 15 since v0.18, 17 since v0.19, 19 since v0.20, 20 since v0.21). A new template is added here
  * and in src/games without touching the mission screen.
  */
 export const Game = z.discriminatedUnion('type', [
@@ -396,6 +409,7 @@ export const Game = z.discriminatedUnion('type', [
   PaintGame,
   CipherGame,
   FillGame,
+  PlateGame,
 ])
 
 export const LevelContent = z
@@ -465,6 +479,7 @@ export type CookGame = z.infer<typeof CookGame>
 export type PaintGame = z.infer<typeof PaintGame>
 export type CipherGame = z.infer<typeof CipherGame>
 export type FillGame = z.infer<typeof FillGame>
+export type PlateGame = z.infer<typeof PlateGame>
 export type Thing = z.infer<typeof Thing>
 export type SceneId = (typeof SCENES)[number]
 export type Option = z.infer<typeof Option>

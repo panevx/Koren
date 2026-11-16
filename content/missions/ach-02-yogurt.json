@@ -1,0 +1,263 @@
+{
+  "id": "ach-02-yogurt",
+  "subject": "culture",
+  "free": true,
+  "order": 99,
+  "badge": {
+    "id": "yogurt",
+    "icon": "science/bulgarian-yogurt.webp"
+  },
+  "title": {
+    "bg": "Българското кисело мляко",
+    "en": "Bulgarian yogurt"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "chef",
+          "bg": "Киселото мляко е бяло, гъсто и много полезно!",
+          "en": "Yogurt is white, thick and very healthy!",
+          "img": "food/kiselo-mlyako.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Покажи киселото мляко.",
+          "en": "Show the yogurt."
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Кое е киселото мляко?",
+              "en": "Which is the yogurt?"
+            },
+            "options": [
+              {
+                "bg": "Сирене",
+                "en": "Cheese",
+                "img": "food/cheese.webp"
+              },
+              {
+                "bg": "Кисело мляко",
+                "en": "Yogurt",
+                "img": "food/kiselo-mlyako.webp"
+              },
+              {
+                "bg": "Домат",
+                "en": "Tomato",
+                "img": "food/tomato.webp"
+              }
+            ],
+            "answer": 1
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "chef",
+          "bg": "Киселото мляко се прави вкъщи от прясно мляко и малко кисело мляко – закваска.",
+          "en": "Yogurt is made at home from fresh milk and a little yogurt – the starter.",
+          "img": "food/kiselo-mlyako.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Да подквасим мляко!",
+          "en": "Let's make yogurt!"
+        }
+      ],
+      "game": {
+        "type": "cook",
+        "prompt": {
+          "bg": "Направи кисело мляко!",
+          "en": "Make yogurt!"
+        },
+        "dish": {
+          "bg": "Кисело мляко",
+          "en": "Yogurt",
+          "img": "food/kiselo-mlyako.webp"
+        },
+        "vessel": "minigame/clay-pot.webp",
+        "ingredients": [
+          {
+            "bg": "Прясно мляко",
+            "en": "Fresh milk",
+            "belongs": true
+          },
+          {
+            "bg": "Малко кисело мляко (закваска)",
+            "en": "A little yogurt (starter)",
+            "img": "food/yogurt.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Сол",
+            "en": "Salt",
+            "belongs": false,
+            "why": {
+              "bg": "Киселото мляко не се соли.",
+              "en": "Yogurt is not salted."
+            }
+          },
+          {
+            "bg": "Домат",
+            "en": "Tomato",
+            "img": "food/tomato.webp",
+            "belongs": false,
+            "why": {
+              "bg": "Доматът няма място в киселото мляко.",
+              "en": "A tomato does not go into yogurt."
+            }
+          }
+        ],
+        "steps": [
+          {
+            "bg": "Затопли млякото",
+            "en": "Warm the milk"
+          },
+          {
+            "bg": "Изчакай да стане топло, не горещо",
+            "en": "Wait until it is warm, not hot"
+          },
+          {
+            "bg": "Добави закваската и разбъркай",
+            "en": "Add the starter and stir"
+          },
+          {
+            "bg": "Завий и остави на топло няколко часа",
+            "en": "Cover and keep warm for a few hours"
+          },
+          {
+            "bg": "Сложи в хладилника",
+            "en": "Put it in the fridge"
+          }
+        ],
+        "done": {
+          "bg": "Готово! Малките бактерии превърнаха млякото в кисело мляко.",
+          "en": "Done! Tiny bacteria turned the milk into yogurt."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Защо закваската трябва да е топла, а не гореща?",
+            "en": "Why must the starter go into warm, not hot, milk?"
+          },
+          "options": [
+            {
+              "bg": "Горещото убива полезните бактерии",
+              "en": "Heat kills the good bacteria"
+            },
+            {
+              "bg": "За да е по-сладко",
+              "en": "To make it sweeter"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "През 1905 г. българският студент Стамен Григоров открива бактерията, която прави киселото мляко.",
+          "en": "In 1905 the Bulgarian student Stamen Grigorov discovered the bacterium that makes yogurt.",
+          "img": "science/bulgarian-yogurt.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "compass",
+          "bg": "Свържи името с това, което е направило.",
+          "en": "Match each name with what it did."
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи!",
+          "en": "Match them!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Стамен Григоров",
+              "en": "Stamen Grigorov"
+            },
+            "b": {
+              "bg": "Открива бактерията (1905 г.)",
+              "en": "Discovers the bacterium (1905)"
+            }
+          },
+          {
+            "a": {
+              "bg": "Lactobacillus bulgaricus",
+              "en": "Lactobacillus bulgaricus",
+              "img": "science/bulgarian-yogurt.webp"
+            },
+            "b": {
+              "bg": "Бактерия, кръстена на България",
+              "en": "A bacterium named after Bulgaria"
+            }
+          },
+          {
+            "a": {
+              "bg": "Streptococcus thermophilus",
+              "en": "Streptococcus thermophilus"
+            },
+            "b": {
+              "bg": "Работи заедно с нея",
+              "en": "Works together with it"
+            }
+          },
+          {
+            "a": {
+              "bg": "Иля Мечников",
+              "en": "Ilya Mechnikov"
+            },
+            "b": {
+              "bg": "Свързва киселото мляко с дългия живот",
+              "en": "Links yogurt to a long life"
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "С какъв уред Григоров вижда бактерията?",
+            "en": "With what instrument did Grigorov see the bacterium?"
+          },
+          "options": [
+            {
+              "bg": "С микроскоп",
+              "en": "A microscope"
+            },
+            {
+              "bg": "С телескоп",
+              "en": "A telescope"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Енциклопедия „България“, БАН",
+    "Музей на киселото мляко, с. Студен извор (Трън)",
+    "Учебници по „Човекът и природата“, „Човекът и обществото“, „Компютърно моделиране“ (3.–6. кл.), МОН"
+  ],
+  "review": null,
+  "draft": true
+}

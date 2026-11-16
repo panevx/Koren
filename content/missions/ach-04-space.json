@@ -1,0 +1,234 @@
+{
+  "id": "ach-04-space",
+  "subject": "history",
+  "free": true,
+  "order": 102,
+  "badge": {
+    "id": "space",
+    "icon": "space/rocket.webp"
+  },
+  "title": {
+    "bg": "Българи в космоса",
+    "en": "Bulgarians in space"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "3… 2… 1… старт! Ракетата лети към звездите!",
+          "en": "3… 2… 1… lift-off! The rocket flies to the stars!",
+          "img": "space/rocket.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Намери еднаквите картинки от космоса.",
+          "en": "Find the matching pictures from space."
+        }
+      ],
+      "game": {
+        "type": "memory",
+        "prompt": {
+          "bg": "Намери двете еднакви картинки!",
+          "en": "Find the two matching pictures!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Ракета",
+              "en": "Rocket",
+              "img": "space/rocket.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Космонавт",
+              "en": "Cosmonaut",
+              "img": "space/cosmonaut.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Спътник",
+              "en": "Satellite",
+              "img": "space/satellite.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Земята",
+              "en": "The Earth",
+              "img": "space/earth.webp"
+            }
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "explorer",
+          "bg": "През 1979 г. Георги Иванов става първият български космонавт.",
+          "en": "In 1979 Georgi Ivanov became the first Bulgarian cosmonaut.",
+          "img": "space/cosmonaut.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Подреди полетите по време.",
+          "en": "Put the flights in order of time."
+        }
+      ],
+      "game": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди – от най-ранния полет!",
+          "en": "Order them – the earliest flight first!"
+        },
+        "items": [
+          {
+            "bg": "Юрий Гагарин – първият човек в космоса (1961)",
+            "en": "Yuri Gagarin – the first person in space (1961)",
+            "img": "space/rocket.webp"
+          },
+          {
+            "bg": "Нийл Армстронг стъпва на Луната (1969)",
+            "en": "Neil Armstrong walks on the Moon (1969)"
+          },
+          {
+            "bg": "Георги Иванов – първият българин в космоса (1979)",
+            "en": "Georgi Ivanov – the first Bulgarian in space (1979)",
+            "img": "space/cosmonaut.webp"
+          },
+          {
+            "bg": "Александър Александров на станция „Мир“ (1988)",
+            "en": "Aleksandar Aleksandrov on the Mir station (1988)",
+            "img": "space/satellite.webp"
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Какво ядат космонавтите?",
+            "en": "What do cosmonauts eat?"
+          },
+          "options": [
+            {
+              "bg": "Специална храна в пликчета и туби",
+              "en": "Special food in pouches and tubes"
+            },
+            {
+              "bg": "Пица от фурната",
+              "en": "Pizza from the oven"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "С полета на Георги Иванов България става шестата страна с космонавт.",
+          "en": "With Georgi Ivanov's flight, Bulgaria became the sixth country with a cosmonaut.",
+          "img": "space/earth.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "compass",
+          "bg": "Свържи името с постижението.",
+          "en": "Match the name with the achievement."
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи!",
+          "en": "Match them!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Георги Иванов",
+              "en": "Georgi Ivanov",
+              "img": "space/cosmonaut.webp"
+            },
+            "b": {
+              "bg": "„Союз 33“, април 1979 г.",
+              "en": "Soyuz 33, April 1979"
+            }
+          },
+          {
+            "a": {
+              "bg": "Александър Александров",
+              "en": "Aleksandar Aleksandrov",
+              "img": "space/rocket.webp"
+            },
+            "b": {
+              "bg": "Станция „Мир“, юни 1988 г.",
+              "en": "The Mir station, June 1988"
+            }
+          },
+          {
+            "a": {
+              "bg": "„Свет“",
+              "en": "\"Svet\""
+            },
+            "b": {
+              "bg": "Българска оранжерия в космоса",
+              "en": "A Bulgarian greenhouse in space"
+            }
+          },
+          {
+            "a": {
+              "bg": "„Люлин“",
+              "en": "\"Lyulin\"",
+              "img": "space/satellite.webp"
+            },
+            "b": {
+              "bg": "Български уред за радиация",
+              "en": "A Bulgarian radiation instrument"
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Коя поред страна с космонавт става България?",
+            "en": "Which country in order to have a cosmonaut was Bulgaria?"
+          },
+          "options": [
+            {
+              "bg": "Шестата",
+              "en": "The sixth"
+            },
+            {
+              "bg": "Първата",
+              "en": "The first"
+            },
+            {
+              "bg": "Двадесетата",
+              "en": "The twentieth"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Енциклопедия „България“, БАН",
+    "Институт за космически изследвания и технологии – БАН",
+    "Без лица на живи хора: космонавтите и спортистите са с общи картинки"
+  ],
+  "review": null,
+  "draft": true
+}

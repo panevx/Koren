@@ -20,3 +20,14 @@ describe('Glagolitic', () => {
     for (const g of ciphers) expect(canWriteGlagolitic(g.message.bg), g.message.bg).toBe(true)
   })
 })
+
+describe('Hall of Fame (v0.21)', () => {
+  it('every card points to a mission and a real picture', async () => {
+    const { FAME } = await import('../src/content/fame')
+    const { existsSync } = await import('node:fs')
+    for (const p of FAME) {
+      expect(MISSIONS.some((m) => m.id === p.mission), `${p.id}: ${p.mission}`).toBe(true)
+      expect(existsSync(`public/img/${p.img}`), p.img).toBe(true)
+    }
+  })
+})

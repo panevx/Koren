@@ -221,3 +221,16 @@ describe('map screen', () => {
     expect(screen.getByRole('button', { name: 'Велики Преслав' }).firstElementChild).toHaveAttribute('data-state', 'open')
   })
 })
+
+describe('Hall of Fame (v0.21)', () => {
+  it('a card is a link to its mission until it is played; then it lights up and tells its story', async () => {
+    renderAt('/fame')
+    expect(await screen.findByRole('heading', { name: 'Космос' })).toBeInTheDocument()
+    expect(screen.getAllByRole('link', { name: /Георги Иванов/ })[0]).toHaveAttribute('href', '/mission/ach-04-space')
+    cleanup()
+    useProfiles.getState().complete('ach-04-space', 'young', 'space')
+    renderAt('/fame')
+    fireEvent.click(await screen.findByRole('button', { name: /Георги Иванов/ }))
+    expect(screen.getByText(/Първият български космонавт/)).toBeInTheDocument()
+  })
+})

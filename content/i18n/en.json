@@ -279,6 +279,7 @@
   "game.paint": "Embroidery",
   "game.cipher": "Cipher",
   "game.fill": "Fill the gap",
+  "game.plate": "Number plates",
   "reward.bronze.name": "Bronze",
   "reward.silver.name": "Silver",
   "reward.gold.name": "Gold",
@@ -402,5 +403,17 @@
   "fill.again": "It doesn't fit. Read the whole sentence again!",
   "fill.count": "Sentence {n} of {total}",
   "fill.done": "Well done! All the sentences are whole.",
-  "fill.idle": "Drag the word into the gap – or tap it."
+  "fill.idle": "Drag the word into the gap – or tap it.",
+  "plate.good": "{code} is {name}!",
+  "plate.look": "That is {name}. Look {dir}.",
+  "plate.count": "Plate {n} of {total}",
+  "plate.sr": "A plate with the code {code}. Which province?",
+  "plate.done": "You knew all the plates!",
+  "plate.idle": "Tap the province the car is from.",
+  "fame.title": "Hall of Fame",
+  "fame.intro": "Cards lit: {n} of {total}. Each lights up when you play its mission.",
+  "fame.field.science": "Science and discoveries",
+  "fame.field.space": "Space",
+  "fame.field.sport": "Sport",
+  "fame.play": "Play “{title}”"
 }

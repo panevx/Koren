@@ -4,6 +4,8 @@
  * scripts/export-world.py. tests/assets.test.ts checks that every file exists.
  */
 export const ART = {
+  /** v0.21: the blank number plate (the code and digits are text on top). */
+  plate: 'places/car-license-plate.svg',
   star: 'world/correct-star.webp',
   heart: 'world/try-again-heart.webp',
   lantern: 'world/hint-lantern.webp',
@@ -51,4 +53,5 @@ export const GAME_ART: Record<string, string> = {
   paint: 'game/paintbrush.webp',
   cipher: 'world/old-scroll.webp',
   fill: 'game/word-tile.webp',
+  plate: 'places/transport-corridor.webp',
 }

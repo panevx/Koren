@@ -279,6 +279,7 @@
   "game.paint": "Шевица",
   "game.cipher": "Шифър",
   "game.fill": "Допълни",
+  "game.plate": "Номера",
   "reward.bronze.name": "Бронз",
   "reward.silver.name": "Сребро",
   "reward.gold.name": "Злато",
@@ -402,5 +403,17 @@
   "fill.again": "Не пасва. Прочети пак цялото изречение!",
   "fill.count": "Изречение {n} от {total}",
   "fill.done": "Браво! Всички изречения са цели.",
-  "fill.idle": "Плъзни думата в празното място – или я докосни."
+  "fill.idle": "Плъзни думата в празното място – или я докосни.",
+  "plate.good": "{code} е {name}!",
+  "plate.look": "Това е {name}. Потърси {dir}.",
+  "plate.count": "Номер {n} от {total}",
+  "plate.sr": "Номер с код {code}. Коя е областта?",
+  "plate.done": "Позна всички номера!",
+  "plate.idle": "Докосни областта, от която е колата.",
+  "fame.title": "Зала на славата",
+  "fame.intro": "Светнали карти: {n} от {total}. Всяка светва, когато изиграеш мисията за нея.",
+  "fame.field.science": "Наука и открития",
+  "fame.field.space": "Космос",
+  "fame.field.sport": "Спорт",
+  "fame.play": "Изиграй „{title}“"
 }

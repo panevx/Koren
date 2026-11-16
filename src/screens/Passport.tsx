@@ -73,6 +73,13 @@ export function Passport() {
             </div>
           </section>
 
+          {/* v0.21: the Hall of Fame — people the child meets in the missions */}
+          <Link to="/fame" className="press tap flex items-center gap-3 rounded-[var(--radius-card)] bg-stage-gold px-4 py-3 font-extrabold text-ink shadow-soft">
+            <img src={img(ART.trophy)} alt="" className="pop-3d size-12 shrink-0" />
+            <span className="min-w-0 flex-1 text-lg leading-tight">{t('fame.title')}</span>
+            <Icon name="chevron" width="1em" height="1em" />
+          </Link>
+
           {/* The reward track: one line, four medals. */}
           <section aria-labelledby="rewards" className="rounded-[var(--radius-card)] bg-white p-4 shadow-soft">
             <h2 id="rewards" className="mb-3 text-lg font-black">

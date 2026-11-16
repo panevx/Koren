@@ -1,0 +1,253 @@
+{
+  "id": "ach-03-rose-oil",
+  "subject": "culture",
+  "free": true,
+  "order": 100,
+  "place": "kazanlak",
+  "unlock": {
+    "after": [
+      "ach-02-yogurt"
+    ]
+  },
+  "badge": {
+    "id": "rose-oil",
+    "icon": "world/rose-oil-bottle.webp"
+  },
+  "title": {
+    "bg": "Розовото масло",
+    "en": "Rose oil"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "nature",
+          "bg": "От розите правят ароматно масло!",
+          "en": "People make fragrant oil from roses!",
+          "img": "world/rose-oil-bottle.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Намери еднаквите картинки.",
+          "en": "Find the matching pictures."
+        }
+      ],
+      "game": {
+        "type": "memory",
+        "prompt": {
+          "bg": "Намери двете еднакви картинки!",
+          "en": "Find the two matching pictures!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Рози",
+              "en": "Roses",
+              "img": "culture/rose-festival.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Казан",
+              "en": "Still",
+              "img": "science/rose-distillation.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Шишенце",
+              "en": "Little bottle",
+              "img": "world/rose-oil-bottle.webp"
+            }
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "explorer",
+          "bg": "В Розовата долина розите се берат в края на май и в юни – рано сутрин.",
+          "en": "In the Rose Valley the roses are picked in late May and June – early in the morning.",
+          "img": "culture/rose-festival.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Как става маслото? Подреди!",
+          "en": "How is the oil made? Put it in order!"
+        }
+      ],
+      "game": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди как се прави розовото масло!",
+          "en": "Put the making of rose oil in order!"
+        },
+        "items": [
+          {
+            "bg": "Берат розите рано сутрин",
+            "en": "They pick the roses early in the morning",
+            "img": "culture/rose-festival.webp"
+          },
+          {
+            "bg": "Носят цвета бързо в розоварната",
+            "en": "They take the petals quickly to the distillery"
+          },
+          {
+            "bg": "Варят го с вода в голям казан",
+            "en": "They boil them with water in a big still",
+            "img": "science/rose-distillation.webp"
+          },
+          {
+            "bg": "Маслото се събира капка по капка",
+            "en": "The oil is collected drop by drop",
+            "img": "world/rose-oil-bottle.webp"
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Защо розите се берат рано сутрин?",
+            "en": "Why are the roses picked early in the morning?"
+          },
+          "options": [
+            {
+              "bg": "Преди слънцето да изпари аромата",
+              "en": "Before the sun dries away the scent"
+            },
+            {
+              "bg": "Защото е по-студено за берачите",
+              "en": "Because it is cooler for the pickers"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Розовото масло е толкова скъпо, защото трябват огромно количество цвят.",
+          "en": "Rose oil is so precious because it takes a huge amount of petals.",
+          "img": "science/rose-distillation.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "compass",
+          "bg": "Довърши изреченията.",
+          "en": "Finish the sentences."
+        }
+      ],
+      "game": {
+        "type": "fill",
+        "prompt": {
+          "bg": "Довърши изреченията за розовото масло!",
+          "en": "Finish the sentences about rose oil!"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "За 1 кг розово масло са нужни около ___ тона розов цвят.",
+              "en": "About ___ tonnes of rose petals make 1 kg of rose oil."
+            },
+            "options": [
+              {
+                "bg": "3",
+                "en": "3"
+              },
+              {
+                "bg": "30",
+                "en": "30"
+              },
+              {
+                "bg": "0,3",
+                "en": "0.3"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "text": {
+              "bg": "Маслото се добива чрез ___.",
+              "en": "The oil is obtained by ___."
+            },
+            "options": [
+              {
+                "bg": "дестилация",
+                "en": "distillation"
+              },
+              {
+                "bg": "замразяване",
+                "en": "freezing"
+              },
+              {
+                "bg": "сушене",
+                "en": "drying"
+              }
+            ],
+            "answer": 0,
+            "hint": {
+              "bg": "Парата носи аромата и после се охлажда.",
+              "en": "The steam carries the scent and is then cooled."
+            }
+          },
+          {
+            "text": {
+              "bg": "Маслодайната роза е ___ роза.",
+              "en": "The oil-bearing rose is the ___ rose."
+            },
+            "options": [
+              {
+                "bg": "дамаската",
+                "en": "Damask"
+              },
+              {
+                "bg": "кучешката",
+                "en": "dog"
+              },
+              {
+                "bg": "китайската",
+                "en": "Chinese"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Къде се използва розовото масло?",
+            "en": "Where is rose oil used?"
+          },
+          "options": [
+            {
+              "bg": "В парфюми и козметика",
+              "en": "In perfumes and cosmetics"
+            },
+            {
+              "bg": "Като гориво",
+              "en": "As fuel"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Енциклопедия „България“, БАН",
+    "Музей на розата, Казанлък",
+    "Учебници по „Човекът и природата“, „Човекът и обществото“, „Компютърно моделиране“ (3.–6. кл.), МОН"
+  ],
+  "review": null,
+  "draft": true
+}

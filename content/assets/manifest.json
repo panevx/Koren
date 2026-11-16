@@ -2,8 +2,8 @@
  "version": "v5",
  "total": 300,
  "summary": {
-  "used": 152,
-  "ready": 82,
+  "used": 175,
+  "ready": 59,
   "source": 10,
   "duplicate": 49,
   "review": 7
@@ -397,9 +397,9 @@
    "id": "food-kiselo-mlyako",
    "original": "design/v5/food/food-kiselo-mlyako.png",
    "category": "food",
-   "status": "ready",
+   "status": "used",
    "path": "food/kiselo-mlyako.webp",
-   "stage": 6,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
@@ -1852,9 +1852,9 @@
    "id": "science-atanasoff-computer",
    "original": "design/v5/science/science-atanasoff-computer.png",
    "category": "science",
-   "status": "ready",
+   "status": "used",
    "path": "science/atanasoff-computer.webp",
-   "stage": 8,
+   "usedIn": "мисии",
    "size": "640x503",
    "check": "Формата да се сравни със снимка на истинския предмет (музей)."
   },
@@ -1862,18 +1862,18 @@
    "id": "science-bulgarian-yogurt",
    "original": "design/v5/science/science-bulgarian-yogurt.png",
    "category": "science",
-   "status": "ready",
+   "status": "used",
    "path": "science/bulgarian-yogurt.webp",
-   "stage": 8,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
    "id": "science-computer",
    "original": "design/v5/science/science-computer.png",
    "category": "science",
-   "status": "ready",
+   "status": "used",
    "path": "science/computer.webp",
-   "stage": 8,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
@@ -1887,9 +1887,9 @@
    "id": "science-discovery-lab",
    "original": "design/v5/science/science-discovery-lab.png",
    "category": "science",
-   "status": "ready",
+   "status": "used",
    "path": "science/discovery-lab.webp",
-   "stage": 8,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
@@ -1903,18 +1903,18 @@
    "id": "science-invention-medal",
    "original": "design/v5/science/science-invention-medal.png",
    "category": "science",
-   "status": "ready",
+   "status": "used",
    "path": "science/invention-medal.webp",
-   "stage": 8,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
    "id": "science-john-atanasoff",
    "original": "design/v5/science/science-john-atanasoff.png",
    "category": "science",
-   "status": "ready",
+   "status": "used",
    "path": "science/john-atanasoff.webp",
-   "stage": 8,
+   "usedIn": "мисии",
    "size": "320x320",
    "check": "Условен образ — сравни чертите със запазен портрет/снимка (историк)."
   },
@@ -1922,18 +1922,18 @@
    "id": "science-lightbulb",
    "original": "design/v5/science/science-lightbulb.png",
    "category": "science",
-   "status": "ready",
+   "status": "used",
    "path": "science/lightbulb.webp",
-   "stage": 8,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
    "id": "science-microscope",
    "original": "design/v5/science/science-microscope.png",
    "category": "science",
-   "status": "ready",
+   "status": "used",
    "path": "science/microscope.webp",
-   "stage": 8,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
@@ -1956,9 +1956,9 @@
    "id": "science-telescope",
    "original": "design/v5/science/science-telescope.png",
    "category": "science",
-   "status": "ready",
+   "status": "used",
    "path": "science/telescope.webp",
-   "stage": 8,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
@@ -1972,18 +1972,18 @@
    "id": "space-cosmonaut",
    "original": "design/v5/space/space-cosmonaut.png",
    "category": "space",
-   "status": "ready",
+   "status": "used",
    "path": "space/cosmonaut.webp",
-   "stage": 8,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
    "id": "space-earth",
    "original": "design/v5/space/space-earth.png",
    "category": "space",
-   "status": "ready",
+   "status": "used",
    "path": "space/earth.webp",
-   "stage": 8,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
@@ -2006,18 +2006,18 @@
    "id": "space-rocket",
    "original": "design/v5/space/space-rocket.png",
    "category": "space",
-   "status": "ready",
+   "status": "used",
    "path": "space/rocket.webp",
-   "stage": 8,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
    "id": "space-satellite",
    "original": "design/v5/space/space-satellite.png",
    "category": "space",
-   "status": "ready",
+   "status": "used",
    "path": "space/satellite.webp",
-   "stage": 8,
+   "usedIn": "мисии",
    "size": "640x495"
   },
   {
@@ -2273,9 +2273,9 @@
    "id": "tradition-rose-festival",
    "original": "design/v5/tradition/tradition-rose-festival.png",
    "category": "tradition",
-   "status": "ready",
+   "status": "used",
    "path": "culture/rose-festival.webp",
-   "stage": 6,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
@@ -2408,9 +2408,9 @@
    "id": "ui-passport",
    "original": "design/v5/ui/ui-passport.png",
    "category": "ui",
-   "status": "ready",
+   "status": "used",
    "path": "ui/passport.webp",
-   "stage": 9,
+   "usedIn": "мисии",
    "size": "192x192"
   },
   {
@@ -2480,17 +2480,17 @@
    "id": "world-car-license-plate",
    "original": "design/v5/world/world-car-license-plate.svg",
    "category": "world",
-   "status": "ready",
+   "status": "used",
    "path": "places/car-license-plate.svg",
-   "stage": 8
+   "usedIn": "мисии"
   },
   {
    "id": "world-customs",
    "original": "design/v5/world/world-customs.png",
    "category": "world",
-   "status": "ready",
+   "status": "used",
    "path": "places/customs.webp",
-   "stage": 8,
+   "usedIn": "мисии",
    "size": "640x504"
   },
   {
@@ -2588,45 +2588,45 @@
    "id": "world-sports-football",
    "original": "design/v5/world/world-sports-football.png",
    "category": "world",
-   "status": "ready",
+   "status": "used",
    "path": "places/sports-football.webp",
-   "stage": 8,
+   "usedIn": "мисии",
    "size": "640x464"
   },
   {
    "id": "world-sports-high-jump",
    "original": "design/v5/world/world-sports-high-jump.png",
    "category": "world",
-   "status": "ready",
+   "status": "used",
    "path": "places/sports-high-jump.webp",
-   "stage": 8,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
    "id": "world-sports-tennis",
    "original": "design/v5/world/world-sports-tennis.png",
    "category": "world",
-   "status": "ready",
+   "status": "used",
    "path": "places/sports-tennis.webp",
-   "stage": 8,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
    "id": "world-sports-weightlifting",
    "original": "design/v5/world/world-sports-weightlifting.png",
    "category": "world",
-   "status": "ready",
+   "status": "used",
    "path": "places/sports-weightlifting.webp",
-   "stage": 8,
+   "usedIn": "мисии",
    "size": "640x306"
   },
   {
    "id": "world-transport-corridor",
    "original": "design/v5/world/world-transport-corridor.png",
    "category": "world",
-   "status": "ready",
+   "status": "used",
    "path": "places/transport-corridor.webp",
-   "stage": 8,
+   "usedIn": "мисии",
    "size": "640x493"
   },
   {

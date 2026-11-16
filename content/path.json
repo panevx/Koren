@@ -256,6 +256,30 @@
         "lang-10-tale-objects",
         "lang-11-hitar-petar"
       ]
+    },
+    {
+      "title": {
+        "bg": "Българи, с които се гордеем",
+        "en": "Bulgarians we are proud of"
+      },
+      "missions": [
+        "ach-01-atanasoff",
+        "ach-02-yogurt",
+        "ach-03-rose-oil",
+        "ach-05-discoveries",
+        "ach-04-space",
+        "ach-06-sport"
+      ]
+    },
+    {
+      "title": {
+        "bg": "Пътища и граници",
+        "en": "Roads and borders"
+      },
+      "missions": [
+        "ach-07-plates",
+        "ach-08-borders"
+      ]
     }
   ]
 }

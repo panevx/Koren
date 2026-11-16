@@ -12,6 +12,7 @@ import { Match } from './Match'
 import { Memory } from './Memory'
 import { Order } from './Order'
 import { Paint } from './Paint'
+import { Plate } from './Plate'
 import { Puzzle } from './Puzzle'
 import { Regions } from './Regions'
 import { Riddle } from './Riddle'
@@ -63,5 +64,7 @@ export function GameView({ game, onDone }: { game: Game; onDone: () => void }) {
       return <Cipher game={game} onDone={onDone} />
     case 'fill':
       return <Fill game={game} onDone={onDone} />
+    case 'plate':
+      return <Plate game={game} onDone={onDone} />
   }
 }

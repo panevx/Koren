@@ -1,0 +1,283 @@
+{
+  "id": "ach-05-discoveries",
+  "subject": "history",
+  "free": true,
+  "order": 101,
+  "unlock": {
+    "after": [
+      "ach-03-rose-oil"
+    ]
+  },
+  "badge": {
+    "id": "discoveries",
+    "icon": "science/invention-medal.webp"
+  },
+  "title": {
+    "bg": "Български открития",
+    "en": "Bulgarian discoveries"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "explorer",
+          "bg": "В лабораторията учените откриват нови неща!",
+          "en": "In the lab scientists discover new things!",
+          "img": "science/discovery-lab.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Намери микроскопа, телескопа и крушката.",
+          "en": "Find the microscope, the telescope and the light bulb."
+        }
+      ],
+      "game": {
+        "type": "find",
+        "prompt": {
+          "bg": "Намери уредите на учените!",
+          "en": "Find the scientists' instruments!"
+        },
+        "scene": "village",
+        "items": [
+          {
+            "bg": "Микроскоп",
+            "en": "Microscope",
+            "img": "science/microscope.webp",
+            "x": 22,
+            "y": 70,
+            "size": 18,
+            "target": true,
+            "under": "world/forest-bush.webp"
+          },
+          {
+            "bg": "Телескоп",
+            "en": "Telescope",
+            "img": "science/telescope.webp",
+            "x": 52,
+            "y": 76,
+            "size": 18,
+            "target": true
+          },
+          {
+            "bg": "Крушка",
+            "en": "Light bulb",
+            "img": "science/lightbulb.webp",
+            "x": 82,
+            "y": 66,
+            "size": 14,
+            "target": true,
+            "under": "world/forest-bush.webp"
+          },
+          {
+            "bg": "Птичка",
+            "en": "Bird",
+            "img": "world/bird.webp",
+            "x": 30,
+            "y": 26,
+            "size": 11
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Българи и хора с български корени са дали на света важни открития.",
+          "en": "Bulgarians and people with Bulgarian roots have given the world important discoveries.",
+          "img": "science/invention-medal.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Свържи откривателя с откритието.",
+          "en": "Match the discoverer with the discovery."
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи!",
+          "en": "Match them!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Джон Атанасов",
+              "en": "John Atanasoff",
+              "img": "science/john-atanasoff.webp"
+            },
+            "b": {
+              "bg": "Електронният компютър ABC",
+              "en": "The ABC electronic computer"
+            }
+          },
+          {
+            "a": {
+              "bg": "Стамен Григоров",
+              "en": "Stamen Grigorov"
+            },
+            "b": {
+              "bg": "Бактерията на киселото мляко",
+              "en": "The yogurt bacterium"
+            }
+          },
+          {
+            "a": {
+              "bg": "Българските учени",
+              "en": "Bulgarian scientists",
+              "img": "space/satellite.webp"
+            },
+            "b": {
+              "bg": "Космическата оранжерия „Свет“",
+              "en": "The \"Svet\" space greenhouse"
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Какво се отглеждало в оранжерията „Свет“ на станция „Мир“?",
+            "en": "What was grown in the \"Svet\" greenhouse on the Mir station?"
+          },
+          "options": [
+            {
+              "bg": "Растения",
+              "en": "Plants"
+            },
+            {
+              "bg": "Риби",
+              "en": "Fish"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Не всяко известно изобретение е българско. Внимавай!",
+          "en": "Not every famous invention is Bulgarian. Careful!",
+          "img": "science/invention-medal.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "compass",
+          "bg": "Подреди в двете кутии.",
+          "en": "Sort into the two boxes."
+        }
+      ],
+      "game": {
+        "type": "sort",
+        "prompt": {
+          "bg": "Българско постижение или не?",
+          "en": "A Bulgarian achievement or not?"
+        },
+        "bins": [
+          {
+            "bg": "Българско",
+            "en": "Bulgarian"
+          },
+          {
+            "bg": "Не е българско",
+            "en": "Not Bulgarian"
+          }
+        ],
+        "items": [
+          {
+            "bg": "Компютърът ABC",
+            "en": "The ABC computer",
+            "img": "science/atanasoff-computer.webp",
+            "bin": 0,
+            "why": {
+              "bg": "Джон Атанасов е с български корени.",
+              "en": "John Atanasoff had Bulgarian roots."
+            }
+          },
+          {
+            "bg": "Бактерията на киселото мляко",
+            "en": "The yogurt bacterium",
+            "img": "science/bulgarian-yogurt.webp",
+            "bin": 0
+          },
+          {
+            "bg": "Кирилицата",
+            "en": "Cyrillic",
+            "bin": 0,
+            "why": {
+              "bg": "Създадена е в Преслав, в България.",
+              "en": "It was created in Preslav, in Bulgaria."
+            }
+          },
+          {
+            "bg": "Оранжерията „Свет“",
+            "en": "The \"Svet\" greenhouse",
+            "bin": 0
+          },
+          {
+            "bg": "Телефонът",
+            "en": "The telephone",
+            "bin": 1,
+            "why": {
+              "bg": "Телефонът е на Александър Бел.",
+              "en": "The telephone is by Alexander Graham Bell."
+            }
+          },
+          {
+            "bg": "Крушката",
+            "en": "The light bulb",
+            "img": "science/lightbulb.webp",
+            "bin": 1,
+            "why": {
+              "bg": "Крушката е свързана с Томас Едисон.",
+              "en": "The light bulb is linked to Thomas Edison."
+            }
+          },
+          {
+            "bg": "Самолетът",
+            "en": "The aeroplane",
+            "bin": 1,
+            "why": {
+              "bg": "Първият полет е на братя Райт (1903 г.).",
+              "en": "The first flight was by the Wright brothers (1903)."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Какво мери българският уред „Люлин“ в космоса?",
+            "en": "What does the Bulgarian instrument \"Lyulin\" measure in space?"
+          },
+          "options": [
+            {
+              "bg": "Радиацията",
+              "en": "Radiation"
+            },
+            {
+              "bg": "Температурата на чая",
+              "en": "The temperature of tea"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Енциклопедия „България“, БАН",
+    "Институт за космически изследвания и технологии – БАН („Свет“, „Люлин“)",
+    "Учебници по „Човекът и природата“, „Човекът и обществото“, „Компютърно моделиране“ (3.–6. кл.), МОН"
+  ],
+  "review": null,
+  "draft": true
+}

@@ -4,14 +4,14 @@
 
 | Статус | Брой |
 |---|---:|
-| В приложението сега (`used`) | 152 |
-| Готови за следващ етап (`ready`) | 82 |
+| В приложението сега (`used`) | 175 |
+| Готови за следващ етап (`ready`) | 59 |
 | Данни (оригинал за препроектиране) (`source`) | 10 |
 | Дубликати на съществуващи картинки (`duplicate`) | 49 |
 | Чакат проверка (не се публикуват) (`review`) | 7 |
 | **Общо** | **300** |
 
-## В приложението сега — 152
+## В приложението сега — 175
 
 | ID | Оригинал | Път в `public/img` / същото като | Етап | Бележка / проверка |
 |---|---|---|---|---|
@@ -27,6 +27,7 @@
 | `city-veliko-tarnovo` | `design/v5/city/city-veliko-tarnovo.png` | `city/veliko-tarnovo.webp` |  | мисии |
 | `food-banitsa` | `design/v5/food/food-banitsa.png` | `food/banitsa.webp` |  | мисии |
 | `food-bob-chorba` | `design/v5/food/food-bob-chorba.png` | `food/bob-chorba.webp` |  | мисии |
+| `food-kiselo-mlyako` | `design/v5/food/food-kiselo-mlyako.png` | `food/kiselo-mlyako.webp` |  | мисии |
 | `food-kozunak` | `design/v5/food/food-kozunak.png` | `food/kozunak.webp` |  | мисии |
 | `food-lyutenitsa` | `design/v5/food/food-lyutenitsa.png` | `food/lyutenitsa.webp` |  | мисии |
 | `food-mekitsi` | `design/v5/food/food-mekitsi.png` | `food/mekitsi.webp` |  | мисии |
@@ -130,7 +131,20 @@
 | `river-maritsa` | `design/v5/river/river-maritsa.png` | `geo/maritsa.webp` |  | мисии |
 | `river-struma` | `design/v5/river/river-struma.png` | `geo/struma.webp` |  | мисии |
 | `river-yantra` | `design/v5/river/river-yantra.png` | `geo/yantra.webp` |  | мисии |
+| `science-atanasoff-computer` | `design/v5/science/science-atanasoff-computer.png` | `science/atanasoff-computer.webp` |  | мисии · Формата да се сравни със снимка на истинския предмет (музей). |
+| `science-bulgarian-yogurt` | `design/v5/science/science-bulgarian-yogurt.png` | `science/bulgarian-yogurt.webp` |  | мисии |
+| `science-computer` | `design/v5/science/science-computer.png` | `science/computer.webp` |  | мисии |
+| `science-discovery-lab` | `design/v5/science/science-discovery-lab.png` | `science/discovery-lab.webp` |  | мисии |
+| `science-invention-medal` | `design/v5/science/science-invention-medal.png` | `science/invention-medal.webp` |  | мисии |
+| `science-john-atanasoff` | `design/v5/science/science-john-atanasoff.png` | `science/john-atanasoff.webp` |  | мисии · Условен образ — сравни чертите със запазен портрет/снимка (историк). |
+| `science-lightbulb` | `design/v5/science/science-lightbulb.png` | `science/lightbulb.webp` |  | мисии |
+| `science-microscope` | `design/v5/science/science-microscope.png` | `science/microscope.webp` |  | мисии |
 | `science-rose-distillation` | `design/v5/science/science-rose-distillation.png` | `science/rose-distillation.webp` |  | Долината на розите (история) |
+| `science-telescope` | `design/v5/science/science-telescope.png` | `science/telescope.webp` |  | мисии |
+| `space-cosmonaut` | `design/v5/space/space-cosmonaut.png` | `space/cosmonaut.webp` |  | мисии |
+| `space-earth` | `design/v5/space/space-earth.png` | `space/earth.webp` |  | мисии |
+| `space-rocket` | `design/v5/space/space-rocket.png` | `space/rocket.webp` |  | мисии |
+| `space-satellite` | `design/v5/space/space-satellite.png` | `space/satellite.webp` |  | мисии |
 | `terrain-cave` | `design/v5/terrain/terrain-cave.png` | `geo/cave.webp` |  | мисии |
 | `terrain-coast` | `design/v5/terrain/terrain-coast.png` | `geo/coast.webp` |  | мисии |
 | `terrain-forest` | `design/v5/terrain/terrain-forest.png` | `geo/forest.webp` |  | мисии |
@@ -155,8 +169,12 @@
 | `tradition-lazaruvane` | `design/v5/tradition/tradition-lazaruvane.png` | `culture/lazaruvane.webp` |  | мисии |
 | `tradition-name-day` | `design/v5/tradition/tradition-name-day.png` | `culture/name-day.webp` |  | мисии |
 | `tradition-nestinarstvo` | `design/v5/tradition/tradition-nestinarstvo.png` | `culture/nestinarstvo.webp` |  | мисии · Чувствителна тема (огън, религиозен обичай) — текстът се проверява от учител. |
+| `tradition-rose-festival` | `design/v5/tradition/tradition-rose-festival.png` | `culture/rose-festival.webp` |  | мисии |
 | `tradition-survachka` | `design/v5/tradition/tradition-survachka.png` | `culture/survachka.webp` |  | мисии |
+| `ui-passport` | `design/v5/ui/ui-passport.png` | `ui/passport.webp` |  | мисии |
 | `world-border-crossing` | `design/v5/world/world-border-crossing.png` | `places/border-crossing.webp` |  | мисии |
+| `world-car-license-plate` | `design/v5/world/world-car-license-plate.svg` | `places/car-license-plate.svg` |  | мисии |
+| `world-customs` | `design/v5/world/world-customs.png` | `places/customs.webp` |  | мисии |
 | `world-mineral-hisarya` | `design/v5/world/world-mineral-hisarya.png` | `places/mineral-hisarya.webp` |  | мисии |
 | `world-mineral-sandanski` | `design/v5/world/world-mineral-sandanski.png` | `places/mineral-sandanski.webp` |  | мисии |
 | `world-mineral-velingrad` | `design/v5/world/world-mineral-velingrad.png` | `places/mineral-velingrad.webp` |  | мисии |
@@ -166,9 +184,14 @@
 | `world-ski-bansko` | `design/v5/world/world-ski-bansko.png` | `places/ski-bansko.webp` |  | мисии |
 | `world-ski-borovets` | `design/v5/world/world-ski-borovets.png` | `places/ski-borovets.webp` |  | мисии |
 | `world-ski-pamporovo` | `design/v5/world/world-ski-pamporovo.png` | `places/ski-pamporovo.webp` |  | мисии |
+| `world-sports-football` | `design/v5/world/world-sports-football.png` | `places/sports-football.webp` |  | мисии |
+| `world-sports-high-jump` | `design/v5/world/world-sports-high-jump.png` | `places/sports-high-jump.webp` |  | мисии |
+| `world-sports-tennis` | `design/v5/world/world-sports-tennis.png` | `places/sports-tennis.webp` |  | мисии |
+| `world-sports-weightlifting` | `design/v5/world/world-sports-weightlifting.png` | `places/sports-weightlifting.webp` |  | мисии |
+| `world-transport-corridor` | `design/v5/world/world-transport-corridor.png` | `places/transport-corridor.webp` |  | мисии |
 | `world-valchitran-treasure` | `design/v5/world/world-valchitran-treasure.png` | `places/valchitran-treasure.webp` |  | мисии · Формата да се сравни със снимка на истинския предмет (музей). |
 
-## Готови за следващ етап — 82
+## Готови за следващ етап — 59
 
 | ID | Оригинал | Път в `public/img` / същото като | Етап | Бележка / проверка |
 |---|---|---|---|---|
@@ -189,7 +212,6 @@
 | `currency-pendar` | `design/v5/currency/currency-pendar.png` | `currency/pendar.webp` | 9 |  |
 | `food-kavarma` | `design/v5/food/food-kavarma.png` | `food/kavarma.webp` | 6 |  |
 | `food-kebapche` | `design/v5/food/food-kebapche.png` | `food/kebapche.webp` | 6 |  |
-| `food-kiselo-mlyako` | `design/v5/food/food-kiselo-mlyako.png` | `food/kiselo-mlyako.webp` | 6 |  |
 | `food-kyufte` | `design/v5/food/food-kyufte.png` | `food/kyufte.webp` | 6 |  |
 | `food-shkembe-chorba` | `design/v5/food/food-shkembe-chorba.png` | `food/shkembe-chorba.webp` | 6 |  |
 | `game-drag-handle` | `design/v5/game/game-drag-handle.png` | `game/drag-handle.webp` | 9 |  |
@@ -212,23 +234,9 @@
 | `minigame-fairytale-flute` | `design/v5/minigame/minigame-fairytale-flute.png` | `minigame/fairytale-flute.webp` | 7 |  |
 | `minigame-hidden-object-scene` | `design/v5/minigame/minigame-hidden-object-scene.png` | `minigame/hidden-object-scene.webp` | 7 |  |
 | `river-tundzha` | `design/v5/river/river-tundzha.png` | `geo/tundzha.webp` | 3 |  |
-| `science-atanasoff-computer` | `design/v5/science/science-atanasoff-computer.png` | `science/atanasoff-computer.webp` | 8 | Формата да се сравни със снимка на истинския предмет (музей). |
-| `science-bulgarian-yogurt` | `design/v5/science/science-bulgarian-yogurt.png` | `science/bulgarian-yogurt.webp` | 8 |  |
-| `science-computer` | `design/v5/science/science-computer.png` | `science/computer.webp` | 8 |  |
-| `science-discovery-lab` | `design/v5/science/science-discovery-lab.png` | `science/discovery-lab.webp` | 8 |  |
-| `science-invention-medal` | `design/v5/science/science-invention-medal.png` | `science/invention-medal.webp` | 8 |  |
-| `science-john-atanasoff` | `design/v5/science/science-john-atanasoff.png` | `science/john-atanasoff.webp` | 8 | Условен образ — сравни чертите със запазен портрет/снимка (историк). |
-| `science-lightbulb` | `design/v5/science/science-lightbulb.png` | `science/lightbulb.webp` | 8 |  |
-| `science-microscope` | `design/v5/science/science-microscope.png` | `science/microscope.webp` | 8 |  |
-| `science-telescope` | `design/v5/science/science-telescope.png` | `science/telescope.webp` | 8 |  |
-| `space-cosmonaut` | `design/v5/space/space-cosmonaut.png` | `space/cosmonaut.webp` | 8 |  |
-| `space-earth` | `design/v5/space/space-earth.png` | `space/earth.webp` | 8 |  |
 | `space-food` | `design/v5/space/space-food.png` | `space/food.webp` | 8 |  |
-| `space-rocket` | `design/v5/space/space-rocket.png` | `space/rocket.webp` | 8 |  |
-| `space-satellite` | `design/v5/space/space-satellite.png` | `space/satellite.webp` | 8 |  |
 | `tradition-elbetitsa` | `design/v5/tradition/tradition-elbetitsa.png` | `culture/elbetitsa.webp` | 6 |  |
 | `tradition-folk-wreath` | `design/v5/tradition/tradition-folk-wreath.png` | `culture/folk-wreath.webp` | 6 |  |
-| `tradition-rose-festival` | `design/v5/tradition/tradition-rose-festival.png` | `culture/rose-festival.webp` | 6 |  |
 | `ui-back` | `design/v5/ui/ui-back.png` | `ui/back.webp` | 9 |  |
 | `ui-calendar` | `design/v5/ui/ui-calendar.png` | `ui/calendar.webp` | 6 |  |
 | `ui-forward` | `design/v5/ui/ui-forward.png` | `ui/forward.webp` | 9 |  |
@@ -239,21 +247,13 @@
 | `ui-lock` | `design/v5/ui/ui-lock.png` | `ui/lock.webp` | 9 |  |
 | `ui-music` | `design/v5/ui/ui-music.png` | `ui/music.webp` | 6 |  |
 | `ui-parental-controls` | `design/v5/ui/ui-parental-controls.png` | `ui/parental-controls.webp` | 9 |  |
-| `ui-passport` | `design/v5/ui/ui-passport.png` | `ui/passport.webp` | 9 |  |
 | `ui-profile` | `design/v5/ui/ui-profile.png` | `ui/profile.webp` | 9 |  |
 | `ui-search` | `design/v5/ui/ui-search.png` | `ui/search.webp` | 9 |  |
 | `ui-settings` | `design/v5/ui/ui-settings.png` | `ui/settings.webp` | 9 |  |
 | `ui-sound` | `design/v5/ui/ui-sound.png` | `ui/sound.webp` | 9 |  |
 | `ui-unlock` | `design/v5/ui/ui-unlock.png` | `ui/unlock.webp` | 9 |  |
 | `world-bulgaria-granary` | `design/v5/world/world-bulgaria-granary.png` | `places/bulgaria-granary.webp` | 3 |  |
-| `world-car-license-plate` | `design/v5/world/world-car-license-plate.svg` | `places/car-license-plate.svg` | 8 |  |
-| `world-customs` | `design/v5/world/world-customs.png` | `places/customs.webp` | 8 |  |
 | `world-daily-streak` | `design/v5/world/world-daily-streak.png` | `places/daily-streak.webp` | 9 |  |
-| `world-sports-football` | `design/v5/world/world-sports-football.png` | `places/sports-football.webp` | 8 |  |
-| `world-sports-high-jump` | `design/v5/world/world-sports-high-jump.png` | `places/sports-high-jump.webp` | 8 |  |
-| `world-sports-tennis` | `design/v5/world/world-sports-tennis.png` | `places/sports-tennis.webp` | 8 |  |
-| `world-sports-weightlifting` | `design/v5/world/world-sports-weightlifting.png` | `places/sports-weightlifting.webp` | 8 |  |
-| `world-transport-corridor` | `design/v5/world/world-transport-corridor.png` | `places/transport-corridor.webp` | 8 |  |
 
 ## Данни (оригинал за препроектиране) — 10
 

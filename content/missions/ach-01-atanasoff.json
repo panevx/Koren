@@ -1,0 +1,235 @@
+{
+  "id": "ach-01-atanasoff",
+  "subject": "history",
+  "free": true,
+  "order": 98,
+  "badge": {
+    "id": "atanasoff",
+    "icon": "science/atanasoff-computer.webp"
+  },
+  "title": {
+    "bg": "Джон Атанасов и първият компютър",
+    "en": "John Atanasoff and the first computer"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Първият електронен компютър бил голям колкото гардероб!",
+          "en": "The first electronic computer was as big as a wardrobe!",
+          "img": "science/atanasoff-computer.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Измислил го е човек с български корени – Джон Атанасов.",
+          "en": "A man with Bulgarian roots invented it – John Atanasoff."
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Покажи компютъра!",
+              "en": "Show the computer!"
+            },
+            "options": [
+              {
+                "bg": "Компютър",
+                "en": "Computer",
+                "img": "science/computer.webp"
+              },
+              {
+                "bg": "Микроскоп",
+                "en": "Microscope",
+                "img": "science/microscope.webp"
+              },
+              {
+                "bg": "Телескоп",
+                "en": "Telescope",
+                "img": "science/telescope.webp"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "А кой е първият, големият компютър?",
+              "en": "And which is the first, big computer?"
+            },
+            "options": [
+              {
+                "bg": "Лампа",
+                "en": "Lamp",
+                "img": "science/lightbulb.webp"
+              },
+              {
+                "bg": "Компютърът ABC",
+                "en": "The ABC computer",
+                "img": "science/atanasoff-computer.webp"
+              }
+            ],
+            "answer": 1
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Някои хора са родени далеч, но корените им са в България.",
+          "en": "Some people were born far away, but their roots are in Bulgaria.",
+          "img": "science/john-atanasoff.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "Познай кой е!",
+          "en": "Guess who it is!"
+        }
+      ],
+      "game": {
+        "type": "riddle",
+        "prompt": {
+          "bg": "Кой съм аз?",
+          "en": "Who am I?"
+        },
+        "clues": [
+          {
+            "bg": "Баща ми е българин от село Бояджик, край Ямбол.",
+            "en": "My father was a Bulgarian from the village of Boyadzhik, near Yambol."
+          },
+          {
+            "bg": "Живях в САЩ – бях физик и математик.",
+            "en": "I lived in the USA – I was a physicist and a mathematician."
+          },
+          {
+            "bg": "С Клифърд Бери построихме ABC – първия електронен цифров компютър.",
+            "en": "With Clifford Berry I built the ABC – the first electronic digital computer."
+          }
+        ],
+        "options": [
+          {
+            "bg": "Джон Атанасов",
+            "en": "John Atanasoff",
+            "img": "science/john-atanasoff.webp"
+          },
+          {
+            "bg": "Стамен Григоров",
+            "en": "Stamen Grigorov"
+          },
+          {
+            "bg": "Георги Иванов",
+            "en": "Georgi Ivanov",
+            "img": "space/cosmonaut.webp"
+          },
+          {
+            "bg": "Христо Стоичков",
+            "en": "Hristo Stoichkov"
+          }
+        ],
+        "answer": 0,
+        "fact": {
+          "bg": "Джон Атанасов (1903–1995) – „бащата на компютъра“.",
+          "en": "John Atanasoff (1903–1995) – \"the father of the computer\"."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Как се казва компютърът на Атанасов?",
+            "en": "What is the name of Atanasoff's computer?"
+          },
+          "options": [
+            {
+              "bg": "ABC",
+              "en": "ABC"
+            },
+            {
+              "bg": "XYZ",
+              "en": "XYZ"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "През 1973 г. съд в САЩ решава, че идеята за електронния цифров компютър е на Атанасов.",
+          "en": "In 1973 a US court ruled that the idea of the electronic digital computer was Atanasoff's.",
+          "img": "science/atanasoff-computer.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "compass",
+          "bg": "Подреди историята на компютрите.",
+          "en": "Put the story of computers in order."
+        }
+      ],
+      "game": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди – от най-ранното!",
+          "en": "Order them – the earliest first!"
+        },
+        "items": [
+          {
+            "bg": "Компютърът ABC на Атанасов и Бери (1937–1942)",
+            "en": "The ABC of Atanasoff and Berry (1937–1942)",
+            "img": "science/atanasoff-computer.webp"
+          },
+          {
+            "bg": "ENIAC – огромен компютър в цяла зала (1945)",
+            "en": "ENIAC – a huge computer filling a room (1945)"
+          },
+          {
+            "bg": "Първите домашни компютри (1970-те)",
+            "en": "The first home computers (1970s)",
+            "img": "science/computer.webp"
+          },
+          {
+            "bg": "Смартфоните (2000-те)",
+            "en": "Smartphones (2000s)"
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Какво значи „цифров“ компютър?",
+            "en": "What does \"digital\" computer mean?"
+          },
+          "options": [
+            {
+              "bg": "Смята с числата 0 и 1",
+              "en": "It computes with the numbers 0 and 1"
+            },
+            {
+              "bg": "Има циферблат",
+              "en": "It has a dial"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Енциклопедия „България“, БАН",
+    "Учебници по „Човекът и природата“, „Човекът и обществото“, „Компютърно моделиране“ (3.–6. кл.), МОН",
+    "Iowa State University – Atanasoff–Berry Computer",
+    "Образът на Атанасов е условен – по снимки"
+  ],
+  "review": null,
+  "draft": true
+}
