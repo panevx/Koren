@@ -1,0 +1,292 @@
+{
+  "id": "cult-04-kukeri",
+  "subject": "culture",
+  "free": true,
+  "order": 79,
+  "unlock": {
+    "after": [
+      "cult-01-baba-marta"
+    ]
+  },
+  "badge": {
+    "id": "kukeri",
+    "icon": "culture/kukeri.webp"
+  },
+  "title": {
+    "bg": "Кукери, коледари и лазарки",
+    "en": "Kukeri, carol singers and lazarki"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Чуваш ли звънците? Идват кукерите!",
+          "en": "Can you hear the bells? Here come the kukeri!",
+          "img": "culture/kukeri.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Обърни картите и намери еднаквите празнуващи.",
+          "en": "Turn the cards and find the matching celebrations."
+        }
+      ],
+      "game": {
+        "type": "memory",
+        "prompt": {
+          "bg": "Намери двете еднакви картинки!",
+          "en": "Find the two matching pictures!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Кукери",
+              "en": "Kukeri",
+              "img": "culture/kukeri.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Коледари",
+              "en": "Koledari (carol singers)",
+              "img": "culture/koledari.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Лазарки",
+              "en": "Lazarki",
+              "img": "culture/lazaruvane.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Сурвакари",
+              "en": "Survakari",
+              "img": "culture/survachka.webp"
+            }
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Всеки обичай си има свое време от годината.",
+          "en": "Every custom has its own time of the year.",
+          "img": "culture/koledari.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Свържи обичая с това кога и защо го правим.",
+          "en": "Match each custom with when and why we do it."
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи обичая с неговото време!",
+          "en": "Match the custom with its time!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Коледари",
+              "en": "Koledari (carol singers)",
+              "img": "culture/koledari.webp"
+            },
+            "b": {
+              "bg": "В нощта срещу Коледа пеят за здраве",
+              "en": "On Christmas Eve night they sing for good health"
+            }
+          },
+          {
+            "a": {
+              "bg": "Сурвакари",
+              "en": "Survakari",
+              "img": "culture/survachka.webp"
+            },
+            "b": {
+              "bg": "На Нова година потупват с дрянова сурвачка",
+              "en": "On New Year they tap people with a cornel branch"
+            }
+          },
+          {
+            "a": {
+              "bg": "Кукери",
+              "en": "Kukeri",
+              "img": "culture/kukeri.webp"
+            },
+            "b": {
+              "bg": "През зимата гонят злото със звънци",
+              "en": "In winter they chase away evil with bells"
+            }
+          },
+          {
+            "a": {
+              "bg": "Лазарки",
+              "en": "Lazarki",
+              "img": "culture/lazaruvane.webp"
+            },
+            "b": {
+              "bg": "Напролет, на Лазаровден, момичета пеят",
+              "en": "In spring, on St Lazarus Day, girls sing"
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "С какво сурвакат на Нова година?",
+            "en": "What do people tap with on New Year?"
+          },
+          "options": [
+            {
+              "bg": "Със сурвачка от дрян",
+              "en": "A cornel-wood survachka"
+            },
+            {
+              "bg": "С метла",
+              "en": "A broom"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Някои обичаи са зимни, други – пролетни. Те следват годината на земеделеца.",
+          "en": "Some customs are for winter, others for spring. They follow the farmer's year.",
+          "img": "culture/lazaruvane.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "compass",
+          "bg": "Подреди ги по сезони.",
+          "en": "Sort them by season."
+        }
+      ],
+      "game": {
+        "type": "sort",
+        "prompt": {
+          "bg": "Зимен или пролетен обичай?",
+          "en": "A winter or a spring custom?"
+        },
+        "bins": [
+          {
+            "bg": "Зима",
+            "en": "Winter"
+          },
+          {
+            "bg": "Пролет",
+            "en": "Spring"
+          }
+        ],
+        "items": [
+          {
+            "bg": "Коледуване",
+            "en": "Carol singing",
+            "bin": 0
+          },
+          {
+            "bg": "Сурвакане",
+            "en": "Survakane",
+            "bin": 0
+          },
+          {
+            "bg": "Кукерски игри",
+            "en": "Kukeri games",
+            "bin": 0,
+            "why": {
+              "bg": "Кукерите играят от Нова година до Сирни заговезни – през зимата.",
+              "en": "Kukeri play from New Year to Shrovetide – in winter."
+            }
+          },
+          {
+            "bg": "Бъдни вечер",
+            "en": "Christmas Eve",
+            "bin": 0
+          },
+          {
+            "bg": "Лазаруване",
+            "en": "Lazaruvane",
+            "bin": 1
+          },
+          {
+            "bg": "Баба Марта",
+            "en": "Baba Marta",
+            "bin": 1
+          },
+          {
+            "bg": "Цветница",
+            "en": "Palm Sunday",
+            "bin": 1
+          },
+          {
+            "bg": "Великден",
+            "en": "Easter",
+            "bin": 1
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "В кой град е фестивалът на маскарадните игри „Сурва“?",
+            "en": "Which town hosts the \"Surva\" masquerade festival?"
+          },
+          "options": [
+            {
+              "bg": "Перник",
+              "en": "Pernik"
+            },
+            {
+              "bg": "Варна",
+              "en": "Varna"
+            },
+            {
+              "bg": "Русе",
+              "en": "Ruse"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Защо кукерите носят тежки звънци и страшни маски?",
+            "en": "Why do kukeri wear heavy bells and scary masks?"
+          },
+          "options": [
+            {
+              "bg": "За да прогонят злото и да има плодородие",
+              "en": "To chase away evil and bring a good harvest"
+            },
+            {
+              "bg": "За да спят по-добре",
+              "en": "To sleep better"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Институт за етнология и фолклористика с Етнографски музей – БАН",
+    "Учебници по „Музика“, „Технологии“ и „Човекът и обществото“ (1.–6. кл.), МОН",
+    "ЮНЕСКО – Представителен списък на нематериалното културно наследство (България) – „Сурова“, Пернишко (2015)"
+  ],
+  "review": null,
+  "draft": true
+}

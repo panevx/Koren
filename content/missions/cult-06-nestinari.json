@@ -1,0 +1,198 @@
+{
+  "id": "cult-06-nestinari",
+  "subject": "culture",
+  "free": true,
+  "order": 81,
+  "ages": [
+    "young",
+    "guard"
+  ],
+  "unlock": {
+    "after": [
+      "cult-05-easter"
+    ]
+  },
+  "badge": {
+    "id": "nestinari",
+    "icon": "culture/nestinarstvo.webp"
+  },
+  "title": {
+    "bg": "Нестинари и наследството ни",
+    "en": "Fire dancers and our heritage"
+  },
+  "levels": {
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "В Странджа има стар обичай: нестинарите танцуват боси върху жарава.",
+          "en": "In Strandzha there is an old custom: the nestinari dance barefoot on embers.",
+          "img": "culture/nestinarstvo.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "Това правят само посветените, по стари правила. Никога не го опитвай!",
+          "en": "Only those initiated do it, by old rules. Never try it yourself!"
+        }
+      ],
+      "game": {
+        "type": "riddle",
+        "prompt": {
+          "bg": "Кой обичай е това?",
+          "en": "Which custom is this?"
+        },
+        "clues": [
+          {
+            "bg": "Празнува се в Странджа, в село Българи.",
+            "en": "It is held in Strandzha, in the village of Bulgari."
+          },
+          {
+            "bg": "Танцьорите носят иконите на светите Константин и Елена.",
+            "en": "The dancers carry icons of Saints Constantine and Helena."
+          },
+          {
+            "bg": "Танцуват боси върху жарава.",
+            "en": "They dance barefoot on embers."
+          }
+        ],
+        "options": [
+          {
+            "bg": "Нестинарство",
+            "en": "Nestinarstvo (fire dancing)",
+            "img": "culture/nestinarstvo.webp"
+          },
+          {
+            "bg": "Кукери",
+            "en": "Kukeri",
+            "img": "culture/kukeri.webp"
+          },
+          {
+            "bg": "Лазаруване",
+            "en": "Lazaruvane",
+            "img": "culture/lazaruvane.webp"
+          }
+        ],
+        "answer": 0,
+        "fact": {
+          "bg": "Нестинарството е в списъка на ЮНЕСКО от 2009 г.",
+          "en": "Nestinarstvo has been on the UNESCO list since 2009."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Може ли да опиташ да ходиш по жарава вкъщи?",
+            "en": "May you try walking on embers at home?"
+          },
+          "options": [
+            {
+              "bg": "Не – това е опасно и е обичай само за посветените",
+              "en": "No – it is dangerous and only for the initiated"
+            },
+            {
+              "bg": "Да",
+              "en": "Yes"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Шест български обичая и умения са в списъка на ЮНЕСКО за нематериално наследство.",
+          "en": "Several Bulgarian customs and skills are on the UNESCO intangible heritage list.",
+          "img": "culture/nestinarstvo.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "map",
+          "bg": "Свържи традицията с мястото ѝ.",
+          "en": "Match each tradition with its place."
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи традицията с мястото ѝ!",
+          "en": "Match the tradition with its place!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Нестинарство",
+              "en": "Nestinarstvo",
+              "img": "culture/nestinarstvo.webp"
+            },
+            "b": {
+              "bg": "Село Българи, Странджа",
+              "en": "The village of Bulgari, Strandzha"
+            }
+          },
+          {
+            "a": {
+              "bg": "Сурова – кукерски игри",
+              "en": "Surova – kukeri games",
+              "img": "culture/kukeri.webp"
+            },
+            "b": {
+              "bg": "Пернишко",
+              "en": "The Pernik region"
+            }
+          },
+          {
+            "a": {
+              "bg": "Бистришките баби",
+              "en": "The Bistritsa grannies",
+              "img": "culture/horo.webp"
+            },
+            "b": {
+              "bg": "Село Бистрица, до София",
+              "en": "The village of Bistritsa, near Sofia"
+            }
+          },
+          {
+            "a": {
+              "bg": "Чипровски килими",
+              "en": "Chiprovtsi carpets"
+            },
+            "b": {
+              "bg": "Чипровци",
+              "en": "Chiprovtsi"
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Какво значи „нематериално наследство“?",
+            "en": "What does \"intangible heritage\" mean?"
+          },
+          "options": [
+            {
+              "bg": "Умения, песни и обичаи, предавани от човек на човек",
+              "en": "Skills, songs and customs passed from person to person"
+            },
+            {
+              "bg": "Само сгради и паметници",
+              "en": "Only buildings and monuments"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "ЮНЕСКО – Представителен списък на нематериалното културно наследство (България)",
+    "Институт за етнология и фолклористика с Етнографски музей – БАН"
+  ],
+  "review": null,
+  "draft": true
+}

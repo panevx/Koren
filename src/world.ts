@@ -47,4 +47,6 @@ export const GAME_ART: Record<string, string> = {
   regions: 'game/puzzle-blue.webp',
   assemble: 'minigame/fortress-tower.webp',
   riddle: 'game/letter-tile.webp',
+  cook: 'minigame/cooking-pot.webp',
+  paint: 'game/paintbrush.webp',
 }

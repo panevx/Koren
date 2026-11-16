@@ -1,0 +1,272 @@
+{
+  "id": "cult-13-food-map",
+  "subject": "culture",
+  "free": true,
+  "order": 88,
+  "unlock": {
+    "after": [
+      "cult-12-banitsa-lyutenitsa"
+    ]
+  },
+  "badge": {
+    "id": "food-map",
+    "icon": "food/patatnik.webp"
+  },
+  "title": {
+    "bg": "Вкусна България",
+    "en": "Tasty Bulgaria"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "chef",
+          "bg": "Колко вкусни неща има в България!",
+          "en": "How many tasty things there are in Bulgaria!",
+          "img": "food/mekitsi.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Намери двете еднакви гозби.",
+          "en": "Find the two matching dishes."
+        }
+      ],
+      "game": {
+        "type": "memory",
+        "prompt": {
+          "bg": "Намери двете еднакви гозби!",
+          "en": "Find the two matching dishes!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Баница",
+              "en": "Banitsa",
+              "img": "food/banitsa.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Козунак",
+              "en": "Kozunak",
+              "img": "food/kozunak.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Мекици",
+              "en": "Mekitsi",
+              "img": "food/mekitsi.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Таратор",
+              "en": "Tarator",
+              "img": "food/tarator.webp"
+            }
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "На Бъдни вечер трапезата е постна – без месо. На Великден има козунак и яйца.",
+          "en": "On Christmas Eve the table is meatless. At Easter there are kozunak and eggs.",
+          "img": "culture/christmas-bread.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Кое ястие за кой празник е?",
+          "en": "Which dish is for which holiday?"
+        }
+      ],
+      "game": {
+        "type": "sort",
+        "prompt": {
+          "bg": "За Бъдни вечер или за Великден?",
+          "en": "For Christmas Eve or for Easter?"
+        },
+        "bins": [
+          {
+            "bg": "Бъдни вечер",
+            "en": "Christmas Eve",
+            "img": "culture/christmas-bread.webp"
+          },
+          {
+            "bg": "Великден",
+            "en": "Easter",
+            "img": "culture/easter-eggs.webp"
+          }
+        ],
+        "items": [
+          {
+            "bg": "Боб",
+            "en": "Beans",
+            "img": "food/bob-chorba.webp",
+            "bin": 0
+          },
+          {
+            "bg": "Тиквеник",
+            "en": "Pumpkin pie",
+            "img": "food/tikvenik.webp",
+            "bin": 0
+          },
+          {
+            "bg": "Постни сарми",
+            "en": "Meatless sarmi",
+            "img": "food/sarmi.webp",
+            "bin": 0,
+            "why": {
+              "bg": "На Бъдни вечер сармите са с ориз, без месо.",
+              "en": "On Christmas Eve sarmi are made with rice, without meat."
+            }
+          },
+          {
+            "bg": "Козунак",
+            "en": "Kozunak",
+            "img": "food/kozunak.webp",
+            "bin": 1
+          },
+          {
+            "bg": "Червени яйца",
+            "en": "Red eggs",
+            "img": "minigame/easter-egg-decorated.webp",
+            "bin": 1
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Защо на Бъдни вечер няма месо?",
+            "en": "Why is there no meat on Christmas Eve?"
+          },
+          "options": [
+            {
+              "bg": "Това е последният ден от поста",
+              "en": "It is the last day of the fast"
+            },
+            {
+              "bg": "Защото месото е свършило",
+              "en": "Because the meat ran out"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "map",
+          "bg": "Всеки край на България има своя гозба.",
+          "en": "Every corner of Bulgaria has its own dish.",
+          "img": "food/patatnik.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "compass",
+          "bg": "Свържи гозбата с мястото или празника.",
+          "en": "Match the dish with its place or holiday."
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи гозбата с мястото или празника!",
+          "en": "Match the dish with its place or holiday!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Пататник",
+              "en": "Patatnik",
+              "img": "food/patatnik.webp"
+            },
+            "b": {
+              "bg": "Родопите",
+              "en": "The Rhodopes"
+            }
+          },
+          {
+            "a": {
+              "bg": "Шопска салата",
+              "en": "Shopska salad",
+              "img": "food/shopska-salad.webp"
+            },
+            "b": {
+              "bg": "Шопският край около София",
+              "en": "The Shop region around Sofia"
+            }
+          },
+          {
+            "a": {
+              "bg": "Риба",
+              "en": "Fish"
+            },
+            "b": {
+              "bg": "Никулден",
+              "en": "St Nicholas' Day"
+            }
+          },
+          {
+            "a": {
+              "bg": "Баница с късмети",
+              "en": "Banitsa with lucky charms",
+              "img": "food/banitsa.webp"
+            },
+            "b": {
+              "bg": "Нова година",
+              "en": "New Year"
+            }
+          },
+          {
+            "a": {
+              "bg": "Козунак",
+              "en": "Kozunak",
+              "img": "food/kozunak.webp"
+            },
+            "b": {
+              "bg": "Великден",
+              "en": "Easter"
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "От какво се прави пататникът?",
+            "en": "What is patatnik made of?"
+          },
+          "options": [
+            {
+              "bg": "От картофи",
+              "en": "Potatoes"
+            },
+            {
+              "bg": "От тиква",
+              "en": "Pumpkin"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Традиционни рецепти – „Българска национална кухня“ (сборници); рецептите са опростени за деца",
+    "Институт за етнология и фолклористика с Етнографски музей – БАН"
+  ],
+  "review": null,
+  "draft": true
+}

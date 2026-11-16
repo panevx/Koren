@@ -1,0 +1,346 @@
+{
+  "id": "cult-12-banitsa-lyutenitsa",
+  "subject": "culture",
+  "free": true,
+  "order": 87,
+  "unlock": {
+    "after": [
+      "cult-11-salad-tarator"
+    ]
+  },
+  "badge": {
+    "id": "banitsa",
+    "icon": "food/banitsa.webp"
+  },
+  "title": {
+    "bg": "Баница и лютеница",
+    "en": "Banitsa and lyutenitsa"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "chef",
+          "bg": "Кората за баницата вече е разстлана. Сега – плънката!",
+          "en": "The pastry for the banitsa is already rolled out. Now – the filling!",
+          "img": "food/banitsa.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Сложи в купата сирене, яйца и кисело мляко.",
+          "en": "Put cheese, eggs and yogurt in the bowl."
+        }
+      ],
+      "game": {
+        "type": "cook",
+        "prompt": {
+          "bg": "Направи плънката за баницата!",
+          "en": "Make the filling for the banitsa!"
+        },
+        "dish": {
+          "bg": "Баница",
+          "en": "Banitsa",
+          "img": "food/banitsa.webp"
+        },
+        "vessel": "minigame/cooking-pot.webp",
+        "ingredients": [
+          {
+            "bg": "Сирене",
+            "en": "White cheese",
+            "img": "food/cheese.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Яйца",
+            "en": "Eggs",
+            "img": "minigame/easter-egg-blank.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Кисело мляко",
+            "en": "Yogurt",
+            "img": "food/yogurt.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Домат",
+            "en": "Tomato",
+            "img": "food/tomato.webp",
+            "belongs": false,
+            "why": {
+              "bg": "В баницата няма домати.",
+              "en": "There are no tomatoes in banitsa."
+            }
+          },
+          {
+            "bg": "Краставица",
+            "en": "Cucumber",
+            "img": "food/cucumber.webp",
+            "belongs": false,
+            "why": {
+              "bg": "Краставицата е за салата.",
+              "en": "The cucumber is for salad."
+            }
+          }
+        ],
+        "done": {
+          "bg": "Баницата е във фурната… и ето я! Ммм!",
+          "en": "The banitsa goes in the oven… and here it is! Mmm!"
+        }
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "chef",
+          "bg": "Наесен в двора пекат чушки – правят лютеница за цялата зима.",
+          "en": "In autumn people roast peppers in the yard – they make lyutenitsa for the whole winter.",
+          "img": "food/lyutenitsa.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Избери съставките и подреди стъпките.",
+          "en": "Pick the ingredients and order the steps."
+        }
+      ],
+      "game": {
+        "type": "cook",
+        "prompt": {
+          "bg": "Направи лютеница!",
+          "en": "Make lyutenitsa!"
+        },
+        "dish": {
+          "bg": "Лютеница",
+          "en": "Lyutenitsa",
+          "img": "food/lyutenitsa.webp"
+        },
+        "vessel": "minigame/cooking-pot.webp",
+        "ingredients": [
+          {
+            "bg": "Чушка",
+            "en": "Pepper",
+            "img": "food/pepper.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Домат",
+            "en": "Tomato",
+            "img": "food/tomato.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Олио",
+            "en": "Oil",
+            "belongs": true
+          },
+          {
+            "bg": "Сол",
+            "en": "Salt",
+            "belongs": true
+          },
+          {
+            "bg": "Краставица",
+            "en": "Cucumber",
+            "img": "food/cucumber.webp",
+            "belongs": false,
+            "why": {
+              "bg": "В лютеницата няма краставици.",
+              "en": "There are no cucumbers in lyutenitsa."
+            }
+          },
+          {
+            "bg": "Кисело мляко",
+            "en": "Yogurt",
+            "img": "food/yogurt.webp",
+            "belongs": false,
+            "why": {
+              "bg": "Киселото мляко не се вари с чушките.",
+              "en": "Yogurt is not cooked with the peppers."
+            }
+          }
+        ],
+        "steps": [
+          {
+            "bg": "Опечи чушките",
+            "en": "Roast the peppers"
+          },
+          {
+            "bg": "Обели ги",
+            "en": "Peel them"
+          },
+          {
+            "bg": "Смели ги с доматите",
+            "en": "Mince them with the tomatoes"
+          },
+          {
+            "bg": "Вари дълго, като бъркаш",
+            "en": "Cook for a long time, stirring"
+          },
+          {
+            "bg": "Напълни бурканите",
+            "en": "Fill the jars"
+          }
+        ],
+        "done": {
+          "bg": "Лютеницата е в бурканите – до пролетта!",
+          "en": "The lyutenitsa is in the jars – until spring!"
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кога се прави лютеница?",
+            "en": "When is lyutenitsa made?"
+          },
+          "options": [
+            {
+              "bg": "Наесен, когато чушките са узрели",
+              "en": "In autumn, when the peppers are ripe"
+            },
+            {
+              "bg": "През зимата",
+              "en": "In winter"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "chef",
+          "bg": "На Нова година в баницата слагат късмети – който ги намери, ще има такава година.",
+          "en": "On New Year lucky charms are put in the banitsa – whoever finds one will have such a year.",
+          "img": "food/banitsa.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "compass",
+          "bg": "Цялата рецепта – съставки и стъпки.",
+          "en": "The whole recipe – ingredients and steps."
+        }
+      ],
+      "game": {
+        "type": "cook",
+        "prompt": {
+          "bg": "Направи новогодишна баница!",
+          "en": "Make a New Year banitsa!"
+        },
+        "dish": {
+          "bg": "Баница",
+          "en": "Banitsa",
+          "img": "food/banitsa.webp"
+        },
+        "vessel": "minigame/cooking-pot.webp",
+        "ingredients": [
+          {
+            "bg": "Тънки кори",
+            "en": "Filo pastry",
+            "belongs": true
+          },
+          {
+            "bg": "Сирене",
+            "en": "White cheese",
+            "img": "food/cheese.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Яйца",
+            "en": "Eggs",
+            "img": "minigame/easter-egg-blank.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Кисело мляко",
+            "en": "Yogurt",
+            "img": "food/yogurt.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Масло",
+            "en": "Butter",
+            "belongs": true
+          },
+          {
+            "bg": "Късмети",
+            "en": "Lucky charms",
+            "belongs": true
+          },
+          {
+            "bg": "Захар на прах",
+            "en": "Icing sugar",
+            "belongs": false,
+            "why": {
+              "bg": "Тази баница е солена – със сирене.",
+              "en": "This banitsa is savoury – with cheese."
+            }
+          },
+          {
+            "bg": "Домат",
+            "en": "Tomato",
+            "img": "food/tomato.webp",
+            "belongs": false,
+            "why": {
+              "bg": "В баницата няма домати.",
+              "en": "There are no tomatoes in banitsa."
+            }
+          }
+        ],
+        "steps": [
+          {
+            "bg": "Разбий яйцата с киселото мляко",
+            "en": "Whisk the eggs with the yogurt"
+          },
+          {
+            "bg": "Натроши сиренето",
+            "en": "Crumble the cheese"
+          },
+          {
+            "bg": "Редувай кори и плънка, сложи късметите",
+            "en": "Layer pastry and filling, add the charms"
+          },
+          {
+            "bg": "Печи във фурната",
+            "en": "Bake in the oven"
+          }
+        ],
+        "done": {
+          "bg": "Честита Нова година! Кой ли ще намери късмета за здраве?",
+          "en": "Happy New Year! Who will find the charm for good health?"
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Какво се слага в новогодишната баница?",
+            "en": "What goes into the New Year banitsa?"
+          },
+          "options": [
+            {
+              "bg": "Късмети",
+              "en": "Lucky charms"
+            },
+            {
+              "bg": "Мартеници",
+              "en": "Martenitsi"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Традиционни рецепти – „Българска национална кухня“ (сборници); рецептите са опростени за деца",
+    "Институт за етнология и фолклористика с Етнографски музей – БАН"
+  ],
+  "review": null,
+  "draft": true
+}

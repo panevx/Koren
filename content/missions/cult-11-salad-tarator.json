@@ -1,0 +1,339 @@
+{
+  "id": "cult-11-salad-tarator",
+  "subject": "culture",
+  "free": true,
+  "order": 86,
+  "badge": {
+    "id": "salad-tarator",
+    "icon": "food/shopska-salad.webp"
+  },
+  "title": {
+    "bg": "Шопска салата и таратор",
+    "en": "Shopska salad and tarator"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "chef",
+          "bg": "Днес сме готвачи! Правим шопска салата.",
+          "en": "Today we are cooks! We're making shopska salad.",
+          "img": "food/shopska-salad.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Сложи в купата само зеленчуците и сиренето.",
+          "en": "Put only the vegetables and the cheese in the bowl."
+        }
+      ],
+      "game": {
+        "type": "cook",
+        "prompt": {
+          "bg": "Направи шопска салата!",
+          "en": "Make a shopska salad!"
+        },
+        "dish": {
+          "bg": "Шопска салата",
+          "en": "Shopska salad",
+          "img": "food/shopska-salad.webp"
+        },
+        "vessel": "minigame/clay-pot.webp",
+        "ingredients": [
+          {
+            "bg": "Домат",
+            "en": "Tomato",
+            "img": "food/tomato.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Краставица",
+            "en": "Cucumber",
+            "img": "food/cucumber.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Чушка",
+            "en": "Pepper",
+            "img": "food/pepper.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Сирене",
+            "en": "White cheese",
+            "img": "food/cheese.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Козунак",
+            "en": "Kozunak",
+            "img": "food/kozunak.webp",
+            "belongs": false,
+            "why": {
+              "bg": "Козунакът е сладък хляб – не е за салата.",
+              "en": "Kozunak is sweet bread – not for a salad."
+            }
+          }
+        ],
+        "done": {
+          "bg": "Ето я шопската салата! Бяло, зелено и червено – като знамето.",
+          "en": "Here is the shopska salad! White, green and red – like the flag."
+        }
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "chef",
+          "bg": "Шопската салата носи името на шопите – хората от края около София.",
+          "en": "Shopska salad is named after the Shopi – the people of the area around Sofia.",
+          "img": "food/shopska-salad.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Първо съставките, после стъпките!",
+          "en": "First the ingredients, then the steps!"
+        }
+      ],
+      "game": {
+        "type": "cook",
+        "prompt": {
+          "bg": "Направи шопска салата!",
+          "en": "Make a shopska salad!"
+        },
+        "dish": {
+          "bg": "Шопска салата",
+          "en": "Shopska salad",
+          "img": "food/shopska-salad.webp"
+        },
+        "vessel": "minigame/clay-pot.webp",
+        "ingredients": [
+          {
+            "bg": "Домат",
+            "en": "Tomato",
+            "img": "food/tomato.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Краставица",
+            "en": "Cucumber",
+            "img": "food/cucumber.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Чушка",
+            "en": "Pepper",
+            "img": "food/pepper.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Сирене",
+            "en": "White cheese",
+            "img": "food/cheese.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Лук",
+            "en": "Onion",
+            "belongs": true
+          },
+          {
+            "bg": "Магданоз",
+            "en": "Parsley",
+            "belongs": true
+          },
+          {
+            "bg": "Кисело мляко",
+            "en": "Yogurt",
+            "img": "food/yogurt.webp",
+            "belongs": false,
+            "why": {
+              "bg": "Киселото мляко е за таратора, не за шопската салата.",
+              "en": "Yogurt is for tarator, not for shopska salad."
+            }
+          },
+          {
+            "bg": "Захар",
+            "en": "Sugar",
+            "belongs": false,
+            "why": {
+              "bg": "Салатата е солена, не сладка.",
+              "en": "The salad is salty, not sweet."
+            }
+          }
+        ],
+        "steps": [
+          {
+            "bg": "Измий зеленчуците",
+            "en": "Wash the vegetables"
+          },
+          {
+            "bg": "Нарежи ги",
+            "en": "Chop them"
+          },
+          {
+            "bg": "Сложи сол и олио",
+            "en": "Add salt and oil"
+          },
+          {
+            "bg": "Настържи сирене отгоре",
+            "en": "Grate cheese on top"
+          }
+        ],
+        "done": {
+          "bg": "Готово! Сиренето винаги е най-отгоре.",
+          "en": "Done! The cheese always goes on top."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Откъде идва името „шопска“?",
+            "en": "Where does the name \"shopska\" come from?"
+          },
+          "options": [
+            {
+              "bg": "От шопите край София",
+              "en": "From the Shopi near Sofia"
+            },
+            {
+              "bg": "От думата „шоп“ – магазин",
+              "en": "From \"shop\""
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "chef",
+          "bg": "Тараторът е студена супа за горещите летни дни.",
+          "en": "Tarator is a cold soup for hot summer days.",
+          "img": "food/tarator.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "compass",
+          "bg": "Внимание: някои съставки са капани!",
+          "en": "Careful: some ingredients are traps!"
+        }
+      ],
+      "game": {
+        "type": "cook",
+        "prompt": {
+          "bg": "Направи таратор!",
+          "en": "Make tarator!"
+        },
+        "dish": {
+          "bg": "Таратор",
+          "en": "Tarator",
+          "img": "food/tarator.webp"
+        },
+        "vessel": "minigame/clay-pot.webp",
+        "ingredients": [
+          {
+            "bg": "Кисело мляко",
+            "en": "Yogurt",
+            "img": "food/yogurt.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Краставица",
+            "en": "Cucumber",
+            "img": "food/cucumber.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Чесън",
+            "en": "Garlic",
+            "belongs": true
+          },
+          {
+            "bg": "Копър",
+            "en": "Dill",
+            "belongs": true
+          },
+          {
+            "bg": "Орехи",
+            "en": "Walnuts",
+            "belongs": true
+          },
+          {
+            "bg": "Студена вода",
+            "en": "Cold water",
+            "belongs": true
+          },
+          {
+            "bg": "Домат",
+            "en": "Tomato",
+            "img": "food/tomato.webp",
+            "belongs": false,
+            "why": {
+              "bg": "Доматите не са за таратор – те са за салатата.",
+              "en": "Tomatoes are not for tarator – they are for the salad."
+            }
+          },
+          {
+            "bg": "Олио",
+            "en": "Oil",
+            "belongs": true
+          }
+        ],
+        "steps": [
+          {
+            "bg": "Разбий киселото мляко с вода",
+            "en": "Whisk the yogurt with water"
+          },
+          {
+            "bg": "Нарежи краставицата на кубчета",
+            "en": "Dice the cucumber"
+          },
+          {
+            "bg": "Добави чесън, копър и орехи",
+            "en": "Add garlic, dill and walnuts"
+          },
+          {
+            "bg": "Охлади преди сервиране",
+            "en": "Chill before serving"
+          }
+        ],
+        "done": {
+          "bg": "Свеж таратор! Яде се студен, понякога с лед.",
+          "en": "Fresh tarator! It is eaten cold, sometimes with ice."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кога най-често се яде таратор?",
+            "en": "When is tarator eaten most often?"
+          },
+          "options": [
+            {
+              "bg": "Лятото, в жегите",
+              "en": "In summer, when it is hot"
+            },
+            {
+              "bg": "На Коледа",
+              "en": "At Christmas"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Традиционни рецепти – „Българска национална кухня“ (сборници); рецептите са опростени за деца",
+    "Институт за етнология и фолклористика с Етнографски музей – БАН"
+  ],
+  "review": null,
+  "draft": true
+}

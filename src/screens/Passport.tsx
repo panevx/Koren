@@ -171,7 +171,7 @@ function BadgeItem({ mission, has, i }: { mission: Mission; has: boolean; i: num
           />
         )}
       </span>
-      <span className={`w-full leading-tight font-extrabold ${has ? 'text-sm' : 'text-[length:clamp(0.55rem,10.5cqw,0.75rem)] text-muted'}`}>{l(mission.title)}</span>
+      <span className={`w-full leading-tight font-extrabold ${has ? 'text-[length:clamp(0.5rem,10.5cqw,0.875rem)]' : 'text-[length:clamp(0.42rem,10.5cqw,0.75rem)] text-muted'}`}>{l(mission.title)}</span>
       <span className={`flex items-center gap-1 text-xs font-bold ${has ? 'text-green-dark' : 'sr-only'}`}>
         {has && <Icon name="check" width="1em" height="1em" />}
         {has ? t('passport.earned') : t('passport.locked')}

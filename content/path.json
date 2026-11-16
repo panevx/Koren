@@ -197,6 +197,40 @@
         "hist-10-botev",
         "hist-12-thracian-gold"
       ]
+    },
+    {
+      "title": {
+        "bg": "Обичаи и празници",
+        "en": "Customs and holidays"
+      },
+      "missions": [
+        "cult-04-kukeri",
+        "cult-05-easter",
+        "cult-06-nestinari",
+        "cult-10-name-days"
+      ]
+    },
+    {
+      "title": {
+        "bg": "Майстори и музика",
+        "en": "Masters and music"
+      },
+      "missions": [
+        "cult-07-embroidery",
+        "cult-08-instruments",
+        "cult-09-crafts"
+      ]
+    },
+    {
+      "title": {
+        "bg": "Българската кухня",
+        "en": "Bulgarian cooking"
+      },
+      "missions": [
+        "cult-11-salad-tarator",
+        "cult-12-banitsa-lyutenitsa",
+        "cult-13-food-map"
+      ]
     }
   ]
 }

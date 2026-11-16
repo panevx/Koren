@@ -1,0 +1,277 @@
+{
+  "id": "cult-08-instruments",
+  "subject": "culture",
+  "free": true,
+  "order": 84,
+  "unlock": {
+    "after": [
+      "cult-07-embroidery"
+    ]
+  },
+  "badge": {
+    "id": "instruments",
+    "icon": "culture/gaida.webp"
+  },
+  "title": {
+    "bg": "Народните инструменти",
+    "en": "Folk instruments"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Хоро без музика не става! Ето инструментите.",
+          "en": "No horo dance without music! Here are the instruments.",
+          "img": "culture/horo.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Намери двата еднакви инструмента.",
+          "en": "Find the two matching instruments."
+        }
+      ],
+      "game": {
+        "type": "memory",
+        "prompt": {
+          "bg": "Намери двата еднакви инструмента!",
+          "en": "Find the two matching instruments!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Гайда",
+              "en": "Gaida (bagpipe)",
+              "img": "culture/gaida.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Кавал",
+              "en": "Kaval (flute)",
+              "img": "culture/kaval.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Гъдулка",
+              "en": "Gadulka (fiddle)",
+              "img": "culture/gadulka.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Тъпан",
+              "en": "Tapan (drum)",
+              "img": "culture/folk-drum.webp"
+            }
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Всеки инструмент свири по своему – с дъх, с лък или с палка.",
+          "en": "Each instrument plays its own way – with breath, a bow or a stick.",
+          "img": "culture/gadulka.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Свържи инструмента с това как се свири.",
+          "en": "Match each instrument with how it is played."
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Как се свири?",
+          "en": "How is it played?"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Гайда",
+              "en": "Gaida (bagpipe)",
+              "img": "culture/gaida.webp"
+            },
+            "b": {
+              "bg": "Духа се в мях от кожа",
+              "en": "You blow into a leather bag"
+            }
+          },
+          {
+            "a": {
+              "bg": "Кавал",
+              "en": "Kaval (flute)",
+              "img": "culture/kaval.webp"
+            },
+            "b": {
+              "bg": "Духа се в дълга дървена тръба",
+              "en": "You blow into a long wooden pipe"
+            }
+          },
+          {
+            "a": {
+              "bg": "Гъдулка",
+              "en": "Gadulka (fiddle)",
+              "img": "culture/gadulka.webp"
+            },
+            "b": {
+              "bg": "Свири се с лък по струните",
+              "en": "You play the strings with a bow"
+            }
+          },
+          {
+            "a": {
+              "bg": "Тъпан",
+              "en": "Tapan (drum)",
+              "img": "culture/folk-drum.webp"
+            },
+            "b": {
+              "bg": "Удря се с две палки",
+              "en": "You beat it with two sticks"
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Под коя музика се играе хоро?",
+            "en": "What music is the horo danced to?"
+          },
+          "options": [
+            {
+              "bg": "Народна музика",
+              "en": "Folk music"
+            },
+            {
+              "bg": "Тишина",
+              "en": "Silence"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "В Родопите има ансамбъл „Сто каба гайди“ – стотина гайдари свирят заедно.",
+          "en": "In the Rhodopes there is an ensemble called \"A Hundred Kaba Gaidi\" – about a hundred bagpipers play together.",
+          "img": "culture/gaida.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "compass",
+          "bg": "Подреди инструментите в трите семейства.",
+          "en": "Sort the instruments into the three families."
+        }
+      ],
+      "game": {
+        "type": "sort",
+        "prompt": {
+          "bg": "Духов, струнен или ударен?",
+          "en": "Wind, string or percussion?"
+        },
+        "bins": [
+          {
+            "bg": "Духови",
+            "en": "Wind"
+          },
+          {
+            "bg": "Струнни",
+            "en": "String"
+          },
+          {
+            "bg": "Ударни",
+            "en": "Percussion"
+          }
+        ],
+        "items": [
+          {
+            "bg": "Гайда",
+            "en": "Gaida (bagpipe)",
+            "img": "culture/gaida.webp",
+            "bin": 0
+          },
+          {
+            "bg": "Кавал",
+            "en": "Kaval (flute)",
+            "img": "culture/kaval.webp",
+            "bin": 0
+          },
+          {
+            "bg": "Дудук",
+            "en": "Duduk",
+            "bin": 0
+          },
+          {
+            "bg": "Гъдулка",
+            "en": "Gadulka (fiddle)",
+            "img": "culture/gadulka.webp",
+            "bin": 1
+          },
+          {
+            "bg": "Тамбура",
+            "en": "Tambura",
+            "bin": 1,
+            "why": {
+              "bg": "Тамбурата има струни, по които се дърпа с перце.",
+              "en": "The tambura has strings plucked with a plectrum."
+            }
+          },
+          {
+            "bg": "Тъпан",
+            "en": "Tapan (drum)",
+            "img": "culture/folk-drum.webp",
+            "bin": 2
+          },
+          {
+            "bg": "Тарамбука",
+            "en": "Tarambuka",
+            "bin": 2,
+            "why": {
+              "bg": "Тарамбуката е барабан – удря се с ръце.",
+              "en": "The tarambuka is a drum – played with the hands."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "От какво е мехът на гайдата?",
+            "en": "What is the gaida's bag made of?"
+          },
+          "options": [
+            {
+              "bg": "От козя кожа",
+              "en": "Goat skin"
+            },
+            {
+              "bg": "От пластмаса",
+              "en": "Plastic"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Институт за етнология и фолклористика с Етнографски музей – БАН",
+    "Учебници по „Музика“, „Технологии“ и „Човекът и обществото“ (1.–6. кл.), МОН"
+  ],
+  "review": null,
+  "draft": true
+}

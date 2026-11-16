@@ -4,14 +4,14 @@
 
 | Статус | Брой |
 |---|---:|
-| В приложението сега (`used`) | 112 |
-| Готови за следващ етап (`ready`) | 122 |
+| В приложението сега (`used`) | 150 |
+| Готови за следващ етап (`ready`) | 84 |
 | Данни (оригинал за препроектиране) (`source`) | 10 |
 | Дубликати на съществуващи картинки (`duplicate`) | 49 |
 | Чакат проверка (не се публикуват) (`review`) | 7 |
 | **Общо** | **300** |
 
-## В приложението сега — 112
+## В приложението сега — 150
 
 | ID | Оригинал | Път в `public/img` / същото като | Етап | Бележка / проверка |
 |---|---|---|---|---|
@@ -25,7 +25,18 @@
 | `city-sofia` | `design/v5/city/city-sofia.png` | `city/sofia.webp` |  | Катедралата в София (история) |
 | `city-varna` | `design/v5/city/city-varna.png` | `city/varna.webp` |  | карта: Варна; Черно море (история) |
 | `city-veliko-tarnovo` | `design/v5/city/city-veliko-tarnovo.png` | `city/veliko-tarnovo.webp` |  | мисии |
+| `food-banitsa` | `design/v5/food/food-banitsa.png` | `food/banitsa.webp` |  | мисии |
+| `food-bob-chorba` | `design/v5/food/food-bob-chorba.png` | `food/bob-chorba.webp` |  | мисии |
+| `food-kozunak` | `design/v5/food/food-kozunak.png` | `food/kozunak.webp` |  | мисии |
+| `food-lyutenitsa` | `design/v5/food/food-lyutenitsa.png` | `food/lyutenitsa.webp` |  | мисии |
+| `food-mekitsi` | `design/v5/food/food-mekitsi.png` | `food/mekitsi.webp` |  | мисии |
+| `food-patatnik` | `design/v5/food/food-patatnik.png` | `food/patatnik.webp` |  | мисии |
+| `food-sarmi` | `design/v5/food/food-sarmi.png` | `food/sarmi.webp` |  | мисии |
+| `food-shopska-salad` | `design/v5/food/food-shopska-salad.png` | `food/shopska-salad.webp` |  | мисии |
+| `food-tarator` | `design/v5/food/food-tarator.png` | `food/tarator.webp` |  | мисии |
+| `food-tikvenik` | `design/v5/food/food-tikvenik.png` | `food/tikvenik.webp` |  | мисии |
 | `game-letter-tile` | `design/v5/game/game-letter-tile.png` | `game/letter-tile.webp` |  | мисии |
+| `game-paintbrush` | `design/v5/game/game-paintbrush.png` | `game/paintbrush.webp` |  | мисии |
 | `game-puzzle-blue` | `design/v5/game/game-puzzle-blue.png` | `game/puzzle-blue.webp` |  | мисии |
 | `game-puzzle-red` | `design/v5/game/game-puzzle-red.png` | `game/puzzle-red.webp` |  | мисии |
 | `hero-budenie-book` | `design/v5/hero/hero-budenie-book.png` | `people/budenie-book.webp` |  | мисии |
@@ -54,6 +65,11 @@
 | `history-preslav` | `design/v5/history/history-preslav.png` | `history/preslav.webp` |  | карта: Велики Преслав; Цар Симеон (история) |
 | `history-samuil` | `design/v5/history/history-samuil.png` | `history/samuil.webp` |  | мисии · Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста. |
 | `history-simeon` | `design/v5/history/history-simeon.png` | `history/simeon.webp` |  | Цар Симеон (история) · Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста. |
+| `ingredient-cheese` | `design/v5/ingredient/ingredient-cheese.png` | `food/cheese.webp` |  | мисии |
+| `ingredient-cucumber` | `design/v5/ingredient/ingredient-cucumber.png` | `food/cucumber.webp` |  | мисии |
+| `ingredient-pepper` | `design/v5/ingredient/ingredient-pepper.png` | `food/pepper.webp` |  | мисии |
+| `ingredient-tomato` | `design/v5/ingredient/ingredient-tomato.png` | `food/tomato.webp` |  | мисии |
+| `ingredient-yogurt` | `design/v5/ingredient/ingredient-yogurt.png` | `food/yogurt.webp` |  | мисии |
 | `koren-celebrate` | `design/v5/koren/koren-celebrate.png` | `poses/koren-celebrate.webp` |  | истории на мисиите (поза celebrate) |
 | `koren-chef` | `design/v5/koren/koren-chef.png` | `poses/koren-chef.webp` |  | мисия „Погача за гости“ |
 | `koren-compass` | `design/v5/koren/koren-compass.png` | `poses/koren-compass.webp` |  | мисии с ориентиране |
@@ -71,11 +87,17 @@
 | `landmark-madara-rider` | `design/v5/landmark/landmark-madara-rider.png` | `landmarks/madara-rider.webp` |  | мисии · Формата да се сравни със снимка на истинския предмет (музей). |
 | `landmark-nessebar` | `design/v5/landmark/landmark-nessebar.png` | `landmarks/nessebar.webp` |  | карта: Несебър; Черно море (история) |
 | `minigame-bulgaria-flag` | `design/v5/minigame/minigame-bulgaria-flag.svg` | `minigame/bulgaria-flag.svg` |  | мисии · Цветовете да се сравнят с официалните (бяло, зелено #00966E, червено #D62612). |
+| `minigame-clay-pot` | `design/v5/minigame/minigame-clay-pot.png` | `minigame/clay-pot.webp` |  | мисии |
+| `minigame-cooking-pot` | `design/v5/minigame/minigame-cooking-pot.png` | `minigame/cooking-pot.webp` |  | мисии |
+| `minigame-easter-egg-blank` | `design/v5/minigame/minigame-easter-egg-blank.png` | `minigame/easter-egg-blank.webp` |  | мисии |
+| `minigame-easter-egg-decorated` | `design/v5/minigame/minigame-easter-egg-decorated.png` | `minigame/easter-egg-decorated.webp` |  | мисии |
 | `minigame-fortress-gate` | `design/v5/minigame/minigame-fortress-gate.png` | `minigame/fortress-gate.webp` |  | мисии |
 | `minigame-fortress-tower` | `design/v5/minigame/minigame-fortress-tower.png` | `minigame/fortress-tower.webp` |  | мисии |
 | `minigame-fortress-wall` | `design/v5/minigame/minigame-fortress-wall.png` | `minigame/fortress-wall.webp` |  | мисии |
+| `minigame-pottery-wheel` | `design/v5/minigame/minigame-pottery-wheel.png` | `minigame/pottery-wheel.webp` |  | мисии |
 | `minigame-recycling-bin` | `design/v5/minigame/minigame-recycling-bin.png` | `minigame/recycling-bin.webp` |  | мисии |
 | `minigame-river-route` | `design/v5/minigame/minigame-river-route.png` | `minigame/river-route.webp` |  | мисии |
+| `minigame-woodcarving-board` | `design/v5/minigame/minigame-woodcarving-board.png` | `minigame/woodcarving-board.webp` |  | мисии |
 | `mountain-balkan` | `design/v5/mountain/mountain-balkan.png` | `geo/balkan.webp` |  | Шипка (история) |
 | `mountain-pirin` | `design/v5/mountain/mountain-pirin.png` | `geo/pirin.webp` |  | мисии |
 | `mountain-rhodopes` | `design/v5/mountain/mountain-rhodopes.png` | `geo/rhodopes.webp` |  | мисии |
@@ -92,6 +114,7 @@
 | `plant-pirin-tea` | `design/v5/plant/plant-pirin-tea.png` | `nature/pirin-tea.webp` |  | мисии |
 | `plant-rhodope-haberlea` | `design/v5/plant/plant-rhodope-haberlea.png` | `nature/rhodope-haberlea.webp` |  | мисии |
 | `raya-celebrate` | `design/v5/raya/raya-celebrate.png` | `poses/raya-celebrate.webp` |  | истории на мисиите (поза celebrate) |
+| `raya-chef` | `design/v5/raya/raya-chef.png` | `poses/raya-chef.webp` |  | мисия „Погача за гости“ |
 | `raya-compass` | `design/v5/raya/raya-compass.png` | `poses/raya-compass.webp` |  | мисии с ориентиране |
 | `raya-encourage` | `design/v5/raya/raya-encourage.png` | `poses/raya-encourage.webp` |  | истории (последната реплика преди играта) |
 | `raya-explorer` | `design/v5/raya/raya-explorer.png` | `poses/raya-explorer.webp` |  | географски мисии |
@@ -117,10 +140,25 @@
 | `terrain-river` | `design/v5/terrain/terrain-river.png` | `geo/river.webp` |  | Пътят на реката (история) |
 | `terrain-valley` | `design/v5/terrain/terrain-valley.png` | `geo/valley.webp` |  | мисии |
 | `tradition-bulgarian-costume` | `design/v5/tradition/tradition-bulgarian-costume.png` | `culture/bulgarian-costume.webp` |  | Копривщица и носията; Облечи носията (история) |
+| `tradition-christmas-bread` | `design/v5/tradition/tradition-christmas-bread.png` | `culture/christmas-bread.webp` |  | мисии |
+| `tradition-easter-basket` | `design/v5/tradition/tradition-easter-basket.png` | `culture/easter-basket.webp` |  | мисии |
+| `tradition-easter-eggs` | `design/v5/tradition/tradition-easter-eggs.png` | `culture/easter-eggs.webp` |  | мисии |
+| `tradition-folk-drum` | `design/v5/tradition/tradition-folk-drum.png` | `culture/folk-drum.webp` |  | мисии |
+| `tradition-gadulka` | `design/v5/tradition/tradition-gadulka.png` | `culture/gadulka.webp` |  | мисии |
+| `tradition-gaida` | `design/v5/tradition/tradition-gaida.png` | `culture/gaida.webp` |  | мисии |
+| `tradition-horo` | `design/v5/tradition/tradition-horo.png` | `culture/horo.webp` |  | мисии |
+| `tradition-kaval` | `design/v5/tradition/tradition-kaval.png` | `culture/kaval.webp` |  | мисии |
+| `tradition-koledari` | `design/v5/tradition/tradition-koledari.png` | `culture/koledari.webp` |  | мисии |
+| `tradition-kukeri` | `design/v5/tradition/tradition-kukeri.png` | `culture/kukeri.webp` |  | мисии |
+| `tradition-lazaruvane` | `design/v5/tradition/tradition-lazaruvane.png` | `culture/lazaruvane.webp` |  | мисии |
+| `tradition-name-day` | `design/v5/tradition/tradition-name-day.png` | `culture/name-day.webp` |  | мисии |
+| `tradition-nestinarstvo` | `design/v5/tradition/tradition-nestinarstvo.png` | `culture/nestinarstvo.webp` |  | мисии · Чувствителна тема (огън, религиозен обичай) — текстът се проверява от учител. |
+| `tradition-survachka` | `design/v5/tradition/tradition-survachka.png` | `culture/survachka.webp` |  | мисии |
 | `world-border-crossing` | `design/v5/world/world-border-crossing.png` | `places/border-crossing.webp` |  | мисии |
 | `world-mineral-hisarya` | `design/v5/world/world-mineral-hisarya.png` | `places/mineral-hisarya.webp` |  | мисии |
 | `world-mineral-sandanski` | `design/v5/world/world-mineral-sandanski.png` | `places/mineral-sandanski.webp` |  | мисии |
 | `world-mineral-velingrad` | `design/v5/world/world-mineral-velingrad.png` | `places/mineral-velingrad.webp` |  | мисии |
+| `world-name-day-calendar` | `design/v5/world/world-name-day-calendar.svg` | `places/name-day-calendar.svg` |  | мисии |
 | `world-panagyurishte-treasure` | `design/v5/world/world-panagyurishte-treasure.png` | `places/panagyurishte-treasure.webp` |  | мисии · Формата да се сравни със снимка на истинския предмет (музей). |
 | `world-rogozen-treasure` | `design/v5/world/world-rogozen-treasure.png` | `places/rogozen-treasure.webp` |  | мисии · Формата да се сравни със снимка на истинския предмет (музей). |
 | `world-ski-bansko` | `design/v5/world/world-ski-bansko.png` | `places/ski-bansko.webp` |  | мисии |
@@ -128,7 +166,7 @@
 | `world-ski-pamporovo` | `design/v5/world/world-ski-pamporovo.png` | `places/ski-pamporovo.webp` |  | мисии |
 | `world-valchitran-treasure` | `design/v5/world/world-valchitran-treasure.png` | `places/valchitran-treasure.webp` |  | мисии · Формата да се сравни със снимка на истинския предмет (музей). |
 
-## Готови за следващ етап — 122
+## Готови за следващ етап — 84
 
 | ID | Оригинал | Път в `public/img` / същото като | Етап | Бележка / проверка |
 |---|---|---|---|---|
@@ -147,26 +185,15 @@
 | `currency-coin-stack` | `design/v5/currency/currency-coin-stack.png` | `currency/coin-stack.webp` | 9 |  |
 | `currency-gold-coin` | `design/v5/currency/currency-gold-coin.png` | `currency/gold-coin.webp` | 9 |  |
 | `currency-pendar` | `design/v5/currency/currency-pendar.png` | `currency/pendar.webp` | 9 |  |
-| `food-banitsa` | `design/v5/food/food-banitsa.png` | `food/banitsa.webp` | 6 |  |
-| `food-bob-chorba` | `design/v5/food/food-bob-chorba.png` | `food/bob-chorba.webp` | 6 |  |
 | `food-kavarma` | `design/v5/food/food-kavarma.png` | `food/kavarma.webp` | 6 |  |
 | `food-kebapche` | `design/v5/food/food-kebapche.png` | `food/kebapche.webp` | 6 |  |
 | `food-kiselo-mlyako` | `design/v5/food/food-kiselo-mlyako.png` | `food/kiselo-mlyako.webp` | 6 |  |
-| `food-kozunak` | `design/v5/food/food-kozunak.png` | `food/kozunak.webp` | 6 |  |
 | `food-kyufte` | `design/v5/food/food-kyufte.png` | `food/kyufte.webp` | 6 |  |
-| `food-lyutenitsa` | `design/v5/food/food-lyutenitsa.png` | `food/lyutenitsa.webp` | 6 |  |
-| `food-mekitsi` | `design/v5/food/food-mekitsi.png` | `food/mekitsi.webp` | 6 |  |
-| `food-patatnik` | `design/v5/food/food-patatnik.png` | `food/patatnik.webp` | 6 |  |
-| `food-sarmi` | `design/v5/food/food-sarmi.png` | `food/sarmi.webp` | 6 |  |
 | `food-shkembe-chorba` | `design/v5/food/food-shkembe-chorba.png` | `food/shkembe-chorba.webp` | 6 |  |
-| `food-shopska-salad` | `design/v5/food/food-shopska-salad.png` | `food/shopska-salad.webp` | 6 |  |
-| `food-tarator` | `design/v5/food/food-tarator.png` | `food/tarator.webp` | 6 |  |
-| `food-tikvenik` | `design/v5/food/food-tikvenik.png` | `food/tikvenik.webp` | 6 |  |
 | `game-drag-handle` | `design/v5/game/game-drag-handle.png` | `game/drag-handle.webp` | 9 |  |
 | `game-drop-target` | `design/v5/game/game-drop-target.png` | `game/drop-target.webp` | 9 |  |
 | `game-mission-complete` | `design/v5/game/game-mission-complete.png` | `game/mission-complete.webp` | 9 |  |
 | `game-paint-bucket` | `design/v5/game/game-paint-bucket.png` | `game/paint-bucket.webp` | 6 |  |
-| `game-paintbrush` | `design/v5/game/game-paintbrush.png` | `game/paintbrush.webp` | 6 |  |
 | `game-timer` | `design/v5/game/game-timer.png` | `game/timer.webp` | 9 |  |
 | `game-true-false-false` | `design/v5/game/game-true-false-false.svg` | `game/true-false-false.svg` | 9 |  |
 | `game-true-false-true` | `design/v5/game/game-true-false-true.svg` | `game/true-false-true.svg` | 9 |  |
@@ -179,23 +206,11 @@
 | `hero-zahari-stoyanov` | `design/v5/hero/hero-zahari-stoyanov.png` | `people/zahari-stoyanov.webp` | 5 | Условен образ — сравни чертите със запазен портрет/снимка (историк). |
 | `history-medieval-tower` | `design/v5/history/history-medieval-tower.png` | `history/medieval-tower.webp` | 5 |  |
 | `history-petar-first` | `design/v5/history/history-petar-first.png` | `history/petar-first.webp` | 5 | Няма достоверен портрет — образът е условен (иконографски). Да се каже в текста. |
-| `ingredient-cheese` | `design/v5/ingredient/ingredient-cheese.png` | `food/cheese.webp` | 6 |  |
-| `ingredient-cucumber` | `design/v5/ingredient/ingredient-cucumber.png` | `food/cucumber.webp` | 6 |  |
-| `ingredient-pepper` | `design/v5/ingredient/ingredient-pepper.png` | `food/pepper.webp` | 6 |  |
-| `ingredient-tomato` | `design/v5/ingredient/ingredient-tomato.png` | `food/tomato.webp` | 6 |  |
-| `ingredient-yogurt` | `design/v5/ingredient/ingredient-yogurt.png` | `food/yogurt.webp` | 6 |  |
 | `minigame-beach-trash` | `design/v5/minigame/minigame-beach-trash.png` | `minigame/beach-trash.webp` | 4 |  |
-| `minigame-clay-pot` | `design/v5/minigame/minigame-clay-pot.png` | `minigame/clay-pot.webp` | 6 |  |
-| `minigame-cooking-pot` | `design/v5/minigame/minigame-cooking-pot.png` | `minigame/cooking-pot.webp` | 6 |  |
-| `minigame-easter-egg-blank` | `design/v5/minigame/minigame-easter-egg-blank.png` | `minigame/easter-egg-blank.webp` | 6 |  |
-| `minigame-easter-egg-decorated` | `design/v5/minigame/minigame-easter-egg-decorated.png` | `minigame/easter-egg-decorated.webp` | 6 |  |
 | `minigame-embroidery-board` | `design/v5/minigame/minigame-embroidery-board.png` | `minigame/embroidery-board.webp` | 6 |  |
 | `minigame-fairytale-flute` | `design/v5/minigame/minigame-fairytale-flute.png` | `minigame/fairytale-flute.webp` | 7 |  |
 | `minigame-fairytale-golden-apple` | `design/v5/minigame/minigame-fairytale-golden-apple.png` | `minigame/fairytale-golden-apple.webp` | 7 |  |
 | `minigame-hidden-object-scene` | `design/v5/minigame/minigame-hidden-object-scene.png` | `minigame/hidden-object-scene.webp` | 7 |  |
-| `minigame-pottery-wheel` | `design/v5/minigame/minigame-pottery-wheel.png` | `minigame/pottery-wheel.webp` | 6 |  |
-| `minigame-woodcarving-board` | `design/v5/minigame/minigame-woodcarving-board.png` | `minigame/woodcarving-board.webp` | 6 |  |
-| `raya-chef` | `design/v5/raya/raya-chef.png` | `poses/raya-chef.webp` | 5 |  |
 | `river-tundzha` | `design/v5/river/river-tundzha.png` | `geo/tundzha.webp` | 3 |  |
 | `science-atanasoff-computer` | `design/v5/science/science-atanasoff-computer.png` | `science/atanasoff-computer.webp` | 8 | Формата да се сравни със снимка на истинския предмет (музей). |
 | `science-bulgarian-yogurt` | `design/v5/science/science-bulgarian-yogurt.png` | `science/bulgarian-yogurt.webp` | 8 |  |
@@ -211,23 +226,9 @@
 | `space-food` | `design/v5/space/space-food.png` | `space/food.webp` | 8 |  |
 | `space-rocket` | `design/v5/space/space-rocket.png` | `space/rocket.webp` | 8 |  |
 | `space-satellite` | `design/v5/space/space-satellite.png` | `space/satellite.webp` | 8 |  |
-| `tradition-christmas-bread` | `design/v5/tradition/tradition-christmas-bread.png` | `culture/christmas-bread.webp` | 6 |  |
-| `tradition-easter-basket` | `design/v5/tradition/tradition-easter-basket.png` | `culture/easter-basket.webp` | 6 |  |
-| `tradition-easter-eggs` | `design/v5/tradition/tradition-easter-eggs.png` | `culture/easter-eggs.webp` | 6 |  |
 | `tradition-elbetitsa` | `design/v5/tradition/tradition-elbetitsa.png` | `culture/elbetitsa.webp` | 6 |  |
-| `tradition-folk-drum` | `design/v5/tradition/tradition-folk-drum.png` | `culture/folk-drum.webp` | 6 |  |
 | `tradition-folk-wreath` | `design/v5/tradition/tradition-folk-wreath.png` | `culture/folk-wreath.webp` | 6 |  |
-| `tradition-gadulka` | `design/v5/tradition/tradition-gadulka.png` | `culture/gadulka.webp` | 6 |  |
-| `tradition-gaida` | `design/v5/tradition/tradition-gaida.png` | `culture/gaida.webp` | 6 |  |
-| `tradition-horo` | `design/v5/tradition/tradition-horo.png` | `culture/horo.webp` | 6 |  |
-| `tradition-kaval` | `design/v5/tradition/tradition-kaval.png` | `culture/kaval.webp` | 6 |  |
-| `tradition-koledari` | `design/v5/tradition/tradition-koledari.png` | `culture/koledari.webp` | 6 |  |
-| `tradition-kukeri` | `design/v5/tradition/tradition-kukeri.png` | `culture/kukeri.webp` | 6 |  |
-| `tradition-lazaruvane` | `design/v5/tradition/tradition-lazaruvane.png` | `culture/lazaruvane.webp` | 6 |  |
-| `tradition-name-day` | `design/v5/tradition/tradition-name-day.png` | `culture/name-day.webp` | 6 |  |
-| `tradition-nestinarstvo` | `design/v5/tradition/tradition-nestinarstvo.png` | `culture/nestinarstvo.webp` | 6 | Чувствителна тема (огън, религиозен обичай) — текстът се проверява от учител. |
 | `tradition-rose-festival` | `design/v5/tradition/tradition-rose-festival.png` | `culture/rose-festival.webp` | 6 |  |
-| `tradition-survachka` | `design/v5/tradition/tradition-survachka.png` | `culture/survachka.webp` | 6 |  |
 | `ui-back` | `design/v5/ui/ui-back.png` | `ui/back.webp` | 9 |  |
 | `ui-calendar` | `design/v5/ui/ui-calendar.png` | `ui/calendar.webp` | 6 |  |
 | `ui-forward` | `design/v5/ui/ui-forward.png` | `ui/forward.webp` | 9 |  |
@@ -248,7 +249,6 @@
 | `world-car-license-plate` | `design/v5/world/world-car-license-plate.svg` | `places/car-license-plate.svg` | 8 |  |
 | `world-customs` | `design/v5/world/world-customs.png` | `places/customs.webp` | 8 |  |
 | `world-daily-streak` | `design/v5/world/world-daily-streak.png` | `places/daily-streak.webp` | 9 |  |
-| `world-name-day-calendar` | `design/v5/world/world-name-day-calendar.svg` | `places/name-day-calendar.svg` | 6 |  |
 | `world-sports-football` | `design/v5/world/world-sports-football.png` | `places/sports-football.webp` | 8 |  |
 | `world-sports-high-jump` | `design/v5/world/world-sports-high-jump.png` | `places/sports-high-jump.webp` | 8 |  |
 | `world-sports-tennis` | `design/v5/world/world-sports-tennis.png` | `places/sports-tennis.webp` | 8 |  |

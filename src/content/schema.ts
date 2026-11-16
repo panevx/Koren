@@ -297,7 +297,51 @@ export const RiddleGame = z
   .refine((g) => distinct(g.options), { message: 'options must be different', path: ['options'] })
 
 /**
- * One entry per game template (11 since v0.12, 13 since v0.16, 15 since v0.18). A new template is added here
+ * Cook (v0.19): put the right ingredients into the pot (tap or drag; a wrong one jumps out and Raya says `why`),
+ * then — if there are `steps` — tap the steps in the right order. At the end the dish appears.
+ * Ingredients without a picture are shown as word cards.
+ */
+export const CookGame = z
+  .object({
+    type: z.literal('cook'),
+    prompt: Text,
+    dish: Thing,
+    vessel: ImgPath,
+    ingredients: z.array(Option.extend({ belongs: z.boolean(), why: Text.optional() }).strict()).min(3).max(9),
+    /** Written in the RIGHT order; shown shuffled. */
+    steps: z.array(Text).max(5).default([]),
+    done: Text,
+  })
+  .strict()
+  .refine((g) => g.ingredients.some((i) => i.belongs), { message: 'at least one ingredient belongs', path: ['ingredients'] })
+  .refine((g) => g.ingredients.every((i) => i.belongs || i.why), { message: 'a wrong ingredient needs "why"', path: ['ingredients'] })
+  .refine((g) => distinct(g.ingredients) && (g.steps.length === 0 || g.steps.length >= 3), { message: 'ingredients must differ; 0 or 3–5 steps', path: ['steps'] })
+
+/** Palette colour for `paint`: a name in both languages and a #hex colour. */
+const Colour = Text.extend({ color: z.string().regex(/^#[0-9a-fA-F]{6}$/) }).strict()
+
+/**
+ * Paint (v0.19 — embroidery, Easter eggs): a picture made of stitches on a grid. `rows` are text lines of equal length:
+ * ' ' = nothing, '.' = the cloth, 'a'–'e' = the colour (index in `palette`) of the model. Touching stitches of the same
+ * letter form one part; the child picks a colour and taps a part. `copy`: the parts must match the model (shown small);
+ * without it, any colours — done when every part is painted.
+ */
+export const PaintGame = z
+  .object({
+    type: z.literal('paint'),
+    prompt: Text,
+    look: z.enum(['stitch', 'egg']),
+    palette: z.array(Colour).min(2).max(5),
+    rows: z.array(z.string().regex(/^[ .a-e]+$/)).min(4).max(16),
+    copy: z.boolean().default(true),
+    done: Text,
+  })
+  .strict()
+  .refine((g) => g.rows.every((r) => r.length === g.rows[0]!.length), { message: 'all rows must be equally long', path: ['rows'] })
+  .refine((g) => g.rows.join('').split('').every((c) => c === ' ' || c === '.' || c.charCodeAt(0) - 97 < g.palette.length), { message: 'a letter has no colour in the palette', path: ['rows'] })
+
+/**
+ * One entry per game template (11 since v0.12, 13 since v0.16, 15 since v0.18, 17 since v0.19). A new template is added here
  * and in src/games without touching the mission screen.
  */
 export const Game = z.discriminatedUnion('type', [
@@ -316,6 +360,8 @@ export const Game = z.discriminatedUnion('type', [
   RegionsGame,
   AssembleGame,
   RiddleGame,
+  CookGame,
+  PaintGame,
 ])
 
 export const LevelContent = z
@@ -381,6 +427,8 @@ export type TraceGame = z.infer<typeof TraceGame>
 export type RegionsGame = z.infer<typeof RegionsGame>
 export type AssembleGame = z.infer<typeof AssembleGame>
 export type RiddleGame = z.infer<typeof RiddleGame>
+export type CookGame = z.infer<typeof CookGame>
+export type PaintGame = z.infer<typeof PaintGame>
 export type Thing = z.infer<typeof Thing>
 export type SceneId = (typeof SCENES)[number]
 export type Option = z.infer<typeof Option>

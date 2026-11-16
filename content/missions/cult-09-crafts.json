@@ -1,0 +1,221 @@
+{
+  "id": "cult-09-crafts",
+  "subject": "culture",
+  "free": true,
+  "order": 85,
+  "unlock": {
+    "after": [
+      "cult-08-instruments"
+    ]
+  },
+  "badge": {
+    "id": "crafts",
+    "icon": "minigame/clay-pot.webp"
+  },
+  "title": {
+    "bg": "Грънчари и резбари",
+    "en": "Potters and woodcarvers"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Грънчарят прави гърне на колело, а резбарят издълбава шарки в дърво.",
+          "en": "The potter makes a pot on a wheel, and the woodcarver carves patterns in wood.",
+          "img": "minigame/pottery-wheel.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Намери еднаквите картинки!",
+          "en": "Find the matching pictures!"
+        }
+      ],
+      "game": {
+        "type": "memory",
+        "prompt": {
+          "bg": "Намери двете еднакви неща!",
+          "en": "Find the two matching things!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Грънчарско колело",
+              "en": "Potter's wheel",
+              "img": "minigame/pottery-wheel.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Гърне",
+              "en": "Pot",
+              "img": "minigame/clay-pot.webp"
+            }
+          },
+          {
+            "a": {
+              "bg": "Резбована дъска",
+              "en": "Carved board",
+              "img": "minigame/woodcarving-board.webp"
+            }
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Троянската керамика има шарка „капка“ – боята се стича като капки.",
+          "en": "Troyan pottery has the \"drop\" pattern – the paint runs down like drops.",
+          "img": "minigame/clay-pot.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Как се прави едно гърне? Подреди!",
+          "en": "How is a pot made? Put it in order!"
+        }
+      ],
+      "game": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди как се прави гърнето!",
+          "en": "Put the making of the pot in order!"
+        },
+        "items": [
+          {
+            "bg": "Меси глината",
+            "en": "Knead the clay"
+          },
+          {
+            "bg": "Оформя на колелото",
+            "en": "Shape it on the wheel"
+          },
+          {
+            "bg": "Суши",
+            "en": "Let it dry"
+          },
+          {
+            "bg": "Рисува шарката",
+            "en": "Paint the pattern"
+          },
+          {
+            "bg": "Пече в пещта",
+            "en": "Fire it in the kiln"
+          }
+        ],
+        "hint": {
+          "bg": "Последно е огънят: той прави гърнето здраво.",
+          "en": "The fire comes last: it makes the pot strong."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Защо гърнето се пече в пещ?",
+            "en": "Why is the pot fired in a kiln?"
+          },
+          "options": [
+            {
+              "bg": "За да стане твърдо и да държи вода",
+              "en": "To become hard and hold water"
+            },
+            {
+              "bg": "За да се стопли",
+              "en": "To get warm"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "map",
+          "bg": "Всеки занаят си има свой прочут град.",
+          "en": "Every craft has its famous town.",
+          "img": "minigame/woodcarving-board.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "compass",
+          "bg": "Свържи занаята с града.",
+          "en": "Match the craft with the town."
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи занаята с прочутия му град!",
+          "en": "Match the craft with its famous town!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Керамика с „капка“",
+              "en": "Pottery with \"drops\"",
+              "img": "minigame/clay-pot.webp"
+            },
+            "b": {
+              "bg": "Троян",
+              "en": "Troyan"
+            }
+          },
+          {
+            "a": {
+              "bg": "Дърворезба",
+              "en": "Woodcarving",
+              "img": "minigame/woodcarving-board.webp"
+            },
+            "b": {
+              "bg": "Трявна",
+              "en": "Tryavna"
+            }
+          },
+          {
+            "a": {
+              "bg": "Тъкани килими",
+              "en": "Woven carpets"
+            },
+            "b": {
+              "bg": "Чипровци",
+              "en": "Chiprovtsi"
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Къде са били изрязани прочутите резбовани тавани – например „слънцата“?",
+            "en": "Where are the famous carved ceilings – such as the \"suns\" – from?"
+          },
+          "options": [
+            {
+              "bg": "Тревненската школа",
+              "en": "The Tryavna school"
+            },
+            {
+              "bg": "Морските рибари",
+              "en": "The sea fishermen"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Институт за етнология и фолклористика с Етнографски музей – БАН",
+    "Етнографски комплекс „Етъра“, Габрово; Музей на резбарското и зографско изкуство, Трявна"
+  ],
+  "review": null,
+  "draft": true
+}

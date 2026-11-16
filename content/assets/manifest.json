@@ -2,8 +2,8 @@
  "version": "v5",
  "total": 300,
  "summary": {
-  "used": 112,
-  "ready": 122,
+  "used": 150,
+  "ready": 84,
   "source": 10,
   "duplicate": 49,
   "review": 7
@@ -361,18 +361,18 @@
    "id": "food-banitsa",
    "original": "design/v5/food/food-banitsa.png",
    "category": "food",
-   "status": "ready",
+   "status": "used",
    "path": "food/banitsa.webp",
-   "stage": 6,
+   "usedIn": "мисии",
    "size": "640x511"
   },
   {
    "id": "food-bob-chorba",
    "original": "design/v5/food/food-bob-chorba.png",
    "category": "food",
-   "status": "ready",
+   "status": "used",
    "path": "food/bob-chorba.webp",
-   "stage": 6,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
@@ -406,9 +406,9 @@
    "id": "food-kozunak",
    "original": "design/v5/food/food-kozunak.png",
    "category": "food",
-   "status": "ready",
+   "status": "used",
    "path": "food/kozunak.webp",
-   "stage": 6,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
@@ -424,36 +424,36 @@
    "id": "food-lyutenitsa",
    "original": "design/v5/food/food-lyutenitsa.png",
    "category": "food",
-   "status": "ready",
+   "status": "used",
    "path": "food/lyutenitsa.webp",
-   "stage": 6,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
    "id": "food-mekitsi",
    "original": "design/v5/food/food-mekitsi.png",
    "category": "food",
-   "status": "ready",
+   "status": "used",
    "path": "food/mekitsi.webp",
-   "stage": 6,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
    "id": "food-patatnik",
    "original": "design/v5/food/food-patatnik.png",
    "category": "food",
-   "status": "ready",
+   "status": "used",
    "path": "food/patatnik.webp",
-   "stage": 6,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
    "id": "food-sarmi",
    "original": "design/v5/food/food-sarmi.png",
    "category": "food",
-   "status": "ready",
+   "status": "used",
    "path": "food/sarmi.webp",
-   "stage": 6,
+   "usedIn": "мисии",
    "size": "640x481"
   },
   {
@@ -469,27 +469,27 @@
    "id": "food-shopska-salad",
    "original": "design/v5/food/food-shopska-salad.png",
    "category": "food",
-   "status": "ready",
+   "status": "used",
    "path": "food/shopska-salad.webp",
-   "stage": 6,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
    "id": "food-tarator",
    "original": "design/v5/food/food-tarator.png",
    "category": "food",
-   "status": "ready",
+   "status": "used",
    "path": "food/tarator.webp",
-   "stage": 6,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
    "id": "food-tikvenik",
    "original": "design/v5/food/food-tikvenik.png",
    "category": "food",
-   "status": "ready",
+   "status": "used",
    "path": "food/tikvenik.webp",
-   "stage": 6,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
@@ -562,9 +562,9 @@
    "id": "game-paintbrush",
    "original": "design/v5/game/game-paintbrush.png",
    "category": "game",
-   "status": "ready",
+   "status": "used",
    "path": "game/paintbrush.webp",
-   "stage": 6,
+   "usedIn": "мисии",
    "size": "192x192"
   },
   {
@@ -1035,45 +1035,45 @@
    "id": "ingredient-cheese",
    "original": "design/v5/ingredient/ingredient-cheese.png",
    "category": "ingredient",
-   "status": "ready",
+   "status": "used",
    "path": "food/cheese.webp",
-   "stage": 6,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
    "id": "ingredient-cucumber",
    "original": "design/v5/ingredient/ingredient-cucumber.png",
    "category": "ingredient",
-   "status": "ready",
+   "status": "used",
    "path": "food/cucumber.webp",
-   "stage": 6,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
    "id": "ingredient-pepper",
    "original": "design/v5/ingredient/ingredient-pepper.png",
    "category": "ingredient",
-   "status": "ready",
+   "status": "used",
    "path": "food/pepper.webp",
-   "stage": 6,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
    "id": "ingredient-tomato",
    "original": "design/v5/ingredient/ingredient-tomato.png",
    "category": "ingredient",
-   "status": "ready",
+   "status": "used",
    "path": "food/tomato.webp",
-   "stage": 6,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
    "id": "ingredient-yogurt",
    "original": "design/v5/ingredient/ingredient-yogurt.png",
    "category": "ingredient",
-   "status": "ready",
+   "status": "used",
    "path": "food/yogurt.webp",
-   "stage": 6,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
@@ -1379,36 +1379,36 @@
    "id": "minigame-clay-pot",
    "original": "design/v5/minigame/minigame-clay-pot.png",
    "category": "minigame",
-   "status": "ready",
+   "status": "used",
    "path": "minigame/clay-pot.webp",
-   "stage": 6,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
    "id": "minigame-cooking-pot",
    "original": "design/v5/minigame/minigame-cooking-pot.png",
    "category": "minigame",
-   "status": "ready",
+   "status": "used",
    "path": "minigame/cooking-pot.webp",
-   "stage": 6,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
    "id": "minigame-easter-egg-blank",
    "original": "design/v5/minigame/minigame-easter-egg-blank.png",
    "category": "minigame",
-   "status": "ready",
+   "status": "used",
    "path": "minigame/easter-egg-blank.webp",
-   "stage": 6,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
    "id": "minigame-easter-egg-decorated",
    "original": "design/v5/minigame/minigame-easter-egg-decorated.png",
    "category": "minigame",
-   "status": "ready",
+   "status": "used",
    "path": "minigame/easter-egg-decorated.webp",
-   "stage": 6,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
@@ -1485,9 +1485,9 @@
    "id": "minigame-pottery-wheel",
    "original": "design/v5/minigame/minigame-pottery-wheel.png",
    "category": "minigame",
-   "status": "ready",
+   "status": "used",
    "path": "minigame/pottery-wheel.webp",
-   "stage": 6,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
@@ -1512,9 +1512,9 @@
    "id": "minigame-woodcarving-board",
    "original": "design/v5/minigame/minigame-woodcarving-board.png",
    "category": "minigame",
-   "status": "ready",
+   "status": "used",
    "path": "minigame/woodcarving-board.webp",
-   "stage": 6,
+   "usedIn": "мисии",
    "size": "640x454"
   },
   {
@@ -1675,9 +1675,9 @@
    "id": "raya-chef",
    "original": "design/v5/raya/raya-chef.png",
    "category": "raya",
-   "status": "ready",
+   "status": "used",
    "path": "poses/raya-chef.webp",
-   "stage": 5,
+   "usedIn": "мисия „Погача за гости“",
    "size": "433x900"
   },
   {
@@ -2130,27 +2130,27 @@
    "id": "tradition-christmas-bread",
    "original": "design/v5/tradition/tradition-christmas-bread.png",
    "category": "tradition",
-   "status": "ready",
+   "status": "used",
    "path": "culture/christmas-bread.webp",
-   "stage": 6,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
    "id": "tradition-easter-basket",
    "original": "design/v5/tradition/tradition-easter-basket.png",
    "category": "tradition",
-   "status": "ready",
+   "status": "used",
    "path": "culture/easter-basket.webp",
-   "stage": 6,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
    "id": "tradition-easter-eggs",
    "original": "design/v5/tradition/tradition-easter-eggs.png",
    "category": "tradition",
-   "status": "ready",
+   "status": "used",
    "path": "culture/easter-eggs.webp",
-   "stage": 6,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
@@ -2173,9 +2173,9 @@
    "id": "tradition-folk-drum",
    "original": "design/v5/tradition/tradition-folk-drum.png",
    "category": "tradition",
-   "status": "ready",
+   "status": "used",
    "path": "culture/folk-drum.webp",
-   "stage": 6,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
@@ -2191,81 +2191,81 @@
    "id": "tradition-gadulka",
    "original": "design/v5/tradition/tradition-gadulka.png",
    "category": "tradition",
-   "status": "ready",
+   "status": "used",
    "path": "culture/gadulka.webp",
-   "stage": 6,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
    "id": "tradition-gaida",
    "original": "design/v5/tradition/tradition-gaida.png",
    "category": "tradition",
-   "status": "ready",
+   "status": "used",
    "path": "culture/gaida.webp",
-   "stage": 6,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
    "id": "tradition-horo",
    "original": "design/v5/tradition/tradition-horo.png",
    "category": "tradition",
-   "status": "ready",
+   "status": "used",
    "path": "culture/horo.webp",
-   "stage": 6,
+   "usedIn": "мисии",
    "size": "640x504"
   },
   {
    "id": "tradition-kaval",
    "original": "design/v5/tradition/tradition-kaval.png",
    "category": "tradition",
-   "status": "ready",
+   "status": "used",
    "path": "culture/kaval.webp",
-   "stage": 6,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
    "id": "tradition-koledari",
    "original": "design/v5/tradition/tradition-koledari.png",
    "category": "tradition",
-   "status": "ready",
+   "status": "used",
    "path": "culture/koledari.webp",
-   "stage": 6,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
    "id": "tradition-kukeri",
    "original": "design/v5/tradition/tradition-kukeri.png",
    "category": "tradition",
-   "status": "ready",
+   "status": "used",
    "path": "culture/kukeri.webp",
-   "stage": 6,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
    "id": "tradition-lazaruvane",
    "original": "design/v5/tradition/tradition-lazaruvane.png",
    "category": "tradition",
-   "status": "ready",
+   "status": "used",
    "path": "culture/lazaruvane.webp",
-   "stage": 6,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
    "id": "tradition-name-day",
    "original": "design/v5/tradition/tradition-name-day.png",
    "category": "tradition",
-   "status": "ready",
+   "status": "used",
    "path": "culture/name-day.webp",
-   "stage": 6,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
    "id": "tradition-nestinarstvo",
    "original": "design/v5/tradition/tradition-nestinarstvo.png",
    "category": "tradition",
-   "status": "ready",
+   "status": "used",
    "path": "culture/nestinarstvo.webp",
-   "stage": 6,
+   "usedIn": "мисии",
    "size": "320x320",
    "check": "Чувствителна тема (огън, религиозен обичай) — текстът се проверява от учител."
   },
@@ -2282,9 +2282,9 @@
    "id": "tradition-survachka",
    "original": "design/v5/tradition/tradition-survachka.png",
    "category": "tradition",
-   "status": "ready",
+   "status": "used",
    "path": "culture/survachka.webp",
-   "stage": 6,
+   "usedIn": "мисии",
    "size": "320x320"
   },
   {
@@ -2533,9 +2533,9 @@
    "id": "world-name-day-calendar",
    "original": "design/v5/world/world-name-day-calendar.svg",
    "category": "world",
-   "status": "ready",
+   "status": "used",
    "path": "places/name-day-calendar.svg",
-   "stage": 6
+   "usedIn": "мисии"
   },
   {
    "id": "world-panagyurishte-treasure",

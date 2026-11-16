@@ -1,0 +1,242 @@
+{
+  "id": "cult-10-name-days",
+  "subject": "culture",
+  "free": true,
+  "order": 82,
+  "unlock": {
+    "after": [
+      "cult-05-easter"
+    ]
+  },
+  "badge": {
+    "id": "name-days",
+    "icon": "culture/name-day.webp"
+  },
+  "title": {
+    "bg": "Именни дни",
+    "en": "Name days"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "celebrate",
+          "bg": "Днес е имен ден! Празнува този, чието име е като името на светеца.",
+          "en": "Today is a name day! Whoever has the name of the saint celebrates.",
+          "img": "culture/name-day.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Какво правим на имен ден?",
+          "en": "What do we do on a name day?"
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "На имен ден черпим гостите. Покажи почерпката!",
+              "en": "On a name day we treat the guests. Show the treat!"
+            },
+            "options": [
+              {
+                "bg": "Почерпка",
+                "en": "A treat",
+                "img": "culture/name-day.webp"
+              },
+              {
+                "bg": "Боклук",
+                "en": "Litter",
+                "img": "minigame/trash-can.webp"
+              },
+              {
+                "bg": "Лупа",
+                "en": "Magnifier",
+                "img": "world/discovery-magnifier.webp"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "В България празнуваме не само рождени дни, но и именни дни.",
+          "en": "In Bulgaria we celebrate not only birthdays but also name days.",
+          "img": "culture/name-day.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Свържи името с неговия празник.",
+          "en": "Match each name with its feast day."
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи името с празника!",
+          "en": "Match the name with the feast!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Иван",
+              "en": "Ivan"
+            },
+            "b": {
+              "bg": "Ивановден – 7 януари",
+              "en": "St John's Day – 7 January"
+            }
+          },
+          {
+            "a": {
+              "bg": "Георги",
+              "en": "Georgi"
+            },
+            "b": {
+              "bg": "Гергьовден – 6 май",
+              "en": "St George's Day – 6 May"
+            }
+          },
+          {
+            "a": {
+              "bg": "Петър",
+              "en": "Petar"
+            },
+            "b": {
+              "bg": "Петровден – 29 юни",
+              "en": "St Peter's Day – 29 June"
+            }
+          },
+          {
+            "a": {
+              "bg": "Димитър",
+              "en": "Dimitar"
+            },
+            "b": {
+              "bg": "Димитровден – 26 октомври",
+              "en": "St Demetrius' Day – 26 October"
+            }
+          },
+          {
+            "a": {
+              "bg": "Никола",
+              "en": "Nikola"
+            },
+            "b": {
+              "bg": "Никулден – 6 декември",
+              "en": "St Nicholas' Day – 6 December"
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кой празнува на Цветница?",
+            "en": "Who celebrates on Palm Sunday?"
+          },
+          "options": [
+            {
+              "bg": "Хората с имена на цветя",
+              "en": "People with flower names"
+            },
+            {
+              "bg": "Всички Ивановци",
+              "en": "Everyone called Ivan"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Именните дни следват църковния календар.",
+          "en": "Name days follow the church calendar.",
+          "img": "places/name-day-calendar.svg"
+        },
+        {
+          "hero": "koren",
+          "pose": "compass",
+          "bg": "Подреди празниците по календара – от януари.",
+          "en": "Put the feasts in calendar order – from January."
+        }
+      ],
+      "game": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди празниците от януари до декември!",
+          "en": "Order the feasts from January to December!"
+        },
+        "items": [
+          {
+            "bg": "Ивановден",
+            "en": "St John's Day"
+          },
+          {
+            "bg": "Гергьовден",
+            "en": "St George's Day"
+          },
+          {
+            "bg": "Петровден",
+            "en": "St Peter's Day"
+          },
+          {
+            "bg": "Димитровден",
+            "en": "St Demetrius' Day"
+          },
+          {
+            "bg": "Никулден",
+            "en": "St Nicholas' Day"
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Какво традиционно се приготвя на Никулден?",
+            "en": "What is traditionally cooked on St Nicholas' Day?"
+          },
+          "options": [
+            {
+              "bg": "Риба",
+              "en": "Fish"
+            },
+            {
+              "bg": "Козунак",
+              "en": "Kozunak"
+            },
+            {
+              "bg": "Тиквеник",
+              "en": "Pumpkin pie"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "bg": "Свети Никола е покровител на моряците и рибарите.",
+            "en": "Saint Nicholas is the patron of sailors and fishermen."
+          }
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Институт за етнология и фолклористика с Етнографски музей – БАН",
+    "Православен църковен календар (Българска православна църква)"
+  ],
+  "review": null,
+  "draft": true
+}

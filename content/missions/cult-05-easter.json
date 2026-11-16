@@ -1,0 +1,249 @@
+{
+  "id": "cult-05-easter",
+  "subject": "culture",
+  "free": true,
+  "order": 80,
+  "unlock": {
+    "after": [
+      "cult-04-kukeri"
+    ]
+  },
+  "badge": {
+    "id": "easter",
+    "icon": "culture/easter-eggs.webp"
+  },
+  "title": {
+    "bg": "Великденски яйца",
+    "en": "Easter eggs"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Великден идва! Да боядисаме яйца!",
+          "en": "Easter is coming! Let's colour some eggs!",
+          "img": "minigame/easter-egg-blank.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Избери цвят и докосни ивица на яйцето.",
+          "en": "Pick a colour and tap a stripe on the egg."
+        }
+      ],
+      "game": {
+        "type": "paint",
+        "prompt": {
+          "bg": "Нашарай яйцето, както ти харесва!",
+          "en": "Decorate the egg as you like!"
+        },
+        "look": "egg",
+        "palette": [
+          {
+            "bg": "Червено",
+            "en": "Red",
+            "color": "#C62828"
+          },
+          {
+            "bg": "Жълто",
+            "en": "Yellow",
+            "color": "#F2B705"
+          },
+          {
+            "bg": "Зелено",
+            "en": "Green",
+            "color": "#2E7D32"
+          },
+          {
+            "bg": "Синьо",
+            "en": "Blue",
+            "color": "#1F6FB2"
+          }
+        ],
+        "rows": [
+          ".........",
+          ".........",
+          ".........",
+          "aaaaaaaaa",
+          "bbbbbbbbb",
+          "ccccccccc",
+          "ccccccccc",
+          "bbbbbbbbb",
+          "aaaaaaaaa",
+          ".........",
+          "........."
+        ],
+        "copy": false,
+        "done": {
+          "bg": "Какво красиво яйце! Честит Великден!",
+          "en": "What a beautiful egg! Happy Easter!"
+        }
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Първото боядисано яйце е червено. С него баба потрива бузите на децата – за здраве.",
+          "en": "The first dyed egg is red. Grandma rubs the children's cheeks with it – for good health.",
+          "img": "culture/easter-eggs.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Какво слагаме на великденската трапеза?",
+          "en": "What do we put on the Easter table?"
+        }
+      ],
+      "game": {
+        "type": "chest",
+        "prompt": {
+          "bg": "Сложи в кошницата нещата за Великден!",
+          "en": "Put the Easter things in the basket!"
+        },
+        "items": [
+          {
+            "bg": "Боядисани яйца",
+            "en": "Dyed eggs",
+            "img": "culture/easter-eggs.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Козунак",
+            "en": "Kozunak",
+            "img": "food/kozunak.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Червено яйце",
+            "en": "A red egg",
+            "img": "minigame/easter-egg-decorated.webp",
+            "belongs": true
+          },
+          {
+            "bg": "Сурвачка",
+            "en": "Survachka",
+            "img": "culture/survachka.webp",
+            "belongs": false,
+            "why": {
+              "bg": "Със сурвачката сурвакаме на Нова година.",
+              "en": "The survachka is for New Year."
+            }
+          },
+          {
+            "bg": "Коледна пита",
+            "en": "Christmas bread",
+            "img": "culture/christmas-bread.webp",
+            "belongs": false,
+            "why": {
+              "bg": "Питата с шарки се меси за Коледа.",
+              "en": "The decorated bread is baked for Christmas."
+            }
+          }
+        ],
+        "reward": {
+          "bg": "Кошницата е готова – Христос воскресе!",
+          "en": "The basket is ready – Christ is risen!"
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Какъв цвят е първото яйце?",
+            "en": "What colour is the first egg?"
+          },
+          "options": [
+            {
+              "bg": "Червено",
+              "en": "Red"
+            },
+            {
+              "bg": "Зелено",
+              "en": "Green"
+            },
+            {
+              "bg": "Синьо",
+              "en": "Blue"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Седмицата преди Великден е пълна с обичаи.",
+          "en": "The week before Easter is full of customs.",
+          "img": "culture/easter-basket.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "compass",
+          "bg": "Подреди празниците по ред.",
+          "en": "Put the holidays in order."
+        }
+      ],
+      "game": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди празниците преди Великден!",
+          "en": "Put the days before Easter in order!"
+        },
+        "items": [
+          {
+            "bg": "Лазаровден – лазарките пеят",
+            "en": "St Lazarus Day – the lazarki sing"
+          },
+          {
+            "bg": "Цветница – имен ден на хората с имена на цветя",
+            "en": "Palm Sunday – name day of people with flower names"
+          },
+          {
+            "bg": "Велики четвъртък – боядисват се яйцата",
+            "en": "Holy Thursday – the eggs are dyed"
+          },
+          {
+            "bg": "Великден – чукаме се с яйца",
+            "en": "Easter – we crack eggs together"
+          }
+        ],
+        "hint": {
+          "bg": "Лазаровден е в събота, Цветница – на следващия ден, неделя.",
+          "en": "St Lazarus Day is a Saturday, Palm Sunday the next day."
+        }
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Защо се чукаме с яйца на Великден?",
+            "en": "Why do we crack eggs on Easter?"
+          },
+          "options": [
+            {
+              "bg": "Който остане с цяло яйце, ще е здрав през годината",
+              "en": "Whoever keeps a whole egg will be healthy all year"
+            },
+            {
+              "bg": "За да ги изядем по-бързо",
+              "en": "To eat them faster"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Институт за етнология и фолклористика с Етнографски музей – БАН",
+    "Учебници по „Музика“, „Технологии“ и „Човекът и обществото“ (1.–6. кл.), МОН"
+  ],
+  "review": null,
+  "draft": true
+}

@@ -6,6 +6,7 @@ import { MISSIONS } from '../src/content/missions'
 import { PROVINCES } from '../src/content/layers'
 import { placeById } from '../src/content/places'
 import type { Game, Question } from '../src/content/schema'
+import { partsOf } from '../src/games/Paint'
 import { shuffledIndexes } from '../src/games/shuffle'
 import { activeProfile, useProfiles } from '../src/store/profiles'
 import { useSettings } from '../src/store/settings'
@@ -117,6 +118,16 @@ async function solveGame(game: Game) {
     case 'riddle':
       fireEvent.click(within(screen.getByRole('list', { name: 'Отговори' })).getByRole('button', { name: game.options[game.answer]!.bg }))
       return next()
+    case 'cook':
+      for (const ing of game.ingredients) if (ing.belongs) fireEvent.click(within(screen.getByRole('list', { name: 'Съставки' })).getByRole('button', { name: ing.bg }))
+      for (const s of game.steps) fireEvent.click(within(screen.getByRole('list', { name: 'Стъпки за подреждане' })).getByRole('button', { name: s.bg }))
+      return next()
+    case 'paint':
+      partsOf(game.rows).forEach((part, p) => {
+        fireEvent.click(within(screen.getByRole('list', { name: 'Цветове' })).getByRole('button', { name: game.palette[part.letter.charCodeAt(0) - 97]!.bg }))
+        fireEvent.click(screen.getByRole('button', { name: `Част ${p + 1}` }))
+      })
+      return next()
   }
 }
 
@@ -183,13 +194,13 @@ describe('a break after 3 missions in a row', () => {
   })
 })
 
-describe('there is at least one mission per subject and all 15 templates are used', () => {
+describe('there is at least one mission per subject and all 17 templates are used', () => {
   it('subjects', () => {
     expect(new Set(MISSIONS.map((m) => m.subject))).toEqual(new Set(['history', 'culture', 'language', 'geography']))
   })
   it('templates', () => {
     const used = new Set(MISSIONS.flatMap((m) => Object.values(m.levels).map((l) => l!.game.type)))
-    expect(used).toEqual(new Set(['quiz', 'map', 'match', 'order', 'puzzle', 'find', 'sort', 'memory', 'chest', 'build', 'guess', 'trace', 'regions', 'assemble', 'riddle']))
+    expect(used).toEqual(new Set(['quiz', 'map', 'match', 'order', 'puzzle', 'find', 'sort', 'memory', 'chest', 'build', 'guess', 'trace', 'regions', 'assemble', 'riddle', 'cook', 'paint']))
   })
 })
 
