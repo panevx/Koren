@@ -279,16 +279,16 @@
                 "en": "The greedy and the pompous"
               },
               {
+                "bg": "На бедните и слабите",
+                "en": "The poor and the weak"
+              },
+              {
                 "bg": "На децата",
                 "en": "Children"
               },
               {
                 "bg": "На животните",
                 "en": "Animals"
-              },
-              {
-                "bg": "На учителите",
-                "en": "Teachers"
               }
             ],
             "answer": 0
@@ -304,16 +304,16 @@
                 "en": "A trickster in the stories of many peoples"
               },
               {
-                "bg": "Цар",
-                "en": "A king"
+                "bg": "Хайдутин от Стара планина",
+                "en": "An outlaw from the Balkan Mountains"
               },
               {
-                "bg": "Будител",
-                "en": "An enlightener"
+                "bg": "Цар от народните песни",
+                "en": "A king from folk songs"
               },
               {
-                "bg": "Хайдутин",
-                "en": "An outlaw"
+                "bg": "Будител от Възраждането",
+                "en": "An enlightener of the Revival"
               }
             ],
             "answer": 0
@@ -325,20 +325,20 @@
             },
             "options": [
               {
-                "bg": "Хитрец",
-                "en": "A trickster"
+                "bg": "Хитрец от народните разкази",
+                "en": "A trickster from folk stories"
               },
               {
                 "bg": "Юнак от народните песни",
                 "en": "A hero of folk songs"
               },
               {
-                "bg": "Писател",
-                "en": "A writer"
+                "bg": "Писател от Възраждането",
+                "en": "A writer of the Revival"
               },
               {
-                "bg": "Хан",
-                "en": "A khan"
+                "bg": "Хан от Първото царство",
+                "en": "A khan of the First Empire"
               }
             ],
             "answer": 1
@@ -354,16 +354,16 @@
                 "en": "Wit beats strength and wealth"
               },
               {
-                "bg": "Има много битки",
-                "en": "There are many battles"
+                "bg": "Героят винаги губи",
+                "en": "The hero always loses"
               },
               {
-                "bg": "Има много числа",
-                "en": "There are many numbers"
+                "bg": "Животните говорят",
+                "en": "The animals talk"
               },
               {
-                "bg": "Тъжни са",
-                "en": "They are sad"
+                "bg": "Има много вълшебства",
+                "en": "There is a lot of magic"
               }
             ],
             "answer": 0
@@ -374,16 +374,24 @@
         {
           "q": {
             "bg": "Кой е юнакът от народните песни, а не хитрецът?",
-            "en": "Who is the hero of the folk songs, not the trickster?"
+            "en": "Who is the hero of folk songs, not the trickster?"
           },
           "options": [
             {
               "bg": "Крали Марко",
-              "en": "Prince Marko"
+              "en": "Krali Marko"
             },
             {
               "bg": "Хитър Петър",
               "en": "Clever Peter"
+            },
+            {
+              "bg": "Настрадин Ходжа",
+              "en": "Nasreddin Hodja"
+            },
+            {
+              "bg": "Бай Ганьо",
+              "en": "Bay Ganyo"
             }
           ],
           "answer": 0
@@ -415,28 +423,28 @@
         },
         {
           "q": {
-            "bg": "Кое е най-силно в разказите за Хитър Петър?",
-            "en": "What is strongest in the Clever Peter stories?"
+            "bg": "Откъде идват разказите за Хитър Петър?",
+            "en": "Where do the Clever Peter stories come from?"
           },
           "options": [
             {
-              "bg": "Силата",
-              "en": "Strength"
+              "bg": "От народното творчество",
+              "en": "From folk tradition"
             },
             {
-              "bg": "Парите",
-              "en": "Money"
+              "bg": "От роман на Вазов",
+              "en": "From a novel by Vazov"
             },
             {
-              "bg": "Умът",
-              "en": "Wit"
+              "bg": "От детско списание",
+              "en": "From a children’s magazine"
             },
             {
-              "bg": "Властта",
-              "en": "Power"
+              "bg": "От чуждестранен филм",
+              "en": "From a foreign film"
             }
           ],
-          "answer": 2
+          "answer": 0
         }
       ]
     }

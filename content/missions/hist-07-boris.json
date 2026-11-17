@@ -115,25 +115,25 @@
         },
         "items": [
           {
-            "bg": "Покръстването (864 г.)",
-            "en": "The Christianisation (864)"
+            "bg": "Покръстването",
+            "en": "The Christianisation"
           },
           {
-            "bg": "Пристигат Климент и Наум (886 г.)",
-            "en": "Kliment and Naum arrive (886)"
+            "bg": "Пристигат Климент и Наум",
+            "en": "Kliment and Naum arrive"
           },
           {
-            "bg": "Борис отива в манастир (889 г.)",
-            "en": "Boris goes to a monastery (889)"
+            "bg": "Борис отива в манастир",
+            "en": "Boris goes to a monastery"
           },
           {
-            "bg": "Съборът в Преслав (893 г.)",
-            "en": "The Council of Preslav (893)"
+            "bg": "Съборът в Преслав",
+            "en": "The Council of Preslav"
           }
         ],
         "hint": {
-          "bg": "Годините помагат: от по-малката към по-голямата.",
-          "en": "The years help: from the smaller to the bigger."
+          "bg": "Първо е покръстването, а съборът е последен.",
+          "en": "The Christianisation is first and the council is last."
         }
       },
       "extra": {
@@ -408,17 +408,25 @@
       "check": [
         {
           "q": {
-            "bg": "Какво решава Съборът в Преслав (893 г.)?",
-            "en": "What did the Council of Preslav (893) decide?"
+            "bg": "Какво решава Съборът в Преслав през 893 г.?",
+            "en": "What does the Council of Preslav decide in 893?"
           },
           "options": [
             {
-              "bg": "Столицата става Преслав, а богослужението – на старобългарски",
-              "en": "Preslav becomes the capital, and church services are in Old Bulgarian"
+              "bg": "Богослужението става на старобългарски",
+              "en": "Church services are held in Old Bulgarian"
             },
             {
-              "bg": "България става империя",
-              "en": "Bulgaria becomes an empire"
+              "bg": "Българите приемат християнството",
+              "en": "The Bulgarians accept Christianity"
+            },
+            {
+              "bg": "Плиска става столица",
+              "en": "Pliska becomes the capital"
+            },
+            {
+              "bg": "Охрид става столица",
+              "en": "Ohrid becomes the capital"
             }
           ],
           "answer": 0

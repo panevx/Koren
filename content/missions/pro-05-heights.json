@@ -420,8 +420,8 @@
         },
         {
           "q": {
-            "bg": "Коя река пресича цялата Стара планина?",
-            "en": "Which river crosses the whole Balkan Mountains?"
+            "bg": "Коя река минава през Велико Търново?",
+            "en": "Which river flows through Veliko Tarnovo?"
           },
           "options": [
             {
@@ -429,19 +429,19 @@
               "en": "Yantra"
             },
             {
+              "bg": "Осъм",
+              "en": "Osam"
+            },
+            {
               "bg": "Вит",
               "en": "Vit"
             },
             {
-              "bg": "Искър",
-              "en": "Iskar"
-            },
-            {
-              "bg": "Тунджа",
-              "en": "Tundzha"
+              "bg": "Росица",
+              "en": "Rositsa"
             }
           ],
-          "answer": 2
+          "answer": 0
         },
         {
           "q": {

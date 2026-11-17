@@ -298,16 +298,16 @@
                 "en": "To unite the people and be equal to the Christian states"
               },
               {
-                "bg": "За да спечели една битка",
-                "en": "To win one battle"
+                "bg": "За да сключи мир с аварите",
+                "en": "To make peace with the Avars"
               },
               {
-                "bg": "Защото Симеон го кара",
-                "en": "Because Simeon makes him"
+                "bg": "За да отвоюва Плиска от Византия",
+                "en": "To win Pliska back from Byzantium"
               },
               {
-                "bg": "Заради търговия с Китай",
-                "en": "For trade with China"
+                "bg": "За да стане император на Рим",
+                "en": "To become emperor of Rome"
               }
             ],
             "answer": 0
@@ -442,28 +442,28 @@
         },
         {
           "q": {
-            "bg": "Коя е последната столица на Първото царство?",
-            "en": "Which is the last capital of the First Empire?"
+            "bg": "Кой хан управлява след Крум?",
+            "en": "Which khan rules after Krum?"
           },
           "options": [
             {
-              "bg": "Плиска",
-              "en": "Pliska"
+              "bg": "Омуртаг",
+              "en": "Omurtag"
             },
             {
-              "bg": "Преслав",
-              "en": "Preslav"
+              "bg": "Тервел",
+              "en": "Tervel"
             },
             {
-              "bg": "Охрид",
-              "en": "Ohrid"
+              "bg": "Аспарух",
+              "en": "Asparuh"
             },
             {
-              "bg": "Търново",
-              "en": "Tarnovo"
+              "bg": "Борис I",
+              "en": "Boris I"
             }
           ],
-          "answer": 2
+          "answer": 0
         },
         {
           "q": {

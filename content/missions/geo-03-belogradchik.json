@@ -309,20 +309,24 @@
           {
             "q": {
               "bg": "Откъде идва червеният цвят на скалите?",
-              "en": "Where does the rocks' red colour come from?"
+              "en": "Where does the red colour of the rocks come from?"
             },
             "options": [
               {
                 "bg": "От железни оксиди",
-                "en": "From iron oxides"
+                "en": "Iron oxides"
               },
               {
-                "bg": "От боя",
-                "en": "From paint"
+                "bg": "От медни руди",
+                "en": "Copper ores"
               },
               {
-                "bg": "От залеза",
-                "en": "From the sunset"
+                "bg": "От червени водорасли",
+                "en": "Red algae"
+              },
+              {
+                "bg": "От вулканична пепел",
+                "en": "Volcanic ash"
               }
             ],
             "answer": 0,
@@ -363,19 +367,23 @@
             },
             "options": [
               {
-                "bg": "Езеро с делфини",
-                "en": "A lake with dolphins"
-              },
-              {
-                "bg": "Вулкан",
-                "en": "A volcano"
-              },
-              {
                 "bg": "Праисторически рисунки",
                 "en": "Prehistoric paintings"
+              },
+              {
+                "bg": "Подземно езеро с риби",
+                "en": "An underground lake with fish"
+              },
+              {
+                "bg": "Златна мина",
+                "en": "A gold mine"
+              },
+              {
+                "bg": "Римски мозайки",
+                "en": "Roman mosaics"
               }
             ],
-            "answer": 2,
+            "answer": 0,
             "hint": {
               "bg": "Нарисувани са от древни хора.",
               "en": "They were painted by ancient people."
@@ -462,16 +470,20 @@
         {
           "q": {
             "bg": "От какви скали са Белоградчишките скали?",
-            "en": "What kind of rock are the Belogradchik Rocks?"
+            "en": "What rock are the Belogradchik Rocks made of?"
           },
           "options": [
             {
               "bg": "Пясъчници и конгломерати",
-              "en": "Sandstones and conglomerates"
+              "en": "Sandstone and conglomerate"
             },
             {
-              "bg": "Лед",
-              "en": "Ice"
+              "bg": "Варовик и мрамор",
+              "en": "Limestone and marble"
+            },
+            {
+              "bg": "Гранит",
+              "en": "Granite"
             },
             {
               "bg": "Вулканична лава",
@@ -486,25 +498,25 @@
         },
         {
           "q": {
-            "bg": "Кой град е до скалите?",
-            "en": "Which town is next to the rocks?"
+            "bg": "В коя област са Белоградчишките скали?",
+            "en": "In which province are the Belogradchik Rocks?"
           },
           "options": [
             {
-              "bg": "Белоградчик",
-              "en": "Belogradchik"
+              "bg": "Видин",
+              "en": "Vidin"
             },
             {
-              "bg": "Варна",
-              "en": "Varna"
+              "bg": "Враца",
+              "en": "Vratsa"
             },
             {
-              "bg": "Бургас",
-              "en": "Burgas"
+              "bg": "Монтана",
+              "en": "Montana"
             },
             {
-              "bg": "Пловдив",
-              "en": "Plovdiv"
+              "bg": "Плевен",
+              "en": "Pleven"
             }
           ],
           "answer": 0
@@ -524,12 +536,12 @@
               "en": "Bat droppings (guano)"
             },
             {
-              "bg": "С флумастери",
-              "en": "Felt-tip pens"
+              "bg": "С въглен и кръв",
+              "en": "Charcoal and blood"
             },
             {
-              "bg": "Със злато",
-              "en": "Gold"
+              "bg": "С варова боя",
+              "en": "Lime paint"
             }
           ],
           "answer": 1

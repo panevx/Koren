@@ -313,16 +313,16 @@
                 "en": "Polyphonic singing and dancing by old women"
               },
               {
-                "bg": "Килими",
-                "en": "Carpets"
+                "bg": "Кукерска група от Пернишко",
+                "en": "A kukeri group from the Pernik region"
               },
               {
-                "bg": "Маски",
-                "en": "Masks"
+                "bg": "Тъкачки на чипровски килими",
+                "en": "Weavers of Chiprovtsi carpets"
               },
               {
-                "bg": "Ястие",
-                "en": "A dish"
+                "bg": "Родопски певици с каба гайда",
+                "en": "Rhodope singers with a kaba gaida"
               }
             ],
             "answer": 0
@@ -383,7 +383,7 @@
         {
           "q": {
             "bg": "Какво значи „нематериално наследство“?",
-            "en": "What does \"intangible heritage\" mean?"
+            "en": "What does “intangible heritage” mean?"
           },
           "options": [
             {
@@ -391,8 +391,16 @@
               "en": "Skills, songs and customs passed from person to person"
             },
             {
-              "bg": "Само сгради и паметници",
-              "en": "Only buildings and monuments"
+              "bg": "Стари сгради, защитени от закона",
+              "en": "Old buildings protected by law"
+            },
+            {
+              "bg": "Предмети, пазени в музеите",
+              "en": "Objects kept in museums"
+            },
+            {
+              "bg": "Природни паркове и резервати",
+              "en": "Nature parks and reserves"
             }
           ],
           "answer": 0
@@ -424,25 +432,25 @@
         },
         {
           "q": {
-            "bg": "В кое село се пази нестинарството?",
-            "en": "In which village is nestinarstvo kept alive?"
+            "bg": "През коя година нестинарството е вписано в списъка на ЮНЕСКО?",
+            "en": "In which year is nestinarstvo inscribed on the UNESCO list?"
           },
           "options": [
             {
-              "bg": "Бистрица",
-              "en": "Bistritsa"
+              "bg": "1979",
+              "en": "1979"
             },
             {
-              "bg": "Чипровци",
-              "en": "Chiprovtsi"
+              "bg": "1999",
+              "en": "1999"
             },
             {
-              "bg": "Българи",
-              "en": "Bulgari"
+              "bg": "2009",
+              "en": "2009"
             },
             {
-              "bg": "Копривщица",
-              "en": "Koprivshtitsa"
+              "bg": "2019",
+              "en": "2019"
             }
           ],
           "answer": 2

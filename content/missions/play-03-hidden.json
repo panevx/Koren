@@ -484,41 +484,41 @@
               "en": "Some are deadly poisonous"
             },
             {
-              "bg": "Всички са защитени",
-              "en": "All are protected"
+              "bg": "Всички гъби са защитени",
+              "en": "All mushrooms are protected"
             },
             {
-              "bg": "Те са сладки",
-              "en": "They are sweet"
+              "bg": "Растат веднъж на десет години",
+              "en": "They grow once every ten years"
             },
             {
-              "bg": "Растат бавно",
-              "en": "They grow slowly"
+              "bg": "Пречат на дърветата да растат",
+              "en": "They stop trees growing"
             }
           ],
           "answer": 0
         },
         {
           "q": {
-            "bg": "Какви монети носят жените по носията като украса?",
-            "en": "Which coins do women wear on folk costume as decoration?"
+            "bg": "Какво означава белият цвят на мартеницата?",
+            "en": "What does the white of the martenitsa mean?"
           },
           "options": [
             {
-              "bg": "Пендари",
-              "en": "Pendari"
+              "bg": "Чистота",
+              "en": "Purity"
             },
             {
-              "bg": "Мартеници",
-              "en": "Martenitsi"
+              "bg": "Здраве",
+              "en": "Health"
             },
             {
-              "bg": "Ключове",
-              "en": "Keys"
+              "bg": "Смелост",
+              "en": "Courage"
             },
             {
-              "bg": "Пера",
-              "en": "Quills"
+              "bg": "Богатство",
+              "en": "Wealth"
             }
           ],
           "answer": 0

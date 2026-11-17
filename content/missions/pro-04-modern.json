@@ -427,25 +427,25 @@
         },
         {
           "q": {
-            "bg": "В кой град е приета първата българска конституция?",
-            "en": "In which town is the first Bulgarian constitution adopted?"
+            "bg": "Кой обявява Независимостта през 1908 г.?",
+            "en": "Who declares Independence in 1908?"
           },
           "options": [
             {
-              "bg": "Велико Търново",
-              "en": "Veliko Tarnovo"
+              "bg": "Княз Фердинанд",
+              "en": "Prince Ferdinand"
             },
             {
-              "bg": "София",
-              "en": "Sofia"
+              "bg": "Княз Александър Батенберг",
+              "en": "Prince Alexander of Battenberg"
             },
             {
-              "bg": "Пловдив",
-              "en": "Plovdiv"
+              "bg": "Цар Борис III",
+              "en": "Tsar Boris III"
             },
             {
-              "bg": "Шумен",
-              "en": "Shumen"
+              "bg": "Цар Симеон II",
+              "en": "Tsar Simeon II"
             }
           ],
           "answer": 0

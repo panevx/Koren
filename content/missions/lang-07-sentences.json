@@ -503,11 +503,19 @@
           "options": [
             {
               "bg": "Ученикът чете.",
-              "en": "Ученикът чете."
+              "en": "Uchenikat chete."
             },
             {
               "bg": "Ученика чете.",
-              "en": "Ученика чете."
+              "en": "Uchenika chete."
+            },
+            {
+              "bg": "Учениката чете.",
+              "en": "Uchenikata chete."
+            },
+            {
+              "bg": "Ученикат чете.",
+              "en": "Uchenikat (a) chete."
             }
           ],
           "answer": 0,

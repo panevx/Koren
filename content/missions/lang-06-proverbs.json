@@ -485,16 +485,24 @@
         {
           "q": {
             "bg": "Какво значи „Тиха вода брегове рони“?",
-            "en": "What does \"Quiet water wears away the banks\" mean?"
+            "en": "What does “Still water wears away the banks” mean?"
           },
           "options": [
             {
               "bg": "Тихите хора също могат много",
-              "en": "Quiet people can also do a lot"
+              "en": "Quiet people can achieve a lot too"
             },
             {
-              "bg": "Реките са тихи",
-              "en": "Rivers are quiet"
+              "bg": "Бавната работа не струва",
+              "en": "Slow work is worthless"
+            },
+            {
+              "bg": "Реките са опасни",
+              "en": "Rivers are dangerous"
+            },
+            {
+              "bg": "Водата е по-силна от камъка",
+              "en": "Water is stronger than stone"
             }
           ],
           "answer": 0
@@ -526,28 +534,28 @@
         },
         {
           "q": {
-            "bg": "Коя поговорка учи да не се хвалим предварително?",
-            "en": "Which proverb teaches us not to boast too early?"
+            "bg": "Какво значи „Бързата работа – срам за майстора“?",
+            "en": "What does “Hasty work shames the master” mean?"
           },
           "options": [
             {
-              "bg": "„Капка по капка – вир става.“",
-              "en": "“Drop by drop a pool forms.”"
+              "bg": "Като бързаш, правиш грешки",
+              "en": "When you hurry, you make mistakes"
             },
             {
-              "bg": "„Не казвай „хоп“, докато не прескочиш.“",
-              "en": "“Don’t say ‘hop’ until you have jumped.”"
+              "bg": "Майсторите работят бавно",
+              "en": "Masters work slowly"
             },
             {
-              "bg": "„Нова метла – чисто мете.“",
-              "en": "“A new broom sweeps clean.”"
+              "bg": "Бързият е най-добрият майстор",
+              "en": "The fastest is the best master"
             },
             {
-              "bg": "„Ден година храни.“",
-              "en": "“A day feeds a year.”"
+              "bg": "Срамно е да работиш",
+              "en": "Working is shameful"
             }
           ],
-          "answer": 1
+          "answer": 0
         }
       ]
     }

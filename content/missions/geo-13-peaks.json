@@ -445,15 +445,19 @@
           "options": [
             {
               "bg": "Балканския полуостров",
-              "en": "the Balkan Peninsula"
+              "en": "The Balkan Peninsula"
             },
             {
               "bg": "Европа",
               "en": "Europe"
             },
             {
-              "bg": "света",
-              "en": "the world"
+              "bg": "Алпите",
+              "en": "The Alps"
+            },
+            {
+              "bg": "Карпатите",
+              "en": "The Carpathians"
             }
           ],
           "answer": 0
@@ -461,7 +465,7 @@
         {
           "q": {
             "bg": "В коя планина е Вихрен?",
-            "en": "Which mountain is Vihren in?"
+            "en": "In which mountain is Vihren?"
           },
           "options": [
             {
@@ -475,6 +479,10 @@
             {
               "bg": "Витоша",
               "en": "Vitosha"
+            },
+            {
+              "bg": "Родопите",
+              "en": "The Rhodopes"
             }
           ],
           "answer": 1
@@ -487,15 +495,19 @@
           "options": [
             {
               "bg": "Стара планина",
-              "en": "the Balkan Mountains"
+              "en": "The Balkan Mountains"
             },
             {
               "bg": "Родопите",
-              "en": "the Rhodopes"
+              "en": "The Rhodopes"
             },
             {
               "bg": "Странджа",
               "en": "Strandzha"
+            },
+            {
+              "bg": "Средна гора",
+              "en": "Sredna Gora"
             }
           ],
           "answer": 0

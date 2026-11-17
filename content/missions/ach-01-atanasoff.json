@@ -290,24 +290,28 @@
         },
         "items": [
           {
-            "bg": "Компютърът ABC на Атанасов и Бери (1937–1942)",
-            "en": "The ABC of Atanasoff and Berry (1937–1942)",
+            "bg": "Компютърът ABC на Атанасов и Бери",
+            "en": "The ABC of Atanasoff and Berry",
             "img": "science/atanasoff-computer.webp"
           },
           {
-            "bg": "ENIAC – огромен компютър в цяла зала (1945)",
-            "en": "ENIAC – a huge computer filling a room (1945)"
+            "bg": "ENIAC – огромен компютър в цяла зала",
+            "en": "ENIAC – a huge computer filling a room"
           },
           {
-            "bg": "Първите домашни компютри (1970-те)",
-            "en": "The first home computers (1970s)",
+            "bg": "Първите домашни компютри",
+            "en": "The first home computers",
             "img": "science/computer.webp"
           },
           {
-            "bg": "Смартфоните (2000-те)",
-            "en": "Smartphones (2000s)"
+            "bg": "Смартфоните",
+            "en": "Smartphones"
           }
-        ]
+        ],
+        "hint": {
+          "bg": "ABC е първият, а смартфоните са най-новите.",
+          "en": "The ABC comes first and smartphones are the newest."
+        }
       },
       "extra": {
         "type": "quiz",
@@ -348,16 +352,16 @@
                 "en": "The Atanasoff–Berry Computer"
               },
               {
-                "bg": "Азбука",
-                "en": "Alphabet"
+                "bg": "Автоматичен броячен калкулатор",
+                "en": "Automatic Binary Calculator"
               },
               {
-                "bg": "Голяма американска кола",
-                "en": "A big American car"
+                "bg": "Американски бързодействащ компютър",
+                "en": "American Bulk Computer"
               },
               {
-                "bg": "Нищо",
-                "en": "Nothing"
+                "bg": "Азбучен код на Бери",
+                "en": "Berry’s Alphabet Code"
               }
             ],
             "answer": 0
@@ -418,16 +422,24 @@
         {
           "q": {
             "bg": "Какво значи „цифров“ компютър?",
-            "en": "What does \"digital\" computer mean?"
+            "en": "What does a “digital” computer mean?"
           },
           "options": [
             {
-              "bg": "Смята с числата 0 и 1",
-              "en": "It computes with the numbers 0 and 1"
+              "bg": "Работи с числата 0 и 1",
+              "en": "It works with the numbers 0 and 1"
             },
             {
-              "bg": "Има циферблат",
-              "en": "It has a dial"
+              "bg": "Работи само с десетични цифри",
+              "en": "It works only with decimal digits"
+            },
+            {
+              "bg": "Показва цифри на екран",
+              "en": "It shows digits on a screen"
+            },
+            {
+              "bg": "Има циферблат като часовник",
+              "en": "It has a dial like a clock"
             }
           ],
           "answer": 0
@@ -468,16 +480,16 @@
               "en": "That the idea of the electronic digital computer is Atanasoff’s"
             },
             {
-              "bg": "Че Атанасов е изобретил телефона",
-              "en": "That Atanasoff invented the telephone"
+              "bg": "Че ENIAC е първият електронен цифров компютър",
+              "en": "That ENIAC is the first electronic digital computer"
             },
             {
-              "bg": "Че ENIAC е построен първи",
-              "en": "That ENIAC was built first"
+              "bg": "Че ABC е построен след ENIAC",
+              "en": "That the ABC was built after ENIAC"
             },
             {
-              "bg": "Нищо",
-              "en": "Nothing"
+              "bg": "Че Атанасов и Бери не са построили компютър",
+              "en": "That Atanasoff and Berry never built a computer"
             }
           ],
           "answer": 0

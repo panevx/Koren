@@ -273,8 +273,8 @@
         },
         "items": [
           {
-            "bg": "Роден в Карлово (1837 г.)",
-            "en": "Born in Karlovo (1837)"
+            "bg": "Роден в Карлово",
+            "en": "Born in Karlovo"
           },
           {
             "bg": "Става монах – Дякона",
@@ -285,10 +285,14 @@
             "en": "Sets up revolutionary committees"
           },
           {
-            "bg": "Загива в София (1873 г.)",
-            "en": "Dies in Sofia (1873)"
+            "bg": "Загива в София",
+            "en": "Dies in Sofia"
           }
-        ]
+        ],
+        "hint": {
+          "bg": "Започни с раждането му.",
+          "en": "Start with his birth."
+        }
       },
       "extra": {
         "type": "quiz",
@@ -325,23 +329,23 @@
             },
             "options": [
               {
-                "bg": "Първото училище",
-                "en": "The first school"
-              },
-              {
                 "bg": "Мрежа от революционни комитети",
                 "en": "A network of revolutionary committees"
               },
               {
-                "bg": "Вестник в Букурещ",
-                "en": "A newspaper in Bucharest"
+                "bg": "Първите читалища",
+                "en": "The first chitalishta"
               },
               {
-                "bg": "Чета на кораб",
-                "en": "A band on a ship"
+                "bg": "Българската екзархия",
+                "en": "The Bulgarian Exarchate"
+              },
+              {
+                "bg": "Чета, която минава Дунав",
+                "en": "A band that crosses the Danube"
               }
             ],
-            "answer": 1
+            "answer": 0
           },
           {
             "q": {
@@ -354,16 +358,16 @@
                 "en": "A republic with equal rights for all"
               },
               {
-                "bg": "Империя",
-                "en": "An empire"
+                "bg": "Княжество с руски княз",
+                "en": "A principality with a Russian prince"
               },
               {
-                "bg": "Царство с нов цар",
-                "en": "A kingdom with a new tsar"
+                "bg": "Царство с български цар",
+                "en": "A kingdom with a Bulgarian tsar"
               },
               {
-                "bg": "Част от друга държава",
-                "en": "Part of another country"
+                "bg": "Автономна област в империята",
+                "en": "An autonomous region within the empire"
               }
             ],
             "answer": 0
@@ -399,16 +403,24 @@
         {
           "q": {
             "bg": "Какво значи „Апостол на свободата“?",
-            "en": "What does \"Apostle of Freedom\" mean?"
+            "en": "What does “Apostle of Freedom” mean?"
           },
           "options": [
             {
               "bg": "Човек, който носи идеята за свобода на всички",
-              "en": "Someone who carries the idea of freedom to everyone"
+              "en": "A person who carries the idea of freedom to everyone"
             },
             {
-              "bg": "Цар",
-              "en": "A king"
+              "bg": "Духовник, който служи в църквата",
+              "en": "A priest who serves in church"
+            },
+            {
+              "bg": "Пратеник на руския цар",
+              "en": "An envoy of the Russian tsar"
+            },
+            {
+              "bg": "Водач на чета в Румъния",
+              "en": "The leader of a band in Romania"
             }
           ],
           "answer": 0
@@ -416,7 +428,7 @@
         {
           "q": {
             "bg": "Как се казва истински Левски?",
-            "en": "What was Levski's real name?"
+            "en": "What is Levski’s real name?"
           },
           "options": [
             {
@@ -426,6 +438,14 @@
             {
               "bg": "Христо Ботьов Петков",
               "en": "Hristo Botyov Petkov"
+            },
+            {
+              "bg": "Георги Стойков Раковски",
+              "en": "Georgi Stoykov Rakovski"
+            },
+            {
+              "bg": "Любен Стойчев Каравелов",
+              "en": "Lyuben Stoychev Karavelov"
             }
           ],
           "answer": 0

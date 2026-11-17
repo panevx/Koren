@@ -389,8 +389,16 @@
               "en": "Danube Bridge 2"
             },
             {
-              "bg": "Мостът на Искър",
-              "en": "The Iskar bridge"
+              "bg": "Дунав мост",
+              "en": "The Danube Bridge"
+            },
+            {
+              "bg": "Мостът при Свищов",
+              "en": "The bridge at Svishtov"
+            },
+            {
+              "bg": "Мостът при Силистра",
+              "en": "The bridge at Silistra"
             }
           ],
           "answer": 0
@@ -398,45 +406,49 @@
         {
           "q": {
             "bg": "Колко паневропейски коридора минават през България?",
-            "en": "How many Pan-European corridors cross Bulgaria?"
+            "en": "How many pan-European corridors cross Bulgaria?"
           },
           "options": [
+            {
+              "bg": "3",
+              "en": "3"
+            },
             {
               "bg": "5",
               "en": "5"
             },
             {
-              "bg": "1",
-              "en": "1"
+              "bg": "7",
+              "en": "7"
             },
             {
-              "bg": "12",
-              "en": "12"
+              "bg": "10",
+              "en": "10"
             }
           ],
-          "answer": 0
+          "answer": 1
         },
         {
           "q": {
-            "bg": "Какво е транспортен коридор?",
-            "en": "What is a transport corridor?"
+            "bg": "Какво е паневропейски транспортен коридор?",
+            "en": "What is a pan-European transport corridor?"
           },
           "options": [
             {
-              "bg": "Голям път за хора и стоки през няколко държави",
-              "en": "A major route for people and goods across several countries"
+              "bg": "Път, железница или река, която свързва няколко държави",
+              "en": "A road, railway or river linking several countries"
             },
             {
-              "bg": "Коридор в училище",
-              "en": "A school corridor"
+              "bg": "Граница между две държави",
+              "en": "A border between two countries"
             },
             {
-              "bg": "Тунел за влак",
-              "en": "A train tunnel"
+              "bg": "Летище с международни полети",
+              "en": "An airport with international flights"
             },
             {
-              "bg": "Летище",
-              "en": "An airport"
+              "bg": "Пристанище на Черно море",
+              "en": "A port on the Black Sea"
             }
           ],
           "answer": 0

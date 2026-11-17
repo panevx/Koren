@@ -388,23 +388,23 @@
             },
             "options": [
               {
-                "bg": "Гориво",
-                "en": "Fuel"
+                "bg": "В козметиката и в сладкиши",
+                "en": "In cosmetics and sweets"
               },
               {
-                "bg": "Козметика и сладкиши",
-                "en": "Cosmetics and sweets"
+                "bg": "Като гориво за казаните",
+                "en": "As fuel for the stills"
               },
               {
-                "bg": "Боя за коли",
-                "en": "Car paint"
+                "bg": "За боядисване на тъкани",
+                "en": "For dyeing cloth"
               },
               {
-                "bg": "Лепило",
-                "en": "Glue"
+                "bg": "За поливане на розовите градини",
+                "en": "For watering the rose fields"
               }
             ],
-            "answer": 1
+            "answer": 0
           },
           {
             "q": {
@@ -436,17 +436,25 @@
       "check": [
         {
           "q": {
-            "bg": "Къде се използва розовото масло?",
-            "en": "Where is rose oil used?"
+            "bg": "Къде се използва най-много розовото масло?",
+            "en": "Where is rose oil used most?"
           },
           "options": [
             {
-              "bg": "В парфюми и козметика",
+              "bg": "В парфюмерията и козметиката",
               "en": "In perfumes and cosmetics"
             },
             {
-              "bg": "Като гориво",
-              "en": "As fuel"
+              "bg": "В сосовете и подправките",
+              "en": "In sauces and spices"
+            },
+            {
+              "bg": "Като лекарство за кашлица",
+              "en": "As a cough medicine"
+            },
+            {
+              "bg": "Като смазка за машини",
+              "en": "As grease for machines"
             }
           ],
           "answer": 0
@@ -458,20 +466,20 @@
           },
           "options": [
             {
-              "bg": "Трябва огромно количество цвят",
-              "en": "A huge amount of petals is needed"
+              "bg": "Трябват тонове цвят за един килограм",
+              "en": "Tonnes of petals are needed for one kilogram"
             },
             {
-              "bg": "Розите са сини",
-              "en": "The roses are blue"
+              "bg": "Розите растат само в една градина",
+              "en": "The roses grow in only one garden"
             },
             {
-              "bg": "Прави се от злато",
-              "en": "It is made of gold"
+              "bg": "Добива се веднъж на десет години",
+              "en": "It is made once every ten years"
             },
             {
-              "bg": "Има малко бутилки",
-              "en": "There are few bottles"
+              "bg": "Бере се само нощем",
+              "en": "It is picked only at night"
             }
           ],
           "answer": 0

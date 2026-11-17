@@ -288,7 +288,7 @@
         {
           "q": {
             "bg": "Как се казва първата буква на глаголицата?",
-            "en": "What is the name of the first Glagolitic letter?"
+            "en": "What is the first letter of Glagolitic called?"
           },
           "options": [
             {
@@ -302,23 +302,35 @@
             {
               "bg": "Глаголи",
               "en": "Glagoli"
+            },
+            {
+              "bg": "Веди",
+              "en": "Vedi"
             }
           ],
           "answer": 0
         },
         {
           "q": {
-            "bg": "Защо азбуката се казва „глаголица“?",
-            "en": "Why is the alphabet called \"Glagolitic\"?"
+            "bg": "Откъде идва името „глаголица“?",
+            "en": "Where does the name “Glagolitic” come from?"
           },
           "options": [
             {
-              "bg": "От „глагол“ – дума, говоря",
-              "en": "From \"glagol\" – word, to speak"
+              "bg": "От „глагол“ – дума, слово",
+              "en": "From “glagol” – word"
             },
             {
               "bg": "От името на град",
               "en": "From the name of a town"
+            },
+            {
+              "bg": "От името на ученик",
+              "en": "From the name of a disciple"
+            },
+            {
+              "bg": "От „гласна“ буква",
+              "en": "From “glasna” – vowel"
             }
           ],
           "answer": 0

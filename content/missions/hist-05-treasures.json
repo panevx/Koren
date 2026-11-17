@@ -459,6 +459,10 @@
             {
               "bg": "Хан Крум",
               "en": "Khan Krum"
+            },
+            {
+              "bg": "Цар Калоян",
+              "en": "Tsar Kaloyan"
             }
           ],
           "answer": 0
@@ -499,16 +503,16 @@
               "en": "It was invented much later"
             },
             {
-              "bg": "Твърде голям е",
-              "en": "It is too big"
+              "bg": "Твърде голям е за сандъка",
+              "en": "It is too big for the chest"
             },
             {
-              "bg": "Бил е забранен",
-              "en": "It was forbidden"
+              "bg": "Не е от злато",
+              "en": "It is not made of gold"
             },
             {
-              "bg": "Бил е твърде скъп",
-              "en": "It was too expensive"
+              "bg": "Не е български",
+              "en": "It is not Bulgarian"
             }
           ],
           "answer": 0

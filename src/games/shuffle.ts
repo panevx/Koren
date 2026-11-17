@@ -30,3 +30,18 @@ export function shuffledIndexes(n: number, seed: string): number[] {
   if (idx.every((v, i) => v === i)) idx.push(idx.shift()!)
   return idx
 }
+
+/**
+ * A seeded order of 0..n-1 that MAY stay as it is (unlike `shuffledIndexes`). For answer lists (v0.24.1): the author
+ * writes the right answer first most of the time — shown as written, a child learns to tap the first button.
+ * Never-in-order would be just as bad for 2 answers (the right one would always be second).
+ */
+export function answerOrder(n: number, seed: string): number[] {
+  const idx = Array.from({ length: n }, (_, i) => i)
+  const rand = rng(hash(`answers:${seed}`))
+  for (let i = n - 1; i > 0; i--) {
+    const j = Math.floor(rand() * (i + 1))
+    ;[idx[i], idx[j]] = [idx[j]!, idx[i]!]
+  }
+  return idx
+}

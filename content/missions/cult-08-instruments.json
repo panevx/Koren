@@ -392,16 +392,16 @@
                 "en": "A large Rhodope bagpipe with a low sound"
               },
               {
-                "bg": "Малък барабан",
-                "en": "A small drum"
+                "bg": "Малка гайда с висок звук от Странджа",
+                "en": "A small high-pitched bagpipe from Strandzha"
               },
               {
-                "bg": "Струнен инструмент",
-                "en": "A string instrument"
+                "bg": "Дървена флейта без мях",
+                "en": "A wooden flute without a bag"
               },
               {
-                "bg": "Метална флейта",
-                "en": "A metal flute"
+                "bg": "Барабан от козя кожа",
+                "en": "A drum of goatskin"
               }
             ],
             "answer": 0
@@ -462,16 +462,24 @@
         {
           "q": {
             "bg": "От какво е мехът на гайдата?",
-            "en": "What is the gaida's bag made of?"
+            "en": "What is the bagpipe’s bag made of?"
           },
           "options": [
             {
-              "bg": "От козя кожа",
-              "en": "Goat skin"
+              "bg": "Козя кожа",
+              "en": "Goatskin"
             },
             {
-              "bg": "От пластмаса",
-              "en": "Plastic"
+              "bg": "Говежда кожа",
+              "en": "Cowhide"
+            },
+            {
+              "bg": "Ленен плат",
+              "en": "Linen cloth"
+            },
+            {
+              "bg": "Дърво",
+              "en": "Wood"
             }
           ],
           "answer": 0

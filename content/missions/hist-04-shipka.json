@@ -324,29 +324,29 @@
         },
         "items": [
           {
-            "bg": "Априлско въстание (1876)",
-            "en": "April Uprising (1876)"
+            "bg": "Априлско въстание",
+            "en": "April Uprising"
           },
           {
-            "bg": "Русия обявява война (април 1877)",
-            "en": "Russia declares war (April 1877)"
+            "bg": "Русия обявява война",
+            "en": "Russia declares war"
           },
           {
-            "bg": "Боевете на Шипка (август 1877)",
-            "en": "Battles of Shipka (August 1877)"
+            "bg": "Боевете на Шипка",
+            "en": "Battles of Shipka"
           },
           {
-            "bg": "Санстефански мирен договор (3 март 1878)",
-            "en": "Treaty of San Stefano (3 March 1878)"
+            "bg": "Санстефански мирен договор",
+            "en": "Treaty of San Stefano"
           },
           {
-            "bg": "Търновска конституция (1879)",
-            "en": "Tarnovo Constitution (1879)"
+            "bg": "Търновска конституция",
+            "en": "Tarnovo Constitution"
           }
         ],
         "hint": {
-          "bg": "Гледай годините в скобите.",
-          "en": "Look at the years in brackets."
+          "bg": "Първо е въстанието, а конституцията идва след Освобождението.",
+          "en": "The uprising is first; the constitution comes after the Liberation."
         }
       },
       "extra": {
@@ -462,7 +462,7 @@
         {
           "q": {
             "bg": "Кой ден е националният празник на България?",
-            "en": "Which day is the national holiday of Bulgaria?"
+            "en": "Which day is Bulgaria’s national holiday?"
           },
           "options": [
             {
@@ -476,6 +476,10 @@
             {
               "bg": "6 септември",
               "en": "6 September"
+            },
+            {
+              "bg": "22 септември",
+              "en": "22 September"
             }
           ],
           "answer": 1
@@ -488,15 +492,19 @@
           "options": [
             {
               "bg": "Паметникът на свободата",
-              "en": "The Monument to Freedom"
+              "en": "The Freedom Monument"
             },
             {
-              "bg": "Рилският манастир",
-              "en": "The Rila Monastery"
+              "bg": "Паметникът на Цар Освободител",
+              "en": "The Tsar Liberator Monument"
             },
             {
-              "bg": "Крепостта Царевец",
-              "en": "Tsarevets Fortress"
+              "bg": "Паметникът „Създатели на българската държава“",
+              "en": "The “Founders of the Bulgarian State” monument"
+            },
+            {
+              "bg": "Паметникът на Левски",
+              "en": "The Levski Monument"
             }
           ],
           "answer": 0

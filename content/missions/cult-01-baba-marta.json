@@ -382,23 +382,23 @@
             },
             "options": [
               {
-                "bg": "Добра фея",
-                "en": "A good fairy"
+                "bg": "Сприхава старица – сърди ли се, времето е лошо",
+                "en": "A moody old woman – when she is cross, the weather is bad"
               },
               {
-                "bg": "Сприхава старица – когато е сърдита, времето е лошо",
-                "en": "A moody old woman – when she is angry, the weather is bad"
+                "bg": "Добра старица, която носи подаръци на Коледа",
+                "en": "A kind old woman who brings presents at Christmas"
               },
               {
-                "bg": "Морско същество",
-                "en": "A sea creature"
+                "bg": "Млада девойка, която води пролетта",
+                "en": "A young girl who leads spring in"
               },
               {
-                "bg": "Царица на зимата",
-                "en": "The queen of winter"
+                "bg": "Царица, която управлява зимата",
+                "en": "A queen who rules the winter"
               }
             ],
-            "answer": 1
+            "answer": 0
           },
           {
             "q": {
@@ -407,20 +407,20 @@
             },
             "options": [
               {
-                "bg": "Здраве",
+                "bg": "Със здравето",
                 "en": "Health"
               },
               {
-                "bg": "Тъга",
-                "en": "Sadness"
+                "bg": "Със смелостта на войниците",
+                "en": "The courage of soldiers"
               },
               {
-                "bg": "Студ",
-                "en": "Cold"
+                "bg": "С любовта",
+                "en": "Love"
               },
               {
-                "bg": "Нощ",
-                "en": "Night"
+                "bg": "С огъня в огнището",
+                "en": "The fire in the hearth"
               }
             ],
             "answer": 0
@@ -431,7 +431,7 @@
         {
           "q": {
             "bg": "През коя година ЮНЕСКО вписва обичаите около 1 март?",
-            "en": "In which year did UNESCO list the customs of 1 March?"
+            "en": "In which year does UNESCO inscribe the 1 March customs?"
           },
           "options": [
             {
@@ -445,6 +445,10 @@
             {
               "bg": "1997",
               "en": "1997"
+            },
+            {
+              "bg": "2012",
+              "en": "2012"
             }
           ],
           "answer": 1,
@@ -455,24 +459,28 @@
         },
         {
           "q": {
-            "bg": "Какво ни казва първият щъркел?",
-            "en": "What does the first stork tell us?"
+            "bg": "Какво „казва“ първият щъркел по традиция?",
+            "en": "By tradition, what does the first stork “say”?"
           },
           "options": [
             {
-              "bg": "Започва училището",
-              "en": "School is starting"
-            },
-            {
-              "bg": "Идва зимата",
-              "en": "Winter is coming"
-            },
-            {
               "bg": "Пролетта е дошла",
               "en": "Spring has come"
+            },
+            {
+              "bg": "Зимата ще е дълга",
+              "en": "Winter will be long"
+            },
+            {
+              "bg": "Време е за сеитба на жито",
+              "en": "It is time to sow wheat"
+            },
+            {
+              "bg": "Скоро ще вали сняг",
+              "en": "Snow is coming soon"
             }
           ],
-          "answer": 2,
+          "answer": 0,
           "hint": {
             "bg": "Щъркелите се връщат, когато стане топло.",
             "en": "Storks come back when it gets warm."
@@ -486,7 +494,7 @@
           "options": [
             {
               "bg": "Хитър Петър и Настрадин",
-              "en": "Clever Peter and Nasradin"
+              "en": "Clever Peter and Nasreddin"
             },
             {
               "bg": "Пижо и Пенда",
@@ -495,6 +503,10 @@
             {
               "bg": "Крали Марко и Яна",
               "en": "Krali Marko and Yana"
+            },
+            {
+              "bg": "Ян Бибиян и Фют",
+              "en": "Yan Bibiyan and Fyut"
             }
           ],
           "answer": 1,

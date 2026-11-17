@@ -528,28 +528,28 @@
         },
         {
           "q": {
-            "bg": "Коя е най-дългата река изцяло в България?",
-            "en": "Which is the longest river entirely in Bulgaria?"
+            "bg": "Коя река извира от Витоша?",
+            "en": "Which river rises on Vitosha?"
           },
           "options": [
             {
-              "bg": "Марица",
-              "en": "Maritsa"
+              "bg": "Струма",
+              "en": "Struma"
             },
             {
-              "bg": "Янтра",
-              "en": "Yantra"
+              "bg": "Марица",
+              "en": "Maritsa"
             },
             {
               "bg": "Искър",
               "en": "Iskar"
             },
             {
-              "bg": "Тунджа",
-              "en": "Tundzha"
+              "bg": "Места",
+              "en": "Mesta"
             }
           ],
-          "answer": 2
+          "answer": 0
         },
         {
           "q": {

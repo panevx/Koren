@@ -360,20 +360,20 @@
             },
             "options": [
               {
-                "bg": "Хората с имена на цветя",
-                "en": "People with flower names"
+                "bg": "Хората с имена на цветя и растения",
+                "en": "People with flower and plant names"
               },
               {
-                "bg": "Всички на име Иван",
-                "en": "Everyone named Ivan"
+                "bg": "Хората с имена на светци",
+                "en": "People named after saints"
               },
               {
-                "bg": "Само децата",
-                "en": "Only children"
+                "bg": "Хората, родени през април",
+                "en": "People born in April"
               },
               {
-                "bg": "Само рибарите",
-                "en": "Only fishermen"
+                "bg": "Хората на име Лазар",
+                "en": "People named Lazar"
               }
             ],
             "answer": 0
@@ -410,23 +410,23 @@
             },
             "options": [
               {
-                "bg": "Винаги на 1 януари",
-                "en": "Always on 1 January"
-              },
-              {
-                "bg": "Винаги на 25 декември",
-                "en": "Always on 25 December"
-              },
-              {
-                "bg": "През пролетта, всяка година на различна дата",
+                "bg": "Пролетта, всяка година на различна дата",
                 "en": "In spring, on a different date each year"
               },
               {
-                "bg": "Всяко лято",
-                "en": "Every summer"
+                "bg": "Винаги на 6 май",
+                "en": "Always on 6 May"
+              },
+              {
+                "bg": "Винаги в първата неделя на април",
+                "en": "Always on the first Sunday of April"
+              },
+              {
+                "bg": "Винаги 40 дни след Коледа",
+                "en": "Always 40 days after Christmas"
               }
             ],
-            "answer": 2
+            "answer": 0
           }
         ]
       },
@@ -434,41 +434,49 @@
         {
           "q": {
             "bg": "Защо се чукаме с яйца на Великден?",
-            "en": "Why do we crack eggs on Easter?"
+            "en": "Why do we knock eggs together at Easter?"
           },
           "options": [
             {
-              "bg": "Който остане с цяло яйце, ще е здрав през годината",
-              "en": "Whoever keeps a whole egg will be healthy all year"
+              "bg": "Който остане с цяло яйце, ще е здрав",
+              "en": "Whoever keeps a whole egg will be healthy"
             },
             {
-              "bg": "За да ги изядем по-бързо",
-              "en": "To eat them faster"
+              "bg": "Който счупи първи, ще има късмет",
+              "en": "Whoever breaks first will be lucky"
+            },
+            {
+              "bg": "За да проверим кое яйце е сварено",
+              "en": "To check which egg is boiled"
+            },
+            {
+              "bg": "За да започне празничният обяд",
+              "en": "To start the festive lunch"
             }
           ],
           "answer": 0
         },
         {
           "q": {
-            "bg": "Кой празник е в съботата преди Цветница?",
-            "en": "Which feast is on the Saturday before Palm Sunday?"
+            "bg": "Какво се носи от църквата на Цветница?",
+            "en": "What is brought home from church on Palm Sunday?"
           },
           "options": [
             {
-              "bg": "Лазаровден",
-              "en": "St Lazarus’ Day"
+              "bg": "Върбови клонки",
+              "en": "Willow twigs"
             },
             {
-              "bg": "Великден",
-              "en": "Easter"
+              "bg": "Боядисани яйца",
+              "en": "Dyed eggs"
             },
             {
-              "bg": "Гергьовден",
-              "en": "St George’s Day"
+              "bg": "Дрянови пръчки",
+              "en": "Cornel twigs"
             },
             {
-              "bg": "Коледа",
-              "en": "Christmas"
+              "bg": "Запалени свещи от огньове",
+              "en": "Candles lit from bonfires"
             }
           ],
           "answer": 0
@@ -484,16 +492,16 @@
               "en": "“Christ is risen!” – “Truly He is risen!”"
             },
             {
-              "bg": "„Честита Баба Марта!“",
-              "en": "“Happy Baba Marta!”"
+              "bg": "„Христос се роди!“ – „Наистина се роди!“",
+              "en": "“Christ is born!” – “Truly He is born!”"
             },
             {
-              "bg": "„Весела Коледа!“",
-              "en": "“Merry Christmas!”"
+              "bg": "„Честит празник!“ – „И на теб!“",
+              "en": "“Happy holiday!” – “And to you!”"
             },
             {
-              "bg": "„Наздраве!“",
-              "en": "“Cheers!”"
+              "bg": "„Наздраве!“ – „За здраве!“",
+              "en": "“Cheers!” – “To health!”"
             }
           ],
           "answer": 0

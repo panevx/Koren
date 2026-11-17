@@ -421,28 +421,28 @@
           },
           {
             "q": {
-              "bg": "Как се нарича голямата среща на певци и танцьори там?",
-              "en": "What is the big gathering of singers and dancers there called?"
+              "bg": "Как се нарича голямата среща на певци и танцьори в Копривщица?",
+              "en": "What is the big gathering of singers and dancers in Koprivshtitsa called?"
             },
             "options": [
-              {
-                "bg": "Олимпиада",
-                "en": "An Olympiad"
-              },
               {
                 "bg": "Национален събор на народното творчество",
                 "en": "The National Folklore Festival"
               },
               {
-                "bg": "Карнавал",
-                "en": "A carnival"
+                "bg": "Празник на розата",
+                "en": "The Rose Festival"
               },
               {
-                "bg": "Панаир на книгата",
-                "en": "A book fair"
+                "bg": "Сурва",
+                "en": "Surva"
+              },
+              {
+                "bg": "Фестивал на кукерите",
+                "en": "The Kukeri Festival"
               }
             ],
-            "answer": 1
+            "answer": 0
           }
         ]
       },
@@ -454,16 +454,20 @@
           },
           "options": [
             {
-              "bg": "Метални токи за колана",
-              "en": "Metal belt buckles"
+              "bg": "Метални токи за колана на носията",
+              "en": "Metal clasps for the costume belt"
             },
             {
-              "bg": "Обувки",
-              "en": "Shoes"
+              "bg": "Тъкан колан на носията",
+              "en": "A woven costume belt"
             },
             {
-              "bg": "Хляб",
-              "en": "Bread"
+              "bg": "Пъстри ленти за косата",
+              "en": "Colourful hair ribbons"
+            },
+            {
+              "bg": "Метални гривни за ръцете",
+              "en": "Metal bracelets"
             }
           ],
           "answer": 0,
@@ -483,16 +487,16 @@
               "en": "A sleeveless woman’s dress of the costume"
             },
             {
-              "bg": "Мъжка шапка",
-              "en": "A man’s hat"
+              "bg": "Мъжки вълнен елек",
+              "en": "A man’s woollen waistcoat"
             },
             {
-              "bg": "Музикален инструмент",
-              "en": "A musical instrument"
+              "bg": "Престилка с шевици",
+              "en": "An embroidered apron"
             },
             {
-              "bg": "Вид хляб",
-              "en": "A kind of bread"
+              "bg": "Дълга риза с ръкави",
+              "en": "A long shirt with sleeves"
             }
           ],
           "answer": 0

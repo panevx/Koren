@@ -300,20 +300,20 @@
             },
             "options": [
               {
-                "bg": "П и Л ги няма в латиницата",
-                "en": "П and Л do not exist in Latin script"
+                "bg": "Буквите П и Л ги няма в латиницата",
+                "en": "The letters П and Л do not exist in Latin script"
               },
               {
-                "bg": "Твърде е дълго",
-                "en": "It is too long"
+                "bg": "Кодът ПЛ е запазен за Плевен",
+                "en": "The code ПЛ is kept for Pleven"
               },
               {
-                "bg": "Вече е заето от Плевен",
-                "en": "Pleven already uses it"
+                "bg": "Кодовете са само с по една буква",
+                "en": "Codes have only one letter"
               },
               {
-                "bg": "Забранено е от ЕС",
-                "en": "The EU forbids it"
+                "bg": "Пловдив е твърде голям за два знака",
+                "en": "Plovdiv is too big for two letters"
               }
             ],
             "answer": 0
@@ -349,16 +349,24 @@
         {
           "q": {
             "bg": "Защо по номерата има само букви като А, В, Е, К, М, Н, О, Р, С, Т, У, Х?",
-            "en": "Why do plates only use letters like А, В, Е, К, М, Н, О, Р, С, Т, У, Х?"
+            "en": "Why do plates use only letters like А, В, Е, К, М, Н, О, Р, С, Т, У, Х?"
           },
           "options": [
             {
-              "bg": "Те изглеждат еднакво на кирилица и на латиница",
+              "bg": "Изглеждат еднакво на кирилица и на латиница",
               "en": "They look the same in Cyrillic and Latin"
             },
             {
-              "bg": "Те са най-красиви",
-              "en": "They are the prettiest"
+              "bg": "Най-лесни са за писане",
+              "en": "They are the easiest to write"
+            },
+            {
+              "bg": "Всеки град ги е избрал сам",
+              "en": "Each town chose them itself"
+            },
+            {
+              "bg": "Това са гласните звукове",
+              "en": "They are the vowels"
             }
           ],
           "answer": 0

@@ -404,16 +404,24 @@
         {
           "q": {
             "bg": "Къде на дрехата се шият шевиците и защо?",
-            "en": "Where on a garment is embroidery stitched, and why?"
+            "en": "Where on the garment are shevitsi sewn, and why?"
           },
           "options": [
             {
               "bg": "По яката, ръкавите и подгъва – вярвали са, че пазят",
-              "en": "On the collar, sleeves and hem – people believed it protects"
+              "en": "On the collar, sleeves and hem – people believed they protect"
             },
             {
-              "bg": "Само на гърба – за красота",
-              "en": "Only on the back – for beauty"
+              "bg": "По гърба – за да се виждат отдалеч",
+              "en": "On the back – to be seen from afar"
+            },
+            {
+              "bg": "По джобовете – за да са здрави",
+              "en": "On the pockets – to make them strong"
+            },
+            {
+              "bg": "Навсякъде еднакво – само за красота",
+              "en": "Evenly everywhere – just for beauty"
             }
           ],
           "answer": 0
@@ -429,16 +437,16 @@
               "en": "Diamonds, stars and crosses"
             },
             {
-              "bg": "Букви и числа",
-              "en": "Letters and numbers"
+              "bg": "Портрети на светци",
+              "en": "Portraits of saints"
             },
             {
-              "bg": "Коли и самолети",
-              "en": "Cars and planes"
+              "bg": "Букви и надписи",
+              "en": "Letters and words"
             },
             {
-              "bg": "Портрети",
-              "en": "Portraits"
+              "bg": "Пейзажи с планини",
+              "en": "Mountain landscapes"
             }
           ],
           "answer": 0
@@ -454,16 +462,16 @@
               "en": "The traditional dress of a region"
             },
             {
-              "bg": "Вид песен",
-              "en": "A kind of song"
+              "bg": "Празнична песен",
+              "en": "A festive song"
             },
             {
-              "bg": "Празник",
-              "en": "A feast"
+              "bg": "Народен танц",
+              "en": "A folk dance"
             },
             {
-              "bg": "Танц",
-              "en": "A dance"
+              "bg": "Шарка на шевица",
+              "en": "An embroidery pattern"
             }
           ],
           "answer": 0

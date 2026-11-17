@@ -378,28 +378,28 @@
       "check": [
         {
           "q": {
-            "bg": "Кой град пада последен под османска власт?",
-            "en": "Which city falls last to the Ottomans?"
+            "bg": "Кой цар управлява в Търново, когато градът пада?",
+            "en": "Which tsar rules in Tarnovo when the city falls?"
           },
           "options": [
             {
-              "bg": "Търново",
-              "en": "Tarnovo"
+              "bg": "Иван Шишман",
+              "en": "Ivan Shishman"
             },
             {
-              "bg": "Видин",
-              "en": "Vidin"
+              "bg": "Иван Срацимир",
+              "en": "Ivan Sratsimir"
             },
             {
-              "bg": "Пловдив",
-              "en": "Plovdiv"
+              "bg": "Иван Асен II",
+              "en": "Ivan Asen II"
             },
             {
-              "bg": "Плиска",
-              "en": "Pliska"
+              "bg": "Калоян",
+              "en": "Kaloyan"
             }
           ],
-          "answer": 1
+          "answer": 0
         },
         {
           "q": {
@@ -437,16 +437,16 @@
               "en": "A centre of letters linked with Patriarch Euthymius"
             },
             {
-              "bg": "Военно училище",
-              "en": "A military school"
+              "bg": "Военно училище към двореца",
+              "en": "A military school at the palace"
             },
             {
-              "bg": "Пазар",
-              "en": "A market"
+              "bg": "Школа за иконописци в Самоков",
+              "en": "A school of icon painters in Samokov"
             },
             {
-              "bg": "Крепост",
-              "en": "A fortress"
+              "bg": "Манастир на Атон",
+              "en": "A monastery on Mount Athos"
             }
           ],
           "answer": 0

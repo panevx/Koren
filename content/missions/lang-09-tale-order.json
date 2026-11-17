@@ -290,23 +290,23 @@
             },
             "options": [
               {
-                "bg": "Началото",
-                "en": "The beginning"
-              },
-              {
                 "bg": "Най-напрегнатият момент",
                 "en": "The most tense moment"
               },
               {
-                "bg": "Краят",
-                "en": "The end"
+                "bg": "Моментът, в който се появява героят",
+                "en": "The moment the hero appears"
               },
               {
-                "bg": "Заглавието",
-                "en": "The title"
+                "bg": "Последното изречение",
+                "en": "The last sentence"
+              },
+              {
+                "bg": "Описанието на мястото",
+                "en": "The description of the place"
               }
             ],
-            "answer": 1
+            "answer": 0
           },
           {
             "q": {
@@ -389,7 +389,7 @@
         {
           "q": {
             "bg": "Каква е поуката на приказката?",
-            "en": "What is the lesson of the tale?"
+            "en": "What is the moral of the tale?"
           },
           "options": [
             {
@@ -397,36 +397,44 @@
               "en": "Do not boast and do not trust flattery"
             },
             {
-              "bg": "Питките са вкусни",
-              "en": "Loaves are tasty"
+              "bg": "Бягай от всички непознати",
+              "en": "Run from all strangers"
+            },
+            {
+              "bg": "Винаги слушай баба си",
+              "en": "Always listen to your grandma"
+            },
+            {
+              "bg": "Най-бързият печели",
+              "en": "The fastest wins"
             }
           ],
           "answer": 0
         },
         {
           "q": {
-            "bg": "Как се казва частта, в която започва действието?",
-            "en": "What is the part where the action starts called?"
+            "bg": "Към кой вид е „Житената питка“?",
+            "en": "What kind of work is “The Wheat Loaf”?"
           },
           "options": [
             {
-              "bg": "Край",
-              "en": "Ending"
+              "bg": "Народна приказка",
+              "en": "A folk tale"
             },
             {
-              "bg": "Поука",
-              "en": "Moral"
+              "bg": "Басня",
+              "en": "A fable"
             },
             {
-              "bg": "Завръзка",
-              "en": "Inciting incident"
+              "bg": "Роман",
+              "en": "A novel"
             },
             {
-              "bg": "Заглавие",
-              "en": "Title"
+              "bg": "Стихотворение",
+              "en": "A poem"
             }
           ],
-          "answer": 2
+          "answer": 0
         },
         {
           "q": {
@@ -439,16 +447,16 @@
               "en": "To hear her better – but really to eat her"
             },
             {
-              "bg": "За да ѝ помогне",
-              "en": "To help her"
+              "bg": "За да ѝ покаже пътя",
+              "en": "To show her the way"
             },
             {
-              "bg": "За да я заведе вкъщи",
-              "en": "To take her home"
+              "bg": "За да ѝ даде подарък",
+              "en": "To give her a present"
             },
             {
-              "bg": "За да играят",
-              "en": "To play"
+              "bg": "За да я скрие от вълка",
+              "en": "To hide her from the wolf"
             }
           ],
           "answer": 0

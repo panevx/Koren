@@ -391,8 +391,8 @@
       "check": [
         {
           "q": {
-            "bg": "Какво ушила Райна Княгиня за Априлското въстание (1876 г.)?",
-            "en": "What did Rayna Knyaginya sew for the April Uprising (1876)?"
+            "bg": "Какво ушива Райна Княгиня за Априлското въстание?",
+            "en": "What does Rayna Knyaginya sew for the April Uprising?"
           },
           "options": [
             {
@@ -400,57 +400,69 @@
               "en": "The flag of the uprising"
             },
             {
-              "bg": "Носия за сватба",
-              "en": "A wedding costume"
+              "bg": "Униформите на четниците",
+              "en": "The fighters’ uniforms"
+            },
+            {
+              "bg": "Носиите на учителките",
+              "en": "The teachers’ costumes"
+            },
+            {
+              "bg": "Палатките на въстаниците",
+              "en": "The rebels’ tents"
             }
           ],
           "answer": 0
         },
         {
           "q": {
-            "bg": "Кой град е родно място на Софроний, Петър Берон и Раковски?",
-            "en": "Which town is the birthplace of Sofroniy, Petar Beron and Rakovski?"
+            "bg": "Кой будител е монах в Хилендарския манастир?",
+            "en": "Which enlightener is a monk at the Hilendar Monastery?"
           },
           "options": [
             {
-              "bg": "Котел",
-              "en": "Kotel"
-            },
-            {
-              "bg": "Габрово",
-              "en": "Gabrovo"
-            },
-            {
-              "bg": "Русе",
-              "en": "Ruse"
-            }
-          ],
-          "answer": 0
-        },
-        {
-          "q": {
-            "bg": "Кой е авторът на „Неделник“?",
-            "en": "Who is the author of the “Nedelnik”?"
-          },
-          "options": [
-            {
-              "bg": "Паисий Хилендарски",
-              "en": "Paisius of Hilendar"
-            },
-            {
-              "bg": "Софроний Врачански",
-              "en": "Sophronius of Vratsa"
-            },
-            {
-              "bg": "Петър Берон",
-              "en": "Petar Beron"
+              "bg": "Паисий",
+              "en": "Paisius"
             },
             {
               "bg": "Георги Раковски",
               "en": "Georgi Rakovski"
+            },
+            {
+              "bg": "Любен Каравелов",
+              "en": "Lyuben Karavelov"
+            },
+            {
+              "bg": "Христо Ботев",
+              "en": "Hristo Botev"
             }
           ],
-          "answer": 1
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кога е Денят на народните будители?",
+            "en": "When is the Day of the National Enlighteners?"
+          },
+          "options": [
+            {
+              "bg": "1 ноември",
+              "en": "1 November"
+            },
+            {
+              "bg": "24 май",
+              "en": "24 May"
+            },
+            {
+              "bg": "3 март",
+              "en": "3 March"
+            },
+            {
+              "bg": "2 юни",
+              "en": "2 June"
+            }
+          ],
+          "answer": 0
         }
       ]
     }

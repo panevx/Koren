@@ -360,16 +360,16 @@
                 "en": "On the Saturday before Palm Sunday"
               },
               {
-                "bg": "На Коледа",
-                "en": "At Christmas"
+                "bg": "В неделята след Великден",
+                "en": "On the Sunday after Easter"
               },
               {
                 "bg": "На 1 март",
                 "en": "On 1 March"
               },
               {
-                "bg": "На Гергьовден",
-                "en": "On St George’s Day"
+                "bg": "В първата събота на май",
+                "en": "On the first Saturday of May"
               }
             ],
             "answer": 0
@@ -401,28 +401,28 @@
           },
           {
             "q": {
-              "bg": "Колко ястия има по традиция на трапезата на Бъдни вечер?",
-              "en": "By tradition, how many dishes are on the table on Badni Vecher?"
+              "bg": "Колко ястия има по традиция на Бъдни вечер?",
+              "en": "By tradition, how many dishes are there on Christmas Eve?"
             },
             "options": [
-              {
-                "bg": "Точно 2",
-                "en": "Exactly 2"
-              },
               {
                 "bg": "Нечетен брой – 7, 9 или 11",
                 "en": "An odd number – 7, 9 or 11"
               },
               {
-                "bg": "Точно 100",
-                "en": "Exactly 100"
+                "bg": "Четен брой – 6, 8 или 10",
+                "en": "An even number – 6, 8 or 10"
               },
               {
-                "bg": "Нито едно",
-                "en": "None"
+                "bg": "Винаги точно 12",
+                "en": "Always exactly 12"
+              },
+              {
+                "bg": "Колкото са хората на масата",
+                "en": "As many as the people at the table"
               }
             ],
-            "answer": 1
+            "answer": 0
           },
           {
             "q": {
@@ -455,7 +455,7 @@
         {
           "q": {
             "bg": "В кой град е фестивалът на маскарадните игри „Сурва“?",
-            "en": "Which town hosts the \"Surva\" masquerade festival?"
+            "en": "In which town is the “Surva” masquerade festival?"
           },
           "options": [
             {
@@ -469,6 +469,10 @@
             {
               "bg": "Русе",
               "en": "Ruse"
+            },
+            {
+              "bg": "Казанлък",
+              "en": "Kazanlak"
             }
           ],
           "answer": 0
@@ -476,7 +480,7 @@
         {
           "q": {
             "bg": "Защо кукерите носят тежки звънци и страшни маски?",
-            "en": "Why do kukeri wear heavy bells and scary masks?"
+            "en": "Why do the kukeri wear heavy bells and scary masks?"
           },
           "options": [
             {
@@ -484,8 +488,16 @@
               "en": "To chase away evil and bring a good harvest"
             },
             {
-              "bg": "За да спят по-добре",
-              "en": "To sleep better"
+              "bg": "За да събудят мечките от зимния сън",
+              "en": "To wake the bears from their winter sleep"
+            },
+            {
+              "bg": "За да спечелят награда на фестивала",
+              "en": "To win a prize at the festival"
+            },
+            {
+              "bg": "За да покажат колко са силни",
+              "en": "To show how strong they are"
             }
           ],
           "answer": 0
@@ -501,16 +513,16 @@
               "en": "Around New Year and on Cheesefare Sunday"
             },
             {
-              "bg": "През юли",
-              "en": "In July"
+              "bg": "Около Великден и Гергьовден",
+              "en": "Around Easter and St George’s Day"
             },
             {
-              "bg": "На 24 май",
-              "en": "On 24 May"
+              "bg": "През лятото, след жътвата",
+              "en": "In summer, after the harvest"
             },
             {
-              "bg": "На Великден",
-              "en": "At Easter"
+              "bg": "На 1 март",
+              "en": "On 1 March"
             }
           ],
           "answer": 0

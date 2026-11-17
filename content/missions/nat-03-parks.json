@@ -359,44 +359,48 @@
             },
             "options": [
               {
-                "bg": "Да се ходи по пътеките",
-                "en": "Walking on the paths"
-              },
-              {
-                "bg": "Да се снима",
-                "en": "Taking photos"
-              },
-              {
                 "bg": "Да се сече гора и да се ловува",
                 "en": "Cutting forest and hunting"
               },
               {
-                "bg": "Да се наблюдават птици",
-                "en": "Watching birds"
+                "bg": "Да се ходи по маркираните пътеки",
+                "en": "Walking on marked paths"
+              },
+              {
+                "bg": "Да се снимат растения",
+                "en": "Photographing plants"
+              },
+              {
+                "bg": "Да се нощува в хижа",
+                "en": "Staying overnight in a hut"
               }
             ],
-            "answer": 2
+            "answer": 0
           }
         ]
       },
       "check": [
         {
           "q": {
-            "bg": "Какво е разликата между национален и природен парк?",
+            "bg": "Каква е разликата между национален и природен парк?",
             "en": "What is the difference between a national and a nature park?"
           },
           "options": [
             {
               "bg": "В националния опазването е по-строго",
-              "en": "In a national park protection is stricter"
+              "en": "Protection is stricter in a national park"
             },
             {
-              "bg": "Няма разлика",
-              "en": "There is none"
+              "bg": "Природните са винаги по-големи",
+              "en": "Nature parks are always bigger"
             },
             {
               "bg": "В природния не живеят животни",
               "en": "No animals live in a nature park"
+            },
+            {
+              "bg": "Няма разлика",
+              "en": "There is no difference"
             }
           ],
           "answer": 0
@@ -408,19 +412,23 @@
           },
           "options": [
             {
-              "bg": "11",
-              "en": "11"
-            },
-            {
               "bg": "3",
               "en": "3"
+            },
+            {
+              "bg": "7",
+              "en": "7"
+            },
+            {
+              "bg": "11",
+              "en": "11"
             },
             {
               "bg": "28",
               "en": "28"
             }
           ],
-          "answer": 0
+          "answer": 2
         },
         {
           "q": {

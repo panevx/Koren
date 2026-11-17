@@ -82,21 +82,21 @@
         },
         "items": [
           {
-            "bg": "Въстанието на Асен и Петър (1185 г.)",
-            "en": "The uprising of Asen and Peter (1185)"
+            "bg": "Въстанието на Асен и Петър",
+            "en": "The uprising of Asen and Peter"
           },
           {
-            "bg": "Битката при Клокотница (1230 г.)",
-            "en": "The Battle of Klokotnitsa (1230)"
+            "bg": "Битката при Клокотница",
+            "en": "The Battle of Klokotnitsa"
           },
           {
-            "bg": "Търново пада под османска власт (1393 г.)",
-            "en": "Tarnovo falls to the Ottomans (1393)"
+            "bg": "Търново пада под османска власт",
+            "en": "Tarnovo falls to the Ottomans"
           }
         ],
         "hint": {
-          "bg": "Започни с най-малката година.",
-          "en": "Start with the smallest year."
+          "bg": "Първо е въстанието, накрая – падането на Търново.",
+          "en": "First the uprising, last the fall of Tarnovo."
         }
       },
       "extra": {
@@ -452,6 +452,10 @@
             {
               "bg": "1393",
               "en": "1393"
+            },
+            {
+              "bg": "1396",
+              "en": "1396"
             },
             {
               "bg": "1878",

@@ -408,8 +408,8 @@
       "check": [
         {
           "q": {
-            "bg": "Кого пленява Калоян в битката при Одрин (1205 г.)?",
-            "en": "Whom did Kaloyan capture at the battle of Adrianople (1205)?"
+            "bg": "Кого пленява Калоян в битката при Одрин през 1205 г.?",
+            "en": "Whom does Kaloyan capture at the battle of Adrianople in 1205?"
           },
           "options": [
             {
@@ -417,8 +417,16 @@
               "en": "The Latin emperor Baldwin"
             },
             {
-              "bg": "Василий II",
-              "en": "Basil II"
+              "bg": "Византийския император Василий II",
+              "en": "The Byzantine emperor Basil II"
+            },
+            {
+              "bg": "Унгарския крал",
+              "en": "The King of Hungary"
+            },
+            {
+              "bg": "Епирския владетел Теодор Комнин",
+              "en": "Theodore Komnenos of Epirus"
             }
           ],
           "answer": 0
@@ -426,48 +434,52 @@
         {
           "q": {
             "bg": "Коя битка печели Иван Асен II през 1230 г.?",
-            "en": "Which battle did Ivan Asen II win in 1230?"
+            "en": "Which battle does Ivan Asen II win in 1230?"
           },
           "options": [
             {
               "bg": "При Клокотница",
-              "en": "Klokotnitsa"
+              "en": "At Klokotnitsa"
             },
             {
               "bg": "При Одрин",
-              "en": "Adrianople"
+              "en": "At Adrianople"
             },
             {
               "bg": "При Беласица",
-              "en": "Belasitsa"
+              "en": "At Belasitsa"
+            },
+            {
+              "bg": "При Ахелой",
+              "en": "At Achelous"
             }
           ],
           "answer": 0
         },
         {
           "q": {
-            "bg": "Кой е последният търновски цар?",
-            "en": "Who is the last tsar of Tarnovo?"
+            "bg": "Кой цар е по-малкият брат на Асен и Петър?",
+            "en": "Which tsar is the younger brother of Asen and Peter?"
           },
           "options": [
             {
-              "bg": "Иван Асен II",
-              "en": "Ivan Asen II"
-            },
-            {
               "bg": "Калоян",
               "en": "Kaloyan"
+            },
+            {
+              "bg": "Самуил",
+              "en": "Samuel"
             },
             {
               "bg": "Иван Шишман",
               "en": "Ivan Shishman"
             },
             {
-              "bg": "Симеон",
-              "en": "Simeon"
+              "bg": "Иван Александър",
+              "en": "Ivan Alexander"
             }
           ],
-          "answer": 2
+          "answer": 0
         }
       ]
     }

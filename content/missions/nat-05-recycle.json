@@ -488,70 +488,78 @@
       "check": [
         {
           "q": {
-            "bg": "Колко пъти може да се рециклира стъклото?",
-            "en": "How many times can glass be recycled?"
+            "bg": "Какво НЕ бива да слагаме в жълтия контейнер?",
+            "en": "What must we NOT put in the yellow bin?"
           },
           "options": [
             {
-              "bg": "Отново и отново",
-              "en": "Again and again"
+              "bg": "Стъклен буркан",
+              "en": "A glass jar"
             },
             {
-              "bg": "Само веднъж",
-              "en": "Only once"
+              "bg": "Пластмасова бутилка",
+              "en": "A plastic bottle"
+            },
+            {
+              "bg": "Метално кенче",
+              "en": "A metal can"
+            },
+            {
+              "bg": "Кутия от сок",
+              "en": "A juice carton"
             }
           ],
           "answer": 0
         },
         {
           "q": {
-            "bg": "В кой контейнер отива металното кенче?",
-            "en": "Which bin does a metal can go in?"
+            "bg": "Защо изплакваме опаковките, преди да ги изхвърлим?",
+            "en": "Why do we rinse packaging before throwing it away?"
           },
           "options": [
             {
-              "bg": "Зеления",
-              "en": "The green one"
+              "bg": "За да не миришат и да се рециклират по-лесно",
+              "en": "So they do not smell and recycle more easily"
             },
             {
-              "bg": "Синия",
-              "en": "The blue one"
+              "bg": "За да тежат по-малко",
+              "en": "So they weigh less"
             },
             {
-              "bg": "Жълтия",
-              "en": "The yellow one"
+              "bg": "За да станат прозрачни",
+              "en": "So they become see-through"
             },
             {
-              "bg": "В никой",
-              "en": "None"
+              "bg": "За да не ги вземат птиците",
+              "en": "So birds do not take them"
             }
           ],
-          "answer": 2
+          "answer": 0
         },
         {
           "q": {
-            "bg": "В кой контейнер отива кашонът?",
-            "en": "Which bin does a cardboard box go in?"
+            "bg": "Какво се прави от рециклирана хартия?",
+            "en": "What is made from recycled paper?"
           },
           "options": [
             {
-              "bg": "Жълтия",
-              "en": "The yellow one"
+              "bg": "Нова хартия и картон",
+              "en": "New paper and cardboard"
             },
             {
-              "bg": "Синия",
-              "en": "The blue one"
+              "bg": "Стъклени бутилки",
+              "en": "Glass bottles"
             },
             {
-              "bg": "Зеления",
-              "en": "The green one"
+              "bg": "Метални кенчета",
+              "en": "Metal cans"
             },
             {
-              "bg": "В никой",
-              "en": "None"
+              "bg": "Пластмасови играчки",
+              "en": "Plastic toys"
             }
           ],
-          "answer": 1
+          "answer": 0
         }
       ]
     }

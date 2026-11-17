@@ -343,28 +343,28 @@
             },
             "options": [
               {
-                "bg": "Освобождение",
-                "en": "Liberation"
+                "bg": "Освобождение от османска власт",
+                "en": "Liberation from Ottoman rule"
               },
               {
                 "bg": "Отделна българска църква",
                 "en": "A separate Bulgarian Church"
               },
               {
-                "bg": "Нова столица",
-                "en": "A new capital"
+                "bg": "Нова столица в София",
+                "en": "A new capital in Sofia"
               },
               {
-                "bg": "Нова азбука",
-                "en": "A new alphabet"
+                "bg": "Първата българска печатница",
+                "en": "The first Bulgarian printing press"
               }
             ],
             "answer": 1
           },
           {
             "q": {
-              "bg": "Кой води Априлското въстание в Пловдивския революционен окръг?",
-              "en": "Who leads the April Uprising in the Plovdiv revolutionary district?"
+              "bg": "Кой води Априлското въстание в IV (Панагюрски) революционен окръг?",
+              "en": "Who leads the April Uprising in the 4th (Panagyurishte) revolutionary district?"
             },
             "options": [
               {
@@ -397,8 +397,8 @@
                 "en": "The church-national struggle"
               },
               {
-                "bg": "Кръстоносен поход",
-                "en": "A crusade"
+                "bg": "Национално-освободителна борба",
+                "en": "The national liberation struggle"
               },
               {
                 "bg": "Покръстване",
@@ -441,28 +441,28 @@
         },
         {
           "q": {
-            "bg": "В кой град е първото светско училище?",
-            "en": "In which town is the first secular school?"
+            "bg": "Кой е първият учител в светското училище в Габрово?",
+            "en": "Who is the first teacher at the secular school in Gabrovo?"
           },
           "options": [
             {
-              "bg": "София",
-              "en": "Sofia"
+              "bg": "Неофит Рилски",
+              "en": "Neophyte of Rila"
             },
             {
-              "bg": "Габрово",
-              "en": "Gabrovo"
+              "bg": "Паисий",
+              "en": "Paisius"
             },
             {
-              "bg": "Варна",
-              "en": "Varna"
+              "bg": "Петър Берон",
+              "en": "Petar Beron"
             },
             {
-              "bg": "Пловдив",
-              "en": "Plovdiv"
+              "bg": "Васил Априлов",
+              "en": "Vasil Aprilov"
             }
           ],
-          "answer": 1
+          "answer": 0
         },
         {
           "q": {
@@ -475,16 +475,16 @@
               "en": "A cultural centre with a library and a stage"
             },
             {
-              "bg": "Затвор",
-              "en": "A prison"
+              "bg": "Църковно училище за свещеници",
+              "en": "A church school for priests"
             },
             {
-              "bg": "Пазар",
-              "en": "A market"
+              "bg": "Печатница за книги",
+              "en": "A printing house"
             },
             {
-              "bg": "Болница",
-              "en": "A hospital"
+              "bg": "Търговски дом",
+              "en": "A trading house"
             }
           ],
           "answer": 0

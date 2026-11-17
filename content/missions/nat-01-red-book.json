@@ -375,23 +375,23 @@
             },
             "options": [
               {
-                "bg": "От студ",
-                "en": "From cold"
-              },
-              {
                 "bg": "От токов удар",
                 "en": "From electric shock"
               },
               {
-                "bg": "От глад",
-                "en": "From hunger"
+                "bg": "От капани на ловци",
+                "en": "From hunters’ traps"
               },
               {
-                "bg": "От шум",
-                "en": "From noise"
+                "bg": "От студ през зимата",
+                "en": "From cold in winter"
+              },
+              {
+                "bg": "От липса на храна",
+                "en": "From lack of food"
               }
             ],
-            "answer": 1
+            "answer": 0
           },
           {
             "q": {
@@ -400,23 +400,23 @@
             },
             "options": [
               {
-                "bg": "Снегът",
-                "en": "Snow"
-              },
-              {
                 "bg": "Пресушаването на блатата",
                 "en": "The draining of marshes"
               },
               {
-                "bg": "Скиорите",
-                "en": "Skiers"
+                "bg": "Студените зими",
+                "en": "Cold winters"
               },
               {
-                "bg": "Вятърът",
-                "en": "Wind"
+                "bg": "Липсата на риба в морето",
+                "en": "Lack of fish in the sea"
+              },
+              {
+                "bg": "Шумът от ски курортите",
+                "en": "Noise from ski resorts"
               }
             ],
-            "answer": 1
+            "answer": 0
           },
           {
             "q": {
@@ -457,8 +457,12 @@
               "en": "A few dozen"
             },
             {
-              "bg": "Хиляди",
-              "en": "Thousands"
+              "bg": "Няколко стотици",
+              "en": "A few hundred"
+            },
+            {
+              "bg": "Няколко хиляди",
+              "en": "A few thousand"
             },
             {
               "bg": "Нито една",
@@ -488,6 +492,10 @@
             {
               "bg": "Странджа",
               "en": "Strandzha"
+            },
+            {
+              "bg": "Пирин",
+              "en": "Pirin"
             }
           ],
           "answer": 0
@@ -499,20 +507,20 @@
           },
           "options": [
             {
-              "bg": "Рядък е и е защитен",
-              "en": "It is rare and protected"
-            },
-            {
-              "bg": "Боде",
-              "en": "It pricks"
-            },
-            {
-              "bg": "Мирише лошо",
-              "en": "It smells bad"
+              "bg": "Рядък е и е защитен от закона",
+              "en": "It is rare and protected by law"
             },
             {
               "bg": "Отровен е",
               "en": "It is poisonous"
+            },
+            {
+              "bg": "Цъфти веднъж в живота си",
+              "en": "It flowers once in its life"
+            },
+            {
+              "bg": "Корените му държат скалите",
+              "en": "Its roots hold up the rocks"
             }
           ],
           "answer": 0

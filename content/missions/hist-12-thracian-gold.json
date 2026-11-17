@@ -439,8 +439,12 @@
               "en": "The Romans"
             },
             {
-              "bg": "Викингите",
-              "en": "The Vikings"
+              "bg": "Гърците",
+              "en": "The Greeks"
+            },
+            {
+              "bg": "Прабългарите",
+              "en": "The Bulgars"
             }
           ],
           "answer": 0
@@ -448,16 +452,24 @@
         {
           "q": {
             "bg": "Защо съкровищата са в музей, а не у тези, които са ги намерили?",
-            "en": "Why are the treasures in a museum and not with those who found them?"
+            "en": "Why are the treasures in a museum, not with those who found them?"
           },
           "options": [
             {
               "bg": "Те са наследство на всички",
-              "en": "They are a heritage for everyone"
+              "en": "They belong to everyone’s heritage"
             },
             {
-              "bg": "Защото са тежки",
-              "en": "Because they are heavy"
+              "bg": "Музеят ги купува от намерилите",
+              "en": "The museum buys them from the finders"
+            },
+            {
+              "bg": "Златото е опасно за хората",
+              "en": "Gold is dangerous to people"
+            },
+            {
+              "bg": "Намерилите не ги искат",
+              "en": "The finders do not want them"
             }
           ],
           "answer": 0

@@ -394,16 +394,16 @@
                 "en": "The frozen river becomes like a bridge"
               },
               {
-                "bg": "Носи камъни",
-                "en": "It carries stones"
+                "bg": "Мразът прави мостове от сняг",
+                "en": "The frost makes bridges of snow"
               },
               {
-                "bg": "Сече дървета",
-                "en": "It cuts trees"
+                "bg": "Хората строят мостове зимата",
+                "en": "People build bridges in winter"
               },
               {
-                "bg": "Вали сняг",
-                "en": "It snows"
+                "bg": "Ледените висулки висят като мост",
+                "en": "Icicles hang like a bridge"
               }
             ],
             "answer": 0
@@ -414,16 +414,24 @@
         {
           "q": {
             "bg": "„Без ръце, без брадва мост направи.“ Кой?",
-            "en": "\"With no hands and no axe, it built a bridge.\" Who?"
+            "en": "“Without hands, without an axe, it built a bridge.” Who?"
           },
           "options": [
             {
-              "bg": "Мразът – прави лед на реката",
-              "en": "Frost – it makes ice on the river"
+              "bg": "Мразът",
+              "en": "The frost"
             },
             {
               "bg": "Бобърът",
               "en": "The beaver"
+            },
+            {
+              "bg": "Вятърът",
+              "en": "The wind"
+            },
+            {
+              "bg": "Дъждът",
+              "en": "The rain"
             }
           ],
           "answer": 0
@@ -431,20 +439,24 @@
         {
           "q": {
             "bg": "„Сто ризи облякло, без копче на тях.“ Какво е?",
-            "en": "\"Dressed in a hundred shirts, not one has a button.\" What is it?"
+            "en": "“It wears a hundred shirts without a button.” What is it?"
           },
           "options": [
             {
               "bg": "Зелка",
-              "en": "Cabbage"
+              "en": "A cabbage"
             },
             {
               "bg": "Палто",
-              "en": "Coat"
+              "en": "A coat"
             },
             {
-              "bg": "Лук",
-              "en": "Onion"
+              "bg": "Снежен човек",
+              "en": "A snowman"
+            },
+            {
+              "bg": "Книга",
+              "en": "A book"
             }
           ],
           "answer": 0

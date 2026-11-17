@@ -454,16 +454,16 @@
                 "en": "Dill and garlic"
               },
               {
-                "bg": "Канела",
-                "en": "Cinnamon"
+                "bg": "Магданоз и лук",
+                "en": "Parsley and onion"
               },
               {
-                "bg": "Ванилия",
-                "en": "Vanilla"
+                "bg": "Мента и лимон",
+                "en": "Mint and lemon"
               },
               {
-                "bg": "Какао",
-                "en": "Cocoa"
+                "bg": "Чубрица и черен пипер",
+                "en": "Savory and black pepper"
               }
             ],
             "answer": 0
@@ -528,16 +528,24 @@
         {
           "q": {
             "bg": "Кога най-често се яде таратор?",
-            "en": "When is tarator eaten most often?"
+            "en": "When is tarator usually eaten?"
           },
           "options": [
             {
               "bg": "Лятото, в жегите",
-              "en": "In summer, when it is hot"
+              "en": "In summer, in the heat"
             },
             {
-              "bg": "На Коледа",
-              "en": "At Christmas"
+              "bg": "Есента, при гроздобера",
+              "en": "In autumn, at the grape harvest"
+            },
+            {
+              "bg": "Зимата, на празници",
+              "en": "In winter, at holidays"
+            },
+            {
+              "bg": "Пролетта, на Великден",
+              "en": "In spring, at Easter"
             }
           ],
           "answer": 0
@@ -553,16 +561,16 @@
               "en": "It is cold and refreshing"
             },
             {
-              "bg": "Много е лют",
-              "en": "It is very spicy"
+              "bg": "Дава много енергия",
+              "en": "It gives a lot of energy"
             },
             {
-              "bg": "Горещ е",
-              "en": "It is hot"
+              "bg": "Сварява се бързо",
+              "en": "It cooks quickly"
             },
             {
-              "bg": "Сладък е",
-              "en": "It is sweet"
+              "bg": "Не се разваля на слънце",
+              "en": "It does not spoil in the sun"
             }
           ],
           "answer": 0
@@ -578,16 +586,16 @@
               "en": "Yoghurt"
             },
             {
-              "bg": "Масло",
-              "en": "Butter"
+              "bg": "Прясно мляко",
+              "en": "Fresh milk"
             },
             {
               "bg": "Сметана",
               "en": "Cream"
             },
             {
-              "bg": "Кашкавал",
-              "en": "Yellow cheese"
+              "bg": "Извара",
+              "en": "Curd cheese"
             }
           ],
           "answer": 0

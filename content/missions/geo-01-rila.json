@@ -460,7 +460,7 @@
         {
           "q": {
             "bg": "Кои реки извират от Рила?",
-            "en": "Which rivers spring from Rila?"
+            "en": "Which rivers rise in Rila?"
           },
           "options": [
             {
@@ -468,12 +468,16 @@
               "en": "Iskar, Maritsa and Mesta"
             },
             {
+              "bg": "Струма, Тунджа и Арда",
+              "en": "Struma, Tundzha and Arda"
+            },
+            {
               "bg": "Дунав, Янтра и Осъм",
               "en": "Danube, Yantra and Osam"
             },
             {
-              "bg": "Камчия и Тунджа",
-              "en": "Kamchia and Tundzha"
+              "bg": "Камчия, Вит и Огоста",
+              "en": "Kamchia, Vit and Ogosta"
             }
           ],
           "answer": 0,
@@ -493,6 +497,10 @@
               "en": "1878"
             },
             {
+              "bg": "1944",
+              "en": "1944"
+            },
+            {
               "bg": "1983",
               "en": "1983"
             },
@@ -501,7 +509,7 @@
               "en": "2007"
             }
           ],
-          "answer": 1,
+          "answer": 2,
           "hint": {
             "bg": "През XX век.",
             "en": "In the 20th century."
@@ -515,7 +523,7 @@
           "options": [
             {
               "bg": "Изкопани са от хора",
-              "en": "People dug them"
+              "en": "Dug by people"
             },
             {
               "bg": "От древни ледници",
@@ -524,6 +532,10 @@
             {
               "bg": "От вулкан",
               "en": "By a volcano"
+            },
+            {
+              "bg": "От свлачище",
+              "en": "By a landslide"
             }
           ],
           "answer": 1,

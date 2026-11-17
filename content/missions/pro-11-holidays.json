@@ -356,78 +356,78 @@
       "check": [
         {
           "q": {
-            "bg": "Кой празник е на 22 септември?",
-            "en": "Which holiday is on 22 September?"
+            "bg": "На кой празник по традиция се приготвя агне?",
+            "en": "On which holiday is lamb traditionally cooked?"
           },
           "options": [
             {
-              "bg": "Съединението",
-              "en": "The Unification"
+              "bg": "Гергьовден",
+              "en": "St George’s Day"
             },
             {
-              "bg": "Независимостта",
-              "en": "Independence"
+              "bg": "Никулден",
+              "en": "St Nicholas’ Day"
             },
             {
-              "bg": "Освобождението",
-              "en": "The Liberation"
+              "bg": "Бъдни вечер",
+              "en": "Christmas Eve"
             },
             {
-              "bg": "Денят на будителите",
-              "en": "Enlighteners’ Day"
+              "bg": "Баба Марта",
+              "en": "Baba Marta"
             }
           ],
-          "answer": 1
+          "answer": 0
         },
         {
           "q": {
-            "bg": "Коя година е Съединението?",
-            "en": "In which year is the Unification?"
+            "bg": "Кой имен ден е на 1 януари?",
+            "en": "Which name day is on 1 January?"
           },
           "options": [
             {
-              "bg": "1878",
-              "en": "1878"
+              "bg": "Васильовден",
+              "en": "St Basil’s Day"
             },
             {
-              "bg": "1885",
-              "en": "1885"
+              "bg": "Ивановден",
+              "en": "St John’s Day"
             },
             {
-              "bg": "1908",
-              "en": "1908"
+              "bg": "Йордановден",
+              "en": "Epiphany (Yordanovden)"
             },
             {
-              "bg": "1944",
-              "en": "1944"
+              "bg": "Бабинден",
+              "en": "Midwives’ Day"
             }
           ],
-          "answer": 1
+          "answer": 0
         },
         {
           "q": {
-            "bg": "Кой е националният празник на България?",
-            "en": "Which is Bulgaria’s national holiday?"
+            "bg": "Какво празнуваме вечерта на 24 декември?",
+            "en": "What do we celebrate on the evening of 24 December?"
           },
           "options": [
             {
-              "bg": "24 май",
-              "en": "24 May"
+              "bg": "Бъдни вечер",
+              "en": "Christmas Eve"
             },
             {
-              "bg": "6 септември",
-              "en": "6 September"
+              "bg": "Нова година",
+              "en": "New Year"
             },
             {
-              "bg": "3 март",
-              "en": "3 March"
+              "bg": "Ивановден",
+              "en": "St John’s Day"
             },
             {
-              "bg": "1 ноември",
-              "en": "1 November"
+              "bg": "Никулден",
+              "en": "St Nicholas’ Day"
             }
           ],
-          "answer": 2
+          "answer": 0
         }
       ]
     }

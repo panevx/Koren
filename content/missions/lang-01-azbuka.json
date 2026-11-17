@@ -485,7 +485,7 @@
         {
           "q": {
             "bg": "През коя година учениците пристигат в България?",
-            "en": "In which year did the students arrive in Bulgaria?"
+            "en": "In which year do the disciples arrive in Bulgaria?"
           },
           "options": [
             {
@@ -495,6 +495,10 @@
             {
               "bg": "886",
               "en": "886"
+            },
+            {
+              "bg": "893",
+              "en": "893"
             },
             {
               "bg": "1396",
@@ -534,28 +538,28 @@
         },
         {
           "q": {
-            "bg": "Как се казва първата славянска азбука?",
-            "en": "What is the first Slavic alphabet called?"
+            "bg": "Кой ученик на Кирил и Методий работи в Преслав?",
+            "en": "Which disciple of Cyril and Methodius works in Preslav?"
           },
           "options": [
             {
-              "bg": "Кирилица",
-              "en": "Cyrillic"
+              "bg": "Наум",
+              "en": "Naum"
             },
             {
-              "bg": "Латиница",
-              "en": "Latin"
+              "bg": "Климент",
+              "en": "Clement"
             },
             {
-              "bg": "Глаголица",
-              "en": "Glagolitic"
+              "bg": "Ангеларий",
+              "en": "Angelarius"
             },
             {
-              "bg": "Гръцката",
-              "en": "Greek"
+              "bg": "Горазд",
+              "en": "Gorazd"
             }
           ],
-          "answer": 2
+          "answer": 0
         }
       ]
     }

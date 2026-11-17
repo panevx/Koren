@@ -467,7 +467,7 @@
         {
           "q": {
             "bg": "Какво мери българският уред „Люлин“ в космоса?",
-            "en": "What does the Bulgarian instrument \"Lyulin\" measure in space?"
+            "en": "What does the Bulgarian instrument “Lyulin” measure in space?"
           },
           "options": [
             {
@@ -475,8 +475,16 @@
               "en": "Radiation"
             },
             {
-              "bg": "Температурата на чая",
-              "en": "The temperature of tea"
+              "bg": "Температурата",
+              "en": "Temperature"
+            },
+            {
+              "bg": "Налягането",
+              "en": "Pressure"
+            },
+            {
+              "bg": "Скоростта на станцията",
+              "en": "The station’s speed"
             }
           ],
           "answer": 0
@@ -517,16 +525,16 @@
               "en": "They are linked with Bulgaria"
             },
             {
-              "bg": "Всички са космонавти",
-              "en": "They are all cosmonauts"
+              "bg": "Всички получават Нобелова награда",
+              "en": "They all win a Nobel Prize"
             },
             {
-              "bg": "Всички са футболисти",
-              "en": "They are all footballers"
+              "bg": "Всички работят в космоса",
+              "en": "They all work in space"
             },
             {
-              "bg": "Нищо",
-              "en": "Nothing"
+              "bg": "Всички живеят в Америка",
+              "en": "They all live in America"
             }
           ],
           "answer": 0

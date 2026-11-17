@@ -400,8 +400,8 @@
       "check": [
         {
           "q": {
-            "bg": "Кой град е бил столица на Второто българско царство?",
-            "en": "Which city was the capital of the Second Bulgarian Empire?"
+            "bg": "Кой град е столица на Второто българско царство?",
+            "en": "Which city is the capital of the Second Bulgarian Empire?"
           },
           "options": [
             {
@@ -409,61 +409,69 @@
               "en": "Tarnovo"
             },
             {
-              "bg": "Варна",
-              "en": "Varna"
+              "bg": "Плиска",
+              "en": "Pliska"
             },
             {
-              "bg": "Бургас",
-              "en": "Burgas"
+              "bg": "Преслав",
+              "en": "Preslav"
+            },
+            {
+              "bg": "София",
+              "en": "Sofia"
             }
           ],
           "answer": 0
         },
         {
           "q": {
-            "bg": "Кой е най-големият български град на Дунав?",
-            "en": "Which is the biggest Bulgarian city on the Danube?"
+            "bg": "Кой град е на Черно море, на север от Варна?",
+            "en": "Which town is on the Black Sea, north of Varna?"
           },
           "options": [
             {
-              "bg": "Видин",
-              "en": "Vidin"
-            },
-            {
-              "bg": "Русе",
-              "en": "Ruse"
-            },
-            {
-              "bg": "Силистра",
-              "en": "Silistra"
-            }
-          ],
-          "answer": 1
-        },
-        {
-          "q": {
-            "bg": "Кой е вторият по големина град в България?",
-            "en": "Which is the second largest city in Bulgaria?"
-          },
-          "options": [
-            {
-              "bg": "Варна",
-              "en": "Varna"
-            },
-            {
-              "bg": "Пловдив",
-              "en": "Plovdiv"
+              "bg": "Балчик",
+              "en": "Balchik"
             },
             {
               "bg": "Бургас",
               "en": "Burgas"
             },
             {
-              "bg": "Русе",
-              "en": "Ruse"
+              "bg": "Созопол",
+              "en": "Sozopol"
+            },
+            {
+              "bg": "Несебър",
+              "en": "Nessebar"
             }
           ],
-          "answer": 1
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "В кой град е крепостта Царевец?",
+            "en": "In which town is the Tsarevets fortress?"
+          },
+          "options": [
+            {
+              "bg": "Велико Търново",
+              "en": "Veliko Tarnovo"
+            },
+            {
+              "bg": "Шумен",
+              "en": "Shumen"
+            },
+            {
+              "bg": "Русе",
+              "en": "Ruse"
+            },
+            {
+              "bg": "Плевен",
+              "en": "Pleven"
+            }
+          ],
+          "answer": 0
         }
       ]
     }

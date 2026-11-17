@@ -410,7 +410,7 @@
         {
           "q": {
             "bg": "С коя съседка България има най-дълга граница?",
-            "en": "Which neighbour has the longest border with Bulgaria?"
+            "en": "With which neighbour does Bulgaria have the longest border?"
           },
           "options": [
             {
@@ -423,7 +423,11 @@
             },
             {
               "bg": "Турция",
-              "en": "Türkiye"
+              "en": "Turkey"
+            },
+            {
+              "bg": "Гърция",
+              "en": "Greece"
             }
           ],
           "answer": 0,
@@ -435,7 +439,7 @@
         {
           "q": {
             "bg": "С коя съседка граничим в планината Странджа?",
-            "en": "Which neighbour do we share the Strandzha mountains with?"
+            "en": "Which neighbour do we border in the Strandzha mountains?"
           },
           "options": [
             {
@@ -444,11 +448,15 @@
             },
             {
               "bg": "Турция",
-              "en": "Türkiye"
+              "en": "Turkey"
             },
             {
               "bg": "Сърбия",
               "en": "Serbia"
+            },
+            {
+              "bg": "Румъния",
+              "en": "Romania"
             }
           ],
           "answer": 1
@@ -456,7 +464,7 @@
         {
           "q": {
             "bg": "С коя съседка България има най-къса граница?",
-            "en": "Which neighbour has the shortest border with Bulgaria?"
+            "en": "With which neighbour does Bulgaria have the shortest border?"
           },
           "options": [
             {
@@ -470,6 +478,10 @@
             {
               "bg": "Румъния",
               "en": "Romania"
+            },
+            {
+              "bg": "Сърбия",
+              "en": "Serbia"
             }
           ],
           "answer": 0

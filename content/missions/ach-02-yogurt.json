@@ -447,24 +447,32 @@
         {
           "q": {
             "bg": "С какъв уред Григоров вижда бактерията?",
-            "en": "With what instrument did Grigorov see the bacterium?"
+            "en": "With which instrument does Grigorov see the bacterium?"
           },
           "options": [
             {
-              "bg": "С микроскоп",
+              "bg": "Микроскоп",
               "en": "A microscope"
             },
             {
-              "bg": "С телескоп",
+              "bg": "Телескоп",
               "en": "A telescope"
+            },
+            {
+              "bg": "Лупа",
+              "en": "A magnifying glass"
+            },
+            {
+              "bg": "Рентгенов апарат",
+              "en": "An X-ray machine"
             }
           ],
           "answer": 0
         },
         {
           "q": {
-            "bg": "Каква е ролята на Streptococcus thermophilus?",
-            "en": "What is the role of Streptococcus thermophilus?"
+            "bg": "Каква е ролята на Streptococcus thermophilus в киселото мляко?",
+            "en": "What does Streptococcus thermophilus do in yoghurt?"
           },
           "options": [
             {
@@ -472,16 +480,16 @@
               "en": "It works together with the Bulgarian bacterium"
             },
             {
-              "bg": "Разваля млякото",
-              "en": "It spoils the milk"
+              "bg": "Само оцветява млякото",
+              "en": "It only colours the milk"
             },
             {
-              "bg": "Оцветява го",
-              "en": "It colours it"
+              "bg": "Пречи на подквасването",
+              "en": "It stops the milk from setting"
             },
             {
-              "bg": "Няма роля",
-              "en": "It has no role"
+              "bg": "Прави млякото сладко",
+              "en": "It makes the milk sweet"
             }
           ],
           "answer": 0
@@ -493,20 +501,20 @@
           },
           "options": [
             {
-              "bg": "Малко кисело мляко, с което започваме",
-              "en": "A little yoghurt to begin with"
+              "bg": "Малко кисело мляко, с което се подквасва ново",
+              "en": "A little yoghurt used to set new yoghurt"
             },
             {
-              "bg": "Вид сирене",
-              "en": "A kind of cheese"
+              "bg": "Прясно мляко без мазнини",
+              "en": "Skimmed fresh milk"
             },
             {
-              "bg": "Захар",
-              "en": "Sugar"
+              "bg": "Сирене, нарязано на кубчета",
+              "en": "Cheese cut into cubes"
             },
             {
-              "bg": "Вода",
-              "en": "Water"
+              "bg": "Захар, разтворена във вода",
+              "en": "Sugar dissolved in water"
             }
           ],
           "answer": 0

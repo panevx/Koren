@@ -524,27 +524,32 @@
       "check": [
         {
           "q": {
-            "bg": "Кой е най-едрият хищник в България?",
-            "en": "Which is the largest predator in Bulgaria?"
+            "bg": "Кое от тези животни е най-рядко в нашите гори?",
+            "en": "Which of these animals is rarest in our forests?"
           },
           "options": [
-            {
-              "bg": "Вълк",
-              "en": "Wolf",
-              "img": "animals/wolf.webp"
-            },
-            {
-              "bg": "Кафява мечка",
-              "en": "Brown bear",
-              "img": "animals/bear.webp"
-            },
             {
               "bg": "Рис",
               "en": "Lynx",
               "img": "animals/lynx.webp"
+            },
+            {
+              "bg": "Лисица",
+              "en": "Fox",
+              "img": "animals/fox.webp"
+            },
+            {
+              "bg": "Сърна",
+              "en": "Roe deer",
+              "img": "animals/roe-deer.webp"
+            },
+            {
+              "bg": "Глиган",
+              "en": "Wild boar",
+              "img": "animals/boar.webp"
             }
           ],
-          "answer": 1,
+          "answer": 0,
           "hint": {
             "bg": "Зимува в бърлога.",
             "en": "It spends the winter in a den."
@@ -552,24 +557,25 @@
         },
         {
           "q": {
-            "bg": "Кое животно ловува на глутници?",
-            "en": "Which animal hunts in packs?"
+            "bg": "Защо бухалът лови почти безшумно?",
+            "en": "Why does the eagle owl hunt almost silently?"
           },
           "options": [
             {
-              "bg": "Вълк",
-              "en": "Wolf",
-              "img": "animals/wolf.webp"
+              "bg": "Меките пера заглушават крилете",
+              "en": "Soft feathers muffle its wings"
             },
             {
-              "bg": "Язовец",
-              "en": "Badger",
-              "img": "animals/badger.webp"
+              "bg": "Лети много бавно",
+              "en": "It flies very slowly"
             },
             {
-              "bg": "Таралеж",
-              "en": "Hedgehog",
-              "img": "animals/hedgehog.webp"
+              "bg": "Не маха с криле",
+              "en": "It does not flap its wings"
+            },
+            {
+              "bg": "Ловува само денем",
+              "en": "It hunts only by day"
             }
           ],
           "answer": 0,
@@ -580,27 +586,28 @@
         },
         {
           "q": {
-            "bg": "Кое от тези животни е активно нощем?",
-            "en": "Which of these animals is active at night?"
+            "bg": "В кои планини живее главно кафявата мечка?",
+            "en": "In which mountains does the brown bear mainly live?"
           },
           "options": [
             {
-              "bg": "Катерица",
-              "en": "Squirrel",
-              "img": "animals/squirrel.webp"
+              "bg": "Рила, Пирин и Родопите",
+              "en": "Rila, Pirin and the Rhodopes"
             },
             {
-              "bg": "Кълвач",
-              "en": "Woodpecker",
-              "img": "animals/woodpecker.webp"
+              "bg": "Странджа и Сакар",
+              "en": "Strandzha and Sakar"
             },
             {
-              "bg": "Бухал",
-              "en": "Eagle owl",
-              "img": "animals/owl.webp"
+              "bg": "Добруджа и Лудогорието",
+              "en": "Dobruja and Ludogorie"
+            },
+            {
+              "bg": "Черноморието и Дунавската равнина",
+              "en": "The coast and the Danubian Plain"
             }
           ],
-          "answer": 2,
+          "answer": 0,
           "hint": {
             "bg": "Има големи оранжеви очи.",
             "en": "It has big orange eyes."

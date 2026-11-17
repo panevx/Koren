@@ -392,21 +392,25 @@
       "check": [
         {
           "q": {
-            "bg": "Какво традиционно се приготвя на Никулден?",
-            "en": "What is traditionally cooked on St Nicholas' Day?"
+            "bg": "Кой празнува на Петровден?",
+            "en": "Who celebrates on St Peter’s Day?"
           },
           "options": [
             {
-              "bg": "Риба",
-              "en": "Fish"
+              "bg": "Петър и Павел",
+              "en": "Petar and Pavel"
             },
             {
-              "bg": "Козунак",
-              "en": "Kozunak"
+              "bg": "Георги и Гергана",
+              "en": "Georgi and Gergana"
             },
             {
-              "bg": "Тиквеник",
-              "en": "Pumpkin pie"
+              "bg": "Иван и Иванка",
+              "en": "Ivan and Ivanka"
+            },
+            {
+              "bg": "Никола и Николина",
+              "en": "Nikola and Nikolina"
             }
           ],
           "answer": 0,

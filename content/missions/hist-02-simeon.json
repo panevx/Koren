@@ -299,21 +299,21 @@
             "en": "Simeon studies in Constantinople"
           },
           {
-            "bg": "Преславският събор (893 г.)",
-            "en": "The Council of Preslav (893)"
+            "bg": "Преславският събор",
+            "en": "The Council of Preslav"
           },
           {
-            "bg": "Битката при Ахелой (917 г.)",
-            "en": "The Battle of Achelous (917)"
+            "bg": "Битката при Ахелой",
+            "en": "The Battle of Achelous"
           },
           {
-            "bg": "Смъртта на цар Симеон (927 г.)",
-            "en": "Tsar Simeon dies (927)"
+            "bg": "Смъртта на цар Симеон",
+            "en": "Tsar Simeon dies"
           }
         ],
         "hint": {
-          "bg": "Гледай годините в скобите.",
-          "en": "Look at the years in brackets."
+          "bg": "Започни от младостта на Симеон. Смъртта му е последна.",
+          "en": "Start with Simeon’s youth. His death comes last."
         }
       },
       "extra": {
@@ -394,24 +394,28 @@
       "check": [
         {
           "q": {
-            "bg": "Кой пише „За буквите“?",
-            "en": "Who wrote “On the Letters”?"
+            "bg": "Кой книжовник от Преслав пише „Шестоднев“?",
+            "en": "Which Preslav writer writes the “Hexaemeron” (Shestodnev)?"
           },
           "options": [
             {
-              "bg": "Паисий Хилендарски",
-              "en": "Paisius of Hilendar"
+              "bg": "Йоан Екзарх",
+              "en": "John the Exarch"
             },
             {
               "bg": "Черноризец Храбър",
               "en": "Chernorizets Hrabar"
             },
             {
-              "bg": "Васил Левски",
-              "en": "Vasil Levski"
+              "bg": "Константин Преславски",
+              "en": "Constantine of Preslav"
+            },
+            {
+              "bg": "Климент Охридски",
+              "en": "Clement of Ohrid"
             }
           ],
-          "answer": 1,
+          "answer": 0,
           "hint": {
             "bg": "Името му означава „смел монах“.",
             "en": "His name means “brave monk”."
@@ -419,21 +423,25 @@
         },
         {
           "q": {
-            "bg": "При коя река Симеон побеждава през 917 г.?",
-            "en": "At which river does Simeon win in 917?"
+            "bg": "За какво е подготвян Симеон като млад?",
+            "en": "What is Simeon prepared for as a young man?"
           },
           "options": [
             {
-              "bg": "Ахелой",
-              "en": "Achelous"
+              "bg": "За духовник",
+              "en": "For the Church"
             },
             {
-              "bg": "Марица",
-              "en": "Maritsa"
+              "bg": "За пълководец",
+              "en": "For a general"
             },
             {
-              "bg": "Дунав",
-              "en": "Danube"
+              "bg": "За търговец",
+              "en": "For a merchant"
+            },
+            {
+              "bg": "За владетел на Охрид",
+              "en": "For ruler of Ohrid"
             }
           ],
           "answer": 0,
@@ -449,16 +457,20 @@
           },
           "options": [
             {
-              "bg": "Хан Крум",
+              "bg": "На хан Крум",
               "en": "Khan Krum"
             },
             {
-              "bg": "Хан Аспарух",
+              "bg": "На хан Аспарух",
               "en": "Khan Asparuh"
             },
             {
-              "bg": "Княз Борис I",
+              "bg": "На княз Борис I",
               "en": "Prince Boris I"
+            },
+            {
+              "bg": "На хан Омуртаг",
+              "en": "Khan Omurtag"
             }
           ],
           "answer": 2,

@@ -362,16 +362,16 @@
                 "en": "A species surviving from very old times"
               },
               {
-                "bg": "Нов вид",
-                "en": "A new species"
+                "bg": "Вид, внесен от друг континент",
+                "en": "A species brought from another continent"
               },
               {
-                "bg": "Изкуствено цвете",
-                "en": "An artificial flower"
+                "bg": "Вид, който вече е изчезнал",
+                "en": "A species that is already extinct"
               },
               {
-                "bg": "Вид от друга планета",
-                "en": "A species from another planet"
+                "bg": "Вид, създаден от учени",
+                "en": "A species created by scientists"
               }
             ],
             "answer": 0
@@ -379,24 +379,24 @@
           {
             "q": {
               "bg": "Откога расте силивряк у нас според учените?",
-              "en": "Since when has the silivryak grown here, according to scientists?"
+              "en": "Since when has silivryak grown here, according to scientists?"
             },
             "options": [
               {
-                "bg": "От миналата година",
-                "en": "Since last year"
+                "bg": "От миналия век",
+                "en": "Since the last century"
               },
               {
-                "bg": "От 1878 г.",
-                "en": "Since 1878"
+                "bg": "От Средновековието",
+                "en": "Since the Middle Ages"
               },
               {
                 "bg": "Още преди ледниковия период",
                 "en": "Since before the Ice Age"
               },
               {
-                "bg": "От 2000 г.",
-                "en": "Since 2000"
+                "bg": "От времето на траките",
+                "en": "Since Thracian times"
               }
             ],
             "answer": 2
@@ -416,11 +416,11 @@
                 "en": "It is rare and protected"
               },
               {
-                "bg": "Не мирише",
-                "en": "It has no smell"
+                "bg": "Расте само в Рила",
+                "en": "It grows only in Rila"
               },
               {
-                "bg": "Цъфти само зимата",
+                "bg": "Цъфти само през зимата",
                 "en": "It flowers only in winter"
               }
             ],
@@ -437,16 +437,16 @@
                 "en": "In a botanical garden"
               },
               {
-                "bg": "На паркинга",
-                "en": "In a car park"
+                "bg": "Извън пътеките в парка",
+                "en": "Off the paths in the park"
               },
               {
-                "bg": "В супермаркета",
-                "en": "In a supermarket"
+                "bg": "На поляната, като ги изкопаем",
+                "en": "In a meadow, by digging them up"
               },
               {
-                "bg": "В мазето",
-                "en": "In the cellar"
+                "bg": "В цветарски магазин",
+                "en": "In a flower shop"
               }
             ],
             "answer": 0
@@ -457,20 +457,24 @@
         {
           "q": {
             "bg": "Какво е особеното на родопския силивряк?",
-            "en": "What is special about the Rhodope haberlea?"
+            "en": "What is special about the Rhodope silivryak?"
           },
           "options": [
             {
               "bg": "Изсъхва и пак оживява",
-              "en": "It dries up and comes back to life"
+              "en": "It dries out and comes back to life"
             },
             {
               "bg": "Цъфти само през зимата",
               "en": "It flowers only in winter"
             },
             {
-              "bg": "Расте в морето",
-              "en": "It grows in the sea"
+              "bg": "Расте във вода",
+              "en": "It grows in water"
+            },
+            {
+              "bg": "Яде насекоми",
+              "en": "It eats insects"
             }
           ],
           "answer": 0

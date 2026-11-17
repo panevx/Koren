@@ -403,24 +403,28 @@
       "check": [
         {
           "q": {
-            "bg": "Колко розов цвят е нужен за 1 кг розово масло?",
-            "en": "How many petals are needed for 1 kg of rose oil?"
+            "bg": "Защо маслодайната роза расте добре в Розовата долина?",
+            "en": "Why does the oil-bearing rose grow well in the Rose Valley?"
           },
           "options": [
             {
-              "bg": "Около 30 кг",
-              "en": "About 30 kg"
+              "bg": "Климатът и почвата там ѝ подхождат",
+              "en": "The climate and soil there suit it"
             },
             {
-              "bg": "Около 300 кг",
-              "en": "About 300 kg"
+              "bg": "Там е най-студеното място у нас",
+              "en": "It is the coldest place in the country"
             },
             {
-              "bg": "Над 3 тона",
-              "en": "Over 3 tonnes"
+              "bg": "Там вали най-много сняг",
+              "en": "It snows most there"
+            },
+            {
+              "bg": "Там няма никакви реки",
+              "en": "There are no rivers there"
             }
           ],
-          "answer": 2,
+          "answer": 0,
           "hint": {
             "bg": "Много, много повече, отколкото мислиш.",
             "en": "Much, much more than you think."
@@ -429,20 +433,24 @@
         {
           "q": {
             "bg": "Защо розите се берат рано сутрин?",
-            "en": "Why are roses picked early in the morning?"
+            "en": "Why are the roses picked early in the morning?"
           },
           "options": [
             {
-              "bg": "Тогава имат най-много масло",
-              "en": "They hold the most oil then"
+              "bg": "Тогава цветът има най-много масло",
+              "en": "Then the petals hold the most oil"
             },
             {
-              "bg": "Защото пчелите спят",
-              "en": "Because the bees are asleep"
+              "bg": "Тогава розите са най-едри",
+              "en": "Then the roses are biggest"
             },
             {
-              "bg": "Защото е по-тъмно",
-              "en": "Because it is darker"
+              "bg": "Следобед розоберът е забранен",
+              "en": "Picking is forbidden in the afternoon"
+            },
+            {
+              "bg": "Сутрин цветът тежи по-малко",
+              "en": "In the morning the petals weigh less"
             }
           ],
           "answer": 0,
@@ -453,28 +461,28 @@
         },
         {
           "q": {
-            "bg": "Как се нарича процесът, при който от цвета се получава масло?",
-            "en": "What is the process that turns petals into oil called?"
+            "bg": "В коя част на България е Розовата долина?",
+            "en": "In which part of Bulgaria is the Rose Valley?"
           },
           "options": [
             {
-              "bg": "Замразяване",
-              "en": "Freezing"
+              "bg": "В Централна България",
+              "en": "In central Bulgaria"
             },
             {
-              "bg": "Дестилация",
-              "en": "Distillation"
+              "bg": "По Черноморието",
+              "en": "On the Black Sea coast"
             },
             {
-              "bg": "Печене",
-              "en": "Baking"
+              "bg": "В Северозападна България",
+              "en": "In north-western Bulgaria"
             },
             {
-              "bg": "Сушене",
-              "en": "Drying"
+              "bg": "В Родопите",
+              "en": "In the Rhodopes"
             }
           ],
-          "answer": 1
+          "answer": 0
         }
       ]
     }

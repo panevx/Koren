@@ -311,16 +311,16 @@
                 "en": "A round carved ornament in the middle of the ceiling"
               },
               {
-                "bg": "Прозорец",
-                "en": "A window"
+                "bg": "Резбован кръст над вратата",
+                "en": "A carved cross above the door"
               },
               {
-                "bg": "Лампа",
-                "en": "A lamp"
+                "bg": "Шарка върху дървени ракли",
+                "en": "A pattern on wooden chests"
               },
               {
-                "bg": "Часовник",
-                "en": "A clock"
+                "bg": "Резбована рамка на икона",
+                "en": "A carved icon frame"
               }
             ],
             "answer": 0
@@ -405,17 +405,25 @@
       "check": [
         {
           "q": {
-            "bg": "Къде са били изрязани прочутите резбовани тавани – например „слънцата“?",
-            "en": "Where are the famous carved ceilings – such as the \"suns\" – from?"
+            "bg": "Коя школа е прочута с резбованите тавани – „слънцата“?",
+            "en": "Which school is famous for the carved ceilings – the “suns”?"
           },
           "options": [
             {
-              "bg": "Тревненската школа",
+              "bg": "Тревненската",
               "en": "The Tryavna school"
             },
             {
-              "bg": "Морските рибари",
-              "en": "The sea fishermen"
+              "bg": "Самоковската",
+              "en": "The Samokov school"
+            },
+            {
+              "bg": "Дебърската",
+              "en": "The Debar school"
+            },
+            {
+              "bg": "Троянската",
+              "en": "The Troyan school"
             }
           ],
           "answer": 0
@@ -456,16 +464,16 @@
               "en": "So it holds water and is smooth"
             },
             {
-              "bg": "За да е по-тежко",
-              "en": "To make it heavier"
+              "bg": "За да се изпече по-бързо",
+              "en": "So it fires faster"
             },
             {
-              "bg": "За да мирише хубаво",
-              "en": "To make it smell nice"
+              "bg": "За да е по-леко",
+              "en": "To make it lighter"
             },
             {
-              "bg": "За да се счупи по-лесно",
-              "en": "So it breaks more easily"
+              "bg": "За да не се нагорещява",
+              "en": "So it does not get hot"
             }
           ],
           "answer": 0

@@ -299,16 +299,16 @@
                 "en": "Dissolved minerals"
               },
               {
-                "bg": "Захар",
-                "en": "Sugar"
+                "bg": "Морска сол",
+                "en": "Sea salt"
               },
               {
-                "bg": "Пясък",
-                "en": "Sand"
+                "bg": "Пясък от реките",
+                "en": "River sand"
               },
               {
-                "bg": "Нищо",
-                "en": "Nothing"
+                "bg": "Частици от лава",
+                "en": "Bits of lava"
               }
             ],
             "answer": 0
@@ -320,23 +320,23 @@
             },
             "options": [
               {
-                "bg": "Вулкан",
-                "en": "A volcano"
-              },
-              {
                 "bg": "Гейзер с гореща вода",
                 "en": "A geyser of hot water"
               },
               {
-                "bg": "Ледник",
-                "en": "A glacier"
+                "bg": "Солено езеро",
+                "en": "A salt lake"
               },
               {
-                "bg": "Пустиня",
-                "en": "A desert"
+                "bg": "Пещера с ледени висулки",
+                "en": "A cave with icicles"
+              },
+              {
+                "bg": "Пясъчни дюни",
+                "en": "Sand dunes"
               }
             ],
-            "answer": 1
+            "answer": 0
           },
           {
             "q": {
@@ -370,23 +370,23 @@
             },
             "options": [
               {
-                "bg": "Слънцето я топли",
-                "en": "The sun warms it"
-              },
-              {
                 "bg": "Затопля се дълбоко в земята",
                 "en": "It is heated deep in the earth"
               },
               {
-                "bg": "Хората я топлят",
-                "en": "People heat it"
+                "bg": "Слънцето я затопля в езерата",
+                "en": "The sun warms it in lakes"
               },
               {
-                "bg": "Тече бавно",
-                "en": "It flows slowly"
+                "bg": "Тече под горещи пясъци",
+                "en": "It flows under hot sand"
+              },
+              {
+                "bg": "Смесва се с морска вода",
+                "en": "It mixes with sea water"
               }
             ],
-            "answer": 1
+            "answer": 0
           }
         ]
       },
@@ -394,20 +394,24 @@
         {
           "q": {
             "bg": "Къде блика най-горещата минерална вода в България (около 103 °C)?",
-            "en": "Where does the hottest mineral water in Bulgaria spring (about 103 °C)?"
+            "en": "Where does the hottest mineral water in Bulgaria (about 103 °C) spring?"
           },
           "options": [
             {
               "bg": "В Сапарева баня",
-              "en": "Sapareva Banya"
+              "en": "In Sapareva Banya"
             },
             {
               "bg": "В Хисаря",
-              "en": "Hisarya"
+              "en": "In Hisarya"
             },
             {
               "bg": "В Сандански",
-              "en": "Sandanski"
+              "en": "In Sandanski"
+            },
+            {
+              "bg": "Във Велинград",
+              "en": "In Velingrad"
             }
           ],
           "answer": 0

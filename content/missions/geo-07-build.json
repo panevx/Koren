@@ -390,49 +390,53 @@
       "check": [
         {
           "q": {
-            "bg": "Коя е първата столица на България?",
-            "en": "Which was the first capital of Bulgaria?"
+            "bg": "В каква посока от София е Варна?",
+            "en": "In which direction from Sofia is Varna?"
           },
           "options": [
             {
-              "bg": "Плиска",
-              "en": "Pliska"
+              "bg": "На изток",
+              "en": "East"
             },
             {
-              "bg": "Велико Търново",
-              "en": "Veliko Tarnovo"
+              "bg": "На запад",
+              "en": "West"
             },
             {
-              "bg": "Пловдив",
-              "en": "Plovdiv"
+              "bg": "На север",
+              "en": "North"
+            },
+            {
+              "bg": "На юг",
+              "en": "South"
             }
           ],
           "answer": 0
         },
         {
           "q": {
-            "bg": "Коя река тече през Пловдив?",
-            "en": "Which river flows through Plovdiv?"
+            "bg": "Кой голям град е най-близо до Рилския манастир?",
+            "en": "Which big town is nearest to the Rila Monastery?"
           },
           "options": [
             {
-              "bg": "Дунав",
-              "en": "Danube"
+              "bg": "Благоевград",
+              "en": "Blagoevgrad"
             },
             {
-              "bg": "Марица",
-              "en": "Maritsa"
+              "bg": "Варна",
+              "en": "Varna"
             },
             {
-              "bg": "Искър",
-              "en": "Iskar"
+              "bg": "Русе",
+              "en": "Ruse"
             },
             {
-              "bg": "Янтра",
-              "en": "Yantra"
+              "bg": "Шумен",
+              "en": "Shumen"
             }
           ],
-          "answer": 1
+          "answer": 0
         },
         {
           "q": {

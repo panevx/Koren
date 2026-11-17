@@ -427,6 +427,10 @@
             {
               "bg": "Има сероводород",
               "en": "There is hydrogen sulphide"
+            },
+            {
+              "bg": "Твърде солено е",
+              "en": "It is too salty"
             }
           ],
           "answer": 2,
@@ -442,19 +446,23 @@
           },
           "options": [
             {
+              "bg": "Два",
+              "en": "Two"
+            },
+            {
               "bg": "Три",
               "en": "Three"
             },
             {
-              "bg": "Десет",
-              "en": "Ten"
+              "bg": "Пет",
+              "en": "Five"
             },
             {
-              "bg": "Нито един",
-              "en": "None"
+              "bg": "Десет",
+              "en": "Ten"
             }
           ],
-          "answer": 0,
+          "answer": 1,
           "hint": {
             "bg": "Афала, муткур и още един.",
             "en": "The bottlenose, the porpoise and one more."

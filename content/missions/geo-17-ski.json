@@ -397,16 +397,16 @@
                 "en": "The higher you go, the colder it is"
               },
               {
-                "bg": "По-близо са до морето",
-                "en": "They are closer to the sea"
+                "bg": "Планините са по-близо до полюса",
+                "en": "Mountains are closer to the pole"
               },
               {
-                "bg": "Има повече хора",
-                "en": "There are more people"
+                "bg": "Там дъждът винаги замръзва",
+                "en": "Rain always freezes there"
               },
               {
-                "bg": "Снегът там е от пластмаса",
-                "en": "The snow there is plastic"
+                "bg": "Скалите пазят студа от лятото",
+                "en": "The rocks keep the cold from summer"
               }
             ],
             "answer": 0
@@ -431,6 +431,10 @@
             {
               "bg": "Пампорово",
               "en": "Pamporovo"
+            },
+            {
+              "bg": "Чепеларе",
+              "en": "Chepelare"
             }
           ],
           "answer": 0,

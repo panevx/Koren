@@ -310,24 +310,28 @@
       "check": [
         {
           "q": {
-            "bg": "Кой град е център на ДВЕ области?",
-            "en": "Which town is the centre of TWO provinces?"
+            "bg": "Коя от тези области граничи с Румъния по Дунав?",
+            "en": "Which of these provinces borders Romania along the Danube?"
           },
           "options": [
             {
-              "bg": "Пловдив",
-              "en": "Plovdiv"
+              "bg": "Русе",
+              "en": "Ruse"
             },
             {
-              "bg": "София",
-              "en": "Sofia"
+              "bg": "Смолян",
+              "en": "Smolyan"
             },
             {
-              "bg": "Варна",
-              "en": "Varna"
+              "bg": "Кърджали",
+              "en": "Kardzhali"
+            },
+            {
+              "bg": "Пазарджик",
+              "en": "Pazardzhik"
             }
           ],
-          "answer": 1,
+          "answer": 0,
           "hint": {
             "bg": "Едната е самата столица, другата е областта около нея.",
             "en": "One is the capital itself, the other is the province around it."
@@ -350,6 +354,10 @@
             {
               "bg": "Сливен",
               "en": "Sliven"
+            },
+            {
+              "bg": "Търговище",
+              "en": "Targovishte"
             }
           ],
           "answer": 1

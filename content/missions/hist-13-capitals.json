@@ -367,49 +367,53 @@
       "check": [
         {
           "q": {
-            "bg": "Над коя река е хълмът Царевец?",
-            "en": "Which river flows below Tsarevets hill?"
+            "bg": "Близо до кой днешен град е Плиска?",
+            "en": "Near which present-day town is Pliska?"
           },
           "options": [
             {
-              "bg": "Янтра",
-              "en": "The Yantra"
+              "bg": "Шумен",
+              "en": "Shumen"
             },
             {
-              "bg": "Искър",
-              "en": "The Iskar"
+              "bg": "Варна",
+              "en": "Varna"
             },
             {
-              "bg": "Марица",
-              "en": "The Maritsa"
+              "bg": "Русе",
+              "en": "Ruse"
+            },
+            {
+              "bg": "Добрич",
+              "en": "Dobrich"
             }
           ],
           "answer": 0
         },
         {
           "q": {
-            "bg": "Коя година Търново става столица?",
-            "en": "In which year does Tarnovo become the capital?"
+            "bg": "В коя област е днес Велики Преслав?",
+            "en": "In which province is Veliki Preslav today?"
           },
           "options": [
             {
-              "bg": "681",
-              "en": "681"
+              "bg": "Шумен",
+              "en": "Shumen"
             },
             {
-              "bg": "893",
-              "en": "893"
+              "bg": "Велико Търново",
+              "en": "Veliko Tarnovo"
             },
             {
-              "bg": "1185",
-              "en": "1185"
+              "bg": "Варна",
+              "en": "Varna"
             },
             {
-              "bg": "1879",
-              "en": "1879"
+              "bg": "Търговище",
+              "en": "Targovishte"
             }
           ],
-          "answer": 2
+          "answer": 0
         },
         {
           "q": {

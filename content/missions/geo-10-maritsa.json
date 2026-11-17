@@ -448,20 +448,24 @@
         {
           "q": {
             "bg": "Сред реките, които ИЗВИРАТ в България, коя носи най-много вода?",
-            "en": "Of the rivers that SPRING in Bulgaria, which carries the most water?"
+            "en": "Among rivers that RISE in Bulgaria, which carries the most water?"
           },
           "options": [
             {
               "bg": "Искър",
-              "en": "The Iskar"
+              "en": "Iskar"
             },
             {
               "bg": "Марица",
-              "en": "The Maritsa"
+              "en": "Maritsa"
             },
             {
               "bg": "Янтра",
-              "en": "The Yantra"
+              "en": "Yantra"
+            },
+            {
+              "bg": "Струма",
+              "en": "Struma"
             }
           ],
           "answer": 1,
@@ -473,12 +477,12 @@
         {
           "q": {
             "bg": "През коя низина тече Марица?",
-            "en": "Which lowland does the Maritsa flow through?"
+            "en": "Through which lowland does the Maritsa flow?"
           },
           "options": [
             {
               "bg": "Горнотракийската",
-              "en": "The Upper Thracian Lowland"
+              "en": "The Upper Thracian"
             },
             {
               "bg": "Дунавската равнина",
@@ -486,7 +490,11 @@
             },
             {
               "bg": "Софийската котловина",
-              "en": "The Sofia Valley"
+              "en": "The Sofia basin"
+            },
+            {
+              "bg": "Казанлъшката котловина",
+              "en": "The Kazanlak basin"
             }
           ],
           "answer": 0
@@ -499,15 +507,19 @@
           "options": [
             {
               "bg": "Тунджа и Арда",
-              "en": "The Tundzha and the Arda"
+              "en": "Tundzha and Arda"
             },
             {
               "bg": "Вит и Осъм",
-              "en": "The Vit and the Osam"
+              "en": "Vit and Osam"
             },
             {
               "bg": "Струма и Места",
-              "en": "The Struma and the Mesta"
+              "en": "Struma and Mesta"
+            },
+            {
+              "bg": "Янтра и Лом",
+              "en": "Yantra and Lom"
             }
           ],
           "answer": 0

@@ -91,25 +91,29 @@
         },
         "items": [
           {
-            "bg": "Юрий Гагарин – първият човек в космоса (1961)",
-            "en": "Yuri Gagarin – the first person in space (1961)",
+            "bg": "Юрий Гагарин – първият човек в космоса",
+            "en": "Yuri Gagarin – the first person in space",
             "img": "space/rocket.webp"
           },
           {
-            "bg": "Нийл Армстронг стъпва на Луната (1969)",
-            "en": "Neil Armstrong walks on the Moon (1969)"
+            "bg": "Нийл Армстронг стъпва на Луната",
+            "en": "Neil Armstrong walks on the Moon"
           },
           {
-            "bg": "Георги Иванов – първият българин в космоса (1979)",
-            "en": "Georgi Ivanov – the first Bulgarian in space (1979)",
+            "bg": "Георги Иванов – първият българин в космоса",
+            "en": "Georgi Ivanov – the first Bulgarian in space",
             "img": "space/cosmonaut.webp"
           },
           {
-            "bg": "Александър Александров на станция „Мир“ (1988)",
-            "en": "Aleksandar Aleksandrov on the Mir station (1988)",
+            "bg": "Александър Александров на станция „Мир“",
+            "en": "Aleksandar Aleksandrov on the Mir station",
             "img": "space/satellite.webp"
           }
-        ]
+        ],
+        "hint": {
+          "bg": "Първо човек лети в космоса, а после стъпва на Луната.",
+          "en": "First a person flies into space, then walks on the Moon."
+        }
       },
       "extra": {
         "type": "truefalse",
@@ -418,7 +422,7 @@
         {
           "q": {
             "bg": "Коя поред страна с космонавт става България?",
-            "en": "Which country in order to have a cosmonaut was Bulgaria?"
+            "en": "Which country in turn to have a cosmonaut does Bulgaria become?"
           },
           "options": [
             {
@@ -430,8 +434,12 @@
               "en": "The first"
             },
             {
-              "bg": "Двадесетата",
-              "en": "The twentieth"
+              "bg": "Третата",
+              "en": "The third"
+            },
+            {
+              "bg": "Десетата",
+              "en": "The tenth"
             }
           ],
           "answer": 0

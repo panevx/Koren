@@ -303,10 +303,14 @@
             "en": "Publishes newspapers in Romania"
           },
           {
-            "bg": "Четата слиза от „Радецки“ (1876 г.)",
-            "en": "His band lands from the Radetzky (1876)"
+            "bg": "Четата слиза от „Радецки“",
+            "en": "His band lands from the Radetzky"
           }
-        ]
+        ],
+        "hint": {
+          "bg": "Започни с раждането му.",
+          "en": "Start with his birth."
+        }
       },
       "extra": {
         "type": "quiz",
@@ -416,34 +420,50 @@
       "check": [
         {
           "q": {
-            "bg": "Кой връх носи неговото име?",
-            "en": "Which peak bears his name?"
+            "bg": "Кой връх носи името на Ботев?",
+            "en": "Which peak is named after Botev?"
           },
           "options": [
             {
-              "bg": "Ботев – най-високият в Стара планина",
-              "en": "Botev – the highest in the Balkan Mountains"
+              "bg": "Най-високият в Стара планина",
+              "en": "The highest in the Balkan Mountains"
             },
             {
-              "bg": "Мусала",
-              "en": "Musala"
+              "bg": "Най-високият в Рила",
+              "en": "The highest in Rila"
+            },
+            {
+              "bg": "Най-високият в Пирин",
+              "en": "The highest in Pirin"
+            },
+            {
+              "bg": "Най-високият на Витоша",
+              "en": "The highest on Vitosha"
             }
           ],
           "answer": 0
         },
         {
           "q": {
-            "bg": "Какво празнуваме на 2 юни?",
-            "en": "What do we mark on 2 June?"
+            "bg": "Кого почитаме на 2 юни?",
+            "en": "Whom do we honour on 2 June?"
           },
           "options": [
             {
-              "bg": "Деня на Ботев и на загиналите за свободата",
-              "en": "The day of Botev and of those who died for freedom"
+              "bg": "Ботев и загиналите за свободата",
+              "en": "Botev and those who died for freedom"
             },
             {
-              "bg": "Освобождението",
-              "en": "The Liberation"
+              "bg": "Освободителите от 1878 г.",
+              "en": "The liberators of 1878"
+            },
+            {
+              "bg": "Героите на Съединението",
+              "en": "The heroes of the Unification"
+            },
+            {
+              "bg": "Народните будители",
+              "en": "The national enlighteners"
             }
           ],
           "answer": 0

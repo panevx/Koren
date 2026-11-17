@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import { img } from '../components/Brand'
 import { Icon } from '../components/Icon'
 import type { Question } from '../content/schema'
@@ -7,6 +7,7 @@ import { useT } from '../i18n/useT'
 import { bouncy, m, rise, stagger } from '../motion'
 import { play } from '../sound'
 import { DoneButton, Feedback, Prompt } from './Feedback'
+import { answerOrder } from './shuffle'
 
 type Props = {
   questions: Question[]
@@ -67,6 +68,8 @@ function QuizQuestion({
   const [wrong, setWrong] = useState<number[]>([])
   const [solved, setSolved] = useState(false)
   const withImages = question.options.some((o) => o.img)
+  // Shown in a seeded order (same in bg and en, same every time) – never simply as written.
+  const order = useMemo(() => answerOrder(question.options.length, question.q.bg), [question])
 
   const choose = (i: number) => {
     if (solved || wrong.includes(i)) return
@@ -86,7 +89,8 @@ function QuizQuestion({
       <Prompt>{l(question.q)}</Prompt>
 
       <m.div variants={stagger} initial="hidden" animate="show" className={`grid gap-3 ${withImages ? 'grid-cols-2 side:grid-cols-[repeat(auto-fit,minmax(8rem,1fr))]' : 'grid-cols-1 side:grid-cols-2'}`}>
-        {question.options.map((option, i) => {
+        {order.map((i, at) => {
+          const option = question.options[i]!
           const isWrong = wrong.includes(i)
           const isRight = solved && i === question.answer
           return (
@@ -111,7 +115,7 @@ function QuizQuestion({
               {option.img ? (
                 <img src={img(option.img)} alt="" className="pop-3d size-20 object-contain short:size-14" />
               ) : (
-                <span className={`size-3.5 shrink-0 rounded-full ${isWrong || (solved && !isRight) ? 'bg-muted/40' : DOTS[i % DOTS.length]}`} aria-hidden="true" />
+                <span className={`size-3.5 shrink-0 rounded-full ${isWrong || (solved && !isRight) ? 'bg-muted/40' : DOTS[at % DOTS.length]}`} aria-hidden="true" />
               )}
               <span className={`min-w-0 flex-1 ${withImages ? 'text-[length:clamp(0.6rem,12cqw,1.125rem)]' : ''}`}>{l(option)}</span>
               {isRight && (

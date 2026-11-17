@@ -531,20 +531,24 @@
         {
           "q": {
             "bg": "Как се обръщаме учтиво към непознат възрастен?",
-            "en": "How do we politely address an adult we don't know?"
+            "en": "How do we politely address an unknown adult?"
           },
           "options": [
             {
               "bg": "ти",
-              "en": "ти"
+              "en": "ti (you, informal)"
             },
             {
               "bg": "Вие",
-              "en": "Вие"
+              "en": "Vie (you, polite)"
             },
             {
               "bg": "той",
-              "en": "той"
+              "en": "toy (he)"
+            },
+            {
+              "bg": "те",
+              "en": "te (they)"
             }
           ],
           "answer": 1,
@@ -556,20 +560,24 @@
         {
           "q": {
             "bg": "Кое е умалителното на „къща“?",
-            "en": "What is the diminutive of “къща” (house)?"
+            "en": "What is the diminutive of “kashta” (house)?"
           },
           "options": [
             {
               "bg": "къщище",
-              "en": "къщище"
+              "en": "kashtishte"
             },
             {
               "bg": "къщар",
-              "en": "къщар"
+              "en": "kashtar"
             },
             {
               "bg": "къщичка",
-              "en": "къщичка"
+              "en": "kashtichka"
+            },
+            {
+              "bg": "къщен",
+              "en": "kashten"
             }
           ],
           "answer": 2,

@@ -356,12 +356,12 @@
           },
           {
             "a": {
-              "bg": "чешма",
-              "en": "cheshma"
+              "bg": "софра",
+              "en": "sofra"
             },
             "b": {
-              "bg": "извор с чучур",
-              "en": "fountain with a spout"
+              "bg": "ниска кръгла маса",
+              "en": "a low round table"
             }
           }
         ]
@@ -370,16 +370,24 @@
         {
           "q": {
             "bg": "Защо в песните има стари думи?",
-            "en": "Why are there old words in songs?"
+            "en": "Why do songs contain old words?"
           },
           "options": [
             {
               "bg": "Песните са се предавали от поколение на поколение",
-              "en": "Songs were passed down from generation to generation"
+              "en": "Songs have passed from generation to generation"
             },
             {
-              "bg": "Някой ги е объркал",
-              "en": "Someone mixed them up"
+              "bg": "Певците са измисляли нови думи",
+              "en": "Singers made up new words"
+            },
+            {
+              "bg": "Думите са взети от учебници",
+              "en": "The words come from textbooks"
+            },
+            {
+              "bg": "Песните са превеждани от гръцки",
+              "en": "The songs were translated from Greek"
             }
           ],
           "answer": 0
@@ -411,28 +419,28 @@
         },
         {
           "q": {
-            "bg": "Какво значи „либе“?",
-            "en": "What does “libe” mean?"
+            "bg": "Какво значи „пенджер“?",
+            "en": "What does “pendzher” mean?"
           },
           "options": [
             {
-              "bg": "Мост",
-              "en": "A bridge"
+              "bg": "Прозорец",
+              "en": "Window"
             },
             {
-              "bg": "Улица",
-              "en": "A street"
+              "bg": "Врата",
+              "en": "Door"
             },
             {
-              "bg": "Любим човек",
-              "en": "A beloved person"
+              "bg": "Покрив",
+              "en": "Roof"
             },
             {
-              "bg": "Работник",
-              "en": "A worker"
+              "bg": "Огнище",
+              "en": "Hearth"
             }
           ],
-          "answer": 2
+          "answer": 0
         }
       ]
     }

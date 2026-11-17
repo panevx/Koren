@@ -417,53 +417,53 @@
       "check": [
         {
           "q": {
-            "bg": "В кой град е паметникът „Създатели на българската държава“?",
-            "en": "In which town is the “Founders of the Bulgarian State” monument?"
+            "bg": "Близо до кой град е музеят на открито „Етъра“?",
+            "en": "Near which town is the open-air museum “Etara”?"
           },
           "options": [
             {
-              "bg": "Плиска",
-              "en": "Pliska"
+              "bg": "Габрово",
+              "en": "Gabrovo"
             },
             {
               "bg": "Шумен",
               "en": "Shumen"
             },
             {
-              "bg": "Варна",
-              "en": "Varna"
-            },
-            {
-              "bg": "София",
-              "en": "Sofia"
-            }
-          ],
-          "answer": 1
-        },
-        {
-          "q": {
-            "bg": "Кой град е известен със Сините камъни?",
-            "en": "Which town is known for the Blue Rocks?"
-          },
-          "options": [
-            {
-              "bg": "Ямбол",
-              "en": "Yambol"
-            },
-            {
-              "bg": "Стара Загора",
-              "en": "Stara Zagora"
+              "bg": "Плевен",
+              "en": "Pleven"
             },
             {
               "bg": "Сливен",
               "en": "Sliven"
-            },
-            {
-              "bg": "Хасково",
-              "en": "Haskovo"
             }
           ],
-          "answer": 2
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кой областен град е на Дунав в Северозапада?",
+            "en": "Which provincial town is on the Danube in the north-west?"
+          },
+          "options": [
+            {
+              "bg": "Видин",
+              "en": "Vidin"
+            },
+            {
+              "bg": "Ловеч",
+              "en": "Lovech"
+            },
+            {
+              "bg": "Габрово",
+              "en": "Gabrovo"
+            },
+            {
+              "bg": "Сливен",
+              "en": "Sliven"
+            }
+          ],
+          "answer": 0
         },
         {
           "q": {

@@ -469,45 +469,53 @@
       "check": [
         {
           "q": {
-            "bg": "Коя е най-дългата планина в България?",
-            "en": "Which is the longest mountain range in Bulgaria?"
+            "bg": "Коя планина е на границата със Северна Македония и Гърция, до Петрич?",
+            "en": "Which mountain lies on the border with North Macedonia and Greece, near Petrich?"
           },
           "options": [
             {
-              "bg": "Стара планина",
-              "en": "The Balkan Mountains"
+              "bg": "Беласица",
+              "en": "Belasitsa"
+            },
+            {
+              "bg": "Странджа",
+              "en": "Strandzha"
+            },
+            {
+              "bg": "Сакар",
+              "en": "Sakar"
             },
             {
               "bg": "Витоша",
               "en": "Vitosha"
-            },
-            {
-              "bg": "Рила",
-              "en": "Rila"
             }
           ],
           "answer": 0
         },
         {
           "q": {
-            "bg": "В коя планина е Мусала?",
-            "en": "Which mountain is Musala in?"
+            "bg": "Коя планина е между Стара планина и Тракийската низина?",
+            "en": "Which mountain lies between the Balkan Mountains and the Thracian Plain?"
           },
           "options": [
             {
-              "bg": "Пирин",
-              "en": "Pirin"
+              "bg": "Средна гора",
+              "en": "Sredna Gora"
             },
             {
-              "bg": "Рила",
-              "en": "Rila"
+              "bg": "Витоша",
+              "en": "Vitosha"
             },
             {
-              "bg": "Родопи",
-              "en": "The Rhodopes"
+              "bg": "Беласица",
+              "en": "Belasitsa"
+            },
+            {
+              "bg": "Осогово",
+              "en": "Osogovo"
             }
           ],
-          "answer": 1
+          "answer": 0
         },
         {
           "q": {

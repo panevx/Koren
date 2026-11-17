@@ -468,28 +468,28 @@
         },
         {
           "q": {
-            "bg": "Кой град е на полуостров с древни църкви?",
-            "en": "Which town stands on a peninsula with ancient churches?"
+            "bg": "Кой от тези градове е най-на север?",
+            "en": "Which of these towns is furthest north?"
           },
           "options": [
             {
-              "bg": "Бургас",
-              "en": "Burgas"
+              "bg": "Балчик",
+              "en": "Balchik"
             },
             {
               "bg": "Варна",
               "en": "Varna"
             },
             {
-              "bg": "Несебър",
-              "en": "Nessebar"
+              "bg": "Бургас",
+              "en": "Burgas"
             },
             {
-              "bg": "Балчик",
-              "en": "Balchik"
+              "bg": "Созопол",
+              "en": "Sozopol"
             }
           ],
-          "answer": 2
+          "answer": 0
         }
       ]
     }

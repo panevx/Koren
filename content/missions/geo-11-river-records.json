@@ -473,45 +473,53 @@
       "check": [
         {
           "q": {
-            "bg": "Коя е най-дългата река, която минава през България (цялата ѝ дължина)?",
-            "en": "Which is the longest river that flows through Bulgaria (its whole length)?"
+            "bg": "Коя от тези реки е приток на Марица?",
+            "en": "Which of these rivers is a tributary of the Maritsa?"
           },
           "options": [
             {
-              "bg": "Дунав",
-              "en": "The Danube"
+              "bg": "Арда",
+              "en": "Arda"
             },
             {
-              "bg": "Искър",
-              "en": "The Iskar"
+              "bg": "Янтра",
+              "en": "Yantra"
             },
             {
-              "bg": "Марица",
-              "en": "The Maritsa"
+              "bg": "Осъм",
+              "en": "Osam"
+            },
+            {
+              "bg": "Вит",
+              "en": "Vit"
             }
           ],
           "answer": 0
         },
         {
           "q": {
-            "bg": "Коя е най-дългата река, която тече САМО в България?",
-            "en": "Which is the longest river that flows ONLY in Bulgaria?"
+            "bg": "Коя река тече през Казанлък и Ямбол?",
+            "en": "Which river flows through Kazanlak and Yambol?"
           },
           "options": [
             {
-              "bg": "Марица",
-              "en": "The Maritsa"
-            },
-            {
-              "bg": "Искър",
-              "en": "The Iskar"
-            },
-            {
               "bg": "Тунджа",
-              "en": "The Tundzha"
+              "en": "Tundzha"
+            },
+            {
+              "bg": "Марица",
+              "en": "Maritsa"
+            },
+            {
+              "bg": "Арда",
+              "en": "Arda"
+            },
+            {
+              "bg": "Струма",
+              "en": "Struma"
             }
           ],
-          "answer": 1,
+          "answer": 0,
           "hint": {
             "bg": "Марица и Тунджа продължават в съседни държави.",
             "en": "The Maritsa and the Tundzha go on into neighbouring countries."
@@ -519,21 +527,25 @@
         },
         {
           "q": {
-            "bg": "Сред реките, които ИЗВИРАТ в България, коя носи най-много вода?",
-            "en": "Of the rivers that SPRING in Bulgaria, which carries the most water?"
+            "bg": "В коя държава Струма стига до морето?",
+            "en": "In which country does the Struma reach the sea?"
           },
           "options": [
             {
-              "bg": "Марица",
-              "en": "The Maritsa"
+              "bg": "Гърция",
+              "en": "Greece"
             },
             {
-              "bg": "Искър",
-              "en": "The Iskar"
+              "bg": "Турция",
+              "en": "Turkey"
             },
             {
-              "bg": "Камчия",
-              "en": "The Kamchia"
+              "bg": "България",
+              "en": "Bulgaria"
+            },
+            {
+              "bg": "Северна Македония",
+              "en": "North Macedonia"
             }
           ],
           "answer": 0

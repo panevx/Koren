@@ -468,6 +468,10 @@
             {
               "bg": "Рейн",
               "en": "The Rhine"
+            },
+            {
+              "bg": "Днепър",
+              "en": "The Dnieper"
             }
           ],
           "answer": 0,
@@ -479,7 +483,7 @@
         {
           "q": {
             "bg": "През колко държави тече Дунав?",
-            "en": "How many countries does the Danube flow through?"
+            "en": "Through how many countries does the Danube flow?"
           },
           "options": [
             {
@@ -487,15 +491,19 @@
               "en": "4"
             },
             {
+              "bg": "7",
+              "en": "7"
+            },
+            {
               "bg": "10",
               "en": "10"
             },
             {
-              "bg": "20",
-              "en": "20"
+              "bg": "15",
+              "en": "15"
             }
           ],
-          "answer": 1
+          "answer": 2
         },
         {
           "q": {
@@ -514,6 +522,10 @@
             {
               "bg": "Силистра",
               "en": "Silistra"
+            },
+            {
+              "bg": "Русе",
+              "en": "Ruse"
             }
           ],
           "answer": 1

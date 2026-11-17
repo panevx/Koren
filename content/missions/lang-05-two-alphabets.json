@@ -250,22 +250,26 @@
         },
         "items": [
           {
-            "bg": "Кирил и Методий създават глаголицата (около 863 г.)",
-            "en": "Cyril and Methodius create Glagolitic (around 863)"
+            "bg": "Кирил и Методий създават глаголицата",
+            "en": "Cyril and Methodius create Glagolitic"
           },
           {
-            "bg": "Учениците им идват в България (886 г.)",
-            "en": "Their pupils come to Bulgaria (886)"
+            "bg": "Учениците им идват в България",
+            "en": "Their pupils come to Bulgaria"
           },
           {
-            "bg": "В Преслав се създава кирилицата (края на 9 век)",
-            "en": "Cyrillic is created in Preslav (end of the 9th century)"
+            "bg": "В Преслав се създава кирилицата",
+            "en": "Cyrillic is created in Preslav"
           },
           {
-            "bg": "Кирилицата става азбука на ЕС (2007 г.)",
-            "en": "Cyrillic becomes an EU alphabet (2007)"
+            "bg": "Кирилицата става азбука на ЕС",
+            "en": "Cyrillic becomes an EU alphabet"
           }
-        ]
+        ],
+        "hint": {
+          "bg": "Първо е глаголицата, а ЕС е най-новото.",
+          "en": "Glagolitic comes first; the EU is the newest."
+        }
       },
       "extra": {
         "type": "quiz",
@@ -380,12 +384,20 @@
           },
           "options": [
             {
-              "bg": "Деня на българската просвета и култура и на славянската писменост",
-              "en": "The Day of Bulgarian Education and Culture and of Slavonic Writing"
+              "bg": "Деня на просветата, културата и славянската писменост",
+              "en": "The Day of Education, Culture and Slavonic Literacy"
             },
             {
-              "bg": "Освобождението",
-              "en": "The Liberation"
+              "bg": "Деня на народните будители",
+              "en": "The Day of the National Enlighteners"
+            },
+            {
+              "bg": "Деня на Съединението",
+              "en": "Unification Day"
+            },
+            {
+              "bg": "Деня на Независимостта",
+              "en": "Independence Day"
             }
           ],
           "answer": 0

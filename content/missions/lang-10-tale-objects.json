@@ -345,7 +345,7 @@
         {
           "q": {
             "bg": "Как Кума Лиса подмамва Кумчо Вълчо в зимната приказка?",
-            "en": "How does Godmother Fox trick Godfather Wolf in the winter tale?"
+            "en": "How does Auntie Fox trick Uncle Wolf in the winter tale?"
           },
           "options": [
             {
@@ -353,36 +353,44 @@
               "en": "To fish with his tail in the ice"
             },
             {
-              "bg": "Да пее на луната",
-              "en": "To sing to the moon"
+              "bg": "Да открадне кокошки от двора",
+              "en": "To steal hens from the yard"
+            },
+            {
+              "bg": "Да спи в бърлогата на мечката",
+              "en": "To sleep in the bear’s den"
+            },
+            {
+              "bg": "Да пие вода от кладенеца",
+              "en": "To drink from the well"
             }
           ],
           "answer": 0
         },
         {
           "q": {
-            "bg": "Кой обикновено успява в приказките за трима братя?",
-            "en": "Who usually succeeds in tales of three brothers?"
+            "bg": "Каква е Кума Лиса в приказките?",
+            "en": "What is Auntie Fox like in the tales?"
           },
           "options": [
             {
-              "bg": "Най-големият",
-              "en": "The eldest"
+              "bg": "Хитра и лъжлива",
+              "en": "Sly and deceitful"
             },
             {
-              "bg": "Средният",
-              "en": "The middle one"
+              "bg": "Глупава и добра",
+              "en": "Silly and kind"
             },
             {
-              "bg": "Най-малкият",
-              "en": "The youngest"
+              "bg": "Силна и страшна",
+              "en": "Strong and scary"
             },
             {
-              "bg": "Никой",
-              "en": "Nobody"
+              "bg": "Мързелива и сънлива",
+              "en": "Lazy and sleepy"
             }
           ],
-          "answer": 2
+          "answer": 0
         },
         {
           "q": {
@@ -395,16 +403,16 @@
               "en": "A tale passed by word of mouth"
             },
             {
-              "bg": "Предаване по телевизията",
-              "en": "A TV programme"
+              "bg": "Приказка от един известен писател",
+              "en": "A tale by one famous writer"
             },
             {
-              "bg": "Роман от един писател",
-              "en": "A novel by one writer"
+              "bg": "Приказка от телевизията",
+              "en": "A tale from television"
             },
             {
-              "bg": "Статия във вестник",
-              "en": "A newspaper article"
+              "bg": "Приказка, преведена от чужд език",
+              "en": "A tale translated from a foreign language"
             }
           ],
           "answer": 0

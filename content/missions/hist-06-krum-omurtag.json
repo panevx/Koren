@@ -459,7 +459,7 @@
         {
           "q": {
             "bg": "Кой византийски император е победен от хан Крум през 811 г.?",
-            "en": "Which Byzantine emperor did Khan Krum defeat in 811?"
+            "en": "Which Byzantine emperor is defeated by Khan Krum in 811?"
           },
           "options": [
             {
@@ -467,12 +467,16 @@
               "en": "Nikephoros I"
             },
             {
-              "bg": "Юстиниан",
-              "en": "Justinian"
+              "bg": "Юстиниан II",
+              "en": "Justinian II"
             },
             {
               "bg": "Василий II",
               "en": "Basil II"
+            },
+            {
+              "bg": "Константин IV",
+              "en": "Constantine IV"
             }
           ],
           "answer": 0
@@ -490,6 +494,14 @@
             {
               "bg": "Покръстването",
               "en": "The Christianisation"
+            },
+            {
+              "bg": "Златния век",
+              "en": "The Golden Age"
+            },
+            {
+              "bg": "Преместването на столицата в Преслав",
+              "en": "Moving the capital to Preslav"
             }
           ],
           "answer": 0

@@ -436,16 +436,16 @@
                 "en": "Wishes for the new year"
               },
               {
-                "bg": "Рецепти",
-                "en": "Recipes"
+                "bg": "Имената на гостите",
+                "en": "The guests’ names"
               },
               {
-                "bg": "Задачи по математика",
-                "en": "Maths problems"
+                "bg": "Рецептата на баницата",
+                "en": "The banitsa recipe"
               },
               {
-                "bg": "Адреси",
-                "en": "Addresses"
+                "bg": "Гатанки за децата",
+                "en": "Riddles for the children"
               }
             ],
             "answer": 0
@@ -539,8 +539,16 @@
               "en": "Lucky charms"
             },
             {
+              "bg": "Дрянови клонки",
+              "en": "Cornel twigs"
+            },
+            {
               "bg": "Мартеници",
               "en": "Martenitsi"
+            },
+            {
+              "bg": "Сушени плодове",
+              "en": "Dried fruit"
             }
           ],
           "answer": 0

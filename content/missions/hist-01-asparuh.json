@@ -335,24 +335,28 @@
       "check": [
         {
           "q": {
-            "bg": "Как се нарича областта край делтата на Дунав, където се установява Аспарух?",
-            "en": "What is the area near the Danube delta where Asparuh settles called?"
+            "bg": "С кои племена се съюзява Аспарух?",
+            "en": "With which tribes does Asparuh make an alliance?"
           },
           "options": [
             {
-              "bg": "Тракия",
-              "en": "Thrace"
+              "bg": "Седемте славянски племена и северите",
+              "en": "The Seven Slavic Tribes and the Severi"
             },
             {
-              "bg": "Онгъла",
-              "en": "Onglos"
+              "bg": "Аварите и хазарите",
+              "en": "The Avars and the Khazars"
             },
             {
-              "bg": "Македония",
-              "en": "Macedonia"
+              "bg": "Готите и хуните",
+              "en": "The Goths and the Huns"
+            },
+            {
+              "bg": "Траките и илирите",
+              "en": "The Thracians and the Illyrians"
             }
           ],
-          "answer": 1,
+          "answer": 0,
           "hint": {
             "bg": "Името ѝ означава „ъгъл“.",
             "en": "Its name means “corner”."
@@ -361,7 +365,7 @@
         {
           "q": {
             "bg": "Какво се задължава да плаща Византия на българите след мира от 681 г.?",
-            "en": "What does Byzantium agree to pay the Bulgars after the peace of 681?"
+            "en": "What does Byzantium agree to pay the Bulgarians after the peace of 681?"
           },
           "options": [
             {
@@ -375,6 +379,10 @@
             {
               "bg": "Ежегоден данък",
               "en": "A yearly tribute"
+            },
+            {
+              "bg": "Земя край Цариград",
+              "en": "Land near Constantinople"
             }
           ],
           "answer": 2,
@@ -385,24 +393,28 @@
         },
         {
           "q": {
-            "bg": "Кой е бащата на хан Аспарух?",
-            "en": "Who was Khan Asparuh's father?"
+            "bg": "Как напада Константин IV през 680 г.?",
+            "en": "How does Constantine IV attack in 680?"
           },
           "options": [
             {
-              "bg": "Хан Тервел",
-              "en": "Khan Tervel"
+              "bg": "По суша и по море",
+              "en": "By land and by sea"
             },
             {
-              "bg": "Хан Кубрат",
-              "en": "Khan Kubrat"
+              "bg": "Само с кораби",
+              "en": "Only with ships"
             },
             {
-              "bg": "Хан Крум",
-              "en": "Khan Krum"
+              "bg": "Само с конници",
+              "en": "Only with horsemen"
+            },
+            {
+              "bg": "С помощта на аварите",
+              "en": "With the help of the Avars"
             }
           ],
-          "answer": 1,
+          "answer": 0,
           "hint": {
             "bg": "Той е владетел на Стара Велика България.",
             "en": "He ruled Old Great Bulgaria."

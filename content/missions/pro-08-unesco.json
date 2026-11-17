@@ -467,28 +467,28 @@
         },
         {
           "q": {
-            "bg": "Кой от тези обекти е тракийски?",
-            "en": "Which of these sites is Thracian?"
+            "bg": "В кой град е Боянската църква?",
+            "en": "In which city is the Boyana Church?"
           },
           "options": [
             {
-              "bg": "Рилският манастир",
-              "en": "The Rila Monastery"
+              "bg": "София",
+              "en": "Sofia"
             },
             {
-              "bg": "Несебър",
-              "en": "Nessebar"
+              "bg": "Пловдив",
+              "en": "Plovdiv"
             },
             {
-              "bg": "Казанлъшката гробница",
-              "en": "The Kazanlak Tomb"
+              "bg": "Велико Търново",
+              "en": "Veliko Tarnovo"
             },
             {
-              "bg": "Боянската църква",
-              "en": "The Boyana Church"
+              "bg": "Шумен",
+              "en": "Shumen"
             }
           ],
-          "answer": 2
+          "answer": 0
         },
         {
           "q": {

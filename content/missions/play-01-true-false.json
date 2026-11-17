@@ -450,28 +450,28 @@
       "check": [
         {
           "q": {
-            "bg": "Кой хан пише първите закони?",
-            "en": "Which khan writes the first laws?"
+            "bg": "Кой хан получава от Византия титлата „кесар“?",
+            "en": "Which khan receives the title “caesar” from Byzantium?"
           },
           "options": [
             {
-              "bg": "Аспарух",
-              "en": "Asparuh"
+              "bg": "Тервел",
+              "en": "Tervel"
             },
             {
               "bg": "Крум",
               "en": "Krum"
             },
             {
-              "bg": "Омуртаг",
-              "en": "Omurtag"
+              "bg": "Аспарух",
+              "en": "Asparuh"
             },
             {
-              "bg": "Тервел",
-              "en": "Tervel"
+              "bg": "Омуртаг",
+              "en": "Omurtag"
             }
           ],
-          "answer": 1
+          "answer": 0
         },
         {
           "q": {

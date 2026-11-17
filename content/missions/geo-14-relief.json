@@ -476,16 +476,24 @@
         {
           "q": {
             "bg": "Защо в Горнотракийската низина има толкова ниви и градини?",
-            "en": "Why are there so many fields and gardens in the Upper Thracian Lowland?"
+            "en": "Why are there so many fields and gardens in the Upper Thracian Plain?"
           },
           "options": [
             {
-              "bg": "Равна, топла и с вода от Марица",
-              "en": "It is flat, warm and has water from the Maritsa"
+              "bg": "Равна е, топла и с вода от Марица",
+              "en": "It is flat, warm and watered by the Maritsa"
             },
             {
-              "bg": "Висока и студена",
-              "en": "It is high and cold"
+              "bg": "Висока е и има много сняг",
+              "en": "It is high and snowy"
+            },
+            {
+              "bg": "Покрита е с гъсти гори",
+              "en": "It is covered with thick forest"
+            },
+            {
+              "bg": "Има много пясък и скали",
+              "en": "It has a lot of sand and rock"
             }
           ],
           "answer": 0
@@ -497,16 +505,20 @@
           },
           "options": [
             {
-              "bg": "Високо и равно отгоре",
-              "en": "High and flat on top"
+              "bg": "Високо място, равно отгоре",
+              "en": "A high place, flat on top"
             },
             {
-              "bg": "Дълбока пещера",
-              "en": "A deep cave"
+              "bg": "Ниско място между планини",
+              "en": "A low place between mountains"
             },
             {
-              "bg": "Остър връх",
-              "en": "A sharp peak"
+              "bg": "Остър планински връх",
+              "en": "A sharp mountain peak"
+            },
+            {
+              "bg": "Широка речна долина",
+              "en": "A wide river valley"
             }
           ],
           "answer": 0

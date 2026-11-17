@@ -410,19 +410,19 @@
             "options": [
               {
                 "bg": "Биосферен резерват и обект на ЮНЕСКО",
-                "en": "A biosphere reserve and a UNESCO site"
+                "en": "A biosphere reserve and UNESCO site"
               },
               {
-                "bg": "Плаж",
-                "en": "A beach"
+                "bg": "Национален парк в Стара планина",
+                "en": "A national park in the Balkan Mountains"
               },
               {
-                "bg": "Парк за забавления",
-                "en": "An amusement park"
+                "bg": "Язовир край Силистра",
+                "en": "A reservoir near Silistra"
               },
               {
-                "bg": "Пристанище",
-                "en": "A port"
+                "bg": "Природен парк край Варна",
+                "en": "A nature park near Varna"
               }
             ],
             "answer": 0
@@ -459,23 +459,23 @@
             },
             "options": [
               {
-                "bg": "Хапят",
-                "en": "They bite"
-              },
-              {
                 "bg": "Защитен вид са и мястото им е в природата",
                 "en": "They are protected and belong in nature"
               },
               {
-                "bg": "Бягат много бързо",
-                "en": "They run very fast"
+                "bg": "Носят опасни болести за котките",
+                "en": "They carry diseases dangerous to cats"
               },
               {
-                "bg": "Миришат",
-                "en": "They smell"
+                "bg": "Живеят само две години",
+                "en": "They live only two years"
+              },
+              {
+                "bg": "Не ядат нищо в плен",
+                "en": "They eat nothing in captivity"
               }
             ],
-            "answer": 1
+            "answer": 0
           }
         ]
       },
@@ -487,19 +487,23 @@
           },
           "options": [
             {
+              "bg": "1878",
+              "en": "1878"
+            },
+            {
               "bg": "1983",
               "en": "1983"
             },
             {
-              "bg": "2007",
-              "en": "2007"
+              "bg": "1999",
+              "en": "1999"
             },
             {
-              "bg": "1878",
-              "en": "1878"
+              "bg": "2007",
+              "en": "2007"
             }
           ],
-          "answer": 0,
+          "answer": 1,
           "hint": {
             "bg": "Същата година като Рилския манастир.",
             "en": "The same year as the Rila Monastery."
@@ -522,6 +526,10 @@
             {
               "bg": "Via Egnatia",
               "en": "Via Egnatia"
+            },
+            {
+              "bg": "Via Appia",
+              "en": "Via Appia"
             }
           ],
           "answer": 0,
@@ -532,14 +540,19 @@
         },
         {
           "q": {
-            "bg": "Коя птица гнезди в Сребърна?",
-            "en": "Which bird nests at Srebarna?"
+            "bg": "С коя рядка птица е прочута Сребърна?",
+            "en": "Which rare bird is Srebarna famous for?"
           },
           "options": [
             {
               "bg": "Къдроглав пеликан",
               "en": "Dalmatian pelican",
               "img": "animals/pelican.webp"
+            },
+            {
+              "bg": "Бял щъркел",
+              "en": "White stork",
+              "img": "animals/stork.webp"
             },
             {
               "bg": "Бухал",

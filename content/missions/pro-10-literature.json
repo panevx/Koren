@@ -363,16 +363,16 @@
                 "en": "His journey to America"
               },
               {
-                "bg": "За война",
-                "en": "A war"
+                "bg": "За пътуването си до Париж",
+                "en": "His journey to Paris"
               },
               {
-                "bg": "За дракон",
-                "en": "A dragon"
+                "bg": "За живота в Габрово",
+                "en": "Life in Gabrovo"
               },
               {
-                "bg": "За морска буря",
-                "en": "A storm at sea"
+                "bg": "За Освободителната война",
+                "en": "The War of Liberation"
               }
             ],
             "answer": 0
@@ -388,16 +388,16 @@
                 "en": "Byala Cherkva"
               },
               {
-                "bg": "Варна",
-                "en": "Varna"
+                "bg": "Копривщица",
+                "en": "Koprivshtitsa"
               },
               {
-                "bg": "Париж",
-                "en": "Paris"
+                "bg": "Панагюрище",
+                "en": "Panagyurishte"
               },
               {
-                "bg": "Габрово",
-                "en": "Gabrovo"
+                "bg": "Карлово",
+                "en": "Karlovo"
               }
             ],
             "answer": 0
@@ -432,14 +432,10 @@
       "check": [
         {
           "q": {
-            "bg": "Кой е написал „Бай Ганьо“?",
-            "en": "Who wrote “Bay Ganyo”?"
+            "bg": "Кой писател наричат „Щастливеца“?",
+            "en": "Which writer is called “the Lucky One”?"
           },
           "options": [
-            {
-              "bg": "Йордан Йовков",
-              "en": "Yordan Yovkov"
-            },
             {
               "bg": "Алеко Константинов",
               "en": "Aleko Konstantinov"
@@ -451,34 +447,38 @@
             {
               "bg": "Елин Пелин",
               "en": "Elin Pelin"
+            },
+            {
+              "bg": "Йордан Йовков",
+              "en": "Yordan Yovkov"
             }
           ],
-          "answer": 1
+          "answer": 0
         },
         {
           "q": {
-            "bg": "Кой е написал „Старопланински легенди“?",
-            "en": "Who wrote “Legends of the Balkan Mountains”?"
+            "bg": "Кой е написал „Гераците“?",
+            "en": "Who wrote “The Gerak Family”?"
           },
           "options": [
             {
-              "bg": "Христо Ботев",
-              "en": "Hristo Botev"
-            },
-            {
-              "bg": "Паисий",
-              "en": "Paisius"
+              "bg": "Елин Пелин",
+              "en": "Elin Pelin"
             },
             {
               "bg": "Йордан Йовков",
               "en": "Yordan Yovkov"
             },
             {
-              "bg": "Ран Босилек",
-              "en": "Ran Bosilek"
+              "bg": "Иван Вазов",
+              "en": "Ivan Vazov"
+            },
+            {
+              "bg": "Алеко Константинов",
+              "en": "Aleko Konstantinov"
             }
           ],
-          "answer": 2
+          "answer": 0
         },
         {
           "q": {
@@ -491,16 +491,16 @@
               "en": "A long prose work with many characters"
             },
             {
-              "bg": "Кратко стихотворение",
-              "en": "A short poem"
+              "bg": "Кратък разказ с поука",
+              "en": "A short story with a moral"
             },
             {
-              "bg": "Песен",
-              "en": "A song"
+              "bg": "Стихотворение в няколко куплета",
+              "en": "A poem in a few stanzas"
             },
             {
-              "bg": "Гатанка",
-              "en": "A riddle"
+              "bg": "Пиеса за театър",
+              "en": "A play for the theatre"
             }
           ],
           "answer": 0

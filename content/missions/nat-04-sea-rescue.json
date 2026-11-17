@@ -411,16 +411,16 @@
                 "en": "Tiny bits of plastic"
               },
               {
+                "bg": "Малки морски растения",
+                "en": "Tiny sea plants"
+              },
+              {
                 "bg": "Малки рибки",
                 "en": "Tiny fish"
               },
               {
-                "bg": "Водорасли",
-                "en": "Seaweed"
-              },
-              {
-                "bg": "Пясък",
-                "en": "Sand"
+                "bg": "Песъчинки",
+                "en": "Grains of sand"
               }
             ],
             "answer": 0
@@ -436,16 +436,16 @@
                 "en": "We use less plastic and recycle it"
               },
               {
-                "bg": "Купуваме повече бутилки",
-                "en": "We buy more bottles"
+                "bg": "Заравяме боклука в пясъка",
+                "en": "We bury rubbish in the sand"
               },
               {
-                "bg": "Хвърляме боклука по-далеч",
-                "en": "We throw rubbish further"
+                "bg": "Хвърляме опаковките далеч от брега",
+                "en": "We throw wrappers far from the shore"
               },
               {
-                "bg": "Палим го на плажа",
-                "en": "We burn it on the beach"
+                "bg": "Изгаряме пластмасата на плажа",
+                "en": "We burn plastic on the beach"
               }
             ],
             "answer": 0
@@ -460,12 +460,20 @@
           },
           "options": [
             {
-              "bg": "Делфините се заплитат в тях",
-              "en": "Dolphins get caught in them"
+              "bg": "Делфините се заплитат и се давят",
+              "en": "Dolphins get tangled and drown"
             },
             {
-              "bg": "Не вредят",
-              "en": "They do no harm"
+              "bg": "Плашат рибите от брега",
+              "en": "They scare fish from the shore"
+            },
+            {
+              "bg": "Оцветяват водата",
+              "en": "They colour the water"
+            },
+            {
+              "bg": "Затрупват дъното с пясък",
+              "en": "They bury the seabed in sand"
             }
           ],
           "answer": 0
@@ -473,16 +481,24 @@
         {
           "q": {
             "bg": "Кой от тези делфини е най-малкият в Черно море?",
-            "en": "Which of these is the smallest in the Black Sea?"
+            "en": "Which of these dolphins is the smallest in the Black Sea?"
           },
           "options": [
             {
-              "bg": "Муткур",
-              "en": "Harbour porpoise"
+              "bg": "Муткурът",
+              "en": "The harbour porpoise"
             },
             {
-              "bg": "Афалина",
-              "en": "Bottlenose dolphin"
+              "bg": "Афалината",
+              "en": "The bottlenose dolphin"
+            },
+            {
+              "bg": "Обикновеният делфин",
+              "en": "The common dolphin"
+            },
+            {
+              "bg": "Гърбатият кит",
+              "en": "The humpback whale"
             }
           ],
           "answer": 0
@@ -498,16 +514,16 @@
               "en": "I call 112 and tell an adult"
             },
             {
-              "bg": "Бутам го сам във водата",
-              "en": "I push it into the water myself"
+              "bg": "Бутам го сам обратно във водата",
+              "en": "I push it back into the water myself"
             },
             {
-              "bg": "Снимам го и си тръгвам",
-              "en": "I take a photo and leave"
+              "bg": "Поливам го и си тръгвам",
+              "en": "I pour water on it and leave"
             },
             {
-              "bg": "Храня го",
-              "en": "I feed it"
+              "bg": "Опитвам се да го нахраня",
+              "en": "I try to feed it"
             }
           ],
           "answer": 0

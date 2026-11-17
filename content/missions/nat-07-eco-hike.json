@@ -356,23 +356,23 @@
             },
             "options": [
               {
-                "bg": "От дъжда",
-                "en": "From rain"
-              },
-              {
                 "bg": "От човешка небрежност",
                 "en": "From human carelessness"
               },
               {
-                "bg": "От снега",
-                "en": "From snow"
+                "bg": "От светкавици",
+                "en": "From lightning"
               },
               {
-                "bg": "От животните",
+                "bg": "От слънцето",
+                "en": "From the sun"
+              },
+              {
+                "bg": "От животни",
                 "en": "From animals"
               }
             ],
-            "answer": 1
+            "answer": 0
           },
           {
             "q": {
@@ -385,16 +385,16 @@
                 "en": "Coloured signs on trees showing the path"
               },
               {
-                "bg": "Боклук",
-                "en": "Rubbish"
+                "bg": "Табели с правилата на парка",
+                "en": "Signs with the park rules"
               },
               {
-                "bg": "Табела за паркинг",
-                "en": "A parking sign"
+                "bg": "Карта на хижата",
+                "en": "A map of the hut"
               },
               {
-                "bg": "Реклама",
-                "en": "An advert"
+                "bg": "Номера на пътеките в книга",
+                "en": "Trail numbers in a book"
               }
             ],
             "answer": 0
@@ -406,23 +406,23 @@
             },
             "options": [
               {
-                "bg": "Те са сити",
-                "en": "They are full"
-              },
-              {
                 "bg": "Свикват с хората и се разболяват от нашата храна",
                 "en": "They get used to people and fall ill from our food"
               },
               {
-                "bg": "Нищо лошо не става",
-                "en": "Nothing bad happens"
+                "bg": "Стават прекалено бързи",
+                "en": "They get too fast"
               },
               {
-                "bg": "Хапят веднага",
-                "en": "They bite at once"
+                "bg": "Забравят да летят",
+                "en": "They forget how to fly"
+              },
+              {
+                "bg": "Нищо лошо не става",
+                "en": "Nothing bad happens"
               }
             ],
-            "answer": 1
+            "answer": 0
           },
           {
             "q": {
@@ -435,16 +435,16 @@
                 "en": "In summer, when it is dry and hot"
               },
               {
-                "bg": "Зимата, когато вали сняг",
-                "en": "In winter, when it snows"
+                "bg": "Пролетта, когато се топи снегът",
+                "en": "In spring, when snow melts"
               },
               {
-                "bg": "Пролетта след дъжд",
-                "en": "In spring after rain"
+                "bg": "Есента, при дъждове",
+                "en": "In autumn, in the rain"
               },
               {
-                "bg": "Нощем при мъгла",
-                "en": "At night in fog"
+                "bg": "Зимата, при сняг",
+                "en": "In winter, in the snow"
               }
             ],
             "answer": 0
@@ -469,6 +469,10 @@
             {
               "bg": "100",
               "en": "100"
+            },
+            {
+              "bg": "150",
+              "en": "150"
             }
           ],
           "answer": 0
@@ -484,16 +488,24 @@
               "en": "In the sun they can set dry grass alight"
             },
             {
-              "bg": "Нищо не правят",
-              "en": "They do nothing"
+              "bg": "Привличат мечките",
+              "en": "They attract bears"
+            },
+            {
+              "bg": "Замърсяват въздуха",
+              "en": "They pollute the air"
+            },
+            {
+              "bg": "Чупят се от вятъра",
+              "en": "The wind breaks them"
             }
           ],
           "answer": 0
         },
         {
           "q": {
-            "bg": "Какво правим с огъня на определеното място, преди да тръгнем?",
-            "en": "What do we do with a campfire before leaving?"
+            "bg": "Какво правим с огъня, преди да тръгнем?",
+            "en": "What do we do with the fire before leaving?"
           },
           "options": [
             {
@@ -501,16 +513,16 @@
               "en": "Put it out completely with water and soil"
             },
             {
-              "bg": "Оставяме го да гори",
-              "en": "Leave it burning"
-            },
-            {
-              "bg": "Слагаме още дърва",
-              "en": "Add more wood"
-            },
-            {
               "bg": "Покриваме го с листа",
               "en": "Cover it with leaves"
+            },
+            {
+              "bg": "Оставяме го да догори сам",
+              "en": "Let it burn out by itself"
+            },
+            {
+              "bg": "Заливаме го с малко вода",
+              "en": "Pour a little water on it"
             }
           ],
           "answer": 0

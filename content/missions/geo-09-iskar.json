@@ -471,20 +471,24 @@
         {
           "q": {
             "bg": "Коя река пресича цялата Стара планина?",
-            "en": "Which river crosses the whole of the Balkan Mountains?"
+            "en": "Which river crosses the whole Balkan Mountains?"
           },
           "options": [
             {
               "bg": "Янтра",
-              "en": "The Yantra"
+              "en": "Yantra"
             },
             {
               "bg": "Тунджа",
-              "en": "The Tundzha"
+              "en": "Tundzha"
             },
             {
               "bg": "Искър",
-              "en": "The Iskar"
+              "en": "Iskar"
+            },
+            {
+              "bg": "Вит",
+              "en": "Vit"
             }
           ],
           "answer": 2
@@ -492,20 +496,24 @@
         {
           "q": {
             "bg": "Кой е най-големият язовир в България?",
-            "en": "Which is the biggest reservoir in Bulgaria?"
+            "en": "Which is the largest reservoir in Bulgaria?"
           },
           "options": [
             {
               "bg": "„Искър“",
-              "en": "Iskar"
+              "en": "“Iskar”"
             },
             {
               "bg": "„Батак“",
-              "en": "Batak"
+              "en": "“Batak”"
             },
             {
               "bg": "„Жребчево“",
-              "en": "Zhrebchevo"
+              "en": "“Zhrebchevo”"
+            },
+            {
+              "bg": "„Кърджали“",
+              "en": "“Kardzhali”"
             }
           ],
           "answer": 0,
@@ -521,12 +529,16 @@
           },
           "options": [
             {
-              "bg": "68 км",
-              "en": "68 km"
+              "bg": "268 км",
+              "en": "268 km"
             },
             {
               "bg": "368 км",
               "en": "368 km"
+            },
+            {
+              "bg": "468 км",
+              "en": "468 km"
             },
             {
               "bg": "2850 км",

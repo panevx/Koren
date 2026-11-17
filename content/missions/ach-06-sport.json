@@ -461,8 +461,8 @@
       "check": [
         {
           "q": {
-            "bg": "Кой спечели финалния турнир ATP Finals през 2017 г.?",
-            "en": "Who won the ATP Finals in 2017?"
+            "bg": "Кой печели финалния турнир ATP Finals през 2017 г.?",
+            "en": "Who wins the ATP Finals in 2017?"
           },
           "options": [
             {
@@ -470,8 +470,16 @@
               "en": "Grigor Dimitrov"
             },
             {
-              "bg": "Христо Стоичков",
-              "en": "Hristo Stoichkov"
+              "bg": "Рафаел Надал",
+              "en": "Rafael Nadal"
+            },
+            {
+              "bg": "Роджър Федерер",
+              "en": "Roger Federer"
+            },
+            {
+              "bg": "Новак Джокович",
+              "en": "Novak Djokovic"
             }
           ],
           "answer": 0

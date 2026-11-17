@@ -300,25 +300,25 @@
         },
         "items": [
           {
-            "bg": "Паисий завършва „История славянобългарска“ (1762 г.)",
-            "en": "Paisius completes the “Slavo-Bulgarian History” (1762)"
+            "bg": "Паисий завършва „История славянобългарска“",
+            "en": "Paisius completes the “Slavo-Bulgarian History”"
           },
           {
-            "bg": "Софроний Врачански прави първия препис (1765 г.)",
-            "en": "Sophronius of Vratsa makes the first copy (1765)"
+            "bg": "Софроний Врачански прави първия препис",
+            "en": "Sophronius of Vratsa makes the first copy"
           },
           {
-            "bg": "Априлското въстание (1876 г.)",
-            "en": "The April Uprising (1876)"
+            "bg": "Априлското въстание",
+            "en": "The April Uprising"
           },
           {
-            "bg": "Освобождението на България (1878 г.)",
-            "en": "The Liberation of Bulgaria (1878)"
+            "bg": "Освобождението на България",
+            "en": "The Liberation of Bulgaria"
           }
         ],
         "hint": {
-          "bg": "Гледай годините в скобите.",
-          "en": "Look at the years in brackets."
+          "bg": "Първо Паисий пише книгата, а Освобождението е последно.",
+          "en": "First Paisius writes the book; the Liberation is last."
         }
       },
       "extra": {
@@ -360,16 +360,16 @@
                 "en": "Those ashamed to call themselves Bulgarians"
               },
               {
-                "bg": "Към султана",
-                "en": "The sultan"
+                "bg": "Към гърците, които управляват църквата",
+                "en": "The Greeks who run the Church"
               },
               {
-                "bg": "Към децата",
-                "en": "Children"
+                "bg": "Към турския султан и неговите паши",
+                "en": "The Turkish sultan and his pashas"
               },
               {
-                "bg": "Към монасите",
-                "en": "The monks"
+                "bg": "Към монасите от своя манастир",
+                "en": "The monks of his monastery"
               }
             ],
             "answer": 0
@@ -414,16 +414,16 @@
                 "en": "A book copied by hand"
               },
               {
-                "bg": "Отпечатана книга",
-                "en": "A printed book"
+                "bg": "Книга от печатница",
+                "en": "A book from a printing press"
               },
               {
-                "bg": "Писмо",
-                "en": "A letter"
+                "bg": "Превод от гръцки",
+                "en": "A translation from Greek"
               },
               {
-                "bg": "Песен",
-                "en": "A song"
+                "bg": "Кратко съдържание на книга",
+                "en": "A short summary of a book"
               }
             ],
             "answer": 0
@@ -434,7 +434,7 @@
         {
           "q": {
             "bg": "Началото на коя епоха бележи 1762 г.?",
-            "en": "The start of which era does 1762 mark?"
+            "en": "The beginning of which era does 1762 mark?"
           },
           "options": [
             {
@@ -447,7 +447,11 @@
             },
             {
               "bg": "Покръстването",
-              "en": "The Christianization"
+              "en": "The Christianisation"
+            },
+            {
+              "bg": "Третата българска държава",
+              "en": "The Third Bulgarian State"
             }
           ],
           "answer": 1,
@@ -459,20 +463,24 @@
         {
           "q": {
             "bg": "Как се разпространява книгата на Паисий?",
-            "en": "How did Paisius's book spread?"
+            "en": "How does Paisius’ book spread?"
           },
           "options": [
             {
               "bg": "В преписи на ръка",
-              "en": "In hand-written copies"
+              "en": "In handwritten copies"
             },
             {
-              "bg": "По радиото",
-              "en": "On the radio"
+              "bg": "Отпечатана в Цариград",
+              "en": "Printed in Constantinople"
             },
             {
-              "bg": "Отпечатана в милиони броеве",
-              "en": "Printed in millions"
+              "bg": "Отпечатана във Виена",
+              "en": "Printed in Vienna"
+            },
+            {
+              "bg": "Чрез вестниците",
+              "en": "Through newspapers"
             }
           ],
           "answer": 0,

@@ -1,4 +1,5 @@
 import { existsSync, readFileSync, readdirSync } from 'node:fs'
+import { answerOrder } from '../src/games/shuffle'
 import { basename, join, resolve } from 'node:path'
 import { describe, expect, it } from 'vitest'
 import { MISSIONS, parseMissions, pickLevel } from '../src/content/missions'
@@ -83,6 +84,25 @@ describe('content/missions — every file', () => {
         expect(c.extra, `${m.id} ${level}: extra`).toBeTruthy()
         expect(c.check.length, `${m.id} ${level}: check`).toBe(3)
       }
+  })
+
+  it('the right answer is not always in the same place on screen (v0.24.1)', () => {
+    // Quiz and check show answers in answerOrder(); written order is mostly "right answer first".
+    const at: Record<number, number[]> = {}
+    for (const m of MISSIONS)
+      for (const c of Object.values(m.levels)) {
+        if (!c) continue
+        const qs = [...[c.game, c.extra].flatMap((g) => (g?.type === 'quiz' ? g.questions : [])), ...c.check]
+        for (const q of qs) {
+          const row = (at[q.options.length] ??= Array<number>(q.options.length).fill(0))
+          const pos = answerOrder(q.options.length, q.q.bg).indexOf(q.answer)
+          row[pos] = (row[pos] ?? 0) + 1
+        }
+      }
+    for (const [n, counts] of Object.entries(at)) {
+      const total = counts.reduce((a, b) => a + b, 0)
+      for (const c of counts) expect(c / total, `${n} answers: ${counts}`).toBeLessThan(1 / Number(n) + 0.15)
+    }
   })
 
   it('ids and badge ids are unique', () => {

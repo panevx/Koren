@@ -491,25 +491,25 @@
           },
           {
             "q": {
-              "bg": "Коя крепост е до Асеновград?",
-              "en": "Which fortress is near Asenovgrad?"
+              "bg": "Кой цар обновява крепостта над Асеновград?",
+              "en": "Which tsar renews the fortress above Asenovgrad?"
             },
             "options": [
               {
-                "bg": "Асенова крепост",
-                "en": "Asen’s Fortress"
+                "bg": "Иван Асен II",
+                "en": "Ivan Asen II"
               },
               {
-                "bg": "Баба Вида",
-                "en": "Baba Vida"
+                "bg": "Самуил",
+                "en": "Samuel"
               },
               {
-                "bg": "Царевец",
-                "en": "Tsarevets"
+                "bg": "Симеон",
+                "en": "Simeon"
               },
               {
-                "bg": "Шуменска",
-                "en": "Shumen"
+                "bg": "Калоян",
+                "en": "Kaloyan"
               }
             ],
             "answer": 0
@@ -520,13 +520,9 @@
         {
           "q": {
             "bg": "От коя година е трибагреникът?",
-            "en": "When does the tricolour flag date from?"
+            "en": "Since which year is the tricolour?"
           },
           "options": [
-            {
-              "bg": "1879 г.",
-              "en": "1879"
-            },
             {
               "bg": "681 г.",
               "en": "681"
@@ -534,9 +530,17 @@
             {
               "bg": "1185 г.",
               "en": "1185"
+            },
+            {
+              "bg": "1879 г.",
+              "en": "1879"
+            },
+            {
+              "bg": "1908 г.",
+              "en": "1908"
             }
           ],
-          "answer": 0
+          "answer": 2
         },
         {
           "q": {
@@ -549,16 +553,16 @@
               "en": "It is raised and the enemy cannot cross the moat"
             },
             {
-              "bg": "По-красив е",
-              "en": "It looks nicer"
+              "bg": "Пропуска само конници",
+              "en": "It lets only horsemen through"
             },
             {
-              "bg": "По-евтин е",
-              "en": "It is cheaper"
+              "bg": "Свързва две кули",
+              "en": "It joins two towers"
             },
             {
-              "bg": "Пази от дъжд",
-              "en": "It keeps the rain off"
+              "bg": "Пази стените от дъжд",
+              "en": "It shields the walls from rain"
             }
           ],
           "answer": 0
@@ -574,8 +578,8 @@
               "en": "A high hill above a river"
             },
             {
-              "bg": "Равно поле",
-              "en": "A flat field"
+              "bg": "Равно поле до пътя",
+              "en": "A flat field by the road"
             },
             {
               "bg": "Дъното на долина",

@@ -400,16 +400,16 @@
                 "en": "The place where a species lives and finds food"
               },
               {
-                "bg": "Вид храна",
-                "en": "A kind of food"
+                "bg": "Пътят, по който мигрират птиците",
+                "en": "The route birds migrate along"
               },
               {
                 "bg": "Зоологическа градина",
                 "en": "A zoo"
               },
               {
-                "bg": "Ловно поле",
-                "en": "A hunting ground"
+                "bg": "Резерват само за растения",
+                "en": "A reserve only for plants"
               }
             ],
             "answer": 0
@@ -450,15 +450,15 @@
                 "en": "A strip of nature animals use to move between places"
               },
               {
-                "bg": "Коридор в училище",
-                "en": "A school corridor"
+                "bg": "Пътека за туристи в планината",
+                "en": "A hiking trail in the mountains"
               },
               {
-                "bg": "Път за коли",
-                "en": "A road for cars"
+                "bg": "Ограда около резерват",
+                "en": "A fence around a reserve"
               },
               {
-                "bg": "Тунел за влак",
+                "bg": "Тунел за влакове",
                 "en": "A train tunnel"
               }
             ],
@@ -475,16 +475,16 @@
                 "en": "If the home disappears, so does the animal"
               },
               {
-                "bg": "Защото местата са красиви",
-                "en": "Because places are pretty"
+                "bg": "Местата се пазят по-лесно от животните",
+                "en": "Places are easier to guard than animals"
               },
               {
-                "bg": "За да строим там",
-                "en": "To build there"
+                "bg": "Видовете се пазят сами",
+                "en": "Species protect themselves"
               },
               {
-                "bg": "Няма причина",
-                "en": "There is no reason"
+                "bg": "Така е по-евтино",
+                "en": "It is cheaper"
               }
             ],
             "answer": 0
@@ -503,8 +503,16 @@
               "en": "Otters live in it"
             },
             {
+              "bg": "Водата е топла",
+              "en": "The water is warm"
+            },
+            {
               "bg": "Има пяна по водата",
               "en": "There is foam on the water"
+            },
+            {
+              "bg": "Бреговете са бетонни",
+              "en": "The banks are concrete"
             }
           ],
           "answer": 0,
@@ -545,23 +553,23 @@
           },
           "options": [
             {
-              "bg": "Снегът",
-              "en": "Snow"
-            },
-            {
               "bg": "Мръсните реки",
               "en": "Dirty rivers"
             },
             {
-              "bg": "Слънцето",
-              "en": "The sun"
+              "bg": "Студените зими",
+              "en": "Cold winters"
             },
             {
-              "bg": "Вятърът",
-              "en": "Wind"
+              "bg": "Силното слънце",
+              "en": "Strong sun"
+            },
+            {
+              "bg": "Дъждовете",
+              "en": "Rain"
             }
           ],
-          "answer": 1
+          "answer": 0
         }
       ]
     }

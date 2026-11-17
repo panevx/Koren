@@ -441,6 +441,14 @@
             {
               "bg": "От тиква",
               "en": "Pumpkin"
+            },
+            {
+              "bg": "От ориз",
+              "en": "Rice"
+            },
+            {
+              "bg": "От боб",
+              "en": "Beans"
             }
           ],
           "answer": 0
@@ -481,16 +489,16 @@
               "en": "An odd number"
             },
             {
-              "bg": "Точно 2",
-              "en": "Exactly 2"
+              "bg": "Четен брой",
+              "en": "An even number"
             },
             {
-              "bg": "Точно 20",
-              "en": "Exactly 20"
+              "bg": "Точно 12",
+              "en": "Exactly 12"
             },
             {
-              "bg": "Едно",
-              "en": "One"
+              "bg": "Колкото са гостите",
+              "en": "As many as the guests"
             }
           ],
           "answer": 0
