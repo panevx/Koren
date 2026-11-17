@@ -125,8 +125,11 @@ npm install
 npm run dev -- --host   # отвори от телефон в същата мрежа
 npm test                # Vitest
 npm run build           # typecheck + build
+npm run build:family    # проверява одобренията за първата глава, след което компилира семейната версия
 npm run review-list     # docs/REVIEW.md за учителя
 ```
+
+Проверка на pull request: тестове и компилация на семейната конфигурация и демото.
 
 Публикуване: всеки push в `main` (и в работния клон) пуска `.github/workflows/deploy.yml` → тестове → build → клон `gh-pages`.
 Правилата за проекта са в [CLAUDE.md](CLAUDE.md).

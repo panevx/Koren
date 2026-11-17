@@ -1,39 +1,61 @@
 name: Build & deploy to GitHub Pages
 
 on:
+  pull_request:
   push:
     branches: [main, 'claude/web-app-v0-2-pj7074']
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
-  group: pages
+  group: ${{ github.event_name == 'pull_request' && github.ref || 'pages' }}
   cancel-in-progress: true
 
 jobs:
-  build-deploy:
+  build:
     runs-on: ubuntu-latest
+    env:
+      BASE_PATH: /${{ github.event.repository.name }}/
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
-
       - run: npm ci
       - run: npm test
-      - run: npm run build
+      - name: Build and check the family configuration
+        run: |
+          npm run build -- --mode family --outDir dist-family
+          npm run check:pages -- dist-family --family
+      - name: Build and check the public demo
+        run: |
+          npm run build
+          npm run check:pages
         env:
-          # Site is served from https://<user>.github.io/<repo>/
-          BASE_PATH: /${{ github.event.repository.name }}/
-          # The public demo shows draft missions (marked "Draft") so the team can test them.
           VITE_SHOW_DRAFTS: "1"
+      - uses: actions/upload-artifact@v4
+        if: github.event_name != 'pull_request'
+        with:
+          name: koren-pages
+          path: dist/
+          include-hidden-files: true
 
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: koren-pages
+          path: dist
       - name: Publish dist/ to the gh-pages branch
-        uses: peaceiris/actions-gh-pages@v4
+        uses: peaceiris/actions-gh-pages@329bcc8f12caed2cefe5a5b80781499a6f3b361b # v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist

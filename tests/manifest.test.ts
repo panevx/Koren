@@ -40,10 +40,13 @@ describe('asset manifest (design/v5)', () => {
     for (const a of assets.filter((x) => x.status === 'review')) expect(a.check, a.id).toBeTruthy()
   })
 
-  it('every "used" asset is really used by the app (missions, map, interface)', () => {
+  it('the offline catalog includes referenced "used" assets and excludes future art', () => {
     const inApp = new Set(allImages(MISSIONS))
     for (const a of assets.filter((x) => x.status === 'used')) {
       expect(inApp.has(a.path!), `${a.id} → ${a.path}`).toBe(true)
+    }
+    for (const a of assets.filter((x) => x.status === 'ready')) {
+      expect(inApp.has(a.path!), `${a.id} is referenced and must be marked used`).toBe(false)
     }
   })
 

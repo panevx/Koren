@@ -1,10 +1,13 @@
 import { lazy, Suspense, type ReactNode } from 'react'
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router'
+import { BrowserRouter, Link, Navigate, Route, Routes, useLocation } from 'react-router'
 import { AgeSelect } from './screens/AgeSelect'
 import { Home } from './screens/Home'
 import { SignSelect } from './screens/SignSelect'
 import { Welcome } from './screens/Welcome'
 import { MotionRoot } from './motion'
+import { Screen, useTitle } from './components/ui'
+import { useT } from './i18n/useT'
+import { appPages, canonicalPage } from './routes'
 import { useSettings } from './store/settings'
 
 /**
@@ -46,26 +49,42 @@ function FirstVisitOnly({ children }: { children: ReactNode }) {
   return onboarded ? <Navigate to="/home" replace /> : children
 }
 
+function NotFound() {
+  const t = useT()
+  useTitle(t('route.notFound'))
+  return (
+    <Screen>
+      <div className="flex flex-1 flex-col items-center justify-center gap-4 px-6 text-center">
+        <h1 className="text-2xl font-black">{t('route.notFound')}</h1>
+        <Link to="/" className="tap font-bold underline">{t('route.home')}</Link>
+      </div>
+    </Screen>
+  )
+}
+
 export function AppRoutes() {
+  const { pathname, search, hash } = useLocation()
+  const canonical = canonicalPage(pathname)
+  if (canonical) return <Navigate to={{ pathname: canonical, search, hash }} replace />
   return (
     <Suspense fallback={<Loading />}>
       <Routes>
         <Route path="/" element={<FirstVisitOnly><Welcome /></FirstVisitOnly>} />
-        <Route path="/age" element={<AgeSelect />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/sign" element={<SignSelect />} />
-        <Route path="/who" element={<WhoPlays />} />
-        <Route path="/parents" element={<Parents />} />
-        <Route path="/settings" element={<Navigate to="/parents" replace />} />
-        <Route path="/map" element={<MapScreen />} />
-        <Route path="/timeline" element={<Timeline />} />
-        <Route path="/missions" element={<Adventure />} />
+        <Route path={appPages.age} element={<AgeSelect />} />
+        <Route path={appPages.home} element={<Home />} />
+        <Route path={appPages.sign} element={<SignSelect />} />
+        <Route path={appPages.who} element={<WhoPlays />} />
+        <Route path={appPages.parents} element={<Parents />} />
+        <Route path={appPages.settings} element={<Navigate to="/parents" replace />} />
+        <Route path={appPages.map} element={<MapScreen />} />
+        <Route path={appPages.timeline} element={<Timeline />} />
+        <Route path={appPages.missions} element={<Adventure />} />
         <Route path="/mission/:id" element={<Mission />} />
-        <Route path="/collection" element={<Passport />} />
-        <Route path="/fame" element={<Fame />} />
-        <Route path="/shop" element={<Shop />} />
+        <Route path={appPages.collection} element={<Passport />} />
+        <Route path={appPages.fame} element={<Fame />} />
+        <Route path={appPages.shop} element={<Shop />} />
         <Route path="/topic/:id" element={<MissionList topic />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Suspense>
   )

@@ -1,68 +1,41 @@
-/**
- * Smaller letters instead of a broken word (v0.23.4).
- *
- * A word split over two lines („Аспару-х“, „Сер-гия“) is hard for a child to read. It happens only when a column is narrower
- * than the word — a tablet in the two-column layout with a big system font, a long word in a narrow card. Then the text
- * gets smaller, step by step, down to MIN of its size; everywhere else nothing changes (most screens: 0 broken words).
- *
- * How: every text node whose line count is larger than its word count holds a broken word. Its element gets `data-fit` and
- * `--fit-px` (index.css: `[data-fit] { font-size: var(--fit-px) !important }`) — never React's own `style`, so a re-render
- * does not undo it and undoing it does not touch React's values. Runs after each DOM change (new screen, next question),
- * on resize and when the font arrives; each run first undoes the old fitting, so a longer screen never keeps tiny letters.
- * Words of 12+ letters may still get a hyphen at MIN — that is the hyphenation rule in index.css.
- */
-const MIN = 0.72
-const STEP = 0.07
-
-function brokenText(): Set<HTMLElement> {
-  const out = new Set<HTMLElement>()
-  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT)
+/** Adjust the size of compact card labels when a single word exceeds the card. */
+export function startFitText() {
+  if (typeof Range === 'undefined' || !('getClientRects' in Range.prototype)) return
+  const root = document.getElementById('root')
+  if (!root) return
   const range = document.createRange()
-  for (let n = walker.nextNode(); n; n = walker.nextNode()) {
-    const text = n.textContent?.trim() ?? ''
-    const el = n.parentElement
-    if (text.length < 4 || !el || el.closest('svg, script, style, [aria-hidden="true"]')) continue
-    range.selectNodeContents(n)
-    const tops = new Set([...range.getClientRects()].map((r) => Math.round(r.top)))
-    if (tops.size > text.split(/\s+/).length) out.add(el)
-  }
-  return out
-}
-
-function fit() {
-  for (const el of document.querySelectorAll<HTMLElement>('[data-fit]')) {
-    el.removeAttribute('data-fit')
-    el.style.removeProperty('--fit-px')
-  }
-  const base = new Map<HTMLElement, number>()
-  for (let pass = 0; pass < Math.ceil((1 - MIN) / STEP); pass++) {
-    const broken = brokenText()
-    if (!broken.size) return
-    for (const el of broken) {
-      if (!base.has(el)) base.set(el, parseFloat(getComputedStyle(el).fontSize))
-      const scale = Math.max(MIN, Number(el.dataset.fit ?? 1) - STEP)
-      el.dataset.fit = scale.toFixed(2)
-      el.style.setProperty('--fit-px', `${(base.get(el)! * scale).toFixed(2)}px`)
+  const fit = () => {
+    const labels = root.querySelectorAll<HTMLElement>('[data-fit-label]')
+    for (const label of labels) {
+      label.removeAttribute('data-fit')
+      label.style.removeProperty('--fit-px')
+    }
+    const adjustments = []
+    for (const label of labels) {
+      if (!label.textContent?.trim()) continue
+      range.selectNodeContents(label)
+      const lines = new Set([...range.getClientRects()].map((rect) => Math.round(rect.top)))
+      if (lines.size <= label.textContent.trim().split(/\s+/).length) continue
+      const fontSize = parseFloat(getComputedStyle(label).fontSize)
+      // Never shrink below 1rem. Long labels can wrap normally at the floor.
+      if (fontSize > 16) adjustments.push([label, Math.max(16, fontSize * 0.9)] as const)
+    }
+    for (const [label, size] of adjustments) {
+      label.dataset.fit = ''
+      label.style.setProperty('--fit-px', `${size}px`)
     }
   }
-}
 
-/** Starts watching (main.tsx). Not in tests: jsdom has no layout. */
-export function startFitText() {
-  if (typeof document === 'undefined' || typeof Range === 'undefined' || !('getClientRects' in Range.prototype)) return
   let queued = 0
-  const later = () => {
+  const schedule = () => {
     if (queued) return
     queued = requestAnimationFrame(() => {
       queued = 0
-      observer.disconnect()
       fit()
-      observer.observe(document.documentElement, { childList: true, characterData: true, subtree: true })
     })
   }
-  const observer = new MutationObserver(later)
-  observer.observe(document.documentElement, { childList: true, characterData: true, subtree: true })
-  addEventListener('resize', later)
-  void document.fonts?.ready.then(later)
-  later()
+  new MutationObserver(schedule).observe(root, { childList: true, characterData: true, subtree: true })
+  addEventListener('resize', schedule)
+  void document.fonts?.ready.then(schedule)
+  schedule()
 }

@@ -405,6 +405,6 @@ body {
 }
 
 /* v0.23.4: smaller letters instead of a broken word — set by src/fitText.ts, only where a word did not fit. */
-[data-fit] {
+[data-fit-label][data-fit] {
   font-size: var(--fit-px) !important;
 }

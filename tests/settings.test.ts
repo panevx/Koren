@@ -151,6 +151,43 @@ describe('profiles store (per child)', () => {
   })
 })
 
+describe('profile reset and scoped saves', () => {
+  it('erases the old progress record when resetting the profiles', () => {
+    localStorage.setItem(LEGACY_PROGRESS_KEY, JSON.stringify({ state: { badges: ['old'] } }))
+    useProfiles.getState().reset()
+    expect(localStorage.getItem(LEGACY_PROGRESS_KEY)).toBeNull()
+    expect(activeProfile(useProfiles.getState()).badges).toEqual([])
+  })
+
+  it('keeps a completion bound to the original child after a profile switch', () => {
+    const firstId = useProfiles.getState().activeId
+    const secondId = useProfiles.getState().addProfile({ age: 8, avatar: 'bear', nickname: 'Ани' })!
+    useProfiles.getState().setActive(secondId)
+    useProfiles.getState().complete('mission', 'young', 'badge', firstId)
+    expect(useProfiles.getState().profiles.find((profile) => profile.id === firstId)?.badges).toEqual(['badge'])
+    expect(activeProfile(useProfiles.getState()).badges).toEqual([])
+  })
+
+  it('keeps progress already written by another tab', () => {
+    const before = localStorage.getItem(PROFILES_KEY)!
+    const saved = JSON.parse(before)
+    saved.state.profiles[0].badges = ['other-tab']
+    localStorage.setItem(PROFILES_KEY, JSON.stringify(saved))
+    useProfiles.getState().complete('mission', 'young', 'this-tab')
+    expect(activeProfile(useProfiles.getState()).badges).toEqual(['other-tab', 'this-tab'])
+  })
+
+  it('does not re-create a profile erased from another tab', () => {
+    const oldId = useProfiles.getState().activeId
+    const saved = JSON.parse(localStorage.getItem(PROFILES_KEY)!)
+    saved.state.activeId = 'different-id'
+    saved.state.profiles[0].id = 'different-id'
+    localStorage.setItem(PROFILES_KEY, JSON.stringify(saved))
+    useProfiles.getState().complete('mission', 'young', 'badge', oldId)
+    expect(JSON.parse(localStorage.getItem(PROFILES_KEY)!).state.profiles[0]).toMatchObject({ id: 'different-id', badges: [] })
+  })
+})
+
 describe('migration from v0.5 (single child)', () => {
   it('keeps the age and badges a child already had', async () => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify({ state: { lang: 'bg', age: 12, onboarded: true, remember: true }, version: 1 }))

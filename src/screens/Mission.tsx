@@ -21,22 +21,37 @@ import type { TKey } from '../i18n'
 import { useT } from '../i18n/useT'
 import { bouncy, m } from '../motion'
 import { play } from '../sound'
-import { BREAK_AFTER, activeProfile, useActiveProfile, useAge, useProfiles } from '../store/profiles'
+import { BREAK_AFTER, saveProfileChange, useActiveProfile, useProfiles } from '../store/profiles'
 import { ageToLevel, type Level } from '../theme/levels'
 
 type Phase = 'story' | 'game' | 'check' | 'badge'
+type MissionHistory = { profileId: string; phase: Phase; q?: number }
 
 export function Mission() {
   const { id } = useParams()
   const mission = missionById(id)
-  const age = useAge()
   const profile = useActiveProfile()
   const missions = useChildMissions()
   const unlockAll = useUnlockAll()
-  if (!mission) return <Navigate to="/missions" replace />
+  if (!mission) return <Unavailable message="mission.notFound" />
+  if (!missions.some((entry) => entry.id === mission.id)) return <Unavailable message="mission.wrongAge" />
   if (!isUnlocked(mission, { ...profile, unlockAll }, missions)) return <Locked mission={mission} />
   // The level is fixed when the mission starts, so changing age mid-game cannot reshuffle it.
-  return <MissionRun key={mission.id} mission={mission} childLevel={ageToLevel(age)} />
+  return <MissionRun key={JSON.stringify([profile.id, mission.id])} mission={mission} childLevel={ageToLevel(profile.age)} profileId={profile.id} />
+}
+
+function Unavailable({ message }: { message: 'mission.notFound' | 'mission.wrongAge' }) {
+  const t = useT()
+  const navigate = useNavigate()
+  useTitle(t(message))
+  return (
+    <Screen>
+      <div className="flex flex-1 flex-col items-center justify-center gap-4 px-6 py-8 text-center">
+        <h1 className="text-2xl font-black">{t(message)}</h1>
+        <Button variant="accent" onClick={() => navigate('/missions', { replace: true })}>{t('unlock.toPath')}</Button>
+      </div>
+    </Screen>
+  )
 }
 
 /** A locked mission opened from a link: say kindly how it opens. Never a dead end. */
@@ -73,7 +88,7 @@ function Locked({ mission }: { mission: MissionData }) {
   )
 }
 
-function MissionRun({ mission, childLevel }: { mission: MissionData; childLevel: Level }) {
+function MissionRun({ mission, childLevel, profileId }: { mission: MissionData; childLevel: Level; profileId: string }) {
   const t = useT()
   const l = useLocalized()
   const navigate = useNavigate()
@@ -84,21 +99,22 @@ function MissionRun({ mission, childLevel }: { mission: MissionData; childLevel:
   )
   useTitle(l(mission.title))
   const markSeen = useProfiles((s) => s.markSeen)
-  useEffect(() => markSeen(mission.id), [markSeen, mission.id])
+  useEffect(() => saveProfileChange(() => markSeen(mission.id, profileId)), [markSeen, mission.id, profileId])
   // Each phase is its own history entry: the phone's "back" gesture goes one step back
   // (game → story) instead of throwing the child out of the mission.
   const location = useLocation()
-  const saved = (location.state as { phase?: Phase } | null)?.phase
-  const phase: Phase = saved && phases.includes(saved) ? saved : 'story'
+  const history = location.state as MissionHistory | null
+  const saved = history?.profileId === profileId ? history : null
+  const phase: Phase = saved && phases.includes(saved.phase) ? saved.phase : 'story'
   const next = () => {
     const to = phases[phases.indexOf(phase) + 1] ?? 'badge'
     // The badge replaces the last step, so "back" from the badge cannot replay the quiz and count it twice.
-    navigate(location.pathname, { state: { phase: to }, replace: to === 'badge' })
+    navigate(location.pathname, { state: { profileId, phase: to }, replace: to === 'badge' })
   }
   // "Back" from the badge would land in the game just finished (the badge replaced the check entry). A mission finished in
   // this tab is left instead: going back into its game or check goes to the path. Starting it again (the story) clears it.
   const navType = useNavigationType()
-  const finishedKey = `koren:finished:${mission.id}`
+  const finishedKey = `koren:finished:${profileId}:${mission.id}`
   useEffect(() => {
     if (phase === 'badge') session.set(finishedKey)
     else if (phase === 'story') session.clear(finishedKey)
@@ -145,11 +161,11 @@ function MissionRun({ mission, childLevel }: { mission: MissionData; childLevel:
               title={t('check.title')}
               onDone={next}
               // a reload goes on from the same question, not from the first one
-              start={(location.state as { q?: number } | null)?.q ?? 0}
-              onIndex={(q) => navigate(location.pathname, { state: { phase: 'check', q }, replace: true })}
+              start={saved?.q ?? 0}
+              onIndex={(q) => navigate(location.pathname, { state: { profileId, phase: 'check', q }, replace: true })}
             />
           )}
-          {phase === 'badge' && <Badge mission={mission} level={level} />}
+          {phase === 'badge' && <Badge mission={mission} level={level} profileId={profileId} />}
         </m.div>
       </div>
     </Screen>
@@ -234,7 +250,7 @@ function Story({ lines, onDone }: { lines: StoryLine[]; onDone: () => void }) {
   const fromRight = line.hero === 'raya'
   return (
     <div className="flex flex-1 flex-col gap-3">
-      <p className="sr-only">{t('mission.progress', { n: i + 1, total: lines.length })}</p>
+      <p className="sr-only">{t('mission.storyProgress', { n: i + 1, total: lines.length })}</p>
       <div className="relative flex min-h-[min(27rem,62dvh)] flex-1 flex-col overflow-hidden rounded-[var(--radius-stage)] shadow-soft short:min-h-0 side:flex-row-reverse side:items-end">
         {/* The fortress of the backdrop would peek out behind a story object — it steps aside. */}
         <Scenery className="absolute inset-0" castle={!line.img} />
@@ -319,7 +335,7 @@ const CONFETTI = Array.from({ length: 18 }, (_, i) => {
   }
 })
 
-function Badge({ mission, level }: { mission: MissionData; level: Level }) {
+function Badge({ mission, level, profileId }: { mission: MissionData; level: Level; profileId: string }) {
   const t = useT()
   const l = useLocalized()
   const navigate = useNavigate()
@@ -330,7 +346,7 @@ function Badge({ mission, level }: { mission: MissionData; level: Level }) {
   const missions = useChildMissions()
   // What was open and which rewards were reached BEFORE this badge — the difference is celebrated below.
   const [before] = useState(() => {
-    const p = activeProfile(useProfiles.getState())
+    const p = profile
     const w = wallet(p, MISSIONS)
     return { open: unlockedIds(p, missions), rewards: reachedMilestones(earnedCount(p.badges, missions), missions), coins: w.earnedCoins, pendars: w.earnedPendars }
   })
@@ -347,9 +363,9 @@ function Badge({ mission, level }: { mission: MissionData; level: Level }) {
   useEffect(() => {
     if (counted.current) return
     counted.current = true
-    complete(mission.id, level, mission.badge.id)
+    saveProfileChange(() => complete(mission.id, level, mission.badge.id, profileId))
     play('badge')
-  }, [complete, mission, level])
+  }, [complete, mission, level, profileId])
   const needsBreak = streak >= BREAK_AFTER
   // A new medal gets its own moment: the reward window opens once the badge has landed.
   const best = rewards[rewards.length - 1]

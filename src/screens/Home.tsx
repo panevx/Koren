@@ -224,7 +224,7 @@ function AdventureCard({ next, missions, done }: { next: Mission | undefined; mi
             <span className="text-label inline-block rounded-full bg-green-deep/70 px-2.5 py-1 text-[length:min(0.75rem,3.2vw)] text-white">
               {next ? t('home.next') : t('home.allDone.caption')}
             </span>
-            <span className="text-title mt-1.5 line-clamp-3 block" style={fitWords(next ? l(next.title) : t('home.allDone'), 'min(1.5rem,6.4vw)')}>
+            <span className="text-title mt-1.5 line-clamp-3 block" data-fit-label style={fitWords(next ? l(next.title) : t('home.allDone'), 'min(1.5rem,6.4vw)')}>
               {next ? l(next.title) : t('home.allDone')}
             </span>
             {chapter && (
@@ -313,7 +313,7 @@ function World({
       <span className="pointer-events-none relative -mx-1 -mt-1 grid flex-1 place-items-center" aria-hidden="true">
         <SectionIcon id={world.id} className="pop-3d size-[min(6.5rem,26vw)] wide:size-[6rem]" />
       </span>
-      <span className="relative mt-1 block leading-tight font-black" style={fitWords(t(section.label), 'min(1.125rem,5vw)')}>
+      <span className="relative mt-1 block leading-tight font-black" data-fit-label style={fitWords(t(section.label), 'min(1.125rem,5vw)')}>
         {t(section.label)}
       </span>
       {showDesc && <span className="relative mt-0.5 block text-xs leading-snug font-bold">{t(section.desc)}</span>}

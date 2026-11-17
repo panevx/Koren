@@ -150,9 +150,17 @@ describe('mission Хан Аспарух (young)', () => {
     expect(small!.check).toHaveLength(0) // 4–6: nothing to read in the check phase
   })
 
-  it('an unknown mission id goes back to the list', async () => {
+  it('an unknown mission id explains the problem and links back to the list', async () => {
     renderAt('/mission/nope-99-x')
+    expect(await screen.findByRole('heading', { name: 'Тази мисия не е налична' })).toBeInTheDocument()
+    fireEvent.click(screen.getByRole('button', { name: 'Към пътя на приключенията' }))
     expect((await screen.findAllByRole('button', { name: /Хан Аспарух/ }))[0]).toBeInTheDocument()
+  })
+
+  it('a direct link cannot bypass the mission age group', async () => {
+    renderAt('/mission/mini-02-boar')
+    expect(await screen.findByRole('heading', { name: 'Тази мисия е за друга възрастова група' })).toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: /Напред/ })).not.toBeInTheDocument()
   })
 
   it('a locked mission explains how it opens and links to the mission before it', async () => {
