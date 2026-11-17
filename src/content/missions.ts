@@ -1,6 +1,7 @@
 import type { Level } from '../theme/levels'
 import { Mission, type LevelContent, type Subject } from './schema'
 import { TESTER_TOOLS } from './tester'
+import { compareMissionOrder } from './missionSummary'
 
 /**
  * Every JSON file in content/missions becomes a mission — no registration needed.
@@ -25,7 +26,7 @@ export function parseMissions(raw: Record<string, unknown>, showDrafts = SHOW_DR
     if (parsed.data.draft && !showDrafts) continue
     out.push(parsed.data)
   }
-  return out.sort((a, b) => a.order - b.order || a.id.localeCompare(b.id))
+  return out.sort(compareMissionOrder)
 }
 
 export const MISSIONS: readonly Mission[] = parseMissions(files)

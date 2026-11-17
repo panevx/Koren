@@ -12,7 +12,8 @@ import { Screen, roundButton, useTitle } from '../components/ui'
 import { earnedCount } from '../content/badges'
 import { forLevel } from '../content/forLevel'
 import { byPathOrder, chapterOf } from '../content/pathOrder'
-import type { Mission, Subject } from '../content/schema'
+import type { Subject } from '../content/schema'
+import type { MissionSummary } from '../content/missionSummary'
 import { useLocalized } from '../content/useLocalized'
 import { useMissions } from '../content/useMissions'
 import { useProgress, useUnlockAll } from '../content/useProgress'
@@ -193,7 +194,7 @@ function NoMissionsCard() {
 }
 
 /** The big card: what is next on the path, in which chapter, and one clear button. */
-function AdventureCard({ next, missions, done }: { next: Mission | undefined; missions: readonly Mission[]; done: Record<string, unknown> }) {
+function AdventureCard({ next, missions, done }: { next: MissionSummary | undefined; missions: readonly MissionSummary[]; done: Record<string, unknown> }) {
   const t = useT()
   const l = useLocalized()
   const chapter = next ? chapterOf(next.id) : undefined
@@ -296,7 +297,7 @@ function World({
   showDesc,
 }: {
   world: (typeof WORLDS)[number]
-  missions: readonly Mission[] | null
+  missions: readonly MissionSummary[] | null
   done: Record<string, unknown>
   showDesc: boolean
 }) {

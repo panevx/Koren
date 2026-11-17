@@ -1,11 +1,13 @@
 /// <reference types="vitest/config" />
 import { copyFileSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
-import { defineConfig, type Plugin } from 'vite'
+import { defineConfig, loadEnv, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import assetManifest from './content/assets/manifest.json'
+import { Mission } from './src/content/schema'
+import { compareMissionOrder, summarizeMission } from './src/content/missionSummary'
 import { IMAGE_CACHE } from './src/offline/imageCache'
 import { staticPages } from './src/routes'
 
@@ -31,6 +33,27 @@ function reviewedMissionsOnly(): Plugin {
       const pattern = "'../../content/missions/*.json'"
       if (!source.includes(pattern)) throw new Error('Cannot locate the mission catalog for the family build')
       return source.replace(pattern, JSON.stringify(paths))
+    },
+  }
+}
+
+function hubMissionIndex(showDrafts: boolean): Plugin {
+  return {
+    name: 'koren-hub-missions',
+    enforce: 'pre',
+    apply: 'build',
+    transform(_source, id) {
+      if (!id.endsWith('/src/content/hubMissions.ts')) return
+      const missions = missionFiles(false)
+        .map((file) => {
+          const data = JSON.parse(readFileSync(resolve(missionDir, file), 'utf8'))
+          const result = Mission.safeParse(data)
+          if (!result.success) this.error(`Invalid mission ${file}: ${result.error.message}`)
+          return result.data
+        })
+        .filter((mission) => showDrafts || !mission.draft)
+        .sort(compareMissionOrder)
+      return `export const HUB_MISSIONS = ${JSON.stringify(missions.map(summarizeMission))}`
     },
   }
 }
@@ -79,6 +102,7 @@ export default defineConfig(({ mode }) => ({
     react(),
     tailwindcss(),
     ...(mode === 'family' ? [reviewedMissionsOnly()] : []),
+    hubMissionIndex(mode !== 'family' && loadEnv(mode, process.cwd()).VITE_SHOW_DRAFTS === '1'),
     spaRoutes(mode === 'family'),
     VitePWA({
       // "prompt": a new version waits until the child is on the hub — never a reload mid-mission.
