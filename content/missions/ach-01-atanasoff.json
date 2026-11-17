@@ -296,7 +296,8 @@
           },
           {
             "bg": "ENIAC – огромен компютър в цяла зала",
-            "en": "ENIAC – a huge computer filling a room"
+            "en": "ENIAC – a huge computer filling a room",
+            "img": "science/eniac.webp"
           },
           {
             "bg": "Първите домашни компютри",
@@ -305,7 +306,8 @@
           },
           {
             "bg": "Смартфоните",
-            "en": "Smartphones"
+            "en": "Smartphones",
+            "img": "science/early-smartphone.webp"
           }
         ],
         "hint": {

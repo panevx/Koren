@@ -38,6 +38,7 @@ export function parseCsv(text: string): string[][] {
       cell = ''
     } else cell += ch
   }
+  if (quoted) throw new Error('CSV файлът завършва в незатворена клетка.')
   if (cell || row.length) row.push(cell), rows.push(row)
   return rows
 }
@@ -118,7 +119,12 @@ export function missionsToCsv(missions: Mission[]): string {
 export type ImportResult = { missions: Mission[]; errors: string[] }
 
 export function csvToMissions(text: string): ImportResult {
-  const table = parseCsv(text).filter((r) => r.some((c) => c.trim()))
+  let table: string[][]
+  try {
+    table = parseCsv(text).filter((r) => r.some((c) => c.trim()))
+  } catch (error) {
+    return { missions: [], errors: [error instanceof Error ? error.message : String(error)] }
+  }
   const errors: string[] = []
   if (!table.length) return { missions: [], errors: ['Таблицата е празна.'] }
   const header = table[0]!.map((h) => h.trim().toLowerCase())
@@ -190,6 +196,10 @@ export function csvToMissions(text: string): ImportResult {
         L.story.push({ hero, pose: pose || 'point', bg: r.bg, en: r.en, ...(r.img ? { img: r.img } : {}) })
       } else if (block === 'check') L.check.push(toQuestion(r))
       else if (block === 'extra') {
+        if ('extra' in L) {
+          errors.push(`${at(r)}: повторен ред за второто предизвикателство`)
+          continue
+        }
         try {
           L.extra = JSON.parse(r.bg)
         } catch {

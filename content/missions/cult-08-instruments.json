@@ -319,7 +319,8 @@
           {
             "bg": "Дудук",
             "en": "Duduk",
-            "bin": 0
+            "bin": 0,
+            "img": "culture/duduk.webp"
           },
           {
             "bg": "Гъдулка",
@@ -334,7 +335,8 @@
             "why": {
               "bg": "Тамбурата има струни, по които се дърпа с перце.",
               "en": "The tambura has strings plucked with a plectrum."
-            }
+            },
+            "img": "culture/tambura.webp"
           },
           {
             "bg": "Тъпан",
@@ -349,7 +351,8 @@
             "why": {
               "bg": "Тарамбуката е барабан – удря се с ръце.",
               "en": "The tarambuka is a drum – played with the hands."
-            }
+            },
+            "img": "culture/tarambuka.webp"
           }
         ]
       },

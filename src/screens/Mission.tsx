@@ -25,7 +25,7 @@ import { BREAK_AFTER, saveProfileChange, useActiveProfile, useProfiles } from '.
 import { ageToLevel, type Level } from '../theme/levels'
 
 type Phase = 'story' | 'game' | 'extra' | 'check' | 'badge'
-type MissionHistory = { profileId: string; phase: Phase; q?: number }
+type MissionHistory = { profileId: string; level?: Level; phase: Phase; q?: number }
 
 export function Mission() {
   const { id } = useParams()
@@ -104,12 +104,12 @@ function MissionRun({ mission, childLevel, profileId }: { mission: MissionData; 
   // (game → story) instead of throwing the child out of the mission.
   const location = useLocation()
   const history = location.state as MissionHistory | null
-  const saved = history?.profileId === profileId ? history : null
+  const saved = history?.profileId === profileId && (history.level === undefined || history.level === level) ? history : null
   const phase: Phase = saved && phases.includes(saved.phase) ? saved.phase : 'story'
   const next = () => {
     const to = phases[phases.indexOf(phase) + 1] ?? 'badge'
     // The badge replaces the last step, so "back" from the badge cannot replay the quiz and count it twice.
-    navigate(location.pathname, { state: { profileId, phase: to }, replace: to === 'badge' })
+    navigate(location.pathname, { state: { profileId, level, phase: to }, replace: to === 'badge' })
   }
   // "Back" from the badge would land in the game just finished (the badge replaced the check entry). A mission finished in
   // this tab is left instead: going back into its game or check goes to the path. Starting it again (the story) clears it.
@@ -163,11 +163,11 @@ function MissionRun({ mission, childLevel, profileId }: { mission: MissionData; 
               title={t('check.title')}
               onDone={next}
               // a reload goes on from the same question, not from the first one
-              start={saved?.q ?? 0}
-              onIndex={(q) => navigate(location.pathname, { state: { profileId, phase: 'check', q }, replace: true })}
+              start={typeof saved?.q === 'number' && Number.isInteger(saved.q) ? saved.q : 0}
+              onIndex={(q) => navigate(location.pathname, { state: { profileId, level, phase: 'check', q }, replace: true })}
             />
           )}
-          {phase === 'badge' && <Badge mission={mission} level={level} profileId={profileId} />}
+          {phase === 'badge' && <Badge mission={mission} level={level} profileId={profileId} entryKey={location.key} legacyEntry={saved?.level === undefined} />}
         </m.div>
       </div>
     </Screen>
@@ -339,7 +339,13 @@ const CONFETTI = Array.from({ length: 18 }, (_, i) => {
   }
 })
 
-function Badge({ mission, level, profileId }: { mission: MissionData; level: Level; profileId: string }) {
+function Badge({ mission, level, profileId, entryKey, legacyEntry }: {
+  mission: MissionData
+  level: Level
+  profileId: string
+  entryKey: string
+  legacyEntry: boolean
+}) {
   const t = useT()
   const l = useLocalized()
   const navigate = useNavigate()
@@ -362,14 +368,21 @@ function Badge({ mission, level, profileId }: { mission: MissionData; level: Lev
     .filter((id) => !before.open.includes(id))
     .map((id) => missionById(id)!)
   const rewards = reachedMilestones(earnedCount(profile.badges, missions), missions).filter((r) => !before.rewards.includes(r))
-  // Count the mission exactly once, even if React runs the effect twice (StrictMode).
-  const counted = useRef(false)
+  // The history entry survives a reload. A real replay creates a new entry.
+  const receipt = `koren:badge:${profileId}:${mission.id}:${entryKey}`
+  const counted = useRef('')
   useEffect(() => {
-    if (counted.current) return
-    counted.current = true
-    saveProfileChange(() => complete(mission.id, level, mission.badge.id, profileId))
-    play('badge')
-  }, [complete, mission, level, profileId])
+    if (counted.current === receipt) return
+    counted.current = receipt
+    saveProfileChange(() => {
+      if (session.has(receipt)) return
+      const savedProfile = useProfiles.getState().profiles.find((p) => p.id === profileId)
+      if (!savedProfile || (legacyEntry && savedProfile.done[mission.id])) return
+      complete(mission.id, level, mission.badge.id, profileId)
+      session.set(receipt)
+      play('badge')
+    })
+  }, [complete, mission, level, profileId, receipt, legacyEntry])
   const needsBreak = streak >= BREAK_AFTER
   // A new medal gets its own moment: the reward window opens once the badge has landed.
   const best = rewards[rewards.length - 1]

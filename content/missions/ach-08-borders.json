@@ -66,17 +66,20 @@
           {
             "bg": "Лична карта",
             "en": "ID card",
-            "bin": 0
+            "bin": 0,
+            "img": "minigame/travel-id-card.webp"
           },
           {
             "bg": "Куфар с подаръци",
             "en": "A suitcase of presents",
-            "bin": 1
+            "bin": 1,
+            "img": "minigame/suitcase-with-presents.webp"
           },
           {
             "bg": "Камион със стоки",
             "en": "A lorry full of goods",
-            "bin": 1
+            "bin": 1,
+            "img": "minigame/cargo-lorry.webp"
           }
         ]
       },
