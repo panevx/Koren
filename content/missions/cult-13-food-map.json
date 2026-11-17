@@ -143,6 +143,74 @@
           }
         ]
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Какво НЕ ядем на Бъдни вечер?",
+              "en": "What do we NOT eat on Christmas Eve?"
+            },
+            "options": [
+              {
+                "bg": "Месо",
+                "en": "Meat"
+              },
+              {
+                "bg": "Боб",
+                "en": "Beans"
+              },
+              {
+                "bg": "Постни сарми",
+                "en": "Meatless sarmi"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Какво ядем на Великден?",
+              "en": "What do we eat at Easter?"
+            },
+            "options": [
+              {
+                "bg": "Козунак и яйца",
+                "en": "Kozunak and eggs"
+              },
+              {
+                "bg": "Тиквеник",
+                "en": "Pumpkin pie"
+              },
+              {
+                "bg": "Риба",
+                "en": "Fish"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Какво ядем на Никулден?",
+              "en": "What do we eat on St Nicholas’ Day?"
+            },
+            "options": [
+              {
+                "bg": "Риба",
+                "en": "Fish"
+              },
+              {
+                "bg": "Агне",
+                "en": "Lamb"
+              },
+              {
+                "bg": "Пуйка",
+                "en": "Turkey"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -157,6 +225,48 @@
             {
               "bg": "Защото месото е свършило",
               "en": "Because the meat ran out"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какво е тиквеник?",
+            "en": "What is tikvenik?"
+          },
+          "options": [
+            {
+              "bg": "Баница с тиква",
+              "en": "A pumpkin pastry"
+            },
+            {
+              "bg": "Супа",
+              "en": "A soup"
+            },
+            {
+              "bg": "Салата",
+              "en": "A salad"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Каква е трапезата на Бъдни вечер?",
+            "en": "What is the table like on Christmas Eve?"
+          },
+          "options": [
+            {
+              "bg": "Постна – без месо",
+              "en": "Meatless"
+            },
+            {
+              "bg": "Само сладкиши",
+              "en": "Only sweets"
+            },
+            {
+              "bg": "Само месо",
+              "en": "Only meat"
             }
           ],
           "answer": 0
@@ -242,6 +352,81 @@
           }
         ]
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Пататникът е от Родопите.",
+              "en": "Patatnik comes from the Rhodopes."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – типично родопско ястие.",
+              "en": "Yes – a typical Rhodope dish."
+            }
+          },
+          {
+            "text": {
+              "bg": "Пататникът се прави от тиква.",
+              "en": "Patatnik is made of pumpkin."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – от картофи („патати“).",
+              "en": "No – of potatoes (“patati”)."
+            }
+          },
+          {
+            "text": {
+              "bg": "Шопската салата е от края около София.",
+              "en": "Shopska salad is from the region around Sofia."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – от Шоплука.",
+              "en": "Yes – from the Shop region."
+            }
+          },
+          {
+            "text": {
+              "bg": "На Никулден се яде риба.",
+              "en": "On St Nicholas’ Day fish is eaten."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – най-често шаран.",
+              "en": "Yes – most often carp."
+            }
+          },
+          {
+            "text": {
+              "bg": "Козунакът е коледно ястие.",
+              "en": "Kozunak is a Christmas dish."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – козунакът е за Великден.",
+              "en": "No – kozunak is for Easter."
+            }
+          },
+          {
+            "text": {
+              "bg": "Баница с късмети се прави на Нова година.",
+              "en": "Banitsa with lucky charms is made at New Year."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – всеки търси своя късмет.",
+              "en": "Yes – everyone looks for their charm."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -256,6 +441,56 @@
             {
               "bg": "От тиква",
               "en": "Pumpkin"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кое ястие е за Гергьовден?",
+            "en": "Which dish is for St George’s Day?"
+          },
+          "options": [
+            {
+              "bg": "Агне",
+              "en": "Lamb"
+            },
+            {
+              "bg": "Риба",
+              "en": "Fish"
+            },
+            {
+              "bg": "Козунак",
+              "en": "Kozunak"
+            },
+            {
+              "bg": "Тиквеник",
+              "en": "Pumpkin pie"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Колко ястия има по традиция на Бъдни вечер?",
+            "en": "How many dishes are there on Christmas Eve by tradition?"
+          },
+          "options": [
+            {
+              "bg": "Нечетен брой",
+              "en": "An odd number"
+            },
+            {
+              "bg": "Точно 2",
+              "en": "Exactly 2"
+            },
+            {
+              "bg": "Точно 20",
+              "en": "Exactly 20"
+            },
+            {
+              "bg": "Едно",
+              "en": "One"
             }
           ],
           "answer": 0

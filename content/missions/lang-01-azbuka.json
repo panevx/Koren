@@ -151,6 +151,74 @@
           "en": "Start with the first letter – А."
         }
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Коя буква е след „Б“?",
+              "en": "Which letter comes after “Б”?"
+            },
+            "options": [
+              {
+                "bg": "В",
+                "en": "В"
+              },
+              {
+                "bg": "Г",
+                "en": "Г"
+              },
+              {
+                "bg": "А",
+                "en": "А"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Коя е последната буква на азбуката?",
+              "en": "Which is the last letter of the alphabet?"
+            },
+            "options": [
+              {
+                "bg": "Ю",
+                "en": "Ю"
+              },
+              {
+                "bg": "Я",
+                "en": "Я"
+              },
+              {
+                "bg": "Ъ",
+                "en": "Ъ"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Кои са учениците на Кирил и Методий?",
+              "en": "Who are the disciples of Cyril and Methodius?"
+            },
+            "options": [
+              {
+                "bg": "Асен и Петър",
+                "en": "Asen and Peter"
+              },
+              {
+                "bg": "Климент и Наум",
+                "en": "Clement and Naum"
+              },
+              {
+                "bg": "Ботев и Левски",
+                "en": "Botev and Levski"
+              }
+            ],
+            "answer": 1
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -338,6 +406,81 @@
           }
         ]
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Глаголицата е създадена около 863 г.",
+              "en": "The Glagolitic alphabet was created around 863."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – от Кирил и Методий.",
+              "en": "Yes – by Cyril and Methodius."
+            }
+          },
+          {
+            "text": {
+              "bg": "Кирилицата е създадена във Великоморавия.",
+              "en": "The Cyrillic alphabet was created in Great Moravia."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – в България, в Преслав.",
+              "en": "No – in Bulgaria, in Preslav."
+            }
+          },
+          {
+            "text": {
+              "bg": "Учениците пристигат в България през 886 г.",
+              "en": "The disciples arrive in Bulgaria in 886."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – приема ги княз Борис I.",
+              "en": "Yes – Prince Boris I welcomes them."
+            }
+          },
+          {
+            "text": {
+              "bg": "Климент заминава за Охрид.",
+              "en": "Clement goes to Ohrid."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – там учи хиляди ученици.",
+              "en": "Yes – there he teaches thousands of pupils."
+            }
+          },
+          {
+            "text": {
+              "bg": "С кирилица пишат и руснаци, и сърби.",
+              "en": "Russians and Serbs also write in Cyrillic."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – с нейни варианти.",
+              "en": "Yes – in versions of it."
+            }
+          },
+          {
+            "text": {
+              "bg": "Кирилицата е по-трудна за писане от глаголицата.",
+              "en": "Cyrillic is harder to write than Glagolitic."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – по-лесна е, затова се разпространява.",
+              "en": "No – it is easier, that is why it spread."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -363,6 +506,56 @@
             "bg": "В края на IX век.",
             "en": "At the end of the 9th century."
           }
+        },
+        {
+          "q": {
+            "bg": "Къде е създадена кирилицата?",
+            "en": "Where was the Cyrillic alphabet created?"
+          },
+          "options": [
+            {
+              "bg": "В Рим",
+              "en": "In Rome"
+            },
+            {
+              "bg": "В Преслав",
+              "en": "In Preslav"
+            },
+            {
+              "bg": "В Атина",
+              "en": "In Athens"
+            },
+            {
+              "bg": "В Киев",
+              "en": "In Kyiv"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Как се казва първата славянска азбука?",
+            "en": "What is the first Slavic alphabet called?"
+          },
+          "options": [
+            {
+              "bg": "Кирилица",
+              "en": "Cyrillic"
+            },
+            {
+              "bg": "Латиница",
+              "en": "Latin"
+            },
+            {
+              "bg": "Глаголица",
+              "en": "Glagolitic"
+            },
+            {
+              "bg": "Гръцката",
+              "en": "Greek"
+            }
+          ],
+          "answer": 2
         }
       ]
     }

@@ -138,6 +138,74 @@
           }
         ]
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "„Бързата работа – срам за майстора.“ Какво значи?",
+              "en": "“Hasty work shames the master.” What does it mean?"
+            },
+            "options": [
+              {
+                "bg": "Като бързаш, правиш грешки",
+                "en": "When you hurry, you make mistakes"
+              },
+              {
+                "bg": "Винаги бързай",
+                "en": "Always hurry"
+              },
+              {
+                "bg": "Майсторите са бавни",
+                "en": "Masters are slow"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "„Сговорна дружина планина повдига.“ Какво значи?",
+              "en": "“A united team lifts a mountain.” What does it mean?"
+            },
+            "options": [
+              {
+                "bg": "Планините са леки",
+                "en": "Mountains are light"
+              },
+              {
+                "bg": "Заедно постигаме много",
+                "en": "Together we achieve a lot"
+              },
+              {
+                "bg": "Дружината е голяма",
+                "en": "The team is big"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "„Каквото посееш, това ще пожънеш.“ Какво значи?",
+              "en": "“As you sow, so shall you reap.” What does it mean?"
+            },
+            "options": [
+              {
+                "bg": "Сей само жито",
+                "en": "Sow only wheat"
+              },
+              {
+                "bg": "Жътвата е лятото",
+                "en": "Harvest is in summer"
+              },
+              {
+                "bg": "Каквото правиш, това получаваш",
+                "en": "What you do comes back to you"
+              }
+            ],
+            "answer": 2
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -152,6 +220,48 @@
             {
               "bg": "Вали дъжд",
               "en": "It is raining"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кое от тези е поговорка?",
+            "en": "Which of these is a proverb?"
+          },
+          "options": [
+            {
+              "bg": "„Сговорна дружина планина повдига.“",
+              "en": "“A united team lifts a mountain.”"
+            },
+            {
+              "bg": "„Днес е понеделник.“",
+              "en": "“Today is Monday.”"
+            },
+            {
+              "bg": "„Котката е черна.“",
+              "en": "“The cat is black.”"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Откъде идват поговорките?",
+            "en": "Where do proverbs come from?"
+          },
+          "options": [
+            {
+              "bg": "От народа – предават се от баба на внук",
+              "en": "From the people – passed from grandparent to grandchild"
+            },
+            {
+              "bg": "От телевизията",
+              "en": "From television"
+            },
+            {
+              "bg": "От компютъра",
+              "en": "From the computer"
             }
           ],
           "answer": 0
@@ -296,6 +406,81 @@
           }
         ]
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно? Мисли за смисъла, не за думите.",
+          "en": "True or not true? Think of the meaning, not the words."
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "„Не казвай „хоп“, докато не прескочиш“ значи: не се хвали, преди да си успял.",
+              "en": "“Don’t say ‘hop’ until you have jumped” means: don’t boast before you succeed."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "„Ден година храни“ значи, че ядем веднъж в годината.",
+              "en": "“A day feeds a year” means we eat once a year."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – един ден работа в точното време храни цяла година.",
+              "en": "No – one day of work at the right time feeds a whole year."
+            }
+          },
+          {
+            "text": {
+              "bg": "„Който рано рани, две сполучва“ значи, че който започне рано, успява повече.",
+              "en": "“Who rises early succeeds twice” means whoever starts early achieves more."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "„Нова метла – чисто мете“ значи, че новият човек отначало работи много старателно.",
+              "en": "“A new broom sweeps clean” means a newcomer works very hard at first."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "„Тиха вода брегове рони“ значи, че реките са опасни само при буря.",
+              "en": "“Still water wears away the banks” means rivers are only dangerous in storms."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – значи, че тихите хора също могат много.",
+              "en": "No – it means quiet people can also achieve a lot."
+            }
+          },
+          {
+            "text": {
+              "bg": "Поговорките са кратка народна мъдрост.",
+              "en": "Proverbs are short folk wisdom."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -313,6 +498,56 @@
             }
           ],
           "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Коя поговорка значи „заедно сме по-силни“?",
+            "en": "Which proverb means “together we are stronger”?"
+          },
+          "options": [
+            {
+              "bg": "„Нова метла – чисто мете.“",
+              "en": "“A new broom sweeps clean.”"
+            },
+            {
+              "bg": "„Сговорна дружина планина повдига.“",
+              "en": "“A united team lifts a mountain.”"
+            },
+            {
+              "bg": "„Ден година храни.“",
+              "en": "“A day feeds a year.”"
+            },
+            {
+              "bg": "„Тиха вода брегове рони.“",
+              "en": "“Still water wears away the banks.”"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Коя поговорка учи да не се хвалим предварително?",
+            "en": "Which proverb teaches us not to boast too early?"
+          },
+          "options": [
+            {
+              "bg": "„Капка по капка – вир става.“",
+              "en": "“Drop by drop a pool forms.”"
+            },
+            {
+              "bg": "„Не казвай „хоп“, докато не прескочиш.“",
+              "en": "“Don’t say ‘hop’ until you have jumped.”"
+            },
+            {
+              "bg": "„Нова метла – чисто мете.“",
+              "en": "“A new broom sweeps clean.”"
+            },
+            {
+              "bg": "„Ден година храни.“",
+              "en": "“A day feeds a year.”"
+            }
+          ],
+          "answer": 1
         }
       ]
     }

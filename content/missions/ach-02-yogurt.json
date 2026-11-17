@@ -146,6 +146,70 @@
           "en": "Done! Tiny bacteria turned the milk into yogurt."
         }
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Киселото мляко се прави от прясно мляко и закваска.",
+              "en": "Yoghurt is made from fresh milk and a starter."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "Закваската трябва да е толкова гореща, че да ври.",
+              "en": "The starter must be boiling hot."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – топла. Горещото убива полезните бактерии.",
+              "en": "No – warm. Heat kills the good bacteria."
+            }
+          },
+          {
+            "text": {
+              "bg": "В киселото мляко има полезни бактерии.",
+              "en": "Yoghurt contains good bacteria."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – те правят млякото кисело.",
+              "en": "Yes – they turn the milk sour."
+            }
+          },
+          {
+            "text": {
+              "bg": "Една от бактериите носи името на България.",
+              "en": "One of the bacteria is named after Bulgaria."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – Lactobacillus bulgaricus.",
+              "en": "Yes – Lactobacillus bulgaricus."
+            }
+          },
+          {
+            "text": {
+              "bg": "Киселото мляко се прави от портокалов сок.",
+              "en": "Yoghurt is made of orange juice."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – от мляко.",
+              "en": "No – from milk."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -160,6 +224,48 @@
             {
               "bg": "За да е по-сладко",
               "en": "To make it sweeter"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Как се казва малкото кисело мляко, с което подквасваме?",
+            "en": "What is the bit of yoghurt we add called?"
+          },
+          "options": [
+            {
+              "bg": "Закваска",
+              "en": "Starter"
+            },
+            {
+              "bg": "Мая за хляб",
+              "en": "Bread yeast"
+            },
+            {
+              "bg": "Сол",
+              "en": "Salt"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какво правят бактериите в млякото?",
+            "en": "What do the bacteria do to the milk?"
+          },
+          "options": [
+            {
+              "bg": "Правят го кисело мляко",
+              "en": "Turn it into yoghurt"
+            },
+            {
+              "bg": "Правят го сладко",
+              "en": "Make it sweet"
+            },
+            {
+              "bg": "Правят го синьо",
+              "en": "Turn it blue"
             }
           ],
           "answer": 0
@@ -232,6 +338,111 @@
           }
         ]
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "През коя година Стамен Григоров открива бактерията?",
+              "en": "In which year does Stamen Grigorov discover the bacterium?"
+            },
+            "options": [
+              {
+                "bg": "1805",
+                "en": "1805"
+              },
+              {
+                "bg": "1878",
+                "en": "1878"
+              },
+              {
+                "bg": "1905",
+                "en": "1905"
+              },
+              {
+                "bg": "1950",
+                "en": "1950"
+              }
+            ],
+            "answer": 2
+          },
+          {
+            "q": {
+              "bg": "Как се казва бактерията, кръстена на България?",
+              "en": "What is the bacterium named after Bulgaria called?"
+            },
+            "options": [
+              {
+                "bg": "Escherichia coli",
+                "en": "Escherichia coli"
+              },
+              {
+                "bg": "Lactobacillus bulgaricus",
+                "en": "Lactobacillus bulgaricus"
+              },
+              {
+                "bg": "Penicillium",
+                "en": "Penicillium"
+              },
+              {
+                "bg": "Salmonella",
+                "en": "Salmonella"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "В кой град Григоров прави откритието си?",
+              "en": "In which city does Grigorov make his discovery?"
+            },
+            "options": [
+              {
+                "bg": "Женева",
+                "en": "Geneva"
+              },
+              {
+                "bg": "Париж",
+                "en": "Paris"
+              },
+              {
+                "bg": "Москва",
+                "en": "Moscow"
+              },
+              {
+                "bg": "Лондон",
+                "en": "London"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Около каква температура се подквасва млякото?",
+              "en": "At about what temperature is milk set?"
+            },
+            "options": [
+              {
+                "bg": "Около 0 °C",
+                "en": "About 0 °C"
+              },
+              {
+                "bg": "Около 45 °C",
+                "en": "About 45 °C"
+              },
+              {
+                "bg": "Около 100 °C",
+                "en": "About 100 °C"
+              },
+              {
+                "bg": "Около 200 °C",
+                "en": "About 200 °C"
+              }
+            ],
+            "answer": 1
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -246,6 +457,56 @@
             {
               "bg": "С телескоп",
               "en": "A telescope"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Каква е ролята на Streptococcus thermophilus?",
+            "en": "What is the role of Streptococcus thermophilus?"
+          },
+          "options": [
+            {
+              "bg": "Работи заедно с българската бактерия",
+              "en": "It works together with the Bulgarian bacterium"
+            },
+            {
+              "bg": "Разваля млякото",
+              "en": "It spoils the milk"
+            },
+            {
+              "bg": "Оцветява го",
+              "en": "It colours it"
+            },
+            {
+              "bg": "Няма роля",
+              "en": "It has no role"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какво е закваска?",
+            "en": "What is a starter?"
+          },
+          "options": [
+            {
+              "bg": "Малко кисело мляко, с което започваме",
+              "en": "A little yoghurt to begin with"
+            },
+            {
+              "bg": "Вид сирене",
+              "en": "A kind of cheese"
+            },
+            {
+              "bg": "Захар",
+              "en": "Sugar"
+            },
+            {
+              "bg": "Вода",
+              "en": "Water"
             }
           ],
           "answer": 0

@@ -139,6 +139,70 @@
           }
         ]
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Атанасов построява компютъра ABC.",
+              "en": "Atanasoff builds the ABC computer."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – с Клифърд Бери.",
+              "en": "Yes – with Clifford Berry."
+            }
+          },
+          {
+            "text": {
+              "bg": "Григоров открива бактерията на киселото мляко.",
+              "en": "Grigorov discovers the yoghurt bacterium."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – през 1905 г.",
+              "en": "Yes – in 1905."
+            }
+          },
+          {
+            "text": {
+              "bg": "„Свет“ е оранжерия в космоса.",
+              "en": "“Svet” is a greenhouse in space."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – на станция „Мир“.",
+              "en": "Yes – on the “Mir” station."
+            }
+          },
+          {
+            "text": {
+              "bg": "Крушката е българско изобретение.",
+              "en": "The light bulb is a Bulgarian invention."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – тя е свързана с Томас Едисон.",
+              "en": "No – it is linked with Thomas Edison."
+            }
+          },
+          {
+            "text": {
+              "bg": "Телефонът е изобретен от Стамен Григоров.",
+              "en": "The telephone was invented by Stamen Grigorov."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – от Александър Бел.",
+              "en": "No – by Alexander Bell."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -156,6 +220,48 @@
             }
           ],
           "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кой открива бактерията на киселото мляко?",
+            "en": "Who discovers the yoghurt bacterium?"
+          },
+          "options": [
+            {
+              "bg": "Стамен Григоров",
+              "en": "Stamen Grigorov"
+            },
+            {
+              "bg": "Джон Атанасов",
+              "en": "John Atanasoff"
+            },
+            {
+              "bg": "Георги Иванов",
+              "en": "Georgi Ivanov"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кой построява компютъра ABC?",
+            "en": "Who builds the ABC computer?"
+          },
+          "options": [
+            {
+              "bg": "Христо Ботев",
+              "en": "Hristo Botev"
+            },
+            {
+              "bg": "Джон Атанасов",
+              "en": "John Atanasoff"
+            },
+            {
+              "bg": "Хан Аспарух",
+              "en": "Khan Asparuh"
+            }
+          ],
+          "answer": 1
         }
       ]
     },
@@ -252,6 +358,111 @@
           }
         ]
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Кой изобретява телефона?",
+              "en": "Who invents the telephone?"
+            },
+            "options": [
+              {
+                "bg": "Александър Бел",
+                "en": "Alexander Bell"
+              },
+              {
+                "bg": "Джон Атанасов",
+                "en": "John Atanasoff"
+              },
+              {
+                "bg": "Стамен Григоров",
+                "en": "Stamen Grigorov"
+              },
+              {
+                "bg": "Петър Берон",
+                "en": "Petar Beron"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "С кого свързваме електрическата крушка?",
+              "en": "Whom do we link with the electric light bulb?"
+            },
+            "options": [
+              {
+                "bg": "Георги Иванов",
+                "en": "Georgi Ivanov"
+              },
+              {
+                "bg": "Томас Едисон",
+                "en": "Thomas Edison"
+              },
+              {
+                "bg": "Паисий",
+                "en": "Paisius"
+              },
+              {
+                "bg": "Исак Нютон",
+                "en": "Isaac Newton"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Кой лети пръв със самолет?",
+              "en": "Who flies an aeroplane first?"
+            },
+            "options": [
+              {
+                "bg": "Братя Миладинови",
+                "en": "The Miladinov brothers"
+              },
+              {
+                "bg": "Братя Райт",
+                "en": "The Wright brothers"
+              },
+              {
+                "bg": "Кирил и Методий",
+                "en": "Cyril and Methodius"
+              },
+              {
+                "bg": "Асен и Петър",
+                "en": "Asen and Peter"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Кое от тези е създадено в България?",
+              "en": "Which of these was created in Bulgaria?"
+            },
+            "options": [
+              {
+                "bg": "Кирилицата",
+                "en": "The Cyrillic alphabet"
+              },
+              {
+                "bg": "Телефонът",
+                "en": "The telephone"
+              },
+              {
+                "bg": "Крушката",
+                "en": "The light bulb"
+              },
+              {
+                "bg": "Самолетът",
+                "en": "The aeroplane"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -266,6 +477,56 @@
             {
               "bg": "Температурата на чая",
               "en": "The temperature of tea"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Къде работи оранжерията „Свет“?",
+            "en": "Where does the “Svet” greenhouse work?"
+          },
+          "options": [
+            {
+              "bg": "На Луната",
+              "en": "On the Moon"
+            },
+            {
+              "bg": "На станция „Мир“",
+              "en": "On the “Mir” station"
+            },
+            {
+              "bg": "На Марс",
+              "en": "On Mars"
+            },
+            {
+              "bg": "В София",
+              "en": "In Sofia"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Какво е общото между Атанасов, Григоров и учените от „Свет“?",
+            "en": "What do Atanasoff, Grigorov and the “Svet” scientists have in common?"
+          },
+          "options": [
+            {
+              "bg": "Свързани са с България",
+              "en": "They are linked with Bulgaria"
+            },
+            {
+              "bg": "Всички са космонавти",
+              "en": "They are all cosmonauts"
+            },
+            {
+              "bg": "Всички са футболисти",
+              "en": "They are all footballers"
+            },
+            {
+              "bg": "Нищо",
+              "en": "Nothing"
             }
           ],
           "answer": 0

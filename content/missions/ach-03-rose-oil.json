@@ -110,6 +110,70 @@
           }
         ]
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Розите се берат рано сутрин.",
+              "en": "Roses are picked early in the morning."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – преди слънцето да изпари аромата.",
+              "en": "Yes – before the sun takes away the scent."
+            }
+          },
+          {
+            "text": {
+              "bg": "Цветът се вари с вода в голям казан.",
+              "en": "The petals are boiled with water in a big still."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "Розовото масло се прави от лалета.",
+              "en": "Rose oil is made from tulips."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – от маслодайни рози.",
+              "en": "No – from oil-bearing roses."
+            }
+          },
+          {
+            "text": {
+              "bg": "Маслото се събира капка по капка.",
+              "en": "The oil is collected drop by drop."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – затова е скъпо.",
+              "en": "Yes – that is why it is expensive."
+            }
+          },
+          {
+            "text": {
+              "bg": "Розите се берат през декември.",
+              "en": "The roses are picked in December."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – в края на май и през юни.",
+              "en": "No – at the end of May and in June."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -124,6 +188,48 @@
             {
               "bg": "Защото е по-студено за берачите",
               "en": "Because it is cooler for the pickers"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Около кой град е Розовата долина?",
+            "en": "Around which town is the Rose Valley?"
+          },
+          "options": [
+            {
+              "bg": "Казанлък",
+              "en": "Kazanlak"
+            },
+            {
+              "bg": "Варна",
+              "en": "Varna"
+            },
+            {
+              "bg": "Банско",
+              "en": "Bansko"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Как се казва мястото, където варят розите?",
+            "en": "What is the place where the roses are distilled called?"
+          },
+          "options": [
+            {
+              "bg": "Розоварна",
+              "en": "A rose distillery"
+            },
+            {
+              "bg": "Пекарна",
+              "en": "A bakery"
+            },
+            {
+              "bg": "Пристанище",
+              "en": "A port"
             }
           ],
           "answer": 0
@@ -222,6 +328,111 @@
           }
         ]
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Защо цветът се вари веднага след брането?",
+              "en": "Why are the petals distilled right after picking?"
+            },
+            "options": [
+              {
+                "bg": "Иначе губи аромата си",
+                "en": "Otherwise they lose their scent"
+              },
+              {
+                "bg": "Защото е тежък",
+                "en": "Because they are heavy"
+              },
+              {
+                "bg": "За да не се развалят казаните",
+                "en": "So the stills do not break"
+              },
+              {
+                "bg": "Няма значение",
+                "en": "It does not matter"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Кога е розоберът?",
+              "en": "When is the rose harvest?"
+            },
+            "options": [
+              {
+                "bg": "Март",
+                "en": "March"
+              },
+              {
+                "bg": "Май–юни",
+                "en": "May–June"
+              },
+              {
+                "bg": "Септември",
+                "en": "September"
+              },
+              {
+                "bg": "Декември",
+                "en": "December"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "За какво се използва розовата вода?",
+              "en": "What is rose water used for?"
+            },
+            "options": [
+              {
+                "bg": "Гориво",
+                "en": "Fuel"
+              },
+              {
+                "bg": "Козметика и сладкиши",
+                "en": "Cosmetics and sweets"
+              },
+              {
+                "bg": "Боя за коли",
+                "en": "Car paint"
+              },
+              {
+                "bg": "Лепило",
+                "en": "Glue"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "В кой град е Музеят на розата?",
+              "en": "In which town is the Museum of the Rose?"
+            },
+            "options": [
+              {
+                "bg": "Казанлък",
+                "en": "Kazanlak"
+              },
+              {
+                "bg": "Варна",
+                "en": "Varna"
+              },
+              {
+                "bg": "Видин",
+                "en": "Vidin"
+              },
+              {
+                "bg": "Силистра",
+                "en": "Silistra"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -236,6 +447,56 @@
             {
               "bg": "Като гориво",
               "en": "As fuel"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Защо розовото масло е толкова скъпо?",
+            "en": "Why is rose oil so expensive?"
+          },
+          "options": [
+            {
+              "bg": "Трябва огромно количество цвят",
+              "en": "A huge amount of petals is needed"
+            },
+            {
+              "bg": "Розите са сини",
+              "en": "The roses are blue"
+            },
+            {
+              "bg": "Прави се от злато",
+              "en": "It is made of gold"
+            },
+            {
+              "bg": "Има малко бутилки",
+              "en": "There are few bottles"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кой празник е в Казанлък в началото на юни?",
+            "en": "Which festival is in Kazanlak at the beginning of June?"
+          },
+          "options": [
+            {
+              "bg": "Празникът на розата",
+              "en": "The Rose Festival"
+            },
+            {
+              "bg": "Денят на будителите",
+              "en": "Enlighteners’ Day"
+            },
+            {
+              "bg": "Баба Марта",
+              "en": "Baba Marta"
+            },
+            {
+              "bg": "Коледа",
+              "en": "Christmas"
             }
           ],
           "answer": 0

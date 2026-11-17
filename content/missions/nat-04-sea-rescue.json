@@ -172,6 +172,70 @@
           "en": "Litter – in the bin. Animals – home, in the sea."
         }
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "В Черно море живеят три вида делфини.",
+              "en": "Three kinds of dolphin live in the Black Sea."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "Пластмасата вреди на делфините.",
+              "en": "Plastic harms dolphins."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – разболява ги.",
+              "en": "Yes – it makes them ill."
+            }
+          },
+          {
+            "text": {
+              "bg": "Пластмасовата бутилка изчезва в морето за една седмица.",
+              "en": "A plastic bottle disappears in the sea in a week."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – остава стотици години.",
+              "en": "No – it stays for hundreds of years."
+            }
+          },
+          {
+            "text": {
+              "bg": "Делфинът е бозайник.",
+              "en": "The dolphin is a mammal."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – диша въздух.",
+              "en": "Yes – it breathes air."
+            }
+          },
+          {
+            "text": {
+              "bg": "Можем да хвърляме опаковки в морето.",
+              "en": "We can throw wrappers into the sea."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – слагаме ги в кошче.",
+              "en": "No – we put them in a bin."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -207,6 +271,27 @@
             {
               "bg": "Една седмица",
               "en": "One week"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какво правим с боклука на плажа?",
+            "en": "What do we do with rubbish on the beach?"
+          },
+          "options": [
+            {
+              "bg": "Слагаме го в кошче",
+              "en": "Put it in a bin"
+            },
+            {
+              "bg": "Заравяме го в пясъка",
+              "en": "Bury it in the sand"
+            },
+            {
+              "bg": "Хвърляме го във водата",
+              "en": "Throw it in the water"
             }
           ],
           "answer": 0
@@ -262,6 +347,111 @@
           "en": "Paper – weeks; a can – about 200 years; a plastic bottle – about 450; glass – many thousands of years."
         }
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Кой е най-едрият делфин в Черно море?",
+              "en": "Which is the largest dolphin in the Black Sea?"
+            },
+            "options": [
+              {
+                "bg": "Муткурът",
+                "en": "The harbour porpoise"
+              },
+              {
+                "bg": "Обикновеният делфин",
+                "en": "The common dolphin"
+              },
+              {
+                "bg": "Афалината",
+                "en": "The bottlenose dolphin"
+              },
+              {
+                "bg": "Тюленът монах",
+                "en": "The monk seal"
+              }
+            ],
+            "answer": 2
+          },
+          {
+            "q": {
+              "bg": "Кое се разпада най-бавно?",
+              "en": "Which breaks down most slowly?"
+            },
+            "options": [
+              {
+                "bg": "Хартията",
+                "en": "Paper"
+              },
+              {
+                "bg": "Ябълковата огризка",
+                "en": "An apple core"
+              },
+              {
+                "bg": "Стъклената бутилка",
+                "en": "A glass bottle"
+              },
+              {
+                "bg": "Памучната тениска",
+                "en": "A cotton T-shirt"
+              }
+            ],
+            "answer": 2
+          },
+          {
+            "q": {
+              "bg": "Какво са микропластмасите?",
+              "en": "What are microplastics?"
+            },
+            "options": [
+              {
+                "bg": "Малки парченца пластмаса",
+                "en": "Tiny bits of plastic"
+              },
+              {
+                "bg": "Малки рибки",
+                "en": "Tiny fish"
+              },
+              {
+                "bg": "Водорасли",
+                "en": "Seaweed"
+              },
+              {
+                "bg": "Пясък",
+                "en": "Sand"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Как помагаме най-много на морето?",
+              "en": "How do we help the sea most?"
+            },
+            "options": [
+              {
+                "bg": "Ползваме по-малко пластмаса и я рециклираме",
+                "en": "We use less plastic and recycle it"
+              },
+              {
+                "bg": "Купуваме повече бутилки",
+                "en": "We buy more bottles"
+              },
+              {
+                "bg": "Хвърляме боклука по-далеч",
+                "en": "We throw rubbish further"
+              },
+              {
+                "bg": "Палим го на плажа",
+                "en": "We burn it on the beach"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -293,6 +483,31 @@
             {
               "bg": "Афалина",
               "en": "Bottlenose dolphin"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какво правиш, ако видиш делфин, изхвърлен на брега?",
+            "en": "What do you do if you see a dolphin stranded on the shore?"
+          },
+          "options": [
+            {
+              "bg": "Звъня на 112 и казвам на възрастен",
+              "en": "I call 112 and tell an adult"
+            },
+            {
+              "bg": "Бутам го сам във водата",
+              "en": "I push it into the water myself"
+            },
+            {
+              "bg": "Снимам го и си тръгвам",
+              "en": "I take a photo and leave"
+            },
+            {
+              "bg": "Храня го",
+              "en": "I feed it"
             }
           ],
           "answer": 0

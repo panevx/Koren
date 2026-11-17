@@ -133,6 +133,70 @@
           "en": "After Svilengrad the Maritsa becomes the border between Greece and Türkiye and flows into the Aegean Sea."
         }
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Марица извира от Рила.",
+              "en": "The Maritsa rises in Rila."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – близо до Мусала.",
+              "en": "Yes – near Musala."
+            }
+          },
+          {
+            "text": {
+              "bg": "Марица тече през Горнотракийската низина.",
+              "en": "The Maritsa flows through the Upper Thracian Plain."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – там има много ниви и градини.",
+              "en": "Yes – there are many fields and gardens there."
+            }
+          },
+          {
+            "text": {
+              "bg": "Марица се влива в Черно море.",
+              "en": "The Maritsa flows into the Black Sea."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – в Бяло (Егейско) море.",
+              "en": "No – into the White (Aegean) Sea."
+            }
+          },
+          {
+            "text": {
+              "bg": "Пловдив е на Марица.",
+              "en": "Plovdiv is on the Maritsa."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – вторият по големина град у нас.",
+              "en": "Yes – our second largest city."
+            }
+          },
+          {
+            "text": {
+              "bg": "Марица извира от Витоша.",
+              "en": "The Maritsa rises on Vitosha."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – от Рила.",
+              "en": "No – in Rila."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -175,6 +239,27 @@
             "bg": "Тя тече на юг и на изток – към Гърция и Турция.",
             "en": "It flows south and east – towards Greece and Türkiye."
           }
+        },
+        {
+          "q": {
+            "bg": "Кой голям град е на Марица?",
+            "en": "Which big city is on the Maritsa?"
+          },
+          "options": [
+            {
+              "bg": "Пловдив",
+              "en": "Plovdiv"
+            },
+            {
+              "bg": "Варна",
+              "en": "Varna"
+            },
+            {
+              "bg": "Русе",
+              "en": "Ruse"
+            }
+          ],
+          "answer": 0
         }
       ]
     },
@@ -253,6 +338,111 @@
           "bg": "Тунджа и Арда се вливат в Марица отвъд границата, край Одрин.",
           "en": "The Tundzha and the Arda join the Maritsa beyond the border, near Edirne."
         }
+      },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Колко е дълга Марица общо?",
+              "en": "How long is the Maritsa in total?"
+            },
+            "options": [
+              {
+                "bg": "Около 47 км",
+                "en": "About 47 km"
+              },
+              {
+                "bg": "Около 470 км",
+                "en": "About 470 km"
+              },
+              {
+                "bg": "Около 2850 км",
+                "en": "About 2,850 km"
+              },
+              {
+                "bg": "Около 4700 км",
+                "en": "About 4,700 km"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Колко от Марица тече в България?",
+              "en": "How much of the Maritsa flows in Bulgaria?"
+            },
+            "options": [
+              {
+                "bg": "Около 32 км",
+                "en": "About 32 km"
+              },
+              {
+                "bg": "Около 320 км",
+                "en": "About 320 km"
+              },
+              {
+                "bg": "Около 470 км",
+                "en": "About 470 km"
+              },
+              {
+                "bg": "Около 1000 км",
+                "en": "About 1,000 km"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Между кои държави тече Марица след България?",
+              "en": "Between which countries does the Maritsa flow after Bulgaria?"
+            },
+            "options": [
+              {
+                "bg": "Гърция и Турция",
+                "en": "Greece and Turkey"
+              },
+              {
+                "bg": "Сърбия и Румъния",
+                "en": "Serbia and Romania"
+              },
+              {
+                "bg": "Румъния и Украйна",
+                "en": "Romania and Ukraine"
+              },
+              {
+                "bg": "Северна Македония и Албания",
+                "en": "North Macedonia and Albania"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Кой приток на Марица идва от Родопите?",
+              "en": "Which tributary of the Maritsa comes from the Rhodopes?"
+            },
+            "options": [
+              {
+                "bg": "Тунджа",
+                "en": "Tundzha"
+              },
+              {
+                "bg": "Искър",
+                "en": "Iskar"
+              },
+              {
+                "bg": "Арда",
+                "en": "Arda"
+              },
+              {
+                "bg": "Вит",
+                "en": "Vit"
+              }
+            ],
+            "answer": 2
+          }
+        ]
       },
       "check": [
         {

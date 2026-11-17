@@ -212,6 +212,74 @@
           }
         ]
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Коя река минава през много държави?",
+              "en": "Which river flows through many countries?"
+            },
+            "options": [
+              {
+                "bg": "Дунав",
+                "en": "Danube"
+              },
+              {
+                "bg": "Искър",
+                "en": "Iskar"
+              },
+              {
+                "bg": "Янтра",
+                "en": "Yantra"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Коя река тече само в България?",
+              "en": "Which river flows only in Bulgaria?"
+            },
+            "options": [
+              {
+                "bg": "Дунав",
+                "en": "Danube"
+              },
+              {
+                "bg": "Янтра",
+                "en": "Yantra"
+              },
+              {
+                "bg": "Марица",
+                "en": "Maritsa"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Коя река пробива Стара планина?",
+              "en": "Which river cuts through the Balkan Mountains?"
+            },
+            "options": [
+              {
+                "bg": "Искър",
+                "en": "Iskar"
+              },
+              {
+                "bg": "Марица",
+                "en": "Maritsa"
+              },
+              {
+                "bg": "Струма",
+                "en": "Struma"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -230,6 +298,48 @@
             {
               "bg": "Камчия",
               "en": "The Kamchia"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Коя от тези реки е най-дълга?",
+            "en": "Which of these rivers is the longest?"
+          },
+          "options": [
+            {
+              "bg": "Дунав",
+              "en": "Danube"
+            },
+            {
+              "bg": "Искър",
+              "en": "Iskar"
+            },
+            {
+              "bg": "Осъм",
+              "en": "Osam"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Къде се влива Струма?",
+            "en": "Where does the Struma flow into?"
+          },
+          "options": [
+            {
+              "bg": "В Бяло (Егейско) море",
+              "en": "The White (Aegean) Sea"
+            },
+            {
+              "bg": "В Черно море",
+              "en": "The Black Sea"
+            },
+            {
+              "bg": "В Дунав",
+              "en": "The Danube"
             }
           ],
           "answer": 0
@@ -284,6 +394,81 @@
           "bg": "Дунав ~2850 км, Марица ~470 км, Искър 368 км, Янтра 285 км.",
           "en": "Danube ~2,850 km, Maritsa ~470 km, Iskar 368 km, Yantra 285 km."
         }
+      },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно? Помни правилата за рекордите.",
+          "en": "True or not true? Remember the rules for records."
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Дунав е по-дълъг от Марица.",
+              "en": "The Danube is longer than the Maritsa."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – около шест пъти.",
+              "en": "Yes – about six times."
+            }
+          },
+          {
+            "text": {
+              "bg": "Искър е най-дългата река изцяло в България.",
+              "en": "The Iskar is the longest river entirely in Bulgaria."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – 368 км.",
+              "en": "Yes – 368 km."
+            }
+          },
+          {
+            "text": {
+              "bg": "Марица тече изцяло в България.",
+              "en": "The Maritsa flows entirely in Bulgaria."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – после минава между Гърция и Турция.",
+              "en": "No – later it flows between Greece and Turkey."
+            }
+          },
+          {
+            "text": {
+              "bg": "Янтра се влива в Дунав.",
+              "en": "The Yantra flows into the Danube."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – като повечето реки на север.",
+              "en": "Yes – like most rivers in the north."
+            }
+          },
+          {
+            "text": {
+              "bg": "Камчия се влива в Черно море.",
+              "en": "The Kamchia flows into the Black Sea."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – южно от Варна.",
+              "en": "Yes – south of Varna."
+            }
+          },
+          {
+            "text": {
+              "bg": "Струма извира от Рила.",
+              "en": "The Struma rises in Rila."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – Струма извира от Витоша.",
+              "en": "No – the Struma rises on Vitosha."
+            }
+          }
+        ]
       },
       "check": [
         {

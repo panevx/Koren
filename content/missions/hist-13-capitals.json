@@ -106,6 +106,55 @@
           }
         ]
       },
+      "extra": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи столицата с нейното време.",
+          "en": "Match the capital with its time."
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Плиска",
+              "en": "Pliska"
+            },
+            "b": {
+              "bg": "Първата столица",
+              "en": "The first capital"
+            }
+          },
+          {
+            "a": {
+              "bg": "Велики Преслав",
+              "en": "Veliki Preslav"
+            },
+            "b": {
+              "bg": "Столицата на цар Симеон",
+              "en": "Tsar Simeon’s capital"
+            }
+          },
+          {
+            "a": {
+              "bg": "Търново",
+              "en": "Tarnovo"
+            },
+            "b": {
+              "bg": "Столицата на Второто царство",
+              "en": "The capital of the Second Empire"
+            }
+          },
+          {
+            "a": {
+              "bg": "София",
+              "en": "Sofia"
+            },
+            "b": {
+              "bg": "Днешната столица",
+              "en": "Today’s capital"
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -124,6 +173,48 @@
             {
               "bg": "681 г.",
               "en": "681"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Коя е първата столица?",
+            "en": "What is the first capital?"
+          },
+          "options": [
+            {
+              "bg": "Плиска",
+              "en": "Pliska"
+            },
+            {
+              "bg": "София",
+              "en": "Sofia"
+            },
+            {
+              "bg": "Търново",
+              "en": "Tarnovo"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "На кой хълм в Търново е дворецът?",
+            "en": "On which hill in Tarnovo is the palace?"
+          },
+          "options": [
+            {
+              "bg": "Царевец",
+              "en": "Tsarevets"
+            },
+            {
+              "bg": "Витоша",
+              "en": "Vitosha"
+            },
+            {
+              "bg": "Шипка",
+              "en": "Shipka"
             }
           ],
           "answer": 0
@@ -198,6 +289,81 @@
           }
         ]
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Плиска е столица от 681 до 893 г.",
+              "en": "Pliska is the capital from 681 to 893."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – после столицата се мести в Преслав.",
+              "en": "Yes – then the capital moves to Preslav."
+            }
+          },
+          {
+            "text": {
+              "bg": "Столицата се мести в Преслав при цар Симеон.",
+              "en": "The capital moves to Preslav under Tsar Simeon."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – решено е през 893 г.",
+              "en": "Yes – decided in 893."
+            }
+          },
+          {
+            "text": {
+              "bg": "Охрид е столица на цар Самуил.",
+              "en": "Ohrid is the capital of Tsar Samuel."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – около 1000 г.",
+              "en": "Yes – around the year 1000."
+            }
+          },
+          {
+            "text": {
+              "bg": "Търново е столица на Първото българско царство.",
+              "en": "Tarnovo is the capital of the First Bulgarian Empire."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – на Второто (1185–1393).",
+              "en": "No – of the Second (1185–1393)."
+            }
+          },
+          {
+            "text": {
+              "bg": "Царевец е над река Янтра.",
+              "en": "Tsarevets stands above the Yantra River."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – реката го обикаля от три страни.",
+              "en": "Yes – the river curls round it on three sides."
+            }
+          },
+          {
+            "text": {
+              "bg": "София е столица още от Средновековието.",
+              "en": "Sofia has been the capital since the Middle Ages."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – София е столица от 1879 г.",
+              "en": "No – Sofia has been the capital since 1879."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -219,6 +385,56 @@
             }
           ],
           "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Коя година Търново става столица?",
+            "en": "In which year does Tarnovo become the capital?"
+          },
+          "options": [
+            {
+              "bg": "681",
+              "en": "681"
+            },
+            {
+              "bg": "893",
+              "en": "893"
+            },
+            {
+              "bg": "1185",
+              "en": "1185"
+            },
+            {
+              "bg": "1879",
+              "en": "1879"
+            }
+          ],
+          "answer": 2
+        },
+        {
+          "q": {
+            "bg": "От коя година София е столица?",
+            "en": "Since which year has Sofia been the capital?"
+          },
+          "options": [
+            {
+              "bg": "1185",
+              "en": "1185"
+            },
+            {
+              "bg": "1879",
+              "en": "1879"
+            },
+            {
+              "bg": "1944",
+              "en": "1944"
+            },
+            {
+              "bg": "681",
+              "en": "681"
+            }
+          ],
+          "answer": 1
         }
       ]
     }

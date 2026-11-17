@@ -135,6 +135,74 @@
           }
         ]
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Кой град е на Дунав?",
+              "en": "Which town is on the Danube?"
+            },
+            "options": [
+              {
+                "bg": "Русе",
+                "en": "Ruse"
+              },
+              {
+                "bg": "Пловдив",
+                "en": "Plovdiv"
+              },
+              {
+                "bg": "Стара Загора",
+                "en": "Stara Zagora"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Кой град е столицата?",
+              "en": "Which city is the capital?"
+            },
+            "options": [
+              {
+                "bg": "Варна",
+                "en": "Varna"
+              },
+              {
+                "bg": "София",
+                "en": "Sofia"
+              },
+              {
+                "bg": "Бургас",
+                "en": "Burgas"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Кой град е построен на хълмове – тепета?",
+              "en": "Which city is built on hills – the tepeta?"
+            },
+            "options": [
+              {
+                "bg": "Пловдив",
+                "en": "Plovdiv"
+              },
+              {
+                "bg": "Варна",
+                "en": "Varna"
+              },
+              {
+                "bg": "Видин",
+                "en": "Vidin"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -156,6 +224,48 @@
             }
           ],
           "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кой град е на южното Черноморие?",
+            "en": "Which city is on the southern Black Sea coast?"
+          },
+          "options": [
+            {
+              "bg": "Бургас",
+              "en": "Burgas"
+            },
+            {
+              "bg": "Плевен",
+              "en": "Pleven"
+            },
+            {
+              "bg": "Видин",
+              "en": "Vidin"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "В кой град е Царевец?",
+            "en": "In which town is Tsarevets?"
+          },
+          "options": [
+            {
+              "bg": "Габрово",
+              "en": "Gabrovo"
+            },
+            {
+              "bg": "Велико Търново",
+              "en": "Veliko Tarnovo"
+            },
+            {
+              "bg": "Шумен",
+              "en": "Shumen"
+            }
+          ],
+          "answer": 1
         }
       ]
     },
@@ -212,6 +322,81 @@
           "en": "Plovdiv is one of the oldest continuously inhabited cities in Europe."
         }
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Пловдив е сред най-старите градове в Европа.",
+              "en": "Plovdiv is among the oldest cities in Europe."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – хората живеят там от хиляди години.",
+              "en": "Yes – people have lived there for thousands of years."
+            }
+          },
+          {
+            "text": {
+              "bg": "Пловдив е построен на тепета.",
+              "en": "Plovdiv is built on the tepeta (hills)."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – затова го наричат „градът на тепетата“.",
+              "en": "Yes – so it is called “the city of the hills”."
+            }
+          },
+          {
+            "text": {
+              "bg": "Русе е най-големият български град на Дунав.",
+              "en": "Ruse is the biggest Bulgarian town on the Danube."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "Варна е столицата на България.",
+              "en": "Varna is the capital of Bulgaria."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – столицата е София. Варна е „морската столица“.",
+              "en": "No – the capital is Sofia. Varna is the “sea capital”."
+            }
+          },
+          {
+            "text": {
+              "bg": "Античният театър в Пловдив се ползва и днес.",
+              "en": "The ancient theatre in Plovdiv is still used today."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – за концерти и представления.",
+              "en": "Yes – for concerts and shows."
+            }
+          },
+          {
+            "text": {
+              "bg": "Габрово е на брега на морето.",
+              "en": "Gabrovo is on the seashore."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – в подножието на Стара планина.",
+              "en": "No – at the foot of the Balkan Mountains."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -251,6 +436,31 @@
             {
               "bg": "Силистра",
               "en": "Silistra"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Кой е вторият по големина град в България?",
+            "en": "Which is the second largest city in Bulgaria?"
+          },
+          "options": [
+            {
+              "bg": "Варна",
+              "en": "Varna"
+            },
+            {
+              "bg": "Пловдив",
+              "en": "Plovdiv"
+            },
+            {
+              "bg": "Бургас",
+              "en": "Burgas"
+            },
+            {
+              "bg": "Русе",
+              "en": "Ruse"
             }
           ],
           "answer": 1

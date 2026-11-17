@@ -66,6 +66,7 @@
   "mission.prev": "Назад",
   "mission.phase.story": "История",
   "mission.phase.game": "Игра",
+  "mission.phase.extra": "Предизвикателство",
   "mission.phase.check": "Проверка",
   "mission.phase.badge": "Значка",
   "mission.progress": "Стъпка {n} от {total}",

@@ -79,6 +79,74 @@
           }
         ]
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Кой лови риба с опашката си в леда?",
+              "en": "Who fishes with his tail in the ice?"
+            },
+            "options": [
+              {
+                "bg": "Кумчо Вълчо",
+                "en": "Uncle Wolf"
+              },
+              {
+                "bg": "Кума Лиса",
+                "en": "Auntie Fox"
+              },
+              {
+                "bg": "Зайо Байо",
+                "en": "Bunny Hare"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Каква е ябълката в приказката?",
+              "en": "What is the apple like in the tale?"
+            },
+            "options": [
+              {
+                "bg": "Зелена",
+                "en": "Green"
+              },
+              {
+                "bg": "Златна",
+                "en": "Golden"
+              },
+              {
+                "bg": "Сребърна",
+                "en": "Silver"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Кой изяжда житената питка?",
+              "en": "Who eats the wheat loaf?"
+            },
+            "options": [
+              {
+                "bg": "Вълкът",
+                "en": "The wolf"
+              },
+              {
+                "bg": "Заекът",
+                "en": "The hare"
+              },
+              {
+                "bg": "Лисицата",
+                "en": "The fox"
+              }
+            ],
+            "answer": 2
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -93,6 +161,48 @@
             {
               "bg": "Зайо Байо",
               "en": "Bunny"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кой е хитър в приказката с опашката в леда?",
+            "en": "Who is the clever one in the tale of the tail in the ice?"
+          },
+          "options": [
+            {
+              "bg": "Кума Лиса",
+              "en": "Auntie Fox"
+            },
+            {
+              "bg": "Кумчо Вълчо",
+              "en": "Uncle Wolf"
+            },
+            {
+              "bg": "Мечо",
+              "en": "Bruin"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какво става с опашката на вълка?",
+            "en": "What happens to the wolf’s tail?"
+          },
+          "options": [
+            {
+              "bg": "Замръзва в леда",
+              "en": "It freezes in the ice"
+            },
+            {
+              "bg": "Пораства",
+              "en": "It grows"
+            },
+            {
+              "bg": "Става златна",
+              "en": "It turns gold"
             }
           ],
           "answer": 0
@@ -156,6 +266,81 @@
           "en": "In many of our tales the youngest brother is the bravest."
         }
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "В „Златната ябълка“ най-малкият брат пази дървото.",
+              "en": "In “The Golden Apple” the youngest brother guards the tree."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – той не заспива.",
+              "en": "Yes – he stays awake."
+            }
+          },
+          {
+            "text": {
+              "bg": "В „Златната ябълка“ дървото ражда сребърни круши.",
+              "en": "In “The Golden Apple” the tree bears silver pears."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – златни ябълки.",
+              "en": "No – golden apples."
+            }
+          },
+          {
+            "text": {
+              "bg": "Кума Лиса често хитрува в приказките.",
+              "en": "Auntie Fox often plays tricks in the tales."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "В приказката с леда Кумчо Вълчо е по-хитър от лисицата.",
+              "en": "In the ice tale Uncle Wolf is cleverer than the fox."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – лисицата го подмамва.",
+              "en": "No – the fox tricks him."
+            }
+          },
+          {
+            "text": {
+              "bg": "В приказките често има три брата или три изпитания.",
+              "en": "Tales often have three brothers or three trials."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – тройката е любимо число в приказките.",
+              "en": "Yes – three is a favourite number in tales."
+            }
+          },
+          {
+            "text": {
+              "bg": "Народните приказки нямат известен автор.",
+              "en": "Folk tales have no known author."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – предават се от уста на уста.",
+              "en": "Yes – they pass from mouth to mouth."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -170,6 +355,56 @@
             {
               "bg": "Да пее на луната",
               "en": "To sing to the moon"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кой обикновено успява в приказките за трима братя?",
+            "en": "Who usually succeeds in tales of three brothers?"
+          },
+          "options": [
+            {
+              "bg": "Най-големият",
+              "en": "The eldest"
+            },
+            {
+              "bg": "Средният",
+              "en": "The middle one"
+            },
+            {
+              "bg": "Най-малкият",
+              "en": "The youngest"
+            },
+            {
+              "bg": "Никой",
+              "en": "Nobody"
+            }
+          ],
+          "answer": 2
+        },
+        {
+          "q": {
+            "bg": "Какво е народна приказка?",
+            "en": "What is a folk tale?"
+          },
+          "options": [
+            {
+              "bg": "Приказка, предавана от уста на уста",
+              "en": "A tale passed by word of mouth"
+            },
+            {
+              "bg": "Предаване по телевизията",
+              "en": "A TV programme"
+            },
+            {
+              "bg": "Роман от един писател",
+              "en": "A novel by one writer"
+            },
+            {
+              "bg": "Статия във вестник",
+              "en": "A newspaper article"
             }
           ],
           "answer": 0

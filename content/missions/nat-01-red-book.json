@@ -141,6 +141,70 @@
           "en": "The book is full – now you know whom to protect!"
         }
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "В Червената книга са редки растения и животни.",
+              "en": "The Red Book lists rare plants and animals."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – тези, които може да изчезнат.",
+              "en": "Yes – those that might disappear."
+            }
+          },
+          {
+            "text": {
+              "bg": "Лисицата е в Червената книга, защото е много рядка.",
+              "en": "The fox is in the Red Book because it is very rare."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – лисиците у нас са много.",
+              "en": "No – there are many foxes in our country."
+            }
+          },
+          {
+            "text": {
+              "bg": "Еделвайсът е рядко цвете.",
+              "en": "The edelweiss is a rare flower."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – и е защитен.",
+              "en": "Yes – and it is protected."
+            }
+          },
+          {
+            "text": {
+              "bg": "Видрата живее в чисти реки.",
+              "en": "The otter lives in clean rivers."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "Животните от Червената книга може да се ловят.",
+              "en": "The animals in the Red Book may be hunted."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – те са защитени от закона.",
+              "en": "No – they are protected by law."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -155,6 +219,48 @@
             {
               "bg": "За да ги ловим",
               "en": "To hunt them"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кое от тези е рядко животно?",
+            "en": "Which of these is a rare animal?"
+          },
+          "options": [
+            {
+              "bg": "Царски орел",
+              "en": "Eastern imperial eagle"
+            },
+            {
+              "bg": "Лисица",
+              "en": "Fox"
+            },
+            {
+              "bg": "Врабче",
+              "en": "Sparrow"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какво правим, ако видим рядко цвете?",
+            "en": "What do we do if we see a rare flower?"
+          },
+          "options": [
+            {
+              "bg": "Снимаме го и го оставяме",
+              "en": "Photograph it and leave it"
+            },
+            {
+              "bg": "Откъсваме го",
+              "en": "Pick it"
+            },
+            {
+              "bg": "Изкопаваме го",
+              "en": "Dig it up"
             }
           ],
           "answer": 0
@@ -234,6 +340,111 @@
           "en": "Think where each species lives."
         }
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Колко тома има Червената книга на България (2011)?",
+              "en": "How many volumes does the Red Book of Bulgaria (2011) have?"
+            },
+            "options": [
+              {
+                "bg": "1",
+                "en": "1"
+              },
+              {
+                "bg": "3",
+                "en": "3"
+              },
+              {
+                "bg": "10",
+                "en": "10"
+              },
+              {
+                "bg": "28",
+                "en": "28"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Защо загиват царски орли по електрическите стълбове?",
+              "en": "Why do imperial eagles die on electricity poles?"
+            },
+            "options": [
+              {
+                "bg": "От студ",
+                "en": "From cold"
+              },
+              {
+                "bg": "От токов удар",
+                "en": "From electric shock"
+              },
+              {
+                "bg": "От глад",
+                "en": "From hunger"
+              },
+              {
+                "bg": "От шум",
+                "en": "From noise"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Какво застрашава къдроглавия пеликан?",
+              "en": "What threatens the Dalmatian pelican?"
+            },
+            "options": [
+              {
+                "bg": "Снегът",
+                "en": "Snow"
+              },
+              {
+                "bg": "Пресушаването на блатата",
+                "en": "The draining of marshes"
+              },
+              {
+                "bg": "Скиорите",
+                "en": "Skiers"
+              },
+              {
+                "bg": "Вятърът",
+                "en": "Wind"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Какво значи „застрашен вид“?",
+              "en": "What does “endangered species” mean?"
+            },
+            "options": [
+              {
+                "bg": "Опасно за хората животно",
+                "en": "An animal dangerous to people"
+              },
+              {
+                "bg": "Вид, който може да изчезне",
+                "en": "A species that might die out"
+              },
+              {
+                "bg": "Домашно животно",
+                "en": "A pet"
+              },
+              {
+                "bg": "Вид, който има навсякъде",
+                "en": "A species found everywhere"
+              }
+            ],
+            "answer": 1
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -277,6 +488,31 @@
             {
               "bg": "Странджа",
               "en": "Strandzha"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Защо не бива да късаме еделвайс?",
+            "en": "Why must we not pick edelweiss?"
+          },
+          "options": [
+            {
+              "bg": "Рядък е и е защитен",
+              "en": "It is rare and protected"
+            },
+            {
+              "bg": "Боде",
+              "en": "It pricks"
+            },
+            {
+              "bg": "Мирише лошо",
+              "en": "It smells bad"
+            },
+            {
+              "bg": "Отровен е",
+              "en": "It is poisonous"
             }
           ],
           "answer": 0

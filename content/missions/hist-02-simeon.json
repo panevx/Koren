@@ -116,6 +116,74 @@
         },
         "showIcons": false
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Чий син е Симеон?",
+              "en": "Whose son is Simeon?"
+            },
+            "options": [
+              {
+                "bg": "На княз Борис I",
+                "en": "Prince Boris I"
+              },
+              {
+                "bg": "На хан Аспарух",
+                "en": "Khan Asparuh"
+              },
+              {
+                "bg": "На Васил Левски",
+                "en": "Vasil Levski"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Къде учи Симеон като млад?",
+              "en": "Where does Simeon study as a young man?"
+            },
+            "options": [
+              {
+                "bg": "В Рим",
+                "en": "In Rome"
+              },
+              {
+                "bg": "В Константинопол",
+                "en": "In Constantinople"
+              },
+              {
+                "bg": "В Париж",
+                "en": "In Paris"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Каква титла приема Симеон пръв от българските владетели?",
+              "en": "Which title does Simeon take, first of all Bulgarian rulers?"
+            },
+            "options": [
+              {
+                "bg": "Хан",
+                "en": "Khan"
+              },
+              {
+                "bg": "Цар",
+                "en": "Tsar"
+              },
+              {
+                "bg": "Крал",
+                "en": "King"
+              }
+            ],
+            "answer": 1
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -166,6 +234,27 @@
             "bg": "Името ѝ започва с „Велики“.",
             "en": "Its name starts with “Veliki”."
           }
+        },
+        {
+          "q": {
+            "bg": "През коя година Симеон става владетел?",
+            "en": "In which year does Simeon become ruler?"
+          },
+          "options": [
+            {
+              "bg": "893 г.",
+              "en": "893"
+            },
+            {
+              "bg": "681 г.",
+              "en": "681"
+            },
+            {
+              "bg": "1185 г.",
+              "en": "1185"
+            }
+          ],
+          "answer": 0
         }
       ]
     },
@@ -226,6 +315,81 @@
           "bg": "Гледай годините в скобите.",
           "en": "Look at the years in brackets."
         }
+      },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно? Внимавай с подробностите.",
+          "en": "True or not true? Watch the details."
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Симеон е първородният син на Борис I.",
+              "en": "Simeon is the first-born son of Boris I."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – той е трети син и е подготвян за духовник.",
+              "en": "No – he is the third son and was being prepared for the Church."
+            }
+          },
+          {
+            "text": {
+              "bg": "Битката при Ахелой е през 917 г.",
+              "en": "The Battle of Achelous is in 917."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – една от най-големите битки на Средновековието.",
+              "en": "Yes – one of the largest battles of the Middle Ages."
+            }
+          },
+          {
+            "text": {
+              "bg": "При Симеон столицата се мести от Плиска във Велики Преслав.",
+              "en": "Under Simeon the capital moves from Pliska to Veliki Preslav."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – решено е на Преславския събор през 893 г.",
+              "en": "Yes – decided at the Council of Preslav in 893."
+            }
+          },
+          {
+            "text": {
+              "bg": "Черноризец Храбър пише „История славянобългарска“.",
+              "en": "Chernorizets Hrabar writes the “Slavonic-Bulgarian History”."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – Храбър пише „За буквите“. „История славянобългарска“ е на Паисий, 900 години по-късно.",
+              "en": "No – Hrabar writes “On the Letters”. The “History” is by Paisius, 900 years later."
+            }
+          },
+          {
+            "text": {
+              "bg": "Йоан Екзарх е книжовник от Преслав.",
+              "en": "John the Exarch is a man of letters from Preslav."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – той работи в Преславската книжовна школа.",
+              "en": "Yes – he works in the Preslav Literary School."
+            }
+          },
+          {
+            "text": {
+              "bg": "Симеон умира през 927 г.",
+              "en": "Simeon dies in 927."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – след 34 години управление.",
+              "en": "Yes – after 34 years of rule."
+            }
+          }
+        ]
       },
       "check": [
         {

@@ -151,6 +151,70 @@
           "en": "Botev is named after the poet, and Cherni Vrah is above Sofia."
         }
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Мусала е в Рила.",
+              "en": "Musala is in Rila."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – най-високият връх у нас.",
+              "en": "Yes – our highest peak."
+            }
+          },
+          {
+            "text": {
+              "bg": "Вихрен е в Пирин.",
+              "en": "Vihren is in Pirin."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – най-високият в Пирин.",
+              "en": "Yes – the highest in Pirin."
+            }
+          },
+          {
+            "text": {
+              "bg": "Черни връх е на Витоша.",
+              "en": "Cherni Vrah is on Vitosha."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – до София.",
+              "en": "Yes – near Sofia."
+            }
+          },
+          {
+            "text": {
+              "bg": "Ботев е в Родопите.",
+              "en": "Botev is in the Rhodopes."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – в Стара планина.",
+              "en": "No – in the Balkan Mountains."
+            }
+          },
+          {
+            "text": {
+              "bg": "Голям Перелик е в Пирин.",
+              "en": "Golyam Perelik is in Pirin."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – в Родопите.",
+              "en": "No – in the Rhodopes."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -169,6 +233,48 @@
             {
               "bg": "Странджа",
               "en": "Strandzha"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кой е най-високият връх на Стара планина?",
+            "en": "Which is the highest peak of the Balkan Mountains?"
+          },
+          "options": [
+            {
+              "bg": "Ботев",
+              "en": "Botev"
+            },
+            {
+              "bg": "Мусала",
+              "en": "Musala"
+            },
+            {
+              "bg": "Вихрен",
+              "en": "Vihren"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "В коя планина е Голям Перелик?",
+            "en": "In which mountain is Golyam Perelik?"
+          },
+          "options": [
+            {
+              "bg": "Родопите",
+              "en": "The Rhodopes"
+            },
+            {
+              "bg": "Рила",
+              "en": "Rila"
+            },
+            {
+              "bg": "Витоша",
+              "en": "Vitosha"
             }
           ],
           "answer": 0
@@ -255,6 +361,111 @@
           }
         ]
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Коя планина дава името на Балканския полуостров?",
+              "en": "Which mountain gives its name to the Balkan Peninsula?"
+            },
+            "options": [
+              {
+                "bg": "Рила",
+                "en": "Rila"
+              },
+              {
+                "bg": "Стара планина (Балкан)",
+                "en": "The Balkan Mountains (Stara Planina)"
+              },
+              {
+                "bg": "Пирин",
+                "en": "Pirin"
+              },
+              {
+                "bg": "Родопите",
+                "en": "The Rhodopes"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Коя е най-голямата по площ планина в България?",
+              "en": "Which mountain covers the largest area in Bulgaria?"
+            },
+            "options": [
+              {
+                "bg": "Рила",
+                "en": "Rila"
+              },
+              {
+                "bg": "Пирин",
+                "en": "Pirin"
+              },
+              {
+                "bg": "Родопите",
+                "en": "The Rhodopes"
+              },
+              {
+                "bg": "Витоша",
+                "en": "Vitosha"
+              }
+            ],
+            "answer": 2
+          },
+          {
+            "q": {
+              "bg": "През коя година Витоша става първият природен парк на Балканите?",
+              "en": "In which year does Vitosha become the first nature park in the Balkans?"
+            },
+            "options": [
+              {
+                "bg": "1878",
+                "en": "1878"
+              },
+              {
+                "bg": "1934",
+                "en": "1934"
+              },
+              {
+                "bg": "1983",
+                "en": "1983"
+              },
+              {
+                "bg": "2007",
+                "en": "2007"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Коя планина е на границата с Турция?",
+              "en": "Which mountain lies on the border with Turkey?"
+            },
+            "options": [
+              {
+                "bg": "Странджа",
+                "en": "Strandzha"
+              },
+              {
+                "bg": "Беласица",
+                "en": "Belasitsa"
+              },
+              {
+                "bg": "Осогово",
+                "en": "Osogovo"
+              },
+              {
+                "bg": "Витоша",
+                "en": "Vitosha"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -294,6 +505,31 @@
             {
               "bg": "Родопи",
               "en": "The Rhodopes"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Кой е най-високият връх на Пирин?",
+            "en": "Which is the highest peak of Pirin?"
+          },
+          "options": [
+            {
+              "bg": "Мусала",
+              "en": "Musala"
+            },
+            {
+              "bg": "Вихрен",
+              "en": "Vihren"
+            },
+            {
+              "bg": "Ботев",
+              "en": "Botev"
+            },
+            {
+              "bg": "Черни връх",
+              "en": "Cherni Vrah"
             }
           ],
           "answer": 1

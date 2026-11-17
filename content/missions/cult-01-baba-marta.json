@@ -123,6 +123,70 @@
           "en": "We wear the martenitsa until we see a stork or a swallow – the first signs of spring. Then we hang it on a blossoming tree."
         }
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Баба Марта празнуваме на 1 март.",
+              "en": "We celebrate Baba Marta on 1 March."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – първия ден на март.",
+              "en": "Yes – on the first day of March."
+            }
+          },
+          {
+            "text": {
+              "bg": "Мартеницата е синя и жълта.",
+              "en": "The martenitsa is blue and yellow."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – тя е бяла и червена.",
+              "en": "No – it is white and red."
+            }
+          },
+          {
+            "text": {
+              "bg": "Белият цвят носи чистота, а червеният – здраве.",
+              "en": "White stands for purity and red for health."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – така казва традицията.",
+              "en": "Yes – so the tradition says."
+            }
+          },
+          {
+            "text": {
+              "bg": "Носим мартеницата, докато видим щъркел или лястовица.",
+              "en": "We wear the martenitsa until we see a stork or a swallow."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – или цъфнало дърво.",
+              "en": "Yes – or a tree in blossom."
+            }
+          },
+          {
+            "text": {
+              "bg": "Накрая хвърляме мартеницата в морето.",
+              "en": "In the end we throw the martenitsa into the sea."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – закачаме я на цъфнало дърво.",
+              "en": "No – we tie it to a blossoming tree."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -173,6 +237,27 @@
             "bg": "Името на празника е в поздрава.",
             "en": "The name of the holiday is in the greeting."
           }
+        },
+        {
+          "q": {
+            "bg": "Къде закачаме мартеницата накрая?",
+            "en": "Where do we tie the martenitsa in the end?"
+          },
+          "options": [
+            {
+              "bg": "На цъфнало дърво",
+              "en": "On a blossoming tree"
+            },
+            {
+              "bg": "В хладилника",
+              "en": "In the fridge"
+            },
+            {
+              "bg": "На колата",
+              "en": "On the car"
+            }
+          ],
+          "answer": 0
         }
       ]
     },
@@ -236,6 +321,111 @@
           "bg": "Започни от изработката и завърши с пролетта.",
           "en": "Start with making it and finish with spring."
         }
+      },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Коя от тези страни също има обичай за 1 март, вписан в ЮНЕСКО заедно с България?",
+              "en": "Which of these countries also has a 1 March custom inscribed by UNESCO together with Bulgaria?"
+            },
+            "options": [
+              {
+                "bg": "Испания",
+                "en": "Spain"
+              },
+              {
+                "bg": "Румъния",
+                "en": "Romania"
+              },
+              {
+                "bg": "Норвегия",
+                "en": "Norway"
+              },
+              {
+                "bg": "Япония",
+                "en": "Japan"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Какво посреща обичаят на 1 март?",
+              "en": "What does the 1 March custom welcome?"
+            },
+            "options": [
+              {
+                "bg": "Пролетта",
+                "en": "Spring"
+              },
+              {
+                "bg": "Края на лятото",
+                "en": "The end of summer"
+              },
+              {
+                "bg": "Жътвата",
+                "en": "The harvest"
+              },
+              {
+                "bg": "Новата година",
+                "en": "The New Year"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Каква е Баба Марта в преданията?",
+              "en": "What is Baba Marta like in folk tales?"
+            },
+            "options": [
+              {
+                "bg": "Добра фея",
+                "en": "A good fairy"
+              },
+              {
+                "bg": "Сприхава старица – когато е сърдита, времето е лошо",
+                "en": "A moody old woman – when she is angry, the weather is bad"
+              },
+              {
+                "bg": "Морско същество",
+                "en": "A sea creature"
+              },
+              {
+                "bg": "Царица на зимата",
+                "en": "The queen of winter"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "С какво свързват червения цвят на мартеницата?",
+              "en": "What is the red of the martenitsa linked with?"
+            },
+            "options": [
+              {
+                "bg": "Здраве",
+                "en": "Health"
+              },
+              {
+                "bg": "Тъга",
+                "en": "Sadness"
+              },
+              {
+                "bg": "Студ",
+                "en": "Cold"
+              },
+              {
+                "bg": "Нощ",
+                "en": "Night"
+              }
+            ],
+            "answer": 0
+          }
+        ]
       },
       "check": [
         {

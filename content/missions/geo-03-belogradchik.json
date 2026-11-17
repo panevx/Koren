@@ -134,6 +134,74 @@
           }
         ]
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "На какво приличат Белоградчишките скали?",
+              "en": "What do the Belogradchik Rocks look like?"
+            },
+            "options": [
+              {
+                "bg": "На хора и животни",
+                "en": "People and animals"
+              },
+              {
+                "bg": "На коли",
+                "en": "Cars"
+              },
+              {
+                "bg": "На кораби",
+                "en": "Ships"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Какъв цвят са скалите?",
+              "en": "What colour are the rocks?"
+            },
+            "options": [
+              {
+                "bg": "Червеникави",
+                "en": "Reddish"
+              },
+              {
+                "bg": "Сини",
+                "en": "Blue"
+              },
+              {
+                "bg": "Зелени",
+                "en": "Green"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Как се казва една от скалите?",
+              "en": "What is one of the rocks called?"
+            },
+            "options": [
+              {
+                "bg": "Слънцето",
+                "en": "The Sun"
+              },
+              {
+                "bg": "Мадоната",
+                "en": "The Madonna"
+              },
+              {
+                "bg": "Луната",
+                "en": "The Moon"
+              }
+            ],
+            "answer": 1
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -184,6 +252,27 @@
             "bg": "Скалите служат за стени.",
             "en": "The rocks work as walls."
           }
+        },
+        {
+          "q": {
+            "bg": "Колко високи са най-високите скали?",
+            "en": "How tall are the tallest rocks?"
+          },
+          "options": [
+            {
+              "bg": "До около 2 м",
+              "en": "Up to about 2 m"
+            },
+            {
+              "bg": "До около 200 м",
+              "en": "Up to about 200 m"
+            },
+            {
+              "bg": "До около 2000 м",
+              "en": "Up to about 2,000 m"
+            }
+          ],
+          "answer": 1
         }
       ]
     },
@@ -294,6 +383,81 @@
           }
         ]
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Червеният цвят на скалите идва от железни оксиди.",
+              "en": "The red colour of the rocks comes from iron oxides."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – както ръждата е червена.",
+              "en": "Yes – just as rust is red."
+            }
+          },
+          {
+            "text": {
+              "bg": "Скалите са се образували за няколко години.",
+              "en": "The rocks formed in a few years."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – за милиони години.",
+              "en": "No – over millions of years."
+            }
+          },
+          {
+            "text": {
+              "bg": "Крепостта използва скалите като естествени стени.",
+              "en": "The fortress uses the rocks as natural walls."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – стените се свързват със скалите.",
+              "en": "Yes – the walls join up with the rocks."
+            }
+          },
+          {
+            "text": {
+              "bg": "Първи строят крепостта римляните.",
+              "en": "The Romans are the first to build the fortress."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – после е разширявана.",
+              "en": "Yes – it was enlarged later."
+            }
+          },
+          {
+            "text": {
+              "bg": "В пещерата Магура има праисторически рисунки.",
+              "en": "The Magura Cave has prehistoric paintings."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – на хиляди години.",
+              "en": "Yes – thousands of years old."
+            }
+          },
+          {
+            "text": {
+              "bg": "Белоградчишките скали са в Родопите.",
+              "en": "The Belogradchik Rocks are in the Rhodopes."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – в северозападна България.",
+              "en": "No – in north-western Bulgaria."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -319,6 +483,56 @@
             "bg": "Пясъкът се е превърнал в камък.",
             "en": "Sand has turned into stone."
           }
+        },
+        {
+          "q": {
+            "bg": "Кой град е до скалите?",
+            "en": "Which town is next to the rocks?"
+          },
+          "options": [
+            {
+              "bg": "Белоградчик",
+              "en": "Belogradchik"
+            },
+            {
+              "bg": "Варна",
+              "en": "Varna"
+            },
+            {
+              "bg": "Бургас",
+              "en": "Burgas"
+            },
+            {
+              "bg": "Пловдив",
+              "en": "Plovdiv"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "С какво са рисувани рисунките в Магура?",
+            "en": "What were the Magura paintings made with?"
+          },
+          "options": [
+            {
+              "bg": "С маслени бои",
+              "en": "Oil paints"
+            },
+            {
+              "bg": "С прилепов тор (гуано)",
+              "en": "Bat droppings (guano)"
+            },
+            {
+              "bg": "С флумастери",
+              "en": "Felt-tip pens"
+            },
+            {
+              "bg": "Със злато",
+              "en": "Gold"
+            }
+          ],
+          "answer": 1
         }
       ]
     }

@@ -123,6 +123,70 @@
           }
         ]
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Еделвайсът расте високо по скалите.",
+              "en": "The edelweiss grows high on the rocks."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – в Пирин.",
+              "en": "Yes – in Pirin."
+            }
+          },
+          {
+            "text": {
+              "bg": "Пиринският чай може да се бере свободно в планината.",
+              "en": "Pirin tea may be picked freely in the mountains."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – защитен е. Купуваме отгледан в градина.",
+              "en": "No – it is protected. We buy it grown in gardens."
+            }
+          },
+          {
+            "text": {
+              "bg": "Родопският силивряк изсъхва и пак оживява след дъжд.",
+              "en": "The Rhodope silivryak dries up and comes back to life after rain."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – затова е толкова интересен.",
+              "en": "Yes – that is what makes it so special."
+            }
+          },
+          {
+            "text": {
+              "bg": "Редките цветя ги снимаме, а не ги късаме.",
+              "en": "We photograph rare flowers instead of picking them."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "Еделвайсът расте на плажа.",
+              "en": "The edelweiss grows on the beach."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – високо в планината.",
+              "en": "No – high in the mountains."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -144,6 +208,48 @@
             "bg": "Еделвайсът е защитен – остава в планината за всички.",
             "en": "The edelweiss is protected – it stays in the mountains for everyone."
           }
+        },
+        {
+          "q": {
+            "bg": "Къде расте еделвайсът?",
+            "en": "Where does the edelweiss grow?"
+          },
+          "options": [
+            {
+              "bg": "Високо по скалите",
+              "en": "High on the rocks"
+            },
+            {
+              "bg": "В морето",
+              "en": "In the sea"
+            },
+            {
+              "bg": "В пустинята",
+              "en": "In the desert"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какъв пирински чай купуваме?",
+            "en": "Which Pirin tea do we buy?"
+          },
+          "options": [
+            {
+              "bg": "Отгледан в градина",
+              "en": "Grown in a garden"
+            },
+            {
+              "bg": "Откъснат в планината",
+              "en": "Picked in the mountains"
+            },
+            {
+              "bg": "Никакъв – не съществува",
+              "en": "None – it does not exist"
+            }
+          ],
+          "answer": 0
         }
       ]
     },
@@ -242,6 +348,111 @@
           }
         ]
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Какво е реликт?",
+              "en": "What is a relict?"
+            },
+            "options": [
+              {
+                "bg": "Вид, оцелял от много стари времена",
+                "en": "A species surviving from very old times"
+              },
+              {
+                "bg": "Нов вид",
+                "en": "A new species"
+              },
+              {
+                "bg": "Изкуствено цвете",
+                "en": "An artificial flower"
+              },
+              {
+                "bg": "Вид от друга планета",
+                "en": "A species from another planet"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Откога расте силивряк у нас според учените?",
+              "en": "Since when has the silivryak grown here, according to scientists?"
+            },
+            "options": [
+              {
+                "bg": "От миналата година",
+                "en": "Since last year"
+              },
+              {
+                "bg": "От 1878 г.",
+                "en": "Since 1878"
+              },
+              {
+                "bg": "Още преди ледниковия период",
+                "en": "Since before the Ice Age"
+              },
+              {
+                "bg": "От 2000 г.",
+                "en": "Since 2000"
+              }
+            ],
+            "answer": 2
+          },
+          {
+            "q": {
+              "bg": "Защо пиринският чай не се бере в планината?",
+              "en": "Why is Pirin tea not picked in the mountains?"
+            },
+            "options": [
+              {
+                "bg": "Отровен е",
+                "en": "It is poisonous"
+              },
+              {
+                "bg": "Рядък е и е защитен",
+                "en": "It is rare and protected"
+              },
+              {
+                "bg": "Не мирише",
+                "en": "It has no smell"
+              },
+              {
+                "bg": "Цъфти само зимата",
+                "en": "It flowers only in winter"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Къде можем да видим много редки растения, без да им вредим?",
+              "en": "Where can we see many rare plants without harming them?"
+            },
+            "options": [
+              {
+                "bg": "В ботаническа градина",
+                "en": "In a botanical garden"
+              },
+              {
+                "bg": "На паркинга",
+                "en": "In a car park"
+              },
+              {
+                "bg": "В супермаркета",
+                "en": "In a supermarket"
+              },
+              {
+                "bg": "В мазето",
+                "en": "In the cellar"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -260,6 +471,56 @@
             {
               "bg": "Расте в морето",
               "en": "It grows in the sea"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кое от тези вреди на природата?",
+            "en": "Which of these harms nature?"
+          },
+          "options": [
+            {
+              "bg": "Да снимам цвете",
+              "en": "Photographing a flower"
+            },
+            {
+              "bg": "Да паля огън в гората",
+              "en": "Lighting a fire in the forest"
+            },
+            {
+              "bg": "Да нося боклука си обратно",
+              "en": "Taking my rubbish back"
+            },
+            {
+              "bg": "Да вървя по пътеката",
+              "en": "Walking on the path"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Кога силивряк отново се раззеленява?",
+            "en": "When does the silivryak turn green again?"
+          },
+          "options": [
+            {
+              "bg": "След дъжд",
+              "en": "After rain"
+            },
+            {
+              "bg": "В хладилник",
+              "en": "In a fridge"
+            },
+            {
+              "bg": "На силно слънце",
+              "en": "In strong sun"
+            },
+            {
+              "bg": "Никога",
+              "en": "Never"
             }
           ],
           "answer": 0

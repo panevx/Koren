@@ -111,6 +111,70 @@
           }
         ]
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Георги Иванов е първият български космонавт.",
+              "en": "Georgi Ivanov is the first Bulgarian cosmonaut."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – през 1979 г.",
+              "en": "Yes – in 1979."
+            }
+          },
+          {
+            "text": {
+              "bg": "Юрий Гагарин е първият човек в космоса.",
+              "en": "Yuri Gagarin is the first person in space."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – през 1961 г.",
+              "en": "Yes – in 1961."
+            }
+          },
+          {
+            "text": {
+              "bg": "Георги Иванов стъпва на Луната.",
+              "en": "Georgi Ivanov walks on the Moon."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – първият на Луната е Нийл Армстронг.",
+              "en": "No – the first on the Moon is Neil Armstrong."
+            }
+          },
+          {
+            "text": {
+              "bg": "Александър Александров е първият българин в космоса.",
+              "en": "Alexander Alexandrov is the first Bulgarian in space."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – той е вторият, през 1988 г.",
+              "en": "No – he is the second, in 1988."
+            }
+          },
+          {
+            "text": {
+              "bg": "В космическа станция нещата плуват във въздуха.",
+              "en": "In a space station things float in the air."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – там почти няма тегло.",
+              "en": "Yes – there is almost no weight there."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -128,6 +192,48 @@
             }
           ],
           "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кой е първият човек в космоса?",
+            "en": "Who is the first person in space?"
+          },
+          "options": [
+            {
+              "bg": "Юрий Гагарин",
+              "en": "Yuri Gagarin"
+            },
+            {
+              "bg": "Нийл Армстронг",
+              "en": "Neil Armstrong"
+            },
+            {
+              "bg": "Георги Иванов",
+              "en": "Georgi Ivanov"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кой стъпва пръв на Луната?",
+            "en": "Who walks on the Moon first?"
+          },
+          "options": [
+            {
+              "bg": "Георги Иванов",
+              "en": "Georgi Ivanov"
+            },
+            {
+              "bg": "Нийл Армстронг",
+              "en": "Neil Armstrong"
+            },
+            {
+              "bg": "Юрий Гагарин",
+              "en": "Yuri Gagarin"
+            }
+          ],
+          "answer": 1
         }
       ]
     },
@@ -199,6 +305,115 @@
           }
         ]
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "С кой кораб лети Георги Иванов?",
+              "en": "In which spacecraft does Georgi Ivanov fly?"
+            },
+            "options": [
+              {
+                "bg": "„Аполо 11“",
+                "en": "“Apollo 11”"
+              },
+              {
+                "bg": "„Союз 33“",
+                "en": "“Soyuz 33”"
+              },
+              {
+                "bg": "„Восток 1“",
+                "en": "“Vostok 1”"
+              },
+              {
+                "bg": "Совалка",
+                "en": "A Space Shuttle"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "На коя станция работи Александър Александров?",
+              "en": "At which station does Alexander Alexandrov work?"
+            },
+            "options": [
+              {
+                "bg": "„Мир“",
+                "en": "“Mir”"
+              },
+              {
+                "bg": "МКС",
+                "en": "The ISS"
+              },
+              {
+                "bg": "„Скайлаб“",
+                "en": "“Skylab”"
+              },
+              {
+                "bg": "„Тянгун“",
+                "en": "“Tiangong”"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Колко години минават от полета на Гагарин до полета на Георги Иванов?",
+              "en": "How many years pass from Gagarin’s flight to Georgi Ivanov’s?"
+            },
+            "options": [
+              {
+                "bg": "8",
+                "en": "8"
+              },
+              {
+                "bg": "18",
+                "en": "18"
+              },
+              {
+                "bg": "28",
+                "en": "28"
+              },
+              {
+                "bg": "1",
+                "en": "1"
+              }
+            ],
+            "answer": 1,
+            "hint": {
+              "bg": "1979 минус 1961.",
+              "en": "1979 minus 1961."
+            }
+          },
+          {
+            "q": {
+              "bg": "През коя година лети Александров?",
+              "en": "In which year does Alexandrov fly?"
+            },
+            "options": [
+              {
+                "bg": "1961",
+                "en": "1961"
+              },
+              {
+                "bg": "1979",
+                "en": "1979"
+              },
+              {
+                "bg": "1988",
+                "en": "1988"
+              },
+              {
+                "bg": "2000",
+                "en": "2000"
+              }
+            ],
+            "answer": 2
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -220,6 +435,56 @@
             }
           ],
           "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Защо „Союз 33“ не успява да се скачи със станцията?",
+            "en": "Why does “Soyuz 33” fail to dock with the station?"
+          },
+          "options": [
+            {
+              "bg": "Повреда в двигателя",
+              "en": "An engine failure"
+            },
+            {
+              "bg": "Беше твърде рано",
+              "en": "It was too early"
+            },
+            {
+              "bg": "Космонавтите заспаха",
+              "en": "The cosmonauts fell asleep"
+            },
+            {
+              "bg": "Станцията беше затворена",
+              "en": "The station was closed"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Колко български космонавти са летели в космоса?",
+            "en": "How many Bulgarian cosmonauts have flown in space?"
+          },
+          "options": [
+            {
+              "bg": "Един",
+              "en": "One"
+            },
+            {
+              "bg": "Двама",
+              "en": "Two"
+            },
+            {
+              "bg": "Петима",
+              "en": "Five"
+            },
+            {
+              "bg": "Нито един",
+              "en": "None"
+            }
+          ],
+          "answer": 1
         }
       ]
     }

@@ -148,6 +148,70 @@
           }
         ]
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Траките живеят по нашите земи преди повече от 2000 години.",
+              "en": "The Thracians lived in our lands more than 2,000 years ago."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – много преди да се появи българската държава.",
+              "en": "Yes – long before the Bulgarian state appeared."
+            }
+          },
+          {
+            "text": {
+              "bg": "Панагюрското съкровище има 9 златни съда.",
+              "en": "The Panagyurishte treasure has 9 gold vessels."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – всичките от чисто злато.",
+              "en": "Yes – all of pure gold."
+            }
+          },
+          {
+            "text": {
+              "bg": "Рогозенското съкровище е от злато.",
+              "en": "The Rogozen treasure is made of gold."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – то е от 165 сребърни съда.",
+              "en": "No – it is 165 silver vessels."
+            }
+          },
+          {
+            "text": {
+              "bg": "Вълчитрънското съкровище е най-тежкото.",
+              "en": "The Valchitran treasure is the heaviest."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – около 12,5 кг злато.",
+              "en": "Yes – about 12.5 kg of gold."
+            }
+          },
+          {
+            "text": {
+              "bg": "Съкровищата са у тези, които са ги намерили.",
+              "en": "The treasures belong to the people who found them."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – пазят се в музеи, защото са наследство на всички.",
+              "en": "No – they are kept in museums because they belong to everyone."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -162,6 +226,48 @@
             {
               "bg": "Морето го изхвърлило",
               "en": "The sea washed it ashore"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "От какъв метал са съдовете от Рогозен?",
+            "en": "What metal are the Rogozen vessels made of?"
+          },
+          "options": [
+            {
+              "bg": "Сребро",
+              "en": "Silver"
+            },
+            {
+              "bg": "Злато",
+              "en": "Gold"
+            },
+            {
+              "bg": "Желязо",
+              "en": "Iron"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Колко съда има в Панагюрското съкровище?",
+            "en": "How many vessels are in the Panagyurishte treasure?"
+          },
+          "options": [
+            {
+              "bg": "9",
+              "en": "9"
+            },
+            {
+              "bg": "165",
+              "en": "165"
+            },
+            {
+              "bg": "2",
+              "en": "2"
             }
           ],
           "answer": 0
@@ -212,6 +318,111 @@
           "en": "Valchitran – Bronze Age; Rogozen – 5th–4th c. BC; Panagyurishte – 4th–3rd c. BC."
         }
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Колко тежи Вълчитрънското съкровище?",
+              "en": "How heavy is the Valchitran treasure?"
+            },
+            "options": [
+              {
+                "bg": "Около 100 г",
+                "en": "About 100 g"
+              },
+              {
+                "bg": "Около 1 кг",
+                "en": "About 1 kg"
+              },
+              {
+                "bg": "Около 12,5 кг",
+                "en": "About 12.5 kg"
+              },
+              {
+                "bg": "Около 50 кг",
+                "en": "About 50 kg"
+              }
+            ],
+            "answer": 2
+          },
+          {
+            "q": {
+              "bg": "От коя епоха е Вълчитрънското съкровище?",
+              "en": "Which age is the Valchitran treasure from?"
+            },
+            "options": [
+              {
+                "bg": "Каменната",
+                "en": "The Stone Age"
+              },
+              {
+                "bg": "Бронзовата",
+                "en": "The Bronze Age"
+              },
+              {
+                "bg": "Средновековието",
+                "en": "The Middle Ages"
+              },
+              {
+                "bg": "Новото време",
+                "en": "Modern times"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Кога е намерено Панагюрското съкровище?",
+              "en": "When was the Panagyurishte treasure found?"
+            },
+            "options": [
+              {
+                "bg": "1878 г.",
+                "en": "1878"
+              },
+              {
+                "bg": "1900 г.",
+                "en": "1900"
+              },
+              {
+                "bg": "1949 г.",
+                "en": "1949"
+              },
+              {
+                "bg": "1985 г.",
+                "en": "1985"
+              }
+            ],
+            "answer": 2
+          },
+          {
+            "q": {
+              "bg": "Колко съда има Рогозенското съкровище?",
+              "en": "How many vessels are in the Rogozen treasure?"
+            },
+            "options": [
+              {
+                "bg": "9",
+                "en": "9"
+              },
+              {
+                "bg": "13",
+                "en": "13"
+              },
+              {
+                "bg": "165",
+                "en": "165"
+              },
+              {
+                "bg": "1000",
+                "en": "1000"
+              }
+            ],
+            "answer": 2
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -250,6 +461,31 @@
             }
           ],
           "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кое съкровище е най-старото?",
+            "en": "Which treasure is the oldest?"
+          },
+          "options": [
+            {
+              "bg": "Панагюрското",
+              "en": "Panagyurishte"
+            },
+            {
+              "bg": "Рогозенското",
+              "en": "Rogozen"
+            },
+            {
+              "bg": "Вълчитрънското",
+              "en": "Valchitran"
+            },
+            {
+              "bg": "Всички са от една година",
+              "en": "All are from the same year"
+            }
+          ],
+          "answer": 2
         }
       ]
     }

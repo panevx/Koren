@@ -173,6 +173,70 @@
           "en": "We say “Dovizhdane” when we leave."
         }
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Когато срещнем някого, казваме „Здравей!“.",
+              "en": "When we meet someone we say “Zdravey!” (Hello!)."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "Вечер преди сън казваме „Добро утро!“.",
+              "en": "In the evening before bed we say “Dobro utro!” (Good morning!)."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – казваме „Лека нощ!“.",
+              "en": "No – we say “Leka nosht!” (Good night!)."
+            }
+          },
+          {
+            "text": {
+              "bg": "„Благодаря“ казваме, когато някой ни помогне.",
+              "en": "We say “Blagodarya” (Thank you) when someone helps us."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "„Моля“ е учтива дума.",
+              "en": "“Molya” (Please) is a polite word."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – с нея молим учтиво.",
+              "en": "Yes – we use it to ask politely."
+            }
+          },
+          {
+            "text": {
+              "bg": "Когато си тръгваме, казваме „Добър ден!“.",
+              "en": "When we leave we say “Dobar den!” (Good day!)."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – казваме „Довиждане!“.",
+              "en": "No – we say “Dovizhdane!” (Goodbye!)."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -223,6 +287,27 @@
             "bg": "В поздрава има думата „утро“.",
             "en": "The greeting has the word “утро” (morning)."
           }
+        },
+        {
+          "q": {
+            "bg": "Какво казваме вечер преди сън?",
+            "en": "What do we say in the evening before bed?"
+          },
+          "options": [
+            {
+              "bg": "Лека нощ",
+              "en": "Good night"
+            },
+            {
+              "bg": "Добро утро",
+              "en": "Good morning"
+            },
+            {
+              "bg": "Добър ден",
+              "en": "Good day"
+            }
+          ],
+          "answer": 0
         }
       ]
     },
@@ -333,6 +418,115 @@
           }
         ]
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Кое е множественото число на „човек“?",
+              "en": "What is the plural of “chovek” (person)?"
+            },
+            "options": [
+              {
+                "bg": "човекове",
+                "en": "chovekove"
+              },
+              {
+                "bg": "хора",
+                "en": "hora"
+              },
+              {
+                "bg": "човеки",
+                "en": "choveki"
+              },
+              {
+                "bg": "човеци",
+                "en": "chovetsi"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Кое е правилно: „___ е голям.“",
+              "en": "Which is correct: “___ is big.”"
+            },
+            "options": [
+              {
+                "bg": "Градът",
+                "en": "Gradat"
+              },
+              {
+                "bg": "Града",
+                "en": "Grada"
+              },
+              {
+                "bg": "Градта",
+                "en": "Gradta"
+              },
+              {
+                "bg": "Градо",
+                "en": "Grado"
+              }
+            ],
+            "answer": 0,
+            "hint": {
+              "bg": "Подлогът получава пълен член: -ът.",
+              "en": "The subject takes the full article: -ът."
+            }
+          },
+          {
+            "q": {
+              "bg": "Кое е умалителното на „стол“?",
+              "en": "What is the diminutive of “stol” (chair)?"
+            },
+            "options": [
+              {
+                "bg": "столище",
+                "en": "stolishte"
+              },
+              {
+                "bg": "столар",
+                "en": "stolar"
+              },
+              {
+                "bg": "столче",
+                "en": "stolche"
+              },
+              {
+                "bg": "столен",
+                "en": "stolen"
+              }
+            ],
+            "answer": 2
+          },
+          {
+            "q": {
+              "bg": "Коя дума е прилагателно име?",
+              "en": "Which word is an adjective?"
+            },
+            "options": [
+              {
+                "bg": "бягам",
+                "en": "byagam (I run)"
+              },
+              {
+                "bg": "красив",
+                "en": "krasiv (beautiful)"
+              },
+              {
+                "bg": "бързо",
+                "en": "barzo (quickly)"
+              },
+              {
+                "bg": "маса",
+                "en": "masa (table)"
+              }
+            ],
+            "answer": 1
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -383,6 +577,31 @@
             "bg": "Умалителното звучи мило и малко.",
             "en": "A diminutive sounds small and sweet."
           }
+        },
+        {
+          "q": {
+            "bg": "Имат ли падежи съществителните имена в българския език?",
+            "en": "Do Bulgarian nouns have cases?"
+          },
+          "options": [
+            {
+              "bg": "Не, нямат",
+              "en": "No, they do not"
+            },
+            {
+              "bg": "Да, шест",
+              "en": "Yes, six"
+            },
+            {
+              "bg": "Да, седем",
+              "en": "Yes, seven"
+            },
+            {
+              "bg": "Да, три",
+              "en": "Yes, three"
+            }
+          ],
+          "answer": 0
         }
       ]
     }

@@ -109,6 +109,70 @@
           }
         ]
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Питката бяга и се търкаля.",
+              "en": "The loaf runs away and rolls."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – и пее песничка.",
+              "en": "Yes – and sings a little song."
+            }
+          },
+          {
+            "text": {
+              "bg": "Питката среща заека, вълка и мечката.",
+              "en": "The loaf meets the hare, the wolf and the bear."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – и бяга от всички.",
+              "en": "Yes – and runs from them all."
+            }
+          },
+          {
+            "text": {
+              "bg": "Мечката изяжда питката.",
+              "en": "The bear eats the loaf."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – лисицата.",
+              "en": "No – the fox does."
+            }
+          },
+          {
+            "text": {
+              "bg": "Лисицата хваща питката с хитрост.",
+              "en": "The fox catches the loaf by a trick."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – кара я да се приближи.",
+              "en": "Yes – she gets it to come closer."
+            }
+          },
+          {
+            "text": {
+              "bg": "Дядото меси питката.",
+              "en": "Grandpa kneads the loaf."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – бабата.",
+              "en": "No – Grandma does."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -123,6 +187,48 @@
             {
               "bg": "Тича по-бързо",
               "en": "She runs faster"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кой меси питката?",
+            "en": "Who kneads the loaf?"
+          },
+          "options": [
+            {
+              "bg": "Бабата",
+              "en": "Grandma"
+            },
+            {
+              "bg": "Дядото",
+              "en": "Grandpa"
+            },
+            {
+              "bg": "Лисицата",
+              "en": "The fox"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какво прави питката, докато бяга?",
+            "en": "What does the loaf do while running?"
+          },
+          "options": [
+            {
+              "bg": "Пее песничка",
+              "en": "Sings a song"
+            },
+            {
+              "bg": "Спи",
+              "en": "Sleeps"
+            },
+            {
+              "bg": "Плаче",
+              "en": "Cries"
             }
           ],
           "answer": 0
@@ -174,6 +280,111 @@
           }
         ]
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Какво е кулминация?",
+              "en": "What is the climax?"
+            },
+            "options": [
+              {
+                "bg": "Началото",
+                "en": "The beginning"
+              },
+              {
+                "bg": "Най-напрегнатият момент",
+                "en": "The most tense moment"
+              },
+              {
+                "bg": "Краят",
+                "en": "The end"
+              },
+              {
+                "bg": "Заглавието",
+                "en": "The title"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Какъв е недостатъкът на питката?",
+              "en": "What is the loaf’s flaw?"
+            },
+            "options": [
+              {
+                "bg": "Мързел",
+                "en": "Laziness"
+              },
+              {
+                "bg": "Самохвалство",
+                "en": "Boastfulness"
+              },
+              {
+                "bg": "Страх",
+                "en": "Fear"
+              },
+              {
+                "bg": "Алчност",
+                "en": "Greed"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Колко пъти питката среща животно, преди лисицата?",
+              "en": "How many times does the loaf meet an animal before the fox?"
+            },
+            "options": [
+              {
+                "bg": "Веднъж",
+                "en": "Once"
+              },
+              {
+                "bg": "Три пъти",
+                "en": "Three times"
+              },
+              {
+                "bg": "Десет пъти",
+                "en": "Ten times"
+              },
+              {
+                "bg": "Нито веднъж",
+                "en": "Never"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Как започват много български приказки?",
+              "en": "How do many Bulgarian tales begin?"
+            },
+            "options": [
+              {
+                "bg": "„Имало едно време…“",
+                "en": "“Once upon a time…”"
+              },
+              {
+                "bg": "„Здравейте, зрители!“",
+                "en": "“Hello, viewers!”"
+              },
+              {
+                "bg": "„В далечния космос…“",
+                "en": "“In deep space…”"
+              },
+              {
+                "bg": "„Скъпи дневнико…“",
+                "en": "“Dear diary…”"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -188,6 +399,56 @@
             {
               "bg": "Питките са вкусни",
               "en": "Loaves are tasty"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Как се казва частта, в която започва действието?",
+            "en": "What is the part where the action starts called?"
+          },
+          "options": [
+            {
+              "bg": "Край",
+              "en": "Ending"
+            },
+            {
+              "bg": "Поука",
+              "en": "Moral"
+            },
+            {
+              "bg": "Завръзка",
+              "en": "Inciting incident"
+            },
+            {
+              "bg": "Заглавие",
+              "en": "Title"
+            }
+          ],
+          "answer": 2
+        },
+        {
+          "q": {
+            "bg": "Защо лисицата моли питката да се приближи?",
+            "en": "Why does the fox ask the loaf to come closer?"
+          },
+          "options": [
+            {
+              "bg": "За да я чуе по-добре – а всъщност да я изяде",
+              "en": "To hear her better – but really to eat her"
+            },
+            {
+              "bg": "За да ѝ помогне",
+              "en": "To help her"
+            },
+            {
+              "bg": "За да я заведе вкъщи",
+              "en": "To take her home"
+            },
+            {
+              "bg": "За да играят",
+              "en": "To play"
             }
           ],
           "answer": 0

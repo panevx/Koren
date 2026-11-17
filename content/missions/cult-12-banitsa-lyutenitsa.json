@@ -191,6 +191,70 @@
           "en": "The lyutenitsa is in the jars – until spring!"
         }
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Лютеницата се прави от чушки и домати.",
+              "en": "Lyutenitsa is made of peppers and tomatoes."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – печени и смлени.",
+              "en": "Yes – roasted and ground."
+            }
+          },
+          {
+            "text": {
+              "bg": "Лютеница се прави наесен.",
+              "en": "Lyutenitsa is made in autumn."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – когато чушките са узрели.",
+              "en": "Yes – when the peppers are ripe."
+            }
+          },
+          {
+            "text": {
+              "bg": "Баницата се прави с кори и сирене.",
+              "en": "Banitsa is made with filo sheets and cheese."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – и с яйца.",
+              "en": "Yes – and eggs."
+            }
+          },
+          {
+            "text": {
+              "bg": "В новогодишната баница слагаме мартеници.",
+              "en": "We put martenitsi into the New Year banitsa."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – слагаме късмети.",
+              "en": "No – we put lucky charms."
+            }
+          },
+          {
+            "text": {
+              "bg": "Чушките за лютеница не се пекат.",
+              "en": "The peppers for lyutenitsa are not roasted."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – пекат се, за да се обелят.",
+              "en": "No – they are roasted so they can be peeled."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -205,6 +269,48 @@
             {
               "bg": "През зимата",
               "en": "In winter"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какво се пече в двора за лютеница?",
+            "en": "What is roasted in the yard for lyutenitsa?"
+          },
+          "options": [
+            {
+              "bg": "Чушки",
+              "en": "Peppers"
+            },
+            {
+              "bg": "Ябълки",
+              "en": "Apples"
+            },
+            {
+              "bg": "Хляб",
+              "en": "Bread"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "С какво е плънката на баницата?",
+            "en": "What is the banitsa filling?"
+          },
+          "options": [
+            {
+              "bg": "Сирене и яйца",
+              "en": "Cheese and eggs"
+            },
+            {
+              "bg": "Шоколад",
+              "en": "Chocolate"
+            },
+            {
+              "bg": "Ориз",
+              "en": "Rice"
             }
           ],
           "answer": 0
@@ -316,6 +422,111 @@
           "en": "Happy New Year! Who will find the charm for good health?"
         }
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Какво пише в късметите в баницата?",
+              "en": "What is written in the lucky charms in the banitsa?"
+            },
+            "options": [
+              {
+                "bg": "Пожелания за новата година",
+                "en": "Wishes for the new year"
+              },
+              {
+                "bg": "Рецепти",
+                "en": "Recipes"
+              },
+              {
+                "bg": "Задачи по математика",
+                "en": "Maths problems"
+              },
+              {
+                "bg": "Адреси",
+                "en": "Addresses"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Кои зеленчуци са основни в лютеницата?",
+              "en": "Which vegetables are the base of lyutenitsa?"
+            },
+            "options": [
+              {
+                "bg": "Картофи и лук",
+                "en": "Potatoes and onion"
+              },
+              {
+                "bg": "Чушки и домати",
+                "en": "Peppers and tomatoes"
+              },
+              {
+                "bg": "Зеле и моркови",
+                "en": "Cabbage and carrots"
+              },
+              {
+                "bg": "Тикви и царевица",
+                "en": "Pumpkins and corn"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Как се наричат тънките листове тесто за баница?",
+              "en": "What are the thin pastry sheets for banitsa called?"
+            },
+            "options": [
+              {
+                "bg": "Питки",
+                "en": "Flatbreads"
+              },
+              {
+                "bg": "Палачинки",
+                "en": "Pancakes"
+              },
+              {
+                "bg": "Кори",
+                "en": "Kori (filo sheets)"
+              },
+              {
+                "bg": "Пелмени",
+                "en": "Dumplings"
+              }
+            ],
+            "answer": 2
+          },
+          {
+            "q": {
+              "bg": "С какво се пълни тиквеникът?",
+              "en": "What is tikvenik filled with?"
+            },
+            "options": [
+              {
+                "bg": "С тиква",
+                "en": "Pumpkin"
+              },
+              {
+                "bg": "С месо",
+                "en": "Meat"
+              },
+              {
+                "bg": "С риба",
+                "en": "Fish"
+              },
+              {
+                "bg": "С ориз",
+                "en": "Rice"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -330,6 +541,56 @@
             {
               "bg": "Мартеници",
               "en": "Martenitsi"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "В какво се пази лютеницата за зимата?",
+            "en": "What is lyutenitsa kept in for the winter?"
+          },
+          "options": [
+            {
+              "bg": "В буркани",
+              "en": "Jars"
+            },
+            {
+              "bg": "В торби",
+              "en": "Bags"
+            },
+            {
+              "bg": "В кутии за обувки",
+              "en": "Shoe boxes"
+            },
+            {
+              "bg": "В бутилки за вода",
+              "en": "Water bottles"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кога се яде баница с късмети?",
+            "en": "When is banitsa with lucky charms eaten?"
+          },
+          "options": [
+            {
+              "bg": "На Нова година",
+              "en": "At New Year"
+            },
+            {
+              "bg": "На 1 март",
+              "en": "On 1 March"
+            },
+            {
+              "bg": "На Гергьовден",
+              "en": "On St George’s Day"
+            },
+            {
+              "bg": "На 24 май",
+              "en": "On 24 May"
             }
           ],
           "answer": 0

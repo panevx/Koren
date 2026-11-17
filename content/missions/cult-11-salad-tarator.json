@@ -189,6 +189,70 @@
           "en": "Done! The cheese always goes on top."
         }
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "В шопската салата има домати и краставици.",
+              "en": "Shopska salad has tomatoes and cucumbers."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – и чушки, и лук.",
+              "en": "Yes – and peppers and onion."
+            }
+          },
+          {
+            "text": {
+              "bg": "Шопската салата се поръсва със сирене.",
+              "en": "Shopska salad is sprinkled with white cheese."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – с настъргано бяло сирене.",
+              "en": "Yes – with grated white cheese."
+            }
+          },
+          {
+            "text": {
+              "bg": "Тараторът е гореща супа.",
+              "en": "Tarator is a hot soup."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – тараторът е студена супа.",
+              "en": "No – tarator is a cold soup."
+            }
+          },
+          {
+            "text": {
+              "bg": "В таратора има кисело мляко и краставица.",
+              "en": "Tarator has yoghurt and cucumber."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – и копър, и чесън.",
+              "en": "Yes – and dill and garlic."
+            }
+          },
+          {
+            "text": {
+              "bg": "В шопската салата слагаме шоколад.",
+              "en": "We put chocolate in shopska salad."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – шоколадът не е за салата.",
+              "en": "No – chocolate is not for salad."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -203,6 +267,48 @@
             {
               "bg": "От думата „шоп“ – магазин",
               "en": "From \"shop\""
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какво има отгоре на шопската салата?",
+            "en": "What is on top of shopska salad?"
+          },
+          "options": [
+            {
+              "bg": "Настъргано сирене",
+              "en": "Grated cheese"
+            },
+            {
+              "bg": "Захар",
+              "en": "Sugar"
+            },
+            {
+              "bg": "Кетчуп",
+              "en": "Ketchup"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Каква е супата таратор?",
+            "en": "What kind of soup is tarator?"
+          },
+          "options": [
+            {
+              "bg": "Студена",
+              "en": "Cold"
+            },
+            {
+              "bg": "Гореща",
+              "en": "Hot"
+            },
+            {
+              "bg": "Замразена",
+              "en": "Frozen"
             }
           ],
           "answer": 0
@@ -309,6 +415,115 @@
           "en": "Fresh tarator! It is eaten cold, sometimes with ice."
         }
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Кое НЕ влиза в класическия таратор?",
+              "en": "Which does NOT go into classic tarator?"
+            },
+            "options": [
+              {
+                "bg": "Краставица",
+                "en": "Cucumber"
+              },
+              {
+                "bg": "Домат",
+                "en": "Tomato"
+              },
+              {
+                "bg": "Кисело мляко",
+                "en": "Yoghurt"
+              },
+              {
+                "bg": "Копър",
+                "en": "Dill"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Какво дава аромата на таратора?",
+              "en": "What gives tarator its flavour?"
+            },
+            "options": [
+              {
+                "bg": "Копър и чесън",
+                "en": "Dill and garlic"
+              },
+              {
+                "bg": "Канела",
+                "en": "Cinnamon"
+              },
+              {
+                "bg": "Ванилия",
+                "en": "Vanilla"
+              },
+              {
+                "bg": "Какао",
+                "en": "Cocoa"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "На какво напомнят цветовете на шопската салата според мнозина?",
+              "en": "What do the colours of shopska salad remind many people of?"
+            },
+            "options": [
+              {
+                "bg": "На морето",
+                "en": "The sea"
+              },
+              {
+                "bg": "На българското знаме",
+                "en": "The Bulgarian flag"
+              },
+              {
+                "bg": "На есента",
+                "en": "Autumn"
+              },
+              {
+                "bg": "На небето",
+                "en": "The sky"
+              }
+            ],
+            "answer": 1,
+            "hint": {
+              "bg": "Бяло сирене, зелена краставица, червен домат.",
+              "en": "White cheese, green cucumber, red tomato."
+            }
+          },
+          {
+            "q": {
+              "bg": "Какви чушки често се слагат в шопската салата?",
+              "en": "What kind of peppers often go into shopska salad?"
+            },
+            "options": [
+              {
+                "bg": "Печени",
+                "en": "Roasted"
+              },
+              {
+                "bg": "Захаросани",
+                "en": "Candied"
+              },
+              {
+                "bg": "Сушени на прах",
+                "en": "Dried to powder"
+              },
+              {
+                "bg": "Замразени",
+                "en": "Frozen"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -323,6 +538,56 @@
             {
               "bg": "На Коледа",
               "en": "At Christmas"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Защо тараторът е хубав в жегите?",
+            "en": "Why is tarator good in the heat?"
+          },
+          "options": [
+            {
+              "bg": "Студен е и разхлажда",
+              "en": "It is cold and refreshing"
+            },
+            {
+              "bg": "Много е лют",
+              "en": "It is very spicy"
+            },
+            {
+              "bg": "Горещ е",
+              "en": "It is hot"
+            },
+            {
+              "bg": "Сладък е",
+              "en": "It is sweet"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кой млечен продукт е основата на таратора?",
+            "en": "Which dairy product is the base of tarator?"
+          },
+          "options": [
+            {
+              "bg": "Кисело мляко",
+              "en": "Yoghurt"
+            },
+            {
+              "bg": "Масло",
+              "en": "Butter"
+            },
+            {
+              "bg": "Сметана",
+              "en": "Cream"
+            },
+            {
+              "bg": "Кашкавал",
+              "en": "Yellow cheese"
             }
           ],
           "answer": 0

@@ -46,6 +46,74 @@
           "BG-18"
         ]
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Откъде идва името на всяка област?",
+              "en": "Where does the name of each province come from?"
+            },
+            "options": [
+              {
+                "bg": "От главния ѝ град",
+                "en": "From its main town"
+              },
+              {
+                "bg": "От река",
+                "en": "From a river"
+              },
+              {
+                "bg": "От цар",
+                "en": "From a tsar"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Коя област е на морето?",
+              "en": "Which province is by the sea?"
+            },
+            "options": [
+              {
+                "bg": "Варна",
+                "en": "Varna"
+              },
+              {
+                "bg": "Видин",
+                "en": "Vidin"
+              },
+              {
+                "bg": "Перник",
+                "en": "Pernik"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Коя област е на Дунав?",
+              "en": "Which province is on the Danube?"
+            },
+            "options": [
+              {
+                "bg": "Смолян",
+                "en": "Smolyan"
+              },
+              {
+                "bg": "Русе",
+                "en": "Ruse"
+              },
+              {
+                "bg": "Кърджали",
+                "en": "Kardzhali"
+              }
+            ],
+            "answer": 1
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -67,6 +135,48 @@
             }
           ],
           "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Коя е областта на столицата?",
+            "en": "Which is the capital’s province?"
+          },
+          "options": [
+            {
+              "bg": "София-град",
+              "en": "Sofia City"
+            },
+            {
+              "bg": "Пловдив",
+              "en": "Plovdiv"
+            },
+            {
+              "bg": "Ямбол",
+              "en": "Yambol"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Коя област е най-на северозапад?",
+            "en": "Which province is furthest north-west?"
+          },
+          "options": [
+            {
+              "bg": "Бургас",
+              "en": "Burgas"
+            },
+            {
+              "bg": "Хасково",
+              "en": "Haskovo"
+            },
+            {
+              "bg": "Видин",
+              "en": "Vidin"
+            }
+          ],
+          "answer": 2
         }
       ]
     },
@@ -122,6 +232,81 @@
           "BG-28"
         ]
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "София е център на две области – София-град и Софийска.",
+              "en": "Sofia is the centre of two provinces – Sofia City and Sofia Province."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – единственият такъв град.",
+              "en": "Yes – the only such city."
+            }
+          },
+          {
+            "text": {
+              "bg": "България има 28 области.",
+              "en": "Bulgaria has 28 provinces."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – всяка с главен град.",
+              "en": "Yes – each with a main town."
+            }
+          },
+          {
+            "text": {
+              "bg": "Област Бургас има бряг на Черно море.",
+              "en": "Burgas Province has a Black Sea coast."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – южното Черноморие.",
+              "en": "Yes – the southern coast."
+            }
+          },
+          {
+            "text": {
+              "bg": "Смолян е на Дунав.",
+              "en": "Smolyan is on the Danube."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – Смолян е в Родопите, на юг.",
+              "en": "No – Smolyan is in the Rhodopes, in the south."
+            }
+          },
+          {
+            "text": {
+              "bg": "Област Видин граничи с Румъния и Сърбия.",
+              "en": "Vidin Province borders Romania and Serbia."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – в северозападния ъгъл.",
+              "en": "Yes – in the north-west corner."
+            }
+          },
+          {
+            "text": {
+              "bg": "Кърджали е на Черно море.",
+              "en": "Kardzhali is on the Black Sea."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – в Източните Родопи.",
+              "en": "No – in the Eastern Rhodopes."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -168,6 +353,31 @@
             }
           ],
           "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Коя от тези области граничи с Турция?",
+            "en": "Which of these provinces borders Turkey?"
+          },
+          "options": [
+            {
+              "bg": "Видин",
+              "en": "Vidin"
+            },
+            {
+              "bg": "Плевен",
+              "en": "Pleven"
+            },
+            {
+              "bg": "Ловеч",
+              "en": "Lovech"
+            },
+            {
+              "bg": "Хасково",
+              "en": "Haskovo"
+            }
+          ],
+          "answer": 3
         }
       ]
     }

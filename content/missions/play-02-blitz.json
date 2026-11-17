@@ -207,7 +207,135 @@
           }
         ]
       },
-      "check": []
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "София е столицата на България.",
+              "en": "Sofia is the capital of Bulgaria."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "Черно море е на запад от България.",
+              "en": "The Black Sea is to the west of Bulgaria."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – на изток.",
+              "en": "No – to the east."
+            }
+          },
+          {
+            "text": {
+              "bg": "Аспарух е първият хан на българската държава на Дунав.",
+              "en": "Asparuh is the first khan of the Bulgarian state on the Danube."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – през 681 г.",
+              "en": "Yes – in 681."
+            }
+          },
+          {
+            "text": {
+              "bg": "Първото великденско яйце е зелено.",
+              "en": "The first Easter egg is green."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – червено.",
+              "en": "No – red."
+            }
+          },
+          {
+            "text": {
+              "bg": "България има 28 области.",
+              "en": "Bulgaria has 28 provinces."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кой е най-високият връх в България?",
+            "en": "Which is the highest peak in Bulgaria?"
+          },
+          "options": [
+            {
+              "bg": "Мусала",
+              "en": "Musala"
+            },
+            {
+              "bg": "Вихрен",
+              "en": "Vihren"
+            },
+            {
+              "bg": "Ботев",
+              "en": "Botev"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кога е Баба Марта?",
+            "en": "When is Baba Marta?"
+          },
+          "options": [
+            {
+              "bg": "1 март",
+              "en": "1 March"
+            },
+            {
+              "bg": "1 юни",
+              "en": "1 June"
+            },
+            {
+              "bg": "1 януари",
+              "en": "1 January"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Коя река е границата с Румъния?",
+            "en": "Which river is the border with Romania?"
+          },
+          "options": [
+            {
+              "bg": "Дунав",
+              "en": "Danube"
+            },
+            {
+              "bg": "Марица",
+              "en": "Maritsa"
+            },
+            {
+              "bg": "Искър",
+              "en": "Iskar"
+            }
+          ],
+          "answer": 0
+        }
+      ]
     },
     "guard": {
       "story": [
@@ -339,7 +467,116 @@
           }
         ]
       },
-      "check": []
+      "extra": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди събитията от всички епохи – от най-старото.",
+          "en": "Put events from all eras in order – oldest first."
+        },
+        "items": [
+          {
+            "bg": "Основаване на държавата (681)",
+            "en": "The founding of the state (681)"
+          },
+          {
+            "bg": "Покръстването (864)",
+            "en": "The Christianisation (864)"
+          },
+          {
+            "bg": "Второто българско царство (1185)",
+            "en": "The Second Bulgarian Empire (1185)"
+          },
+          {
+            "bg": "„История славянобългарска“ (1762)",
+            "en": "The “Slavonic-Bulgarian History” (1762)"
+          },
+          {
+            "bg": "Освобождението (1878)",
+            "en": "The Liberation (1878)"
+          },
+          {
+            "bg": "България влиза в Европейския съюз (2007)",
+            "en": "Bulgaria joins the European Union (2007)"
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Коя година е Освобождението?",
+            "en": "In which year is the Liberation?"
+          },
+          "options": [
+            {
+              "bg": "1876",
+              "en": "1876"
+            },
+            {
+              "bg": "1878",
+              "en": "1878"
+            },
+            {
+              "bg": "1885",
+              "en": "1885"
+            },
+            {
+              "bg": "1908",
+              "en": "1908"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Коя е най-дългата река изцяло в България?",
+            "en": "Which is the longest river entirely in Bulgaria?"
+          },
+          "options": [
+            {
+              "bg": "Марица",
+              "en": "Maritsa"
+            },
+            {
+              "bg": "Янтра",
+              "en": "Yantra"
+            },
+            {
+              "bg": "Искър",
+              "en": "Iskar"
+            },
+            {
+              "bg": "Тунджа",
+              "en": "Tundzha"
+            }
+          ],
+          "answer": 2
+        },
+        {
+          "q": {
+            "bg": "Какво празнуваме на 6 септември?",
+            "en": "What do we celebrate on 6 September?"
+          },
+          "options": [
+            {
+              "bg": "Освобождението",
+              "en": "The Liberation"
+            },
+            {
+              "bg": "Съединението",
+              "en": "The Unification"
+            },
+            {
+              "bg": "Независимостта",
+              "en": "Independence"
+            },
+            {
+              "bg": "Деня на будителите",
+              "en": "Enlighteners’ Day"
+            }
+          ],
+          "answer": 1
+        }
+      ]
     }
   },
   "sources": [

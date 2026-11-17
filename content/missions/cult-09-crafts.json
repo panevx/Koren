@@ -114,6 +114,70 @@
           "en": "The fire comes last: it makes the pot strong."
         }
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Троянската керамика има шарка „капка“.",
+              "en": "Troyan pottery has the “drop” pattern."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – боята се стича като капки.",
+              "en": "Yes – the paint runs down like drops."
+            }
+          },
+          {
+            "text": {
+              "bg": "Гърнето се прави от пластмаса.",
+              "en": "A pot is made of plastic."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – от глина.",
+              "en": "No – of clay."
+            }
+          },
+          {
+            "text": {
+              "bg": "Дърворезбата е изрязване на шарки в дърво.",
+              "en": "Woodcarving is cutting patterns into wood."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – с остри длета.",
+              "en": "Yes – with sharp chisels."
+            }
+          },
+          {
+            "text": {
+              "bg": "Гърнето първо се пече, а после се оформя.",
+              "en": "A pot is first fired and then shaped."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – първо се оформя, после се суши и накрая се пече.",
+              "en": "No – first it is shaped, then dried, and fired last."
+            }
+          },
+          {
+            "text": {
+              "bg": "Грънчарят оформя гърнето на колело.",
+              "en": "The potter shapes the pot on a wheel."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – колелото се върти, а ръцете оформят глината.",
+              "en": "Yes – the wheel spins while the hands shape the clay."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -128,6 +192,48 @@
             {
               "bg": "За да се стопли",
               "en": "To get warm"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "От какво се прави гърне?",
+            "en": "What is a pot made of?"
+          },
+          "options": [
+            {
+              "bg": "От глина",
+              "en": "Clay"
+            },
+            {
+              "bg": "От желязо",
+              "en": "Iron"
+            },
+            {
+              "bg": "От стъкло",
+              "en": "Glass"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Как се нарича майсторът на гърнета?",
+            "en": "What is a maker of pots called?"
+          },
+          "options": [
+            {
+              "bg": "Грънчар",
+              "en": "A potter"
+            },
+            {
+              "bg": "Ковач",
+              "en": "A smith"
+            },
+            {
+              "bg": "Шивач",
+              "en": "A tailor"
             }
           ],
           "answer": 0
@@ -191,6 +297,111 @@
           }
         ]
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Какво е „слънце“ в тревненската резба?",
+              "en": "What is a “sun” in Tryavna woodcarving?"
+            },
+            "options": [
+              {
+                "bg": "Кръгла резбована украса в средата на тавана",
+                "en": "A round carved ornament in the middle of the ceiling"
+              },
+              {
+                "bg": "Прозорец",
+                "en": "A window"
+              },
+              {
+                "bg": "Лампа",
+                "en": "A lamp"
+              },
+              {
+                "bg": "Часовник",
+                "en": "A clock"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Кой занаят е свързан с наковалня и чук?",
+              "en": "Which craft goes with an anvil and a hammer?"
+            },
+            "options": [
+              {
+                "bg": "Грънчарство",
+                "en": "Pottery"
+              },
+              {
+                "bg": "Ковачество",
+                "en": "Blacksmithing"
+              },
+              {
+                "bg": "Тъкачество",
+                "en": "Weaving"
+              },
+              {
+                "bg": "Резбарство",
+                "en": "Woodcarving"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Как се нарича уредът, на който се тъкат килими?",
+              "en": "What is the frame on which carpets are woven called?"
+            },
+            "options": [
+              {
+                "bg": "Колело",
+                "en": "A wheel"
+              },
+              {
+                "bg": "Наковалня",
+                "en": "An anvil"
+              },
+              {
+                "bg": "Стан",
+                "en": "A loom"
+              },
+              {
+                "bg": "Хаван",
+                "en": "A mortar"
+              }
+            ],
+            "answer": 2
+          },
+          {
+            "q": {
+              "bg": "Близо до кой град е музеят на открито „Етъра“ със стари занаяти?",
+              "en": "Near which town is the open-air museum “Etara” with old crafts?"
+            },
+            "options": [
+              {
+                "bg": "Варна",
+                "en": "Varna"
+              },
+              {
+                "bg": "Габрово",
+                "en": "Gabrovo"
+              },
+              {
+                "bg": "Видин",
+                "en": "Vidin"
+              },
+              {
+                "bg": "Бургас",
+                "en": "Burgas"
+              }
+            ],
+            "answer": 1
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -205,6 +416,56 @@
             {
               "bg": "Морските рибари",
               "en": "The sea fishermen"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кой занаят прави съдове от глина?",
+            "en": "Which craft makes vessels of clay?"
+          },
+          "options": [
+            {
+              "bg": "Грънчарство",
+              "en": "Pottery"
+            },
+            {
+              "bg": "Ковачество",
+              "en": "Blacksmithing"
+            },
+            {
+              "bg": "Тъкачество",
+              "en": "Weaving"
+            },
+            {
+              "bg": "Кожухарство",
+              "en": "Furriery"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Защо гърнето се покрива с глазура?",
+            "en": "Why is a pot covered with glaze?"
+          },
+          "options": [
+            {
+              "bg": "За да не пропуска вода и да е гладко",
+              "en": "So it holds water and is smooth"
+            },
+            {
+              "bg": "За да е по-тежко",
+              "en": "To make it heavier"
+            },
+            {
+              "bg": "За да мирише хубаво",
+              "en": "To make it smell nice"
+            },
+            {
+              "bg": "За да се счупи по-лесно",
+              "en": "So it breaks more easily"
             }
           ],
           "answer": 0

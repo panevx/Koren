@@ -126,6 +126,70 @@
           "en": "The year and the date are numbers – look for them among the texts."
         }
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Паисий е монах.",
+              "en": "Paisius is a monk."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – в Хилендарския манастир.",
+              "en": "Yes – in the Hilendar Monastery."
+            }
+          },
+          {
+            "text": {
+              "bg": "Паисий завършва книгата си през 1762 г.",
+              "en": "Paisius finishes his book in 1762."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "Книгата на Паисий се казва „Под игото“.",
+              "en": "Paisius’ book is called “Under the Yoke”."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – „История славянобългарска“. „Под игото“ е роман на Иван Вазов.",
+              "en": "No – “Slavonic-Bulgarian History”. “Under the Yoke” is a novel by Ivan Vazov."
+            }
+          },
+          {
+            "text": {
+              "bg": "Паисий иска българите да се гордеят с историята си.",
+              "en": "Paisius wants Bulgarians to be proud of their history."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – затова пише книгата.",
+              "en": "Yes – that is why he writes the book."
+            }
+          },
+          {
+            "text": {
+              "bg": "Денят на будителите е на 24 май.",
+              "en": "Enlighteners’ Day is on 24 May."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – на 1 ноември. На 24 май е Денят на азбуката.",
+              "en": "No – on 1 November. 24 May is the Day of the Alphabet."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -176,6 +240,27 @@
             "bg": "Есента е.",
             "en": "It is in autumn."
           }
+        },
+        {
+          "q": {
+            "bg": "В кой манастир живее Паисий?",
+            "en": "In which monastery does Paisius live?"
+          },
+          "options": [
+            {
+              "bg": "Хилендарския",
+              "en": "Hilendar"
+            },
+            {
+              "bg": "Рилския",
+              "en": "Rila"
+            },
+            {
+              "bg": "Бачковския",
+              "en": "Bachkovo"
+            }
+          ],
+          "answer": 0
         }
       ]
     },
@@ -236,6 +321,115 @@
           "en": "Look at the years in brackets."
         }
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Къде е Хилендарският манастир?",
+              "en": "Where is the Hilendar Monastery?"
+            },
+            "options": [
+              {
+                "bg": "В Рила",
+                "en": "In Rila"
+              },
+              {
+                "bg": "На Света гора (Атон)",
+                "en": "On Mount Athos"
+              },
+              {
+                "bg": "В Пирин",
+                "en": "In Pirin"
+              },
+              {
+                "bg": "В Родопите",
+                "en": "In the Rhodopes"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Към кого се обръща Паисий с „О, неразумний юроде…“?",
+              "en": "Whom does Paisius address with “O, foolish one…”?"
+            },
+            "options": [
+              {
+                "bg": "Към онези, които се срамуват да се нарекат българи",
+                "en": "Those ashamed to call themselves Bulgarians"
+              },
+              {
+                "bg": "Към султана",
+                "en": "The sultan"
+              },
+              {
+                "bg": "Към децата",
+                "en": "Children"
+              },
+              {
+                "bg": "Към монасите",
+                "en": "The monks"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Колко години минават от „История славянобългарска“ до Освобождението?",
+              "en": "How many years pass from the “History” to the Liberation?"
+            },
+            "options": [
+              {
+                "bg": "16",
+                "en": "16"
+              },
+              {
+                "bg": "61",
+                "en": "61"
+              },
+              {
+                "bg": "116",
+                "en": "116"
+              },
+              {
+                "bg": "216",
+                "en": "216"
+              }
+            ],
+            "answer": 2,
+            "hint": {
+              "bg": "1878 минус 1762.",
+              "en": "1878 minus 1762."
+            }
+          },
+          {
+            "q": {
+              "bg": "Какво е „препис“?",
+              "en": "What is a “prepis”?"
+            },
+            "options": [
+              {
+                "bg": "Книга, преписана на ръка",
+                "en": "A book copied by hand"
+              },
+              {
+                "bg": "Отпечатана книга",
+                "en": "A printed book"
+              },
+              {
+                "bg": "Писмо",
+                "en": "A letter"
+              },
+              {
+                "bg": "Песен",
+                "en": "A song"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -286,6 +480,31 @@
             "bg": "Тогава в България още няма печатници.",
             "en": "Bulgaria had no printing presses yet."
           }
+        },
+        {
+          "q": {
+            "bg": "Кой ден почитаме Паисий и другите будители?",
+            "en": "On which day do we honour Paisius and the other enlighteners?"
+          },
+          "options": [
+            {
+              "bg": "24 май",
+              "en": "24 May"
+            },
+            {
+              "bg": "3 март",
+              "en": "3 March"
+            },
+            {
+              "bg": "1 ноември",
+              "en": "1 November"
+            },
+            {
+              "bg": "6 май",
+              "en": "6 May"
+            }
+          ],
+          "answer": 2
         }
       ]
     }

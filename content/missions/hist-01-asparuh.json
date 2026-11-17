@@ -102,6 +102,70 @@
         },
         "showIcons": false
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Аспарух е син на хан Кубрат.",
+              "en": "Asparuh is the son of Khan Kubrat."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – баща му е хан Кубрат, владетелят на Велика България.",
+              "en": "Yes – his father is Khan Kubrat, ruler of Old Great Bulgaria."
+            }
+          },
+          {
+            "text": {
+              "bg": "Новата българска държава се ражда през 681 г.",
+              "en": "The new Bulgarian state is born in 681."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – тогава Византия сключва мир с Аспарух.",
+              "en": "Yes – that is when Byzantium makes peace with Asparuh."
+            }
+          },
+          {
+            "text": {
+              "bg": "Първата столица е Велико Търново.",
+              "en": "The first capital is Veliko Tarnovo."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – първата столица е Плиска. Търново е столица чак след 1185 г.",
+              "en": "No – the first capital is Pliska. Tarnovo becomes capital only after 1185."
+            }
+          },
+          {
+            "text": {
+              "bg": "Аспарух се съюзява със славянските племена.",
+              "en": "Asparuh makes an alliance with the Slavic tribes."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – българи и славяни заедно създават новата държава.",
+              "en": "Yes – Bulgars and Slavs build the new state together."
+            }
+          },
+          {
+            "text": {
+              "bg": "Аспарух побеждава Юлий Цезар.",
+              "en": "Asparuh defeats Julius Caesar."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – Цезар живее 700 години по-рано. Аспарух побеждава император Константин IV.",
+              "en": "No – Caesar lived 700 years earlier. Asparuh defeats Emperor Constantine IV."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -234,6 +298,39 @@
           "en": "It lies north-east of Veliki Preslav – the second capital."
         },
         "showIcons": false
+      },
+      "extra": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди събитията от най-ранното до най-късното.",
+          "en": "Put the events in order, from the earliest to the latest."
+        },
+        "items": [
+          {
+            "bg": "Хан Кубрат управлява Велика България",
+            "en": "Khan Kubrat rules Old Great Bulgaria"
+          },
+          {
+            "bg": "Велика България се разпада под натиска на хазарите",
+            "en": "Old Great Bulgaria falls apart under Khazar pressure"
+          },
+          {
+            "bg": "Аспарух се установява в Онгъла",
+            "en": "Asparuh settles in Ongal"
+          },
+          {
+            "bg": "Походът на Константин IV (680 г.)",
+            "en": "The campaign of Constantine IV (680)"
+          },
+          {
+            "bg": "Мирът с Византия (681 г.)",
+            "en": "The peace with Byzantium (681)"
+          }
+        ],
+        "hint": {
+          "bg": "Всичко започва с бащата на Аспарух.",
+          "en": "It all starts with Asparuh’s father."
+        }
       },
       "check": [
         {

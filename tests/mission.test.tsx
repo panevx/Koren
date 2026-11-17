@@ -52,7 +52,7 @@ beforeEach(() => {
 afterEach(cleanup)
 
 describe('mission Хан Аспарух (young)', () => {
-  it('plays story → game → check → badge and records the badge', async () => {
+  it('plays story → game → challenge → check → badge and records the badge', async () => {
     renderAt(`/mission/${ID}`)
     await screen.findByText(young.story[0]!.bg)
 
@@ -74,6 +74,16 @@ describe('mission Хан Аспарух (young)', () => {
     expect(screen.queryByRole('button', { name: /Готово/ })).not.toBeInTheDocument()
     fireEvent.click(screen.getByRole('button', { name: pointOf(game.target) }))
     expect(screen.getByRole('status')).toHaveTextContent('Браво! Това е Плиска!')
+    fireEvent.click(screen.getByRole('button', { name: /Готово/ }))
+
+    // v0.24: the second round – true or not true. A wrong answer is never a dead end: Raya explains why.
+    const extra = young.extra
+    if (extra?.type !== 'truefalse') throw new Error('young level should have a true/false challenge')
+    extra.items.forEach((it, i) => {
+      fireEvent.click(screen.getByRole('button', { name: it.answer ? 'Не е вярно' : 'Вярно' }))
+      expect(document.body).toHaveTextContent(it.why.bg)
+      if (i < extra.items.length - 1) fireEvent.click(screen.getByRole('button', { name: 'Нататък' }))
+    })
     fireEvent.click(screen.getByRole('button', { name: /Готово/ }))
 
     // Check.

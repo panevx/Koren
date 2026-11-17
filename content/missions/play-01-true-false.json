@@ -151,7 +151,139 @@
           }
         ]
       },
-      "check": []
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Какви цветове има мартеницата?",
+              "en": "What colours does the martenitsa have?"
+            },
+            "options": [
+              {
+                "bg": "Бял и червен",
+                "en": "White and red"
+              },
+              {
+                "bg": "Син и жълт",
+                "en": "Blue and yellow"
+              },
+              {
+                "bg": "Зелен",
+                "en": "Green"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Коя река тече на север, по границата?",
+              "en": "Which river flows in the north, along the border?"
+            },
+            "options": [
+              {
+                "bg": "Дунав",
+                "en": "Danube"
+              },
+              {
+                "bg": "Марица",
+                "en": "Maritsa"
+              },
+              {
+                "bg": "Струма",
+                "en": "Struma"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Какво празнуваме на 24 май?",
+              "en": "What do we celebrate on 24 May?"
+            },
+            "options": [
+              {
+                "bg": "Деня на азбуката",
+                "en": "The Day of the Alphabet"
+              },
+              {
+                "bg": "Коледа",
+                "en": "Christmas"
+              },
+              {
+                "bg": "Великден",
+                "en": "Easter"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кой основава българската държава на Дунав?",
+            "en": "Who founds the Bulgarian state on the Danube?"
+          },
+          "options": [
+            {
+              "bg": "Хан Аспарух",
+              "en": "Khan Asparuh"
+            },
+            {
+              "bg": "Цар Симеон",
+              "en": "Tsar Simeon"
+            },
+            {
+              "bg": "Васил Левски",
+              "en": "Vasil Levski"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Къде е Рилският манастир?",
+            "en": "Where is the Rila Monastery?"
+          },
+          "options": [
+            {
+              "bg": "В Рила",
+              "en": "In Rila"
+            },
+            {
+              "bg": "На морето",
+              "en": "By the sea"
+            },
+            {
+              "bg": "В София",
+              "en": "In Sofia"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кой град е на Черно море?",
+            "en": "Which city is on the Black Sea?"
+          },
+          "options": [
+            {
+              "bg": "Варна",
+              "en": "Varna"
+            },
+            {
+              "bg": "Плевен",
+              "en": "Pleven"
+            },
+            {
+              "bg": "Видин",
+              "en": "Vidin"
+            }
+          ],
+          "answer": 0
+        }
+      ]
     },
     "guard": {
       "story": [
@@ -240,7 +372,158 @@
           }
         ]
       },
-      "check": []
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Още капани – само за знаещи!",
+          "en": "More traps – experts only!"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Шипка е в Рила.",
+              "en": "Shipka is in Rila."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – в Стара планина.",
+              "en": "No – in the Balkan Mountains."
+            }
+          },
+          {
+            "text": {
+              "bg": "Пловдив е на Марица.",
+              "en": "Plovdiv is on the Maritsa."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "Паисий е авторът на „Неделник“.",
+              "en": "Paisius is the author of the “Nedelnik”."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – „Неделник“ е на Софроний Врачански.",
+              "en": "No – the “Nedelnik” is by Sophronius of Vratsa."
+            }
+          },
+          {
+            "text": {
+              "bg": "Вихрен е с 11 м по-нисък от Мусала.",
+              "en": "Vihren is 11 m lower than Musala."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – 2914 м срещу 2925 м.",
+              "en": "Yes – 2,914 m against 2,925 m."
+            }
+          },
+          {
+            "text": {
+              "bg": "Ботев е роден в Калофер.",
+              "en": "Botev was born in Kalofer."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "Българската държава започва с покръстването.",
+              "en": "The Bulgarian state begins with the Christianisation."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – започва през 681 г., покръстването е през 864 г.",
+              "en": "No – it begins in 681; the Christianisation is in 864."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кой хан пише първите закони?",
+            "en": "Which khan writes the first laws?"
+          },
+          "options": [
+            {
+              "bg": "Аспарух",
+              "en": "Asparuh"
+            },
+            {
+              "bg": "Крум",
+              "en": "Krum"
+            },
+            {
+              "bg": "Омуртаг",
+              "en": "Omurtag"
+            },
+            {
+              "bg": "Тервел",
+              "en": "Tervel"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Колко области има България?",
+            "en": "How many provinces does Bulgaria have?"
+          },
+          "options": [
+            {
+              "bg": "12",
+              "en": "12"
+            },
+            {
+              "bg": "28",
+              "en": "28"
+            },
+            {
+              "bg": "30",
+              "en": "30"
+            },
+            {
+              "bg": "50",
+              "en": "50"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Кой е най-големият български град на Дунав?",
+            "en": "Which is the biggest Bulgarian town on the Danube?"
+          },
+          "options": [
+            {
+              "bg": "Видин",
+              "en": "Vidin"
+            },
+            {
+              "bg": "Русе",
+              "en": "Ruse"
+            },
+            {
+              "bg": "Силистра",
+              "en": "Silistra"
+            },
+            {
+              "bg": "Свищов",
+              "en": "Svishtov"
+            }
+          ],
+          "answer": 1
+        }
+      ]
     }
   },
   "sources": [

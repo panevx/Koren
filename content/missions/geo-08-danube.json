@@ -137,6 +137,70 @@
           "en": "After Silistra the Danube flows through Romania into the Black Sea."
         }
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "По Дунав минава границата с Румъния.",
+              "en": "The border with Romania runs along the Danube."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – на север от България.",
+              "en": "Yes – to the north of Bulgaria."
+            }
+          },
+          {
+            "text": {
+              "bg": "Русе е на Дунав.",
+              "en": "Ruse is on the Danube."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – най-големият ни град на реката.",
+              "en": "Yes – our biggest town on the river."
+            }
+          },
+          {
+            "text": {
+              "bg": "Дунав се влива в Черно море.",
+              "en": "The Danube flows into the Black Sea."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – в Румъния, през голяма делта.",
+              "en": "Yes – in Romania, through a big delta."
+            }
+          },
+          {
+            "text": {
+              "bg": "Видин е на Черно море.",
+              "en": "Vidin is on the Black Sea."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – Видин е на Дунав.",
+              "en": "No – Vidin is on the Danube."
+            }
+          },
+          {
+            "text": {
+              "bg": "Дунав тече на юг от България.",
+              "en": "The Danube flows to the south of Bulgaria."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – на север.",
+              "en": "No – to the north."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -280,6 +344,111 @@
           "bg": "При река Тимок Дунав става граница с Румъния; след Силистра продължава към Черно море.",
           "en": "At the Timok the Danube becomes the border with Romania; after Silistra it goes on to the Black Sea."
         }
+      },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Кой е най-големият български град на Дунав?",
+              "en": "Which is the biggest Bulgarian town on the Danube?"
+            },
+            "options": [
+              {
+                "bg": "Видин",
+                "en": "Vidin"
+              },
+              {
+                "bg": "Русе",
+                "en": "Ruse"
+              },
+              {
+                "bg": "Силистра",
+                "en": "Silistra"
+              },
+              {
+                "bg": "Свищов",
+                "en": "Svishtov"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Колко е дълъг Дунав?",
+              "en": "How long is the Danube?"
+            },
+            "options": [
+              {
+                "bg": "Около 285 км",
+                "en": "About 285 km"
+              },
+              {
+                "bg": "Около 850 км",
+                "en": "About 850 km"
+              },
+              {
+                "bg": "Около 2850 км",
+                "en": "About 2,850 km"
+              },
+              {
+                "bg": "Около 28 500 км",
+                "en": "About 28,500 km"
+              }
+            ],
+            "answer": 2
+          },
+          {
+            "q": {
+              "bg": "В коя държава извира Дунав?",
+              "en": "In which country does the Danube rise?"
+            },
+            "options": [
+              {
+                "bg": "Австрия",
+                "en": "Austria"
+              },
+              {
+                "bg": "Германия",
+                "en": "Germany"
+              },
+              {
+                "bg": "Унгария",
+                "en": "Hungary"
+              },
+              {
+                "bg": "Румъния",
+                "en": "Romania"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Как се казва мостът между Русе и Гюргево?",
+              "en": "What is the bridge between Ruse and Giurgiu called?"
+            },
+            "options": [
+              {
+                "bg": "Дунав мост",
+                "en": "The Danube Bridge"
+              },
+              {
+                "bg": "Златният мост",
+                "en": "The Golden Bridge"
+              },
+              {
+                "bg": "Лондонският мост",
+                "en": "London Bridge"
+              },
+              {
+                "bg": "Мостът на въздишките",
+                "en": "The Bridge of Sighs"
+              }
+            ],
+            "answer": 0
+          }
+        ]
       },
       "check": [
         {

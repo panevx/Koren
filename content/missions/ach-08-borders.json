@@ -80,6 +80,70 @@
           }
         ]
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "На границата показваме паспорт или лична карта.",
+              "en": "At the border we show a passport or ID card."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "На митницата проверяват какво носим.",
+              "en": "At customs they check what we carry."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "Дунав е границата ни с Румъния.",
+              "en": "The Danube is our border with Romania."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "За да пътуваш в друга държава, ти трябва билет за кино.",
+              "en": "To travel to another country you need a cinema ticket."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – трябва паспорт или лична карта.",
+              "en": "No – you need a passport or ID card."
+            }
+          },
+          {
+            "text": {
+              "bg": "Камионите със стоки никога не се проверяват.",
+              "en": "Lorries with goods are never checked."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – митницата проверява стоките.",
+              "en": "No – customs check the goods."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -94,6 +158,48 @@
             {
               "bg": "Билет за кино",
               "en": "A cinema ticket"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какво проверяват на митницата?",
+            "en": "What do they check at customs?"
+          },
+          "options": [
+            {
+              "bg": "Какво носим",
+              "en": "What we carry"
+            },
+            {
+              "bg": "Колко сме високи",
+              "en": "How tall we are"
+            },
+            {
+              "bg": "Каква музика слушаме",
+              "en": "What music we like"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кой документ има снимка и име?",
+            "en": "Which document has a photo and a name?"
+          },
+          "options": [
+            {
+              "bg": "Паспортът",
+              "en": "The passport"
+            },
+            {
+              "bg": "Билетът за автобус",
+              "en": "The bus ticket"
+            },
+            {
+              "bg": "Касовата бележка",
+              "en": "The receipt"
             }
           ],
           "answer": 0
@@ -166,6 +272,111 @@
           }
         ]
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Кой коридор е река Дунав?",
+              "en": "Which corridor is the Danube River?"
+            },
+            "options": [
+              {
+                "bg": "IV",
+                "en": "IV"
+              },
+              {
+                "bg": "VII",
+                "en": "VII"
+              },
+              {
+                "bg": "VIII",
+                "en": "VIII"
+              },
+              {
+                "bg": "IX",
+                "en": "IX"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "През коя година е открит Дунав мост между Русе и Гюргево?",
+              "en": "In which year was the Danube Bridge between Ruse and Giurgiu opened?"
+            },
+            "options": [
+              {
+                "bg": "1878",
+                "en": "1878"
+              },
+              {
+                "bg": "1954",
+                "en": "1954"
+              },
+              {
+                "bg": "1989",
+                "en": "1989"
+              },
+              {
+                "bg": "2013",
+                "en": "2013"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "В кое пространство без граничен контрол влиза изцяло България през 2025 г.?",
+              "en": "Which area without border checks does Bulgaria fully join in 2025?"
+            },
+            "options": [
+              {
+                "bg": "Шенгенското пространство",
+                "en": "The Schengen Area"
+              },
+              {
+                "bg": "НАТО",
+                "en": "NATO"
+              },
+              {
+                "bg": "ООН",
+                "en": "The UN"
+              },
+              {
+                "bg": "ОПЕК",
+                "en": "OPEC"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Кой граничен пункт с Гърция е на коридор IV?",
+              "en": "Which border crossing with Greece is on Corridor IV?"
+            },
+            "options": [
+              {
+                "bg": "Кулата",
+                "en": "Kulata"
+              },
+              {
+                "bg": "Видин",
+                "en": "Vidin"
+              },
+              {
+                "bg": "Русе",
+                "en": "Ruse"
+              },
+              {
+                "bg": "Варна",
+                "en": "Varna"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -201,6 +412,31 @@
             {
               "bg": "12",
               "en": "12"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какво е транспортен коридор?",
+            "en": "What is a transport corridor?"
+          },
+          "options": [
+            {
+              "bg": "Голям път за хора и стоки през няколко държави",
+              "en": "A major route for people and goods across several countries"
+            },
+            {
+              "bg": "Коридор в училище",
+              "en": "A school corridor"
+            },
+            {
+              "bg": "Тунел за влак",
+              "en": "A train tunnel"
+            },
+            {
+              "bg": "Летище",
+              "en": "An airport"
             }
           ],
           "answer": 0

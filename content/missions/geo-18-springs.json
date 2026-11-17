@@ -103,6 +103,70 @@
           "en": "Hisarya is in the middle of the country, north of Plovdiv."
         }
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "В България има стотици минерални извори.",
+              "en": "Bulgaria has hundreds of mineral springs."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – една от най-богатите страни в Европа на извори.",
+              "en": "Yes – one of the richest countries in Europe for springs."
+            }
+          },
+          {
+            "text": {
+              "bg": "Хисаря е на север от Пловдив.",
+              "en": "Hisarya is to the north of Plovdiv."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – градът на изворите.",
+              "en": "Yes – the town of springs."
+            }
+          },
+          {
+            "text": {
+              "bg": "Минералната вода винаги е студена като лед.",
+              "en": "Mineral water is always ice-cold."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – някои извори са топли, а други горещи.",
+              "en": "No – some springs are warm and others hot."
+            }
+          },
+          {
+            "text": {
+              "bg": "Най-горещата вода у нас е в Сапарева баня.",
+              "en": "The hottest water in our country is in Sapareva Banya."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – около 103 °C.",
+              "en": "Yes – about 103 °C."
+            }
+          },
+          {
+            "text": {
+              "bg": "Минералната вода идва от морето.",
+              "en": "Mineral water comes from the sea."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – дълбоко от земята.",
+              "en": "No – from deep underground."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -124,6 +188,48 @@
             "bg": "Толкова е гореща, че от нея излиза пара – по-гореща от кипяща вода!",
             "en": "It is so hot that steam rises from it – hotter than boiling water!"
           }
+        },
+        {
+          "q": {
+            "bg": "Кой град наричат „град на изворите“?",
+            "en": "Which town is called the “town of springs”?"
+          },
+          "options": [
+            {
+              "bg": "Хисаря",
+              "en": "Hisarya"
+            },
+            {
+              "bg": "Видин",
+              "en": "Vidin"
+            },
+            {
+              "bg": "Бургас",
+              "en": "Burgas"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Откъде идва минералната вода?",
+            "en": "Where does mineral water come from?"
+          },
+          "options": [
+            {
+              "bg": "Дълбоко от земята",
+              "en": "Deep underground"
+            },
+            {
+              "bg": "От облаците",
+              "en": "From the clouds"
+            },
+            {
+              "bg": "От морето",
+              "en": "From the sea"
+            }
+          ],
+          "answer": 0
         }
       ]
     },
@@ -179,6 +285,111 @@
           "en": "Sandanski is in south-west Bulgaria, at the foot of Pirin."
         }
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Какво носи минералната вода?",
+              "en": "What does mineral water carry?"
+            },
+            "options": [
+              {
+                "bg": "Разтворени минерали",
+                "en": "Dissolved minerals"
+              },
+              {
+                "bg": "Захар",
+                "en": "Sugar"
+              },
+              {
+                "bg": "Пясък",
+                "en": "Sand"
+              },
+              {
+                "bg": "Нищо",
+                "en": "Nothing"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Какво интересно има в Сапарева баня?",
+              "en": "What is special in Sapareva Banya?"
+            },
+            "options": [
+              {
+                "bg": "Вулкан",
+                "en": "A volcano"
+              },
+              {
+                "bg": "Гейзер с гореща вода",
+                "en": "A geyser of hot water"
+              },
+              {
+                "bg": "Ледник",
+                "en": "A glacier"
+              },
+              {
+                "bg": "Пустиня",
+                "en": "A desert"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Кой град е бил римски курорт с името Диоклецианопол?",
+              "en": "Which town was a Roman spa named Diocletianopolis?"
+            },
+            "options": [
+              {
+                "bg": "Варна",
+                "en": "Varna"
+              },
+              {
+                "bg": "Банско",
+                "en": "Bansko"
+              },
+              {
+                "bg": "Хисаря",
+                "en": "Hisarya"
+              },
+              {
+                "bg": "Шумен",
+                "en": "Shumen"
+              }
+            ],
+            "answer": 2
+          },
+          {
+            "q": {
+              "bg": "Защо минералната вода е топла?",
+              "en": "Why is mineral water warm?"
+            },
+            "options": [
+              {
+                "bg": "Слънцето я топли",
+                "en": "The sun warms it"
+              },
+              {
+                "bg": "Затопля се дълбоко в земята",
+                "en": "It is heated deep in the earth"
+              },
+              {
+                "bg": "Хората я топлят",
+                "en": "People heat it"
+              },
+              {
+                "bg": "Тече бавно",
+                "en": "It flows slowly"
+              }
+            ],
+            "answer": 1
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -200,6 +411,56 @@
             }
           ],
           "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кой град е в долината на Струма, под Пирин?",
+            "en": "Which town lies in the Struma valley, below Pirin?"
+          },
+          "options": [
+            {
+              "bg": "Хисаря",
+              "en": "Hisarya"
+            },
+            {
+              "bg": "Сандански",
+              "en": "Sandanski"
+            },
+            {
+              "bg": "Велинград",
+              "en": "Velingrad"
+            },
+            {
+              "bg": "Варна",
+              "en": "Varna"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Кой град в Родопите наричат „СПА столицата на Балканите“?",
+            "en": "Which Rhodope town is called the “spa capital of the Balkans”?"
+          },
+          "options": [
+            {
+              "bg": "Видин",
+              "en": "Vidin"
+            },
+            {
+              "bg": "Габрово",
+              "en": "Gabrovo"
+            },
+            {
+              "bg": "Велинград",
+              "en": "Velingrad"
+            },
+            {
+              "bg": "Добрич",
+              "en": "Dobrich"
+            }
+          ],
+          "answer": 2
         }
       ]
     }

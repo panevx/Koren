@@ -79,6 +79,70 @@
           }
         ]
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "В България има три национални парка.",
+              "en": "Bulgaria has three national parks."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – Рила, Пирин и Централен Балкан.",
+              "en": "Yes – Rila, Pirin and Central Balkan."
+            }
+          },
+          {
+            "text": {
+              "bg": "Седемте рилски езера са в парк „Рила“.",
+              "en": "The Seven Rila Lakes are in Rila National Park."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "Връх Вихрен е в парк „Централен Балкан“.",
+              "en": "Vihren Peak is in Central Balkan National Park."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – в парк „Пирин“.",
+              "en": "No – in Pirin National Park."
+            }
+          },
+          {
+            "text": {
+              "bg": "В национален парк пазим всичко, както е.",
+              "en": "In a national park we keep everything as it is."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "В парка можем да палим огън, където поискаме.",
+              "en": "In the park we can light a fire wherever we like."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – само на определените места, ако изобщо е разрешено.",
+              "en": "No – only at marked places, if it is allowed at all."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -114,6 +178,27 @@
             {
               "bg": "Взимаме камъчета и цветя",
               "en": "We take stones and flowers"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кой национален парк е в Стара планина?",
+            "en": "Which national park is in the Balkan Mountains?"
+          },
+          "options": [
+            {
+              "bg": "Централен Балкан",
+              "en": "Central Balkan"
+            },
+            {
+              "bg": "Пирин",
+              "en": "Pirin"
+            },
+            {
+              "bg": "Рила",
+              "en": "Rila"
             }
           ],
           "answer": 0
@@ -189,6 +274,111 @@
           }
         ]
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Кой национален парк е в списъка на ЮНЕСКО?",
+              "en": "Which national park is on the UNESCO list?"
+            },
+            "options": [
+              {
+                "bg": "Рила",
+                "en": "Rila"
+              },
+              {
+                "bg": "Пирин",
+                "en": "Pirin"
+              },
+              {
+                "bg": "Централен Балкан",
+                "en": "Central Balkan"
+              },
+              {
+                "bg": "Витоша",
+                "en": "Vitosha"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Кой природен парк е в Югоизточна България, до Турция?",
+              "en": "Which nature park is in south-east Bulgaria, next to Turkey?"
+            },
+            "options": [
+              {
+                "bg": "Витоша",
+                "en": "Vitosha"
+              },
+              {
+                "bg": "Странджа",
+                "en": "Strandzha"
+              },
+              {
+                "bg": "Русенски Лом",
+                "en": "Rusenski Lom"
+              },
+              {
+                "bg": "Българка",
+                "en": "Bulgarka"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Кой природен парк е близо до Русе?",
+              "en": "Which nature park is near Ruse?"
+            },
+            "options": [
+              {
+                "bg": "Русенски Лом",
+                "en": "Rusenski Lom"
+              },
+              {
+                "bg": "Странджа",
+                "en": "Strandzha"
+              },
+              {
+                "bg": "Витоша",
+                "en": "Vitosha"
+              },
+              {
+                "bg": "Врачански Балкан",
+                "en": "Vrachanski Balkan"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Какво НЕ е позволено в национален парк?",
+              "en": "What is NOT allowed in a national park?"
+            },
+            "options": [
+              {
+                "bg": "Да се ходи по пътеките",
+                "en": "Walking on the paths"
+              },
+              {
+                "bg": "Да се снима",
+                "en": "Taking photos"
+              },
+              {
+                "bg": "Да се сече гора и да се ловува",
+                "en": "Cutting forest and hunting"
+              },
+              {
+                "bg": "Да се наблюдават птици",
+                "en": "Watching birds"
+              }
+            ],
+            "answer": 2
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -231,6 +421,31 @@
             }
           ],
           "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кой връх е в парк „Централен Балкан“?",
+            "en": "Which peak is in Central Balkan National Park?"
+          },
+          "options": [
+            {
+              "bg": "Мусала",
+              "en": "Musala"
+            },
+            {
+              "bg": "Вихрен",
+              "en": "Vihren"
+            },
+            {
+              "bg": "Ботев",
+              "en": "Botev"
+            },
+            {
+              "bg": "Черни връх",
+              "en": "Cherni Vrah"
+            }
+          ],
+          "answer": 2
         }
       ]
     }

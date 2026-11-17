@@ -66,6 +66,7 @@
   "mission.prev": "Back",
   "mission.phase.story": "Story",
   "mission.phase.game": "Game",
+  "mission.phase.extra": "Challenge",
   "mission.phase.check": "Check",
   "mission.phase.badge": "Badge",
   "mission.progress": "Step {n} of {total}",

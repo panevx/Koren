@@ -80,6 +80,70 @@
           "en": "Nestinarstvo has been on the UNESCO list since 2009."
         }
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Нестинарството е обичай от Странджа.",
+              "en": "Nestinarstvo is a custom from Strandzha."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – от селата в планината Странджа.",
+              "en": "Yes – from the villages in the Strandzha mountains."
+            }
+          },
+          {
+            "text": {
+              "bg": "Нестинарите танцуват върху жарава.",
+              "en": "The nestinari dance on embers."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – боси, по стари правила.",
+              "en": "Yes – barefoot, by old rules."
+            }
+          },
+          {
+            "text": {
+              "bg": "Всеки може да го опита вкъщи.",
+              "en": "Anyone can try it at home."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – това е опасно! Правят го само посветените.",
+              "en": "No – it is dangerous! Only the initiated do it."
+            }
+          },
+          {
+            "text": {
+              "bg": "Нестинарите носят иконите на светите Константин и Елена.",
+              "en": "The nestinari carry the icons of Saints Constantine and Helena."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – това е техният празник.",
+              "en": "Yes – it is their feast day."
+            }
+          },
+          {
+            "text": {
+              "bg": "Нестинарите танцуват на ледена пързалка.",
+              "en": "The nestinari dance on an ice rink."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – върху горещи въглени.",
+              "en": "No – on hot embers."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -94,6 +158,48 @@
             {
               "bg": "Да",
               "en": "Yes"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "В коя планина е нестинарството?",
+            "en": "In which mountains is nestinarstvo?"
+          },
+          "options": [
+            {
+              "bg": "Странджа",
+              "en": "Strandzha"
+            },
+            {
+              "bg": "Рила",
+              "en": "Rila"
+            },
+            {
+              "bg": "Витоша",
+              "en": "Vitosha"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "На чий празник танцуват нестинарите?",
+            "en": "On whose feast do the nestinari dance?"
+          },
+          "options": [
+            {
+              "bg": "Св. Константин и Елена",
+              "en": "Saints Constantine and Helena"
+            },
+            {
+              "bg": "Св. Георги",
+              "en": "St George"
+            },
+            {
+              "bg": "Св. Никола",
+              "en": "St Nicholas"
             }
           ],
           "answer": 0
@@ -168,6 +274,111 @@
           }
         ]
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Кога е празникът на светите Константин и Елена?",
+              "en": "When is the feast of Saints Constantine and Helena?"
+            },
+            "options": [
+              {
+                "bg": "1 март",
+                "en": "1 March"
+              },
+              {
+                "bg": "21 май",
+                "en": "21 May"
+              },
+              {
+                "bg": "24 май",
+                "en": "24 May"
+              },
+              {
+                "bg": "6 май",
+                "en": "6 May"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Какво са Бистришките баби?",
+              "en": "What are the Bistritsa Grannies?"
+            },
+            "options": [
+              {
+                "bg": "Многогласно пеене и хоро на възрастни жени",
+                "en": "Polyphonic singing and dancing by old women"
+              },
+              {
+                "bg": "Килими",
+                "en": "Carpets"
+              },
+              {
+                "bg": "Маски",
+                "en": "Masks"
+              },
+              {
+                "bg": "Ястие",
+                "en": "A dish"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "С какво е известен Чипровци?",
+              "en": "What is Chiprovtsi famous for?"
+            },
+            "options": [
+              {
+                "bg": "С розите",
+                "en": "Roses"
+              },
+              {
+                "bg": "С килимите",
+                "en": "Carpets"
+              },
+              {
+                "bg": "С виното",
+                "en": "Wine"
+              },
+              {
+                "bg": "С керамиката",
+                "en": "Pottery"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Коя организация води списъка на нематериалното наследство?",
+              "en": "Which organisation keeps the list of intangible heritage?"
+            },
+            "options": [
+              {
+                "bg": "ФИФА",
+                "en": "FIFA"
+              },
+              {
+                "bg": "НАСА",
+                "en": "NASA"
+              },
+              {
+                "bg": "ЮНЕСКО",
+                "en": "UNESCO"
+              },
+              {
+                "bg": "Евровизия",
+                "en": "Eurovision"
+              }
+            ],
+            "answer": 2
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -185,6 +396,56 @@
             }
           ],
           "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кой обичай от 1 март също е в списъка на ЮНЕСКО?",
+            "en": "Which 1 March custom is also on the UNESCO list?"
+          },
+          "options": [
+            {
+              "bg": "Мартеницата",
+              "en": "The martenitsa"
+            },
+            {
+              "bg": "Коледуването",
+              "en": "Carolling"
+            },
+            {
+              "bg": "Сурвакането",
+              "en": "Survakane"
+            },
+            {
+              "bg": "Лазаруването",
+              "en": "Lazaruvane"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "В кое село се пази нестинарството?",
+            "en": "In which village is nestinarstvo kept alive?"
+          },
+          "options": [
+            {
+              "bg": "Бистрица",
+              "en": "Bistritsa"
+            },
+            {
+              "bg": "Чипровци",
+              "en": "Chiprovtsi"
+            },
+            {
+              "bg": "Българи",
+              "en": "Bulgari"
+            },
+            {
+              "bg": "Копривщица",
+              "en": "Koprivshtitsa"
+            }
+          ],
+          "answer": 2
         }
       ]
     }

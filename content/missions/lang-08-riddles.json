@@ -136,6 +136,55 @@
           "en": "The cloud \"cries\" with rain!"
         }
       },
+      "extra": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи гатанката с отговора ѝ.",
+          "en": "Match the riddle with its answer."
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Хвърчи без крила, плаче без очи.",
+              "en": "It flies without wings and cries without eyes."
+            },
+            "b": {
+              "bg": "Облак",
+              "en": "A cloud"
+            }
+          },
+          {
+            "a": {
+              "bg": "Сто ризи облякло, без копче на тях.",
+              "en": "It wears a hundred shirts without a button."
+            },
+            "b": {
+              "bg": "Зелка",
+              "en": "A cabbage"
+            }
+          },
+          {
+            "a": {
+              "bg": "Отвън зелена, отвътре червена.",
+              "en": "Green outside, red inside."
+            },
+            "b": {
+              "bg": "Диня",
+              "en": "A watermelon"
+            }
+          },
+          {
+            "a": {
+              "bg": "Цял ден гледа слънцето.",
+              "en": "It watches the sun all day long."
+            },
+            "b": {
+              "bg": "Слънчоглед",
+              "en": "A sunflower"
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -161,6 +210,48 @@
             "bg": "Листата му са като ризи.",
             "en": "Its leaves are like shirts."
           }
+        },
+        {
+          "q": {
+            "bg": "Какво е гатанка?",
+            "en": "What is a riddle?"
+          },
+          "options": [
+            {
+              "bg": "Загадка с думи",
+              "en": "A puzzle in words"
+            },
+            {
+              "bg": "Песен",
+              "en": "A song"
+            },
+            {
+              "bg": "Танц",
+              "en": "A dance"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какъв е отговорът на „Хвърчи без крила, плаче без очи“?",
+            "en": "What is the answer to “It flies without wings and cries without eyes”?"
+          },
+          "options": [
+            {
+              "bg": "Облак",
+              "en": "A cloud"
+            },
+            {
+              "bg": "Птица",
+              "en": "A bird"
+            },
+            {
+              "bg": "Дете",
+              "en": "A child"
+            }
+          ],
+          "answer": 0
         }
       ]
     },
@@ -214,6 +305,111 @@
           "en": "The year (mother) has 12 months (children), each with about 30 days (grandchildren)."
         }
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "В гатанката „Една майка – дванайсет деца“ кои са децата?",
+              "en": "In the riddle “One mother – twelve children”, who are the children?"
+            },
+            "options": [
+              {
+                "bg": "Часовете",
+                "en": "The hours"
+              },
+              {
+                "bg": "Месеците",
+                "en": "The months"
+              },
+              {
+                "bg": "Седмиците",
+                "en": "The weeks"
+              },
+              {
+                "bg": "Годините",
+                "en": "The years"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "А кои са „трийсетината внучета“ на всяко дете?",
+              "en": "And who are the “thirty or so grandchildren” of each child?"
+            },
+            "options": [
+              {
+                "bg": "Минутите",
+                "en": "The minutes"
+              },
+              {
+                "bg": "Седмиците",
+                "en": "The weeks"
+              },
+              {
+                "bg": "Дните",
+                "en": "The days"
+              },
+              {
+                "bg": "Часовете",
+                "en": "The hours"
+              }
+            ],
+            "answer": 2
+          },
+          {
+            "q": {
+              "bg": "„Цял ден гледа слънцето, а вечер навежда глава.“ Какво е?",
+              "en": "“All day it watches the sun, at night it bows its head.” What is it?"
+            },
+            "options": [
+              {
+                "bg": "Котка",
+                "en": "A cat"
+              },
+              {
+                "bg": "Слънчоглед",
+                "en": "A sunflower"
+              },
+              {
+                "bg": "Прозорец",
+                "en": "A window"
+              },
+              {
+                "bg": "Часовник",
+                "en": "A clock"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Защо мразът „прави мост без ръце и без брадва“?",
+              "en": "Why does the frost “build a bridge without hands or an axe”?"
+            },
+            "options": [
+              {
+                "bg": "Замръзналата река става като мост",
+                "en": "The frozen river becomes like a bridge"
+              },
+              {
+                "bg": "Носи камъни",
+                "en": "It carries stones"
+              },
+              {
+                "bg": "Сече дървета",
+                "en": "It cuts trees"
+              },
+              {
+                "bg": "Вали сняг",
+                "en": "It snows"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -252,6 +448,31 @@
             }
           ],
           "answer": 0
+        },
+        {
+          "q": {
+            "bg": "„Отвън зелена, отвътре червена.“ Какво е?",
+            "en": "“Green outside, red inside.” What is it?"
+          },
+          "options": [
+            {
+              "bg": "Ябълка",
+              "en": "An apple"
+            },
+            {
+              "bg": "Диня",
+              "en": "A watermelon"
+            },
+            {
+              "bg": "Краставица",
+              "en": "A cucumber"
+            },
+            {
+              "bg": "Морков",
+              "en": "A carrot"
+            }
+          ],
+          "answer": 1
         }
       ]
     }

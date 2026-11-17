@@ -180,6 +180,70 @@
           }
         ]
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Катерицата живее в гората.",
+              "en": "The squirrel lives in the forest."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "Делфинът живее в планината.",
+              "en": "The dolphin lives in the mountains."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – в морето.",
+              "en": "No – in the sea."
+            }
+          },
+          {
+            "text": {
+              "bg": "Дивата коза живее високо по скалите.",
+              "en": "The chamois lives high up on the rocks."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – в Рила и Пирин.",
+              "en": "Yes – in Rila and Pirin."
+            }
+          },
+          {
+            "text": {
+              "bg": "Видрата живее край реките.",
+              "en": "The otter lives by rivers."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – в чисти реки.",
+              "en": "Yes – in clean rivers."
+            }
+          },
+          {
+            "text": {
+              "bg": "Пеликанът живее в пустинята.",
+              "en": "The pelican lives in the desert."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – край езера и блата.",
+              "en": "No – by lakes and marshes."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -194,6 +258,48 @@
             {
               "bg": "За да има повече пътища",
               "en": "To have more roads"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Къде живее пеликанът?",
+            "en": "Where does the pelican live?"
+          },
+          "options": [
+            {
+              "bg": "Край езера",
+              "en": "By lakes"
+            },
+            {
+              "bg": "В пещера",
+              "en": "In a cave"
+            },
+            {
+              "bg": "На покрива",
+              "en": "On a roof"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Къде живее дивата коза?",
+            "en": "Where does the chamois live?"
+          },
+          "options": [
+            {
+              "bg": "Високо в планината",
+              "en": "High in the mountains"
+            },
+            {
+              "bg": "В морето",
+              "en": "In the sea"
+            },
+            {
+              "bg": "В града",
+              "en": "In the city"
             }
           ],
           "answer": 0
@@ -280,6 +386,111 @@
           }
         ]
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Какво е местообитание?",
+              "en": "What is a habitat?"
+            },
+            "options": [
+              {
+                "bg": "Мястото, където един вид живее и намира храна",
+                "en": "The place where a species lives and finds food"
+              },
+              {
+                "bg": "Вид храна",
+                "en": "A kind of food"
+              },
+              {
+                "bg": "Зоологическа градина",
+                "en": "A zoo"
+              },
+              {
+                "bg": "Ловно поле",
+                "en": "A hunting ground"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Кое от тези е влажна зона?",
+              "en": "Which of these is a wetland?"
+            },
+            "options": [
+              {
+                "bg": "Пустиня",
+                "en": "A desert"
+              },
+              {
+                "bg": "Блато",
+                "en": "A marsh"
+              },
+              {
+                "bg": "Скала",
+                "en": "A cliff"
+              },
+              {
+                "bg": "Паркинг",
+                "en": "A car park"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Какво е екокоридор?",
+              "en": "What is a wildlife corridor?"
+            },
+            "options": [
+              {
+                "bg": "Ивица природа, по която животните минават между две места",
+                "en": "A strip of nature animals use to move between places"
+              },
+              {
+                "bg": "Коридор в училище",
+                "en": "A school corridor"
+              },
+              {
+                "bg": "Път за коли",
+                "en": "A road for cars"
+              },
+              {
+                "bg": "Тунел за влак",
+                "en": "A train tunnel"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Защо пазим цели места, а не само видове?",
+              "en": "Why do we protect whole places, not just species?"
+            },
+            "options": [
+              {
+                "bg": "Ако домът изчезне, изчезва и животното",
+                "en": "If the home disappears, so does the animal"
+              },
+              {
+                "bg": "Защото местата са красиви",
+                "en": "Because places are pretty"
+              },
+              {
+                "bg": "За да строим там",
+                "en": "To build there"
+              },
+              {
+                "bg": "Няма причина",
+                "en": "There is no reason"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -301,6 +512,56 @@
             "bg": "Видрата лови риба само в чиста вода.",
             "en": "The otter fishes only in clean water."
           }
+        },
+        {
+          "q": {
+            "bg": "Кое животно се нуждае от стари дървета с хралупи?",
+            "en": "Which animal needs old trees with hollows?"
+          },
+          "options": [
+            {
+              "bg": "Делфинът",
+              "en": "The dolphin"
+            },
+            {
+              "bg": "Кълвачът",
+              "en": "The woodpecker"
+            },
+            {
+              "bg": "Пеликанът",
+              "en": "The pelican"
+            },
+            {
+              "bg": "Дивата коза",
+              "en": "The chamois"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Кое застрашава видрата най-много?",
+            "en": "What threatens the otter most?"
+          },
+          "options": [
+            {
+              "bg": "Снегът",
+              "en": "Snow"
+            },
+            {
+              "bg": "Мръсните реки",
+              "en": "Dirty rivers"
+            },
+            {
+              "bg": "Слънцето",
+              "en": "The sun"
+            },
+            {
+              "bg": "Вятърът",
+              "en": "Wind"
+            }
+          ],
+          "answer": 1
         }
       ]
     }

@@ -166,7 +166,139 @@
           }
         ]
       },
-      "check": []
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Какво е жълтица?",
+              "en": "What is a zhaltitsa?"
+            },
+            "options": [
+              {
+                "bg": "Стара златна монета",
+                "en": "An old gold coin"
+              },
+              {
+                "bg": "Цвете",
+                "en": "A flower"
+              },
+              {
+                "bg": "Птица",
+                "en": "A bird"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Какво е пендар?",
+              "en": "What is a pendar?"
+            },
+            "options": [
+              {
+                "bg": "Голяма стара златна монета",
+                "en": "A large old gold coin"
+              },
+              {
+                "bg": "Чушка",
+                "en": "A pepper"
+              },
+              {
+                "bg": "Шапка",
+                "en": "A hat"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "С какво са писали, преди да има химикалки?",
+              "en": "What did people write with before ballpoint pens?"
+            },
+            "options": [
+              {
+                "bg": "С перо и мастило",
+                "en": "A quill and ink"
+              },
+              {
+                "bg": "С пръст",
+                "en": "A finger"
+              },
+              {
+                "bg": "С клечка",
+                "en": "A stick"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кога носим мартеница?",
+            "en": "When do we wear a martenitsa?"
+          },
+          "options": [
+            {
+              "bg": "През март",
+              "en": "In March"
+            },
+            {
+              "bg": "През август",
+              "en": "In August"
+            },
+            {
+              "bg": "През ноември",
+              "en": "In November"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "От какво се прави мартеница?",
+            "en": "What is a martenitsa made of?"
+          },
+          "options": [
+            {
+              "bg": "От бял и червен конец",
+              "en": "White and red thread"
+            },
+            {
+              "bg": "От хартия",
+              "en": "Paper"
+            },
+            {
+              "bg": "От пластмаса",
+              "en": "Plastic"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Къде се крият някои неща на площада?",
+            "en": "Where do some things hide in the square?"
+          },
+          "options": [
+            {
+              "bg": "Под храстите",
+              "en": "Under the bushes"
+            },
+            {
+              "bg": "В облаците",
+              "en": "In the clouds"
+            },
+            {
+              "bg": "В морето",
+              "en": "In the sea"
+            }
+          ],
+          "answer": 0
+        }
+      ]
     },
     "guard": {
       "story": [
@@ -265,7 +397,158 @@
           }
         ]
       },
-      "check": []
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Жълтиците са стари златни монети.",
+              "en": "Zhaltitsi are old gold coins."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "Пендарите се носят и като накит на носията.",
+              "en": "Pendari are also worn as jewellery on folk costume."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – на гърдите или на челото.",
+              "en": "Yes – on the chest or the forehead."
+            }
+          },
+          {
+            "text": {
+              "bg": "Мартеницата се носи през декември.",
+              "en": "The martenitsa is worn in December."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – през март.",
+              "en": "No – in March."
+            }
+          },
+          {
+            "text": {
+              "bg": "Будителите са писали с перо и мастило.",
+              "en": "The enlighteners wrote with a quill and ink."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "Розата е символ на Казанлък и Розовата долина.",
+              "en": "The rose is the symbol of Kazanlak and the Rose Valley."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "Всички гъби от гората може да се ядат без страх.",
+              "en": "All mushrooms from the forest are safe to eat."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – някои са смъртно отровни.",
+              "en": "No – some are deadly poisonous."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Защо не бива да берем непознати гъби?",
+            "en": "Why must we not pick unknown mushrooms?"
+          },
+          "options": [
+            {
+              "bg": "Някои са смъртно отровни",
+              "en": "Some are deadly poisonous"
+            },
+            {
+              "bg": "Всички са защитени",
+              "en": "All are protected"
+            },
+            {
+              "bg": "Те са сладки",
+              "en": "They are sweet"
+            },
+            {
+              "bg": "Растат бавно",
+              "en": "They grow slowly"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какви монети носят жените по носията като украса?",
+            "en": "Which coins do women wear on folk costume as decoration?"
+          },
+          "options": [
+            {
+              "bg": "Пендари",
+              "en": "Pendari"
+            },
+            {
+              "bg": "Мартеници",
+              "en": "Martenitsi"
+            },
+            {
+              "bg": "Ключове",
+              "en": "Keys"
+            },
+            {
+              "bg": "Пера",
+              "en": "Quills"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кой цвят на мартеницата е за здраве?",
+            "en": "Which colour of the martenitsa is for health?"
+          },
+          "options": [
+            {
+              "bg": "Белият",
+              "en": "White"
+            },
+            {
+              "bg": "Червеният",
+              "en": "Red"
+            },
+            {
+              "bg": "Синият",
+              "en": "Blue"
+            },
+            {
+              "bg": "Зеленият",
+              "en": "Green"
+            }
+          ],
+          "answer": 1
+        }
+      ]
     }
   },
   "sources": [

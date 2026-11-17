@@ -138,6 +138,74 @@
           }
         ]
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Коя дума е съществително име (предмет)?",
+              "en": "Which word is a noun (a thing)?"
+            },
+            "options": [
+              {
+                "bg": "маса",
+                "en": "masa (table)"
+              },
+              {
+                "bg": "тичам",
+                "en": "ticham (I run)"
+              },
+              {
+                "bg": "бързо",
+                "en": "barzo (quickly)"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Коя дума е прилагателно име (какъв е)?",
+              "en": "Which word is an adjective (what it is like)?"
+            },
+            "options": [
+              {
+                "bg": "пея",
+                "en": "peya (I sing)"
+              },
+              {
+                "bg": "зелен",
+                "en": "zelen (green)"
+              },
+              {
+                "bg": "вчера",
+                "en": "vchera (yesterday)"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "С какво завършва изречението?",
+              "en": "What does a sentence end with?"
+            },
+            "options": [
+              {
+                "bg": "С точка",
+                "en": "A full stop"
+              },
+              {
+                "bg": "С буква",
+                "en": "A letter"
+              },
+              {
+                "bg": "Със запетая",
+                "en": "A comma"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -156,6 +224,48 @@
             {
               "bg": "зелен",
               "en": "green"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кое изречение е правилно?",
+            "en": "Which sentence is correct?"
+          },
+          "options": [
+            {
+              "bg": "Аз чета книга.",
+              "en": "Az cheta kniga."
+            },
+            {
+              "bg": "Аз чете книга.",
+              "en": "Az chete kniga."
+            },
+            {
+              "bg": "Аз четем книга.",
+              "en": "Az chetem kniga."
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "С каква буква започва изречението?",
+            "en": "What letter does a sentence start with?"
+          },
+          "options": [
+            {
+              "bg": "С главна",
+              "en": "A capital letter"
+            },
+            {
+              "bg": "С малка",
+              "en": "A small letter"
+            },
+            {
+              "bg": "С точка",
+              "en": "A full stop"
             }
           ],
           "answer": 0
@@ -275,6 +385,115 @@
           }
         ]
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Кое е правилно?",
+              "en": "Which is correct?"
+            },
+            "options": [
+              {
+                "bg": "Видях ученикът.",
+                "en": "Vidyah uchenikat."
+              },
+              {
+                "bg": "Видях ученика.",
+                "en": "Vidyah uchenika."
+              },
+              {
+                "bg": "Видях учениката.",
+                "en": "Vidyah uchenikata."
+              },
+              {
+                "bg": "Видях ученик-а.",
+                "en": "Vidyah uchenik-a."
+              }
+            ],
+            "answer": 1,
+            "hint": {
+              "bg": "Ученикът тук не е подлог – кратък член.",
+              "en": "The pupil is not the subject here – short article."
+            }
+          },
+          {
+            "q": {
+              "bg": "В кое време е „Той писа“?",
+              "en": "Which tense is “Toy pisa” (He wrote)?"
+            },
+            "options": [
+              {
+                "bg": "Сегашно",
+                "en": "Present"
+              },
+              {
+                "bg": "Минало",
+                "en": "Past"
+              },
+              {
+                "bg": "Бъдеще",
+                "en": "Future"
+              },
+              {
+                "bg": "Повелително",
+                "en": "Imperative"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Кое е бъдеще време?",
+              "en": "Which is the future tense?"
+            },
+            "options": [
+              {
+                "bg": "Пиша",
+                "en": "Pisha"
+              },
+              {
+                "bg": "Писах",
+                "en": "Pisah"
+              },
+              {
+                "bg": "Ще пиша",
+                "en": "Shte pisha"
+              },
+              {
+                "bg": "Пишех",
+                "en": "Pisheh"
+              }
+            ],
+            "answer": 2
+          },
+          {
+            "q": {
+              "bg": "В „Малкото куче лае.“ кое е подлогът?",
+              "en": "In “Malkoto kuche lae.” (The little dog barks.) what is the subject?"
+            },
+            "options": [
+              {
+                "bg": "лае",
+                "en": "lae (barks)"
+              },
+              {
+                "bg": "Малкото куче",
+                "en": "Malkoto kuche (the little dog)"
+              },
+              {
+                "bg": "малкото",
+                "en": "malkoto (the little)"
+              },
+              {
+                "bg": "Няма подлог",
+                "en": "There is no subject"
+              }
+            ],
+            "answer": 1
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -296,6 +515,56 @@
             "bg": "Ученикът е подлог – пълен член.",
             "en": "The pupil is the subject – full article."
           }
+        },
+        {
+          "q": {
+            "bg": "Кое е правилно?",
+            "en": "Which is correct?"
+          },
+          "options": [
+            {
+              "bg": "Стола е нов.",
+              "en": "Stola e nov."
+            },
+            {
+              "bg": "Столът е нов.",
+              "en": "Stolat e nov."
+            },
+            {
+              "bg": "Столат е нов.",
+              "en": "Stolat (a) e nov."
+            },
+            {
+              "bg": "Столъ е нов.",
+              "en": "Stolŭ e nov."
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Каква част на речта е „бързо“?",
+            "en": "What part of speech is “barzo” (quickly)?"
+          },
+          "options": [
+            {
+              "bg": "Глагол",
+              "en": "Verb"
+            },
+            {
+              "bg": "Съществително",
+              "en": "Noun"
+            },
+            {
+              "bg": "Наречие",
+              "en": "Adverb"
+            },
+            {
+              "bg": "Прилагателно",
+              "en": "Adjective"
+            }
+          ],
+          "answer": 2
         }
       ]
     }

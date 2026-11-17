@@ -42,7 +42,7 @@ describe('content/missions — every file', () => {
             paths.push(`poses/${line.hero}-${line.pose}.webp`)
             if (line.img) paths.push(line.img)
           }
-          const questions = [...(level.game.type === 'quiz' ? level.game.questions : []), ...level.check]
+          const questions = [...[level.game, level.extra].flatMap((g) => (g?.type === 'quiz' || g?.type === 'blitz' ? g.questions : [])), ...level.check]
           for (const q of questions) for (const o of q.options) if (o.img) paths.push(o.img)
         }
         for (const p of paths) expect(existsSync(join(PUBLIC_IMG, p)), p).toBe(true)
@@ -51,7 +51,7 @@ describe('content/missions — every file', () => {
       it('options in a question are all different', () => {
         for (const level of Object.values(m.levels)) {
           if (!level) continue
-          const questions = [...(level.game.type === 'quiz' ? level.game.questions : []), ...level.check]
+          const questions = [...[level.game, level.extra].flatMap((g) => (g?.type === 'quiz' || g?.type === 'blitz' ? g.questions : [])), ...level.check]
           for (const q of questions) {
             expect(new Set(q.options.map((o) => o.bg)).size, q.q.bg).toBe(q.options.length)
             expect(new Set(q.options.map((o) => o.en)).size, q.q.en).toBe(q.options.length)
@@ -74,6 +74,16 @@ describe('content/missions — every file', () => {
       })
     })
   }
+
+  it('7–14 levels are not too short (v0.24): a second round and 3 review questions', () => {
+    for (const m of MISSIONS)
+      for (const level of ['young', 'guard'] as const) {
+        const c = m.levels[level]
+        if (!c) continue
+        expect(c.extra, `${m.id} ${level}: extra`).toBeTruthy()
+        expect(c.check.length, `${m.id} ${level}: check`).toBe(3)
+      }
+  })
 
   it('ids and badge ids are unique', () => {
     const ms = files.map((f) => load(f) as { id: string; badge: { id: string } })

@@ -100,6 +100,70 @@
           "en": "Ankara is the capital of Türkiye; Istanbul is its biggest city."
         }
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "България има пет съседни държави.",
+              "en": "Bulgaria has five neighbouring countries."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – Румъния, Сърбия, Северна Македония, Гърция и Турция.",
+              "en": "Yes – Romania, Serbia, North Macedonia, Greece and Turkey."
+            }
+          },
+          {
+            "text": {
+              "bg": "Столицата на Гърция е Атина.",
+              "en": "The capital of Greece is Athens."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "Столицата на Турция е Истанбул.",
+              "en": "The capital of Turkey is Istanbul."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – Анкара. Истанбул е най-големият град.",
+              "en": "No – Ankara. Istanbul is the biggest city."
+            }
+          },
+          {
+            "text": {
+              "bg": "Румъния е на север от нас.",
+              "en": "Romania is to our north."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – отвъд Дунав.",
+              "en": "Yes – across the Danube."
+            }
+          },
+          {
+            "text": {
+              "bg": "Сърбия е на изток от нас.",
+              "en": "Serbia is to our east."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – на запад. На изток е Черно море.",
+              "en": "No – to the west. The Black Sea is to the east."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -131,6 +195,27 @@
             {
               "bg": "Черно море",
               "en": "The Black Sea"
+            },
+            {
+              "bg": "Сърбия",
+              "en": "Serbia"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Коя съседка е на юг от България?",
+            "en": "Which neighbour is south of Bulgaria?"
+          },
+          "options": [
+            {
+              "bg": "Гърция",
+              "en": "Greece"
+            },
+            {
+              "bg": "Румъния",
+              "en": "Romania"
             },
             {
               "bg": "Сърбия",
@@ -213,6 +298,111 @@
               "bg": "Анкара",
               "en": "Ankara"
             }
+          }
+        ]
+      },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "По коя река минава част от границата с Турция?",
+              "en": "Along which river does part of the border with Turkey run?"
+            },
+            "options": [
+              {
+                "bg": "Марица",
+                "en": "Maritsa"
+              },
+              {
+                "bg": "Резовска",
+                "en": "Rezovska"
+              },
+              {
+                "bg": "Тимок",
+                "en": "Timok"
+              },
+              {
+                "bg": "Дунав",
+                "en": "Danube"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "По коя река минава част от границата със Сърбия?",
+              "en": "Along which river does part of the border with Serbia run?"
+            },
+            "options": [
+              {
+                "bg": "Тимок",
+                "en": "Timok"
+              },
+              {
+                "bg": "Струма",
+                "en": "Struma"
+              },
+              {
+                "bg": "Арда",
+                "en": "Arda"
+              },
+              {
+                "bg": "Янтра",
+                "en": "Yantra"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Коя планина е на границата с Гърция?",
+              "en": "Which mountain lies on the border with Greece?"
+            },
+            "options": [
+              {
+                "bg": "Стара планина",
+                "en": "The Balkan Mountains"
+              },
+              {
+                "bg": "Витоша",
+                "en": "Vitosha"
+              },
+              {
+                "bg": "Родопите",
+                "en": "The Rhodopes"
+              },
+              {
+                "bg": "Странджа",
+                "en": "Strandzha"
+              }
+            ],
+            "answer": 2
+          },
+          {
+            "q": {
+              "bg": "Коя от тези съседки НЕ е в Европейския съюз?",
+              "en": "Which of these neighbours is NOT in the European Union?"
+            },
+            "options": [
+              {
+                "bg": "Румъния",
+                "en": "Romania"
+              },
+              {
+                "bg": "Гърция",
+                "en": "Greece"
+              },
+              {
+                "bg": "Сърбия",
+                "en": "Serbia"
+              },
+              {
+                "bg": "Всички са в ЕС",
+                "en": "All are in the EU"
+              }
+            ],
+            "answer": 2
           }
         ]
       },

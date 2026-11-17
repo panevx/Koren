@@ -182,6 +182,70 @@
           }
         ]
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Щъркелът зимува в Африка.",
+              "en": "The stork spends the winter in Africa."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – и се връща напролет.",
+              "en": "Yes – and returns in spring."
+            }
+          },
+          {
+            "text": {
+              "bg": "Лястовицата прави гнездо от кал.",
+              "en": "The swallow builds its nest of mud."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – под стрехите на къщите.",
+              "en": "Yes – under the eaves of houses."
+            }
+          },
+          {
+            "text": {
+              "bg": "Делфинът диша въздух.",
+              "en": "The dolphin breathes air."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – той е бозайник.",
+              "en": "Yes – it is a mammal."
+            }
+          },
+          {
+            "text": {
+              "bg": "Щъркелът зимува на Северния полюс.",
+              "en": "The stork spends the winter at the North Pole."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – там е много студено. Щъркелът отлита в Африка.",
+              "en": "No – it is far too cold there. The stork flies to Africa."
+            }
+          },
+          {
+            "text": {
+              "bg": "Делфинът е риба.",
+              "en": "The dolphin is a fish."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – той е бозайник и диша въздух.",
+              "en": "No – it is a mammal and breathes air."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -238,6 +302,27 @@
             "bg": "Опашката ѝ е раздвоена.",
             "en": "Its tail is forked."
           }
+        },
+        {
+          "q": {
+            "bg": "Кога се връща щъркелът при нас?",
+            "en": "When does the stork come back to us?"
+          },
+          "options": [
+            {
+              "bg": "Напролет",
+              "en": "In spring"
+            },
+            {
+              "bg": "Наесен",
+              "en": "In autumn"
+            },
+            {
+              "bg": "През зимата",
+              "en": "In winter"
+            }
+          ],
+          "answer": 0
         }
       ]
     },
@@ -288,6 +373,111 @@
           "bg": "Търси на североизток, на самия Дунав.",
           "en": "Look in the north-east, right on the Danube."
         }
+      },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Близо до кой град е езерото Сребърна?",
+              "en": "Near which town is Lake Srebarna?"
+            },
+            "options": [
+              {
+                "bg": "Варна",
+                "en": "Varna"
+              },
+              {
+                "bg": "Силистра",
+                "en": "Silistra"
+              },
+              {
+                "bg": "Видин",
+                "en": "Vidin"
+              },
+              {
+                "bg": "Бургас",
+                "en": "Burgas"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Какво е Сребърна?",
+              "en": "What is Srebarna?"
+            },
+            "options": [
+              {
+                "bg": "Биосферен резерват и обект на ЮНЕСКО",
+                "en": "A biosphere reserve and a UNESCO site"
+              },
+              {
+                "bg": "Плаж",
+                "en": "A beach"
+              },
+              {
+                "bg": "Парк за забавления",
+                "en": "An amusement park"
+              },
+              {
+                "bg": "Пристанище",
+                "en": "A port"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Кога над Via Pontica прелитат най-много птици?",
+              "en": "When do most birds fly along the Via Pontica?"
+            },
+            "options": [
+              {
+                "bg": "Наесен и напролет",
+                "en": "In autumn and spring"
+              },
+              {
+                "bg": "Само през юли",
+                "en": "Only in July"
+              },
+              {
+                "bg": "Само нощем през зимата",
+                "en": "Only at night in winter"
+              },
+              {
+                "bg": "Никога",
+                "en": "Never"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Защо не бива да взимаме сухоземни костенурки вкъщи?",
+              "en": "Why must we not take tortoises home?"
+            },
+            "options": [
+              {
+                "bg": "Хапят",
+                "en": "They bite"
+              },
+              {
+                "bg": "Защитен вид са и мястото им е в природата",
+                "en": "They are protected and belong in nature"
+              },
+              {
+                "bg": "Бягат много бързо",
+                "en": "They run very fast"
+              },
+              {
+                "bg": "Миришат",
+                "en": "They smell"
+              }
+            ],
+            "answer": 1
+          }
+        ]
       },
       "check": [
         {

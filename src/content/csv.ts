@@ -106,6 +106,8 @@ export function missionsToCsv(missions: Mission[]): string {
           // The scene games (find, sort, memory, chest, build, guess) have nested data: one row, the game as JSON.
           head('json', { bg: JSON.stringify(g) })
       }
+      // v0.24: the second round, one row with the game as JSON (like the scene games).
+      if (c.extra) add({ mission: id, level, block: 'extra', kind: 'json', bg: JSON.stringify(c.extra) })
       for (const q of c.check) question(id, level, 'check', q)
     }
   }
@@ -134,7 +136,7 @@ export function csvToMissions(text: string): ImportResult {
     const mine = rows.filter((r) => r.mission === id)
     const at = (r: Row) => `ред ${r.line} (${id})`
     const draft: Record<string, unknown> = { id, sources: [], review: null, levels: {} }
-    const levels: Record<string, { story: unknown[]; game?: Record<string, unknown>; check: unknown[] }> = {}
+    const levels: Record<string, { story: unknown[]; game?: Record<string, unknown>; extra?: unknown; check: unknown[] }> = {}
     const toQuestion = (r: Row) => {
       const bg = split(r.opt_bg)
       const en = split(r.opt_en)
@@ -187,6 +189,13 @@ export function csvToMissions(text: string): ImportResult {
         const [hero, pose] = r.kind.split(':')
         L.story.push({ hero, pose: pose || 'point', bg: r.bg, en: r.en, ...(r.img ? { img: r.img } : {}) })
       } else if (block === 'check') L.check.push(toQuestion(r))
+      else if (block === 'extra') {
+        try {
+          L.extra = JSON.parse(r.bg)
+        } catch {
+          errors.push(`${at(r)}: колоната bg не е валиден JSON за второто предизвикателство`)
+        }
+      }
       else if (block === 'game') {
         const g = L.game
         switch (r.kind) {
@@ -224,7 +233,7 @@ export function csvToMissions(text: string): ImportResult {
           default:
             errors.push(`${at(r)}: непознат вид игра „${r.kind}“ (quiz, question, map, map:icons, match, pair, order, item, puzzle, json)`)
         }
-      } else errors.push(`${at(r)}: „block“ трябва да е story, game или check`)
+      } else errors.push(`${at(r)}: „block“ трябва да е story, game, extra или check`)
     }
     draft.levels = Object.fromEntries(Object.entries(levels).map(([k, v]) => [k, v as unknown as LevelContent | { game: Game }]))
 

@@ -141,6 +141,74 @@
           }
         ]
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Кой пише „История славянобългарска“?",
+              "en": "Who writes the “Slavonic-Bulgarian History”?"
+            },
+            "options": [
+              {
+                "bg": "Паисий Хилендарски",
+                "en": "Paisius of Hilendar"
+              },
+              {
+                "bg": "Петър Берон",
+                "en": "Petar Beron"
+              },
+              {
+                "bg": "Христо Ботев",
+                "en": "Hristo Botev"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Как се казва букварът на Петър Берон?",
+              "en": "What is Petar Beron’s primer called?"
+            },
+            "options": [
+              {
+                "bg": "Рибният буквар",
+                "en": "The Fish Primer"
+              },
+              {
+                "bg": "Птичият буквар",
+                "en": "The Bird Primer"
+              },
+              {
+                "bg": "Златният буквар",
+                "en": "The Golden Primer"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Какво е „Неделник“?",
+              "en": "What is the “Nedelnik”?"
+            },
+            "options": [
+              {
+                "bg": "Първата печатна книга на новобългарски",
+                "en": "The first printed book in modern Bulgarian"
+              },
+              {
+                "bg": "Вестник",
+                "en": "A newspaper"
+              },
+              {
+                "bg": "Песен",
+                "en": "A song"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -159,6 +227,48 @@
             {
               "bg": "24 май",
               "en": "24 May"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Защо ги наричаме „будители“?",
+            "en": "Why do we call them “enlighteners” (awakeners)?"
+          },
+          "options": [
+            {
+              "bg": "„Събуждат“ народа с книги и знания",
+              "en": "They “awaken” the people with books and knowledge"
+            },
+            {
+              "bg": "Стават много рано",
+              "en": "They get up very early"
+            },
+            {
+              "bg": "Били са пазачи",
+              "en": "They were guards"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "През коя година Паисий пише своята „История“?",
+            "en": "In which year does Paisius write his “History”?"
+          },
+          "options": [
+            {
+              "bg": "1762 г.",
+              "en": "1762"
+            },
+            {
+              "bg": "1878 г.",
+              "en": "1878"
+            },
+            {
+              "bg": "681 г.",
+              "en": "681"
             }
           ],
           "answer": 0
@@ -249,6 +359,35 @@
           "en": "Kotel gave Bulgaria Sofroniy, Petar Beron and Rakovski."
         }
       },
+      "extra": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди книгите по годината, в която са написани.",
+          "en": "Put the books in the order they were written."
+        },
+        "items": [
+          {
+            "bg": "„История славянобългарска“ (Паисий)",
+            "en": "“Slavonic-Bulgarian History” (Paisius)"
+          },
+          {
+            "bg": "„Неделник“ (Софроний Врачански)",
+            "en": "“Nedelnik” (Sophronius of Vratsa)"
+          },
+          {
+            "bg": "„Рибният буквар“ (Петър Берон)",
+            "en": "“The Fish Primer” (Petar Beron)"
+          },
+          {
+            "bg": "Първата българска граматика (Неофит Рилски)",
+            "en": "The first Bulgarian grammar (Neophyte of Rila)"
+          }
+        ],
+        "hint": {
+          "bg": "Паисий е първият; граматиката е най-късно – 1835 г.",
+          "en": "Paisius is first; the grammar is last – 1835."
+        }
+      },
       "check": [
         {
           "q": {
@@ -287,6 +426,31 @@
             }
           ],
           "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кой е авторът на „Неделник“?",
+            "en": "Who is the author of the “Nedelnik”?"
+          },
+          "options": [
+            {
+              "bg": "Паисий Хилендарски",
+              "en": "Paisius of Hilendar"
+            },
+            {
+              "bg": "Софроний Врачански",
+              "en": "Sophronius of Vratsa"
+            },
+            {
+              "bg": "Петър Берон",
+              "en": "Petar Beron"
+            },
+            {
+              "bg": "Георги Раковски",
+              "en": "Georgi Rakovski"
+            }
+          ],
+          "answer": 1
         }
       ]
     }

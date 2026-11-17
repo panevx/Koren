@@ -135,6 +135,70 @@
           }
         ]
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Стефка Костадинова е в скока на височина.",
+              "en": "Stefka Kostadinova is a high jumper."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – със световен рекорд.",
+              "en": "Yes – with a world record."
+            }
+          },
+          {
+            "text": {
+              "bg": "Христо Стоичков е тенисист.",
+              "en": "Hristo Stoichkov is a tennis player."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – той е футболист.",
+              "en": "No – he is a footballer."
+            }
+          },
+          {
+            "text": {
+              "bg": "Григор Димитров играе тенис.",
+              "en": "Grigor Dimitrov plays tennis."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "„Златните момичета“ са в художествената гимнастика.",
+              "en": "The “Golden Girls” are in rhythmic gymnastics."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "Стефка Костадинова е футболистка.",
+              "en": "Stefka Kostadinova is a footballer."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – тя скача на височина.",
+              "en": "No – she is a high jumper."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -152,6 +216,48 @@
             }
           ],
           "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какъв спорт играе Григор Димитров?",
+            "en": "Which sport does Grigor Dimitrov play?"
+          },
+          "options": [
+            {
+              "bg": "Тенис",
+              "en": "Tennis"
+            },
+            {
+              "bg": "Футбол",
+              "en": "Football"
+            },
+            {
+              "bg": "Шах",
+              "en": "Chess"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какъв спортист е Христо Стоичков?",
+            "en": "What kind of sportsman is Hristo Stoichkov?"
+          },
+          "options": [
+            {
+              "bg": "Плувец",
+              "en": "A swimmer"
+            },
+            {
+              "bg": "Футболист",
+              "en": "A footballer"
+            },
+            {
+              "bg": "Боксьор",
+              "en": "A boxer"
+            }
+          ],
+          "answer": 1
         }
       ]
     },
@@ -247,6 +353,111 @@
           }
         ]
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "През коя година Костадинова поставя световния рекорд?",
+              "en": "In which year does Kostadinova set the world record?"
+            },
+            "options": [
+              {
+                "bg": "1977",
+                "en": "1977"
+              },
+              {
+                "bg": "1987",
+                "en": "1987"
+              },
+              {
+                "bg": "1994",
+                "en": "1994"
+              },
+              {
+                "bg": "2007",
+                "en": "2007"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "В кой град е поставен рекордът?",
+              "en": "In which city is the record set?"
+            },
+            "options": [
+              {
+                "bg": "Рим",
+                "en": "Rome"
+              },
+              {
+                "bg": "Париж",
+                "en": "Paris"
+              },
+              {
+                "bg": "София",
+                "en": "Sofia"
+              },
+              {
+                "bg": "Москва",
+                "en": "Moscow"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "За кой отбор играе Стоичков, когато печели „Златната топка“?",
+              "en": "Which club does Stoichkov play for when he wins the Ballon d’Or?"
+            },
+            "options": [
+              {
+                "bg": "Реал Мадрид",
+                "en": "Real Madrid"
+              },
+              {
+                "bg": "Барселона",
+                "en": "Barcelona"
+              },
+              {
+                "bg": "Ливърпул",
+                "en": "Liverpool"
+              },
+              {
+                "bg": "Ювентус",
+                "en": "Juventus"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "В коя държава е Световното първенство по футбол през 1994 г.?",
+              "en": "In which country is the 1994 World Cup?"
+            },
+            "options": [
+              {
+                "bg": "Италия",
+                "en": "Italy"
+              },
+              {
+                "bg": "Франция",
+                "en": "France"
+              },
+              {
+                "bg": "САЩ",
+                "en": "The USA"
+              },
+              {
+                "bg": "Германия",
+                "en": "Germany"
+              }
+            ],
+            "answer": 2
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -261,6 +472,56 @@
             {
               "bg": "Христо Стоичков",
               "en": "Hristo Stoichkov"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Как наричат българския отбор по художествена гимнастика?",
+            "en": "What is the Bulgarian rhythmic gymnastics team called?"
+          },
+          "options": [
+            {
+              "bg": "„Сребърните птици“",
+              "en": "“The Silver Birds”"
+            },
+            {
+              "bg": "„Златните момичета“",
+              "en": "“The Golden Girls”"
+            },
+            {
+              "bg": "„Звездите“",
+              "en": "“The Stars”"
+            },
+            {
+              "bg": "„Лъвовете“",
+              "en": "“The Lions”"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Какво е „феърплей“?",
+            "en": "What is “fair play”?"
+          },
+          "options": [
+            {
+              "bg": "Честна игра",
+              "en": "Playing fairly"
+            },
+            {
+              "bg": "Бърза игра",
+              "en": "Fast play"
+            },
+            {
+              "bg": "Игра в дъжд",
+              "en": "Playing in the rain"
+            },
+            {
+              "bg": "Игра без топка",
+              "en": "Playing without a ball"
             }
           ],
           "answer": 0

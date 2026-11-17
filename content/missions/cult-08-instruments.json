@@ -141,6 +141,70 @@
           }
         ]
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Гайдата има мях от кожа.",
+              "en": "The bagpipe has a bag made of skin."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – от козя кожа.",
+              "en": "Yes – of goatskin."
+            }
+          },
+          {
+            "text": {
+              "bg": "Кавалът се свири с лък.",
+              "en": "The kaval is played with a bow."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – в кавала се духа.",
+              "en": "No – you blow into the kaval."
+            }
+          },
+          {
+            "text": {
+              "bg": "Гъдулката има струни.",
+              "en": "The gadulka has strings."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – по тях се свири с лък.",
+              "en": "Yes – they are played with a bow."
+            }
+          },
+          {
+            "text": {
+              "bg": "Тъпанът се удря с палки.",
+              "en": "The tapan is beaten with sticks."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – с две различни палки.",
+              "en": "Yes – with two different sticks."
+            }
+          },
+          {
+            "text": {
+              "bg": "Хорото се играе само под рок музика.",
+              "en": "The horo is danced only to rock music."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – хорото се играе под народна музика.",
+              "en": "No – the horo is danced to folk music."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -155,6 +219,48 @@
             {
               "bg": "Тишина",
               "en": "Silence"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кой инструмент се свири с лък?",
+            "en": "Which instrument is played with a bow?"
+          },
+          "options": [
+            {
+              "bg": "Гъдулка",
+              "en": "Gadulka"
+            },
+            {
+              "bg": "Кавал",
+              "en": "Kaval"
+            },
+            {
+              "bg": "Тъпан",
+              "en": "Tapan"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "В кой инструмент се духа през мях?",
+            "en": "Which instrument is blown through a bag?"
+          },
+          "options": [
+            {
+              "bg": "Гайда",
+              "en": "Bagpipe"
+            },
+            {
+              "bg": "Тъпан",
+              "en": "Tapan"
+            },
+            {
+              "bg": "Гъдулка",
+              "en": "Gadulka"
             }
           ],
           "answer": 0
@@ -247,6 +353,111 @@
           }
         ]
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Как се казва ансамбълът от стотина гайдари в Родопите?",
+              "en": "What is the ensemble of about a hundred bagpipers in the Rhodopes called?"
+            },
+            "options": [
+              {
+                "bg": "„Пирин“",
+                "en": "“Pirin”"
+              },
+              {
+                "bg": "„Сто каба гайди“",
+                "en": "“A Hundred Kaba Gaidi”"
+              },
+              {
+                "bg": "„Филип Кутев“",
+                "en": "“Filip Kutev”"
+              },
+              {
+                "bg": "„Тракия“",
+                "en": "“Thrace”"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Какво е каба гайда?",
+              "en": "What is a kaba gaida?"
+            },
+            "options": [
+              {
+                "bg": "Голяма родопска гайда с нисък звук",
+                "en": "A large Rhodope bagpipe with a low sound"
+              },
+              {
+                "bg": "Малък барабан",
+                "en": "A small drum"
+              },
+              {
+                "bg": "Струнен инструмент",
+                "en": "A string instrument"
+              },
+              {
+                "bg": "Метална флейта",
+                "en": "A metal flute"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Към кое семейство е гъдулката?",
+              "en": "Which family does the gadulka belong to?"
+            },
+            "options": [
+              {
+                "bg": "Духови",
+                "en": "Wind"
+              },
+              {
+                "bg": "Струнни",
+                "en": "String"
+              },
+              {
+                "bg": "Ударни",
+                "en": "Percussion"
+              },
+              {
+                "bg": "Клавишни",
+                "en": "Keyboard"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Към кое семейство е тарамбуката?",
+              "en": "Which family does the tarambuka belong to?"
+            },
+            "options": [
+              {
+                "bg": "Ударни",
+                "en": "Percussion"
+              },
+              {
+                "bg": "Струнни",
+                "en": "String"
+              },
+              {
+                "bg": "Духови",
+                "en": "Wind"
+              },
+              {
+                "bg": "Клавишни",
+                "en": "Keyboard"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -264,6 +475,56 @@
             }
           ],
           "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Към кое семейство е кавалът?",
+            "en": "Which family does the kaval belong to?"
+          },
+          "options": [
+            {
+              "bg": "Струнни",
+              "en": "String"
+            },
+            {
+              "bg": "Ударни",
+              "en": "Percussion"
+            },
+            {
+              "bg": "Духови",
+              "en": "Wind"
+            },
+            {
+              "bg": "Клавишни",
+              "en": "Keyboard"
+            }
+          ],
+          "answer": 2
+        },
+        {
+          "q": {
+            "bg": "Кой инструмент има струни и се свири с перце?",
+            "en": "Which instrument has strings and is played with a plectrum?"
+          },
+          "options": [
+            {
+              "bg": "Гайда",
+              "en": "Bagpipe"
+            },
+            {
+              "bg": "Тамбура",
+              "en": "Tambura"
+            },
+            {
+              "bg": "Тъпан",
+              "en": "Tapan"
+            },
+            {
+              "bg": "Кавал",
+              "en": "Kaval"
+            }
+          ],
+          "answer": 1
         }
       ]
     }

@@ -131,6 +131,70 @@
           "en": "Bansko is below Vihren, and Pamporovo is near Smolyan."
         }
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Боровец е в Рила.",
+              "en": "Borovets is in Rila."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – най-старият ни курорт.",
+              "en": "Yes – our oldest resort."
+            }
+          },
+          {
+            "text": {
+              "bg": "Банско е в Пирин.",
+              "en": "Bansko is in Pirin."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – под връх Вихрен.",
+              "en": "Yes – below Vihren Peak."
+            }
+          },
+          {
+            "text": {
+              "bg": "Пампорово е в Родопите.",
+              "en": "Pamporovo is in the Rhodopes."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – близо до Смолян.",
+              "en": "Yes – near Smolyan."
+            }
+          },
+          {
+            "text": {
+              "bg": "Ски курортите са на морския бряг.",
+              "en": "The ski resorts are on the seashore."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – в планините, където има сняг.",
+              "en": "No – in the mountains, where there is snow."
+            }
+          },
+          {
+            "text": {
+              "bg": "Банско е под връх Ботев.",
+              "en": "Bansko lies below Botev Peak."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – под Вихрен. Ботев е в Стара планина.",
+              "en": "No – below Vihren. Botev is in the Balkan Mountains."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -145,6 +209,48 @@
             {
               "bg": "Ботев",
               "en": "Botev"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кога се кара ски?",
+            "en": "When do people ski?"
+          },
+          "options": [
+            {
+              "bg": "През зимата",
+              "en": "In winter"
+            },
+            {
+              "bg": "През лятото",
+              "en": "In summer"
+            },
+            {
+              "bg": "Никога",
+              "en": "Never"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "В коя планина е Пампорово?",
+            "en": "In which mountain is Pamporovo?"
+          },
+          "options": [
+            {
+              "bg": "Родопите",
+              "en": "The Rhodopes"
+            },
+            {
+              "bg": "Рила",
+              "en": "Rila"
+            },
+            {
+              "bg": "Пирин",
+              "en": "Pirin"
             }
           ],
           "answer": 0
@@ -202,6 +308,111 @@
           "en": "Pamporovo is in the Rhodopes, about 15 km from Smolyan."
         }
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Как се е казвал Боровец преди?",
+              "en": "What was Borovets called in the past?"
+            },
+            "options": [
+              {
+                "bg": "Чамкория",
+                "en": "Chamkoria"
+              },
+              {
+                "bg": "Бояна",
+                "en": "Boyana"
+              },
+              {
+                "bg": "Банкя",
+                "en": "Bankya"
+              },
+              {
+                "bg": "Пампорово",
+                "en": "Pamporovo"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Кой град е до Боровец?",
+              "en": "Which town is next to Borovets?"
+            },
+            "options": [
+              {
+                "bg": "Смолян",
+                "en": "Smolyan"
+              },
+              {
+                "bg": "Самоков",
+                "en": "Samokov"
+              },
+              {
+                "bg": "Сандански",
+                "en": "Sandanski"
+              },
+              {
+                "bg": "Сливен",
+                "en": "Sliven"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Кой ски курорт е на Витоша, до София?",
+              "en": "Which ski resort is on Vitosha, near Sofia?"
+            },
+            "options": [
+              {
+                "bg": "Алеко",
+                "en": "Aleko"
+              },
+              {
+                "bg": "Боровец",
+                "en": "Borovets"
+              },
+              {
+                "bg": "Пампорово",
+                "en": "Pamporovo"
+              },
+              {
+                "bg": "Банско",
+                "en": "Bansko"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Защо в планините снегът стои по-дълго?",
+              "en": "Why does snow stay longer in the mountains?"
+            },
+            "options": [
+              {
+                "bg": "Колкото по-високо, толкова по-студено",
+                "en": "The higher you go, the colder it is"
+              },
+              {
+                "bg": "По-близо са до морето",
+                "en": "They are closer to the sea"
+              },
+              {
+                "bg": "Има повече хора",
+                "en": "There are more people"
+              },
+              {
+                "bg": "Снегът там е от пластмаса",
+                "en": "The snow there is plastic"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -227,6 +438,56 @@
             "bg": "Някога се казвал Чамкория и е в Рила.",
             "en": "It used to be called Chamkoria and it is in Rila."
           }
+        },
+        {
+          "q": {
+            "bg": "В коя планина е Банско?",
+            "en": "In which mountain is Bansko?"
+          },
+          "options": [
+            {
+              "bg": "Рила",
+              "en": "Rila"
+            },
+            {
+              "bg": "Пирин",
+              "en": "Pirin"
+            },
+            {
+              "bg": "Родопите",
+              "en": "The Rhodopes"
+            },
+            {
+              "bg": "Витоша",
+              "en": "Vitosha"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "В коя планина е Боровец?",
+            "en": "In which mountain is Borovets?"
+          },
+          "options": [
+            {
+              "bg": "Рила",
+              "en": "Rila"
+            },
+            {
+              "bg": "Пирин",
+              "en": "Pirin"
+            },
+            {
+              "bg": "Стара планина",
+              "en": "The Balkan Mountains"
+            },
+            {
+              "bg": "Странджа",
+              "en": "Strandzha"
+            }
+          ],
+          "answer": 0
         }
       ]
     }

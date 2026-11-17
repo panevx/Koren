@@ -137,6 +137,70 @@
           "en": "The Iskar is the longest river that flows only in Bulgaria."
         }
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Искър извира от Рила.",
+              "en": "The Iskar rises in Rila."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – високо в планината.",
+              "en": "Yes – high in the mountains."
+            }
+          },
+          {
+            "text": {
+              "bg": "Искър минава край София.",
+              "en": "The Iskar passes by Sofia."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – през Софийската котловина.",
+              "en": "Yes – through the Sofia Valley."
+            }
+          },
+          {
+            "text": {
+              "bg": "Искър се влива в Черно море.",
+              "en": "The Iskar flows into the Black Sea."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – в Дунав.",
+              "en": "No – into the Danube."
+            }
+          },
+          {
+            "text": {
+              "bg": "Искър пробива Стара планина.",
+              "en": "The Iskar cuts through the Balkan Mountains."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – през Искърското дефиле.",
+              "en": "Yes – through the Iskar Gorge."
+            }
+          },
+          {
+            "text": {
+              "bg": "Искър тече и през Гърция.",
+              "en": "The Iskar also flows through Greece."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – Искър тече само в България.",
+              "en": "No – the Iskar flows only in Bulgaria."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -180,6 +244,27 @@
             {
               "bg": "Дунавската равнина",
               "en": "The Danubian Plain"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Къде се влива Искър?",
+            "en": "Where does the Iskar flow into?"
+          },
+          "options": [
+            {
+              "bg": "В Дунав",
+              "en": "The Danube"
+            },
+            {
+              "bg": "В Черно море",
+              "en": "The Black Sea"
+            },
+            {
+              "bg": "В Марица",
+              "en": "The Maritsa"
             }
           ],
           "answer": 0
@@ -272,6 +357,115 @@
           "bg": "Искър извира от Рила, пресича Стара планина и се влива в Дунав – 368 км само в България.",
           "en": "The Iskar springs in Rila, crosses the Balkan Mountains and flows into the Danube – 368 km, all in Bulgaria."
         }
+      },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "В коя планина извира Искър?",
+              "en": "In which mountain does the Iskar rise?"
+            },
+            "options": [
+              {
+                "bg": "Пирин",
+                "en": "Pirin"
+              },
+              {
+                "bg": "Витоша",
+                "en": "Vitosha"
+              },
+              {
+                "bg": "Рила",
+                "en": "Rila"
+              },
+              {
+                "bg": "Родопите",
+                "en": "The Rhodopes"
+              }
+            ],
+            "answer": 2
+          },
+          {
+            "q": {
+              "bg": "Около колко пъти Дунав е по-дълъг от Искър?",
+              "en": "About how many times longer is the Danube than the Iskar?"
+            },
+            "options": [
+              {
+                "bg": "2 пъти",
+                "en": "2 times"
+              },
+              {
+                "bg": "8 пъти",
+                "en": "8 times"
+              },
+              {
+                "bg": "30 пъти",
+                "en": "30 times"
+              },
+              {
+                "bg": "Еднакви са",
+                "en": "The same"
+              }
+            ],
+            "answer": 1,
+            "hint": {
+              "bg": "2850 км делено на 368 км.",
+              "en": "2,850 km divided by 368 km."
+            }
+          },
+          {
+            "q": {
+              "bg": "Какво е дефиле?",
+              "en": "What is a gorge?"
+            },
+            "options": [
+              {
+                "bg": "Тясна долина, през която река пробива планина",
+                "en": "A narrow valley where a river cuts through a mountain"
+              },
+              {
+                "bg": "Езеро в кратер",
+                "en": "A crater lake"
+              },
+              {
+                "bg": "Връх",
+                "en": "A peak"
+              },
+              {
+                "bg": "Равнина",
+                "en": "A plain"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "През коя котловина минава Искър?",
+              "en": "Which valley does the Iskar pass through?"
+            },
+            "options": [
+              {
+                "bg": "Софийската",
+                "en": "The Sofia Valley"
+              },
+              {
+                "bg": "Казанлъшката",
+                "en": "The Kazanlak Valley"
+              },
+              {
+                "bg": "Карловската",
+                "en": "The Karlovo Valley"
+              },
+              {
+                "bg": "Сливенската",
+                "en": "The Sliven Valley"
+              }
+            ],
+            "answer": 0
+          }
+        ]
       },
       "check": [
         {

@@ -136,6 +136,74 @@
           "en": "The years help: from the smaller to the bigger."
         }
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "През коя година българите приемат християнството?",
+              "en": "In which year do the Bulgarians accept Christianity?"
+            },
+            "options": [
+              {
+                "bg": "864 г.",
+                "en": "864"
+              },
+              {
+                "bg": "681 г.",
+                "en": "681"
+              },
+              {
+                "bg": "1878 г.",
+                "en": "1878"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Чии ученици са Климент и Наум?",
+              "en": "Whose disciples are Clement and Naum?"
+            },
+            "options": [
+              {
+                "bg": "На Кирил и Методий",
+                "en": "Cyril and Methodius"
+              },
+              {
+                "bg": "На Асен и Петър",
+                "en": "Asen and Peter"
+              },
+              {
+                "bg": "На Левски",
+                "en": "Levski"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Къде отива Борис накрая?",
+              "en": "Where does Boris go in the end?"
+            },
+            "options": [
+              {
+                "bg": "В манастир",
+                "en": "To a monastery"
+              },
+              {
+                "bg": "В Рим",
+                "en": "To Rome"
+              },
+              {
+                "bg": "На война",
+                "en": "To war"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -150,6 +218,48 @@
             {
               "bg": "Паисий и Софроний",
               "en": "Paisiy and Sofroniy"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кой става цар след Борис?",
+            "en": "Who becomes tsar after Boris?"
+          },
+          "options": [
+            {
+              "bg": "Симеон",
+              "en": "Simeon"
+            },
+            {
+              "bg": "Крум",
+              "en": "Krum"
+            },
+            {
+              "bg": "Аспарух",
+              "en": "Asparuh"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Каква вяра приема Борис за народа си?",
+            "en": "Which faith does Boris accept for his people?"
+          },
+          "options": [
+            {
+              "bg": "Християнството",
+              "en": "Christianity"
+            },
+            {
+              "bg": "Исляма",
+              "en": "Islam"
+            },
+            {
+              "bg": "Будизма",
+              "en": "Buddhism"
             }
           ],
           "answer": 0
@@ -220,6 +330,81 @@
           "en": "Prince Boris I (852–889). The Church honours him as Saint Boris-Michael."
         }
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно? Внимавай с годините.",
+          "en": "True or not true? Watch the years."
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Покръстването е през 864 г.",
+              "en": "The Christianisation is in 864."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – при княз Борис I.",
+              "en": "Yes – under Prince Boris I."
+            }
+          },
+          {
+            "text": {
+              "bg": "Климент, Наум и Ангеларий пристигат в България през 886 г.",
+              "en": "Clement, Naum and Angelarius arrive in Bulgaria in 886."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – Борис им дава дом и работа.",
+              "en": "Yes – Boris gives them a home and work."
+            }
+          },
+          {
+            "text": {
+              "bg": "Покръстването помага славяни и прабългари да станат един народ.",
+              "en": "The Christianisation helps Slavs and Bulgars become one people."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – общата вяра ги обединява.",
+              "en": "Yes – a shared faith unites them."
+            }
+          },
+          {
+            "text": {
+              "bg": "Борис остава на трона до смъртта си.",
+              "en": "Boris stays on the throne until his death."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – през 889 г. той отива в манастир.",
+              "en": "No – in 889 he retires to a monastery."
+            }
+          },
+          {
+            "text": {
+              "bg": "Съборът от 893 г. въвежда гръцки език в църквата.",
+              "en": "The council of 893 introduces Greek in church."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – въвежда старобългарски език вместо гръцкия.",
+              "en": "No – it introduces Old Bulgarian instead of Greek."
+            }
+          },
+          {
+            "text": {
+              "bg": "Симеон е син на Борис.",
+              "en": "Simeon is the son of Boris."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – и става първият български цар.",
+              "en": "Yes – and becomes the first Bulgarian tsar."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -237,6 +422,56 @@
             }
           ],
           "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Къде работи Климент и учи хиляди ученици?",
+            "en": "Where does Clement work and teach thousands of pupils?"
+          },
+          "options": [
+            {
+              "bg": "В Охрид",
+              "en": "In Ohrid"
+            },
+            {
+              "bg": "В Рим",
+              "en": "In Rome"
+            },
+            {
+              "bg": "В Атина",
+              "en": "In Athens"
+            },
+            {
+              "bg": "В Киев",
+              "en": "In Kyiv"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "През коя година Борис се оттегля в манастир?",
+            "en": "In which year does Boris retire to a monastery?"
+          },
+          "options": [
+            {
+              "bg": "864",
+              "en": "864"
+            },
+            {
+              "bg": "889",
+              "en": "889"
+            },
+            {
+              "bg": "893",
+              "en": "893"
+            },
+            {
+              "bg": "927",
+              "en": "927"
+            }
+          ],
+          "answer": 1
         }
       ]
     }

@@ -125,6 +125,70 @@
           }
         ]
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Цар Самуил има столица в Охрид.",
+              "en": "Tsar Samuel has his capital in Ohrid."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – от Охрид той брани държавата дълги години.",
+              "en": "Yes – from Ohrid he defends the state for many years."
+            }
+          },
+          {
+            "text": {
+              "bg": "Цар Калоян побеждава рицарите при Одрин.",
+              "en": "Tsar Kaloyan defeats the knights at Adrianople."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – през 1205 г.",
+              "en": "Yes – in 1205."
+            }
+          },
+          {
+            "text": {
+              "bg": "Калоян живее преди Самуил.",
+              "en": "Kaloyan lives before Samuel."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – Самуил е около 1000 г., а Калоян – около 1200 г.",
+              "en": "No – Samuel is around the year 1000, Kaloyan around 1200."
+            }
+          },
+          {
+            "text": {
+              "bg": "При Иван Асен II България стига до три морета.",
+              "en": "Under Ivan Asen II Bulgaria reaches three seas."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – така казва преданието.",
+              "en": "Yes – so the tradition says."
+            }
+          },
+          {
+            "text": {
+              "bg": "Иван Асен II е последният цар в Търново.",
+              "en": "Ivan Asen II is the last tsar in Tarnovo."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – последният е Иван Шишман.",
+              "en": "No – the last one is Ivan Shishman."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -139,6 +203,48 @@
             {
               "bg": "Черно, Червено и Балтийско",
               "en": "The Black, the Red and the Baltic"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "През коя година е битката при Одрин?",
+            "en": "In which year is the battle of Adrianople?"
+          },
+          "options": [
+            {
+              "bg": "1205 г.",
+              "en": "1205"
+            },
+            {
+              "bg": "681 г.",
+              "en": "681"
+            },
+            {
+              "bg": "1876 г.",
+              "en": "1876"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Коя е столицата на цар Самуил?",
+            "en": "What is Tsar Samuel’s capital?"
+          },
+          "options": [
+            {
+              "bg": "Охрид",
+              "en": "Ohrid"
+            },
+            {
+              "bg": "Плиска",
+              "en": "Pliska"
+            },
+            {
+              "bg": "Варна",
+              "en": "Varna"
             }
           ],
           "answer": 0
@@ -194,6 +300,111 @@
           "en": "Samuil – around 1000; Kaloyan – around 1200; Ivan Asen II – 1230; Shishman – end of the 14th century."
         }
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "С кой византийски император воюва цар Самуил десетилетия?",
+              "en": "Which Byzantine emperor does Tsar Samuel fight for decades?"
+            },
+            "options": [
+              {
+                "bg": "Константин IV",
+                "en": "Constantine IV"
+              },
+              {
+                "bg": "Никифор I",
+                "en": "Nikephoros I"
+              },
+              {
+                "bg": "Василий II",
+                "en": "Basil II"
+              },
+              {
+                "bg": "Юстиниан",
+                "en": "Justinian"
+              }
+            ],
+            "answer": 2
+          },
+          {
+            "q": {
+              "bg": "Коя битка през 1014 г. е тежко поражение за Самуил?",
+              "en": "Which battle in 1014 is a heavy defeat for Samuel?"
+            },
+            "options": [
+              {
+                "bg": "При Ахелой",
+                "en": "At Achelous"
+              },
+              {
+                "bg": "При Беласица",
+                "en": "At Belasitsa"
+              },
+              {
+                "bg": "При Клокотница",
+                "en": "At Klokotnitsa"
+              },
+              {
+                "bg": "При Одрин",
+                "en": "At Adrianople"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Кой е бащата на Иван Асен II?",
+              "en": "Who is the father of Ivan Asen II?"
+            },
+            "options": [
+              {
+                "bg": "Асен I",
+                "en": "Asen I"
+              },
+              {
+                "bg": "Калоян",
+                "en": "Kaloyan"
+              },
+              {
+                "bg": "Самуил",
+                "en": "Samuel"
+              },
+              {
+                "bg": "Симеон",
+                "en": "Simeon"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Коя година Търново пада при цар Иван Шишман?",
+              "en": "In which year does Tarnovo fall under Tsar Ivan Shishman?"
+            },
+            "options": [
+              {
+                "bg": "1018",
+                "en": "1018"
+              },
+              {
+                "bg": "1393",
+                "en": "1393"
+              },
+              {
+                "bg": "1453",
+                "en": "1453"
+              },
+              {
+                "bg": "1878",
+                "en": "1878"
+              }
+            ],
+            "answer": 1
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -232,6 +443,31 @@
             }
           ],
           "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кой е последният търновски цар?",
+            "en": "Who is the last tsar of Tarnovo?"
+          },
+          "options": [
+            {
+              "bg": "Иван Асен II",
+              "en": "Ivan Asen II"
+            },
+            {
+              "bg": "Калоян",
+              "en": "Kaloyan"
+            },
+            {
+              "bg": "Иван Шишман",
+              "en": "Ivan Shishman"
+            },
+            {
+              "bg": "Симеон",
+              "en": "Simeon"
+            }
+          ],
+          "answer": 2
         }
       ]
     }

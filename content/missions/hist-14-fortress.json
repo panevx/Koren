@@ -170,6 +170,74 @@
           "en": "The fortress stands! Tsarevets even had three gates and walls around the whole hill."
         }
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Откъде се влиза в крепостта?",
+              "en": "How do you get into the fortress?"
+            },
+            "options": [
+              {
+                "bg": "През портата",
+                "en": "Through the gate"
+              },
+              {
+                "bg": "През покрива",
+                "en": "Through the roof"
+              },
+              {
+                "bg": "През комина",
+                "en": "Through the chimney"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "От какво са крепостните стени?",
+              "en": "What are the fortress walls made of?"
+            },
+            "options": [
+              {
+                "bg": "От камък",
+                "en": "Stone"
+              },
+              {
+                "bg": "От хартия",
+                "en": "Paper"
+              },
+              {
+                "bg": "От пластмаса",
+                "en": "Plastic"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Коя от тези е средновековна крепост?",
+              "en": "Which of these is a medieval fortress?"
+            },
+            "options": [
+              {
+                "bg": "Царевец",
+                "en": "Tsarevets"
+              },
+              {
+                "bg": "Летище София",
+                "en": "Sofia Airport"
+              },
+              {
+                "bg": "Национален стадион",
+                "en": "The National Stadium"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -184,6 +252,48 @@
             {
               "bg": "Защото е по-топло",
               "en": "Because it is warmer"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кое от тези НЕ е от Средновековието?",
+            "en": "Which of these is NOT from the Middle Ages?"
+          },
+          "options": [
+            {
+              "bg": "Електрическа лампа",
+              "en": "An electric lamp"
+            },
+            {
+              "bg": "Щит",
+              "en": "A shield"
+            },
+            {
+              "bg": "Меч",
+              "en": "A sword"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какво копаят около много крепости, за да не влиза врагът?",
+            "en": "What is dug around many fortresses to keep the enemy out?"
+          },
+          "options": [
+            {
+              "bg": "Ров",
+              "en": "A moat"
+            },
+            {
+              "bg": "Басейн",
+              "en": "A swimming pool"
+            },
+            {
+              "bg": "Паркинг",
+              "en": "A car park"
             }
           ],
           "answer": 0
@@ -301,6 +411,111 @@
           "en": "Well done, builder! Tsarevets was surrounded by the Yantra on three sides."
         }
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Коя средновековна крепост е във Видин?",
+              "en": "Which medieval fortress is in Vidin?"
+            },
+            "options": [
+              {
+                "bg": "Царевец",
+                "en": "Tsarevets"
+              },
+              {
+                "bg": "Баба Вида",
+                "en": "Baba Vida"
+              },
+              {
+                "bg": "Овеч",
+                "en": "Ovech"
+              },
+              {
+                "bg": "Калиакра",
+                "en": "Kaliakra"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Как се нарича най-силната кула – последното убежище в крепостта?",
+              "en": "What is the strongest tower – the last refuge in a fortress – called?"
+            },
+            "options": [
+              {
+                "bg": "Донжон",
+                "en": "Keep (donjon)"
+              },
+              {
+                "bg": "Бойница",
+                "en": "Loophole"
+              },
+              {
+                "bg": "Зъбер",
+                "en": "Merlon"
+              },
+              {
+                "bg": "Порта",
+                "en": "Gate"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Как се наричат тесните отвори в стената, от които стрелят?",
+              "en": "What are the narrow openings in the wall for shooting called?"
+            },
+            "options": [
+              {
+                "bg": "Прозорци",
+                "en": "Windows"
+              },
+              {
+                "bg": "Комини",
+                "en": "Chimneys"
+              },
+              {
+                "bg": "Бойници",
+                "en": "Loopholes"
+              },
+              {
+                "bg": "Тунели",
+                "en": "Tunnels"
+              }
+            ],
+            "answer": 2
+          },
+          {
+            "q": {
+              "bg": "Коя крепост е до Асеновград?",
+              "en": "Which fortress is near Asenovgrad?"
+            },
+            "options": [
+              {
+                "bg": "Асенова крепост",
+                "en": "Asen’s Fortress"
+              },
+              {
+                "bg": "Баба Вида",
+                "en": "Baba Vida"
+              },
+              {
+                "bg": "Царевец",
+                "en": "Tsarevets"
+              },
+              {
+                "bg": "Шуменска",
+                "en": "Shumen"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -319,6 +534,56 @@
             {
               "bg": "1185 г.",
               "en": "1185"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Защо подвижният мост е полезен?",
+            "en": "Why is a drawbridge useful?"
+          },
+          "options": [
+            {
+              "bg": "Вдига се и врагът не може да мине рова",
+              "en": "It is raised and the enemy cannot cross the moat"
+            },
+            {
+              "bg": "По-красив е",
+              "en": "It looks nicer"
+            },
+            {
+              "bg": "По-евтин е",
+              "en": "It is cheaper"
+            },
+            {
+              "bg": "Пази от дъжд",
+              "en": "It keeps the rain off"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кое е най-доброто място за крепост?",
+            "en": "Which is the best place for a fortress?"
+          },
+          "options": [
+            {
+              "bg": "Висок хълм над река",
+              "en": "A high hill above a river"
+            },
+            {
+              "bg": "Равно поле",
+              "en": "A flat field"
+            },
+            {
+              "bg": "Дъното на долина",
+              "en": "The bottom of a valley"
+            },
+            {
+              "bg": "Пясъчен плаж",
+              "en": "A sandy beach"
             }
           ],
           "answer": 0

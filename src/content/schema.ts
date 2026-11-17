@@ -446,6 +446,11 @@ export const LevelContent = z
   .object({
     story: z.array(StoryLine).min(1).max(6),
     game: Game,
+    /**
+     * v0.24: a second round — "Предизвикателство" — after the game, for 7–14 (the missions were too short and easy).
+     * Any template; usually a harder text game (quiz with 4 options, order of 5–6 events, match of 5–6 pairs, true/false).
+     */
+    extra: Game.optional(),
     /** 0–3 review questions; the 4–6 level usually has none. */
     check: z.array(Question).max(3).default([]),
   })

@@ -139,6 +139,74 @@
           }
         ]
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Кога е Ивановден?",
+              "en": "When is St John’s Day (Ivanovden)?"
+            },
+            "options": [
+              {
+                "bg": "7 януари",
+                "en": "7 January"
+              },
+              {
+                "bg": "6 май",
+                "en": "6 May"
+              },
+              {
+                "bg": "25 декември",
+                "en": "25 December"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Кое име празнува на Гергьовден?",
+              "en": "Which name celebrates on St George’s Day?"
+            },
+            "options": [
+              {
+                "bg": "Георги",
+                "en": "Georgi"
+              },
+              {
+                "bg": "Петър",
+                "en": "Petar"
+              },
+              {
+                "bg": "Иван",
+                "en": "Ivan"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Кога е Никулден?",
+              "en": "When is St Nicholas’ Day?"
+            },
+            "options": [
+              {
+                "bg": "1 март",
+                "en": "1 March"
+              },
+              {
+                "bg": "6 декември",
+                "en": "6 December"
+              },
+              {
+                "bg": "29 юни",
+                "en": "29 June"
+              }
+            ],
+            "answer": 1
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -153,6 +221,48 @@
             {
               "bg": "Всички Ивановци",
               "en": "Everyone called Ivan"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какво е именен ден?",
+            "en": "What is a name day?"
+          },
+          "options": [
+            {
+              "bg": "Празникът на светеца с твоето име",
+              "en": "The feast of the saint with your name"
+            },
+            {
+              "bg": "Денят, в който си роден",
+              "en": "The day you were born"
+            },
+            {
+              "bg": "Първият учебен ден",
+              "en": "The first day of school"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кой празнува на Димитровден?",
+            "en": "Who celebrates on St Demetrius’ Day?"
+          },
+          "options": [
+            {
+              "bg": "Димитър и Димитрина",
+              "en": "Dimitar and Dimitrina"
+            },
+            {
+              "bg": "Иван и Иванка",
+              "en": "Ivan and Ivanka"
+            },
+            {
+              "bg": "Мария",
+              "en": "Maria"
             }
           ],
           "answer": 0
@@ -204,6 +314,81 @@
           }
         ]
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно? Внимавай с датите.",
+          "en": "True or not true? Watch the dates."
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Гергьовден е на 6 май.",
+              "en": "St George’s Day is on 6 May."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – и е празник на храбростта.",
+              "en": "Yes – and it is also the day of valour."
+            }
+          },
+          {
+            "text": {
+              "bg": "Петровден е на 29 юни.",
+              "en": "St Peter’s Day is on 29 June."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – в разгара на лятото.",
+              "en": "Yes – in the middle of summer."
+            }
+          },
+          {
+            "text": {
+              "bg": "Димитровден е през пролетта.",
+              "en": "St Demetrius’ Day is in spring."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – на 26 октомври, наесен.",
+              "en": "No – on 26 October, in autumn."
+            }
+          },
+          {
+            "text": {
+              "bg": "На Никулден традиционно се яде риба.",
+              "en": "On St Nicholas’ Day fish is traditionally eaten."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – свети Никола пази моряците и рибарите.",
+              "en": "Yes – St Nicholas protects sailors and fishermen."
+            }
+          },
+          {
+            "text": {
+              "bg": "Ивановден е на 1 януари.",
+              "en": "St John’s Day is on 1 January."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – на 7 януари. На 1 януари е Васильовден.",
+              "en": "No – on 7 January. 1 January is St Basil’s Day."
+            }
+          },
+          {
+            "text": {
+              "bg": "На Цветница празнуват хората с имена на цветя.",
+              "en": "On Palm Sunday people with flower names celebrate."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – например Лиляна, Виолета, Цветан.",
+              "en": "Yes – for example Lilyana, Violeta, Tsvetan."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -229,6 +414,56 @@
             "bg": "Свети Никола е покровител на моряците и рибарите.",
             "en": "Saint Nicholas is the patron of sailors and fishermen."
           }
+        },
+        {
+          "q": {
+            "bg": "Кой празник е на 1 януари?",
+            "en": "Which feast is on 1 January?"
+          },
+          "options": [
+            {
+              "bg": "Ивановден",
+              "en": "St John’s Day"
+            },
+            {
+              "bg": "Васильовден",
+              "en": "St Basil’s Day"
+            },
+            {
+              "bg": "Никулден",
+              "en": "St Nicholas’ Day"
+            },
+            {
+              "bg": "Гергьовден",
+              "en": "St George’s Day"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Какво традиционно се приготвя на Гергьовден?",
+            "en": "What is traditionally cooked on St George’s Day?"
+          },
+          "options": [
+            {
+              "bg": "Риба",
+              "en": "Fish"
+            },
+            {
+              "bg": "Агне",
+              "en": "Lamb"
+            },
+            {
+              "bg": "Козунак",
+              "en": "Kozunak"
+            },
+            {
+              "bg": "Тиквеник",
+              "en": "Pumpkin pie"
+            }
+          ],
+          "answer": 1
         }
       ]
     }

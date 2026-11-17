@@ -126,6 +126,74 @@
           "en": "Remember what Koren and Raya told you."
         }
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Какво се прави от маслодайната роза?",
+              "en": "What is made from the oil-bearing rose?"
+            },
+            "options": [
+              {
+                "bg": "Розово масло",
+                "en": "Rose oil"
+              },
+              {
+                "bg": "Захар",
+                "en": "Sugar"
+              },
+              {
+                "bg": "Хляб",
+                "en": "Bread"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Между кои планини е Розовата долина?",
+              "en": "Between which mountains is the Rose Valley?"
+            },
+            "options": [
+              {
+                "bg": "Рила и Пирин",
+                "en": "Rila and Pirin"
+              },
+              {
+                "bg": "Стара планина и Средна гора",
+                "en": "The Balkan Mountains and Sredna Gora"
+              },
+              {
+                "bg": "Родопи и Странджа",
+                "en": "The Rhodopes and Strandzha"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Как се нарича брането на рози?",
+              "en": "What is the picking of roses called?"
+            },
+            "options": [
+              {
+                "bg": "Гроздобер",
+                "en": "Grape harvest"
+              },
+              {
+                "bg": "Розобер",
+                "en": "Rose picking"
+              },
+              {
+                "bg": "Жътва",
+                "en": "Reaping"
+              }
+            ],
+            "answer": 1
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -176,6 +244,27 @@
             "bg": "Тогава цветовете са най-свежи.",
             "en": "That is when the flowers are freshest."
           }
+        },
+        {
+          "q": {
+            "bg": "Защо розовото масло е толкова ценно?",
+            "en": "Why is rose oil so precious?"
+          },
+          "options": [
+            {
+              "bg": "Нужни са много цветове за малко масло",
+              "en": "Many petals are needed for a little oil"
+            },
+            {
+              "bg": "Защото е синьо",
+              "en": "Because it is blue"
+            },
+            {
+              "bg": "Защото се прави от пясък",
+              "en": "Because it is made of sand"
+            }
+          ],
+          "answer": 0
         }
       ]
     },
@@ -236,6 +325,81 @@
           "en": "Start in the field and finish in the shop."
         }
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "За 1 кг розово масло трябват над 3 тона розов цвят.",
+              "en": "Over 3 tonnes of rose petals are needed for 1 kg of rose oil."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – затова маслото е толкова скъпо.",
+              "en": "Yes – that is why the oil is so expensive."
+            }
+          },
+          {
+            "text": {
+              "bg": "Розите се берат с машини по обед.",
+              "en": "The roses are picked by machine at noon."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – на ръка, рано сутрин, когато имат най-много масло.",
+              "en": "No – by hand, early in the morning, when they hold the most oil."
+            }
+          },
+          {
+            "text": {
+              "bg": "Латинското име на маслодайната роза е Rosa damascena.",
+              "en": "The Latin name of the oil-bearing rose is Rosa damascena."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – дамаска роза.",
+              "en": "Yes – the Damask rose."
+            }
+          },
+          {
+            "text": {
+              "bg": "Маслото се получава чрез дестилация в казани.",
+              "en": "The oil is obtained by distillation in stills."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – цветът се вари с вода и парите се изстудяват.",
+              "en": "Yes – the petals are boiled with water and the steam is cooled."
+            }
+          },
+          {
+            "text": {
+              "bg": "Розовата долина е между Рила и Пирин.",
+              "en": "The Rose Valley lies between Rila and Pirin."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – между Стара планина и Средна гора.",
+              "en": "No – between the Balkan Mountains and Sredna Gora."
+            }
+          },
+          {
+            "text": {
+              "bg": "Празникът на розата е в Казанлък в началото на юни.",
+              "en": "The Rose Festival is in Kazanlak at the beginning of June."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – всяка година.",
+              "en": "Yes – every year."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -286,6 +450,31 @@
             "bg": "Слънцето изпарява ценното масло.",
             "en": "The sun evaporates the precious oil."
           }
+        },
+        {
+          "q": {
+            "bg": "Как се нарича процесът, при който от цвета се получава масло?",
+            "en": "What is the process that turns petals into oil called?"
+          },
+          "options": [
+            {
+              "bg": "Замразяване",
+              "en": "Freezing"
+            },
+            {
+              "bg": "Дестилация",
+              "en": "Distillation"
+            },
+            {
+              "bg": "Печене",
+              "en": "Baking"
+            },
+            {
+              "bg": "Сушене",
+              "en": "Drying"
+            }
+          ],
+          "answer": 1
         }
       ]
     }

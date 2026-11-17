@@ -150,6 +150,70 @@
           "en": "The basket is ready – Christ is risen!"
         }
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Първото боядисано яйце е червено.",
+              "en": "The first dyed egg is red."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – то е за здраве.",
+              "en": "Yes – it is for good health."
+            }
+          },
+          {
+            "text": {
+              "bg": "Баба потрива бузите на децата с червеното яйце.",
+              "en": "Grandma rubs the children’s cheeks with the red egg."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – за да са здрави и румени.",
+              "en": "Yes – so they stay healthy and rosy."
+            }
+          },
+          {
+            "text": {
+              "bg": "На Великден ядем козунак.",
+              "en": "At Easter we eat kozunak."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – сладкия великденски хляб.",
+              "en": "Yes – the sweet Easter bread."
+            }
+          },
+          {
+            "text": {
+              "bg": "Сурвачката е за Великден.",
+              "en": "The survachka is for Easter."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – сурвачката е за Нова година.",
+              "en": "No – the survachka is for New Year."
+            }
+          },
+          {
+            "text": {
+              "bg": "На Великден се чукаме с топки.",
+              "en": "At Easter we knock balls together."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – чукаме се с боядисани яйца.",
+              "en": "No – we knock dyed eggs together."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -168,6 +232,48 @@
             {
               "bg": "Синьо",
               "en": "Blue"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какъв сладък хляб ядем на Великден?",
+            "en": "Which sweet bread do we eat at Easter?"
+          },
+          "options": [
+            {
+              "bg": "Козунак",
+              "en": "Kozunak"
+            },
+            {
+              "bg": "Баница",
+              "en": "Banitsa"
+            },
+            {
+              "bg": "Коледна пита",
+              "en": "Christmas loaf"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "С какво се чукаме на Великден?",
+            "en": "What do we knock together at Easter?"
+          },
+          "options": [
+            {
+              "bg": "С боядисани яйца",
+              "en": "Dyed eggs"
+            },
+            {
+              "bg": "С ябълки",
+              "en": "Apples"
+            },
+            {
+              "bg": "С камъни",
+              "en": "Stones"
             }
           ],
           "answer": 0
@@ -219,6 +325,111 @@
           "en": "St Lazarus Day is a Saturday, Palm Sunday the next day."
         }
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "В кой ден се боядисват яйцата?",
+              "en": "On which day are the eggs dyed?"
+            },
+            "options": [
+              {
+                "bg": "Цветница",
+                "en": "Palm Sunday"
+              },
+              {
+                "bg": "Лазаровден",
+                "en": "St Lazarus’ Day"
+              },
+              {
+                "bg": "Велики четвъртък",
+                "en": "Holy Thursday"
+              },
+              {
+                "bg": "Бъдни вечер",
+                "en": "Christmas Eve"
+              }
+            ],
+            "answer": 2
+          },
+          {
+            "q": {
+              "bg": "Кой празнува имен ден на Цветница?",
+              "en": "Who has a name day on Palm Sunday?"
+            },
+            "options": [
+              {
+                "bg": "Хората с имена на цветя",
+                "en": "People with flower names"
+              },
+              {
+                "bg": "Всички на име Иван",
+                "en": "Everyone named Ivan"
+              },
+              {
+                "bg": "Само децата",
+                "en": "Only children"
+              },
+              {
+                "bg": "Само рибарите",
+                "en": "Only fishermen"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Кой празник е в неделята преди Великден?",
+              "en": "Which feast is on the Sunday before Easter?"
+            },
+            "options": [
+              {
+                "bg": "Гергьовден",
+                "en": "St George’s Day"
+              },
+              {
+                "bg": "Цветница",
+                "en": "Palm Sunday"
+              },
+              {
+                "bg": "Коледа",
+                "en": "Christmas"
+              },
+              {
+                "bg": "Лазаровден",
+                "en": "St Lazarus’ Day"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Кога е Великден?",
+              "en": "When is Easter?"
+            },
+            "options": [
+              {
+                "bg": "Винаги на 1 януари",
+                "en": "Always on 1 January"
+              },
+              {
+                "bg": "Винаги на 25 декември",
+                "en": "Always on 25 December"
+              },
+              {
+                "bg": "През пролетта, всяка година на различна дата",
+                "en": "In spring, on a different date each year"
+              },
+              {
+                "bg": "Всяко лято",
+                "en": "Every summer"
+              }
+            ],
+            "answer": 2
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -233,6 +444,56 @@
             {
               "bg": "За да ги изядем по-бързо",
               "en": "To eat them faster"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кой празник е в съботата преди Цветница?",
+            "en": "Which feast is on the Saturday before Palm Sunday?"
+          },
+          "options": [
+            {
+              "bg": "Лазаровден",
+              "en": "St Lazarus’ Day"
+            },
+            {
+              "bg": "Великден",
+              "en": "Easter"
+            },
+            {
+              "bg": "Гергьовден",
+              "en": "St George’s Day"
+            },
+            {
+              "bg": "Коледа",
+              "en": "Christmas"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Как се поздравяваме на Великден?",
+            "en": "How do we greet each other at Easter?"
+          },
+          "options": [
+            {
+              "bg": "„Христос воскресе!“ – „Воистина воскресе!“",
+              "en": "“Christ is risen!” – “Truly He is risen!”"
+            },
+            {
+              "bg": "„Честита Баба Марта!“",
+              "en": "“Happy Baba Marta!”"
+            },
+            {
+              "bg": "„Весела Коледа!“",
+              "en": "“Merry Christmas!”"
+            },
+            {
+              "bg": "„Наздраве!“",
+              "en": "“Cheers!”"
             }
           ],
           "answer": 0

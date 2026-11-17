@@ -139,6 +139,70 @@
           "en": "Koprivshtitsa is a museum town: its houses, embroidered costumes and stone bridges keep the spirit of the National Revival."
         }
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Копривщица е град-музей.",
+              "en": "Koprivshtitsa is a museum town."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – със стотици стари къщи.",
+              "en": "Yes – with hundreds of old houses."
+            }
+          },
+          {
+            "text": {
+              "bg": "Съборът в Копривщица е всяка година.",
+              "en": "The festival in Koprivshtitsa is every year."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – веднъж на пет години.",
+              "en": "No – once every five years."
+            }
+          },
+          {
+            "text": {
+              "bg": "Всеки край на България има своя носия.",
+              "en": "Every region of Bulgaria has its own costume."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – и свои шевици.",
+              "en": "Yes – and its own embroidery."
+            }
+          },
+          {
+            "text": {
+              "bg": "Шевицата е вид танц.",
+              "en": "A shevitsa is a kind of dance."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – шевицата е бродерия.",
+              "en": "No – a shevitsa is embroidery."
+            }
+          },
+          {
+            "text": {
+              "bg": "Къщите в Копривщица са от времето на Възраждането.",
+              "en": "The houses in Koprivshtitsa are from the National Revival."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – отпреди около 150–200 години.",
+              "en": "Yes – from about 150–200 years ago."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -189,6 +253,27 @@
             "bg": "Прави се с игла и конец.",
             "en": "It is made with needle and thread."
           }
+        },
+        {
+          "q": {
+            "bg": "Какво носят певците и танцьорите на събора?",
+            "en": "What do the singers and dancers wear at the festival?"
+          },
+          "options": [
+            {
+              "bg": "Народни носии",
+              "en": "Folk costumes"
+            },
+            {
+              "bg": "Космонавтски костюми",
+              "en": "Space suits"
+            },
+            {
+              "bg": "Пижами",
+              "en": "Pyjamas"
+            }
+          ],
+          "answer": 0
         }
       ]
     },
@@ -256,6 +341,111 @@
           "en": "Koprivshtitsa keeps over 300 Revival houses. The April Uprising began here on 20 April 1876."
         }
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Кога избухва Априлското въстание в Копривщица?",
+              "en": "When does the April Uprising break out in Koprivshtitsa?"
+            },
+            "options": [
+              {
+                "bg": "20 април 1876 г.",
+                "en": "20 April 1876"
+              },
+              {
+                "bg": "3 март 1878 г.",
+                "en": "3 March 1878"
+              },
+              {
+                "bg": "2 юни 1876 г.",
+                "en": "2 June 1876"
+              },
+              {
+                "bg": "6 септември 1885 г.",
+                "en": "6 September 1885"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Кой пише „кървавото писмо“?",
+              "en": "Who writes the “bloody letter”?"
+            },
+            "options": [
+              {
+                "bg": "Христо Ботев",
+                "en": "Hristo Botev"
+              },
+              {
+                "bg": "Тодор Каблешков",
+                "en": "Todor Kableshkov"
+              },
+              {
+                "bg": "Васил Левски",
+                "en": "Vasil Levski"
+              },
+              {
+                "bg": "Паисий Хилендарски",
+                "en": "Paisius of Hilendar"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Колко възрожденски къщи има в Копривщица?",
+              "en": "How many National Revival houses are in Koprivshtitsa?"
+            },
+            "options": [
+              {
+                "bg": "Около 10",
+                "en": "About 10"
+              },
+              {
+                "bg": "Около 50",
+                "en": "About 50"
+              },
+              {
+                "bg": "Над 300",
+                "en": "Over 300"
+              },
+              {
+                "bg": "Над 10 000",
+                "en": "Over 10,000"
+              }
+            ],
+            "answer": 2
+          },
+          {
+            "q": {
+              "bg": "Как се нарича голямата среща на певци и танцьори там?",
+              "en": "What is the big gathering of singers and dancers there called?"
+            },
+            "options": [
+              {
+                "bg": "Олимпиада",
+                "en": "An Olympiad"
+              },
+              {
+                "bg": "Национален събор на народното творчество",
+                "en": "The National Folklore Festival"
+              },
+              {
+                "bg": "Карнавал",
+                "en": "A carnival"
+              },
+              {
+                "bg": "Панаир на книгата",
+                "en": "A book fair"
+              }
+            ],
+            "answer": 1
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -281,6 +471,56 @@
             "bg": "Блестят на кръста на носията.",
             "en": "They shine at the waist of the costume."
           }
+        },
+        {
+          "q": {
+            "bg": "Какво е сукман?",
+            "en": "What is a sukman?"
+          },
+          "options": [
+            {
+              "bg": "Женска рокля без ръкави от носията",
+              "en": "A sleeveless woman’s dress of the costume"
+            },
+            {
+              "bg": "Мъжка шапка",
+              "en": "A man’s hat"
+            },
+            {
+              "bg": "Музикален инструмент",
+              "en": "A musical instrument"
+            },
+            {
+              "bg": "Вид хляб",
+              "en": "A kind of bread"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "От коя епоха са къщите в Копривщица?",
+            "en": "Which period are the houses in Koprivshtitsa from?"
+          },
+          "options": [
+            {
+              "bg": "Античността",
+              "en": "Antiquity"
+            },
+            {
+              "bg": "Средновековието",
+              "en": "The Middle Ages"
+            },
+            {
+              "bg": "Възраждането",
+              "en": "The National Revival"
+            },
+            {
+              "bg": "Каменната епоха",
+              "en": "The Stone Age"
+            }
+          ],
+          "answer": 2
         }
       ]
     }

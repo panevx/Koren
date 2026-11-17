@@ -119,6 +119,70 @@
           "en": "Vasil Levski travelled across Bulgaria and set up secret committees for freedom."
         }
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Левски е роден в Карлово.",
+              "en": "Levski was born in Karlovo."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – през 1837 г.",
+              "en": "Yes – in 1837."
+            }
+          },
+          {
+            "text": {
+              "bg": "Наричат го Апостола на свободата.",
+              "en": "He is called the Apostle of Freedom."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – той носи идеята за свобода из цяла България.",
+              "en": "Yes – he carries the idea of freedom all over Bulgaria."
+            }
+          },
+          {
+            "text": {
+              "bg": "Левски е роден през 1937 г.",
+              "en": "Levski was born in 1937."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – през 1837 г., сто години по-рано.",
+              "en": "No – in 1837, a hundred years earlier."
+            }
+          },
+          {
+            "text": {
+              "bg": "Левски е бил монах – затова го наричат Дякона.",
+              "en": "Levski was a monk – that is why he is called the Deacon."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – после оставя манастира заради свободата.",
+              "en": "Yes – later he leaves the monastery for the sake of freedom."
+            }
+          },
+          {
+            "text": {
+              "bg": "Левски загива в Пловдив.",
+              "en": "Levski dies in Plovdiv."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – загива в София през 1873 г.",
+              "en": "No – he dies in Sofia in 1873."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -137,6 +201,48 @@
             {
               "bg": "Котел",
               "en": "Kotel"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Как наричаме Левски?",
+            "en": "What do we call Levski?"
+          },
+          "options": [
+            {
+              "bg": "Апостола на свободата",
+              "en": "The Apostle of Freedom"
+            },
+            {
+              "bg": "Цар Освободител",
+              "en": "The Tsar Liberator"
+            },
+            {
+              "bg": "Хан",
+              "en": "Khan"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "За каква република мечтае Левски?",
+            "en": "What kind of republic does Levski dream of?"
+          },
+          "options": [
+            {
+              "bg": "Чиста и свята",
+              "en": "Pure and sacred"
+            },
+            {
+              "bg": "Голяма и богата",
+              "en": "Big and rich"
+            },
+            {
+              "bg": "Морска",
+              "en": "A sea republic"
             }
           ],
           "answer": 0
@@ -184,6 +290,111 @@
           }
         ]
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "През коя година загива Левски?",
+              "en": "In which year does Levski die?"
+            },
+            "options": [
+              {
+                "bg": "1837",
+                "en": "1837"
+              },
+              {
+                "bg": "1873",
+                "en": "1873"
+              },
+              {
+                "bg": "1876",
+                "en": "1876"
+              },
+              {
+                "bg": "1878",
+                "en": "1878"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Какво създава Левски из България?",
+              "en": "What does Levski build up across Bulgaria?"
+            },
+            "options": [
+              {
+                "bg": "Първото училище",
+                "en": "The first school"
+              },
+              {
+                "bg": "Мрежа от революционни комитети",
+                "en": "A network of revolutionary committees"
+              },
+              {
+                "bg": "Вестник в Букурещ",
+                "en": "A newspaper in Bucharest"
+              },
+              {
+                "bg": "Чета на кораб",
+                "en": "A band on a ship"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Каква държава иска Левски след освобождението?",
+              "en": "What kind of state does Levski want after liberation?"
+            },
+            "options": [
+              {
+                "bg": "Република с равни права за всички",
+                "en": "A republic with equal rights for all"
+              },
+              {
+                "bg": "Империя",
+                "en": "An empire"
+              },
+              {
+                "bg": "Царство с нов цар",
+                "en": "A kingdom with a new tsar"
+              },
+              {
+                "bg": "Част от друга държава",
+                "en": "Part of another country"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Защо Левски наричат „Дякона“?",
+              "en": "Why is Levski called “the Deacon”?"
+            },
+            "options": [
+              {
+                "bg": "Бил е учител",
+                "en": "He was a teacher"
+              },
+              {
+                "bg": "Бил е монах (дякон)",
+                "en": "He was a monk (a deacon)"
+              },
+              {
+                "bg": "Бил е войник",
+                "en": "He was a soldier"
+              },
+              {
+                "bg": "Бил е търговец",
+                "en": "He was a merchant"
+              }
+            ],
+            "answer": 1
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -218,6 +429,31 @@
             }
           ],
           "answer": 0
+        },
+        {
+          "q": {
+            "bg": "През коя година е роден Левски?",
+            "en": "In which year was Levski born?"
+          },
+          "options": [
+            {
+              "bg": "1812",
+              "en": "1812"
+            },
+            {
+              "bg": "1837",
+              "en": "1837"
+            },
+            {
+              "bg": "1873",
+              "en": "1873"
+            },
+            {
+              "bg": "1878",
+              "en": "1878"
+            }
+          ],
+          "answer": 1
         }
       ]
     }

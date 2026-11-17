@@ -206,7 +206,139 @@
           "en": "Three treasures are hiding under the bushes."
         }
       },
-      "check": []
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Кой хан основава българската държава на Дунав?",
+              "en": "Which khan founds the Bulgarian state on the Danube?"
+            },
+            "options": [
+              {
+                "bg": "Аспарух",
+                "en": "Asparuh"
+              },
+              {
+                "bg": "Крум",
+                "en": "Krum"
+              },
+              {
+                "bg": "Тервел",
+                "en": "Tervel"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Кой цар управлява по време на Златния век?",
+              "en": "Which tsar rules during the Golden Age?"
+            },
+            "options": [
+              {
+                "bg": "Симеон",
+                "en": "Simeon"
+              },
+              {
+                "bg": "Борис III",
+                "en": "Boris III"
+              },
+              {
+                "bg": "Фердинанд",
+                "en": "Ferdinand"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "С какво пишат книжовниците през Средновековието?",
+              "en": "What do medieval scribes write with?"
+            },
+            "options": [
+              {
+                "bg": "С химикалка",
+                "en": "With a ballpoint pen"
+              },
+              {
+                "bg": "С перо и мастило",
+                "en": "With a quill and ink"
+              },
+              {
+                "bg": "С компютър",
+                "en": "With a computer"
+              }
+            ],
+            "answer": 1
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Как се нарича времето на цар Симеон?",
+            "en": "What is the time of Tsar Simeon called?"
+          },
+          "options": [
+            {
+              "bg": "Златен век",
+              "en": "The Golden Age"
+            },
+            {
+              "bg": "Каменна епоха",
+              "en": "The Stone Age"
+            },
+            {
+              "bg": "Ново време",
+              "en": "Modern times"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "През коя година е основана българската държава?",
+            "en": "In which year is the Bulgarian state founded?"
+          },
+          "options": [
+            {
+              "bg": "681 г.",
+              "en": "681"
+            },
+            {
+              "bg": "1878 г.",
+              "en": "1878"
+            },
+            {
+              "bg": "1185 г.",
+              "en": "1185"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Коя е първата столица?",
+            "en": "What is the first capital?"
+          },
+          "options": [
+            {
+              "bg": "София",
+              "en": "Sofia"
+            },
+            {
+              "bg": "Плиска",
+              "en": "Pliska"
+            },
+            {
+              "bg": "Варна",
+              "en": "Varna"
+            }
+          ],
+          "answer": 1
+        }
+      ]
     },
     "guard": {
       "story": [
@@ -280,6 +412,35 @@
           "en": "The shield recalls Khan Asparuh (681), the crown Tsar Simeon the Great, and the book and quill the Golden Age of Bulgarian writing."
         }
       },
+      "extra": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди събитията от Средновековието по време.",
+          "en": "Put the medieval events in order of time."
+        },
+        "items": [
+          {
+            "bg": "Основаване на държавата (681 г.)",
+            "en": "The founding of the state (681)"
+          },
+          {
+            "bg": "Покръстването при Борис I (864 г.)",
+            "en": "The Christianisation under Boris I (864)"
+          },
+          {
+            "bg": "Златният век на Симеон (893–927 г.)",
+            "en": "Simeon’s Golden Age (893–927)"
+          },
+          {
+            "bg": "Въстанието на Асен и Петър (1185 г.)",
+            "en": "The uprising of Asen and Peter (1185)"
+          },
+          {
+            "bg": "Падането на Търново (1393 г.)",
+            "en": "The fall of Tarnovo (1393)"
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -298,6 +459,56 @@
             {
               "bg": "Хан Крум",
               "en": "Khan Krum"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Коя година пада Търново и свършва средновековна България?",
+            "en": "In which year does Tarnovo fall, ending medieval Bulgaria?"
+          },
+          "options": [
+            {
+              "bg": "1018",
+              "en": "1018"
+            },
+            {
+              "bg": "1393",
+              "en": "1393"
+            },
+            {
+              "bg": "1878",
+              "en": "1878"
+            },
+            {
+              "bg": "681",
+              "en": "681"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Защо балонът не влиза в сандъка?",
+            "en": "Why does the balloon not go in the chest?"
+          },
+          "options": [
+            {
+              "bg": "Изобретен е много по-късно",
+              "en": "It was invented much later"
+            },
+            {
+              "bg": "Твърде голям е",
+              "en": "It is too big"
+            },
+            {
+              "bg": "Бил е забранен",
+              "en": "It was forbidden"
+            },
+            {
+              "bg": "Бил е твърде скъп",
+              "en": "It was too expensive"
             }
           ],
           "answer": 0

@@ -175,6 +175,70 @@
           "en": "You are ready for the hike!"
         }
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Добрият турист оставя гората по-чиста.",
+              "en": "A good hiker leaves the forest cleaner."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "В гората палим огън, където поискаме.",
+              "en": "In the forest we light a fire wherever we like."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – огънят може да подпали гората.",
+              "en": "No – a fire can set the forest alight."
+            }
+          },
+          {
+            "text": {
+              "bg": "Взимаме торбичка за боклука.",
+              "en": "We take a bag for rubbish."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – и я носим обратно.",
+              "en": "Yes – and carry it back."
+            }
+          },
+          {
+            "text": {
+              "bg": "Късаме цветя за спомен.",
+              "en": "We pick flowers as a souvenir."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – снимаме ги.",
+              "en": "No – we photograph them."
+            }
+          },
+          {
+            "text": {
+              "bg": "В гората вървим по маркираните пътеки.",
+              "en": "In the forest we walk on marked paths."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – така не се губим и не тъпчем растенията.",
+              "en": "Yes – so we don’t get lost or trample plants."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -189,6 +253,48 @@
             {
               "bg": "Под храста",
               "en": "Under a bush"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какво взимаме на поход?",
+            "en": "What do we take on a hike?"
+          },
+          "options": [
+            {
+              "bg": "Карта и торбичка за боклук",
+              "en": "A map and a rubbish bag"
+            },
+            {
+              "bg": "Телевизор",
+              "en": "A television"
+            },
+            {
+              "bg": "Стъкло за хвърляне",
+              "en": "Glass to throw away"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какво правим, ако видим дим в гората?",
+            "en": "What do we do if we see smoke in the forest?"
+          },
+          "options": [
+            {
+              "bg": "Казваме на възрастен",
+              "en": "Tell an adult"
+            },
+            {
+              "bg": "Отиваме да видим отблизо",
+              "en": "Go closer to look"
+            },
+            {
+              "bg": "Не казваме на никого",
+              "en": "Tell nobody"
             }
           ],
           "answer": 0
@@ -240,6 +346,111 @@
           "en": "First – your safety. Then – help."
         }
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "От какво започват повечето горски пожари?",
+              "en": "How do most forest fires start?"
+            },
+            "options": [
+              {
+                "bg": "От дъжда",
+                "en": "From rain"
+              },
+              {
+                "bg": "От човешка небрежност",
+                "en": "From human carelessness"
+              },
+              {
+                "bg": "От снега",
+                "en": "From snow"
+              },
+              {
+                "bg": "От животните",
+                "en": "From animals"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Какво е туристическа маркировка?",
+              "en": "What are trail markings?"
+            },
+            "options": [
+              {
+                "bg": "Цветни знаци по дърветата, които показват пътеката",
+                "en": "Coloured signs on trees showing the path"
+              },
+              {
+                "bg": "Боклук",
+                "en": "Rubbish"
+              },
+              {
+                "bg": "Табела за паркинг",
+                "en": "A parking sign"
+              },
+              {
+                "bg": "Реклама",
+                "en": "An advert"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Защо не бива да храним дивите животни?",
+              "en": "Why must we not feed wild animals?"
+            },
+            "options": [
+              {
+                "bg": "Те са сити",
+                "en": "They are full"
+              },
+              {
+                "bg": "Свикват с хората и се разболяват от нашата храна",
+                "en": "They get used to people and fall ill from our food"
+              },
+              {
+                "bg": "Нищо лошо не става",
+                "en": "Nothing bad happens"
+              },
+              {
+                "bg": "Хапят веднага",
+                "en": "They bite at once"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Кога опасността от пожар е най-голяма?",
+              "en": "When is the risk of fire greatest?"
+            },
+            "options": [
+              {
+                "bg": "Лятото, когато е сухо и горещо",
+                "en": "In summer, when it is dry and hot"
+              },
+              {
+                "bg": "Зимата, когато вали сняг",
+                "en": "In winter, when it snows"
+              },
+              {
+                "bg": "Пролетта след дъжд",
+                "en": "In spring after rain"
+              },
+              {
+                "bg": "Нощем при мъгла",
+                "en": "At night in fog"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -275,6 +486,31 @@
             {
               "bg": "Нищо не правят",
               "en": "They do nothing"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какво правим с огъня на определеното място, преди да тръгнем?",
+            "en": "What do we do with a campfire before leaving?"
+          },
+          "options": [
+            {
+              "bg": "Гасим го напълно с вода и пръст",
+              "en": "Put it out completely with water and soil"
+            },
+            {
+              "bg": "Оставяме го да гори",
+              "en": "Leave it burning"
+            },
+            {
+              "bg": "Слагаме още дърва",
+              "en": "Add more wood"
+            },
+            {
+              "bg": "Покриваме го с листа",
+              "en": "Cover it with leaves"
             }
           ],
           "answer": 0

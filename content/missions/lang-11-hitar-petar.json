@@ -82,6 +82,70 @@
           "en": "Clever Peter – the hero of hundreds of funny folk stories."
         }
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Хитър Петър е селянин.",
+              "en": "Clever Peter is a villager."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – обикновен селянин.",
+              "en": "Yes – an ordinary villager."
+            }
+          },
+          {
+            "text": {
+              "bg": "Хитър Петър побеждава със сила.",
+              "en": "Clever Peter wins by strength."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – с ум.",
+              "en": "No – with his wits."
+            }
+          },
+          {
+            "text": {
+              "bg": "Хитър Петър се смее на алчните.",
+              "en": "Clever Peter laughs at the greedy."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – и на надутите.",
+              "en": "Yes – and at the pompous."
+            }
+          },
+          {
+            "text": {
+              "bg": "Хитър Петър е цар.",
+              "en": "Clever Peter is a king."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – той е селянин.",
+              "en": "No – he is a villager."
+            }
+          },
+          {
+            "text": {
+              "bg": "Хитър Петър и Настрадин Ходжа често се надхитряват.",
+              "en": "Clever Peter and Nasreddin Hodja often try to outwit each other."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -96,6 +160,48 @@
             {
               "bg": "С Хан Аспарух",
               "en": "Khan Asparuh"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какво помага на Хитър Петър?",
+            "en": "What helps Clever Peter?"
+          },
+          "options": [
+            {
+              "bg": "Умът",
+              "en": "His wits"
+            },
+            {
+              "bg": "Мечът",
+              "en": "A sword"
+            },
+            {
+              "bg": "Парите",
+              "en": "Money"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какъв е Хитър Петър?",
+            "en": "What is Clever Peter like?"
+          },
+          "options": [
+            {
+              "bg": "Весел и хитър",
+              "en": "Merry and clever"
+            },
+            {
+              "bg": "Тъжен и мързелив",
+              "en": "Sad and lazy"
+            },
+            {
+              "bg": "Страшен и зъл",
+              "en": "Scary and wicked"
             }
           ],
           "answer": 0
@@ -159,6 +265,111 @@
           "en": "The stories of Clever Peter and Nasreddin Hodja are known all over Bulgaria."
         }
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "На кого се присмива Хитър Петър?",
+              "en": "Whom does Clever Peter make fun of?"
+            },
+            "options": [
+              {
+                "bg": "На алчните и надутите",
+                "en": "The greedy and the pompous"
+              },
+              {
+                "bg": "На децата",
+                "en": "Children"
+              },
+              {
+                "bg": "На животните",
+                "en": "Animals"
+              },
+              {
+                "bg": "На учителите",
+                "en": "Teachers"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Кой е Настрадин Ходжа?",
+              "en": "Who is Nasreddin Hodja?"
+            },
+            "options": [
+              {
+                "bg": "Хитрец от разказите на много народи",
+                "en": "A trickster in the stories of many peoples"
+              },
+              {
+                "bg": "Цар",
+                "en": "A king"
+              },
+              {
+                "bg": "Будител",
+                "en": "An enlightener"
+              },
+              {
+                "bg": "Хайдутин",
+                "en": "An outlaw"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Кой е Крали Марко?",
+              "en": "Who is Krali Marko?"
+            },
+            "options": [
+              {
+                "bg": "Хитрец",
+                "en": "A trickster"
+              },
+              {
+                "bg": "Юнак от народните песни",
+                "en": "A hero of folk songs"
+              },
+              {
+                "bg": "Писател",
+                "en": "A writer"
+              },
+              {
+                "bg": "Хан",
+                "en": "A khan"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Защо разказите за Хитър Петър са смешни?",
+              "en": "Why are the Clever Peter stories funny?"
+            },
+            "options": [
+              {
+                "bg": "Умът побеждава силата и богатството",
+                "en": "Wit beats strength and wealth"
+              },
+              {
+                "bg": "Има много битки",
+                "en": "There are many battles"
+              },
+              {
+                "bg": "Има много числа",
+                "en": "There are many numbers"
+              },
+              {
+                "bg": "Тъжни са",
+                "en": "They are sad"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -176,6 +387,56 @@
             }
           ],
           "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Как наричаме кратък смешен разказ?",
+            "en": "What do we call a short funny story?"
+          },
+          "options": [
+            {
+              "bg": "Роман",
+              "en": "A novel"
+            },
+            {
+              "bg": "Анекдот",
+              "en": "An anecdote"
+            },
+            {
+              "bg": "Поема",
+              "en": "A poem"
+            },
+            {
+              "bg": "Химн",
+              "en": "An anthem"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Кое е най-силно в разказите за Хитър Петър?",
+            "en": "What is strongest in the Clever Peter stories?"
+          },
+          "options": [
+            {
+              "bg": "Силата",
+              "en": "Strength"
+            },
+            {
+              "bg": "Парите",
+              "en": "Money"
+            },
+            {
+              "bg": "Умът",
+              "en": "Wit"
+            },
+            {
+              "bg": "Властта",
+              "en": "Power"
+            }
+          ],
+          "answer": 2
         }
       ]
     }

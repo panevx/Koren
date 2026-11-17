@@ -99,6 +99,55 @@
           "en": "Start with the smallest year."
         }
       },
+      "extra": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи всяко име или година с това, което означава.",
+          "en": "Match each name or year with what it means."
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Асен и Петър",
+              "en": "Asen and Peter"
+            },
+            "b": {
+              "bg": "Въстанието от 1185 г.",
+              "en": "The uprising of 1185"
+            }
+          },
+          {
+            "a": {
+              "bg": "Иван Асен II",
+              "en": "Ivan Asen II"
+            },
+            "b": {
+              "bg": "Победата при Клокотница",
+              "en": "The victory at Klokotnitsa"
+            }
+          },
+          {
+            "a": {
+              "bg": "Царевец",
+              "en": "Tsarevets"
+            },
+            "b": {
+              "bg": "Хълмът с двореца",
+              "en": "The hill with the palace"
+            }
+          },
+          {
+            "a": {
+              "bg": "1393 г.",
+              "en": "1393"
+            },
+            "b": {
+              "bg": "Търново пада под османска власт",
+              "en": "Tarnovo falls to the Ottomans"
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -149,6 +198,27 @@
             "bg": "В името ѝ има думата „цар“.",
             "en": "Its name has the word “tsar” in it."
           }
+        },
+        {
+          "q": {
+            "bg": "Кой цар побеждава при Клокотница?",
+            "en": "Which tsar wins at Klokotnitsa?"
+          },
+          "options": [
+            {
+              "bg": "Иван Асен II",
+              "en": "Ivan Asen II"
+            },
+            {
+              "bg": "Симеон",
+              "en": "Simeon"
+            },
+            {
+              "bg": "Борис I",
+              "en": "Boris I"
+            }
+          ],
+          "answer": 0
         }
       ]
     },
@@ -259,6 +329,115 @@
           }
         ]
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Срещу коя империя е въстанието от 1185 г.?",
+              "en": "Against which empire is the uprising of 1185?"
+            },
+            "options": [
+              {
+                "bg": "Византийската",
+                "en": "The Byzantine"
+              },
+              {
+                "bg": "Османската",
+                "en": "The Ottoman"
+              },
+              {
+                "bg": "Римската",
+                "en": "The Roman"
+              },
+              {
+                "bg": "Франкската",
+                "en": "The Frankish"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Кой е епирският владетел, победен при Клокотница?",
+              "en": "Who is the ruler of Epirus defeated at Klokotnitsa?"
+            },
+            "options": [
+              {
+                "bg": "Теодор Комнин",
+                "en": "Theodore Komnenos"
+              },
+              {
+                "bg": "Константин IV",
+                "en": "Constantine IV"
+              },
+              {
+                "bg": "Никифор I",
+                "en": "Nikephoros I"
+              },
+              {
+                "bg": "Василий II",
+                "en": "Basil II"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Колко години управлява Иван Асен II (1218–1241)?",
+              "en": "How many years does Ivan Asen II rule (1218–1241)?"
+            },
+            "options": [
+              {
+                "bg": "13",
+                "en": "13"
+              },
+              {
+                "bg": "23",
+                "en": "23"
+              },
+              {
+                "bg": "33",
+                "en": "33"
+              },
+              {
+                "bg": "41",
+                "en": "41"
+              }
+            ],
+            "answer": 1,
+            "hint": {
+              "bg": "Извади 1218 от 1241.",
+              "en": "Subtract 1218 from 1241."
+            }
+          },
+          {
+            "q": {
+              "bg": "Какво има на Царевец освен двореца?",
+              "en": "What else is on Tsarevets besides the palace?"
+            },
+            "options": [
+              {
+                "bg": "Патриаршията",
+                "en": "The Patriarchate"
+              },
+              {
+                "bg": "Пристанище",
+                "en": "A harbour"
+              },
+              {
+                "bg": "Университет",
+                "en": "A university"
+              },
+              {
+                "bg": "Парламент",
+                "en": "A parliament"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -284,6 +463,56 @@
             "bg": "В края на XIV век.",
             "en": "At the end of the 14th century."
           }
+        },
+        {
+          "q": {
+            "bg": "Коя година започва Второто българско царство?",
+            "en": "In which year does the Second Bulgarian Empire begin?"
+          },
+          "options": [
+            {
+              "bg": "681",
+              "en": "681"
+            },
+            {
+              "bg": "1185",
+              "en": "1185"
+            },
+            {
+              "bg": "1393",
+              "en": "1393"
+            },
+            {
+              "bg": "1878",
+              "en": "1878"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Кой град е столица на Второто българско царство?",
+            "en": "Which city is the capital of the Second Bulgarian Empire?"
+          },
+          "options": [
+            {
+              "bg": "Плиска",
+              "en": "Pliska"
+            },
+            {
+              "bg": "Преслав",
+              "en": "Preslav"
+            },
+            {
+              "bg": "Търново",
+              "en": "Tarnovo"
+            },
+            {
+              "bg": "София",
+              "en": "Sofia"
+            }
+          ],
+          "answer": 2
         }
       ]
     }

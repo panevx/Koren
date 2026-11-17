@@ -104,6 +104,70 @@
         },
         "showIcons": false
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Черно море е на изток от България.",
+              "en": "The Black Sea is to the east of Bulgaria."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – на изток, там изгрява слънцето.",
+              "en": "Yes – in the east, where the sun rises."
+            }
+          },
+          {
+            "text": {
+              "bg": "Варна е най-големият град на морето.",
+              "en": "Varna is the biggest city on the sea."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – наричат я „морската столица“.",
+              "en": "Yes – it is called the “sea capital”."
+            }
+          },
+          {
+            "text": {
+              "bg": "В Черно море живеят пингвини.",
+              "en": "Penguins live in the Black Sea."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – пингвините живеят в южните студени морета.",
+              "en": "No – penguins live in the cold southern seas."
+            }
+          },
+          {
+            "text": {
+              "bg": "Несебър има църкви на повече от 700 години.",
+              "en": "Nessebar has churches more than 700 years old."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – той е древен град.",
+              "en": "Yes – it is an ancient town."
+            }
+          },
+          {
+            "text": {
+              "bg": "Делфинът е риба.",
+              "en": "The dolphin is a fish."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – делфинът е бозайник и диша въздух.",
+              "en": "No – the dolphin is a mammal and breathes air."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -154,6 +218,27 @@
             "bg": "Те са умни и обичат да скачат.",
             "en": "They are clever and love to jump."
           }
+        },
+        {
+          "q": {
+            "bg": "В коя посока от България е Черно море?",
+            "en": "In which direction from Bulgaria is the Black Sea?"
+          },
+          "options": [
+            {
+              "bg": "На изток",
+              "en": "East"
+            },
+            {
+              "bg": "На запад",
+              "en": "West"
+            },
+            {
+              "bg": "На север",
+              "en": "North"
+            }
+          ],
+          "answer": 0
         }
       ]
     },
@@ -215,6 +300,115 @@
           "en": "Look at the map: north is at the top."
         }
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Колко дълго е българското Черноморие?",
+              "en": "How long is the Bulgarian Black Sea coast?"
+            },
+            "options": [
+              {
+                "bg": "Около 38 км",
+                "en": "About 38 km"
+              },
+              {
+                "bg": "Около 378 км",
+                "en": "About 378 km"
+              },
+              {
+                "bg": "Около 1000 км",
+                "en": "About 1,000 km"
+              },
+              {
+                "bg": "Около 3780 км",
+                "en": "About 3,780 km"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Кой е най-големият град на южното Черноморие?",
+              "en": "Which is the biggest city on the southern coast?"
+            },
+            "options": [
+              {
+                "bg": "Варна",
+                "en": "Varna"
+              },
+              {
+                "bg": "Балчик",
+                "en": "Balchik"
+              },
+              {
+                "bg": "Бургас",
+                "en": "Burgas"
+              },
+              {
+                "bg": "Созопол",
+                "en": "Sozopol"
+              }
+            ],
+            "answer": 2
+          },
+          {
+            "q": {
+              "bg": "Кой е най-едрият от делфините в Черно море?",
+              "en": "Which is the largest dolphin in the Black Sea?"
+            },
+            "options": [
+              {
+                "bg": "Муткурът",
+                "en": "The harbour porpoise"
+              },
+              {
+                "bg": "Афалата",
+                "en": "The bottlenose dolphin"
+              },
+              {
+                "bg": "Обикновеният делфин",
+                "en": "The common dolphin"
+              },
+              {
+                "bg": "Китът",
+                "en": "The whale"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "През кой проток Черно море се свързва с Мраморно море?",
+              "en": "Through which strait is the Black Sea linked to the Sea of Marmara?"
+            },
+            "options": [
+              {
+                "bg": "Босфора",
+                "en": "The Bosphorus"
+              },
+              {
+                "bg": "Гибралтар",
+                "en": "Gibraltar"
+              },
+              {
+                "bg": "Ламанша",
+                "en": "The English Channel"
+              },
+              {
+                "bg": "Дарданелите",
+                "en": "The Dardanelles"
+              }
+            ],
+            "answer": 0,
+            "hint": {
+              "bg": "Той минава през Истанбул.",
+              "en": "It runs through Istanbul."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -265,6 +459,31 @@
             "bg": "Афала, муткур и още един.",
             "en": "The bottlenose, the porpoise and one more."
           }
+        },
+        {
+          "q": {
+            "bg": "От коя година старият Несебър е в списъка на ЮНЕСКО?",
+            "en": "Since which year has old Nessebar been on the UNESCO list?"
+          },
+          "options": [
+            {
+              "bg": "1878",
+              "en": "1878"
+            },
+            {
+              "bg": "1944",
+              "en": "1944"
+            },
+            {
+              "bg": "1983",
+              "en": "1983"
+            },
+            {
+              "bg": "2007",
+              "en": "2007"
+            }
+          ],
+          "answer": 2
         }
       ]
     }

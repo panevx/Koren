@@ -126,6 +126,74 @@
           }
         ]
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Коя забележителност е в Рила?",
+              "en": "Which landmark is in Rila?"
+            },
+            "options": [
+              {
+                "bg": "Рилският манастир",
+                "en": "The Rila Monastery"
+              },
+              {
+                "bg": "Несебър",
+                "en": "Nessebar"
+              },
+              {
+                "bg": "Белоградчишките скали",
+                "en": "The Belogradchik Rocks"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Кой град е столица на България?",
+              "en": "Which city is the capital of Bulgaria?"
+            },
+            "options": [
+              {
+                "bg": "Варна",
+                "en": "Varna"
+              },
+              {
+                "bg": "София",
+                "en": "Sofia"
+              },
+              {
+                "bg": "Русе",
+                "en": "Ruse"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Коя река тече по границата с Румъния?",
+              "en": "Which river runs along the border with Romania?"
+            },
+            "options": [
+              {
+                "bg": "Марица",
+                "en": "Maritsa"
+              },
+              {
+                "bg": "Искър",
+                "en": "Iskar"
+              },
+              {
+                "bg": "Дунав",
+                "en": "Danube"
+              }
+            ],
+            "answer": 2
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -144,6 +212,48 @@
             {
               "bg": "Рилският манастир",
               "en": "The Rila Monastery"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "В кой град е Царевец?",
+            "en": "In which town is Tsarevets?"
+          },
+          "options": [
+            {
+              "bg": "Велико Търново",
+              "en": "Veliko Tarnovo"
+            },
+            {
+              "bg": "Варна",
+              "en": "Varna"
+            },
+            {
+              "bg": "София",
+              "en": "Sofia"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Къде са Белоградчишките скали?",
+            "en": "Where are the Belogradchik Rocks?"
+          },
+          "options": [
+            {
+              "bg": "В северозападна България",
+              "en": "In north-western Bulgaria"
+            },
+            {
+              "bg": "На морето",
+              "en": "By the sea"
+            },
+            {
+              "bg": "В Пирин",
+              "en": "In Pirin"
             }
           ],
           "answer": 0
@@ -202,6 +312,81 @@
           "balchik"
         ]
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно? Мисли за картата.",
+          "en": "True or not true? Think of the map."
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Плиска е близо до Шумен.",
+              "en": "Pliska is near Shumen."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – в Североизточна България.",
+              "en": "Yes – in north-eastern Bulgaria."
+            }
+          },
+          {
+            "text": {
+              "bg": "Рилският манастир е в Пирин.",
+              "en": "The Rila Monastery is in Pirin."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – в Рила, както подсказва името.",
+              "en": "No – in Rila, as the name says."
+            }
+          },
+          {
+            "text": {
+              "bg": "Несебър е на Черно море.",
+              "en": "Nessebar is on the Black Sea."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – на малък полуостров.",
+              "en": "Yes – on a small peninsula."
+            }
+          },
+          {
+            "text": {
+              "bg": "Велико Търново е на река Янтра.",
+              "en": "Veliko Tarnovo is on the Yantra River."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – реката обикаля Царевец.",
+              "en": "Yes – the river curls round Tsarevets."
+            }
+          },
+          {
+            "text": {
+              "bg": "Белоградчишките скали са до Черно море.",
+              "en": "The Belogradchik Rocks are by the Black Sea."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – в северозапада, далеч от морето.",
+              "en": "No – in the north-west, far from the sea."
+            }
+          },
+          {
+            "text": {
+              "bg": "Пловдив е на река Марица.",
+              "en": "Plovdiv is on the Maritsa River."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – в Горнотракийската низина.",
+              "en": "Yes – in the Upper Thracian Plain."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -223,6 +408,56 @@
             }
           ],
           "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Коя река тече през Пловдив?",
+            "en": "Which river flows through Plovdiv?"
+          },
+          "options": [
+            {
+              "bg": "Дунав",
+              "en": "Danube"
+            },
+            {
+              "bg": "Марица",
+              "en": "Maritsa"
+            },
+            {
+              "bg": "Искър",
+              "en": "Iskar"
+            },
+            {
+              "bg": "Янтра",
+              "en": "Yantra"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Кой от тези градове е на Дунав?",
+            "en": "Which of these towns is on the Danube?"
+          },
+          "options": [
+            {
+              "bg": "Пловдив",
+              "en": "Plovdiv"
+            },
+            {
+              "bg": "Сливен",
+              "en": "Sliven"
+            },
+            {
+              "bg": "Русе",
+              "en": "Ruse"
+            },
+            {
+              "bg": "Благоевград",
+              "en": "Blagoevgrad"
+            }
+          ],
+          "answer": 2
         }
       ]
     }

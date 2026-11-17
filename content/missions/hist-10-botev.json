@@ -141,6 +141,70 @@
           "en": "Hristo Botev – poet and revolutionary. On 2 June at noon we honour him and all who died for freedom."
         }
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Ботев е роден в Калофер.",
+              "en": "Botev was born in Kalofer."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – малко градче в подножието на Стара планина.",
+              "en": "Yes – a small town at the foot of the Balkan Mountains."
+            }
+          },
+          {
+            "text": {
+              "bg": "Ботев е пишел стихове.",
+              "en": "Botev wrote poems."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – и днес учим стиховете му в училище.",
+              "en": "Yes – children still learn his poems at school."
+            }
+          },
+          {
+            "text": {
+              "bg": "Четата слиза от кораба „Титаник“.",
+              "en": "His band comes off the ship “Titanic”."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – от парахода „Радецки“.",
+              "en": "No – from the steamship “Radetzky”."
+            }
+          },
+          {
+            "text": {
+              "bg": "На 2 юни в 12 часа свирят сирени.",
+              "en": "On 2 June at 12 o’clock sirens sound."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – почитаме Ботев и загиналите за свободата.",
+              "en": "Yes – we honour Botev and those who died for freedom."
+            }
+          },
+          {
+            "text": {
+              "bg": "Ботев е роден в Карлово.",
+              "en": "Botev was born in Karlovo."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – в Калофер. Карлово е градът на Левски.",
+              "en": "No – in Kalofer. Karlovo is Levski’s town."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -155,6 +219,48 @@
             {
               "bg": "Започва ваканцията",
               "en": "The holidays begin"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Как се казва корабът на четата?",
+            "en": "What is the name of the band’s ship?"
+          },
+          "options": [
+            {
+              "bg": "„Радецки“",
+              "en": "“Radetzky”"
+            },
+            {
+              "bg": "„Титаник“",
+              "en": "“Titanic”"
+            },
+            {
+              "bg": "„Варна“",
+              "en": "“Varna”"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какво още прави Ботев освен стихове?",
+            "en": "What else does Botev do besides poems?"
+          },
+          "options": [
+            {
+              "bg": "Издава вестници",
+              "en": "He publishes newspapers"
+            },
+            {
+              "bg": "Строи мостове",
+              "en": "He builds bridges"
+            },
+            {
+              "bg": "Рисува икони",
+              "en": "He paints icons"
             }
           ],
           "answer": 0
@@ -202,6 +308,111 @@
           }
         ]
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Коя година е четата на Ботев?",
+              "en": "In which year is Botev’s band?"
+            },
+            "options": [
+              {
+                "bg": "1873",
+                "en": "1873"
+              },
+              {
+                "bg": "1876",
+                "en": "1876"
+              },
+              {
+                "bg": "1878",
+                "en": "1878"
+              },
+              {
+                "bg": "1885",
+                "en": "1885"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "В кой град учи Ботев?",
+              "en": "In which city does Botev study?"
+            },
+            "options": [
+              {
+                "bg": "Одеса",
+                "en": "Odesa"
+              },
+              {
+                "bg": "Виена",
+                "en": "Vienna"
+              },
+              {
+                "bg": "Париж",
+                "en": "Paris"
+              },
+              {
+                "bg": "Прага",
+                "en": "Prague"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "В коя държава Ботев издава вестници?",
+              "en": "In which country does Botev publish newspapers?"
+            },
+            "options": [
+              {
+                "bg": "Сърбия",
+                "en": "Serbia"
+              },
+              {
+                "bg": "Гърция",
+                "en": "Greece"
+              },
+              {
+                "bg": "Румъния",
+                "en": "Romania"
+              },
+              {
+                "bg": "Турция",
+                "en": "Turkey"
+              }
+            ],
+            "answer": 2
+          },
+          {
+            "q": {
+              "bg": "Къде четата слиза на българския бряг на Дунав?",
+              "en": "Where does the band land on the Bulgarian bank of the Danube?"
+            },
+            "options": [
+              {
+                "bg": "При Видин",
+                "en": "Near Vidin"
+              },
+              {
+                "bg": "При Козлодуй",
+                "en": "Near Kozloduy"
+              },
+              {
+                "bg": "При Русе",
+                "en": "Near Ruse"
+              },
+              {
+                "bg": "При Силистра",
+                "en": "Near Silistra"
+              }
+            ],
+            "answer": 1
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -233,6 +444,31 @@
             {
               "bg": "Освобождението",
               "en": "The Liberation"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какво пише Ботев?",
+            "en": "What does Botev write?"
+          },
+          "options": [
+            {
+              "bg": "Стихотворения и статии",
+              "en": "Poems and articles"
+            },
+            {
+              "bg": "Учебници по математика",
+              "en": "Maths textbooks"
+            },
+            {
+              "bg": "Закони",
+              "en": "Laws"
+            },
+            {
+              "bg": "Готварски книги",
+              "en": "Cookbooks"
             }
           ],
           "answer": 0

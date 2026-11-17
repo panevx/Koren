@@ -143,6 +143,74 @@
           "en": "Musala 2,925 m, Vihren 2,914 m, Botev 2,376 m, Cherni Vrah 2,290 m."
         }
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "С колко метра Вихрен е по-нисък от Мусала?",
+              "en": "By how many metres is Vihren lower than Musala?"
+            },
+            "options": [
+              {
+                "bg": "11 м",
+                "en": "11 m"
+              },
+              {
+                "bg": "1100 м",
+                "en": "1,100 m"
+              },
+              {
+                "bg": "2 м",
+                "en": "2 m"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Кой връх е на Витоша?",
+              "en": "Which peak is on Vitosha?"
+            },
+            "options": [
+              {
+                "bg": "Мусала",
+                "en": "Musala"
+              },
+              {
+                "bg": "Черни връх",
+                "en": "Cherni Vrah"
+              },
+              {
+                "bg": "Вихрен",
+                "en": "Vihren"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Кой връх е в Стара планина?",
+              "en": "Which peak is in the Balkan Mountains?"
+            },
+            "options": [
+              {
+                "bg": "Вихрен",
+                "en": "Vihren"
+              },
+              {
+                "bg": "Мусала",
+                "en": "Musala"
+              },
+              {
+                "bg": "Ботев",
+                "en": "Botev"
+              }
+            ],
+            "answer": 2
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -161,6 +229,48 @@
             {
               "bg": "9225 м",
               "en": "9,225 m"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Кой е най-високият връх в България?",
+            "en": "Which is the highest peak in Bulgaria?"
+          },
+          "options": [
+            {
+              "bg": "Мусала",
+              "en": "Musala"
+            },
+            {
+              "bg": "Ботев",
+              "en": "Botev"
+            },
+            {
+              "bg": "Черни връх",
+              "en": "Cherni Vrah"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кой е вторият по височина връх?",
+            "en": "Which is the second highest peak?"
+          },
+          "options": [
+            {
+              "bg": "Черни връх",
+              "en": "Cherni Vrah"
+            },
+            {
+              "bg": "Вихрен",
+              "en": "Vihren"
+            },
+            {
+              "bg": "Ботев",
+              "en": "Botev"
             }
           ],
           "answer": 1
@@ -220,6 +330,111 @@
           "bg": "Рила и Пирин са най-високи; после Стара планина, Витоша и Родопите.",
           "en": "Rila and Pirin are the highest; then the Balkan Mountains, Vitosha and the Rhodopes."
         }
+      },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Колко висок е Вихрен?",
+              "en": "How high is Vihren?"
+            },
+            "options": [
+              {
+                "bg": "2925 м",
+                "en": "2,925 m"
+              },
+              {
+                "bg": "2914 м",
+                "en": "2,914 m"
+              },
+              {
+                "bg": "2376 м",
+                "en": "2,376 m"
+              },
+              {
+                "bg": "2290 м",
+                "en": "2,290 m"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Колко висок е Ботев?",
+              "en": "How high is Botev?"
+            },
+            "options": [
+              {
+                "bg": "2914 м",
+                "en": "2,914 m"
+              },
+              {
+                "bg": "2290 м",
+                "en": "2,290 m"
+              },
+              {
+                "bg": "2376 м",
+                "en": "2,376 m"
+              },
+              {
+                "bg": "2191 м",
+                "en": "2,191 m"
+              }
+            ],
+            "answer": 2
+          },
+          {
+            "q": {
+              "bg": "Колко висок е Черни връх?",
+              "en": "How high is Cherni Vrah?"
+            },
+            "options": [
+              {
+                "bg": "2290 м",
+                "en": "2,290 m"
+              },
+              {
+                "bg": "2376 м",
+                "en": "2,376 m"
+              },
+              {
+                "bg": "1500 м",
+                "en": "1,500 m"
+              },
+              {
+                "bg": "2925 м",
+                "en": "2,925 m"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Колко висок е Голям Перелик?",
+              "en": "How high is Golyam Perelik?"
+            },
+            "options": [
+              {
+                "bg": "1191 м",
+                "en": "1,191 m"
+              },
+              {
+                "bg": "2290 м",
+                "en": "2,290 m"
+              },
+              {
+                "bg": "2191 м",
+                "en": "2,191 m"
+              },
+              {
+                "bg": "2925 м",
+                "en": "2,925 m"
+              }
+            ],
+            "answer": 2
+          }
+        ]
       },
       "check": [
         {

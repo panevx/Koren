@@ -24,7 +24,7 @@ import { play } from '../sound'
 import { BREAK_AFTER, activeProfile, useActiveProfile, useAge, useProfiles } from '../store/profiles'
 import { ageToLevel, type Level } from '../theme/levels'
 
-type Phase = 'story' | 'game' | 'check' | 'badge'
+type Phase = 'story' | 'game' | 'extra' | 'check' | 'badge'
 
 export function Mission() {
   const { id } = useParams()
@@ -79,7 +79,7 @@ function MissionRun({ mission, childLevel }: { mission: MissionData; childLevel:
   const navigate = useNavigate()
   const [{ level, content }] = useState(() => pickLevel(mission, childLevel))
   const phases = useMemo<Phase[]>(
-    () => ['story', 'game', ...(content.check.length ? (['check'] as const) : []), 'badge'],
+    () => ['story', 'game', ...(content.extra ? (['extra'] as const) : []), ...(content.check.length ? (['check'] as const) : []), 'badge'],
     [content],
   )
   useTitle(l(mission.title))
@@ -103,7 +103,7 @@ function MissionRun({ mission, childLevel }: { mission: MissionData; childLevel:
     if (phase === 'badge') session.set(finishedKey)
     else if (phase === 'story') session.clear(finishedKey)
   }, [phase, finishedKey])
-  const backIntoFinished = navType === 'POP' && (phase === 'game' || phase === 'check') && session.has(finishedKey)
+  const backIntoFinished = navType === 'POP' && (phase === 'game' || phase === 'extra' || phase === 'check') && session.has(finishedKey)
   // Leaving in the middle of a game asks once more ("tap again to leave") — no lost progress by accident.
   const [confirming, setConfirming] = useState(false)
   useEffect(() => {
@@ -126,6 +126,7 @@ function MissionRun({ mission, childLevel }: { mission: MissionData; childLevel:
         phases={phases}
         phase={phase}
         game={content.game.type}
+        extra={content.extra?.type}
         exitLabel={confirming ? t('mission.exitConfirm') : t('mission.exit')}
         confirming={confirming}
         onExit={exit}
@@ -139,6 +140,7 @@ function MissionRun({ mission, childLevel }: { mission: MissionData; childLevel:
         <m.div key={phase} initial={{ opacity: 0, x: 28 }} animate={{ opacity: 1, x: 0 }} className="flex flex-1 flex-col">
           {phase === 'story' && <Story lines={content.story} onDone={next} />}
           {phase === 'game' && <GameView game={content.game} onDone={next} />}
+          {phase === 'extra' && content.extra && <GameView game={content.extra} onDone={next} />}
           {phase === 'check' && (
             <Quiz
               questions={content.check}
@@ -156,7 +158,7 @@ function MissionRun({ mission, childLevel }: { mission: MissionData; childLevel:
   )
 }
 
-const PHASE_ART: Record<Exclude<Phase, 'game'>, string> = { story: ART.scroll, check: ART.orb, badge: ART.gold }
+const PHASE_ART: Record<Exclude<Phase, 'game' | 'extra'>, string> = { story: ART.scroll, check: ART.orb, badge: ART.gold }
 
 /**
  * The game header: a way out (asks twice in the middle of a game), the mission's name and the steps of the
@@ -168,6 +170,7 @@ function GameHeader({
   phases,
   phase,
   game,
+  extra,
   exitLabel,
   confirming,
   onExit,
@@ -176,6 +179,7 @@ function GameHeader({
   phases: Phase[]
   phase: Phase
   game: string
+  extra?: string
   exitLabel: string
   confirming: boolean
   onExit: () => void
@@ -212,7 +216,7 @@ function GameHeader({
                 i < at ? 'bg-green-soft ring-2 ring-green' : i === at ? 'scale-125 bg-white shadow-float ring-[3px] ring-coral' : 'bg-white ring-2 ring-sand'
               }`}
             >
-              <img src={img(p === 'game' ? (GAME_ART[game] ?? ART.orb) : PHASE_ART[p])} alt="" className={`size-[78%] object-contain ${i > at ? 'opacity-40 grayscale' : ''}`} />
+              <img src={img(p === 'game' ? (GAME_ART[game] ?? ART.orb) : p === 'extra' ? (GAME_ART[extra ?? ''] ?? ART.orb) : PHASE_ART[p])} alt="" className={`size-[78%] object-contain ${i > at ? 'opacity-40 grayscale' : ''}`} />
             </li>
           ))}
         </ol>

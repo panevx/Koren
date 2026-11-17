@@ -161,6 +161,70 @@
           }
         ]
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Долината е ниско място между планини.",
+              "en": "A valley is a low place between mountains."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – често с река.",
+              "en": "Yes – often with a river."
+            }
+          },
+          {
+            "text": {
+              "bg": "Платото е остър връх.",
+              "en": "A plateau is a sharp peak."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – платото е равно отгоре и стръмно отстрани.",
+              "en": "No – a plateau is flat on top and steep at the sides."
+            }
+          },
+          {
+            "text": {
+              "bg": "Низината е равна земя, която е ниско.",
+              "en": "A lowland is flat land that lies low."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – до около 200 м височина.",
+              "en": "Yes – up to about 200 m high."
+            }
+          },
+          {
+            "text": {
+              "bg": "Дунавската равнина е най-голямата у нас.",
+              "en": "The Danubian Plain is our largest plain."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – на север, до Дунав.",
+              "en": "Yes – in the north, by the Danube."
+            }
+          },
+          {
+            "text": {
+              "bg": "Равнината е много стръмна.",
+              "en": "A plain is very steep."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – равнината е равна.",
+              "en": "No – a plain is flat."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -175,6 +239,48 @@
             {
               "bg": "Софийското поле",
               "en": "The Sofia Field"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кое е равно отгоре и стръмно отстрани?",
+            "en": "What is flat on top and steep at the sides?"
+          },
+          "options": [
+            {
+              "bg": "Плато",
+              "en": "A plateau"
+            },
+            {
+              "bg": "Долина",
+              "en": "A valley"
+            },
+            {
+              "bg": "Низина",
+              "en": "A lowland"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какво често тече в долината?",
+            "en": "What often flows in a valley?"
+          },
+          "options": [
+            {
+              "bg": "Река",
+              "en": "A river"
+            },
+            {
+              "bg": "Лава",
+              "en": "Lava"
+            },
+            {
+              "bg": "Нищо",
+              "en": "Nothing"
             }
           ],
           "answer": 0
@@ -261,6 +367,111 @@
           }
         ]
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "В коя котловина е София?",
+              "en": "In which basin is Sofia?"
+            },
+            "options": [
+              {
+                "bg": "Казанлъшката",
+                "en": "The Kazanlak basin"
+              },
+              {
+                "bg": "Софийската",
+                "en": "The Sofia basin"
+              },
+              {
+                "bg": "Карловската",
+                "en": "The Karlovo basin"
+              },
+              {
+                "bg": "Сливенската",
+                "en": "The Sliven basin"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Кое от тези е плато в Североизточна България?",
+              "en": "Which of these is a plateau in north-eastern Bulgaria?"
+            },
+            "options": [
+              {
+                "bg": "Лудогорското",
+                "en": "The Ludogorie Plateau"
+              },
+              {
+                "bg": "Горнотракийската",
+                "en": "The Upper Thracian"
+              },
+              {
+                "bg": "Софийската",
+                "en": "The Sofia"
+              },
+              {
+                "bg": "Струмската",
+                "en": "The Struma"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Как наричаме долината с розите между Стара планина и Средна гора?",
+              "en": "What do we call the valley of roses between the Balkan Mountains and Sredna Gora?"
+            },
+            "options": [
+              {
+                "bg": "Дунавската",
+                "en": "The Danubian"
+              },
+              {
+                "bg": "Розовата долина",
+                "en": "The Rose Valley"
+              },
+              {
+                "bg": "Тракийската",
+                "en": "The Thracian"
+              },
+              {
+                "bg": "Струмската",
+                "en": "The Struma"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "До каква височина е една низина?",
+              "en": "Up to what height is a lowland?"
+            },
+            "options": [
+              {
+                "bg": "До около 200 м",
+                "en": "Up to about 200 m"
+              },
+              {
+                "bg": "До около 2000 м",
+                "en": "Up to about 2,000 m"
+              },
+              {
+                "bg": "Над 1000 м",
+                "en": "Over 1,000 m"
+              },
+              {
+                "bg": "Само под морското равнище",
+                "en": "Only below sea level"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -296,6 +507,31 @@
             {
               "bg": "Остър връх",
               "en": "A sharp peak"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Коя форма на релефа е най-удобна за ниви?",
+            "en": "Which landform is best for fields?"
+          },
+          "options": [
+            {
+              "bg": "Равнината",
+              "en": "The plain"
+            },
+            {
+              "bg": "Високата планина",
+              "en": "The high mountain"
+            },
+            {
+              "bg": "Скалата",
+              "en": "The cliff"
+            },
+            {
+              "bg": "Пещерата",
+              "en": "The cave"
             }
           ],
           "answer": 0

@@ -141,6 +141,70 @@
           }
         ]
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Кукерите носят звънци, за да прогонят злото.",
+              "en": "The kukeri wear bells to chase away evil."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – шумът и маските плашат злото.",
+              "en": "Yes – the noise and masks scare evil away."
+            }
+          },
+          {
+            "text": {
+              "bg": "Лазарките пеят на Коледа.",
+              "en": "The lazarki sing at Christmas."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – на Лазаровден, напролет.",
+              "en": "No – on St Lazarus’ Day, in spring."
+            }
+          },
+          {
+            "text": {
+              "bg": "Сурвачката се прави от дрян.",
+              "en": "The survachka is made of cornel wood."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – дрянът е здраво дърво, за здраве.",
+              "en": "Yes – cornel is a strong wood, for good health."
+            }
+          },
+          {
+            "text": {
+              "bg": "Коледарите обикалят в нощта срещу Коледа.",
+              "en": "The koledari go round on the night before Christmas."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – и пеят песни за здраве и берекет.",
+              "en": "Yes – and sing songs for health and plenty."
+            }
+          },
+          {
+            "text": {
+              "bg": "Кукерите излизат през лятото на плажа.",
+              "en": "The kukeri come out in summer on the beach."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – през зимата.",
+              "en": "No – in winter."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -155,6 +219,48 @@
             {
               "bg": "С метла",
               "en": "A broom"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кой обичай е на Нова година?",
+            "en": "Which custom is on New Year’s Day?"
+          },
+          "options": [
+            {
+              "bg": "Сурвакане",
+              "en": "Survakane"
+            },
+            {
+              "bg": "Лазаруване",
+              "en": "Lazaruvane"
+            },
+            {
+              "bg": "Баба Марта",
+              "en": "Baba Marta"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кой пее на Лазаровден?",
+            "en": "Who sings on St Lazarus’ Day?"
+          },
+          "options": [
+            {
+              "bg": "Момичета – лазарки",
+              "en": "Girls – the lazarki"
+            },
+            {
+              "bg": "Кукери",
+              "en": "Kukeri"
+            },
+            {
+              "bg": "Коледари",
+              "en": "Koledari"
             }
           ],
           "answer": 0
@@ -240,6 +346,111 @@
           }
         ]
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Кога е Лазаровден?",
+              "en": "When is St Lazarus’ Day?"
+            },
+            "options": [
+              {
+                "bg": "В съботата преди Цветница",
+                "en": "On the Saturday before Palm Sunday"
+              },
+              {
+                "bg": "На Коледа",
+                "en": "At Christmas"
+              },
+              {
+                "bg": "На 1 март",
+                "en": "On 1 March"
+              },
+              {
+                "bg": "На Гергьовден",
+                "en": "On St George’s Day"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Какво е Бъдни вечер?",
+              "en": "What is Badni Vecher?"
+            },
+            "options": [
+              {
+                "bg": "Вечерта преди Коледа",
+                "en": "The evening before Christmas"
+              },
+              {
+                "bg": "Първият ден на пролетта",
+                "en": "The first day of spring"
+              },
+              {
+                "bg": "Празник на виното",
+                "en": "A wine festival"
+              },
+              {
+                "bg": "Денят на будителите",
+                "en": "Enlighteners’ Day"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Колко ястия има по традиция на трапезата на Бъдни вечер?",
+              "en": "By tradition, how many dishes are on the table on Badni Vecher?"
+            },
+            "options": [
+              {
+                "bg": "Точно 2",
+                "en": "Exactly 2"
+              },
+              {
+                "bg": "Нечетен брой – 7, 9 или 11",
+                "en": "An odd number – 7, 9 or 11"
+              },
+              {
+                "bg": "Точно 100",
+                "en": "Exactly 100"
+              },
+              {
+                "bg": "Нито едно",
+                "en": "None"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Какво получават коледарите от домакините?",
+              "en": "What do the koledari get from the hosts?"
+            },
+            "options": [
+              {
+                "bg": "Кравай",
+                "en": "A ring-shaped loaf"
+              },
+              {
+                "bg": "Мартеница",
+                "en": "A martenitsa"
+              },
+              {
+                "bg": "Червено яйце",
+                "en": "A red egg"
+              },
+              {
+                "bg": "Венец от цветя",
+                "en": "A wreath of flowers"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -275,6 +486,31 @@
             {
               "bg": "За да спят по-добре",
               "en": "To sleep better"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кога най-често излизат кукерите?",
+            "en": "When do the kukeri usually come out?"
+          },
+          "options": [
+            {
+              "bg": "Около Нова година и на Сирни заговезни",
+              "en": "Around New Year and on Cheesefare Sunday"
+            },
+            {
+              "bg": "През юли",
+              "en": "In July"
+            },
+            {
+              "bg": "На 24 май",
+              "en": "On 24 May"
+            },
+            {
+              "bg": "На Великден",
+              "en": "At Easter"
             }
           ],
           "answer": 0

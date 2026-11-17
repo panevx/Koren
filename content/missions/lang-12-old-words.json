@@ -86,6 +86,70 @@
           }
         ]
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "„Мома“ значи „момиче“.",
+              "en": "“Moma” means “girl”."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "„Чедо“ значи „куче“.",
+              "en": "“Chedo” means “dog”."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – „дете“.",
+              "en": "No – “child”."
+            }
+          },
+          {
+            "text": {
+              "bg": "„Пенджер“ значи „прозорец“.",
+              "en": "“Pendzher” means “window”."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "„Сокак“ значи „улица“.",
+              "en": "“Sokak” means “street”."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "„Сокак“ значи „сок“.",
+              "en": "“Sokak” means “juice”."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – „улица“.",
+              "en": "No – “street”."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -100,6 +164,48 @@
             {
               "bg": "Котка спи",
               "en": "A cat sleeps"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какво значи „чедо“?",
+            "en": "What does “chedo” mean?"
+          },
+          "options": [
+            {
+              "bg": "Дете",
+              "en": "Child"
+            },
+            {
+              "bg": "Котка",
+              "en": "Cat"
+            },
+            {
+              "bg": "Чаша",
+              "en": "Cup"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какво значи „сокак“?",
+            "en": "What does “sokak” mean?"
+          },
+          "options": [
+            {
+              "bg": "Улица",
+              "en": "Street"
+            },
+            {
+              "bg": "Сок",
+              "en": "Juice"
+            },
+            {
+              "bg": "Обувка",
+              "en": "Shoe"
             }
           ],
           "answer": 0
@@ -191,6 +297,75 @@
           }
         ]
       },
+      "extra": {
+        "type": "match",
+        "prompt": {
+          "bg": "Още шест стари думи – преведи ги!",
+          "en": "Six more old words – translate them!"
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "капия",
+              "en": "kapiya"
+            },
+            "b": {
+              "bg": "порта",
+              "en": "gate"
+            }
+          },
+          {
+            "a": {
+              "bg": "комшия",
+              "en": "komshiya"
+            },
+            "b": {
+              "bg": "съсед",
+              "en": "neighbour"
+            }
+          },
+          {
+            "a": {
+              "bg": "джам",
+              "en": "dzham"
+            },
+            "b": {
+              "bg": "стъкло на прозорец",
+              "en": "windowpane"
+            }
+          },
+          {
+            "a": {
+              "bg": "дюшеме",
+              "en": "dyusheme"
+            },
+            "b": {
+              "bg": "дървен под",
+              "en": "wooden floor"
+            }
+          },
+          {
+            "a": {
+              "bg": "хаир",
+              "en": "hair"
+            },
+            "b": {
+              "bg": "полза, добро",
+              "en": "benefit, good"
+            }
+          },
+          {
+            "a": {
+              "bg": "чешма",
+              "en": "cheshma"
+            },
+            "b": {
+              "bg": "извор с чучур",
+              "en": "fountain with a spout"
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -208,6 +383,56 @@
             }
           ],
           "answer": 0
+        },
+        {
+          "q": {
+            "bg": "От кои езици идват много стари думи у нас?",
+            "en": "Which languages do many old words come from?"
+          },
+          "options": [
+            {
+              "bg": "От турски и гръцки",
+              "en": "Turkish and Greek"
+            },
+            {
+              "bg": "От японски",
+              "en": "Japanese"
+            },
+            {
+              "bg": "От китайски",
+              "en": "Chinese"
+            },
+            {
+              "bg": "От испански",
+              "en": "Spanish"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какво значи „либе“?",
+            "en": "What does “libe” mean?"
+          },
+          "options": [
+            {
+              "bg": "Мост",
+              "en": "A bridge"
+            },
+            {
+              "bg": "Улица",
+              "en": "A street"
+            },
+            {
+              "bg": "Любим човек",
+              "en": "A beloved person"
+            },
+            {
+              "bg": "Работник",
+              "en": "A worker"
+            }
+          ],
+          "answer": 2
         }
       ]
     }

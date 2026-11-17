@@ -212,6 +212,70 @@
           "en": "Think about where the animal finds its food."
         }
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Мечката спи през зимата в бърлога.",
+              "en": "The bear sleeps through the winter in a den."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – и се събужда напролет.",
+              "en": "Yes – and wakes up in spring."
+            }
+          },
+          {
+            "text": {
+              "bg": "Катерицата събира ядки за зимата.",
+              "en": "The squirrel gathers nuts for the winter."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – и ги крие на различни места.",
+              "en": "Yes – and hides them in different places."
+            }
+          },
+          {
+            "text": {
+              "bg": "Таралежът се свива на бодливо кълбо.",
+              "en": "The hedgehog rolls into a prickly ball."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – когато се уплаши.",
+              "en": "Yes – when it is frightened."
+            }
+          },
+          {
+            "text": {
+              "bg": "Кълвачът търси храна в морето.",
+              "en": "The woodpecker looks for food in the sea."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – той чука по дърветата.",
+              "en": "No – it pecks at trees."
+            }
+          },
+          {
+            "text": {
+              "bg": "Лисицата има рога.",
+              "en": "The fox has antlers."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – еленът има рога.",
+              "en": "No – the deer has antlers."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -268,6 +332,27 @@
             "bg": "Рогата му приличат на клони.",
             "en": "Its antlers look like branches."
           }
+        },
+        {
+          "q": {
+            "bg": "Кое е най-едрото хищно животно в нашите гори?",
+            "en": "Which is the largest predator in our forests?"
+          },
+          "options": [
+            {
+              "bg": "Кафявата мечка",
+              "en": "The brown bear"
+            },
+            {
+              "bg": "Лисицата",
+              "en": "The fox"
+            },
+            {
+              "bg": "Катерицата",
+              "en": "The squirrel"
+            }
+          ],
+          "answer": 0
         }
       ]
     },
@@ -330,6 +415,111 @@
           "bg": "Мечката е най-едра, а таралежът – най-дребен.",
           "en": "The bear is the largest and the hedgehog the smallest."
         }
+      },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Коя е най-едрата дива котка в Европа?",
+              "en": "Which is the largest wild cat in Europe?"
+            },
+            "options": [
+              {
+                "bg": "Рисът",
+                "en": "The lynx"
+              },
+              {
+                "bg": "Тигърът",
+                "en": "The tiger"
+              },
+              {
+                "bg": "Лъвът",
+                "en": "The lion"
+              },
+              {
+                "bg": "Дивата котка",
+                "en": "The wildcat"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Коя е най-едрата сова в Европа?",
+              "en": "Which is the largest owl in Europe?"
+            },
+            "options": [
+              {
+                "bg": "Кукумявката",
+                "en": "The little owl"
+              },
+              {
+                "bg": "Чухалът",
+                "en": "The scops owl"
+              },
+              {
+                "bg": "Бухалът",
+                "en": "The eagle owl"
+              },
+              {
+                "bg": "Забулената сова",
+                "en": "The barn owl"
+              }
+            ],
+            "answer": 2
+          },
+          {
+            "q": {
+              "bg": "Кое животно яде и плодове, и мед, и месо?",
+              "en": "Which animal eats fruit, honey and meat?"
+            },
+            "options": [
+              {
+                "bg": "Рисът",
+                "en": "The lynx"
+              },
+              {
+                "bg": "Кафявата мечка",
+                "en": "The brown bear"
+              },
+              {
+                "bg": "Вълкът",
+                "en": "The wolf"
+              },
+              {
+                "bg": "Бухалът",
+                "en": "The eagle owl"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Защо рисът е защитен от закона?",
+              "en": "Why is the lynx protected by law?"
+            },
+            "options": [
+              {
+                "bg": "Много е рядък",
+                "en": "It is very rare"
+              },
+              {
+                "bg": "Опасен е за хората",
+                "en": "It is dangerous to people"
+              },
+              {
+                "bg": "Шумен е",
+                "en": "It is noisy"
+              },
+              {
+                "bg": "Яде много",
+                "en": "It eats a lot"
+              }
+            ],
+            "answer": 0
+          }
+        ]
       },
       "check": [
         {

@@ -57,6 +57,74 @@
           }
         ]
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "С кой код започват номерата от Варна?",
+              "en": "Which code do Varna plates start with?"
+            },
+            "options": [
+              {
+                "bg": "В",
+                "en": "В"
+              },
+              {
+                "bg": "А",
+                "en": "А"
+              },
+              {
+                "bg": "РВ",
+                "en": "РВ"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "С кой код започват номерата от Бургас?",
+              "en": "Which code do Burgas plates start with?"
+            },
+            "options": [
+              {
+                "bg": "В",
+                "en": "В"
+              },
+              {
+                "bg": "А",
+                "en": "А"
+              },
+              {
+                "bg": "С",
+                "en": "С"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "С кой код започват номерата от Пловдив?",
+              "en": "Which code do Plovdiv plates start with?"
+            },
+            "options": [
+              {
+                "bg": "РВ",
+                "en": "РВ"
+              },
+              {
+                "bg": "ПЛ",
+                "en": "ПЛ"
+              },
+              {
+                "bg": "П",
+                "en": "П"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -71,6 +139,48 @@
             {
               "bg": "Името на шофьора",
               "en": "The driver's name"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Защо колите имат номера?",
+            "en": "Why do cars have number plates?"
+          },
+          "options": [
+            {
+              "bg": "За да се знае коя е колата",
+              "en": "So we know which car it is"
+            },
+            {
+              "bg": "За красота",
+              "en": "For decoration"
+            },
+            {
+              "bg": "За да са по-бързи",
+              "en": "To make them faster"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кой код е на София?",
+            "en": "Which code belongs to Sofia?"
+          },
+          "options": [
+            {
+              "bg": "С",
+              "en": "С"
+            },
+            {
+              "bg": "Т",
+              "en": "Т"
+            },
+            {
+              "bg": "Х",
+              "en": "Х"
             }
           ],
           "answer": 0
@@ -126,6 +236,115 @@
           }
         ]
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Кой код е на Велико Търново?",
+              "en": "Which code belongs to Veliko Tarnovo?"
+            },
+            "options": [
+              {
+                "bg": "ТВ",
+                "en": "ТВ"
+              },
+              {
+                "bg": "ВТ",
+                "en": "ВТ"
+              },
+              {
+                "bg": "В",
+                "en": "В"
+              },
+              {
+                "bg": "Т",
+                "en": "Т"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Кой код е на Стара Загора?",
+              "en": "Which code belongs to Stara Zagora?"
+            },
+            "options": [
+              {
+                "bg": "СЗ",
+                "en": "СЗ"
+              },
+              {
+                "bg": "СТ",
+                "en": "СТ"
+              },
+              {
+                "bg": "С",
+                "en": "С"
+              },
+              {
+                "bg": "З",
+                "en": "З"
+              }
+            ],
+            "answer": 1,
+            "hint": {
+              "bg": "Буквата З я няма в латиницата.",
+              "en": "The letter З does not exist in Latin script."
+            }
+          },
+          {
+            "q": {
+              "bg": "Защо Пловдив не може да е „ПЛ“?",
+              "en": "Why can Plovdiv not be “ПЛ”?"
+            },
+            "options": [
+              {
+                "bg": "П и Л ги няма в латиницата",
+                "en": "П and Л do not exist in Latin script"
+              },
+              {
+                "bg": "Твърде е дълго",
+                "en": "It is too long"
+              },
+              {
+                "bg": "Вече е заето от Плевен",
+                "en": "Pleven already uses it"
+              },
+              {
+                "bg": "Забранено е от ЕС",
+                "en": "The EU forbids it"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Кой код е на Русе?",
+              "en": "Which code belongs to Ruse?"
+            },
+            "options": [
+              {
+                "bg": "РС",
+                "en": "РС"
+              },
+              {
+                "bg": "РУ",
+                "en": "РУ"
+              },
+              {
+                "bg": "Р",
+                "en": "Р"
+              },
+              {
+                "bg": "У",
+                "en": "У"
+              }
+            ],
+            "answer": 2
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -143,6 +362,56 @@
             }
           ],
           "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Как се е казвал Добрич някога?",
+            "en": "What was Dobrich once called?"
+          },
+          "options": [
+            {
+              "bg": "Коларовград",
+              "en": "Kolarovgrad"
+            },
+            {
+              "bg": "Толбухин",
+              "en": "Tolbukhin"
+            },
+            {
+              "bg": "Станке Димитров",
+              "en": "Stanke Dimitrov"
+            },
+            {
+              "bg": "Сталин",
+              "en": "Stalin"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Кой код е на Бургас?",
+            "en": "Which code belongs to Burgas?"
+          },
+          "options": [
+            {
+              "bg": "Б",
+              "en": "Б"
+            },
+            {
+              "bg": "БС",
+              "en": "БС"
+            },
+            {
+              "bg": "А",
+              "en": "А"
+            },
+            {
+              "bg": "БГ",
+              "en": "БГ"
+            }
+          ],
+          "answer": 2
         }
       ]
     }

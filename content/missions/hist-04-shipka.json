@@ -155,6 +155,70 @@
           "en": "In August 1877 volunteers and Russian soldiers held the pass at Shipka Peak. The Monument to Freedom was opened in 1934."
         }
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Връх Шипка е в Рила.",
+              "en": "Shipka Peak is in Rila."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – Шипка е в Стара планина, близо до Казанлък.",
+              "en": "No – Shipka is in the Balkan Mountains, near Kazanlak."
+            }
+          },
+          {
+            "text": {
+              "bg": "Боевете на Шипка са през 1877 г.",
+              "en": "The battles at Shipka are in 1877."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – по време на Руско-турската освободителна война.",
+              "en": "Yes – during the Russo-Turkish War of Liberation."
+            }
+          },
+          {
+            "text": {
+              "bg": "Освобождението празнуваме на 3 март.",
+              "en": "We celebrate the Liberation on 3 March."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – това е националният празник на България.",
+              "en": "Yes – it is Bulgaria’s national holiday."
+            }
+          },
+          {
+            "text": {
+              "bg": "Опълченците се бият заедно с руските войници.",
+              "en": "The volunteers fight together with the Russian soldiers."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – заедно удържат прохода.",
+              "en": "Yes – together they hold the pass."
+            }
+          },
+          {
+            "text": {
+              "bg": "На върха днес стои Рилският манастир.",
+              "en": "Today the Rila Monastery stands on the peak."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – там е Паметникът на свободата. Рилският манастир е в Рила.",
+              "en": "No – the Freedom Monument is there. The Rila Monastery is in Rila."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -201,6 +265,27 @@
             "bg": "Опълченците са българи доброволци.",
             "en": "The volunteers were Bulgarians who chose to fight."
           }
+        },
+        {
+          "q": {
+            "bg": "Близо до кой град е връх Шипка?",
+            "en": "Which town is Shipka Peak near?"
+          },
+          "options": [
+            {
+              "bg": "Казанлък",
+              "en": "Kazanlak"
+            },
+            {
+              "bg": "Варна",
+              "en": "Varna"
+            },
+            {
+              "bg": "Видин",
+              "en": "Vidin"
+            }
+          ],
+          "answer": 0
         }
       ]
     },
@@ -264,6 +349,115 @@
           "en": "Look at the years in brackets."
         }
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Кога избухва Априлското въстание?",
+              "en": "When does the April Uprising break out?"
+            },
+            "options": [
+              {
+                "bg": "Април 1876 г.",
+                "en": "April 1876"
+              },
+              {
+                "bg": "Май 1877 г.",
+                "en": "May 1877"
+              },
+              {
+                "bg": "Март 1878 г.",
+                "en": "March 1878"
+              },
+              {
+                "bg": "Септември 1885 г.",
+                "en": "September 1885"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Коя държава обявява война на Османската империя на 24 април 1877 г.?",
+              "en": "Which country declares war on the Ottoman Empire on 24 April 1877?"
+            },
+            "options": [
+              {
+                "bg": "Франция",
+                "en": "France"
+              },
+              {
+                "bg": "Русия",
+                "en": "Russia"
+              },
+              {
+                "bg": "Англия",
+                "en": "Britain"
+              },
+              {
+                "bg": "Австро-Унгария",
+                "en": "Austria-Hungary"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Кой мирен договор е подписан на 3 март 1878 г.?",
+              "en": "Which peace treaty is signed on 3 March 1878?"
+            },
+            "options": [
+              {
+                "bg": "Берлинският",
+                "en": "The Treaty of Berlin"
+              },
+              {
+                "bg": "Ньойският",
+                "en": "The Treaty of Neuilly"
+              },
+              {
+                "bg": "Санстефанският",
+                "en": "The Treaty of San Stefano"
+              },
+              {
+                "bg": "Парижкият",
+                "en": "The Treaty of Paris"
+              }
+            ],
+            "answer": 2
+          },
+          {
+            "q": {
+              "bg": "В кой град е приета първата българска конституция (1879 г.)?",
+              "en": "In which town is the first Bulgarian constitution adopted (1879)?"
+            },
+            "options": [
+              {
+                "bg": "София",
+                "en": "Sofia"
+              },
+              {
+                "bg": "Пловдив",
+                "en": "Plovdiv"
+              },
+              {
+                "bg": "Велико Търново",
+                "en": "Veliko Tarnovo"
+              },
+              {
+                "bg": "Шумен",
+                "en": "Shumen"
+              }
+            ],
+            "answer": 2,
+            "hint": {
+              "bg": "Името ѝ подсказва града.",
+              "en": "Its name tells you the town: the Tarnovo Constitution."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -306,6 +500,31 @@
             }
           ],
           "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какво отбелязваме на 3 март?",
+            "en": "What do we mark on 3 March?"
+          },
+          "options": [
+            {
+              "bg": "Съединението",
+              "en": "The Unification"
+            },
+            {
+              "bg": "Освобождението",
+              "en": "The Liberation"
+            },
+            {
+              "bg": "Независимостта",
+              "en": "Independence"
+            },
+            {
+              "bg": "Деня на будителите",
+              "en": "Enlighteners’ Day"
+            }
+          ],
+          "answer": 1
         }
       ]
     }

@@ -100,6 +100,70 @@
           "en": "Glagolitic letters have little circles and curls."
         }
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Кирилицата е създадена в Преслав.",
+              "en": "Cyrillic was created in Preslav."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – в Преславската книжовна школа.",
+              "en": "Yes – in the Preslav Literary School."
+            }
+          },
+          {
+            "text": {
+              "bg": "Буквите на кирилицата приличат на гръцките.",
+              "en": "Cyrillic letters look like Greek letters."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – много от тях идват от гръцки.",
+              "en": "Yes – many of them come from Greek."
+            }
+          },
+          {
+            "text": {
+              "bg": "Днес пишем с глаголица.",
+              "en": "Today we write in Glagolitic."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – пишем с кирилица.",
+              "en": "No – we write in Cyrillic."
+            }
+          },
+          {
+            "text": {
+              "bg": "Глаголицата е по-стара от кирилицата.",
+              "en": "Glagolitic is older than Cyrillic."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "Кирилицата е създадена в Америка.",
+              "en": "Cyrillic was created in America."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – в България.",
+              "en": "No – in Bulgaria."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -114,6 +178,48 @@
             {
               "bg": "Глаголицата",
               "en": "Glagolitic"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "В кой град е създадена кирилицата?",
+            "en": "In which town was Cyrillic created?"
+          },
+          "options": [
+            {
+              "bg": "Преслав",
+              "en": "Preslav"
+            },
+            {
+              "bg": "Варна",
+              "en": "Varna"
+            },
+            {
+              "bg": "Пловдив",
+              "en": "Plovdiv"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "На кои букви приличат кирилските?",
+            "en": "Which letters do Cyrillic letters resemble?"
+          },
+          "options": [
+            {
+              "bg": "На гръцките",
+              "en": "Greek"
+            },
+            {
+              "bg": "На китайските",
+              "en": "Chinese"
+            },
+            {
+              "bg": "На числата",
+              "en": "Numbers"
             }
           ],
           "answer": 0
@@ -161,6 +267,111 @@
           }
         ]
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Колко души пишат на кирилица днес?",
+              "en": "How many people write in Cyrillic today?"
+            },
+            "options": [
+              {
+                "bg": "Около 10 000",
+                "en": "About 10,000"
+              },
+              {
+                "bg": "Около 1 милион",
+                "en": "About 1 million"
+              },
+              {
+                "bg": "Над 250 милиона",
+                "en": "Over 250 million"
+              },
+              {
+                "bg": "Около 7 милиарда",
+                "en": "About 7 billion"
+              }
+            ],
+            "answer": 2
+          },
+          {
+            "q": {
+              "bg": "От коя година кирилицата е официална азбука на ЕС?",
+              "en": "Since which year has Cyrillic been an official EU alphabet?"
+            },
+            "options": [
+              {
+                "bg": "1878",
+                "en": "1878"
+              },
+              {
+                "bg": "1989",
+                "en": "1989"
+              },
+              {
+                "bg": "2007",
+                "en": "2007"
+              },
+              {
+                "bg": "2020",
+                "en": "2020"
+              }
+            ],
+            "answer": 2
+          },
+          {
+            "q": {
+              "bg": "На коя азбука са основани много букви на кирилицата?",
+              "en": "On which alphabet are many Cyrillic letters based?"
+            },
+            "options": [
+              {
+                "bg": "Гръцката",
+                "en": "Greek"
+              },
+              {
+                "bg": "Латинската",
+                "en": "Latin"
+              },
+              {
+                "bg": "Арабската",
+                "en": "Arabic"
+              },
+              {
+                "bg": "Еврейската",
+                "en": "Hebrew"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Кой език НЕ се пише на кирилица?",
+              "en": "Which language is NOT written in Cyrillic?"
+            },
+            "options": [
+              {
+                "bg": "Руски",
+                "en": "Russian"
+              },
+              {
+                "bg": "Сръбски",
+                "en": "Serbian"
+              },
+              {
+                "bg": "Полски",
+                "en": "Polish"
+              },
+              {
+                "bg": "Украински",
+                "en": "Ukrainian"
+              }
+            ],
+            "answer": 2
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -175,6 +386,56 @@
             {
               "bg": "Освобождението",
               "en": "The Liberation"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кога е създадена кирилицата?",
+            "en": "When was Cyrillic created?"
+          },
+          "options": [
+            {
+              "bg": "VII век",
+              "en": "7th century"
+            },
+            {
+              "bg": "Края на IX век",
+              "en": "Late 9th century"
+            },
+            {
+              "bg": "XIV век",
+              "en": "14th century"
+            },
+            {
+              "bg": "XIX век",
+              "en": "19th century"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Защо кирилицата се разпространява по-лесно?",
+            "en": "Why does Cyrillic spread more easily?"
+          },
+          "options": [
+            {
+              "bg": "По-лесна е за писане",
+              "en": "It is easier to write"
+            },
+            {
+              "bg": "Има повече букви",
+              "en": "It has more letters"
+            },
+            {
+              "bg": "По-стара е",
+              "en": "It is older"
+            },
+            {
+              "bg": "Ползват я само царете",
+              "en": "Only tsars use it"
             }
           ],
           "answer": 0

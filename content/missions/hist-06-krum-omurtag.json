@@ -155,6 +155,70 @@
           }
         ]
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Хан Крум пише първите закони.",
+              "en": "Khan Krum writes the first laws."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – законите важат еднакво за всички.",
+              "en": "Yes – the laws apply to everyone equally."
+            }
+          },
+          {
+            "text": {
+              "bg": "Омуртаг е син на Крум.",
+              "en": "Omurtag is Krum’s son."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – той управлява след баща си.",
+              "en": "Yes – he rules after his father."
+            }
+          },
+          {
+            "text": {
+              "bg": "Хан Крум управлява след Омуртаг.",
+              "en": "Khan Krum rules after Omurtag."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – обратно: първо Крум, после синът му Омуртаг.",
+              "en": "No – the other way round: first Krum, then his son Omurtag."
+            }
+          },
+          {
+            "text": {
+              "bg": "Омуртаг сключва мир с Византия за 30 години.",
+              "en": "Omurtag makes peace with Byzantium for 30 years."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – в мирното време той строи.",
+              "en": "Yes – in peacetime he builds."
+            }
+          },
+          {
+            "text": {
+              "bg": "Законите на Крум важат само за богатите.",
+              "en": "Krum’s laws apply only to the rich."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – те са еднакви за всички.",
+              "en": "No – they are the same for everyone."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -169,6 +233,48 @@
             {
               "bg": "Хан Аспарух",
               "en": "Khan Asparuh"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Колко години мир сключва Омуртаг с Византия?",
+            "en": "For how many years does Omurtag make peace with Byzantium?"
+          },
+          "options": [
+            {
+              "bg": "30",
+              "en": "30"
+            },
+            {
+              "bg": "3",
+              "en": "3"
+            },
+            {
+              "bg": "300",
+              "en": "300"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какво пише хан Крум?",
+            "en": "What does Khan Krum write?"
+          },
+          "options": [
+            {
+              "bg": "Първите закони",
+              "en": "The first laws"
+            },
+            {
+              "bg": "Първата азбука",
+              "en": "The first alphabet"
+            },
+            {
+              "bg": "Първия вестник",
+              "en": "The first newspaper"
             }
           ],
           "answer": 0
@@ -240,6 +346,115 @@
           "en": "Khan Omurtag (814–831) – a builder and a wise ruler."
         }
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "През коя година хан Крум разбива армията на Никифор I?",
+              "en": "In which year does Khan Krum defeat the army of Nikephoros I?"
+            },
+            "options": [
+              {
+                "bg": "681",
+                "en": "681"
+              },
+              {
+                "bg": "811",
+                "en": "811"
+              },
+              {
+                "bg": "917",
+                "en": "917"
+              },
+              {
+                "bg": "1018",
+                "en": "1018"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Чий син е хан Омуртаг?",
+              "en": "Whose son is Khan Omurtag?"
+            },
+            "options": [
+              {
+                "bg": "На хан Аспарух",
+                "en": "Khan Asparuh"
+              },
+              {
+                "bg": "На хан Тервел",
+                "en": "Khan Tervel"
+              },
+              {
+                "bg": "На хан Крум",
+                "en": "Khan Krum"
+              },
+              {
+                "bg": "На княз Борис I",
+                "en": "Prince Boris I"
+              }
+            ],
+            "answer": 2
+          },
+          {
+            "q": {
+              "bg": "На какъв език са надписите на хан Омуртаг върху камък?",
+              "en": "In which language are Khan Omurtag’s stone inscriptions?"
+            },
+            "options": [
+              {
+                "bg": "Латински",
+                "en": "Latin"
+              },
+              {
+                "bg": "Гръцки",
+                "en": "Greek"
+              },
+              {
+                "bg": "Арабски",
+                "en": "Arabic"
+              },
+              {
+                "bg": "Английски",
+                "en": "English"
+              }
+            ],
+            "answer": 1,
+            "hint": {
+              "bg": "Това е езикът на съседна Византия.",
+              "en": "It is the language of neighbouring Byzantium."
+            }
+          },
+          {
+            "q": {
+              "bg": "За колко години е мирът на Омуртаг с Византия?",
+              "en": "How long is Omurtag’s peace with Byzantium?"
+            },
+            "options": [
+              {
+                "bg": "10 години",
+                "en": "10 years"
+              },
+              {
+                "bg": "20 години",
+                "en": "20 years"
+              },
+              {
+                "bg": "30 години",
+                "en": "30 years"
+              },
+              {
+                "bg": "50 години",
+                "en": "50 years"
+              }
+            ],
+            "answer": 2
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -275,6 +490,31 @@
             {
               "bg": "Покръстването",
               "en": "The Christianisation"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "С какво още е известен Омуртаг?",
+            "en": "What else is Omurtag known for?"
+          },
+          "options": [
+            {
+              "bg": "Строи дворци и крепости",
+              "en": "He builds palaces and fortresses"
+            },
+            {
+              "bg": "Покръства българите",
+              "en": "He christianises the Bulgarians"
+            },
+            {
+              "bg": "Създава азбуката",
+              "en": "He creates the alphabet"
+            },
+            {
+              "bg": "Мести столицата в Търново",
+              "en": "He moves the capital to Tarnovo"
             }
           ],
           "answer": 0

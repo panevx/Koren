@@ -174,6 +174,74 @@
           "en": "Plastic and metal – yellow; glass – green; paper and cardboard – blue."
         }
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "В кой контейнер слагаме стъкло?",
+              "en": "Which bin do we put glass in?"
+            },
+            "options": [
+              {
+                "bg": "Зеления",
+                "en": "The green one"
+              },
+              {
+                "bg": "Жълтия",
+                "en": "The yellow one"
+              },
+              {
+                "bg": "Синия",
+                "en": "The blue one"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "В кой контейнер слагаме хартия?",
+              "en": "Which bin do we put paper in?"
+            },
+            "options": [
+              {
+                "bg": "Зеления",
+                "en": "The green one"
+              },
+              {
+                "bg": "Синия",
+                "en": "The blue one"
+              },
+              {
+                "bg": "Жълтия",
+                "en": "The yellow one"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "В кой контейнер слагаме пластмасова бутилка?",
+              "en": "Which bin do we put a plastic bottle in?"
+            },
+            "options": [
+              {
+                "bg": "Синия",
+                "en": "The blue one"
+              },
+              {
+                "bg": "Зеления",
+                "en": "The green one"
+              },
+              {
+                "bg": "Жълтия",
+                "en": "The yellow one"
+              }
+            ],
+            "answer": 2
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -188,6 +256,48 @@
             {
               "bg": "Хвърлят се в морето",
               "en": "It is thrown in the sea"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какво става от старата хартия?",
+            "en": "What does old paper become?"
+          },
+          "options": [
+            {
+              "bg": "Нова хартия",
+              "en": "New paper"
+            },
+            {
+              "bg": "Стъкло",
+              "en": "Glass"
+            },
+            {
+              "bg": "Пластмаса",
+              "en": "Plastic"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Защо разделяме отпадъците?",
+            "en": "Why do we sort our rubbish?"
+          },
+          "options": [
+            {
+              "bg": "За да се рециклират",
+              "en": "So it can be recycled"
+            },
+            {
+              "bg": "За да имаме повече кофи",
+              "en": "To have more bins"
+            },
+            {
+              "bg": "За да ги хвърлим в реката",
+              "en": "To throw it in the river"
             }
           ],
           "answer": 0
@@ -300,6 +410,81 @@
           "en": "A juice carton is cardboard, plastic and aluminium – still, it goes in the yellow one."
         }
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно? Внимавай с хитрите опаковки.",
+          "en": "True or not true? Watch out for tricky packaging."
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Кутията от сок отива в жълтия контейнер.",
+              "en": "A juice carton goes in the yellow bin."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – при нас кутиите от сок и мляко са в жълтия.",
+              "en": "Yes – here juice and milk cartons go in the yellow bin."
+            }
+          },
+          {
+            "text": {
+              "bg": "Металната консерва отива в зеления контейнер.",
+              "en": "A tin can goes in the green bin."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – металът е в жълтия.",
+              "en": "No – metal goes in the yellow bin."
+            }
+          },
+          {
+            "text": {
+              "bg": "Старата тетрадка отива в синия контейнер.",
+              "en": "An old exercise book goes in the blue bin."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – с хартията.",
+              "en": "Yes – with the paper."
+            }
+          },
+          {
+            "text": {
+              "bg": "Стъклото се рециклира отново и отново.",
+              "en": "Glass can be recycled again and again."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – без да губи качество.",
+              "en": "Yes – without losing quality."
+            }
+          },
+          {
+            "text": {
+              "bg": "Бурканът отива в синия контейнер.",
+              "en": "A jar goes in the blue bin."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – в зеления, със стъклото.",
+              "en": "No – in the green one, with the glass."
+            }
+          },
+          {
+            "text": {
+              "bg": "Рециклирането пести суровини и енергия.",
+              "en": "Recycling saves raw materials and energy."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -317,6 +502,56 @@
             }
           ],
           "answer": 0
+        },
+        {
+          "q": {
+            "bg": "В кой контейнер отива металното кенче?",
+            "en": "Which bin does a metal can go in?"
+          },
+          "options": [
+            {
+              "bg": "Зеления",
+              "en": "The green one"
+            },
+            {
+              "bg": "Синия",
+              "en": "The blue one"
+            },
+            {
+              "bg": "Жълтия",
+              "en": "The yellow one"
+            },
+            {
+              "bg": "В никой",
+              "en": "None"
+            }
+          ],
+          "answer": 2
+        },
+        {
+          "q": {
+            "bg": "В кой контейнер отива кашонът?",
+            "en": "Which bin does a cardboard box go in?"
+          },
+          "options": [
+            {
+              "bg": "Жълтия",
+              "en": "The yellow one"
+            },
+            {
+              "bg": "Синия",
+              "en": "The blue one"
+            },
+            {
+              "bg": "Зеления",
+              "en": "The green one"
+            },
+            {
+              "bg": "В никой",
+              "en": "None"
+            }
+          ],
+          "answer": 1
         }
       ]
     }

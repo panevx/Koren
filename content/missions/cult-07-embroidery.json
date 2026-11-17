@@ -126,6 +126,74 @@
           "en": "The eight-pointed star is one of the oldest embroidery patterns."
         }
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Какво е шевица?",
+              "en": "What is a shevitsa?"
+            },
+            "options": [
+              {
+                "bg": "Бродерия с конци",
+                "en": "Embroidery with thread"
+              },
+              {
+                "bg": "Песен",
+                "en": "A song"
+              },
+              {
+                "bg": "Ястие",
+                "en": "A dish"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Къде шият шевиците?",
+              "en": "Where are shevitsi sewn?"
+            },
+            "options": [
+              {
+                "bg": "По ризи и престилки",
+                "en": "On shirts and aprons"
+              },
+              {
+                "bg": "По обувки",
+                "en": "On shoes"
+              },
+              {
+                "bg": "По стени",
+                "en": "On walls"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Еднакви ли са шевиците навсякъде?",
+              "en": "Are the shevitsi the same everywhere?"
+            },
+            "options": [
+              {
+                "bg": "Да – навсякъде са еднакви",
+                "en": "Yes – the same everywhere"
+              },
+              {
+                "bg": "Не – всеки край има свои шарки",
+                "en": "No – every region has its own patterns"
+              },
+              {
+                "bg": "Има само една шевица",
+                "en": "There is only one shevitsa"
+              }
+            ],
+            "answer": 1
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -144,6 +212,48 @@
             {
               "bg": "Сивият",
               "en": "Grey"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "С какво се шият шевиците?",
+            "en": "What are shevitsi sewn with?"
+          },
+          "options": [
+            {
+              "bg": "С игла и конец",
+              "en": "Needle and thread"
+            },
+            {
+              "bg": "С чук",
+              "en": "A hammer"
+            },
+            {
+              "bg": "С четка",
+              "en": "A brush"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "От какво пазят шевиците според старите вярвания?",
+            "en": "What do shevitsi protect from, by the old beliefs?"
+          },
+          "options": [
+            {
+              "bg": "От зло",
+              "en": "From evil"
+            },
+            {
+              "bg": "От дъжд",
+              "en": "From rain"
+            },
+            {
+              "bg": "От глад",
+              "en": "From hunger"
             }
           ],
           "answer": 0
@@ -215,6 +325,81 @@
           "en": "Masterly work! Girls and grandmothers stitched like this for hours."
         }
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Шевиците се шият по яката, ръкавите и подгъва.",
+              "en": "Shevitsi are sewn on the collar, sleeves and hem."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – по отворите на дрехата.",
+              "en": "Yes – at the openings of the garment."
+            }
+          },
+          {
+            "text": {
+              "bg": "Хората вярвали, че шевиците пазят от зло.",
+              "en": "People believed that shevitsi protect from evil."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – това е вярване, а не доказан факт.",
+              "en": "Yes – a belief, not a proven fact."
+            }
+          },
+          {
+            "text": {
+              "bg": "Червеният е най-честият цвят в шевиците.",
+              "en": "Red is the most common colour in shevitsi."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – в почти всички краища.",
+              "en": "Yes – in nearly every region."
+            }
+          },
+          {
+            "text": {
+              "bg": "През Средновековието шевиците се правят с машини в завод.",
+              "en": "In the Middle Ages shevitsi were made by machines in factories."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – шият се на ръка, вкъщи.",
+              "en": "No – they were sewn by hand, at home."
+            }
+          },
+          {
+            "text": {
+              "bg": "Всеки край на България има свои шарки.",
+              "en": "Every region of Bulgaria has its own patterns."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – по шевицата може да познаеш откъде е носията.",
+              "en": "Yes – the shevitsa tells you where a costume is from."
+            }
+          },
+          {
+            "text": {
+              "bg": "Шевиците се появяват едва през XX век.",
+              "en": "Shevitsi appeared only in the 20th century."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – те са много по-стари.",
+              "en": "No – they are much older."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -229,6 +414,56 @@
             {
               "bg": "Само на гърба – за красота",
               "en": "Only on the back – for beauty"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какви форми често има в шевиците?",
+            "en": "What shapes are common in shevitsi?"
+          },
+          "options": [
+            {
+              "bg": "Ромбове, звезди и кръстове",
+              "en": "Diamonds, stars and crosses"
+            },
+            {
+              "bg": "Букви и числа",
+              "en": "Letters and numbers"
+            },
+            {
+              "bg": "Коли и самолети",
+              "en": "Cars and planes"
+            },
+            {
+              "bg": "Портрети",
+              "en": "Portraits"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какво е „носия“?",
+            "en": "What is a “nosia”?"
+          },
+          "options": [
+            {
+              "bg": "Традиционното облекло на един край",
+              "en": "The traditional dress of a region"
+            },
+            {
+              "bg": "Вид песен",
+              "en": "A kind of song"
+            },
+            {
+              "bg": "Празник",
+              "en": "A feast"
+            },
+            {
+              "bg": "Танц",
+              "en": "A dance"
             }
           ],
           "answer": 0

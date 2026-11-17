@@ -140,6 +140,70 @@
           "en": "John Atanasoff (1903–1995) – \"the father of the computer\"."
         }
       },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Бащата на Джон Атанасов е българин.",
+              "en": "John Atanasoff’s father is Bulgarian."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – от село Бояджик, край Ямбол.",
+              "en": "Yes – from the village of Boyadzhik, near Yambol."
+            }
+          },
+          {
+            "text": {
+              "bg": "Атанасов живее в САЩ.",
+              "en": "Atanasoff lives in the USA."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – там е физик и математик.",
+              "en": "Yes – he is a physicist and mathematician there."
+            }
+          },
+          {
+            "text": {
+              "bg": "Атанасов изобретява телефона.",
+              "en": "Atanasoff invents the telephone."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – той създава електронния компютър ABC.",
+              "en": "No – he builds the ABC electronic computer."
+            }
+          },
+          {
+            "text": {
+              "bg": "ABC е построен заедно с Клифърд Бери.",
+              "en": "The ABC is built together with Clifford Berry."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – оттам са буквите A и B.",
+              "en": "Yes – that is where the A and B come from."
+            }
+          },
+          {
+            "text": {
+              "bg": "Бащата му е от село край Варна.",
+              "en": "His father is from a village near Varna."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – от село Бояджик, край Ямбол.",
+              "en": "No – from Boyadzhik, near Yambol."
+            }
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -154,6 +218,48 @@
             {
               "bg": "XYZ",
               "en": "XYZ"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какъв учен е Атанасов?",
+            "en": "What kind of scientist is Atanasoff?"
+          },
+          "options": [
+            {
+              "bg": "Физик и математик",
+              "en": "A physicist and mathematician"
+            },
+            {
+              "bg": "Готвач",
+              "en": "A cook"
+            },
+            {
+              "bg": "Пилот",
+              "en": "A pilot"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "В коя държава живее Атанасов?",
+            "en": "In which country does Atanasoff live?"
+          },
+          "options": [
+            {
+              "bg": "В САЩ",
+              "en": "The USA"
+            },
+            {
+              "bg": "В Китай",
+              "en": "China"
+            },
+            {
+              "bg": "В Бразилия",
+              "en": "Brazil"
             }
           ],
           "answer": 0
@@ -203,6 +309,111 @@
           }
         ]
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "През коя година съд в САЩ признава Атанасов за изобретател на електронния цифров компютър?",
+              "en": "In which year does a US court recognise Atanasoff as inventor of the electronic digital computer?"
+            },
+            "options": [
+              {
+                "bg": "1942",
+                "en": "1942"
+              },
+              {
+                "bg": "1973",
+                "en": "1973"
+              },
+              {
+                "bg": "1999",
+                "en": "1999"
+              },
+              {
+                "bg": "1878",
+                "en": "1878"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Какво значи ABC?",
+              "en": "What does ABC stand for?"
+            },
+            "options": [
+              {
+                "bg": "Компютърът на Атанасов и Бери",
+                "en": "The Atanasoff–Berry Computer"
+              },
+              {
+                "bg": "Азбука",
+                "en": "Alphabet"
+              },
+              {
+                "bg": "Голяма американска кола",
+                "en": "A big American car"
+              },
+              {
+                "bg": "Нищо",
+                "en": "Nothing"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "В кой американски щат е построен ABC?",
+              "en": "In which US state was the ABC built?"
+            },
+            "options": [
+              {
+                "bg": "Калифорния",
+                "en": "California"
+              },
+              {
+                "bg": "Тексас",
+                "en": "Texas"
+              },
+              {
+                "bg": "Айова",
+                "en": "Iowa"
+              },
+              {
+                "bg": "Аляска",
+                "en": "Alaska"
+              }
+            ],
+            "answer": 2
+          },
+          {
+            "q": {
+              "bg": "Как наричат Атанасов?",
+              "en": "What is Atanasoff called?"
+            },
+            "options": [
+              {
+                "bg": "Бащата на телефона",
+                "en": "The father of the telephone"
+              },
+              {
+                "bg": "Бащата на електронния компютър",
+                "en": "The father of the electronic computer"
+              },
+              {
+                "bg": "Първият космонавт",
+                "en": "The first cosmonaut"
+              },
+              {
+                "bg": "Откривателят на Америка",
+                "en": "The discoverer of America"
+              }
+            ],
+            "answer": 1
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -217,6 +428,56 @@
             {
               "bg": "Има циферблат",
               "en": "It has a dial"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Близо до кой град е селото на бащата на Атанасов?",
+            "en": "Near which town is the village of Atanasoff’s father?"
+          },
+          "options": [
+            {
+              "bg": "Ямбол",
+              "en": "Yambol"
+            },
+            {
+              "bg": "Варна",
+              "en": "Varna"
+            },
+            {
+              "bg": "Видин",
+              "en": "Vidin"
+            },
+            {
+              "bg": "Русе",
+              "en": "Ruse"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какво решава съдът в САЩ през 1973 г.?",
+            "en": "What does the US court decide in 1973?"
+          },
+          "options": [
+            {
+              "bg": "Че идеята за електронния цифров компютър е на Атанасов",
+              "en": "That the idea of the electronic digital computer is Atanasoff’s"
+            },
+            {
+              "bg": "Че Атанасов е изобретил телефона",
+              "en": "That Atanasoff invented the telephone"
+            },
+            {
+              "bg": "Че ENIAC е построен първи",
+              "en": "That ENIAC was built first"
+            },
+            {
+              "bg": "Нищо",
+              "en": "Nothing"
             }
           ],
           "answer": 0

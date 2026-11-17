@@ -52,6 +52,74 @@
           "en": "These are the names of the first three letters."
         }
       },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Коя азбука е по-стара?",
+              "en": "Which alphabet is older?"
+            },
+            "options": [
+              {
+                "bg": "Глаголицата",
+                "en": "Glagolitic"
+              },
+              {
+                "bg": "Кирилицата",
+                "en": "Cyrillic"
+              },
+              {
+                "bg": "Създадени са в един ден",
+                "en": "They were made on the same day"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "На какво приличат глаголическите букви?",
+              "en": "What do Glagolitic letters look like?"
+            },
+            "options": [
+              {
+                "bg": "На кръгчета, триъгълници и кръстчета",
+                "en": "Little circles, triangles and crosses"
+              },
+              {
+                "bg": "На животни",
+                "en": "Animals"
+              },
+              {
+                "bg": "На числа",
+                "en": "Numbers"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "С коя азбука пишем днес?",
+              "en": "Which alphabet do we write with today?"
+            },
+            "options": [
+              {
+                "bg": "Глаголицата",
+                "en": "Glagolitic"
+              },
+              {
+                "bg": "Кирилицата",
+                "en": "Cyrillic"
+              },
+              {
+                "bg": "Йероглифи",
+                "en": "Hieroglyphs"
+              }
+            ],
+            "answer": 1
+          }
+        ]
+      },
       "check": [
         {
           "q": {
@@ -66,6 +134,48 @@
             {
               "bg": "Хан Аспарух",
               "en": "Khan Asparuh"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кой празник е посветен на азбуката?",
+            "en": "Which holiday is dedicated to the alphabet?"
+          },
+          "options": [
+            {
+              "bg": "24 май",
+              "en": "24 May"
+            },
+            {
+              "bg": "1 март",
+              "en": "1 March"
+            },
+            {
+              "bg": "3 март",
+              "en": "3 March"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какво ни помага да прочетем посланието?",
+            "en": "What helps us read the message?"
+          },
+          "options": [
+            {
+              "bg": "Ключът",
+              "en": "The key"
+            },
+            {
+              "bg": "Лупа",
+              "en": "A magnifying glass"
+            },
+            {
+              "bg": "Компас",
+              "en": "A compass"
             }
           ],
           "answer": 0
@@ -98,6 +208,81 @@
           "bg": "УЧЕНИЕТО Е СВЕТЛИНА",
           "en": "Learning is light"
         }
+      },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Глаголицата е създадена около 863 г.",
+              "en": "Glagolitic was created around 863."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "Първата буква на глаголицата се казва „Аз“.",
+              "en": "The first letter of Glagolitic is called “Az”."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – „аз“ значи „аз“, както днес.",
+              "en": "Yes – “az” means “I”, as it does today."
+            }
+          },
+          {
+            "text": {
+              "bg": "„Глагол“ на старобългарски значи „дума, слово“.",
+              "en": "“Glagol” in Old Bulgarian means “word”."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – оттам идва името на азбуката.",
+              "en": "Yes – that is where the alphabet’s name comes from."
+            }
+          },
+          {
+            "text": {
+              "bg": "Глаголицата е по-нова от кирилицата.",
+              "en": "Glagolitic is newer than Cyrillic."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – глаголицата е по-стара.",
+              "en": "No – Glagolitic is older."
+            }
+          },
+          {
+            "text": {
+              "bg": "Глаголическите букви приличат на латинските.",
+              "en": "Glagolitic letters look like Latin letters."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – те са кръгчета, триъгълници и кръстчета.",
+              "en": "No – they are little circles, triangles and crosses."
+            }
+          },
+          {
+            "text": {
+              "bg": "Кирил и Методий са братя от Солун.",
+              "en": "Cyril and Methodius are brothers from Thessaloniki."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          }
+        ]
       },
       "check": [
         {
@@ -137,6 +322,31 @@
             }
           ],
           "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Как се казва втората буква на глаголицата?",
+            "en": "What is the second letter of Glagolitic called?"
+          },
+          "options": [
+            {
+              "bg": "Аз",
+              "en": "Az"
+            },
+            {
+              "bg": "Буки",
+              "en": "Buki"
+            },
+            {
+              "bg": "Веди",
+              "en": "Vedi"
+            },
+            {
+              "bg": "Глаголи",
+              "en": "Glagoli"
+            }
+          ],
+          "answer": 1
         }
       ]
     }
