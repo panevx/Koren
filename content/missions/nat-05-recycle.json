@@ -150,7 +150,8 @@
           {
             "bg": "Буркан",
             "en": "Jar",
-            "bin": 1
+            "bin": 1,
+            "img": "minigame/recycle-glass-jar.webp"
           },
           {
             "bg": "Стъклено шишенце",
@@ -161,12 +162,14 @@
           {
             "bg": "Вестник",
             "en": "Newspaper",
-            "bin": 2
+            "bin": 2,
+            "img": "minigame/recycle-newspaper.webp"
           },
           {
             "bg": "Кашон",
             "en": "Cardboard box",
-            "bin": 2
+            "bin": 2,
+            "img": "minigame/recycle-cardboard-box.webp"
           }
         ],
         "hint": {
@@ -363,7 +366,8 @@
             "why": {
               "bg": "Кутиите от мляко и сок (комбинирани опаковки) отиват в жълтия.",
               "en": "Milk and juice cartons (mixed packaging) go in the yellow one."
-            }
+            },
+            "img": "minigame/recycle-juice-carton.webp"
           },
           {
             "bg": "Метална консерва",
@@ -372,12 +376,14 @@
             "why": {
               "bg": "Металът е в жълтия, заедно с пластмасата.",
               "en": "Metal goes in the yellow one, together with plastic."
-            }
+            },
+            "img": "minigame/recycle-tin-can.webp"
           },
           {
             "bg": "Буркан",
             "en": "Jar",
-            "bin": 1
+            "bin": 1,
+            "img": "minigame/recycle-glass-jar.webp"
           },
           {
             "bg": "Стъклено шишенце",
@@ -388,7 +394,8 @@
           {
             "bg": "Вестник",
             "en": "Newspaper",
-            "bin": 2
+            "bin": 2,
+            "img": "minigame/recycle-newspaper.webp"
           },
           {
             "bg": "Кашон",
@@ -397,12 +404,14 @@
             "why": {
               "bg": "Картонът е хартия – в синия.",
               "en": "Cardboard is paper – the blue one."
-            }
+            },
+            "img": "minigame/recycle-cardboard-box.webp"
           },
           {
             "bg": "Стара тетрадка",
             "en": "Old notebook",
-            "bin": 2
+            "bin": 2,
+            "img": "minigame/recycle-notebook.webp"
           }
         ],
         "hint": {

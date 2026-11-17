@@ -321,12 +321,14 @@
             "why": {
               "bg": "Създадена е в Преслав, в България.",
               "en": "It was created in Preslav, in Bulgaria."
-            }
+            },
+            "img": "science/cyrillic-letter-tiles.webp"
           },
           {
             "bg": "Оранжерията „Свет“",
             "en": "The \"Svet\" greenhouse",
-            "bin": 0
+            "bin": 0,
+            "img": "science/svet-greenhouse.webp"
           },
           {
             "bg": "Телефонът",
@@ -335,7 +337,8 @@
             "why": {
               "bg": "Телефонът е на Александър Бел.",
               "en": "The telephone is by Alexander Graham Bell."
-            }
+            },
+            "img": "science/rotary-telephone.webp"
           },
           {
             "bg": "Крушката",
@@ -354,7 +357,8 @@
             "why": {
               "bg": "Първият полет е на братя Райт (1903 г.).",
               "en": "The first flight was by the Wright brothers (1903)."
-            }
+            },
+            "img": "science/propeller-aeroplane.webp"
           }
         ]
       },
