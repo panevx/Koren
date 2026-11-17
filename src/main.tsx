@@ -4,6 +4,7 @@ import { App } from './App'
 import { ErrorBoundary } from './components/ErrorBoundary'
 import { registerSW } from 'virtual:pwa-register'
 import { upgradeImageCache } from './offline/imageCache'
+import { startFitText } from './fitText'
 import { listenForInstall, usePwa } from './offline/pwa'
 import { syncDocumentWithSettings } from './theme/applyTheme'
 import './index.css'
@@ -45,6 +46,7 @@ usePwa.setState({ update: () => void updateSW(true) })
 
 // Pictures replaced under the same name (the old 2D heroes): carry the rest of the stored pictures over to the new cache.
 void upgradeImageCache().catch(() => {})
+startFitText()
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

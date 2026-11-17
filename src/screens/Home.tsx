@@ -1,4 +1,5 @@
 import { useMemo } from 'react'
+import { fitWords } from '../components/fit'
 import { Link } from 'react-router'
 import { BadgeArt } from '../components/BadgeArt'
 import { HeroFigure, img, Logo, Scenery } from '../components/Brand'
@@ -219,11 +220,13 @@ function AdventureCard({ next, missions, done }: { next: Mission | undefined; mi
               <img src={img(ART.trophy)} alt="" className="anim-bob pop-3d relative size-[86%] object-contain" />
             )}
           </span>
-          <span className="min-w-0 flex-1">
+          <span className="min-w-0 flex-1 [container-type:inline-size]">
             <span className="text-label inline-block rounded-full bg-green-deep/70 px-2.5 py-1 text-[length:min(0.75rem,3.2vw)] text-white">
               {next ? t('home.next') : t('home.allDone.caption')}
             </span>
-            <span className="text-title mt-1.5 line-clamp-3 block">{next ? l(next.title) : t('home.allDone')}</span>
+            <span className="text-title mt-1.5 line-clamp-3 block" style={fitWords(next ? l(next.title) : t('home.allDone'), 'min(1.5rem,6.4vw)')}>
+              {next ? l(next.title) : t('home.allDone')}
+            </span>
             {chapter && (
               <span className="mt-1.5 block text-sm leading-tight font-extrabold text-white/90">{t('home.chapter', { n: chapter.n, name: l(chapter.title) })}</span>
             )}
@@ -304,13 +307,15 @@ function World({
   return (
     <Link
       to={section.path}
-      className={`press relative flex h-full min-h-[min(13rem,52vw)] flex-col overflow-hidden rounded-[var(--radius-card)] p-3.5 shadow-soft ${world.stage} ${world.ink} wide:min-h-[11rem]`}
+      className={`press relative flex h-full min-h-[min(13rem,52vw)] flex-col [container-type:inline-size] overflow-hidden rounded-[var(--radius-card)] p-3.5 shadow-soft ${world.stage} ${world.ink} wide:min-h-[11rem]`}
     >
       <span className="kid-deco absolute -right-8 -bottom-10 size-32 rounded-full bg-white/25" aria-hidden="true" />
       <span className="pointer-events-none relative -mx-1 -mt-1 grid flex-1 place-items-center" aria-hidden="true">
         <SectionIcon id={world.id} className="pop-3d size-[min(6.5rem,26vw)] wide:size-[6rem]" />
       </span>
-      <span className="relative mt-1 block text-[length:min(1.125rem,5vw)] leading-tight font-black">{t(section.label)}</span>
+      <span className="relative mt-1 block leading-tight font-black" style={fitWords(t(section.label), 'min(1.125rem,5vw)')}>
+        {t(section.label)}
+      </span>
       {showDesc && <span className="relative mt-0.5 block text-xs leading-snug font-bold">{t(section.desc)}</span>}
       {own.length > 0 && (
         <span className="relative mt-2 flex items-center gap-1.5 self-start rounded-full bg-white/80 px-2 py-0.5 text-xs font-black text-ink">
