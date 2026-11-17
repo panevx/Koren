@@ -46,8 +46,8 @@ type State = {
   setActive: (id: string) => void
   setAge: (age: number) => void
   setAvatar: (avatar: AvatarId) => void
-  complete: (missionId: string, level: Level, badgeId: string) => void
-  markSeen: (missionId: string) => void
+  complete: (missionId: string, level: Level, badgeId: string, profileId?: string) => void
+  markSeen: (missionId: string, profileId?: string) => void
   /** Buy a thing (the price check is done by the shop with the wallet; this only records it, once). */
   buy: (itemId: string, slot?: string) => void
   wear: (itemId: string, slot?: string) => void
@@ -57,6 +57,32 @@ type State = {
 }
 
 export const BREAK_AFTER = 3
+
+function readSavedProfiles() {
+  const value = safeLocalStorage.getItem(PROFILES_KEY)
+  if (!value) return null
+  try {
+    return sanitizeProfiles(JSON.parse(value).state)
+  } catch {
+    return null
+  }
+}
+
+/** Serialize saves from the mission and parent screens across tabs when supported. */
+export function saveProfileChange(change: () => void) {
+  if (!navigator.locks) {
+    change()
+    return
+  }
+  let started = false
+  void navigator.locks.request(PROFILES_KEY, () => {
+    started = true
+    change()
+  }).catch((error: unknown) => {
+    if (!started) change()
+    else console.error('Could not save the KOREN profile', error)
+  })
+}
 
 const newId = () => `p${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`
 
@@ -181,15 +207,23 @@ export const useProfiles = create<State>()(
         setActive: (id) => set((s) => (s.profiles.some((p) => p.id === id) ? { activeId: id, streak: 0 } : s)),
         setAge: (age) => patchActive((p) => ({ ...p, age: clampAge(age) })),
         setAvatar: (avatar) => patchActive((p) => ({ ...p, avatar })),
-        complete: (missionId, level, badgeId) => {
+        complete: (missionId, level, badgeId, profileId = get().activeId) => {
+          const state = get()
+          const saved = useSettings.getState().remember ? readSavedProfiles() : null
+          const profiles = saved?.profiles ?? state.profiles
+          if (!profiles.some((p) => p.id === profileId)) return
+          const activeId = saved?.activeId ?? state.activeId
           const today = localDay()
-          patchActive((p) => ({
-            ...p,
-            done: { ...p.done, [missionId]: { level, at: today } },
-            badges: p.badges.includes(badgeId) ? p.badges : [...p.badges, badgeId],
-            days: p.days.includes(today) ? p.days : [...p.days, today].slice(-400),
-          }))
-          set((s) => ({ streak: s.streak + 1 }))
+          set({
+            activeId,
+            profiles: profiles.map((p) => p.id !== profileId ? p : {
+              ...p,
+              done: { ...p.done, [missionId]: { level, at: today } },
+              badges: p.badges.includes(badgeId) ? p.badges : [...p.badges, badgeId],
+              days: p.days.includes(today) ? p.days : [...p.days, today].slice(-400),
+            }),
+            streak: state.streak + Number(activeId === profileId),
+          })
         },
         // Only real stall items, always in their own slot (the screen checks the purse; this keeps the profile clean).
         buy: (itemId) => {
@@ -206,10 +240,21 @@ export const useProfiles = create<State>()(
             delete outfit[slot]
             return { ...p, outfit }
           }),
-        markSeen: (missionId) => patchActive((p) => (p.seen.includes(missionId) ? p : { ...p, seen: [...p.seen, missionId] })),
+        markSeen: (missionId, profileId = get().activeId) => {
+          const state = get()
+          const saved = useSettings.getState().remember ? readSavedProfiles() : null
+          const profiles = saved?.profiles ?? state.profiles
+          const profile = profiles.find((p) => p.id === profileId)
+          if (!profile || profile.seen.includes(missionId)) return
+          set({
+            activeId: saved?.activeId ?? state.activeId,
+            profiles: profiles.map((p) => p.id === profileId ? { ...p, seen: [...p.seen, missionId] } : p),
+          })
+        },
         takeBreak: () => set({ streak: 0 }),
         reset: () => {
-          const fresh: Profile = { id: 'p1', nickname: '', age: DEFAULT_AGE, avatar: 'bear', done: {}, badges: [], seen: [], days: [], owned: [], outfit: {} }
+          safeLocalStorage.removeItem(LEGACY_PROGRESS_KEY)
+          const fresh: Profile = { id: newId(), nickname: '', age: DEFAULT_AGE, avatar: 'bear', done: {}, badges: [], seen: [], days: [], owned: [], outfit: {} }
           set({ profiles: [fresh], activeId: fresh.id, streak: 0 })
         },
       }
@@ -221,7 +266,11 @@ export const useProfiles = create<State>()(
       storage: createJSONStorage(() => ({
         ...safeLocalStorage,
         setItem: (name: string, value: string) => {
-          if (useSettings.getState().remember) safeLocalStorage.setItem(name, value)
+          if (!useSettings.getState().remember) return
+          safeLocalStorage.setItem(name, value)
+          if (safeLocalStorage.getItem(LEGACY_PROGRESS_KEY) && safeLocalStorage.getItem(name) === value) {
+            safeLocalStorage.removeItem(LEGACY_PROGRESS_KEY)
+          }
         },
       })),
       partialize: (s) => ({ profiles: s.profiles, activeId: s.activeId }),
@@ -229,7 +278,9 @@ export const useProfiles = create<State>()(
       migrate: (persisted) => (sanitizeProfiles(persisted) ?? initialProfiles()) as unknown as State,
       // Save right after loading, so profiles migrated from v0.5 are stored under the new key at once.
       onRehydrateStorage: () => (_state, error) => {
-        if (!error) queueMicrotask(() => useProfiles.setState({}))
+        if (!error && safeLocalStorage.getItem(LEGACY_PROGRESS_KEY)) {
+          queueMicrotask(() => useProfiles.setState({}))
+        }
       },
     },
   ),
@@ -239,7 +290,10 @@ export const useProfiles = create<State>()(
 useSettings.subscribe((s, prev) => {
   if (s.remember === prev.remember) return
   if (s.remember) useProfiles.setState({})
-  else void useProfiles.persist.clearStorage()
+  else {
+    safeLocalStorage.removeItem(LEGACY_PROGRESS_KEY)
+    void useProfiles.persist.clearStorage()
+  }
 })
 
 export function activeProfile(s: Pick<State, 'profiles' | 'activeId'>): Profile {

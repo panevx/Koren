@@ -1,16 +1,67 @@
 /// <reference types="vitest/config" />
-import { copyFileSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs'
+import { copyFileSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
-import { defineConfig, type Plugin } from 'vite'
+import { defineConfig, loadEnv, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { VitePWA } from 'vite-plugin-pwa'
+import assetManifest from './content/assets/manifest.json'
+import { Mission } from './src/content/schema'
+import { compareMissionOrder, summarizeMission } from './src/content/missionSummary'
 import { IMAGE_CACHE } from './src/offline/imageCache'
+import { staticPages } from './src/routes'
+
+const missionDir = resolve(__dirname, 'content/missions')
+
+function missionFiles(family: boolean) {
+  return readdirSync(missionDir).filter((file) => {
+    if (!file.endsWith('.json')) return false
+    if (!family) return true
+    const mission = JSON.parse(readFileSync(resolve(missionDir, file), 'utf8'))
+    return !mission.draft && Boolean(mission.review)
+  })
+}
+
+function reviewedMissionsOnly(): Plugin {
+  return {
+    name: 'koren-reviewed-missions',
+    enforce: 'pre',
+    apply: 'build',
+    transform(source, id) {
+      if (!id.endsWith('/src/content/missions.ts')) return
+      const paths = missionFiles(true).map((file) => `../../content/missions/${file}`)
+      const pattern = "'../../content/missions/*.json'"
+      if (!source.includes(pattern)) throw new Error('Cannot locate the mission catalog for the family build')
+      return source.replace(pattern, JSON.stringify(paths))
+    },
+  }
+}
+
+function hubMissionIndex(showDrafts: boolean): Plugin {
+  return {
+    name: 'koren-hub-missions',
+    enforce: 'pre',
+    apply: 'build',
+    transform(_source, id) {
+      if (!id.endsWith('/src/content/hubMissions.ts')) return
+      const missions = missionFiles(false)
+        .map((file) => {
+          const data = JSON.parse(readFileSync(resolve(missionDir, file), 'utf8'))
+          const result = Mission.safeParse(data)
+          if (!result.success) this.error(`Invalid mission ${file}: ${result.error.message}`)
+          return result.data
+        })
+        .filter((mission) => showDrafts || !mission.draft)
+        .sort(compareMissionOrder)
+      return `export const HUB_MISSIONS = ${JSON.stringify(missions.map(summarizeMission))}`
+    },
+  }
+}
 
 // GitHub Pages serves the app from /<repo>/ and has no SPA fallback, but it does answer
 // "/home" with "home.html". So every known address gets its own copy of index.html → HTTP 200
 // (no 404 in the console, indexable). 404.html still catches anything unknown.
-function spaRoutes(): Plugin {
+function spaRoutes(family: boolean): Plugin {
   let out = resolve(__dirname, 'dist')
   return {
     name: 'koren-spa-routes',
@@ -20,11 +71,13 @@ function spaRoutes(): Plugin {
       out = resolve(config.root, config.build.outDir)
     },
     closeBundle() {
+      // Keep the source catalog available locally, but ship future art only when it is used.
+      for (const asset of assetManifest.assets) {
+        if (asset.status === 'ready' && asset.path) rmSync(resolve(out, 'img', asset.path), { force: true })
+      }
       const index = resolve(out, 'index.html')
-      const missions = readdirSync(resolve(__dirname, 'content/missions'))
-        .filter((f) => f.endsWith('.json'))
-        .map((f) => `mission/${f.replace(/\.json$/, '')}`)
-      const routes = ['home', 'age', 'sign', 'who', 'parents', 'settings', 'map', 'timeline', 'missions', 'collection', 'fame', 'shop', ...['history', 'culture', 'language'].map((t) => `topic/${t}`), ...missions]
+      const missions = missionFiles(family).map((file) => `mission/${file.replace(/\.json$/, '')}`)
+      const routes = [...staticPages.map((path) => path.slice(1)), ...missions]
       copyFileSync(index, resolve(out, '404.html'))
       for (const r of routes) {
         mkdirSync(dirname(resolve(out, `${r}.html`)), { recursive: true })
@@ -42,13 +95,15 @@ function spaRoutes(): Plugin {
   }
 }
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   // BASE_PATH is set by the GitHub Pages workflow ("/Koren/"); locally the app lives at "/".
   base: process.env.BASE_PATH ?? '/',
   plugins: [
     react(),
     tailwindcss(),
-    spaRoutes(),
+    ...(mode === 'family' ? [reviewedMissionsOnly()] : []),
+    hubMissionIndex(mode !== 'family' && loadEnv(mode, process.cwd()).VITE_SHOW_DRAFTS === '1'),
+    spaRoutes(mode === 'family'),
     VitePWA({
       // "prompt": a new version waits until the child is on the hub — never a reload mid-mission.
       registerType: 'prompt',
@@ -105,4 +160,4 @@ export default defineConfig({
     setupFiles: ['./tests/setup.ts'],
     include: ['tests/**/*.test.{ts,tsx}'],
   },
-})
+}))

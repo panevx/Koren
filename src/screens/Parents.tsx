@@ -11,7 +11,7 @@ import { forLevel } from '../content/forLevel'
 import { useLocalized } from '../content/useLocalized'
 import { LANGS } from '../i18n'
 import { useT } from '../i18n/useT'
-import { MAX_PROFILES, NICKNAME_MAX, useProfiles, type AvatarId, type Profile } from '../store/profiles'
+import { MAX_PROFILES, NICKNAME_MAX, saveProfileChange, useProfiles, type AvatarId, type Profile } from '../store/profiles'
 import { useSettings } from '../store/settings'
 import { TESTER_CODE, TESTER_TOOLS } from '../content/tester'
 import { useChildMissions } from '../content/useChildMissions'
@@ -21,11 +21,8 @@ import { DEFAULT_AGE, MAX_AGE, MIN_AGE, ageToLevel, clampAge } from '../theme/le
 /** Once solved, the gate stays open for a few minutes so a parent can move around. */
 const UNLOCK_MS = 10 * 60 * 1000
 let unlockedAt = 0
-/** The testers' code was used: the parents' area shows the testing section (until the app is closed). */
-let testerOpened = false
 export const lockParents = () => {
   unlockedAt = 0
-  testerOpened = false
 }
 
 function newSum() {
@@ -33,7 +30,7 @@ function newSum() {
   return { a: r(), b: r() }
 }
 
-function Gate({ onPass }: { onPass: () => void }) {
+function Gate({ onPass, onTest }: { onPass: () => void; onTest: () => void }) {
   const t = useT()
   const navigate = useNavigate()
   const [sum, setSum] = useState(newSum)
@@ -41,11 +38,8 @@ function Gate({ onPass }: { onPass: () => void }) {
   const [wrong, setWrong] = useState(false)
 
   const submit = () => {
-    // Demo build only: the testers' code opens the area too (whatever the sum) — see src/content/tester.ts.
     if (TESTER_TOOLS && input === TESTER_CODE) {
-      testerOpened = true
-      unlockedAt = Date.now()
-      onPass()
+      onTest()
       return
     }
     if (Number(input) === sum.a * sum.b) {
@@ -103,9 +97,34 @@ function Gate({ onPass }: { onPass: () => void }) {
 }
 
 // ── Parents area ─────────────────────────────────────────────────────
+const parentsUnlocked = () => unlockedAt > 0 && Date.now() < unlockedAt + UNLOCK_MS
+
 export function Parents() {
-  const [open, setOpen] = useState(() => Date.now() - unlockedAt < UNLOCK_MS)
-  return open ? <ParentsArea /> : <Gate onPass={() => setOpen(true)} />
+  const t = useT()
+  const [open, setOpen] = useState(parentsUnlocked)
+  const [testing, setTesting] = useState(false)
+
+  useEffect(() => {
+    if (!open) return
+    const check = () => { if (!parentsUnlocked()) setOpen(false) }
+    const timer = window.setTimeout(check, Math.max(0, unlockedAt + UNLOCK_MS - Date.now()))
+    document.addEventListener('visibilitychange', check)
+    return () => {
+      window.clearTimeout(timer)
+      document.removeEventListener('visibilitychange', check)
+    }
+  }, [open])
+
+  if (open) return <ParentsArea onExpired={() => setOpen(false)} />
+  if (TESTER_TOOLS && testing) {
+    return (
+      <Screen>
+        <TopBar title={t('tester.tools')} onBack={() => setTesting(false)} />
+        <div className="px-4 pb-8"><TesterSection /></div>
+      </Screen>
+    )
+  }
+  return <Gate onPass={() => setOpen(true)} onTest={() => setTesting(true)} />
 }
 
 /** Testers only (demo build): every mission open, and a random mission to test. */
@@ -316,9 +335,8 @@ function Learns({ profile, index }: { profile: Profile; index: number }) {
   )
 }
 
-function ParentsArea() {
+function ParentsArea({ onExpired }: { onExpired: () => void }) {
   const t = useT()
-  const unlockAllOn = useSettings((st) => st.unlockAll)
   const navigate = useNavigate()
   const { lang, remember, sound, setLang, setRemember, setSound } = useSettings()
   const { profiles, addProfile } = useProfiles()
@@ -326,20 +344,24 @@ function ParentsArea() {
   const [armed, confirm] = useConfirm()
 
   const eraseAll = () => {
+    if (!parentsUnlocked()) {
+      onExpired()
+      return
+    }
     if (!confirm()) return
-    useProfiles.getState().reset()
-    useSettings.getState().reset()
-    void useProfiles.persist.clearStorage()
-    void useSettings.persist.clearStorage()
-    lockParents()
-    navigate('/', { replace: true })
+    saveProfileChange(() => {
+      if (!parentsUnlocked()) return
+      useProfiles.getState().reset()
+      useSettings.getState().reset()
+      lockParents()
+      navigate('/', { replace: true })
+    })
   }
 
   return (
     <Screen>
       <TopBar title={t('parents.title')} onBack={() => navigate('/home')} />
       <div className="flex flex-col gap-4 px-4 pb-10">
-        {TESTER_TOOLS && (testerOpened || unlockAllOn) && <TesterSection />}
         <Section icon="users" title={t('parents.profiles')}>
           <p className="mb-3 text-sm text-muted">{t('parents.profilesHint')}</p>
           <ul className="flex flex-col gap-3">

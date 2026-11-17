@@ -15,19 +15,33 @@ export function OfflinePanel() {
   const [cached, setCached] = useState<number | null>(null)
   const [progress, setProgress] = useState<{ done: number; total: number } | null>(null)
   const [failed, setFailed] = useState(0)
+  const [cacheError, setCacheError] = useState(false)
   const supported = offlineSupported()
 
   useEffect(() => {
-    if (supported) void countCached(paths).then(setCached)
+    if (!supported) return
+    let active = true
+    void countCached(paths).then(
+      (count) => { if (active) setCached(count) },
+      () => { if (active) setCacheError(true) },
+    )
+    return () => { active = false }
   }, [paths, supported])
 
   const download = async () => {
     setFailed(0)
+    setCacheError(false)
     setProgress({ done: 0, total: paths.length })
-    const r = await downloadAll(paths, (done, total) => setProgress({ done, total }))
-    setFailed(r.failed)
-    setProgress(null)
-    setCached(await countCached(paths))
+    try {
+      const result = await downloadAll(paths, (done, total) => setProgress({ done, total }))
+      setFailed(result.failed)
+      setCached(await countCached(paths))
+    } catch {
+      setCached(null)
+      setCacheError(true)
+    } finally {
+      setProgress(null)
+    }
   }
 
   const all = cached !== null && cached >= paths.length
@@ -53,6 +67,7 @@ export function OfflinePanel() {
                 <div className="h-full rounded-full bg-green transition-all" style={{ width: `${(progress.done / progress.total) * 100}%` }} />
               </div>
             )}
+            {cacheError && <p role="alert" className="text-sm font-bold text-coral-dark">{t('offline.cacheError')}</p>}
             {failed > 0 && <p className="text-sm font-bold text-coral-dark">{t('offline.failed', { n: failed })}</p>}
             {!all && (
               <Button variant="accent" onClick={download} disabled={progress !== null}>

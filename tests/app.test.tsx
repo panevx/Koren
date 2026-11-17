@@ -129,7 +129,14 @@ describe('hub navigation', () => {
     expect(await screen.findByRole('link', { name: /Открий България/ })).toBeInTheDocument()
     cleanup()
     renderAt('/no/such/page')
+    expect(screen.getByRole('heading', { name: 'Страницата не е намерена' })).toBeInTheDocument()
+    fireEvent.click(screen.getByRole('link', { name: 'Към началото' }))
     expect(screen.getByRole('link', { name: /Открий България/ })).toBeInTheDocument()
+  })
+
+  it('canonicalizes a static Pages file to the matching route', async () => {
+    renderAt('/map.html?source=bookmark#map')
+    expect(await screen.findByRole('heading', { name: 'Открий България' })).toBeInTheDocument()
   })
 })
 
@@ -157,7 +164,21 @@ describe('parents section', () => {
     expect(screen.getByRole('heading', { name: 'За родители' })).toBeInTheDocument()
   })
 
-  it('testers (demo build): the code 6812007 opens the area whatever the sum, and unlocks every mission', async () => {
+  it('locks the parent area when the session expires while it is open', async () => {
+    renderAt('/parents')
+    await screen.findByRole('heading', { name: 'Само за родители' })
+    vi.useFakeTimers()
+    try {
+      solveGate()
+      expect(screen.getByRole('heading', { name: 'За родители' })).toBeInTheDocument()
+      act(() => vi.advanceTimersByTime(10 * 60 * 1000))
+      expect(screen.getByRole('heading', { name: 'Само за родители' })).toBeInTheDocument()
+    } finally {
+      vi.useRealTimers()
+    }
+  })
+
+  it('testers (demo build): the code opens demo tools without opening the parent area', async () => {
     useSettings.getState().completeOnboarding()
     renderAt('/parents')
     await screen.findByRole('heading', { name: 'Само за родители' })
@@ -165,7 +186,8 @@ describe('parents section', () => {
     expect(screen.getByRole('status')).toHaveTextContent('Не е вярно')
     expect(screen.queryByRole('heading', { name: 'Режим за тестване' })).not.toBeInTheDocument()
     solveGate('6812007')
-    expect(screen.getByRole('heading', { name: 'За родители' })).toBeInTheDocument()
+    expect(screen.queryByRole('heading', { name: 'За родители' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: /Изтрий всички данни/ })).not.toBeInTheDocument()
     expect(screen.getByRole('heading', { name: 'Режим за тестване' })).toBeInTheDocument()
     // a locked mission (it needs another one first) opens without playing anything
     const locked = forLevel(MISSIONS, 'young').find((m) => m.unlock?.after)!

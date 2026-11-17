@@ -12,7 +12,8 @@ import { Screen, roundButton, useTitle } from '../components/ui'
 import { earnedCount } from '../content/badges'
 import { forLevel } from '../content/forLevel'
 import { byPathOrder, chapterOf } from '../content/pathOrder'
-import type { Mission, Subject } from '../content/schema'
+import type { Subject } from '../content/schema'
+import type { MissionSummary } from '../content/missionSummary'
 import { useLocalized } from '../content/useLocalized'
 import { useMissions } from '../content/useMissions'
 import { useProgress, useUnlockAll } from '../content/useProgress'
@@ -193,7 +194,7 @@ function NoMissionsCard() {
 }
 
 /** The big card: what is next on the path, in which chapter, and one clear button. */
-function AdventureCard({ next, missions, done }: { next: Mission | undefined; missions: readonly Mission[]; done: Record<string, unknown> }) {
+function AdventureCard({ next, missions, done }: { next: MissionSummary | undefined; missions: readonly MissionSummary[]; done: Record<string, unknown> }) {
   const t = useT()
   const l = useLocalized()
   const chapter = next ? chapterOf(next.id) : undefined
@@ -224,7 +225,7 @@ function AdventureCard({ next, missions, done }: { next: Mission | undefined; mi
             <span className="text-label inline-block rounded-full bg-green-deep/70 px-2.5 py-1 text-[length:min(0.75rem,3.2vw)] text-white">
               {next ? t('home.next') : t('home.allDone.caption')}
             </span>
-            <span className="text-title mt-1.5 line-clamp-3 block" style={fitWords(next ? l(next.title) : t('home.allDone'), 'min(1.5rem,6.4vw)')}>
+            <span className="text-title mt-1.5 line-clamp-3 block" data-fit-label style={fitWords(next ? l(next.title) : t('home.allDone'), 'min(1.5rem,6.4vw)')}>
               {next ? l(next.title) : t('home.allDone')}
             </span>
             {chapter && (
@@ -296,7 +297,7 @@ function World({
   showDesc,
 }: {
   world: (typeof WORLDS)[number]
-  missions: readonly Mission[] | null
+  missions: readonly MissionSummary[] | null
   done: Record<string, unknown>
   showDesc: boolean
 }) {
@@ -313,7 +314,7 @@ function World({
       <span className="pointer-events-none relative -mx-1 -mt-1 grid flex-1 place-items-center" aria-hidden="true">
         <SectionIcon id={world.id} className="pop-3d size-[min(6.5rem,26vw)] wide:size-[6rem]" />
       </span>
-      <span className="relative mt-1 block leading-tight font-black" style={fitWords(t(section.label), 'min(1.125rem,5vw)')}>
+      <span className="relative mt-1 block leading-tight font-black" data-fit-label style={fitWords(t(section.label), 'min(1.125rem,5vw)')}>
         {t(section.label)}
       </span>
       {showDesc && <span className="relative mt-0.5 block text-xs leading-snug font-bold">{t(section.desc)}</span>}

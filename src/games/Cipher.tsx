@@ -19,6 +19,8 @@ const EXTRA = ['Б', 'Ж', 'Ф', 'Ц', 'Ш', 'Ю', 'Х', 'Щ']
 export function Cipher({ game, onDone }: { game: CipherGame; onDone: () => void }) {
   const t = useT()
   const l = useLocalized()
+  const glyphNumber = (letter: string) => GLAGOLITIC[letter]!.codePointAt(0)! - 0x2c00 + 1
+  const glyphName = (letter: string) => t('cipher.glyphNumber', { n: glyphNumber(letter) })
   const chars = [...game.message.bg]
   const letters = chars.map((c, i) => ({ c, i })).filter((x) => x.c !== ' ')
   const inMessage = useMemo(() => [...new Set(letters.map((x) => x.c))], [letters])
@@ -70,6 +72,7 @@ export function Cipher({ game, onDone }: { game: CipherGame; onDone: () => void 
               const next = n === filled && !done
               return (
                 <div key={j} className="flex flex-col items-center gap-0.5">
+                  <span className="sr-only">{t('cipher.symbolAt', { n: n + 1, glyph: glyphName(c) })}</span>
                   <span className="text-[length:min(2rem,8vw)] leading-none text-[#7A3B12]" style={{ fontFamily: "'Noto Sans Glagolitic', serif" }} aria-hidden="true">
                     {GLAGOLITIC[c]}
                   </span>
@@ -78,7 +81,7 @@ export function Cipher({ game, onDone }: { game: CipherGame; onDone: () => void 
                     initial={open ? { scale: 0.4 } : false}
                     animate={{ scale: 1 }}
                     transition={bouncy}
-                    aria-label={open ? c : t('cipher.box', { n: n + 1 })}
+                    lang={open ? 'bg' : undefined}
                     className={`grid size-[min(2.25rem,9vw)] place-items-center rounded-[0.6rem] text-[length:min(1.25rem,5.5vw)] font-black ${
                       open ? 'bg-white text-green-dark' : next ? 'bg-gold-soft ring-[3px] ring-gold' : 'bg-white/60'
                     }`}
@@ -97,7 +100,6 @@ export function Cipher({ game, onDone }: { game: CipherGame; onDone: () => void 
         {key.map((c) => (
           <li
             key={c}
-            aria-label={t('cipher.keyItem', { letter: c })}
             className={`flex items-center justify-center gap-1 rounded-full px-2 py-1 text-base font-black transition ${glow === c ? 'anim-glow bg-gold text-ink' : 'bg-white text-ink shadow-soft'}`}
           >
             <span style={{ fontFamily: "'Noto Sans Glagolitic', serif" }} className="text-xl leading-none text-[#7A3B12]" aria-hidden="true">
@@ -105,6 +107,7 @@ export function Cipher({ game, onDone }: { game: CipherGame; onDone: () => void 
             </span>
             <span aria-hidden="true">=</span>
             <span aria-hidden="true">{c}</span>
+            <span className="sr-only">{t('cipher.keyItem', { n: glyphNumber(c) })} <span lang="bg">{c}</span></span>
           </li>
         ))}
       </ul>
@@ -114,7 +117,7 @@ export function Cipher({ game, onDone }: { game: CipherGame; onDone: () => void 
         <ul aria-label={t('cipher.letters')} className="flex flex-wrap justify-center gap-2">
           {keyboard.map((c) => (
             <li key={c}>
-              <button type="button" onClick={() => press(c)} className="tap press grid size-[max(3rem,var(--tap))] place-items-center rounded-full bg-white text-2xl font-black text-ink shadow-soft">
+              <button type="button" lang="bg" onClick={() => press(c)} className="tap press grid size-[max(3rem,var(--tap))] place-items-center rounded-full bg-white text-2xl font-black text-ink shadow-soft">
                 {c}
               </button>
             </li>
@@ -122,13 +125,22 @@ export function Cipher({ game, onDone }: { game: CipherGame; onDone: () => void 
         </ul>
       )}
 
+      <p className="sr-only" aria-live="polite">
+        {!done && t('cipher.nextBox', { n: filled + 1, glyph: glyphName(letters[filled]!.c) })}
+      </p>
       <Feedback
-        correct={done ? t('cipher.done', { msg: game.message.bg, meaning: game.message.en }) : undefined}
+        correct={done ? t('cipher.done') : undefined}
         help={!done ? say : undefined}
         nudge={misses}
         idle={game.hint ? l(game.hint) : t('cipher.idle')}
       />
-      {done && <DoneButton onClick={onDone} />}
+      {done && (
+        <>
+          <p className="text-center font-bold" lang="bg">{game.message.bg}</p>
+          <p className="text-center font-semibold">{t('cipher.meaning', { meaning: game.message.en })}</p>
+          <DoneButton onClick={onDone} />
+        </>
+      )}
     </div>
   )
 }

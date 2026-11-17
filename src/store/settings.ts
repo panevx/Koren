@@ -30,7 +30,7 @@ const DEFAULTS: Persisted = { lang: 'bg', onboarded: false, remember: true, soun
  * localStorage can throw (Safari private mode, full quota, blocked site data).
  * Settings must never crash the app — at worst they are not remembered.
  */
-export const safeLocalStorage: StateStorage = {
+export const safeLocalStorage = {
   getItem: (name) => {
     try {
       return window.localStorage.getItem(name)
@@ -52,7 +52,7 @@ export const safeLocalStorage: StateStorage = {
       /* ignore */
     }
   },
-}
+} satisfies StateStorage
 
 /** Accept only well-formed values from storage; anything else falls back to defaults. */
 export function sanitize(raw: unknown): Partial<Persisted> {

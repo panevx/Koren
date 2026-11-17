@@ -1,6 +1,9 @@
 import { existsSync, readdirSync, statSync } from 'node:fs'
 import { join, relative, resolve } from 'node:path'
-import { describe, expect, it } from 'vitest'
+import { afterEach, describe, expect, it, vi } from 'vitest'
+import { createElement } from 'react'
+import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react'
+import { OfflinePanel } from '../src/components/OfflinePanel'
 import { MISSIONS } from '../src/content/missions'
 import { allImages, missionImages } from '../src/offline/assets'
 import manifest from '../content/assets/manifest.json'
@@ -17,7 +20,7 @@ describe('"Download everything for a trip"', () => {
   })
 
   it('covers every image the app ships (app icons are precached separately)', () => {
-    // Assets prepared for a later stage (manifest status "ready") ship but are not shown yet — nothing downloads them.
+    // Assets prepared for a later stage (manifest status "ready") are available in the source tree for later builds.
     const later = new Set((manifest.assets as { status: string; path?: string }[]).filter((a) => a.status === 'ready').map((a) => a.path))
     const missing = files.filter((f) => !f.startsWith('icons/') && !list.includes(f) && !later.has(f))
     expect(missing, 'images in public/img that are neither used nor downloaded').toEqual([])
@@ -32,5 +35,24 @@ describe('web app manifest icons', () => {
   it('exist in the sizes the manifest declares', () => {
     for (const f of ['icon-192.png', 'icon-512.png', 'icon-maskable-512.png', 'apple-touch-icon.png'])
       expect(existsSync(join(IMG, 'icons', f)), f).toBe(true)
+  })
+})
+
+describe('offline storage errors', () => {
+  afterEach(() => {
+    cleanup()
+    vi.unstubAllGlobals()
+  })
+
+  it('shows the error and enables retry when opening cache storage fails', async () => {
+    const open = vi.fn().mockRejectedValue(new Error('Access denied'))
+    vi.stubGlobal('caches', { open })
+    vi.stubGlobal('navigator', { userAgent: 'test', serviceWorker: {} })
+    render(createElement(OfflinePanel))
+    expect(await screen.findByRole('alert')).toBeInTheDocument()
+    const retry = screen.getByRole('button', { name: /Изтегли/ })
+    fireEvent.click(retry)
+    await waitFor(() => expect(retry).toBeEnabled())
+    expect(open).toHaveBeenCalledTimes(2)
   })
 })
