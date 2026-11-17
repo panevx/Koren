@@ -89,7 +89,7 @@ export function Home() {
       <div className="px-4 pb-32 short:pb-8 wide:grid wide:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] wide:items-start wide:gap-6 wide:pb-10">
         <div>
           {/* 1. Koren and Raya greet the child. */}
-          <section className="relative mt-3 h-[min(14rem,58vw)] short:h-[12rem] wide:h-[17rem]">
+          <section className="relative mt-3 flow-root min-h-[min(12.5rem,54vw)] pb-4 short:min-h-[11rem] wide:min-h-[15rem]">
             <Scenery castle={false} className="absolute inset-0 rounded-[var(--radius-stage)] shadow-soft" />
             <div className="absolute top-3 left-3 rounded-full bg-white px-3.5 py-1.5 shadow-soft wide:hidden">
               <Logo size="sm" className="h-7" />
@@ -98,22 +98,22 @@ export function Home() {
               initial={{ opacity: 0, scale: 0.8, x: -12 }}
               animate={{ opacity: 1, scale: 1, x: 0 }}
               transition={{ ...bouncy, delay: 0.35 }}
-              className="absolute top-[3.9rem] left-3 max-w-[52%] wide:top-5 wide:max-w-[45%] origin-bottom-left rounded-[1.5rem] rounded-bl-md bg-white px-4 py-2.5 text-[length:min(1.0625rem,4.5vw)] leading-snug font-extrabold shadow-soft"
+              className="relative mt-[3.9rem] ml-3 w-max max-w-[52%] wide:mt-5 wide:max-w-[45%] origin-bottom-left rounded-[1.5rem] rounded-bl-md bg-white px-4 py-2.5 text-[length:min(1.0625rem,4.5vw)] leading-snug font-extrabold shadow-soft"
             >
               {t(`home.greeting.${level}`)}
             </m.p>
-            <div className="absolute right-2 bottom-10 flex items-end" aria-hidden="true">
+            <div className="absolute right-2 bottom-3 flex items-end" aria-hidden="true">
               <m.div initial={{ y: 36 }} animate={{ y: 0 }} transition={{ ...bouncy, delay: 0.1 }}>
-                <HeroFigure hero="raya" className="anim-bob h-[min(9rem,35vw)] wide:h-[11.5rem]" />
+                <HeroFigure hero="raya" className="anim-bob h-[min(8.25rem,33vw)] wide:h-[10.5rem]" />
               </m.div>
               <m.div initial={{ y: 36 }} animate={{ y: 0 }} transition={{ ...bouncy, delay: 0.2 }} className="-ml-3">
-                <HeroFigure hero="koren" className="anim-bob-late h-[min(9.5rem,37vw)] wide:h-[12rem]" />
+                <HeroFigure hero="koren" className="anim-bob-late h-[min(8.75rem,35vw)] wide:h-[11rem]" />
               </m.div>
             </div>
           </section>
 
           {/* 2. The adventure card. Its height is kept while the missions load, so nothing jumps. */}
-          <div className="relative z-10 -mt-9 min-h-[15rem] short:-mt-6">
+          <div className="relative z-10 mt-3 min-h-[15rem]">
             {missions && (missions.length ? <AdventureCard next={next} missions={missions} done={profile.done} /> : <NoMissionsCard />)}
           </div>
           {/* Testers' switch on (demo build only): say so, so nobody forgets it before a presentation. */}
