@@ -1,0 +1,527 @@
+{
+  "id": "pro-08-unesco",
+  "subject": "geography",
+  "free": true,
+  "order": 116,
+  "ages": [
+    "young",
+    "guard"
+  ],
+  "unlock": {
+    "after": [
+      "pro-07-black-sea"
+    ]
+  },
+  "badge": {
+    "id": "pro-unesco",
+    "icon": "landmarks/madara-rider.webp"
+  },
+  "title": {
+    "bg": "Изпит: наследството на ЮНЕСКО",
+    "en": "Exam: the UNESCO heritage"
+  },
+  "levels": {
+    "young": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "explorer",
+          "bg": "В България има места от списъка на световното наследство на ЮНЕСКО – пазят се за целия свят.",
+          "en": "Bulgaria has places on UNESCO’s World Heritage list – they are protected for the whole world."
+        },
+        {
+          "hero": "raya",
+          "pose": "nature",
+          "bg": "Някои са стари сгради и рисунки, а други – природа.",
+          "en": "Some are old buildings and paintings, others are nature."
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи обекта с това какво е.",
+          "en": "Match the site with what it is."
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Рилският манастир",
+              "en": "The Rila Monastery"
+            },
+            "b": {
+              "bg": "Манастир в планината Рила",
+              "en": "A monastery in the Rila mountains"
+            }
+          },
+          {
+            "a": {
+              "bg": "Мадарският конник",
+              "en": "The Madara Rider"
+            },
+            "b": {
+              "bg": "Конник, издълбан в скала",
+              "en": "A horseman carved in rock"
+            }
+          },
+          {
+            "a": {
+              "bg": "Несебър",
+              "en": "Nessebar"
+            },
+            "b": {
+              "bg": "Древен град на морето",
+              "en": "An ancient town by the sea"
+            }
+          },
+          {
+            "a": {
+              "bg": "Сребърна",
+              "en": "Srebarna"
+            },
+            "b": {
+              "bg": "Езеро с пеликани",
+              "en": "A lake with pelicans"
+            }
+          },
+          {
+            "a": {
+              "bg": "Пирин",
+              "en": "Pirin"
+            },
+            "b": {
+              "bg": "Национален парк в планината",
+              "en": "A mountain national park"
+            }
+          }
+        ]
+      },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Мадарският конник е издълбан в скала.",
+              "en": "The Madara Rider is carved into rock."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – високо на скалите край Мадара.",
+              "en": "Yes – high on the cliffs at Madara."
+            }
+          },
+          {
+            "text": {
+              "bg": "Сребърна е в Пирин.",
+              "en": "Srebarna is in Pirin."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – край Силистра, до Дунав.",
+              "en": "No – near Silistra, by the Danube."
+            }
+          },
+          {
+            "text": {
+              "bg": "Рилският манастир е в списъка на ЮНЕСКО.",
+              "en": "The Rila Monastery is on the UNESCO list."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "Несебър е в планината.",
+              "en": "Nessebar is in the mountains."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – на морето.",
+              "en": "No – by the sea."
+            }
+          },
+          {
+            "text": {
+              "bg": "ЮНЕСКО пази места, ценни за целия свят.",
+              "en": "UNESCO protects places valuable to the whole world."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Близо до кой град е Мадарският конник?",
+            "en": "Near which town is the Madara Rider?"
+          },
+          "options": [
+            {
+              "bg": "Шумен",
+              "en": "Shumen"
+            },
+            {
+              "bg": "Бургас",
+              "en": "Burgas"
+            },
+            {
+              "bg": "Видин",
+              "en": "Vidin"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Коя птица живее в Сребърна?",
+            "en": "Which bird lives at Srebarna?"
+          },
+          "options": [
+            {
+              "bg": "Пингвин",
+              "en": "A penguin"
+            },
+            {
+              "bg": "Къдроглав пеликан",
+              "en": "A Dalmatian pelican"
+            },
+            {
+              "bg": "Папагал",
+              "en": "A parrot"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Кой от тези обекти е природен?",
+            "en": "Which of these sites is natural?"
+          },
+          "options": [
+            {
+              "bg": "Несебър",
+              "en": "Nessebar"
+            },
+            {
+              "bg": "Рилският манастир",
+              "en": "The Rila Monastery"
+            },
+            {
+              "bg": "Пирин",
+              "en": "Pirin"
+            }
+          ],
+          "answer": 2
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "reading",
+          "bg": "България има 10 обекта в списъка на световното наследство: 7 културни и 3 природни.",
+          "en": "Bulgaria has 10 World Heritage sites: 7 cultural and 3 natural."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Първите четири са вписани през 1979 г.",
+          "en": "The first four were inscribed in 1979."
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи обекта с описанието му.",
+          "en": "Match the site with its description."
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Боянската църква",
+              "en": "The Boyana Church"
+            },
+            "b": {
+              "bg": "Стенописи от 1259 г.",
+              "en": "Murals from 1259"
+            }
+          },
+          {
+            "a": {
+              "bg": "Казанлъшката гробница",
+              "en": "The Kazanlak Tomb"
+            },
+            "b": {
+              "bg": "Тракийска гробница със стенописи",
+              "en": "A Thracian tomb with murals"
+            }
+          },
+          {
+            "a": {
+              "bg": "Свещарската гробница",
+              "en": "The Sveshtari Tomb"
+            },
+            "b": {
+              "bg": "Тракийска гробница с кариатиди",
+              "en": "A Thracian tomb with caryatids"
+            }
+          },
+          {
+            "a": {
+              "bg": "Ивановските скални църкви",
+              "en": "The Ivanovo Rock Churches"
+            },
+            "b": {
+              "bg": "Църкви в скалите на Русенски Лом",
+              "en": "Churches in the rocks of Rusenski Lom"
+            }
+          },
+          {
+            "a": {
+              "bg": "Мадарският конник",
+              "en": "The Madara Rider"
+            },
+            "b": {
+              "bg": "Скален релеф от Ранното средновековие",
+              "en": "An early medieval rock relief"
+            }
+          },
+          {
+            "a": {
+              "bg": "Древните букови гори",
+              "en": "The ancient beech forests"
+            },
+            "b": {
+              "bg": "Природен обект от 2017 г.",
+              "en": "A natural site since 2017"
+            }
+          }
+        ]
+      },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Колко обекта има България в списъка на световното наследство?",
+              "en": "How many World Heritage sites does Bulgaria have?"
+            },
+            "options": [
+              {
+                "bg": "3",
+                "en": "3"
+              },
+              {
+                "bg": "10",
+                "en": "10"
+              },
+              {
+                "bg": "25",
+                "en": "25"
+              },
+              {
+                "bg": "100",
+                "en": "100"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Кои са трите природни обекта?",
+              "en": "Which are the three natural sites?"
+            },
+            "options": [
+              {
+                "bg": "Пирин, Сребърна и буковите гори",
+                "en": "Pirin, Srebarna and the beech forests"
+              },
+              {
+                "bg": "Рила, Витоша и Странджа",
+                "en": "Rila, Vitosha and Strandzha"
+              },
+              {
+                "bg": "Черно море, Дунав и Искър",
+                "en": "The Black Sea, the Danube and the Iskar"
+              },
+              {
+                "bg": "Мусала, Вихрен и Ботев",
+                "en": "Musala, Vihren and Botev"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "През коя година са вписани първите български обекти?",
+              "en": "In which year were the first Bulgarian sites inscribed?"
+            },
+            "options": [
+              {
+                "bg": "1878",
+                "en": "1878"
+              },
+              {
+                "bg": "1979",
+                "en": "1979"
+              },
+              {
+                "bg": "1999",
+                "en": "1999"
+              },
+              {
+                "bg": "2007",
+                "en": "2007"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Близо до кой град е Свещарската гробница?",
+              "en": "Near which town is the Sveshtari Tomb?"
+            },
+            "options": [
+              {
+                "bg": "Исперих",
+                "en": "Isperih"
+              },
+              {
+                "bg": "Казанлък",
+                "en": "Kazanlak"
+              },
+              {
+                "bg": "Шумен",
+                "en": "Shumen"
+              },
+              {
+                "bg": "Варна",
+                "en": "Varna"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Близо до кой град са Ивановските скални църкви?",
+              "en": "Near which town are the Ivanovo Rock Churches?"
+            },
+            "options": [
+              {
+                "bg": "Варна",
+                "en": "Varna"
+              },
+              {
+                "bg": "Русе",
+                "en": "Ruse"
+              },
+              {
+                "bg": "Видин",
+                "en": "Vidin"
+              },
+              {
+                "bg": "Плевен",
+                "en": "Pleven"
+              }
+            ],
+            "answer": 1
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Колко културни обекта има България в списъка?",
+            "en": "How many cultural sites does Bulgaria have on the list?"
+          },
+          "options": [
+            {
+              "bg": "3",
+              "en": "3"
+            },
+            {
+              "bg": "7",
+              "en": "7"
+            },
+            {
+              "bg": "10",
+              "en": "10"
+            },
+            {
+              "bg": "1",
+              "en": "1"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Кой от тези обекти е тракийски?",
+            "en": "Which of these sites is Thracian?"
+          },
+          "options": [
+            {
+              "bg": "Рилският манастир",
+              "en": "The Rila Monastery"
+            },
+            {
+              "bg": "Несебър",
+              "en": "Nessebar"
+            },
+            {
+              "bg": "Казанлъшката гробница",
+              "en": "The Kazanlak Tomb"
+            },
+            {
+              "bg": "Боянската църква",
+              "en": "The Boyana Church"
+            }
+          ],
+          "answer": 2
+        },
+        {
+          "q": {
+            "bg": "Близо до кой град е Мадарският конник?",
+            "en": "Near which town is the Madara Rider?"
+          },
+          "options": [
+            {
+              "bg": "Пловдив",
+              "en": "Plovdiv"
+            },
+            {
+              "bg": "Шумен",
+              "en": "Shumen"
+            },
+            {
+              "bg": "Бургас",
+              "en": "Burgas"
+            },
+            {
+              "bg": "София",
+              "en": "Sofia"
+            }
+          ],
+          "answer": 1
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Учебник по география и икономика, 5–7 клас (МОН) [страница – попълва учителят]",
+    "Списък на световното наследство на ЮНЕСКО – България (whc.unesco.org)"
+  ],
+  "review": null,
+  "draft": true
+}

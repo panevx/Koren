@@ -1,0 +1,480 @@
+{
+  "id": "pro-05-heights",
+  "subject": "geography",
+  "free": true,
+  "order": 113,
+  "ages": [
+    "young",
+    "guard"
+  ],
+  "unlock": {
+    "badges": 3
+  },
+  "badge": {
+    "id": "pro-heights",
+    "icon": "geo/musala.webp"
+  },
+  "title": {
+    "bg": "Изпит: върхове и реки",
+    "en": "Exam: peaks and rivers"
+  },
+  "levels": {
+    "young": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "compass",
+          "bg": "Изпит за пътешественици: върхове, реки и планини. Без карта – по памет!",
+          "en": "A test for travellers: peaks, rivers and mountains. No map – from memory!"
+        },
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "Внимавай с числата – някои са много близо.",
+          "en": "Careful with the numbers – some are very close."
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи реката с града.",
+          "en": "Match the river with the town."
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Искър",
+              "en": "Iskar"
+            },
+            "b": {
+              "bg": "Минава край София",
+              "en": "Passes by Sofia"
+            }
+          },
+          {
+            "a": {
+              "bg": "Марица",
+              "en": "Maritsa"
+            },
+            "b": {
+              "bg": "Минава през Пловдив",
+              "en": "Flows through Plovdiv"
+            }
+          },
+          {
+            "a": {
+              "bg": "Янтра",
+              "en": "Yantra"
+            },
+            "b": {
+              "bg": "Минава през Велико Търново",
+              "en": "Flows through Veliko Tarnovo"
+            }
+          },
+          {
+            "a": {
+              "bg": "Дунав",
+              "en": "Danube"
+            },
+            "b": {
+              "bg": "Минава край Русе",
+              "en": "Flows past Ruse"
+            }
+          },
+          {
+            "a": {
+              "bg": "Струма",
+              "en": "Struma"
+            },
+            "b": {
+              "bg": "Минава през Перник",
+              "en": "Flows through Pernik"
+            }
+          }
+        ]
+      },
+      "extra": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди върховете – от най-високия.",
+          "en": "Put the peaks in order – highest first."
+        },
+        "items": [
+          {
+            "bg": "Мусала (Рила)",
+            "en": "Musala (Rila)"
+          },
+          {
+            "bg": "Вихрен (Пирин)",
+            "en": "Vihren (Pirin)"
+          },
+          {
+            "bg": "Ботев (Стара планина)",
+            "en": "Botev (Balkan Mountains)"
+          },
+          {
+            "bg": "Черни връх (Витоша)",
+            "en": "Cherni Vrah (Vitosha)"
+          },
+          {
+            "bg": "Голям Перелик (Родопи)",
+            "en": "Golyam Perelik (Rhodopes)"
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "В коя планина е Мусала?",
+            "en": "In which mountain is Musala?"
+          },
+          "options": [
+            {
+              "bg": "Рила",
+              "en": "Rila"
+            },
+            {
+              "bg": "Пирин",
+              "en": "Pirin"
+            },
+            {
+              "bg": "Витоша",
+              "en": "Vitosha"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Коя река минава през Пловдив?",
+            "en": "Which river flows through Plovdiv?"
+          },
+          "options": [
+            {
+              "bg": "Марица",
+              "en": "Maritsa"
+            },
+            {
+              "bg": "Искър",
+              "en": "Iskar"
+            },
+            {
+              "bg": "Дунав",
+              "en": "Danube"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Коя е най-високата планина на Балканите?",
+            "en": "Which is the highest mountain in the Balkans?"
+          },
+          "options": [
+            {
+              "bg": "Стара планина",
+              "en": "The Balkan Mountains"
+            },
+            {
+              "bg": "Рила",
+              "en": "Rila"
+            },
+            {
+              "bg": "Странджа",
+              "en": "Strandzha"
+            }
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "compass",
+          "bg": "Сега като на олимпиада: числа, рекорди и правила.",
+          "en": "Now like an olympiad: numbers, records and rules."
+        },
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "Помни: „тече САМО в България“ и „цялата дължина“ са различни въпроси!",
+          "en": "Remember: “flows ONLY in Bulgaria” and “total length” are different questions!"
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "С колко метра Вихрен е по-нисък от Мусала?",
+              "en": "By how many metres is Vihren lower than Musala?"
+            },
+            "options": [
+              {
+                "bg": "1",
+                "en": "1"
+              },
+              {
+                "bg": "11",
+                "en": "11"
+              },
+              {
+                "bg": "111",
+                "en": "111"
+              },
+              {
+                "bg": "211",
+                "en": "211"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Колко е дълъг Искър?",
+              "en": "How long is the Iskar?"
+            },
+            "options": [
+              {
+                "bg": "168 км",
+                "en": "168 km"
+              },
+              {
+                "bg": "268 км",
+                "en": "268 km"
+              },
+              {
+                "bg": "368 км",
+                "en": "368 km"
+              },
+              {
+                "bg": "468 км",
+                "en": "468 km"
+              }
+            ],
+            "answer": 2
+          },
+          {
+            "q": {
+              "bg": "Кой е най-високият връх в Стара планина?",
+              "en": "Which is the highest peak of the Balkan Mountains?"
+            },
+            "options": [
+              {
+                "bg": "Вежен",
+                "en": "Vezhen"
+              },
+              {
+                "bg": "Мургаш",
+                "en": "Murgash"
+              },
+              {
+                "bg": "Ботев",
+                "en": "Botev"
+              },
+              {
+                "bg": "Ком",
+                "en": "Kom"
+              }
+            ],
+            "answer": 2
+          },
+          {
+            "q": {
+              "bg": "Коя планина е най-дълга у нас?",
+              "en": "Which mountain is the longest in our country?"
+            },
+            "options": [
+              {
+                "bg": "Родопите",
+                "en": "The Rhodopes"
+              },
+              {
+                "bg": "Рила",
+                "en": "Rila"
+              },
+              {
+                "bg": "Пирин",
+                "en": "Pirin"
+              },
+              {
+                "bg": "Стара планина",
+                "en": "The Balkan Mountains"
+              }
+            ],
+            "answer": 3
+          },
+          {
+            "q": {
+              "bg": "Кой е най-големият язовир в България?",
+              "en": "Which is the largest reservoir in Bulgaria?"
+            },
+            "options": [
+              {
+                "bg": "„Батак“",
+                "en": "“Batak”"
+              },
+              {
+                "bg": "„Искър“",
+                "en": "“Iskar”"
+              },
+              {
+                "bg": "„Жребчево“",
+                "en": "“Zhrebchevo”"
+              },
+              {
+                "bg": "„Кърджали“",
+                "en": "“Kardzhali”"
+              }
+            ],
+            "answer": 1
+          }
+        ]
+      },
+      "extra": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи върха с височината му.",
+          "en": "Match the peak with its height."
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Мусала",
+              "en": "Musala"
+            },
+            "b": {
+              "bg": "2925 м",
+              "en": "2,925 m"
+            }
+          },
+          {
+            "a": {
+              "bg": "Вихрен",
+              "en": "Vihren"
+            },
+            "b": {
+              "bg": "2914 м",
+              "en": "2,914 m"
+            }
+          },
+          {
+            "a": {
+              "bg": "Ботев",
+              "en": "Botev"
+            },
+            "b": {
+              "bg": "2376 м",
+              "en": "2,376 m"
+            }
+          },
+          {
+            "a": {
+              "bg": "Черни връх",
+              "en": "Cherni Vrah"
+            },
+            "b": {
+              "bg": "2290 м",
+              "en": "2,290 m"
+            }
+          },
+          {
+            "a": {
+              "bg": "Голям Перелик",
+              "en": "Golyam Perelik"
+            },
+            "b": {
+              "bg": "2191 м",
+              "en": "2,191 m"
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Коя река извира от Витоша?",
+            "en": "Which river rises on Vitosha?"
+          },
+          "options": [
+            {
+              "bg": "Марица",
+              "en": "Maritsa"
+            },
+            {
+              "bg": "Струма",
+              "en": "Struma"
+            },
+            {
+              "bg": "Искър",
+              "en": "Iskar"
+            },
+            {
+              "bg": "Места",
+              "en": "Mesta"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Коя река пресича цялата Стара планина?",
+            "en": "Which river crosses the whole Balkan Mountains?"
+          },
+          "options": [
+            {
+              "bg": "Янтра",
+              "en": "Yantra"
+            },
+            {
+              "bg": "Вит",
+              "en": "Vit"
+            },
+            {
+              "bg": "Искър",
+              "en": "Iskar"
+            },
+            {
+              "bg": "Тунджа",
+              "en": "Tundzha"
+            }
+          ],
+          "answer": 2
+        },
+        {
+          "q": {
+            "bg": "Коя планина е най-голяма по площ?",
+            "en": "Which mountain is the largest in area?"
+          },
+          "options": [
+            {
+              "bg": "Рила",
+              "en": "Rila"
+            },
+            {
+              "bg": "Родопите",
+              "en": "The Rhodopes"
+            },
+            {
+              "bg": "Пирин",
+              "en": "Pirin"
+            },
+            {
+              "bg": "Стара планина",
+              "en": "The Balkan Mountains"
+            }
+          ],
+          "answer": 1
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Учебник по география и икономика, 5–7 клас (МОН) [страница – попълва учителят]",
+    "Национален статистически институт – Географски данни за България"
+  ],
+  "review": null,
+  "draft": true
+}

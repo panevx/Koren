@@ -1,0 +1,487 @@
+{
+  "id": "pro-04-modern",
+  "subject": "history",
+  "free": true,
+  "order": 112,
+  "ages": [
+    "young",
+    "guard"
+  ],
+  "unlock": {
+    "after": [
+      "pro-03-revival"
+    ]
+  },
+  "badge": {
+    "id": "pro-modern",
+    "icon": "minigame/bulgaria-flag.svg"
+  },
+  "title": {
+    "bg": "Изпит: Третата българска държава",
+    "en": "Exam: the Third Bulgarian State"
+  },
+  "levels": {
+    "young": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "celebrate",
+          "bg": "След Освобождението през 1878 г. България отново е свободна.",
+          "en": "After the Liberation in 1878 Bulgaria is free again."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Днес ще научим кои празници пазят спомена за важните дни.",
+          "en": "Today we learn which holidays keep the memory of the important days."
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи датата с празника.",
+          "en": "Match the date with the holiday."
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "3 март",
+              "en": "3 March"
+            },
+            "b": {
+              "bg": "Освобождението",
+              "en": "The Liberation"
+            }
+          },
+          {
+            "a": {
+              "bg": "6 септември",
+              "en": "6 September"
+            },
+            "b": {
+              "bg": "Съединението",
+              "en": "The Unification"
+            }
+          },
+          {
+            "a": {
+              "bg": "22 септември",
+              "en": "22 September"
+            },
+            "b": {
+              "bg": "Независимостта",
+              "en": "Independence"
+            }
+          },
+          {
+            "a": {
+              "bg": "24 май",
+              "en": "24 May"
+            },
+            "b": {
+              "bg": "Денят на азбуката",
+              "en": "The Day of the Alphabet"
+            }
+          }
+        ]
+      },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "България е свободна от 1878 г.",
+              "en": "Bulgaria has been free since 1878."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "На 6 септември празнуваме Съединението.",
+              "en": "On 6 September we celebrate the Unification."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – от 1885 г.",
+              "en": "Yes – from 1885."
+            }
+          },
+          {
+            "text": {
+              "bg": "След Освобождението столица става Варна.",
+              "en": "After the Liberation Varna becomes the capital."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – София, от 1879 г.",
+              "en": "No – Sofia, from 1879."
+            }
+          },
+          {
+            "text": {
+              "bg": "България е член на Европейския съюз.",
+              "en": "Bulgaria is a member of the European Union."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – от 2007 г.",
+              "en": "Yes – since 2007."
+            }
+          },
+          {
+            "text": {
+              "bg": "На 22 септември празнуваме Баба Марта.",
+              "en": "On 22 September we celebrate Baba Marta."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – Независимостта. Баба Марта е на 1 март.",
+              "en": "No – Independence. Baba Marta is on 1 March."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кой град е столица от 1879 г.?",
+            "en": "Which city has been the capital since 1879?"
+          },
+          "options": [
+            {
+              "bg": "София",
+              "en": "Sofia"
+            },
+            {
+              "bg": "Пловдив",
+              "en": "Plovdiv"
+            },
+            {
+              "bg": "Търново",
+              "en": "Tarnovo"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какво празнуваме на 3 март?",
+            "en": "What do we celebrate on 3 March?"
+          },
+          "options": [
+            {
+              "bg": "Освобождението",
+              "en": "The Liberation"
+            },
+            {
+              "bg": "Коледа",
+              "en": "Christmas"
+            },
+            {
+              "bg": "Деня на азбуката",
+              "en": "The Day of the Alphabet"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Коя година е Освобождението?",
+            "en": "In which year is the Liberation?"
+          },
+          "options": [
+            {
+              "bg": "1185",
+              "en": "1185"
+            },
+            {
+              "bg": "1878",
+              "en": "1878"
+            },
+            {
+              "bg": "2007",
+              "en": "2007"
+            }
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "reading",
+          "bg": "1878: Освобождение. 1879: Търновската конституция, а София става столица.",
+          "en": "1878: Liberation. 1879: the Tarnovo Constitution, and Sofia becomes the capital."
+        },
+        {
+          "hero": "raya",
+          "pose": "map",
+          "bg": "1885: Съединението с Източна Румелия. 1908: обявяване на Независимостта.",
+          "en": "1885: Unification with Eastern Rumelia. 1908: declaration of Independence."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "По-късно България влиза в НАТО (2004) и в Европейския съюз (2007).",
+          "en": "Later Bulgaria joins NATO (2004) and the European Union (2007)."
+        }
+      ],
+      "game": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди събитията – от най-ранното.",
+          "en": "Put the events in order – earliest first."
+        },
+        "items": [
+          {
+            "bg": "Освобождението",
+            "en": "The Liberation"
+          },
+          {
+            "bg": "Търновската конституция",
+            "en": "The Tarnovo Constitution"
+          },
+          {
+            "bg": "Съединението",
+            "en": "The Unification"
+          },
+          {
+            "bg": "Независимостта",
+            "en": "Independence"
+          },
+          {
+            "bg": "България в НАТО",
+            "en": "Bulgaria in NATO"
+          },
+          {
+            "bg": "България в ЕС",
+            "en": "Bulgaria in the EU"
+          }
+        ]
+      },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "С коя област се съединява Княжество България през 1885 г.?",
+              "en": "Which region unites with the Principality of Bulgaria in 1885?"
+            },
+            "options": [
+              {
+                "bg": "Македония",
+                "en": "Macedonia"
+              },
+              {
+                "bg": "Източна Румелия",
+                "en": "Eastern Rumelia"
+              },
+              {
+                "bg": "Добруджа",
+                "en": "Dobruja"
+              },
+              {
+                "bg": "Беломорска Тракия",
+                "en": "Western Thrace"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "В кой град е обявена Независимостта през 1908 г.?",
+              "en": "In which town is Independence declared in 1908?"
+            },
+            "options": [
+              {
+                "bg": "София",
+                "en": "Sofia"
+              },
+              {
+                "bg": "Пловдив",
+                "en": "Plovdiv"
+              },
+              {
+                "bg": "Велико Търново",
+                "en": "Veliko Tarnovo"
+              },
+              {
+                "bg": "Русе",
+                "en": "Ruse"
+              }
+            ],
+            "answer": 2
+          },
+          {
+            "q": {
+              "bg": "Кой е първият княз на България след Освобождението?",
+              "en": "Who is Bulgaria’s first prince after the Liberation?"
+            },
+            "options": [
+              {
+                "bg": "Фердинанд",
+                "en": "Ferdinand"
+              },
+              {
+                "bg": "Александър Батенберг",
+                "en": "Alexander of Battenberg"
+              },
+              {
+                "bg": "Борис III",
+                "en": "Boris III"
+              },
+              {
+                "bg": "Симеон II",
+                "en": "Simeon II"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Коя битка печели България след Съединението през 1885 г.?",
+              "en": "Which battle does Bulgaria win after the Unification in 1885?"
+            },
+            "options": [
+              {
+                "bg": "При Сливница",
+                "en": "At Slivnitsa"
+              },
+              {
+                "bg": "При Шипка",
+                "en": "At Shipka"
+              },
+              {
+                "bg": "При Клокотница",
+                "en": "At Klokotnitsa"
+              },
+              {
+                "bg": "При Одрин",
+                "en": "At Adrianople"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Кой град е столица на Източна Румелия?",
+              "en": "Which city is the capital of Eastern Rumelia?"
+            },
+            "options": [
+              {
+                "bg": "София",
+                "en": "Sofia"
+              },
+              {
+                "bg": "Варна",
+                "en": "Varna"
+              },
+              {
+                "bg": "Пловдив",
+                "en": "Plovdiv"
+              },
+              {
+                "bg": "Бургас",
+                "en": "Burgas"
+              }
+            ],
+            "answer": 2
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Колко години минават от Освобождението до Независимостта?",
+            "en": "How many years pass from the Liberation to Independence?"
+          },
+          "options": [
+            {
+              "bg": "3",
+              "en": "3"
+            },
+            {
+              "bg": "13",
+              "en": "13"
+            },
+            {
+              "bg": "30",
+              "en": "30"
+            },
+            {
+              "bg": "50",
+              "en": "50"
+            }
+          ],
+          "answer": 2
+        },
+        {
+          "q": {
+            "bg": "В кой град е приета първата българска конституция?",
+            "en": "In which town is the first Bulgarian constitution adopted?"
+          },
+          "options": [
+            {
+              "bg": "Велико Търново",
+              "en": "Veliko Tarnovo"
+            },
+            {
+              "bg": "София",
+              "en": "Sofia"
+            },
+            {
+              "bg": "Пловдив",
+              "en": "Plovdiv"
+            },
+            {
+              "bg": "Шумен",
+              "en": "Shumen"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Коя година България влиза в НАТО?",
+            "en": "In which year does Bulgaria join NATO?"
+          },
+          "options": [
+            {
+              "bg": "1989",
+              "en": "1989"
+            },
+            {
+              "bg": "2004",
+              "en": "2004"
+            },
+            {
+              "bg": "2007",
+              "en": "2007"
+            },
+            {
+              "bg": "1878",
+              "en": "1878"
+            }
+          ],
+          "answer": 1
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Учебник по история и цивилизации, 5–7 клас (МОН) [страница – попълва учителят]",
+    "Конституция на Република България; Закон за празниците (Кодекс на труда, чл. 154)"
+  ],
+  "review": null,
+  "draft": true
+}

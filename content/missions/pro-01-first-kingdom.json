@@ -1,0 +1,502 @@
+{
+  "id": "pro-01-first-kingdom",
+  "subject": "history",
+  "free": true,
+  "order": 109,
+  "ages": [
+    "young",
+    "guard"
+  ],
+  "unlock": {
+    "badges": 3
+  },
+  "badge": {
+    "id": "pro-first-kingdom",
+    "icon": "history/medieval-throne.webp"
+  },
+  "title": {
+    "bg": "Изпит: Първото българско царство",
+    "en": "Exam: the First Bulgarian Empire"
+  },
+  "levels": {
+    "young": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "explorer",
+          "bg": "Това е изпитание за истински историци! Минаваме през цялото Първо българско царство.",
+          "en": "This is a test for real historians! We cross the whole First Bulgarian Empire."
+        },
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "То започва с хан Аспарух през 681 г. и свършва през 1018 г., когато Византия го завладява.",
+          "en": "It begins with Khan Asparuh in 681 and ends in 1018, when Byzantium conquers it."
+        }
+      ],
+      "game": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди владетелите по време – от най-ранния.",
+          "en": "Put the rulers in order of time – earliest first."
+        },
+        "items": [
+          {
+            "bg": "Хан Аспарух",
+            "en": "Khan Asparuh"
+          },
+          {
+            "bg": "Хан Крум",
+            "en": "Khan Krum"
+          },
+          {
+            "bg": "Княз Борис I",
+            "en": "Prince Boris I"
+          },
+          {
+            "bg": "Цар Симеон",
+            "en": "Tsar Simeon"
+          },
+          {
+            "bg": "Цар Самуил",
+            "en": "Tsar Samuel"
+          }
+        ]
+      },
+      "extra": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи владетеля с делото му.",
+          "en": "Match the ruler with his deed."
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Аспарух",
+              "en": "Asparuh"
+            },
+            "b": {
+              "bg": "Основава държавата",
+              "en": "Founds the state"
+            }
+          },
+          {
+            "a": {
+              "bg": "Крум",
+              "en": "Krum"
+            },
+            "b": {
+              "bg": "Пише първите закони",
+              "en": "Writes the first laws"
+            }
+          },
+          {
+            "a": {
+              "bg": "Борис I",
+              "en": "Boris I"
+            },
+            "b": {
+              "bg": "Покръства българите",
+              "en": "Christianises the Bulgarians"
+            }
+          },
+          {
+            "a": {
+              "bg": "Симеон",
+              "en": "Simeon"
+            },
+            "b": {
+              "bg": "Златният век",
+              "en": "The Golden Age"
+            }
+          },
+          {
+            "a": {
+              "bg": "Самуил",
+              "en": "Samuel"
+            },
+            "b": {
+              "bg": "Воюва с Василий II",
+              "en": "Fights Basil II"
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Коя година свършва Първото българско царство?",
+            "en": "In which year does the First Bulgarian Empire end?"
+          },
+          "options": [
+            {
+              "bg": "1018",
+              "en": "1018"
+            },
+            {
+              "bg": "681",
+              "en": "681"
+            },
+            {
+              "bg": "1878",
+              "en": "1878"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кой владетел покръства българите?",
+            "en": "Which ruler christianises the Bulgarians?"
+          },
+          "options": [
+            {
+              "bg": "Борис I",
+              "en": "Boris I"
+            },
+            {
+              "bg": "Крум",
+              "en": "Krum"
+            },
+            {
+              "bg": "Аспарух",
+              "en": "Asparuh"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Как се казва времето на цар Симеон?",
+            "en": "What is Tsar Simeon’s time called?"
+          },
+          "options": [
+            {
+              "bg": "Златен век",
+              "en": "The Golden Age"
+            },
+            {
+              "bg": "Каменна епоха",
+              "en": "The Stone Age"
+            },
+            {
+              "bg": "Ново време",
+              "en": "Modern times"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "reading",
+          "bg": "Първото българско царство трае над 330 години – от 681 до 1018 г.",
+          "en": "The First Bulgarian Empire lasts over 330 years – from 681 to 1018."
+        },
+        {
+          "hero": "raya",
+          "pose": "map",
+          "bg": "Столиците му са Плиска, Преслав и накрая Охрид.",
+          "en": "Its capitals are Pliska, Preslav and finally Ohrid."
+        },
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "Днес – като на контролно: години, имена, причини и следствия.",
+          "en": "Today it is like a school test: years, names, causes and effects."
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Кой император сключва мир с Аспарух през 681 г.?",
+              "en": "Which emperor makes peace with Asparuh in 681?"
+            },
+            "options": [
+              {
+                "bg": "Юстиниан II",
+                "en": "Justinian II"
+              },
+              {
+                "bg": "Константин IV",
+                "en": "Constantine IV"
+              },
+              {
+                "bg": "Никифор I",
+                "en": "Nikephoros I"
+              },
+              {
+                "bg": "Василий II",
+                "en": "Basil II"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Кой хан помага на Юстиниан II да си върне трона и получава титлата „кесар“?",
+              "en": "Which khan helps Justinian II regain his throne and receives the title “caesar”?"
+            },
+            "options": [
+              {
+                "bg": "Тервел",
+                "en": "Tervel"
+              },
+              {
+                "bg": "Крум",
+                "en": "Krum"
+              },
+              {
+                "bg": "Омуртаг",
+                "en": "Omurtag"
+              },
+              {
+                "bg": "Аспарух",
+                "en": "Asparuh"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Кой император загива в битка с хан Крум през 811 г.?",
+              "en": "Which emperor dies in battle with Khan Krum in 811?"
+            },
+            "options": [
+              {
+                "bg": "Константин IV",
+                "en": "Constantine IV"
+              },
+              {
+                "bg": "Никифор I",
+                "en": "Nikephoros I"
+              },
+              {
+                "bg": "Василий II",
+                "en": "Basil II"
+              },
+              {
+                "bg": "Лъв V",
+                "en": "Leo V"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Защо Борис I приема християнството?",
+              "en": "Why does Boris I accept Christianity?"
+            },
+            "options": [
+              {
+                "bg": "За да обедини народа и да е равен на християнските държави",
+                "en": "To unite the people and be equal to the Christian states"
+              },
+              {
+                "bg": "За да спечели една битка",
+                "en": "To win one battle"
+              },
+              {
+                "bg": "Защото Симеон го кара",
+                "en": "Because Simeon makes him"
+              },
+              {
+                "bg": "Заради търговия с Китай",
+                "en": "For trade with China"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Какъв прякор получава Василий II след 1014 г.?",
+              "en": "What nickname does Basil II get after 1014?"
+            },
+            "options": [
+              {
+                "bg": "Освободител",
+                "en": "Liberator"
+              },
+              {
+                "bg": "Строител",
+                "en": "Builder"
+              },
+              {
+                "bg": "Българоубиец",
+                "en": "Bulgar-slayer"
+              },
+              {
+                "bg": "Мъдрия",
+                "en": "the Wise"
+              }
+            ],
+            "answer": 2
+          }
+        ]
+      },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Плиска, Преслав и Охрид са столици на Първото царство.",
+              "en": "Pliska, Preslav and Ohrid are capitals of the First Empire."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – в този ред.",
+              "en": "Yes – in that order."
+            }
+          },
+          {
+            "text": {
+              "bg": "Битката при Ахелой е при цар Самуил.",
+              "en": "The Battle of Achelous is under Tsar Samuel."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – при цар Симеон, през 917 г.",
+              "en": "No – under Tsar Simeon, in 917."
+            }
+          },
+          {
+            "text": {
+              "bg": "Покръстването е преди Златния век.",
+              "en": "The Christianisation is before the Golden Age."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – 864 г., а Симеон управлява от 893 г.",
+              "en": "Yes – 864, while Simeon rules from 893."
+            }
+          },
+          {
+            "text": {
+              "bg": "Първото царство пада под османска власт.",
+              "en": "The First Empire falls to the Ottomans."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – под византийска власт, през 1018 г.",
+              "en": "No – to Byzantium, in 1018."
+            }
+          },
+          {
+            "text": {
+              "bg": "Хан Тервел помага на византийски император.",
+              "en": "Khan Tervel helps a Byzantine emperor."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – на Юстиниан II.",
+              "en": "Yes – Justinian II."
+            }
+          },
+          {
+            "text": {
+              "bg": "Битката при Беласица е през 1014 г.",
+              "en": "The Battle of Belasitsa is in 1014."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – тежко поражение за Самуил.",
+              "en": "Yes – a heavy defeat for Samuel."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Колко години трае Първото царство (681–1018)?",
+            "en": "How many years does the First Empire last (681–1018)?"
+          },
+          "options": [
+            {
+              "bg": "137",
+              "en": "137"
+            },
+            {
+              "bg": "337",
+              "en": "337"
+            },
+            {
+              "bg": "537",
+              "en": "537"
+            },
+            {
+              "bg": "1018",
+              "en": "1018"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Коя е последната столица на Първото царство?",
+            "en": "Which is the last capital of the First Empire?"
+          },
+          "options": [
+            {
+              "bg": "Плиска",
+              "en": "Pliska"
+            },
+            {
+              "bg": "Преслав",
+              "en": "Preslav"
+            },
+            {
+              "bg": "Охрид",
+              "en": "Ohrid"
+            },
+            {
+              "bg": "Търново",
+              "en": "Tarnovo"
+            }
+          ],
+          "answer": 2
+        },
+        {
+          "q": {
+            "bg": "Кой е бащата на цар Симеон?",
+            "en": "Who is Tsar Simeon’s father?"
+          },
+          "options": [
+            {
+              "bg": "Крум",
+              "en": "Krum"
+            },
+            {
+              "bg": "Омуртаг",
+              "en": "Omurtag"
+            },
+            {
+              "bg": "Борис I",
+              "en": "Boris I"
+            },
+            {
+              "bg": "Тервел",
+              "en": "Tervel"
+            }
+          ],
+          "answer": 2
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Учебник по история и цивилизации, 5–7 клас (МОН) [страница – попълва учителят]",
+    "Енциклопедия „България“, БАН – статии за владетелите"
+  ],
+  "review": null,
+  "draft": true
+}

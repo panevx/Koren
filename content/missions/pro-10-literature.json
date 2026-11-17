@@ -1,0 +1,517 @@
+{
+  "id": "pro-10-literature",
+  "subject": "language",
+  "free": true,
+  "order": 118,
+  "ages": [
+    "young",
+    "guard"
+  ],
+  "unlock": {
+    "after": [
+      "pro-09-grammar"
+    ]
+  },
+  "badge": {
+    "id": "pro-literature",
+    "icon": "game/letter-tile.webp"
+  },
+  "title": {
+    "bg": "Изпит: българската литература",
+    "en": "Exam: Bulgarian literature"
+  },
+  "levels": {
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Българските писатели са ни оставили приказки, стихове и романи.",
+          "en": "Bulgarian writers have left us tales, poems and novels."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Свържи писателя с книгата!",
+          "en": "Match the writer with the book!"
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи писателя с произведението.",
+          "en": "Match the writer with the work."
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Ран Босилек",
+              "en": "Ran Bosilek"
+            },
+            "b": {
+              "bg": "„Патиланци“",
+              "en": "“Patilantsi”"
+            }
+          },
+          {
+            "a": {
+              "bg": "Елин Пелин",
+              "en": "Elin Pelin"
+            },
+            "b": {
+              "bg": "„Ян Бибиян“",
+              "en": "“Yan Bibiyan”"
+            }
+          },
+          {
+            "a": {
+              "bg": "Иван Вазов",
+              "en": "Ivan Vazov"
+            },
+            "b": {
+              "bg": "„Под игото“",
+              "en": "“Under the Yoke”"
+            }
+          },
+          {
+            "a": {
+              "bg": "Христо Ботев",
+              "en": "Hristo Botev"
+            },
+            "b": {
+              "bg": "„Хаджи Димитър“",
+              "en": "“Hadzhi Dimitar”"
+            }
+          }
+        ]
+      },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Иван Вазов е написал „Под игото“.",
+              "en": "Ivan Vazov wrote “Under the Yoke”."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – роман за Априлското въстание.",
+              "en": "Yes – a novel about the April Uprising."
+            }
+          },
+          {
+            "text": {
+              "bg": "„Ян Бибиян“ е от Елин Пелин.",
+              "en": "“Yan Bibiyan” is by Elin Pelin."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "Ботев е писал само романи.",
+              "en": "Botev wrote only novels."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – стихове и статии.",
+              "en": "No – poems and articles."
+            }
+          },
+          {
+            "text": {
+              "bg": "Ран Босилек пише за деца.",
+              "en": "Ran Bosilek writes for children."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – „Патиланци“ и още много.",
+              "en": "Yes – “Patilantsi” and many more."
+            }
+          },
+          {
+            "text": {
+              "bg": "„Под игото“ е готварска книга.",
+              "en": "“Under the Yoke” is a cookbook."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – роман.",
+              "en": "No – a novel."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кой е написал „Под игото“?",
+            "en": "Who wrote “Under the Yoke”?"
+          },
+          "options": [
+            {
+              "bg": "Иван Вазов",
+              "en": "Ivan Vazov"
+            },
+            {
+              "bg": "Христо Ботев",
+              "en": "Hristo Botev"
+            },
+            {
+              "bg": "Паисий",
+              "en": "Paisius"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кой е написал „Ян Бибиян“?",
+            "en": "Who wrote “Yan Bibiyan”?"
+          },
+          "options": [
+            {
+              "bg": "Иван Вазов",
+              "en": "Ivan Vazov"
+            },
+            {
+              "bg": "Елин Пелин",
+              "en": "Elin Pelin"
+            },
+            {
+              "bg": "Васил Левски",
+              "en": "Vasil Levski"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Какво е „Хаджи Димитър“?",
+            "en": "What is “Hadzhi Dimitar”?"
+          },
+          "options": [
+            {
+              "bg": "Стихотворение на Ботев",
+              "en": "A poem by Botev"
+            },
+            {
+              "bg": "Роман на Вазов",
+              "en": "A novel by Vazov"
+            },
+            {
+              "bg": "Песен на Ран Босилек",
+              "en": "A song by Ran Bosilek"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Българската литература – от Паисий до Йовков.",
+          "en": "Bulgarian literature – from Paisius to Yovkov."
+        },
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "Изпит: автори, произведения и герои.",
+          "en": "The test: authors, works and characters."
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи автора с произведението.",
+          "en": "Match the author with the work."
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Иван Вазов",
+              "en": "Ivan Vazov"
+            },
+            "b": {
+              "bg": "„Под игото“",
+              "en": "“Under the Yoke”"
+            }
+          },
+          {
+            "a": {
+              "bg": "Алеко Константинов",
+              "en": "Aleko Konstantinov"
+            },
+            "b": {
+              "bg": "„Бай Ганьо“",
+              "en": "“Bay Ganyo”"
+            }
+          },
+          {
+            "a": {
+              "bg": "Йордан Йовков",
+              "en": "Yordan Yovkov"
+            },
+            "b": {
+              "bg": "„Старопланински легенди“",
+              "en": "“Legends of the Balkan Mountains”"
+            }
+          },
+          {
+            "a": {
+              "bg": "Христо Ботев",
+              "en": "Hristo Botev"
+            },
+            "b": {
+              "bg": "„Хаджи Димитър“",
+              "en": "“Hadzhi Dimitar”"
+            }
+          },
+          {
+            "a": {
+              "bg": "Елин Пелин",
+              "en": "Elin Pelin"
+            },
+            "b": {
+              "bg": "„Ян Бибиян“",
+              "en": "“Yan Bibiyan”"
+            }
+          },
+          {
+            "a": {
+              "bg": "Пейо Яворов",
+              "en": "Peyo Yavorov"
+            },
+            "b": {
+              "bg": "„Арменци“",
+              "en": "“Armenians”"
+            }
+          }
+        ]
+      },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Кого наричат „патриарх на българската литература“?",
+              "en": "Who is called the “patriarch of Bulgarian literature”?"
+            },
+            "options": [
+              {
+                "bg": "Христо Ботев",
+                "en": "Hristo Botev"
+              },
+              {
+                "bg": "Иван Вазов",
+                "en": "Ivan Vazov"
+              },
+              {
+                "bg": "Йордан Йовков",
+                "en": "Yordan Yovkov"
+              },
+              {
+                "bg": "Елин Пелин",
+                "en": "Elin Pelin"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Как се казва главният герой на „Под игото“?",
+              "en": "What is the name of the hero of “Under the Yoke”?"
+            },
+            "options": [
+              {
+                "bg": "Бай Ганьо",
+                "en": "Bay Ganyo"
+              },
+              {
+                "bg": "Ян Бибиян",
+                "en": "Yan Bibiyan"
+              },
+              {
+                "bg": "Бойчо Огнянов",
+                "en": "Boycho Ognyanov"
+              },
+              {
+                "bg": "Хаджи Димитър",
+                "en": "Hadzhi Dimitar"
+              }
+            ],
+            "answer": 2
+          },
+          {
+            "q": {
+              "bg": "За какво пише Алеко Константинов в „До Чикаго и назад“?",
+              "en": "What does Aleko Konstantinov write about in “To Chicago and Back”?"
+            },
+            "options": [
+              {
+                "bg": "За пътуването си до Америка",
+                "en": "His journey to America"
+              },
+              {
+                "bg": "За война",
+                "en": "A war"
+              },
+              {
+                "bg": "За дракон",
+                "en": "A dragon"
+              },
+              {
+                "bg": "За морска буря",
+                "en": "A storm at sea"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "В кое градче се развива „Под игото“?",
+              "en": "In which small town is “Under the Yoke” set?"
+            },
+            "options": [
+              {
+                "bg": "Бяла черква",
+                "en": "Byala Cherkva"
+              },
+              {
+                "bg": "Варна",
+                "en": "Varna"
+              },
+              {
+                "bg": "Париж",
+                "en": "Paris"
+              },
+              {
+                "bg": "Габрово",
+                "en": "Gabrovo"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Кой поет загива с четата си през 1876 г.?",
+              "en": "Which poet dies with his band in 1876?"
+            },
+            "options": [
+              {
+                "bg": "Иван Вазов",
+                "en": "Ivan Vazov"
+              },
+              {
+                "bg": "Пейо Яворов",
+                "en": "Peyo Yavorov"
+              },
+              {
+                "bg": "Христо Ботев",
+                "en": "Hristo Botev"
+              },
+              {
+                "bg": "Йордан Йовков",
+                "en": "Yordan Yovkov"
+              }
+            ],
+            "answer": 2
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кой е написал „Бай Ганьо“?",
+            "en": "Who wrote “Bay Ganyo”?"
+          },
+          "options": [
+            {
+              "bg": "Йордан Йовков",
+              "en": "Yordan Yovkov"
+            },
+            {
+              "bg": "Алеко Константинов",
+              "en": "Aleko Konstantinov"
+            },
+            {
+              "bg": "Иван Вазов",
+              "en": "Ivan Vazov"
+            },
+            {
+              "bg": "Елин Пелин",
+              "en": "Elin Pelin"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Кой е написал „Старопланински легенди“?",
+            "en": "Who wrote “Legends of the Balkan Mountains”?"
+          },
+          "options": [
+            {
+              "bg": "Христо Ботев",
+              "en": "Hristo Botev"
+            },
+            {
+              "bg": "Паисий",
+              "en": "Paisius"
+            },
+            {
+              "bg": "Йордан Йовков",
+              "en": "Yordan Yovkov"
+            },
+            {
+              "bg": "Ран Босилек",
+              "en": "Ran Bosilek"
+            }
+          ],
+          "answer": 2
+        },
+        {
+          "q": {
+            "bg": "Какво е роман?",
+            "en": "What is a novel?"
+          },
+          "options": [
+            {
+              "bg": "Голямо произведение в проза с много герои",
+              "en": "A long prose work with many characters"
+            },
+            {
+              "bg": "Кратко стихотворение",
+              "en": "A short poem"
+            },
+            {
+              "bg": "Песен",
+              "en": "A song"
+            },
+            {
+              "bg": "Гатанка",
+              "en": "A riddle"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Учебник по български език и литература, 5–7 клас (МОН) [страница – попълва учителят]",
+    "Христоматия по българска литература (МОН)"
+  ],
+  "review": null,
+  "draft": true
+}

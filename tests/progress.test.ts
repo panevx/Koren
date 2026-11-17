@@ -92,10 +92,12 @@ describe('missions for 4–6 year olds only', () => {
     for (const m of only) expect(Object.keys(m.levels), m.id).toEqual(['small'])
   })
 
+  // v0.24: 12 exam missions for 7–14 – a test, too hard for 4–6.
+  const PRO = ['pro-01-first-kingdom', 'pro-02-second-kingdom', 'pro-03-revival', 'pro-04-modern', 'pro-05-heights', 'pro-06-cities', 'pro-07-black-sea', 'pro-08-unesco', 'pro-09-grammar', 'pro-10-literature', 'pro-11-holidays', 'pro-12-grand-exam']
   it('a 4–6 year old sees them; an older child does not', () => {
     // v0.16–0.20: these missions are for 7–14 only — reading (names, sentences, letters) is the game itself.
     const notSmall = MISSIONS.filter((m) => m.ages && !m.ages.includes('small'))
-    expect(notSmall.map((m) => m.id).sort()).toEqual(['ach-07-plates', 'ach-08-borders', 'cult-06-nestinari', 'geo-15-provinces', 'geo-16-neighbours', 'lang-04-glagolitic', 'lang-05-two-alphabets', 'lang-06-proverbs', 'lang-07-sentences', 'lang-10-tale-objects', 'lang-11-hitar-petar', 'lang-12-old-words', 'nat-03-parks'])
+    expect(notSmall.map((m) => m.id).sort()).toEqual(['ach-07-plates', 'ach-08-borders', 'cult-06-nestinari', 'geo-15-provinces', 'geo-16-neighbours', 'lang-04-glagolitic', 'lang-05-two-alphabets', 'lang-06-proverbs', 'lang-07-sentences', 'lang-10-tale-objects', 'lang-11-hitar-petar', 'lang-12-old-words', 'nat-03-parks', ...PRO])
     expect(small.length).toBe(older.length - notSmall.length + 33)
     expect(older.some((m) => m.ages?.includes('small'))).toBe(false)
     for (const m of notSmall) expect(Object.keys(m.levels), m.id).not.toContain('small')

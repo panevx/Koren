@@ -291,6 +291,42 @@
         "play-02-blitz",
         "play-03-hidden"
       ]
+    },
+    {
+      "title": {
+        "bg": "Изпити по история",
+        "en": "History exams"
+      },
+      "missions": [
+        "pro-01-first-kingdom",
+        "pro-02-second-kingdom",
+        "pro-03-revival",
+        "pro-04-modern"
+      ]
+    },
+    {
+      "title": {
+        "bg": "Изпити по география",
+        "en": "Geography exams"
+      },
+      "missions": [
+        "pro-05-heights",
+        "pro-06-cities",
+        "pro-07-black-sea",
+        "pro-08-unesco"
+      ]
+    },
+    {
+      "title": {
+        "bg": "Изпити по език и култура",
+        "en": "Language and culture exams"
+      },
+      "missions": [
+        "pro-09-grammar",
+        "pro-10-literature",
+        "pro-11-holidays",
+        "pro-12-grand-exam"
+      ]
     }
   ]
 }

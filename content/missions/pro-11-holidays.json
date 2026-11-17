@@ -1,0 +1,441 @@
+{
+  "id": "pro-11-holidays",
+  "subject": "culture",
+  "free": true,
+  "order": 119,
+  "ages": [
+    "young",
+    "guard"
+  ],
+  "unlock": {
+    "after": [
+      "pro-10-literature"
+    ]
+  },
+  "badge": {
+    "id": "pro-holidays",
+    "icon": "culture/horo.webp"
+  },
+  "title": {
+    "bg": "Изпит: празничният календар",
+    "en": "Exam: the holiday calendar"
+  },
+  "levels": {
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "celebrate",
+          "bg": "Всяка година има важни празници.",
+          "en": "Every year has important holidays."
+        },
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "Знаеш ли кога са?",
+          "en": "Do you know when they are?"
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи датата с празника.",
+          "en": "Match the date with the holiday."
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "1 март",
+              "en": "1 March"
+            },
+            "b": {
+              "bg": "Баба Марта",
+              "en": "Baba Marta"
+            }
+          },
+          {
+            "a": {
+              "bg": "3 март",
+              "en": "3 March"
+            },
+            "b": {
+              "bg": "Освобождението",
+              "en": "The Liberation"
+            }
+          },
+          {
+            "a": {
+              "bg": "24 май",
+              "en": "24 May"
+            },
+            "b": {
+              "bg": "Денят на азбуката",
+              "en": "The Day of the Alphabet"
+            }
+          },
+          {
+            "a": {
+              "bg": "6 септември",
+              "en": "6 September"
+            },
+            "b": {
+              "bg": "Съединението",
+              "en": "The Unification"
+            }
+          },
+          {
+            "a": {
+              "bg": "1 ноември",
+              "en": "1 November"
+            },
+            "b": {
+              "bg": "Денят на будителите",
+              "en": "Enlighteners’ Day"
+            }
+          }
+        ]
+      },
+      "extra": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди празниците от началото на годината.",
+          "en": "Put the holidays in order from the start of the year."
+        },
+        "items": [
+          {
+            "bg": "Нова година",
+            "en": "New Year"
+          },
+          {
+            "bg": "Баба Марта",
+            "en": "Baba Marta"
+          },
+          {
+            "bg": "Гергьовден",
+            "en": "St George’s Day"
+          },
+          {
+            "bg": "Денят на азбуката",
+            "en": "Day of the Alphabet"
+          },
+          {
+            "bg": "Денят на будителите",
+            "en": "Enlighteners’ Day"
+          },
+          {
+            "bg": "Коледа",
+            "en": "Christmas"
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кога е Коледа?",
+            "en": "When is Christmas?"
+          },
+          "options": [
+            {
+              "bg": "25 декември",
+              "en": "25 December"
+            },
+            {
+              "bg": "1 март",
+              "en": "1 March"
+            },
+            {
+              "bg": "6 май",
+              "en": "6 May"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кога е Гергьовден?",
+            "en": "When is St George’s Day?"
+          },
+          "options": [
+            {
+              "bg": "3 март",
+              "en": "3 March"
+            },
+            {
+              "bg": "6 май",
+              "en": "6 May"
+            },
+            {
+              "bg": "1 ноември",
+              "en": "1 November"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Кой празник е на 24 май?",
+            "en": "Which holiday is on 24 May?"
+          },
+          "options": [
+            {
+              "bg": "Баба Марта",
+              "en": "Baba Marta"
+            },
+            {
+              "bg": "Коледа",
+              "en": "Christmas"
+            },
+            {
+              "bg": "Денят на азбуката",
+              "en": "The Day of the Alphabet"
+            }
+          ],
+          "answer": 2
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "celebrate",
+          "bg": "Някои празници са национални, други – народни обичаи.",
+          "en": "Some holidays are national, others are folk customs."
+        },
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "Изпитът: дати и какво помним с тях.",
+          "en": "The test: dates and what we remember with them."
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи датата с празника.",
+          "en": "Match the date with the holiday."
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "3 март",
+              "en": "3 March"
+            },
+            "b": {
+              "bg": "Освобождението (1878)",
+              "en": "The Liberation (1878)"
+            }
+          },
+          {
+            "a": {
+              "bg": "6 май",
+              "en": "6 May"
+            },
+            "b": {
+              "bg": "Ден на храбростта и Гергьовден",
+              "en": "Day of Valour and St George’s Day"
+            }
+          },
+          {
+            "a": {
+              "bg": "24 май",
+              "en": "24 May"
+            },
+            "b": {
+              "bg": "Ден на азбуката, просветата и културата",
+              "en": "Day of the Alphabet, Education and Culture"
+            }
+          },
+          {
+            "a": {
+              "bg": "6 септември",
+              "en": "6 September"
+            },
+            "b": {
+              "bg": "Съединението (1885)",
+              "en": "The Unification (1885)"
+            }
+          },
+          {
+            "a": {
+              "bg": "22 септември",
+              "en": "22 September"
+            },
+            "b": {
+              "bg": "Независимостта (1908)",
+              "en": "Independence (1908)"
+            }
+          },
+          {
+            "a": {
+              "bg": "1 ноември",
+              "en": "1 November"
+            },
+            "b": {
+              "bg": "Ден на народните будители",
+              "en": "Day of the National Enlighteners"
+            }
+          }
+        ]
+      },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Националният празник е на 3 март.",
+              "en": "The national holiday is on 3 March."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "Денят на храбростта е и празник на Българската армия.",
+              "en": "The Day of Valour is also the day of the Bulgarian Army."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – на 6 май.",
+              "en": "Yes – on 6 May."
+            }
+          },
+          {
+            "text": {
+              "bg": "Независимостта е обявена през 1878 г.",
+              "en": "Independence was declared in 1878."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – през 1908 г.",
+              "en": "No – in 1908."
+            }
+          },
+          {
+            "text": {
+              "bg": "Съединението е на Княжество България и Източна Румелия.",
+              "en": "The Unification joins the Principality of Bulgaria and Eastern Rumelia."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – през 1885 г.",
+              "en": "Yes – in 1885."
+            }
+          },
+          {
+            "text": {
+              "bg": "Денят на будителите е на 24 май.",
+              "en": "Enlighteners’ Day is on 24 May."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – на 1 ноември.",
+              "en": "No – on 1 November."
+            }
+          },
+          {
+            "text": {
+              "bg": "На 2 юни почитаме Ботев и загиналите за свободата.",
+              "en": "On 2 June we honour Botev and those who died for freedom."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – в 12 часа свирят сирени.",
+              "en": "Yes – sirens sound at noon."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кой празник е на 22 септември?",
+            "en": "Which holiday is on 22 September?"
+          },
+          "options": [
+            {
+              "bg": "Съединението",
+              "en": "The Unification"
+            },
+            {
+              "bg": "Независимостта",
+              "en": "Independence"
+            },
+            {
+              "bg": "Освобождението",
+              "en": "The Liberation"
+            },
+            {
+              "bg": "Денят на будителите",
+              "en": "Enlighteners’ Day"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Коя година е Съединението?",
+            "en": "In which year is the Unification?"
+          },
+          "options": [
+            {
+              "bg": "1878",
+              "en": "1878"
+            },
+            {
+              "bg": "1885",
+              "en": "1885"
+            },
+            {
+              "bg": "1908",
+              "en": "1908"
+            },
+            {
+              "bg": "1944",
+              "en": "1944"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Кой е националният празник на България?",
+            "en": "Which is Bulgaria’s national holiday?"
+          },
+          "options": [
+            {
+              "bg": "24 май",
+              "en": "24 May"
+            },
+            {
+              "bg": "6 септември",
+              "en": "6 September"
+            },
+            {
+              "bg": "3 март",
+              "en": "3 March"
+            },
+            {
+              "bg": "1 ноември",
+              "en": "1 November"
+            }
+          ],
+          "answer": 2
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Учебник по история и цивилизации, 5–7 клас (МОН) [страница – попълва учителят]",
+    "Кодекс на труда, чл. 154 – официални празници"
+  ],
+  "review": null,
+  "draft": true
+}

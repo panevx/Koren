@@ -1,0 +1,649 @@
+{
+  "id": "pro-12-grand-exam",
+  "subject": "culture",
+  "free": true,
+  "order": 120,
+  "ages": [
+    "young",
+    "guard"
+  ],
+  "unlock": {
+    "after": [
+      "pro-11-holidays"
+    ]
+  },
+  "badge": {
+    "id": "pro-grand-exam",
+    "icon": "science/invention-medal.webp"
+  },
+  "title": {
+    "bg": "Голямото изпитание",
+    "en": "The Grand Exam"
+  },
+  "levels": {
+    "young": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "treasure",
+          "bg": "Последното изпитание! Въпроси от всички светове.",
+          "en": "The final test! Questions from every world."
+        },
+        {
+          "hero": "raya",
+          "pose": "encourage",
+          "bg": "Включи таймера, ако си смел.",
+          "en": "Turn on the timer if you are brave."
+        }
+      ],
+      "game": {
+        "type": "blitz",
+        "prompt": {
+          "bg": "Шест бързи въпроса!",
+          "en": "Six quick questions!"
+        },
+        "questions": [
+          {
+            "q": {
+              "bg": "Коя е столицата на България?",
+              "en": "What is the capital of Bulgaria?"
+            },
+            "options": [
+              {
+                "bg": "Пловдив",
+                "en": "Plovdiv"
+              },
+              {
+                "bg": "София",
+                "en": "Sofia"
+              },
+              {
+                "bg": "Варна",
+                "en": "Varna"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Кой е най-високият връх у нас?",
+              "en": "Which is our highest peak?"
+            },
+            "options": [
+              {
+                "bg": "Мусала",
+                "en": "Musala"
+              },
+              {
+                "bg": "Вихрен",
+                "en": "Vihren"
+              },
+              {
+                "bg": "Ботев",
+                "en": "Botev"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Кой хан основава българската държава на Дунав?",
+              "en": "Which khan founds the Bulgarian state on the Danube?"
+            },
+            "options": [
+              {
+                "bg": "Крум",
+                "en": "Krum"
+              },
+              {
+                "bg": "Аспарух",
+                "en": "Asparuh"
+              },
+              {
+                "bg": "Тервел",
+                "en": "Tervel"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Какво празнуваме на 24 май?",
+              "en": "What do we celebrate on 24 May?"
+            },
+            "options": [
+              {
+                "bg": "Освобождението",
+                "en": "The Liberation"
+              },
+              {
+                "bg": "Деня на азбуката",
+                "en": "The Day of the Alphabet"
+              },
+              {
+                "bg": "Баба Марта",
+                "en": "Baba Marta"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "С коя държава е границата по Дунав?",
+              "en": "Which country is across the Danube border?"
+            },
+            "options": [
+              {
+                "bg": "Румъния",
+                "en": "Romania"
+              },
+              {
+                "bg": "Гърция",
+                "en": "Greece"
+              },
+              {
+                "bg": "Турция",
+                "en": "Turkey"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Колко букви има българската азбука?",
+              "en": "How many letters are in the Bulgarian alphabet?"
+            },
+            "options": [
+              {
+                "bg": "26",
+                "en": "26"
+              },
+              {
+                "bg": "30",
+                "en": "30"
+              },
+              {
+                "bg": "33",
+                "en": "33"
+              }
+            ],
+            "answer": 1
+          }
+        ],
+        "seconds": 15
+      },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Рила е по-висока от Стара планина.",
+              "en": "Rila is higher than the Balkan Mountains."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – Мусала е най-високият връх.",
+              "en": "Yes – Musala is the highest peak."
+            }
+          },
+          {
+            "text": {
+              "bg": "Ботев е роден в Карлово.",
+              "en": "Botev was born in Karlovo."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – в Калофер. Карлово е градът на Левски.",
+              "en": "No – in Kalofer. Karlovo is Levski’s town."
+            }
+          },
+          {
+            "text": {
+              "bg": "Шопската салата е от края около София.",
+              "en": "Shopska salad comes from the region around Sofia."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "Черно море е на запад.",
+              "en": "The Black Sea is to the west."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – на изток.",
+              "en": "No – to the east."
+            }
+          },
+          {
+            "text": {
+              "bg": "Кирилицата е създадена в България.",
+              "en": "The Cyrillic alphabet was created in Bulgaria."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – в Преслав.",
+              "en": "Yes – in Preslav."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кой е Апостола на свободата?",
+            "en": "Who is the Apostle of Freedom?"
+          },
+          "options": [
+            {
+              "bg": "Левски",
+              "en": "Levski"
+            },
+            {
+              "bg": "Ботев",
+              "en": "Botev"
+            },
+            {
+              "bg": "Паисий",
+              "en": "Paisius"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Коя река тече през Пловдив?",
+            "en": "Which river flows through Plovdiv?"
+          },
+          "options": [
+            {
+              "bg": "Дунав",
+              "en": "Danube"
+            },
+            {
+              "bg": "Марица",
+              "en": "Maritsa"
+            },
+            {
+              "bg": "Искър",
+              "en": "Iskar"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Кое животно живее в Сребърна?",
+            "en": "Which animal lives at Srebarna?"
+          },
+          "options": [
+            {
+              "bg": "Кенгуру",
+              "en": "A kangaroo"
+            },
+            {
+              "bg": "Пингвин",
+              "en": "A penguin"
+            },
+            {
+              "bg": "Къдроглав пеликан",
+              "en": "A Dalmatian pelican"
+            }
+          ],
+          "answer": 2
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "treasure",
+          "bg": "Финалният изпит – осем въпроса от историята, езика, културата и географията.",
+          "en": "The final exam – eight questions from history, language, culture and geography."
+        },
+        {
+          "hero": "raya",
+          "pose": "encourage",
+          "bg": "Ако минеш, наистина познаваш България!",
+          "en": "If you pass, you truly know Bulgaria!"
+        }
+      ],
+      "game": {
+        "type": "blitz",
+        "prompt": {
+          "bg": "Осем трудни въпроса!",
+          "en": "Eight hard questions!"
+        },
+        "questions": [
+          {
+            "q": {
+              "bg": "Коя година е битката при Клокотница?",
+              "en": "In which year is the battle of Klokotnitsa?"
+            },
+            "options": [
+              {
+                "bg": "1185",
+                "en": "1185"
+              },
+              {
+                "bg": "1205",
+                "en": "1205"
+              },
+              {
+                "bg": "1230",
+                "en": "1230"
+              },
+              {
+                "bg": "1393",
+                "en": "1393"
+              }
+            ],
+            "answer": 2
+          },
+          {
+            "q": {
+              "bg": "Кой пише „Неделник“?",
+              "en": "Who writes the “Nedelnik”?"
+            },
+            "options": [
+              {
+                "bg": "Паисий",
+                "en": "Paisius"
+              },
+              {
+                "bg": "Софроний Врачански",
+                "en": "Sophronius of Vratsa"
+              },
+              {
+                "bg": "Петър Берон",
+                "en": "Petar Beron"
+              },
+              {
+                "bg": "Георги Раковски",
+                "en": "Georgi Rakovski"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Колко висок е Мусала?",
+              "en": "How high is Musala?"
+            },
+            "options": [
+              {
+                "bg": "2914 м",
+                "en": "2,914 m"
+              },
+              {
+                "bg": "2925 м",
+                "en": "2,925 m"
+              },
+              {
+                "bg": "2376 м",
+                "en": "2,376 m"
+              },
+              {
+                "bg": "2290 м",
+                "en": "2,290 m"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Кой открива бактерията на киселото мляко?",
+              "en": "Who discovers the yoghurt bacterium?"
+            },
+            "options": [
+              {
+                "bg": "Джон Атанасов",
+                "en": "John Atanasoff"
+              },
+              {
+                "bg": "Иля Мечников",
+                "en": "Ilya Mechnikov"
+              },
+              {
+                "bg": "Стамен Григоров",
+                "en": "Stamen Grigorov"
+              },
+              {
+                "bg": "Луи Пастьор",
+                "en": "Louis Pasteur"
+              }
+            ],
+            "answer": 2
+          },
+          {
+            "q": {
+              "bg": "Кой град е столица на Източна Румелия?",
+              "en": "Which city is the capital of Eastern Rumelia?"
+            },
+            "options": [
+              {
+                "bg": "Пловдив",
+                "en": "Plovdiv"
+              },
+              {
+                "bg": "София",
+                "en": "Sofia"
+              },
+              {
+                "bg": "Варна",
+                "en": "Varna"
+              },
+              {
+                "bg": "Бургас",
+                "en": "Burgas"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Колко обекта на ЮНЕСКО има България?",
+              "en": "How many UNESCO sites does Bulgaria have?"
+            },
+            "options": [
+              {
+                "bg": "3",
+                "en": "3"
+              },
+              {
+                "bg": "7",
+                "en": "7"
+              },
+              {
+                "bg": "10",
+                "en": "10"
+              },
+              {
+                "bg": "20",
+                "en": "20"
+              }
+            ],
+            "answer": 2
+          },
+          {
+            "q": {
+              "bg": "Коя река извира от Витоша?",
+              "en": "Which river rises on Vitosha?"
+            },
+            "options": [
+              {
+                "bg": "Искър",
+                "en": "Iskar"
+              },
+              {
+                "bg": "Марица",
+                "en": "Maritsa"
+              },
+              {
+                "bg": "Места",
+                "en": "Mesta"
+              },
+              {
+                "bg": "Струма",
+                "en": "Struma"
+              }
+            ],
+            "answer": 3
+          },
+          {
+            "q": {
+              "bg": "Кой е авторът на „Бай Ганьо“?",
+              "en": "Who is the author of “Bay Ganyo”?"
+            },
+            "options": [
+              {
+                "bg": "Иван Вазов",
+                "en": "Ivan Vazov"
+              },
+              {
+                "bg": "Алеко Константинов",
+                "en": "Aleko Konstantinov"
+              },
+              {
+                "bg": "Йордан Йовков",
+                "en": "Yordan Yovkov"
+              },
+              {
+                "bg": "Елин Пелин",
+                "en": "Elin Pelin"
+              }
+            ],
+            "answer": 1
+          }
+        ],
+        "seconds": 12
+      },
+      "extra": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди събитията от всички епохи – от най-старото.",
+          "en": "Put events from all eras in order – oldest first."
+        },
+        "items": [
+          {
+            "bg": "Тракийските съкровища",
+            "en": "The Thracian treasures"
+          },
+          {
+            "bg": "Основаването на държавата",
+            "en": "The founding of the state"
+          },
+          {
+            "bg": "Покръстването",
+            "en": "The Christianisation"
+          },
+          {
+            "bg": "Падането на Търново",
+            "en": "The fall of Tarnovo"
+          },
+          {
+            "bg": "Освобождението",
+            "en": "The Liberation"
+          },
+          {
+            "bg": "България в ЕС",
+            "en": "Bulgaria in the EU"
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кой император получава прякора „Българоубиец“?",
+            "en": "Which emperor gets the nickname “Bulgar-slayer”?"
+          },
+          "options": [
+            {
+              "bg": "Никифор I",
+              "en": "Nikephoros I"
+            },
+            {
+              "bg": "Василий II",
+              "en": "Basil II"
+            },
+            {
+              "bg": "Константин IV",
+              "en": "Constantine IV"
+            },
+            {
+              "bg": "Юстиниан II",
+              "en": "Justinian II"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Кой е първият княз на България след Освобождението?",
+            "en": "Who is Bulgaria’s first prince after the Liberation?"
+          },
+          "options": [
+            {
+              "bg": "Александър Батенберг",
+              "en": "Alexander of Battenberg"
+            },
+            {
+              "bg": "Фердинанд",
+              "en": "Ferdinand"
+            },
+            {
+              "bg": "Борис III",
+              "en": "Boris III"
+            },
+            {
+              "bg": "Симеон II",
+              "en": "Simeon II"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кой води Априлското въстание в Пловдивския окръг?",
+            "en": "Who leads the April Uprising in the Plovdiv district?"
+          },
+          "options": [
+            {
+              "bg": "Левски",
+              "en": "Levski"
+            },
+            {
+              "bg": "Паисий",
+              "en": "Paisius"
+            },
+            {
+              "bg": "Георги Бенковски",
+              "en": "Georgi Benkovski"
+            },
+            {
+              "bg": "Петър Берон",
+              "en": "Petar Beron"
+            }
+          ],
+          "answer": 2
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Учебник по история и цивилизации, 5–7 клас (МОН) [страница – попълва учителят]",
+    "Учебник по география и икономика, 5–7 клас (МОН) [страница – попълва учителят]",
+    "Учебник по български език и литература, 5–7 клас (МОН) [страница – попълва учителят]"
+  ],
+  "review": null,
+  "draft": true
+}

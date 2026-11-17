@@ -1,0 +1,539 @@
+{
+  "id": "pro-09-grammar",
+  "subject": "language",
+  "free": true,
+  "order": 117,
+  "ages": [
+    "young",
+    "guard"
+  ],
+  "unlock": {
+    "badges": 3
+  },
+  "badge": {
+    "id": "pro-grammar",
+    "icon": "game/word-tile.webp"
+  },
+  "title": {
+    "bg": "Изпит: български език",
+    "en": "Exam: Bulgarian language"
+  },
+  "levels": {
+    "young": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "reading",
+          "bg": "Изпит по български език! Части на речта, изречения и правопис.",
+          "en": "A Bulgarian language test! Parts of speech, sentences and spelling."
+        },
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "Помисли, преди да отговориш.",
+          "en": "Think before you answer."
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи думата с частта на речта.",
+          "en": "Match the word with its part of speech."
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "котка",
+              "en": "kotka (cat)"
+            },
+            "b": {
+              "bg": "съществително",
+              "en": "noun"
+            }
+          },
+          {
+            "a": {
+              "bg": "червен",
+              "en": "cherven (red)"
+            },
+            "b": {
+              "bg": "прилагателно",
+              "en": "adjective"
+            }
+          },
+          {
+            "a": {
+              "bg": "бягам",
+              "en": "byagam (I run)"
+            },
+            "b": {
+              "bg": "глагол",
+              "en": "verb"
+            }
+          },
+          {
+            "a": {
+              "bg": "три",
+              "en": "tri (three)"
+            },
+            "b": {
+              "bg": "числително",
+              "en": "numeral"
+            }
+          },
+          {
+            "a": {
+              "bg": "бързо",
+              "en": "barzo (quickly)"
+            },
+            "b": {
+              "bg": "наречие",
+              "en": "adverb"
+            }
+          }
+        ]
+      },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Коя дума е написана правилно?",
+              "en": "Which word is spelt correctly?"
+            },
+            "options": [
+              {
+                "bg": "слънце",
+                "en": "slantse (sun)"
+              },
+              {
+                "bg": "сълнце",
+                "en": "salntse"
+              },
+              {
+                "bg": "слънцъ",
+                "en": "slantsa"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Как е множественото число на „дете“?",
+              "en": "What is the plural of “dete” (child)?"
+            },
+            "options": [
+              {
+                "bg": "детета",
+                "en": "deteta"
+              },
+              {
+                "bg": "деца",
+                "en": "detsa"
+              },
+              {
+                "bg": "детя",
+                "en": "detya"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Коя дума е написана правилно?",
+              "en": "Which word is spelt correctly?"
+            },
+            "options": [
+              {
+                "bg": "фторник",
+                "en": "ftornik"
+              },
+              {
+                "bg": "вторнек",
+                "en": "vtornek"
+              },
+              {
+                "bg": "вторник",
+                "en": "vtornik (Tuesday)"
+              }
+            ],
+            "answer": 2
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Коя дума е глагол?",
+            "en": "Which word is a verb?"
+          },
+          "options": [
+            {
+              "bg": "пиша",
+              "en": "pisha (I write)"
+            },
+            {
+              "bg": "маса",
+              "en": "masa (table)"
+            },
+            {
+              "bg": "син",
+              "en": "sin (blue)"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кое е множественото число на „котка“?",
+            "en": "What is the plural of “kotka” (cat)?"
+          },
+          "options": [
+            {
+              "bg": "котки",
+              "en": "kotki"
+            },
+            {
+              "bg": "котке",
+              "en": "kotke"
+            },
+            {
+              "bg": "коткове",
+              "en": "kotkove"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "С каква буква започва собственото име?",
+            "en": "What letter does a proper name start with?"
+          },
+          "options": [
+            {
+              "bg": "С главна",
+              "en": "A capital letter"
+            },
+            {
+              "bg": "С малка",
+              "en": "A small letter"
+            },
+            {
+              "bg": "С цифра",
+              "en": "A digit"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "reading",
+          "bg": "Сега – като контролно по български език.",
+          "en": "Now – like a Bulgarian language test at school."
+        },
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "Членуване, времена, правопис и смисъл.",
+          "en": "Articles, tenses, spelling and meaning."
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Кое е правилно?",
+              "en": "Which is correct?"
+            },
+            "options": [
+              {
+                "bg": "Учителят ни похвали.",
+                "en": "Uchitelyat ni pohvali."
+              },
+              {
+                "bg": "Учителя ни похвали.",
+                "en": "Uchitelya ni pohvali."
+              },
+              {
+                "bg": "Учителта ни похвали.",
+                "en": "Uchitelta ni pohvali."
+              },
+              {
+                "bg": "Учитело ни похвали.",
+                "en": "Uchitelo ni pohvali."
+              }
+            ],
+            "answer": 0,
+            "hint": {
+              "bg": "„Учителят“ е подлог – пълен член.",
+              "en": "“The teacher” is the subject – full article."
+            }
+          },
+          {
+            "q": {
+              "bg": "Кое е правилно?",
+              "en": "Which is correct?"
+            },
+            "options": [
+              {
+                "bg": "Дадох книгата на учителят.",
+                "en": "Dadoh knigata na uchitelyat."
+              },
+              {
+                "bg": "Дадох книгата на учителя.",
+                "en": "Dadoh knigata na uchitelya."
+              },
+              {
+                "bg": "Дадох книгата на учителта.",
+                "en": "Dadoh knigata na uchitelta."
+              },
+              {
+                "bg": "Дадох книгата на учител-а.",
+                "en": "Dadoh knigata na uchitel-a."
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Коя дума е написана правилно?",
+              "en": "Which word is spelt correctly?"
+            },
+            "options": [
+              {
+                "bg": "слаткиш",
+                "en": "slatkish"
+              },
+              {
+                "bg": "сладкиш",
+                "en": "sladkish (cake)"
+              },
+              {
+                "bg": "сладкищ",
+                "en": "sladkisht"
+              },
+              {
+                "bg": "слаткищ",
+                "en": "slatkisht"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Коя дума е наречие?",
+              "en": "Which word is an adverb?"
+            },
+            "options": [
+              {
+                "bg": "вчерашен",
+                "en": "vcherashen"
+              },
+              {
+                "bg": "ден",
+                "en": "den"
+              },
+              {
+                "bg": "вчера",
+                "en": "vchera (yesterday)"
+              },
+              {
+                "bg": "вървя",
+                "en": "varvya"
+              }
+            ],
+            "answer": 2
+          },
+          {
+            "q": {
+              "bg": "Колко гласни звука има българският език?",
+              "en": "How many vowel sounds does Bulgarian have?"
+            },
+            "options": [
+              {
+                "bg": "5",
+                "en": "5"
+              },
+              {
+                "bg": "6",
+                "en": "6"
+              },
+              {
+                "bg": "10",
+                "en": "10"
+              },
+              {
+                "bg": "30",
+                "en": "30"
+              }
+            ],
+            "answer": 1
+          }
+        ]
+      },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно? Правила на правописа.",
+          "en": "True or not true? Spelling rules."
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Пълен член пишем, когато думата е подлог.",
+              "en": "We write the full article when the word is the subject."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да: „Градът е голям.“",
+              "en": "Yes: “Gradat e golyam.”"
+            }
+          },
+          {
+            "text": {
+              "bg": "„Ще“ се пише слято с глагола: „щепиша“.",
+              "en": "“Shte” is written together with the verb: “shtepisha”."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – отделно: „ще пиша“.",
+              "en": "No – separately: “shte pisha”."
+            }
+          },
+          {
+            "text": {
+              "bg": "„Не“ пред глагол се пише отделно: „не искам“.",
+              "en": "“Ne” before a verb is written separately: “ne iskam”."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "Българската азбука има 30 букви.",
+              "en": "The Bulgarian alphabet has 30 letters."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "Буквата „Щ“ се чете като „шт“.",
+              "en": "The letter “Щ” is read as “sht”."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "Буквата „ь“ се пише в края на думите.",
+              "en": "The letter “ь” is written at the end of words."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – пише се само пред „о“: „шофьор“.",
+              "en": "No – only before “о”: “shofyor”."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кое е правилно?",
+            "en": "Which is correct?"
+          },
+          "options": [
+            {
+              "bg": "Кучето лае.",
+              "en": "Kucheto lae."
+            },
+            {
+              "bg": "Кучетото лае.",
+              "en": "Kuchetoto lae."
+            },
+            {
+              "bg": "Кучета лае.",
+              "en": "Kucheta lae."
+            },
+            {
+              "bg": "Куче лаят.",
+              "en": "Kuche layat."
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кое изречение е въпросително?",
+            "en": "Which sentence is a question?"
+          },
+          "options": [
+            {
+              "bg": "Отивам вкъщи.",
+              "en": "I am going home."
+            },
+            {
+              "bg": "Къде отиваш?",
+              "en": "Where are you going?"
+            },
+            {
+              "bg": "Отивай!",
+              "en": "Go!"
+            },
+            {
+              "bg": "Колко хубаво!",
+              "en": "How lovely!"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Коя дума значи почти същото като „голям“?",
+            "en": "Which word means almost the same as “golyam” (big)?"
+          },
+          "options": [
+            {
+              "bg": "малък",
+              "en": "malak (small)"
+            },
+            {
+              "bg": "огромен",
+              "en": "ogromen (huge)"
+            },
+            {
+              "bg": "бърз",
+              "en": "barz (fast)"
+            },
+            {
+              "bg": "червен",
+              "en": "cherven (red)"
+            }
+          ],
+          "answer": 1
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Учебник по български език и литература, 5–7 клас (МОН) [страница – попълва учителят]",
+    "Официален правописен речник на българския език, БАН"
+  ],
+  "review": null,
+  "draft": true
+}

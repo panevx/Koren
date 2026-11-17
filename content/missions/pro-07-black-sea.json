@@ -1,0 +1,503 @@
+{
+  "id": "pro-07-black-sea",
+  "subject": "geography",
+  "free": true,
+  "order": 115,
+  "ages": [
+    "young",
+    "guard"
+  ],
+  "unlock": {
+    "after": [
+      "pro-06-cities"
+    ]
+  },
+  "badge": {
+    "id": "pro-black-sea",
+    "icon": "landmarks/nessebar.webp"
+  },
+  "title": {
+    "bg": "Изпит: Черно море",
+    "en": "Exam: the Black Sea"
+  },
+  "levels": {
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "explorer",
+          "bg": "Изпит за моряци! Градове, животни и тайни на Черно море.",
+          "en": "A test for sailors! Towns, animals and secrets of the Black Sea."
+        },
+        {
+          "hero": "koren",
+          "pose": "map",
+          "bg": "Започваме от север – от Балчик – и слизаме на юг.",
+          "en": "We start in the north – at Balchik – and go south."
+        }
+      ],
+      "game": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди градовете от север на юг.",
+          "en": "Put the towns in order from north to south."
+        },
+        "items": [
+          {
+            "bg": "Балчик",
+            "en": "Balchik"
+          },
+          {
+            "bg": "Варна",
+            "en": "Varna"
+          },
+          {
+            "bg": "Несебър",
+            "en": "Nessebar"
+          },
+          {
+            "bg": "Бургас",
+            "en": "Burgas"
+          },
+          {
+            "bg": "Созопол",
+            "en": "Sozopol"
+          }
+        ]
+      },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Черно море е по-малко солено от океана.",
+              "en": "The Black Sea is less salty than the ocean."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – около два пъти.",
+              "en": "Yes – about half as salty."
+            }
+          },
+          {
+            "text": {
+              "bg": "Черно море е на запад от България.",
+              "en": "The Black Sea is to the west of Bulgaria."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – на изток.",
+              "en": "No – to the east."
+            }
+          },
+          {
+            "text": {
+              "bg": "Варна е на север от Бургас.",
+              "en": "Varna is north of Burgas."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "Несебър е древен град.",
+              "en": "Nessebar is an ancient town."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – с църкви на стотици години.",
+              "en": "Yes – with churches hundreds of years old."
+            }
+          },
+          {
+            "text": {
+              "bg": "Делфините в Черно море са риби.",
+              "en": "The dolphins in the Black Sea are fish."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – бозайници са.",
+              "en": "No – they are mammals."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кой от тези градове е най-на юг?",
+            "en": "Which of these towns is furthest south?"
+          },
+          "options": [
+            {
+              "bg": "Варна",
+              "en": "Varna"
+            },
+            {
+              "bg": "Балчик",
+              "en": "Balchik"
+            },
+            {
+              "bg": "Созопол",
+              "en": "Sozopol"
+            }
+          ],
+          "answer": 2
+        },
+        {
+          "q": {
+            "bg": "Колко вида делфини живеят в Черно море?",
+            "en": "How many kinds of dolphin live in the Black Sea?"
+          },
+          "options": [
+            {
+              "bg": "1",
+              "en": "1"
+            },
+            {
+              "bg": "3",
+              "en": "3"
+            },
+            {
+              "bg": "10",
+              "en": "10"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Кой град наричат „морската столица“?",
+            "en": "Which city is called the “sea capital”?"
+          },
+          "options": [
+            {
+              "bg": "Варна",
+              "en": "Varna"
+            },
+            {
+              "bg": "Бургас",
+              "en": "Burgas"
+            },
+            {
+              "bg": "Созопол",
+              "en": "Sozopol"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Черно море е почти затворено – свързва се със Средиземно море през Босфора, Мраморно море и Дарданелите.",
+          "en": "The Black Sea is almost closed – it joins the Mediterranean through the Bosphorus, the Sea of Marmara and the Dardanelles."
+        },
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "Дълбоко в него има сероводород, а солеността е около два пъти по-малка от океанската.",
+          "en": "Deep down it holds hydrogen sulphide, and its salinity is about half that of the ocean."
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Колко е дълго българското крайбрежие?",
+              "en": "How long is the Bulgarian coast?"
+            },
+            "options": [
+              {
+                "bg": "Около 178 км",
+                "en": "About 178 km"
+              },
+              {
+                "bg": "Около 378 км",
+                "en": "About 378 km"
+              },
+              {
+                "bg": "Около 578 км",
+                "en": "About 578 km"
+              },
+              {
+                "bg": "Около 1078 км",
+                "en": "About 1,078 km"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Каква е солеността на Черно море в сравнение с океана?",
+              "en": "How salty is the Black Sea compared with the ocean?"
+            },
+            "options": [
+              {
+                "bg": "Еднаква",
+                "en": "The same"
+              },
+              {
+                "bg": "Около два пъти по-малка",
+                "en": "About half"
+              },
+              {
+                "bg": "Два пъти по-голяма",
+                "en": "Twice as much"
+              },
+              {
+                "bg": "Десет пъти по-голяма",
+                "en": "Ten times as much"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Кой нос край Каварна е известен със скалите и крепостта си?",
+              "en": "Which cape near Kavarna is famous for its cliffs and fortress?"
+            },
+            "options": [
+              {
+                "bg": "Емине",
+                "en": "Emine"
+              },
+              {
+                "bg": "Маслен нос",
+                "en": "Maslen Nos"
+              },
+              {
+                "bg": "Калиакра",
+                "en": "Kaliakra"
+              },
+              {
+                "bg": "Шабла",
+                "en": "Shabla"
+              }
+            ],
+            "answer": 2
+          },
+          {
+            "q": {
+              "bg": "Кой проток свързва Мраморно море с Егейско?",
+              "en": "Which strait links the Sea of Marmara with the Aegean?"
+            },
+            "options": [
+              {
+                "bg": "Босфорът",
+                "en": "The Bosphorus"
+              },
+              {
+                "bg": "Дарданелите",
+                "en": "The Dardanelles"
+              },
+              {
+                "bg": "Гибралтар",
+                "en": "Gibraltar"
+              },
+              {
+                "bg": "Керченският",
+                "en": "The Kerch Strait"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Под каква дълбочина в Черно море почти няма живот?",
+              "en": "Below what depth is there almost no life in the Black Sea?"
+            },
+            "options": [
+              {
+                "bg": "Под 5 м",
+                "en": "Below 5 m"
+              },
+              {
+                "bg": "Под 20 м",
+                "en": "Below 20 m"
+              },
+              {
+                "bg": "Под около 150–200 м",
+                "en": "Below about 150–200 m"
+              },
+              {
+                "bg": "Няма такава",
+                "en": "There is none"
+              }
+            ],
+            "answer": 2
+          }
+        ]
+      },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Черно море се свързва с Мраморно през Босфора.",
+              "en": "The Black Sea joins the Sea of Marmara through the Bosphorus."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "Афалината е най-малкият делфин в Черно море.",
+              "en": "The bottlenose is the smallest dolphin in the Black Sea."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – най-малък е муткурът; афалината е най-едра.",
+              "en": "No – the harbour porpoise is smallest; the bottlenose is largest."
+            }
+          },
+          {
+            "text": {
+              "bg": "Несебър е в списъка на ЮНЕСКО от 1983 г.",
+              "en": "Nessebar has been on the UNESCO list since 1983."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "Бургас е на север от Варна.",
+              "en": "Burgas is north of Varna."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – на юг.",
+              "en": "No – to the south."
+            }
+          },
+          {
+            "text": {
+              "bg": "Via Pontica е прелетен път на птиците.",
+              "en": "The Via Pontica is a bird migration route."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – по брега на Черно море.",
+              "en": "Yes – along the Black Sea coast."
+            }
+          },
+          {
+            "text": {
+              "bg": "Сребърна е на брега на Черно море.",
+              "en": "Srebarna is on the Black Sea coast."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – до Дунав, край Силистра.",
+              "en": "No – by the Danube, near Silistra."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кой от тези градове е най-близо до Турция?",
+            "en": "Which of these towns is closest to Turkey?"
+          },
+          "options": [
+            {
+              "bg": "Варна",
+              "en": "Varna"
+            },
+            {
+              "bg": "Балчик",
+              "en": "Balchik"
+            },
+            {
+              "bg": "Созопол",
+              "en": "Sozopol"
+            },
+            {
+              "bg": "Шабла",
+              "en": "Shabla"
+            }
+          ],
+          "answer": 2
+        },
+        {
+          "q": {
+            "bg": "Кой е най-малкият делфин в Черно море?",
+            "en": "Which is the smallest dolphin in the Black Sea?"
+          },
+          "options": [
+            {
+              "bg": "Афалината",
+              "en": "The bottlenose"
+            },
+            {
+              "bg": "Муткурът",
+              "en": "The harbour porpoise"
+            },
+            {
+              "bg": "Обикновеният делфин",
+              "en": "The common dolphin"
+            },
+            {
+              "bg": "Китът",
+              "en": "The whale"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Кой град е на полуостров с древни църкви?",
+            "en": "Which town stands on a peninsula with ancient churches?"
+          },
+          "options": [
+            {
+              "bg": "Бургас",
+              "en": "Burgas"
+            },
+            {
+              "bg": "Варна",
+              "en": "Varna"
+            },
+            {
+              "bg": "Несебър",
+              "en": "Nessebar"
+            },
+            {
+              "bg": "Балчик",
+              "en": "Balchik"
+            }
+          ],
+          "answer": 2
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Учебник по география и икономика, 5–7 клас (МОН) [страница – попълва учителят]",
+    "Институт по океанология – БАН"
+  ],
+  "review": null,
+  "draft": true
+}

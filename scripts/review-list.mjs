@@ -52,7 +52,7 @@ for (const chapter of path.chapters) {
     if (!m) continue
     listed.add(id)
     const games = Object.entries(m.levels)
-      .map(([lv, c]) => `${AGES[lv]}: ${c.game.type}`)
+      .map(([lv, c]) => `${AGES[lv]}: ${c.game.type}${c.extra ? ` + ${c.extra.type}` : ''}`)
       .join(' · ')
     lines.push(`### ${m.review ? '[x]' : '[ ]'} ${m.title.bg} — \`${m.id}\``, '')
     lines.push(`${SUBJECT[m.subject]} · ${games}`, '')

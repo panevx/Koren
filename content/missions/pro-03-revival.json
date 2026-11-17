@@ -1,0 +1,501 @@
+{
+  "id": "pro-03-revival",
+  "subject": "history",
+  "free": true,
+  "order": 111,
+  "ages": [
+    "young",
+    "guard"
+  ],
+  "unlock": {
+    "after": [
+      "pro-02-second-kingdom"
+    ]
+  },
+  "badge": {
+    "id": "pro-revival",
+    "icon": "people/budenie-book.webp"
+  },
+  "title": {
+    "bg": "Изпит: Възраждането",
+    "en": "Exam: the National Revival"
+  },
+  "levels": {
+    "young": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "reading",
+          "bg": "Възраждането е времето, когато българите „се събуждат“ – учат, пишат книги и мечтаят за свобода.",
+          "en": "The Revival is the time when Bulgarians “wake up” – they learn, write books and dream of freedom."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Започва с Паисий през 1762 г. и стига до Освобождението през 1878 г.",
+          "en": "It begins with Paisius in 1762 and lasts until the Liberation in 1878."
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи човека с това, с което е известен.",
+          "en": "Match the person with what they are known for."
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Паисий",
+              "en": "Paisius"
+            },
+            "b": {
+              "bg": "„История славянобългарска“",
+              "en": "“Slavonic-Bulgarian History”"
+            }
+          },
+          {
+            "a": {
+              "bg": "Софроний Врачански",
+              "en": "Sophronius of Vratsa"
+            },
+            "b": {
+              "bg": "„Неделник“",
+              "en": "“Nedelnik”"
+            }
+          },
+          {
+            "a": {
+              "bg": "Петър Берон",
+              "en": "Petar Beron"
+            },
+            "b": {
+              "bg": "„Рибният буквар“",
+              "en": "“The Fish Primer”"
+            }
+          },
+          {
+            "a": {
+              "bg": "Васил Левски",
+              "en": "Vasil Levski"
+            },
+            "b": {
+              "bg": "Апостола на свободата",
+              "en": "The Apostle of Freedom"
+            }
+          },
+          {
+            "a": {
+              "bg": "Христо Ботев",
+              "en": "Hristo Botev"
+            },
+            "b": {
+              "bg": "Четата от „Радецки“",
+              "en": "The band from the “Radetzky”"
+            }
+          }
+        ]
+      },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Кога започва Възраждането?",
+              "en": "When does the Revival begin?"
+            },
+            "options": [
+              {
+                "bg": "1762 г.",
+                "en": "1762"
+              },
+              {
+                "bg": "681 г.",
+                "en": "681"
+              },
+              {
+                "bg": "1944 г.",
+                "en": "1944"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Какво се отваря по градовете през Възраждането?",
+              "en": "What opens in the towns during the Revival?"
+            },
+            "options": [
+              {
+                "bg": "Училища и читалища",
+                "en": "Schools and community centres"
+              },
+              {
+                "bg": "Летища",
+                "en": "Airports"
+              },
+              {
+                "bg": "Супермаркети",
+                "en": "Supermarkets"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Какво е читалище?",
+              "en": "What is a chitalishte?"
+            },
+            "options": [
+              {
+                "bg": "Място за книги, лекции и празници",
+                "en": "A place for books, talks and celebrations"
+              },
+              {
+                "bg": "Магазин",
+                "en": "A shop"
+              },
+              {
+                "bg": "Болница",
+                "en": "A hospital"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кой пише „Рибния буквар“?",
+            "en": "Who writes “The Fish Primer”?"
+          },
+          "options": [
+            {
+              "bg": "Петър Берон",
+              "en": "Petar Beron"
+            },
+            {
+              "bg": "Паисий",
+              "en": "Paisius"
+            },
+            {
+              "bg": "Левски",
+              "en": "Levski"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кой е Апостола на свободата?",
+            "en": "Who is the Apostle of Freedom?"
+          },
+          "options": [
+            {
+              "bg": "Христо Ботев",
+              "en": "Hristo Botev"
+            },
+            {
+              "bg": "Васил Левски",
+              "en": "Vasil Levski"
+            },
+            {
+              "bg": "Паисий",
+              "en": "Paisius"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Коя година е Освобождението?",
+            "en": "In which year is the Liberation?"
+          },
+          "options": [
+            {
+              "bg": "1185",
+              "en": "1185"
+            },
+            {
+              "bg": "1762",
+              "en": "1762"
+            },
+            {
+              "bg": "1878",
+              "en": "1878"
+            }
+          ],
+          "answer": 2
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "reading",
+          "bg": "Възраждането е епоха на училища, читалища, книги и борба за църковна и политическа свобода.",
+          "en": "The Revival is an age of schools, chitalishta, books and the struggle for church and political freedom."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "През 1835 г. в Габрово отваря първото светско училище, а през 1856 г. се създават първите читалища.",
+          "en": "In 1835 the first secular school opens in Gabrovo, and in 1856 the first chitalishta are founded."
+        },
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "През 1870 г. султанът позволява отделна българска църква – Екзархията.",
+          "en": "In 1870 the sultan allows a separate Bulgarian Church – the Exarchate."
+        }
+      ],
+      "game": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди събитията от Възраждането.",
+          "en": "Put the Revival events in order."
+        },
+        "items": [
+          {
+            "bg": "„История славянобългарска“",
+            "en": "“Slavonic-Bulgarian History”"
+          },
+          {
+            "bg": "„Рибният буквар“",
+            "en": "“The Fish Primer”"
+          },
+          {
+            "bg": "Първото светско училище в Габрово",
+            "en": "The first secular school in Gabrovo"
+          },
+          {
+            "bg": "Първите читалища",
+            "en": "The first chitalishta"
+          },
+          {
+            "bg": "Българската екзархия",
+            "en": "The Bulgarian Exarchate"
+          },
+          {
+            "bg": "Априлското въстание",
+            "en": "The April Uprising"
+          }
+        ]
+      },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Къде са създадени първите читалища през 1856 г.?",
+              "en": "Where are the first chitalishta founded in 1856?"
+            },
+            "options": [
+              {
+                "bg": "В Свищов, Лом и Шумен",
+                "en": "In Svishtov, Lom and Shumen"
+              },
+              {
+                "bg": "В София и Варна",
+                "en": "In Sofia and Varna"
+              },
+              {
+                "bg": "В Пловдив и Бургас",
+                "en": "In Plovdiv and Burgas"
+              },
+              {
+                "bg": "Във Видин и Русе",
+                "en": "In Vidin and Ruse"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Кой дарява средства за Габровското училище?",
+              "en": "Who donates money for the Gabrovo school?"
+            },
+            "options": [
+              {
+                "bg": "Неофит Рилски",
+                "en": "Neophyte of Rila"
+              },
+              {
+                "bg": "Васил Априлов",
+                "en": "Vasil Aprilov"
+              },
+              {
+                "bg": "Паисий",
+                "en": "Paisius"
+              },
+              {
+                "bg": "Георги Раковски",
+                "en": "Georgi Rakovski"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Какво постига Екзархията през 1870 г.?",
+              "en": "What does the Exarchate achieve in 1870?"
+            },
+            "options": [
+              {
+                "bg": "Освобождение",
+                "en": "Liberation"
+              },
+              {
+                "bg": "Отделна българска църква",
+                "en": "A separate Bulgarian Church"
+              },
+              {
+                "bg": "Нова столица",
+                "en": "A new capital"
+              },
+              {
+                "bg": "Нова азбука",
+                "en": "A new alphabet"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Кой води Априлското въстание в Пловдивския революционен окръг?",
+              "en": "Who leads the April Uprising in the Plovdiv revolutionary district?"
+            },
+            "options": [
+              {
+                "bg": "Васил Левски",
+                "en": "Vasil Levski"
+              },
+              {
+                "bg": "Христо Ботев",
+                "en": "Hristo Botev"
+              },
+              {
+                "bg": "Георги Бенковски",
+                "en": "Georgi Benkovski"
+              },
+              {
+                "bg": "Паисий",
+                "en": "Paisius"
+              }
+            ],
+            "answer": 2
+          },
+          {
+            "q": {
+              "bg": "Как наричаме борбата за отделна българска църква?",
+              "en": "What do we call the struggle for a separate Bulgarian Church?"
+            },
+            "options": [
+              {
+                "bg": "Църковно-национална борба",
+                "en": "The church-national struggle"
+              },
+              {
+                "bg": "Кръстоносен поход",
+                "en": "A crusade"
+              },
+              {
+                "bg": "Покръстване",
+                "en": "Christianisation"
+              },
+              {
+                "bg": "Съединение",
+                "en": "Unification"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кога е създадена Българската екзархия?",
+            "en": "When is the Bulgarian Exarchate founded?"
+          },
+          "options": [
+            {
+              "bg": "1762",
+              "en": "1762"
+            },
+            {
+              "bg": "1835",
+              "en": "1835"
+            },
+            {
+              "bg": "1870",
+              "en": "1870"
+            },
+            {
+              "bg": "1878",
+              "en": "1878"
+            }
+          ],
+          "answer": 2
+        },
+        {
+          "q": {
+            "bg": "В кой град е първото светско училище?",
+            "en": "In which town is the first secular school?"
+          },
+          "options": [
+            {
+              "bg": "София",
+              "en": "Sofia"
+            },
+            {
+              "bg": "Габрово",
+              "en": "Gabrovo"
+            },
+            {
+              "bg": "Варна",
+              "en": "Varna"
+            },
+            {
+              "bg": "Пловдив",
+              "en": "Plovdiv"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Какво е читалище?",
+            "en": "What is a chitalishte?"
+          },
+          "options": [
+            {
+              "bg": "Културен център с библиотека и сцена",
+              "en": "A cultural centre with a library and a stage"
+            },
+            {
+              "bg": "Затвор",
+              "en": "A prison"
+            },
+            {
+              "bg": "Пазар",
+              "en": "A market"
+            },
+            {
+              "bg": "Болница",
+              "en": "A hospital"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Учебник по история и цивилизации, 5–7 клас (МОН) [страница – попълва учителят]",
+    "Енциклопедия „България“, БАН – Българско възраждане"
+  ],
+  "review": null,
+  "draft": true
+}

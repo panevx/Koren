@@ -1,0 +1,463 @@
+{
+  "id": "pro-02-second-kingdom",
+  "subject": "history",
+  "free": true,
+  "order": 110,
+  "ages": [
+    "young",
+    "guard"
+  ],
+  "unlock": {
+    "after": [
+      "pro-01-first-kingdom"
+    ]
+  },
+  "badge": {
+    "id": "pro-second-kingdom",
+    "icon": "history/ivan-shishman.webp"
+  },
+  "title": {
+    "bg": "Изпит: Второто българско царство",
+    "en": "Exam: the Second Bulgarian Empire"
+  },
+  "levels": {
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "explorer",
+          "bg": "Второто българско царство започва с въстанието на Асен и Петър през 1185 г.",
+          "en": "The Second Bulgarian Empire begins with the uprising of Asen and Peter in 1185."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Столица е Търново, а най-силно е царството при Иван Асен II.",
+          "en": "The capital is Tarnovo, and the empire is strongest under Ivan Asen II."
+        }
+      ],
+      "game": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди събитията по време.",
+          "en": "Put the events in order of time."
+        },
+        "items": [
+          {
+            "bg": "Въстанието на Асен и Петър",
+            "en": "The uprising of Asen and Peter"
+          },
+          {
+            "bg": "Калоян побеждава при Одрин",
+            "en": "Kaloyan wins at Adrianople"
+          },
+          {
+            "bg": "Иван Асен II побеждава при Клокотница",
+            "en": "Ivan Asen II wins at Klokotnitsa"
+          },
+          {
+            "bg": "Търново пада",
+            "en": "Tarnovo falls"
+          }
+        ]
+      },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Столицата на Второто царство е Търново.",
+              "en": "The capital of the Second Empire is Tarnovo."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – с крепостта Царевец.",
+              "en": "Yes – with the Tsarevets fortress."
+            }
+          },
+          {
+            "text": {
+              "bg": "Калоян побеждава рицарите при Одрин.",
+              "en": "Kaloyan defeats the knights at Adrianople."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – през 1205 г.",
+              "en": "Yes – in 1205."
+            }
+          },
+          {
+            "text": {
+              "bg": "Второто царство започва през 681 г.",
+              "en": "The Second Empire begins in 681."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – през 1185 г. През 681 г. започва Първото.",
+              "en": "No – in 1185. The First one begins in 681."
+            }
+          },
+          {
+            "text": {
+              "bg": "Иван Шишман е последният търновски цар.",
+              "en": "Ivan Shishman is the last tsar of Tarnovo."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "Второто царство пада под властта на римляните.",
+              "en": "The Second Empire falls to the Romans."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – под османска власт.",
+              "en": "No – to the Ottomans."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кой град е столица на Второто царство?",
+            "en": "Which city is the capital of the Second Empire?"
+          },
+          "options": [
+            {
+              "bg": "Търново",
+              "en": "Tarnovo"
+            },
+            {
+              "bg": "Плиска",
+              "en": "Pliska"
+            },
+            {
+              "bg": "Варна",
+              "en": "Varna"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кои братя вдигат въстанието през 1185 г.?",
+            "en": "Which brothers raise the uprising in 1185?"
+          },
+          "options": [
+            {
+              "bg": "Асен и Петър",
+              "en": "Asen and Peter"
+            },
+            {
+              "bg": "Кирил и Методий",
+              "en": "Cyril and Methodius"
+            },
+            {
+              "bg": "Крум и Омуртаг",
+              "en": "Krum and Omurtag"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "При кой цар царството е най-силно?",
+            "en": "Under which tsar is the empire strongest?"
+          },
+          "options": [
+            {
+              "bg": "Иван Асен II",
+              "en": "Ivan Asen II"
+            },
+            {
+              "bg": "Иван Шишман",
+              "en": "Ivan Shishman"
+            },
+            {
+              "bg": "Самуил",
+              "en": "Samuel"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "reading",
+          "bg": "1185 г.: братята Асен и Петър вдигат въстание срещу Византия.",
+          "en": "1185: the brothers Asen and Peter rise against Byzantium."
+        },
+        {
+          "hero": "raya",
+          "pose": "map",
+          "bg": "През XIV век царството се разделя на Търновско и Видинско.",
+          "en": "In the 14th century the empire splits into the Tarnovo and Vidin tsardoms."
+        },
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "Търново пада през 1393 г., а Видин – през 1396 г.",
+          "en": "Tarnovo falls in 1393 and Vidin in 1396."
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Кой цар пленява латинския император Балдуин?",
+              "en": "Which tsar captures the Latin emperor Baldwin?"
+            },
+            "options": [
+              {
+                "bg": "Иван Асен II",
+                "en": "Ivan Asen II"
+              },
+              {
+                "bg": "Калоян",
+                "en": "Kaloyan"
+              },
+              {
+                "bg": "Самуил",
+                "en": "Samuel"
+              },
+              {
+                "bg": "Петър",
+                "en": "Peter"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Кой цар управлява Видинското царство до 1396 г.?",
+              "en": "Which tsar rules the Vidin tsardom until 1396?"
+            },
+            "options": [
+              {
+                "bg": "Иван Шишман",
+                "en": "Ivan Shishman"
+              },
+              {
+                "bg": "Иван Срацимир",
+                "en": "Ivan Sratsimir"
+              },
+              {
+                "bg": "Иван Александър",
+                "en": "Ivan Alexander"
+              },
+              {
+                "bg": "Михаил Шишман",
+                "en": "Mihail Shishman"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Кой е бащата на Иван Шишман и Иван Срацимир?",
+              "en": "Who is the father of Ivan Shishman and Ivan Sratsimir?"
+            },
+            "options": [
+              {
+                "bg": "Иван Асен II",
+                "en": "Ivan Asen II"
+              },
+              {
+                "bg": "Калоян",
+                "en": "Kaloyan"
+              },
+              {
+                "bg": "Иван Александър",
+                "en": "Ivan Alexander"
+              },
+              {
+                "bg": "Теодор Светослав",
+                "en": "Theodore Svetoslav"
+              }
+            ],
+            "answer": 2
+          },
+          {
+            "q": {
+              "bg": "Кой патриарх защитава Търново при обсадата от 1393 г.?",
+              "en": "Which patriarch defends Tarnovo in the siege of 1393?"
+            },
+            "options": [
+              {
+                "bg": "Паисий",
+                "en": "Paisius"
+              },
+              {
+                "bg": "Евтимий",
+                "en": "Euthymius"
+              },
+              {
+                "bg": "Софроний",
+                "en": "Sophronius"
+              },
+              {
+                "bg": "Йоаким",
+                "en": "Joachim"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "В коя битка Иван Асен II побеждава Теодор Комнин?",
+              "en": "In which battle does Ivan Asen II defeat Theodore Komnenos?"
+            },
+            "options": [
+              {
+                "bg": "При Одрин",
+                "en": "At Adrianople"
+              },
+              {
+                "bg": "При Ахелой",
+                "en": "At Achelous"
+              },
+              {
+                "bg": "При Клокотница",
+                "en": "At Klokotnitsa"
+              },
+              {
+                "bg": "При Беласица",
+                "en": "At Belasitsa"
+              }
+            ],
+            "answer": 2
+          }
+        ]
+      },
+      "extra": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди събитията – от най-ранното.",
+          "en": "Put the events in order – earliest first."
+        },
+        "items": [
+          {
+            "bg": "Въстанието на Асен и Петър",
+            "en": "The uprising of Asen and Peter"
+          },
+          {
+            "bg": "Битката при Одрин",
+            "en": "The battle of Adrianople"
+          },
+          {
+            "bg": "Битката при Клокотница",
+            "en": "The battle of Klokotnitsa"
+          },
+          {
+            "bg": "Царството се разделя на Търновско и Видинско",
+            "en": "The empire splits into Tarnovo and Vidin"
+          },
+          {
+            "bg": "Падането на Търново",
+            "en": "The fall of Tarnovo"
+          },
+          {
+            "bg": "Падането на Видин",
+            "en": "The fall of Vidin"
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кой град пада последен под османска власт?",
+            "en": "Which city falls last to the Ottomans?"
+          },
+          "options": [
+            {
+              "bg": "Търново",
+              "en": "Tarnovo"
+            },
+            {
+              "bg": "Видин",
+              "en": "Vidin"
+            },
+            {
+              "bg": "Пловдив",
+              "en": "Plovdiv"
+            },
+            {
+              "bg": "Плиска",
+              "en": "Pliska"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Колко години трае Второто царство (1185–1396)?",
+            "en": "How many years does the Second Empire last (1185–1396)?"
+          },
+          "options": [
+            {
+              "bg": "21",
+              "en": "21"
+            },
+            {
+              "bg": "111",
+              "en": "111"
+            },
+            {
+              "bg": "211",
+              "en": "211"
+            },
+            {
+              "bg": "311",
+              "en": "311"
+            }
+          ],
+          "answer": 2
+        },
+        {
+          "q": {
+            "bg": "Какво е Търновската книжовна школа?",
+            "en": "What is the Tarnovo Literary School?"
+          },
+          "options": [
+            {
+              "bg": "Център на книжовността, свързан с патриарх Евтимий",
+              "en": "A centre of letters linked with Patriarch Euthymius"
+            },
+            {
+              "bg": "Военно училище",
+              "en": "A military school"
+            },
+            {
+              "bg": "Пазар",
+              "en": "A market"
+            },
+            {
+              "bg": "Крепост",
+              "en": "A fortress"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Учебник по история и цивилизации, 5–7 клас (МОН) [страница – попълва учителят]",
+    "Енциклопедия „България“, БАН – Второ българско царство"
+  ],
+  "review": null,
+  "draft": true
+}

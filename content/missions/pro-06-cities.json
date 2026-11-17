@@ -1,0 +1,502 @@
+{
+  "id": "pro-06-cities",
+  "subject": "geography",
+  "free": true,
+  "order": 114,
+  "ages": [
+    "young",
+    "guard"
+  ],
+  "unlock": {
+    "after": [
+      "pro-05-heights"
+    ]
+  },
+  "badge": {
+    "id": "pro-cities",
+    "icon": "geo/river.webp"
+  },
+  "title": {
+    "bg": "Изпит: градове и реки",
+    "en": "Exam: towns and rivers"
+  },
+  "levels": {
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "map",
+          "bg": "Всеки голям град си има своя река, планина или море.",
+          "en": "Every big town has its own river, mountain or sea."
+        },
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "Познаваш ли ги? Да проверим!",
+          "en": "Do you know them? Let’s check!"
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи града с мястото му.",
+          "en": "Match the town with its place."
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Пловдив",
+              "en": "Plovdiv"
+            },
+            "b": {
+              "bg": "На Марица",
+              "en": "On the Maritsa"
+            }
+          },
+          {
+            "a": {
+              "bg": "Русе",
+              "en": "Ruse"
+            },
+            "b": {
+              "bg": "На Дунав",
+              "en": "On the Danube"
+            }
+          },
+          {
+            "a": {
+              "bg": "Варна",
+              "en": "Varna"
+            },
+            "b": {
+              "bg": "На Черно море",
+              "en": "On the Black Sea"
+            }
+          },
+          {
+            "a": {
+              "bg": "Велико Търново",
+              "en": "Veliko Tarnovo"
+            },
+            "b": {
+              "bg": "На Янтра",
+              "en": "On the Yantra"
+            }
+          },
+          {
+            "a": {
+              "bg": "София",
+              "en": "Sofia"
+            },
+            "b": {
+              "bg": "Под Витоша",
+              "en": "Below Vitosha"
+            }
+          }
+        ]
+      },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Бургас е на Черно море.",
+              "en": "Burgas is on the Black Sea."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "Видин е на Дунав.",
+              "en": "Vidin is on the Danube."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "Пловдив е на морето.",
+              "en": "Plovdiv is by the sea."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – на Марица, далеч от морето.",
+              "en": "No – on the Maritsa, far from the sea."
+            }
+          },
+          {
+            "text": {
+              "bg": "София е под Витоша.",
+              "en": "Sofia lies below Vitosha."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "Велико Търново е на Искър.",
+              "en": "Veliko Tarnovo is on the Iskar."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – на Янтра.",
+              "en": "No – on the Yantra."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кой град е под Витоша?",
+            "en": "Which city lies below Vitosha?"
+          },
+          "options": [
+            {
+              "bg": "София",
+              "en": "Sofia"
+            },
+            {
+              "bg": "Варна",
+              "en": "Varna"
+            },
+            {
+              "bg": "Видин",
+              "en": "Vidin"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кой град е на Янтра?",
+            "en": "Which town is on the Yantra?"
+          },
+          "options": [
+            {
+              "bg": "Бургас",
+              "en": "Burgas"
+            },
+            {
+              "bg": "Велико Търново",
+              "en": "Veliko Tarnovo"
+            },
+            {
+              "bg": "Пловдив",
+              "en": "Plovdiv"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Кой е най-големият град на морето?",
+            "en": "Which is the biggest city on the sea?"
+          },
+          "options": [
+            {
+              "bg": "Русе",
+              "en": "Ruse"
+            },
+            {
+              "bg": "Плевен",
+              "en": "Pleven"
+            },
+            {
+              "bg": "Варна",
+              "en": "Varna"
+            }
+          ],
+          "answer": 2
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "map",
+          "bg": "България има 28 области и стотици градове.",
+          "en": "Bulgaria has 28 provinces and hundreds of towns."
+        },
+        {
+          "hero": "koren",
+          "pose": "explorer",
+          "bg": "Изпитът: кой град къде е и с какво е известен.",
+          "en": "The test: which town is where and what it is famous for."
+        }
+      ],
+      "game": {
+        "type": "match",
+        "prompt": {
+          "bg": "Свържи града с това, с което е известен.",
+          "en": "Match the town with what it is famous for."
+        },
+        "pairs": [
+          {
+            "a": {
+              "bg": "Габрово",
+              "en": "Gabrovo"
+            },
+            "b": {
+              "bg": "Домът на хумора и сатирата",
+              "en": "The House of Humour and Satire"
+            }
+          },
+          {
+            "a": {
+              "bg": "Шумен",
+              "en": "Shumen"
+            },
+            "b": {
+              "bg": "Паметникът „Създатели на българската държава“",
+              "en": "The “Founders of the Bulgarian State” monument"
+            }
+          },
+          {
+            "a": {
+              "bg": "Казанлък",
+              "en": "Kazanlak"
+            },
+            "b": {
+              "bg": "Тракийската гробница",
+              "en": "The Thracian tomb"
+            }
+          },
+          {
+            "a": {
+              "bg": "Плевен",
+              "en": "Pleven"
+            },
+            "b": {
+              "bg": "Панорамата „Плевенска епопея 1877“",
+              "en": "The “Pleven Epopee 1877” panorama"
+            }
+          },
+          {
+            "a": {
+              "bg": "Сливен",
+              "en": "Sliven"
+            },
+            "b": {
+              "bg": "Сините камъни",
+              "en": "The Blue Rocks"
+            }
+          },
+          {
+            "a": {
+              "bg": "Велинград",
+              "en": "Velingrad"
+            },
+            "b": {
+              "bg": "Минералните извори",
+              "en": "The mineral springs"
+            }
+          }
+        ]
+      },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Кой град е на река Тунджа?",
+              "en": "Which town is on the Tundzha River?"
+            },
+            "options": [
+              {
+                "bg": "Ямбол",
+                "en": "Yambol"
+              },
+              {
+                "bg": "Плевен",
+                "en": "Pleven"
+              },
+              {
+                "bg": "Видин",
+                "en": "Vidin"
+              },
+              {
+                "bg": "Добрич",
+                "en": "Dobrich"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Кой град е на река Струма?",
+              "en": "Which town is on the Struma River?"
+            },
+            "options": [
+              {
+                "bg": "Ловеч",
+                "en": "Lovech"
+              },
+              {
+                "bg": "Перник",
+                "en": "Pernik"
+              },
+              {
+                "bg": "Габрово",
+                "en": "Gabrovo"
+              },
+              {
+                "bg": "Шумен",
+                "en": "Shumen"
+              }
+            ],
+            "answer": 1
+          },
+          {
+            "q": {
+              "bg": "Кой град е на река Осъм?",
+              "en": "Which town is on the Osam River?"
+            },
+            "options": [
+              {
+                "bg": "Сливен",
+                "en": "Sliven"
+              },
+              {
+                "bg": "Бургас",
+                "en": "Burgas"
+              },
+              {
+                "bg": "Ловеч",
+                "en": "Lovech"
+              },
+              {
+                "bg": "Кърджали",
+                "en": "Kardzhali"
+              }
+            ],
+            "answer": 2
+          },
+          {
+            "q": {
+              "bg": "Кой град е на река Арда?",
+              "en": "Which town is on the Arda River?"
+            },
+            "options": [
+              {
+                "bg": "Видин",
+                "en": "Vidin"
+              },
+              {
+                "bg": "Русе",
+                "en": "Ruse"
+              },
+              {
+                "bg": "Габрово",
+                "en": "Gabrovo"
+              },
+              {
+                "bg": "Кърджали",
+                "en": "Kardzhali"
+              }
+            ],
+            "answer": 3
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "В кой град е паметникът „Създатели на българската държава“?",
+            "en": "In which town is the “Founders of the Bulgarian State” monument?"
+          },
+          "options": [
+            {
+              "bg": "Плиска",
+              "en": "Pliska"
+            },
+            {
+              "bg": "Шумен",
+              "en": "Shumen"
+            },
+            {
+              "bg": "Варна",
+              "en": "Varna"
+            },
+            {
+              "bg": "София",
+              "en": "Sofia"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "q": {
+            "bg": "Кой град е известен със Сините камъни?",
+            "en": "Which town is known for the Blue Rocks?"
+          },
+          "options": [
+            {
+              "bg": "Ямбол",
+              "en": "Yambol"
+            },
+            {
+              "bg": "Стара Загора",
+              "en": "Stara Zagora"
+            },
+            {
+              "bg": "Сливен",
+              "en": "Sliven"
+            },
+            {
+              "bg": "Хасково",
+              "en": "Haskovo"
+            }
+          ],
+          "answer": 2
+        },
+        {
+          "q": {
+            "bg": "Колко области има България?",
+            "en": "How many provinces does Bulgaria have?"
+          },
+          "options": [
+            {
+              "bg": "12",
+              "en": "12"
+            },
+            {
+              "bg": "27",
+              "en": "27"
+            },
+            {
+              "bg": "28",
+              "en": "28"
+            },
+            {
+              "bg": "30",
+              "en": "30"
+            }
+          ],
+          "answer": 2
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Учебник по география и икономика, 5–7 клас (МОН) [страница – попълва учителят]",
+    "Министерство на туризма – обекти в градовете"
+  ],
+  "review": null,
+  "draft": true
+}
