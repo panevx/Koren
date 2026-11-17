@@ -35,6 +35,18 @@ describe('missions ⇄ spreadsheet', () => {
     expect(csvToMissions(csv).errors[0]).toBe('ред 2 (x-01-y): „answer“ трябва да е номер на верния отговор (1–2)')
   })
 
+  it('rejects a truncated quoted cell before importing missions', () => {
+    const csv = missionsToCsv([MISSIONS[0]!]) + '"unfinished'
+    expect(csvToMissions(csv)).toEqual({ missions: [], errors: ['CSV файлът завършва в незатворена клетка.'] })
+  })
+
+  it('rejects duplicate challenge rows instead of silently replacing a challenge', () => {
+    const rows = parseCsv(missionsToCsv([MISSIONS[0]!]))
+    const challenge = rows.find((row) => row[2] === 'extra')!
+    rows.push(challenge)
+    expect(csvToMissions(toCsv(rows)).errors.join(' ')).toMatch(/повторен ред за второто предизвикателство/)
+  })
+
   it('reports missing columns', () => {
     expect(csvToMissions('mission,level\n').errors[0]).toMatch(/Липсват колони/)
   })

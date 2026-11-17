@@ -1,5 +1,5 @@
 import { act, cleanup, fireEvent, render, screen } from '@testing-library/react'
-import { MemoryRouter, useNavigate } from 'react-router'
+import { MemoryRouter, useNavigate, type InitialEntry } from 'react-router'
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import { AppRoutes } from '../src/App'
 import { missionById } from '../src/content/missions'
@@ -18,7 +18,7 @@ function BackGesture() {
   return null
 }
 
-function renderAt(path: string, entries: string[] = []) {
+function renderAt(path: InitialEntry, entries: InitialEntry[] = []) {
   return render(
     <MemoryRouter initialEntries={[...entries, path]}>
       <AppRoutes />
@@ -98,6 +98,36 @@ describe('mission Хан Аспарух (young)', () => {
 
     fireEvent.click(screen.getByRole('button', { name: 'Още мисии' }))
     expect(await screen.findByRole('button', { name: /Хан Аспарух.*Изиграна/ })).toBeInTheDocument()
+  })
+
+  it('a reload or return to the same badge does not count it again', async () => {
+    const badgeEntry = {
+      pathname: `/mission/${ID}`,
+      key: 'completed-run',
+      state: { profileId: useProfiles.getState().activeId, level: 'young', phase: 'badge' },
+    }
+    renderAt(badgeEntry)
+    await screen.findByRole('heading', { name: 'Спечели значка!' })
+    expect(useProfiles.getState().streak).toBe(1)
+    cleanup()
+
+    renderAt(badgeEntry)
+    await screen.findByRole('heading', { name: 'Спечели значка!' })
+    expect(useProfiles.getState().streak).toBe(1)
+    cleanup()
+
+    renderAt({ ...badgeEntry, key: 'new-run' })
+    await screen.findByRole('heading', { name: 'Спечели значка!' })
+    expect(useProfiles.getState().streak).toBe(2)
+  })
+
+  it('a saved phase is not resumed for a different age variant', async () => {
+    useProfiles.getState().setAge(13)
+    renderAt({
+      pathname: `/mission/${ID}`,
+      state: { profileId: useProfiles.getState().activeId, level: 'young', phase: 'check', q: 2 },
+    })
+    expect(await screen.findByText(mission.levels.guard!.story[0]!.bg)).toBeInTheDocument()
   })
 
   it('the Exit button is visible in every phase and leaves without a badge', async () => {

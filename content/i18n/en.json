@@ -178,6 +178,8 @@
   "offline.updateNow": "Update",
   "missions.draftShort": "Draft",
   "home.next": "Next mission",
+  "home.loadFailed": "The missions could not load.",
+  "home.reload": "Reload the page",
   "home.allDone.caption": "Well done!",
   "home.allDone": "You played every mission",
   "timeline.title": "Timeline",

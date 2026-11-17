@@ -178,6 +178,8 @@
   "offline.updateNow": "Обнови",
   "missions.draftShort": "Чернова",
   "home.next": "Следваща мисия",
+  "home.loadFailed": "Мисиите не се заредиха.",
+  "home.reload": "Презареди страницата",
   "home.allDone.caption": "Браво!",
   "home.allDone": "Изигра всички мисии",
   "timeline.title": "Линия на времето",

@@ -8,7 +8,7 @@ import { Icon } from '../components/Icon'
 import { ProfileAvatar, useProfileName } from '../components/ProfileAvatar'
 import { SectionIcon } from '../components/SectionIcon'
 import { UpdateBanner } from '../components/UpdateBanner'
-import { Screen, roundButton, useTitle } from '../components/ui'
+import { Button, Screen, roundButton, useTitle } from '../components/ui'
 import { earnedCount } from '../content/badges'
 import { forLevel } from '../content/forLevel'
 import { byPathOrder, chapterOf } from '../content/pathOrder'
@@ -56,7 +56,7 @@ export function Home() {
   const profile = useProfiles(activeProfile)
   const name = useProfileName()
   const level = ageToLevel(profile.age)
-  const all = useMissions()
+  const { missions: all, failed } = useMissions()
   // Missions for 4–6 year olds only appear for them.
   const missions = useMemo(() => (all ? forLevel(all, level) : null), [all, level])
   useTitle(t('nav.home'))
@@ -117,6 +117,12 @@ export function Home() {
           {/* 2. The adventure card. Its height is kept while the missions load, so nothing jumps. */}
           <div className="relative z-10 mt-3 min-h-[15rem]">
             {missions && (missions.length ? <AdventureCard next={next} missions={missions} done={profile.done} /> : <NoMissionsCard />)}
+            {failed && (
+              <div className="flex flex-col items-center gap-3 rounded-level bg-white p-5 text-center shadow-soft">
+                <p role="status" className="font-bold">{t('home.loadFailed')}</p>
+                <Button variant="accent" onClick={() => window.location.reload()}>{t('home.reload')}</Button>
+              </div>
+            )}
           </div>
           {/* Testers' switch on (demo build only): say so, so nobody forgets it before a presentation. */}
           {testing && (
