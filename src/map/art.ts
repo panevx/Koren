@@ -14,12 +14,31 @@ export const PEAK_ART: Record<string, string> = {
   midzhur: 'geo/balkan.webp',
 }
 
+export const LANDSCAPE_ART: Record<string, string> = {
+  'rila': 'geo/rila.webp',
+  'pirin': 'geo/pirin.webp',
+  'rhodopes': 'geo/rhodopes.webp',
+  'balkan': 'geo/balkan.webp',
+  'vitosha': 'geo/vitosha.webp',
+  'sredna-gora': 'geo/sredna-gora.webp',
+  'strandzha': 'geo/strandzha.webp',
+  'belasitsa': 'geo/belasitsa.webp',
+  'osogovo': 'geo/osogovo.webp',
+  'sakar': 'geo/sakar.webp',
+  'rusenski-lom': 'geo/rusenski-lom.webp',
+  'balgarka': 'geo/balgarka.webp',
+  'vratsa-balkan': 'geo/vratsa-balkan.webp',
+  'danube-plain': 'nature/danube-plain.webp',
+  'thracian-lowland': 'nature/thracian-lowland.webp',
+}
+
 /** The map modes and their pictures. */
 export const MODES = [
   { id: 'landmarks', art: 'world/tsarevets-fortress.webp' },
   { id: 'cities', art: 'city/sofia.webp' },
   { id: 'provinces', art: 'tiles/discover.webp' },
   { id: 'mountains', art: 'world/mountain-peak.webp' },
+  { id: 'landscapes', art: 'geo/rusenski-lom.webp' },
   { id: 'rivers', art: 'world/river.webp' },
   { id: 'neighbours', art: 'levels/young.webp' },
   { id: 'tourism', art: 'places/ski-borovets.webp' },
@@ -29,4 +48,4 @@ export const MODES = [
 export const RIVER_ART = 'world/river.webp'
 export const LAKE_ART = 'geo/lake.webp'
 
-export const MAP_IMAGES: readonly string[] = [RELIEF, ...Object.values(PEAK_ART), ...MODES.map((m) => m.art), RIVER_ART, LAKE_ART]
+export const MAP_IMAGES: readonly string[] = [RELIEF, ...Object.values(PEAK_ART), ...Object.values(LANDSCAPE_ART), ...MODES.map((m) => m.art), RIVER_ART, LAKE_ART]

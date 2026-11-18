@@ -6,7 +6,7 @@ import { Icon } from '../components/Icon'
 import { TimelineLink } from '../components/TimelineLink'
 import { Screen, TopBar } from '../components/ui'
 import { UnlockInfo } from '../components/UnlockInfo'
-import { LAKES, NEIGHBOURS, PEAKS, PROVINCES, PROVINCE_FILL, RANGES, RIVERS, SEA, SOURCES, provinceAt } from '../content/layers'
+import { LAKES, MAP_RANGES, PARKS_AND_PLAINS, NEIGHBOURS, PEAKS, PROVINCES, PROVINCE_FILL, RANGES, RIVERS, SEA, SOURCES, provinceAt } from '../content/layers'
 import { PLACES, type MapPlace } from '../content/places'
 import type { Mission } from '../content/schema'
 import { useChildMissions } from '../content/useChildMissions'
@@ -15,7 +15,7 @@ import { useProgress } from '../content/useProgress'
 import type { TKey } from '../i18n'
 import { useT } from '../i18n/useT'
 import { BulgariaMap, type MapLabel, type MapMarker } from '../map/BulgariaMap'
-import { LAKE_ART, MODES, PEAK_ART, RIVER_ART } from '../map/art'
+import { LANDSCAPE_ART, LAKE_ART, MODES, PEAK_ART, RIVER_ART } from '../map/art'
 import { PlaceGlyph } from '../map/PlaceGlyph'
 import { bouncy, m } from '../motion'
 import { useActiveProfile } from '../store/profiles'
@@ -23,7 +23,7 @@ import { ART } from '../world'
 
 type Mode = (typeof MODES)[number]['id']
 
-type Selection = { kind: 'place' | 'province' | 'river' | 'lake' | 'peak' | 'neighbour'; id: string } | null
+type Selection = { kind: 'place' | 'province' | 'river' | 'lake' | 'peak' | 'landscape' | 'neighbour'; id: string } | null
 
 const placesFor = (mode: Mode, missions: readonly Mission[]): MapPlace[] => {
   const has = (p: MapPlace, ...tags: string[]) => p.tags.some((t) => tags.includes(t))
@@ -36,7 +36,7 @@ const placesFor = (mode: Mode, missions: readonly Mission[]): MapPlace[] => {
 }
 
 /**
- * "Discover Bulgaria": a relief map from real elevation data with seven modes —
+ * "Discover Bulgaria": a relief map from real elevation data with illustrated modes —
  * landmarks (with missions) · cities · the 28 provinces · mountains and peaks · rivers and lakes · neighbours · tourism.
  * Everything tappable is a real button (keyboard, screen reader); provinces also have a list under the map.
  */
@@ -122,7 +122,7 @@ export function MapScreen() {
   let layer: ReactNode = null
   let onSelect: (id: string) => void = choose('place')
   let onMapTap: ((x: number, y: number) => void) | undefined
-  const labelCls = 'rounded-full bg-white/75 px-2 py-0.5 text-[0.7rem] font-black text-ink/80'
+
 
   if (mode === 'landmarks' || mode === 'cities' || mode === 'tourism') {
     markers = placesFor(mode, missions).map(placeMarker)
@@ -149,9 +149,16 @@ export function MapScreen() {
     }
     const p = sel?.kind === 'province' ? PROVINCES.find((x) => x.id === sel.id) : undefined
     if (p) labels = [{ id: p.id, x: p.lx, y: p.ly, text: l(p.name), className: 'rounded-full bg-ink px-2.5 py-1 text-xs font-black text-white shadow-float' }]
-  } else if (mode === 'mountains') {
-    labels = RANGES.map((r) => ({ id: r.id, x: r.at[0], y: r.at[1], text: l(r.name), className: labelCls }))
-    markers = PEAKS.map((p) => ({
+  } else if (mode === 'mountains' || mode === 'landscapes') {
+    const features = mode === 'mountains' ? MAP_RANGES : PARKS_AND_PLAINS
+    markers = features.map((r) => ({
+      id: r.id, x: r.at[0], y: r.at[1], label: l(r.name), className: 'w-max min-w-12',
+      content: <span className={`flex flex-col items-center rounded-xl bg-white/95 px-1.5 pb-1 shadow-soft ring-2 ${isSel('landscape', r.id) ? 'ring-ink' : 'ring-white'}`}>
+        <img src={img(LANDSCAPE_ART[r.id]!)} alt="" className="size-9 object-contain" />
+        <span className="text-[0.7rem] leading-none font-black">{l(r.name)}</span>
+      </span>,
+    }))
+    if (mode === 'mountains') markers.push(...PEAKS.map((p) => ({
       id: p.id,
       x: p.x,
       y: p.y,
@@ -162,8 +169,8 @@ export function MapScreen() {
           <img src={img(PEAK_ART[p.id] ?? 'world/mountain-peak.webp')} alt="" className="size-11 object-contain" />
         </span>
       ),
-    }))
-    onSelect = choose('peak')
+    })))
+    onSelect = (id) => setSel({ kind: features.some((r) => r.id === id) ? 'landscape' : 'peak', id })
   } else if (mode === 'rivers') {
     layer = (
       <g fill="none" strokeLinecap="round" strokeLinejoin="round">
@@ -328,6 +335,10 @@ function InfoPanel({ sel, onClose, missionsAt }: { sel: NonNullable<Selection>; 
     title = l(k.name)
     art = LAKE_ART
     body = <p className="font-semibold">{t('map.lake')}</p>
+  } else if (sel.kind === 'landscape') {
+    const feature = [...MAP_RANGES, ...PARKS_AND_PLAINS].find((r) => r.id === sel.id)!
+    title = l(feature.name)
+    art = LANDSCAPE_ART[feature.id]
   } else if (sel.kind === 'peak') {
     const p = PEAKS.find((x) => x.id === sel.id)!
     title = l(p.name)
@@ -376,7 +387,7 @@ function InfoPanel({ sel, onClose, missionsAt }: { sel: NonNullable<Selection>; 
           <Icon name="close" />
         </button>
       </div>
-      <div className="flex flex-col gap-1 p-4">
+      <div className="flex flex-col gap-1 p-4 empty:hidden">
         {body}
         {here.length > 0 ? <MissionList missions={here} /> : (sel.kind === 'place' || sel.kind === 'peak') && <p className="mt-2 font-semibold text-muted">{t('map.noMission')}</p>}
       </div>

@@ -28,6 +28,27 @@ const data = raw as unknown as {
 
 export const { provinces: PROVINCES, rivers: RIVERS, lakes: LAKES, neighbours: NEIGHBOURS, ranges: RANGES, sea: SEA, sources: SOURCES } = data
 
+// Representative points within these landscapes, in the same projection as the relief map.
+function landscape(id: string, bg: string, en: string, lat: number, lon: number): Range {
+  const { x, y } = project(lat, lon)
+  return { id, name: { bg, en }, at: [x, y] }
+}
+
+export const MAP_RANGES = [
+  ...RANGES,
+  landscape('belasitsa', 'Беласица', 'Belasitsa', 41.34, 23.10),
+  landscape('osogovo', 'Осогово', 'Osogovo', 42.17, 22.56),
+  landscape('sakar', 'Сакар', 'Sakar', 42.05, 26.27),
+]
+
+export const PARKS_AND_PLAINS = [
+  landscape('rusenski-lom', 'Русенски Лом', 'Rusenski Lom', 43.69, 25.99),
+  landscape('balgarka', 'Българка', 'Bulgarka', 42.77, 25.36),
+  landscape('vratsa-balkan', 'Врачански Балкан', 'Vrachanski Balkan', 43.16, 23.50),
+  landscape('danube-plain', 'Дунавска равнина', 'Danubian Plain', 43.48, 24.91),
+  landscape('thracian-lowland', 'Горнотракийска низина', 'Upper Thracian Plain', 42.18, 25.04),
+]
+
 export const PEAKS: Peak[] = (peaksRaw as Omit<Peak, 'x' | 'y'>[]).map((p) => ({ ...p, ...project(p.lat, p.lon) }))
 
 /** Rings of an SVG path made of M…L…Z (what build-layers.py writes). */
