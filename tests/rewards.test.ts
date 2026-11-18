@@ -26,9 +26,26 @@ describe('coins (v0.22) — calculated from progress, never real money', () => {
     expect(spent.pendars).toBe(0)
   })
 
-  it('a mission counts once, whatever the level or the replays; unknown missions count nothing', () => {
+  it('completed missions keep their coins when they leave the current catalog', () => {
     const one = wallet({ done: { 'hist-01-asparuh': { level: 'guard', at: '2026-01-01' }, 'gone-01-x': { level: 'small', at: '2026-01-01' } }, days: [], owned: [] }, MISSIONS)
-    expect(one.coins).toBe(COINS_PER_MISSION)
+    expect(one.coins).toBe(2 * COINS_PER_MISSION)
+  })
+
+  it('keeps the reward for a completed mission when it is hidden by a new build', () => {
+    const profile = { done: { 'hist-01-asparuh': { level: 'young' as const, at: '2026-11-01' } }, days: [], owned: [] }
+    expect(wallet(profile, []).coins).toBe(wallet(profile, MISSIONS).coins)
+  })
+
+  it('continues counting days and rewards beyond the former 400-day limit', async () => {
+    const days = Array.from({ length: 400 }, (_, i) => localDay(new Date(2020, 0, i + 1)))
+    const profile = activeProfile(useProfiles.getState())
+    useProfiles.setState({ profiles: [{ ...profile, days }] })
+    const before = wallet(activeProfile(useProfiles.getState()), MISSIONS).coins
+    useProfiles.getState().complete('hist-01-asparuh', 'young', 'asparuh')
+    expect(activeProfile(useProfiles.getState()).days).toHaveLength(401)
+    expect(wallet(activeProfile(useProfiles.getState()), MISSIONS).coins).toBe(before + COINS_PER_DAY + COINS_PER_MISSION)
+    await useProfiles.persist.rehydrate()
+    expect(activeProfile(useProfiles.getState()).days).toHaveLength(401)
   })
 
   it('days of adventure: only good news — a missed day ends the row quietly, the total stays', () => {

@@ -37,8 +37,7 @@ export function finishedChapters(profile: Pick<Profile, 'done'>, all: readonly M
  * away (a child who turns 7 keeps the coins of the little ones' missions; a parent who changes the age by mistake too).
  */
 export function wallet(profile: Pick<Profile, 'done' | 'days' | 'owned'>, all: readonly Mission[]) {
-  const ids = new Set(all.map((m) => m.id))
-  const played = Object.keys(profile.done).filter((id) => ids.has(id)).length
+  const played = Object.keys(profile.done).length
   const earnedCoins = played * COINS_PER_MISSION + profile.days.length * COINS_PER_DAY
   const earnedPendars = finishedChapters(profile, all)
   const spent = (c: ShopItem['currency']) => profile.owned.map(shopItem).reduce((sum, i) => sum + (i && i.currency === c ? i.price : 0), 0)

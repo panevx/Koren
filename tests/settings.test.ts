@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it } from 'vitest'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 import {
   LEGACY_PROGRESS_KEY,
   MAX_PROFILES,
@@ -200,5 +200,61 @@ describe('migration from v0.5 (single child)', () => {
     expect(profiles).toBeNull()
     const migrated = useProfiles.persist.getOptions().migrate!(undefined, 0) as unknown as { profiles: { age: number; badges: string[] }[] }
     expect(migrated.profiles[0]).toMatchObject({ age: 12, badges: ['asparuh'] })
+  })
+})
+
+
+describe('profile writes shared between tabs', () => {
+  it('keeps a completion saved by another tab when changing an avatar', () => {
+    const saved = stored(PROFILES_KEY)
+    saved.profiles[0].badges = ['remote-badge']
+    saved.profiles[0].done.remote = { level: 'young', at: '2026-11-18' }
+    localStorage.setItem(PROFILES_KEY, JSON.stringify({ state: saved, version: 1 }))
+    useProfiles.getState().setAvatar('book')
+    expect(active().badges).toEqual(['remote-badge'])
+    expect(active().done.remote).toBeDefined()
+    expect(active().avatar).toBe('book')
+  })
+
+  it('clears in-memory profiles after another tab deletes their stored record', () => {
+    const profileId = active().id
+    useProfiles.getState().complete('old', 'young', 'old-badge')
+    localStorage.removeItem(PROFILES_KEY)
+    window.dispatchEvent(new StorageEvent('storage', { key: PROFILES_KEY, newValue: null }))
+    expect(localStorage.getItem(PROFILES_KEY)).toBeNull()
+    expect(active().id).not.toBe(profileId)
+    expect(active().badges).toEqual([])
+    useProfiles.getState().complete('late', 'young', 'late-badge', profileId)
+    expect(active().badges).toEqual([])
+  })
+
+  it('rejects a late save even before the remote deletion event arrives', () => {
+    const profileId = active().id
+    useProfiles.getState().complete('old', 'young', 'old-badge')
+    localStorage.removeItem(PROFILES_KEY)
+    useProfiles.getState().complete('late', 'young', 'late-badge', profileId)
+    expect(active().id).not.toBe(profileId)
+    expect(active().badges).toEqual([])
+  })
+
+  it('reads the latest snapshot inside the lock for queued profile changes', async () => {
+    let work: (() => void) | undefined
+    const request = vi.fn((_name: string, change: () => void) => {
+      work = change
+      return Promise.resolve()
+    })
+    vi.stubGlobal('navigator', { locks: { request } })
+    try {
+      useProfiles.getState().setAvatar('book')
+      const saved = stored(PROFILES_KEY)
+      saved.profiles[0].badges = ['concurrent']
+      localStorage.setItem(PROFILES_KEY, JSON.stringify({ state: saved, version: 1 }))
+      work!()
+      expect(active().avatar).toBe('book')
+      expect(active().badges).toEqual(['concurrent'])
+      expect(request).toHaveBeenCalledOnce()
+    } finally {
+      vi.unstubAllGlobals()
+    }
   })
 })

@@ -28,7 +28,7 @@ export type Profile = {
   badges: string[]
   /** Unlocked missions the child has already opened (newly unlocked ones show "New!"). */
   seen: string[]
-  /** v0.22: days with a finished mission (YYYY-MM-DD, at most the last 400) — for "days of adventure" and coins. */
+  /** v0.22: days with a finished mission (YYYY-MM-DD, all recorded days) — for "days of adventure" and coins. */
   days: string[]
   /** v0.22: things bought at the fair stall (src/content/rewards.ts) and what is worn now, per slot. */
   owned: string[]
@@ -68,18 +68,31 @@ function readSavedProfiles() {
   }
 }
 
-/** Serialize saves from the mission and parent screens across tabs when supported. */
+let insideProfileSave = false
+let suppressProfileStorage = false
+let hadSavedProfiles = safeLocalStorage.getItem(PROFILES_KEY) !== null
+
+/** Serialize profile mutations, including nested mission and parent actions. */
 export function saveProfileChange(change: () => void) {
-  if (!navigator.locks) {
-    change()
+  const run = () => {
+    const previous = insideProfileSave
+    insideProfileSave = true
+    try {
+      change()
+    } finally {
+      insideProfileSave = previous
+    }
+  }
+  if (insideProfileSave || !navigator.locks) {
+    run()
     return
   }
   let started = false
   void navigator.locks.request(PROFILES_KEY, () => {
     started = true
-    change()
+    run()
   }).catch((error: unknown) => {
-    if (!started) change()
+    if (!started) run()
     else console.error('Could not save the KOREN profile', error)
   })
 }
@@ -115,7 +128,7 @@ export function sanitizeProfile(raw: unknown): Profile | null {
     done: sanitizeDone(r.done),
     badges: sanitizeBadges(r.badges),
     seen: sanitizeBadges(r.seen),
-    days: sanitizeBadges(r.days).filter((d) => /^\d{4}-\d{2}-\d{2}$/.test(d)).slice(-400),
+    days: sanitizeBadges(r.days).filter((d) => /^\d{4}-\d{2}-\d{2}$/.test(d)),
     owned: sanitizeBadges(r.owned),
     outfit: sanitizeOutfit(r.outfit),
   }
@@ -171,17 +184,34 @@ function initialProfiles(): Pick<State, 'profiles' | 'activeId'> {
 
 export const useProfiles = create<State>()(
   persist(
-    (set, get) => {
-      const patchActive = (fn: (p: Profile) => Profile) =>
-        set((s) => ({ profiles: s.profiles.map((p) => (p.id === s.activeId ? fn(p) : p)) }))
+    (persistSet, get) => {
+      const set = (change: Partial<State> | ((state: State) => Partial<State>)) => {
+        saveProfileChange(() => {
+          const current = get()
+          const saved = useSettings.getState().remember ? readSavedProfiles() : null
+          let latest = current
+          if (saved) latest = { ...current, ...saved, streak: saved.activeId === current.activeId ? current.streak : 0 }
+          else if (hadSavedProfiles && useSettings.getState().remember) {
+            latest = { ...current, ...initialProfiles(), streak: 0 }
+            latest.profiles[0]!.id = newId()
+            latest.activeId = latest.profiles[0]!.id
+          }
+          const patch = typeof change === 'function' ? change(latest) : change
+          persistSet({ ...latest, ...patch })
+        })
+      }
+      const patchActive = (fn: (p: Profile) => Profile) => {
+        const profileId = get().activeId
+        set((s) => ({ profiles: s.profiles.map((p) => (p.id === profileId ? fn(p) : p)) }))
+      }
       return {
         ...initialProfiles(),
         streak: 0,
         addProfile: ({ nickname, age, avatar }) => {
-          if (get().profiles.length >= MAX_PROFILES) return null
+          if ((readSavedProfiles()?.profiles ?? get().profiles).length >= MAX_PROFILES) return null
           const id = newId()
           set((s) => ({
-            profiles: [...s.profiles, { id, nickname: cleanNickname(nickname), age: clampAge(age), avatar, done: {}, badges: [], seen: [], days: [], owned: [], outfit: {} }],
+            profiles: s.profiles.length >= MAX_PROFILES ? s.profiles : [...s.profiles, { id, nickname: cleanNickname(nickname), age: clampAge(age), avatar, done: {}, badges: [], seen: [], days: [], owned: [], outfit: {} }],
           }))
           return id
         },
@@ -208,21 +238,18 @@ export const useProfiles = create<State>()(
         setAge: (age) => patchActive((p) => ({ ...p, age: clampAge(age) })),
         setAvatar: (avatar) => patchActive((p) => ({ ...p, avatar })),
         complete: (missionId, level, badgeId, profileId = get().activeId) => {
-          const state = get()
-          const saved = useSettings.getState().remember ? readSavedProfiles() : null
-          const profiles = saved?.profiles ?? state.profiles
-          if (!profiles.some((p) => p.id === profileId)) return
-          const activeId = saved?.activeId ?? state.activeId
-          const today = localDay()
-          set({
-            activeId,
-            profiles: profiles.map((p) => p.id !== profileId ? p : {
-              ...p,
-              done: { ...p.done, [missionId]: { level, at: today } },
-              badges: p.badges.includes(badgeId) ? p.badges : [...p.badges, badgeId],
-              days: p.days.includes(today) ? p.days : [...p.days, today].slice(-400),
-            }),
-            streak: state.streak + Number(activeId === profileId),
+          set((state) => {
+            if (!state.profiles.some((p) => p.id === profileId)) return {}
+            const today = localDay()
+            return {
+              profiles: state.profiles.map((p) => p.id !== profileId ? p : {
+                ...p,
+                done: { ...p.done, [missionId]: { level, at: today } },
+                badges: p.badges.includes(badgeId) ? p.badges : [...p.badges, badgeId],
+                days: p.days.includes(today) ? p.days : [...p.days, today],
+              }),
+              streak: state.streak + Number(state.activeId === profileId),
+            }
           })
         },
         // Only real stall items, always in their own slot (the screen checks the purse; this keeps the profile clean).
@@ -241,15 +268,10 @@ export const useProfiles = create<State>()(
             return { ...p, outfit }
           }),
         markSeen: (missionId, profileId = get().activeId) => {
-          const state = get()
-          const saved = useSettings.getState().remember ? readSavedProfiles() : null
-          const profiles = saved?.profiles ?? state.profiles
-          const profile = profiles.find((p) => p.id === profileId)
-          if (!profile || profile.seen.includes(missionId)) return
-          set({
-            activeId: saved?.activeId ?? state.activeId,
-            profiles: profiles.map((p) => p.id === profileId ? { ...p, seen: [...p.seen, missionId] } : p),
-          })
+          set((state) => ({
+            profiles: state.profiles.map((p) => p.id === profileId && !p.seen.includes(missionId)
+              ? { ...p, seen: [...p.seen, missionId] } : p),
+          }))
         },
         takeBreak: () => set({ streak: 0 }),
         reset: () => {
@@ -266,8 +288,9 @@ export const useProfiles = create<State>()(
       storage: createJSONStorage(() => ({
         ...safeLocalStorage,
         setItem: (name: string, value: string) => {
-          if (!useSettings.getState().remember) return
+          if (suppressProfileStorage || !useSettings.getState().remember) return
           safeLocalStorage.setItem(name, value)
+          hadSavedProfiles = safeLocalStorage.getItem(name) !== null
           if (safeLocalStorage.getItem(LEGACY_PROGRESS_KEY) && safeLocalStorage.getItem(name) === value) {
             safeLocalStorage.removeItem(LEGACY_PROGRESS_KEY)
           }
@@ -309,6 +332,20 @@ export const useAge = () => useProfiles((s) => activeProfile(s).age)
 // so neither one overwrites the other's progress with stale data.
 if (typeof window !== 'undefined') {
   window.addEventListener('storage', (e) => {
-    if (e.key === PROFILES_KEY && e.newValue) void useProfiles.persist.rehydrate()
+    if (e.key !== PROFILES_KEY && e.key !== null) return
+    if (safeLocalStorage.getItem(PROFILES_KEY) !== null) {
+      void useProfiles.persist.rehydrate()
+      return
+    }
+    suppressProfileStorage = true
+    try {
+      const fresh = initialProfiles()
+      fresh.profiles[0]!.id = newId()
+      fresh.activeId = fresh.profiles[0]!.id
+      useProfiles.setState({ ...fresh, streak: 0 })
+      hadSavedProfiles = false
+    } finally {
+      suppressProfileStorage = false
+    }
   })
 }
