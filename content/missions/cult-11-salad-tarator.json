@@ -359,21 +359,25 @@
           {
             "bg": "Чесън",
             "en": "Garlic",
+            "img": "food/garlic.webp",
             "belongs": true
           },
           {
             "bg": "Копър",
             "en": "Dill",
+            "img": "food/dill.webp",
             "belongs": true
           },
           {
             "bg": "Орехи",
             "en": "Walnuts",
+            "img": "food/walnuts.webp",
             "belongs": true
           },
           {
             "bg": "Студена вода",
             "en": "Cold water",
+            "img": "food/cold-water.webp",
             "belongs": true
           },
           {
@@ -389,6 +393,7 @@
           {
             "bg": "Олио",
             "en": "Oil",
+            "img": "food/oil.webp",
             "belongs": true
           }
         ],

@@ -136,6 +136,7 @@
           {
             "bg": "Олио",
             "en": "Oil",
+            "img": "food/oil.webp",
             "belongs": true
           },
           {
