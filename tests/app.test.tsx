@@ -164,6 +164,22 @@ describe('parents section', () => {
     expect(screen.getByRole('heading', { name: 'За родители' })).toBeInTheDocument()
   })
 
+  it('restores progress only after the parent confirms the selected backup', async () => {
+    renderAt('/parents')
+    await screen.findByRole('heading', { name: 'Само за родители' })
+    solveGate()
+    const original = activeProfile(useProfiles.getState())
+    const data = { format: 'koren-profiles-v1', activeId: original.id,
+      profiles: [{ ...original, nickname: 'Рая', badges: ['asparuh'] }] }
+    fireEvent.change(screen.getByLabelText('Избери файл за възстановяване'), {
+      target: { files: [{ size: 500, text: async () => JSON.stringify(data) }] },
+    })
+    const apply = await screen.findByRole('button', { name: 'Замени текущите профили с тези от копието' })
+    expect(activeProfile(useProfiles.getState())).toEqual(original)
+    fireEvent.click(apply)
+    expect(activeProfile(useProfiles.getState())).toMatchObject({ nickname: 'Рая', badges: ['asparuh'] })
+  })
+
   it('locks the parent area when the session expires while it is open', async () => {
     renderAt('/parents')
     await screen.findByRole('heading', { name: 'Само за родители' })

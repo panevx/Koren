@@ -117,7 +117,8 @@ function QuizQuestion({
               ) : (
                 <span className={`size-3.5 shrink-0 rounded-full ${isWrong || (solved && !isRight) ? 'bg-muted/40' : DOTS[at % DOTS.length]}`} aria-hidden="true" />
               )}
-              <span className={`min-w-0 flex-1 ${withImages ? 'text-[length:clamp(0.6rem,12cqw,1.125rem)]' : ''}`}>{l(option)}</span>
+              <span className={`min-w-0 flex-1 [overflow-wrap:anywhere] ${withImages ? 'text-[length:clamp(0.6rem,12cqw,1.125rem)]' : ''}`}>{l(option)}</span>
+              {isWrong && <span aria-hidden="true">×</span>}
               {isRight && (
                 <m.span initial={{ scale: 0 }} animate={{ scale: 1 }} transition={bouncy} className="grid size-8 shrink-0 place-items-center rounded-full bg-green text-white">
                   <Icon name="check" width="1.1em" height="1.1em" />
@@ -131,7 +132,10 @@ function QuizQuestion({
 
       <Feedback
         correct={solved ? t('quiz.correct') : undefined}
-        help={wrong.length > 0 ? (question.hint ? l(question.hint) : t('quiz.tryAgain')) : undefined}
+        help={wrong.length > 0 ? [
+          question.hint ? l(question.hint) : t('quiz.tryAgain'),
+          wrong.length > 1 && t('quiz.remaining', { n: question.options.length - wrong.length }),
+        ].filter(Boolean).join(' ') : undefined}
         nudge={wrong.length}
       />
 

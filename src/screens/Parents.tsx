@@ -11,7 +11,7 @@ import { forLevel } from '../content/forLevel'
 import { useLocalized } from '../content/useLocalized'
 import { LANGS } from '../i18n'
 import { useT } from '../i18n/useT'
-import { MAX_PROFILES, NICKNAME_MAX, saveProfileChange, useProfiles, type AvatarId, type Profile } from '../store/profiles'
+import { MAX_PROFILES, NICKNAME_MAX, sanitizeProfiles, saveProfileChange, useProfiles, type AvatarId, type Profile } from '../store/profiles'
 import { useSettings } from '../store/settings'
 import { TESTER_CODE, TESTER_TOOLS } from '../content/tester'
 import { useChildMissions } from '../content/useChildMissions'
@@ -335,6 +335,60 @@ function Learns({ profile, index }: { profile: Profile; index: number }) {
   )
 }
 
+function ProfileBackup({ onExpired }: { onExpired: () => void }) {
+  const t = useT()
+  const [pending, setPending] = useState<ReturnType<typeof sanitizeProfiles>>(null)
+  const [status, setStatus] = useState<'backup.invalid' | 'backup.done' | null>(null)
+  const exportFile = () => {
+    if (!parentsUnlocked()) return onExpired()
+    const { profiles, activeId } = useProfiles.getState()
+    const data = JSON.stringify({ format: 'koren-profiles-v1', activeId, profiles })
+    const url = URL.createObjectURL(new Blob([data], { type: 'application/json' }))
+    const link = document.createElement('a')
+    link.href = url
+    link.download = 'koren-profiles.json'
+    link.click()
+    setTimeout(() => URL.revokeObjectURL(url), 1000)
+  }
+  return (
+    <Section icon="save" title={t('backup.title')}>
+      <div className="flex flex-col gap-3">
+        <Button variant="secondary" onClick={exportFile}>{t('backup.export')}</Button>
+        <label>{t('backup.file')}
+          <input type="file" accept=".json,application/json" className="block w-full" onChange={async e => {
+            const input = e.currentTarget
+            const file = input.files?.[0]
+            setPending(null)
+            setStatus(null)
+            if (!file) return
+            try {
+              if (file.size > 16 * 1024 * 1024) throw Error()
+              const data = JSON.parse(await file.text())
+              if (input.files?.[0] !== file) return
+              const clean = sanitizeProfiles(data)
+              if (data.format !== 'koren-profiles-v1' || !clean || clean.activeId !== data.activeId ||
+                  clean.profiles.length !== data.profiles.length ||
+                  clean.profiles.some((profile, i) => Object.entries(profile).some(([key, value]) =>
+                    JSON.stringify(value) !== JSON.stringify(data.profiles[i][key])))) throw Error()
+              setPending(clean)
+            } catch {
+              if (input.files?.[0] === file) setStatus('backup.invalid')
+            }
+            if (input.files?.[0] === file) input.value = ''
+          }} />
+        </label>
+        {pending && <Button variant="accent" onClick={() => saveProfileChange(() => {
+          if (!parentsUnlocked()) return onExpired()
+          useProfiles.setState({ ...pending, streak: 0 })
+          setPending(null)
+          setStatus('backup.done')
+        })}>{t('backup.apply')}</Button>}
+        <p role="status">{status && t(status)}</p>
+      </div>
+    </Section>
+  )
+}
+
 function ParentsArea({ onExpired }: { onExpired: () => void }) {
   const t = useT()
   const navigate = useNavigate()
@@ -387,6 +441,8 @@ function ParentsArea({ onExpired }: { onExpired: () => void }) {
               </Button>
             ))}
         </Section>
+
+        <ProfileBackup onExpired={onExpired} />
 
         <Section icon="star" title={t('parents.learns')}>
           <div className="flex flex-col gap-4">

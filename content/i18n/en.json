@@ -1,4 +1,11 @@
 {
+  "backup.title": "Progress backup",
+  "backup.export": "Download profile backup",
+  "backup.file": "Choose a backup file",
+  "backup.apply": "Replace current profiles with the backup",
+  "backup.invalid": "This file is not a valid KOREN backup.",
+  "backup.done": "Profiles restored.",
+  "quiz.remaining": "Choices left: {n}.",
   "app.name": "KOREN",
   "app.tagline": "Far from Bulgaria. Close to your roots.",
   "hero.koren": "Koren",

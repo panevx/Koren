@@ -17,15 +17,15 @@
         {
           "hero": "koren",
           "pose": "wave",
-          "bg": "Първият електронен компютър бил голям колкото гардероб!",
-          "en": "The first electronic computer was as big as a wardrobe!",
+          "bg": "ABC бил голям компютър, който помагал при решаването на задачи с числа.",
+          "en": "The ABC was a big computer that helped solve problems with numbers.",
           "img": "science/atanasoff-computer.webp"
         },
         {
           "hero": "raya",
           "pose": "point",
-          "bg": "Измислил го е човек с български корени – Джон Атанасов.",
-          "en": "A man with Bulgarian roots invented it – John Atanasoff."
+          "bg": "Джон Атанасов, който имал български корени, го построил заедно с Клифърд Бери.",
+          "en": "John Atanasoff, whose family had Bulgarian roots, built it with Clifford Berry."
         }
       ],
       "game": {
@@ -53,7 +53,11 @@
                 "img": "science/telescope.webp"
               }
             ],
-            "answer": 0
+            "answer": 0,
+            "hint": {
+              "bg": "Микроскопът увеличава малки неща, а телескопът показва далечни звезди. Потърси машината, с която можеш да смяташ.",
+              "en": "A microscope makes tiny things look bigger. A telescope shows distant stars. Look for the machine you can use to do sums."
+            }
           },
           {
             "q": {
@@ -72,7 +76,11 @@
                 "img": "science/atanasoff-computer.webp"
               }
             ],
-            "answer": 1
+            "answer": 1,
+            "hint": {
+              "bg": "Лампата свети. Коя машина използвали Атанасов и Бери за смятане?",
+              "en": "A lamp gives light. Which machine did Atanasoff and Berry use for calculations?"
+            }
           }
         ]
       },
