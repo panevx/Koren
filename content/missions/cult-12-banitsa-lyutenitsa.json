@@ -142,7 +142,8 @@
           {
             "bg": "Сол",
             "en": "Salt",
-            "belongs": true
+            "belongs": true,
+            "img": "food/salt.webp"
           },
           {
             "bg": "Краставица",
@@ -350,7 +351,8 @@
           {
             "bg": "Тънки кори",
             "en": "Filo pastry",
-            "belongs": true
+            "belongs": true,
+            "img": "food/filo.webp"
           },
           {
             "bg": "Сирене",
@@ -373,12 +375,14 @@
           {
             "bg": "Масло",
             "en": "Butter",
-            "belongs": true
+            "belongs": true,
+            "img": "food/butter.webp"
           },
           {
             "bg": "Късмети",
             "en": "Lucky charms",
-            "belongs": true
+            "belongs": true,
+            "img": "food/fortunes.webp"
           },
           {
             "bg": "Захар на прах",
@@ -387,7 +391,8 @@
             "why": {
               "bg": "Тази баница е солена – със сирене.",
               "en": "This banitsa is savoury – with cheese."
-            }
+            },
+            "img": "food/powdered-sugar.webp"
           },
           {
             "bg": "Домат",

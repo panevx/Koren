@@ -483,19 +483,23 @@
           "options": [
             {
               "bg": "Сребърна",
-              "en": "Srebarna"
+              "en": "Srebarna",
+              "img": "geo/srebarna.webp"
             },
             {
               "bg": "Витоша",
-              "en": "Vitosha"
+              "en": "Vitosha",
+              "img": "geo/vitosha.webp"
             },
             {
               "bg": "Странджа",
-              "en": "Strandzha"
+              "en": "Strandzha",
+              "img": "geo/strandzha.webp"
             },
             {
               "bg": "Пирин",
-              "en": "Pirin"
+              "en": "Pirin",
+              "img": "geo/pirin.webp"
             }
           ],
           "answer": 0

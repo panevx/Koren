@@ -139,12 +139,14 @@
           {
             "bg": "Лук",
             "en": "Onion",
-            "belongs": true
+            "belongs": true,
+            "img": "food/onion.webp"
           },
           {
             "bg": "Магданоз",
             "en": "Parsley",
-            "belongs": true
+            "belongs": true,
+            "img": "food/parsley.webp"
           },
           {
             "bg": "Кисело мляко",
@@ -163,7 +165,8 @@
             "why": {
               "bg": "Салатата е солена, не сладка.",
               "en": "The salad is salty, not sweet."
-            }
+            },
+            "img": "food/sugar.webp"
           }
         ],
         "steps": [

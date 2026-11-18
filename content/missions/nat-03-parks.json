@@ -310,19 +310,23 @@
             "options": [
               {
                 "bg": "Витоша",
-                "en": "Vitosha"
+                "en": "Vitosha",
+                "img": "geo/vitosha.webp"
               },
               {
                 "bg": "Странджа",
-                "en": "Strandzha"
+                "en": "Strandzha",
+                "img": "geo/strandzha.webp"
               },
               {
                 "bg": "Русенски Лом",
-                "en": "Rusenski Lom"
+                "en": "Rusenski Lom",
+                "img": "geo/rusenski-lom.webp"
               },
               {
                 "bg": "Българка",
-                "en": "Bulgarka"
+                "en": "Bulgarka",
+                "img": "geo/balgarka.webp"
               }
             ],
             "answer": 1
@@ -335,19 +339,23 @@
             "options": [
               {
                 "bg": "Русенски Лом",
-                "en": "Rusenski Lom"
+                "en": "Rusenski Lom",
+                "img": "geo/rusenski-lom.webp"
               },
               {
                 "bg": "Странджа",
-                "en": "Strandzha"
+                "en": "Strandzha",
+                "img": "geo/strandzha.webp"
               },
               {
                 "bg": "Витоша",
-                "en": "Vitosha"
+                "en": "Vitosha",
+                "img": "geo/vitosha.webp"
               },
               {
                 "bg": "Врачански Балкан",
-                "en": "Vrachanski Balkan"
+                "en": "Vrachanski Balkan",
+                "img": "geo/vratsa-balkan.webp"
               }
             ],
             "answer": 0

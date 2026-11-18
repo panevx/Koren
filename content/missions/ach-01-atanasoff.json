@@ -130,7 +130,8 @@
           },
           {
             "bg": "Стамен Григоров",
-            "en": "Stamen Grigorov"
+            "en": "Stamen Grigorov",
+            "img": "people/grigorov.webp"
           },
           {
             "bg": "Георги Иванов",
@@ -139,7 +140,8 @@
           },
           {
             "bg": "Христо Стоичков",
-            "en": "Hristo Stoichkov"
+            "en": "Hristo Stoichkov",
+            "img": "people/stoichkov.webp"
           }
         ],
         "answer": 0,

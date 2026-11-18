@@ -495,19 +495,23 @@
           "options": [
             {
               "bg": "Стара планина",
-              "en": "The Balkan Mountains"
+              "en": "The Balkan Mountains",
+              "img": "geo/balkan.webp"
             },
             {
               "bg": "Родопите",
-              "en": "The Rhodopes"
+              "en": "The Rhodopes",
+              "img": "geo/rhodopes.webp"
             },
             {
               "bg": "Странджа",
-              "en": "Strandzha"
+              "en": "Strandzha",
+              "img": "geo/strandzha.webp"
             },
             {
               "bg": "Средна гора",
-              "en": "Sredna Gora"
+              "en": "Sredna Gora",
+              "img": "geo/sredna-gora.webp"
             }
           ],
           "answer": 0

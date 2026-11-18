@@ -60,11 +60,13 @@
         "options": [
           {
             "bg": "Хитър Петър",
-            "en": "Clever Peter"
+            "en": "Clever Peter",
+            "img": "culture/clever-peter.webp"
           },
           {
             "bg": "Настрадин Ходжа",
-            "en": "Nasreddin Hodja"
+            "en": "Nasreddin Hodja",
+            "img": "culture/nasreddin.webp"
           },
           {
             "bg": "Кумчо Вълчо",
@@ -73,7 +75,8 @@
           },
           {
             "bg": "Крали Марко",
-            "en": "Prince Marko"
+            "en": "Prince Marko",
+            "img": "culture/marko.webp"
           }
         ],
         "answer": 0,
@@ -243,11 +246,13 @@
         "options": [
           {
             "bg": "Хитър Петър",
-            "en": "Clever Peter"
+            "en": "Clever Peter",
+            "img": "culture/clever-peter.webp"
           },
           {
             "bg": "Настрадин Ходжа",
-            "en": "Nasreddin Hodja"
+            "en": "Nasreddin Hodja",
+            "img": "culture/nasreddin.webp"
           },
           {
             "bg": "Кумчо Вълчо",
@@ -256,7 +261,8 @@
           },
           {
             "bg": "Крали Марко",
-            "en": "Prince Marko"
+            "en": "Prince Marko",
+            "img": "culture/marko.webp"
           }
         ],
         "answer": 0,

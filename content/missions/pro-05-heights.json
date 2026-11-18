@@ -173,15 +173,18 @@
           "options": [
             {
               "bg": "Стара планина",
-              "en": "The Balkan Mountains"
+              "en": "The Balkan Mountains",
+              "img": "geo/balkan.webp"
             },
             {
               "bg": "Рила",
-              "en": "Rila"
+              "en": "Rila",
+              "img": "geo/rila.webp"
             },
             {
               "bg": "Странджа",
-              "en": "Strandzha"
+              "en": "Strandzha",
+              "img": "geo/strandzha.webp"
             }
           ],
           "answer": 1

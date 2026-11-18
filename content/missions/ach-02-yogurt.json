@@ -91,7 +91,8 @@
           {
             "bg": "Прясно мляко",
             "en": "Fresh milk",
-            "belongs": true
+            "belongs": true,
+            "img": "food/milk.webp"
           },
           {
             "bg": "Малко кисело мляко (закваска)",
@@ -106,7 +107,8 @@
             "why": {
               "bg": "Киселото мляко не се соли.",
               "en": "Yogurt is not salted."
-            }
+            },
+            "img": "food/salt.webp"
           },
           {
             "bg": "Домат",

@@ -257,7 +257,8 @@
           },
           {
             "bg": "„Хитър Петър“",
-            "en": "\"Clever Peter\""
+            "en": "\"Clever Peter\"",
+            "img": "culture/clever-peter.webp"
           }
         ],
         "answer": 0,

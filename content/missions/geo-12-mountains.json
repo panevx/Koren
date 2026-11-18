@@ -224,15 +224,18 @@
           "options": [
             {
               "bg": "Витоша",
-              "en": "Vitosha"
+              "en": "Vitosha",
+              "img": "geo/vitosha.webp"
             },
             {
               "bg": "Пирин",
-              "en": "Pirin"
+              "en": "Pirin",
+              "img": "geo/pirin.webp"
             },
             {
               "bg": "Странджа",
-              "en": "Strandzha"
+              "en": "Strandzha",
+              "img": "geo/strandzha.webp"
             }
           ],
           "answer": 0
@@ -447,19 +450,23 @@
             "options": [
               {
                 "bg": "Странджа",
-                "en": "Strandzha"
+                "en": "Strandzha",
+                "img": "geo/strandzha.webp"
               },
               {
                 "bg": "Беласица",
-                "en": "Belasitsa"
+                "en": "Belasitsa",
+                "img": "geo/belasitsa.webp"
               },
               {
                 "bg": "Осогово",
-                "en": "Osogovo"
+                "en": "Osogovo",
+                "img": "geo/osogovo.webp"
               },
               {
                 "bg": "Витоша",
-                "en": "Vitosha"
+                "en": "Vitosha",
+                "img": "geo/vitosha.webp"
               }
             ],
             "answer": 0
@@ -475,19 +482,23 @@
           "options": [
             {
               "bg": "Беласица",
-              "en": "Belasitsa"
+              "en": "Belasitsa",
+              "img": "geo/belasitsa.webp"
             },
             {
               "bg": "Странджа",
-              "en": "Strandzha"
+              "en": "Strandzha",
+              "img": "geo/strandzha.webp"
             },
             {
               "bg": "Сакар",
-              "en": "Sakar"
+              "en": "Sakar",
+              "img": "geo/sakar.webp"
             },
             {
               "bg": "Витоша",
-              "en": "Vitosha"
+              "en": "Vitosha",
+              "img": "geo/vitosha.webp"
             }
           ],
           "answer": 0

@@ -170,15 +170,18 @@
           "options": [
             {
               "bg": "Странджа",
-              "en": "Strandzha"
+              "en": "Strandzha",
+              "img": "geo/strandzha.webp"
             },
             {
               "bg": "Рила",
-              "en": "Rila"
+              "en": "Rila",
+              "img": "geo/rila.webp"
             },
             {
               "bg": "Витоша",
-              "en": "Vitosha"
+              "en": "Vitosha",
+              "img": "geo/vitosha.webp"
             }
           ],
           "answer": 0

@@ -117,7 +117,8 @@
         "options": [
           {
             "bg": "Облак",
-            "en": "Cloud"
+            "en": "Cloud",
+            "img": "world/cloud.webp"
           },
           {
             "bg": "Птица",

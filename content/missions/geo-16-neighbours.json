@@ -362,19 +362,23 @@
             "options": [
               {
                 "bg": "Стара планина",
-                "en": "The Balkan Mountains"
+                "en": "The Balkan Mountains",
+                "img": "geo/balkan.webp"
               },
               {
                 "bg": "Витоша",
-                "en": "Vitosha"
+                "en": "Vitosha",
+                "img": "geo/vitosha.webp"
               },
               {
                 "bg": "Родопите",
-                "en": "The Rhodopes"
+                "en": "The Rhodopes",
+                "img": "geo/rhodopes.webp"
               },
               {
                 "bg": "Странджа",
-                "en": "Strandzha"
+                "en": "Strandzha",
+                "img": "geo/strandzha.webp"
               }
             ],
             "answer": 2
