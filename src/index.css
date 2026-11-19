@@ -6,6 +6,10 @@
 @custom-variant side (@media (orientation: landscape) and (min-width: 640px));
 /* Tablet sideways and computers: a real desktop composition — a side bar instead of the floating pill, wider screens. */
 @custom-variant wide (@media (min-width: 1024px) and (min-height: 600px));
+/* v0.26 `cols:` — two columns only when the page column is at least 40 rem wide. In rem on purpose: with a bigger
+   system font the same screen has fewer rems, so a 1024 px tablet with +30 % text falls back to one column instead of
+   squeezing words into two narrow ones. Needs an ancestor with `@container/page`. */
+@custom-variant cols (@container page (min-width: 40rem));
 
 /* Nunito, self-hosted (no Google Fonts request). Only Cyrillic + Latin subsets ship. */
 @font-face {
@@ -317,6 +321,22 @@ body {
   box-shadow:
     0 3px 0 var(--color-coral-deep),
     0 8px 12px -4px rgb(28 43 35 / 0.4);
+}
+
+/* v0.26 the timeline's road: the track is drawn under the input (era stretches + milestones), so the input's own
+   track is clear; the knob is the same 38 px in every browser, so the milestones sit exactly under its centre. */
+.road-range::-webkit-slider-runnable-track {
+  background: transparent;
+  box-shadow: none;
+}
+.road-range::-moz-range-track,
+.road-range::-moz-range-progress {
+  background: transparent;
+}
+.road-range::-moz-range-thumb {
+  width: 38px;
+  height: 38px;
+  box-sizing: border-box;
 }
 
 /* Ambient motion — only for people who have not asked for reduced motion. */

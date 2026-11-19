@@ -1,7 +1,8 @@
-import { useState, type ReactNode } from 'react'
+import { useEffect, useRef, useState, type ReactNode } from 'react'
 import { Link } from 'react-router'
 import { img } from '../components/Brand'
 import { CharacterMessage } from '../components/ds'
+import { fitWords } from '../components/fit'
 import { Icon } from '../components/Icon'
 import { TimelineLink } from '../components/TimelineLink'
 import { Screen, TopBar } from '../components/ui'
@@ -22,6 +23,21 @@ import { useActiveProfile } from '../store/profiles'
 import { ART } from '../world'
 
 type Mode = (typeof MODES)[number]['id']
+type PlaceState = 'done' | 'open' | 'locked' | 'none'
+
+/** v0.26 the dish a landmark stands in, by state; the small round marker of a place without a picture. */
+const DISH: Record<PlaceState, string> = {
+  done: 'mat-ceramic-gold',
+  open: 'mat-ceramic outline-[3px] outline-coral',
+  locked: 'well bg-sand',
+  none: 'mat-ceramic',
+}
+const GLYPH: Record<PlaceState, string> = {
+  done: 'mat-ceramic-gold text-ink',
+  open: 'btn-satin tint-coral text-coral-ink',
+  locked: 'well bg-sand text-muted',
+  none: 'mat-ceramic text-green-dark',
+}
 
 type Selection = { kind: 'place' | 'province' | 'river' | 'lake' | 'peak' | 'landscape' | 'neighbour'; id: string } | null
 
@@ -50,7 +66,7 @@ export function MapScreen() {
 
   const missionsAt = (placeId: string) => missions.filter((x) => x.place === placeId)
   /** done (gold) · open (glows) · locked (grey, with a key) · none (no mission here yet). */
-  const stateOf = (placeId: string) => {
+  const stateOf = (placeId: string): PlaceState => {
     const here = missionsAt(placeId).map(progress.status)
     return here.includes('done') ? 'done' : here.includes('open') ? 'open' : here.length ? 'locked' : 'none'
   }
@@ -68,29 +84,24 @@ export function MapScreen() {
       label: l(p.name),
       className: p.img ? 'size-14' : 'size-12',
       content: (
-        <span data-state={state} className={`relative grid place-items-center transition-transform duration-500 ease-[var(--ease-spring)] ${active ? '-translate-y-1 scale-[1.35]' : ''}`}>
+        // v0.26: a little 3D landmark standing in a glazed dish (gold when played, a coral rim when open, a grey recess
+        // when locked), with a soft shadow on the land under it — the dish's centre is the exact spot.
+        <span data-state={state} className={`relative grid size-full place-items-center transition-transform duration-500 ease-[var(--ease-spring)] ${active ? '-translate-y-1 scale-[1.3]' : ''}`}>
           {fresh && <img src={img(ART.burst)} alt="" className="anim-spin-slow pointer-events-none absolute size-16 max-w-none opacity-80" />}
           {active && <span className="anim-glow pointer-events-none absolute size-16 rounded-full bg-gold/60" aria-hidden="true" />}
+          <span className="ground absolute top-[62%] left-1/2 h-[26%] w-[86%] -translate-x-1/2" aria-hidden="true" />
           {p.img ? (
-            <span
-              className={`relative grid size-11 place-items-center rounded-full shadow-float ring-[3px] ${
-                state === 'done' ? 'bg-gold-soft ring-gold' : state === 'open' ? 'bg-white ring-coral' : 'bg-white/85 ring-white'
-              } ${active ? 'ring-ink' : ''}`}
-            >
-              <img src={img(p.img)} alt="" className={`size-10 object-contain ${state === 'locked' ? 'opacity-50 grayscale' : ''}`} />
+            <span className={`relative grid size-10 place-items-center rounded-full ${DISH[state]} ${active ? 'outline-[3px] outline-ink' : ''}`}>
+              <img src={img(p.img)} alt="" className={`pop-3d absolute bottom-[10%] left-1/2 size-[112%] max-w-none -translate-x-1/2 object-contain ${state === 'locked' ? 'opacity-55 grayscale' : ''}`} />
             </span>
           ) : (
-            <span
-              className={`relative grid size-7 place-items-center rounded-full shadow-float ring-2 ${
-                state === 'done' ? 'bg-gold text-ink' : state === 'open' ? 'bg-coral text-coral-ink' : state === 'locked' ? 'bg-sand text-muted' : 'bg-white text-green-dark'
-              } ${active ? 'ring-ink' : 'ring-white'}`}
-            >
+            <span className={`relative grid size-7 place-items-center rounded-full ${GLYPH[state]} ${active ? 'outline-[3px] outline-ink' : ''}`}>
               <PlaceGlyph icon={p.icon} className="size-4" />
             </span>
           )}
-          {state === 'locked' && <img src={img(ART.key)} alt="" className="absolute -right-2 -bottom-1 size-5" />}
+          {state === 'locked' && <img src={img(ART.key)} alt="" className="pop-3d absolute -right-1.5 -bottom-0.5 size-5" />}
           {state === 'done' && (
-            <span className="absolute -right-1.5 -bottom-1 grid size-4 place-items-center rounded-full bg-green-dark text-white ring-2 ring-white">
+            <span className="btn-satin tint-green absolute -right-1 -bottom-0.5 grid size-[1.125rem] place-items-center rounded-full text-white">
               <Icon name="check" width="0.7em" height="0.7em" />
             </span>
           )}
@@ -153,7 +164,7 @@ export function MapScreen() {
     const features = mode === 'mountains' ? MAP_RANGES : PARKS_AND_PLAINS
     markers = features.map((r) => ({
       id: r.id, x: r.at[0], y: r.at[1], label: l(r.name), className: 'w-max min-w-12',
-      content: <span className={`flex flex-col items-center rounded-xl bg-white/95 px-1.5 pb-1 shadow-soft ring-2 ${isSel('landscape', r.id) ? 'ring-ink' : 'ring-white'}`}>
+      content: <span className={`mat-paper edge-light flex flex-col items-center rounded-xl px-1.5 pb-1 ${isSel('landscape', r.id) ? 'outline-2 outline-ink' : ''}`}>
         <img src={img(LANDSCAPE_ART[r.id]!)} alt="" className="size-9 object-contain" />
         <span className="text-[0.7rem] leading-none font-black">{l(r.name)}</span>
       </span>,
@@ -165,8 +176,11 @@ export function MapScreen() {
       label: `${l(p.name)}, ${t('map.peak.height', { n: p.height })}`,
       className: 'size-14',
       content: (
-        <span className={`relative grid size-12 place-items-center rounded-full bg-white/90 shadow-float ring-[3px] transition-transform duration-300 ${isSel('peak', p.id) ? 'scale-125 ring-ink' : 'ring-white'}`}>
-          <img src={img(PEAK_ART[p.id] ?? 'world/mountain-peak.webp')} alt="" className="size-11 object-contain" />
+        <span className={`relative grid size-full place-items-center transition-transform duration-300 ${isSel('peak', p.id) ? 'scale-125' : ''}`}>
+          <span className="ground absolute top-[62%] left-1/2 h-[26%] w-[86%] -translate-x-1/2" aria-hidden="true" />
+          <span className={`mat-ceramic relative grid size-10 place-items-center rounded-full ${isSel('peak', p.id) ? 'outline-[3px] outline-ink' : ''}`}>
+            <img src={img(PEAK_ART[p.id] ?? 'world/mountain-peak.webp')} alt="" className="pop-3d absolute bottom-[10%] left-1/2 size-[112%] max-w-none -translate-x-1/2 object-contain" />
+          </span>
         </span>
       ),
     })))
@@ -204,46 +218,21 @@ export function MapScreen() {
   return (
     <Screen nav wide>
       <TopBar title={t('tile.discover')} />
-      <div className="flex flex-col gap-3 px-4 pb-32 short:pb-8 wide:grid wide:grid-cols-[minmax(0,1.45fr)_minmax(0,1fr)] wide:items-start wide:gap-6 wide:pb-10">
-        <div className="flex flex-col gap-3">
-          {/* Modes: a row of pill buttons with 3D pictures (scrolls sideways on a phone). */}
-          <div role="group" aria-label={t('map.mode.label')} className="-mx-4 flex snap-x gap-2 overflow-x-auto px-4 pb-1 [scrollbar-width:none] wide:mx-0 wide:flex-wrap wide:px-0">
-            {MODES.map((md) => (
-              <button
-                key={md.id}
-                type="button"
-                aria-pressed={mode === md.id}
-                onClick={() => switchMode(md.id)}
-                className={`press edge-light flex min-h-11 shrink-0 snap-start items-center gap-1.5 rounded-full py-1 pr-3.5 pl-1 text-sm font-extrabold ${
-                  mode === md.id
-                    ? 'bg-green-dark text-white shadow-[inset_0_1px_0_rgb(255_255_255/0.25),inset_0_-1.5px_0_rgb(0_0_0/0.15),0_1px_2px_rgb(10_82_48/0.3),0_8px_14px_-8px_rgb(10_82_48/0.6)]'
-                    : 'mat-paper text-ink'
-                }`}
-              >
-                <img src={img(md.art)} alt="" className="size-8 object-contain" />
-                {t(`map.mode.${md.id}` as TKey)}
-              </button>
-            ))}
-          </div>
-
-          <BulgariaMap label={t('map.label')} relief markers={markers} labels={labels} layer={layer} onSelect={onSelect} onMapTap={onMapTap} />
-
-          {(mode === 'landmarks' || mode === 'cities' || mode === 'tourism') && (
-            <ul className="flex flex-wrap items-center justify-center gap-2 text-sm font-extrabold">
-              <li className="edge-light relative flex items-center gap-1.5 rounded-full mat-paper py-1 pr-3 pl-1">
-                <span className="size-5 rounded-full bg-gold-soft ring-[3px] ring-gold" aria-hidden="true" />
-                {t('map.legend.done')}
-              </li>
-              <li className="edge-light relative flex items-center gap-1.5 rounded-full mat-paper py-1 pr-3 pl-1">
-                <span className="size-5 rounded-full bg-white ring-[3px] ring-coral" aria-hidden="true" />
-                {t('map.legend.open')}
-              </li>
-              <li className="edge-light relative flex items-center gap-1.5 rounded-full mat-paper py-1 pr-3 pl-1">
-                <img src={img(ART.key)} alt="" className="size-5" />
-                {t('map.legend.locked')}
-              </li>
-            </ul>
-          )}
+      <div className="@container/page">
+      {/* v0.26 composition. Phone: the mode dock (all eight modes in view — no hidden sideways scroll), the map on its table,
+          then the guide or what was tapped. Computer: the map large on the left; the dock and the panel in a column on the right. */}
+      <div className="flex flex-col gap-4 px-4 pb-[calc(var(--tap)+4rem+env(safe-area-inset-bottom))] short:pb-8 cols:grid cols:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)] cols:items-start cols:gap-x-7 cols:pb-10">
+        <div className="order-2 flex flex-col gap-3 cols:order-none cols:col-start-1 cols:row-start-1">
+          <BulgariaMap
+            label={t('map.label')}
+            relief
+            markers={markers}
+            labels={labels}
+            layer={layer}
+            onSelect={onSelect}
+            onMapTap={onMapTap}
+            footer={(mode === 'landmarks' || mode === 'cities' || mode === 'tourism') && <Legend />}
+          />
 
           {mode === 'provinces' && (
             <details className="edge-light relative rounded-[var(--radius-card)] mat-paper px-4 py-2">
@@ -255,7 +244,7 @@ export function MapScreen() {
                       type="button"
                       aria-pressed={isSel('province', p.id)}
                       onClick={() => setSel({ kind: 'province', id: p.id })}
-                      className={`press min-h-11 rounded-full px-3 text-sm font-bold ${isSel('province', p.id) ? 'bg-ink text-white' : 'bg-cream'}`}
+                      className={`press min-h-11 rounded-full px-3 text-sm font-bold ${isSel('province', p.id) ? 'bg-ink text-white' : 'well'}`}
                     >
                       {l(p.name)}
                     </button>
@@ -271,19 +260,70 @@ export function MapScreen() {
           </p>
         </div>
 
-        <div className="flex flex-col gap-3 wide:sticky wide:top-4">
-          {!sel && (
-            <CharacterMessage hero="koren" mood="determination" className="wide:mt-1">
-              <p className="font-extrabold">
-                {mode === 'provinces' ? t('map.provinces.count') + ' ' + t('map.pick.provinces') : mode === 'landmarks' || mode === 'cities' ? t('map.pick') : t(`map.pick.${mode}` as TKey)}
-              </p>
-            </CharacterMessage>
-          )}
-          {!sel && mode === 'landmarks' && <TimelineLink />}
-          {sel && <InfoPanel key={`${sel.kind}:${sel.id}`} sel={sel} onClose={() => setSel(null)} missionsAt={missionsAt} />}
+        <div className="contents cols:sticky cols:top-4 cols:col-start-2 cols:row-start-1 cols:flex cols:flex-col cols:gap-4">
+          {/* The dock: eight modes as tiles with their 3D picture — the chosen one is gold satin and lifted. */}
+          <div role="group" aria-label={t('map.mode.label')} className="order-1 grid grid-cols-4 gap-2 cols:order-none cols:gap-2.5">
+            {MODES.map((md) => {
+              const on = mode === md.id
+              const short = t(`map.modeShort.${md.id}` as TKey)
+              const full = t(`map.mode.${md.id}` as TKey)
+              return (
+                <button
+                  key={md.id}
+                  type="button"
+                  aria-pressed={on}
+                  // the full name for screen readers; it always contains the visible short word (label in name)
+                  aria-label={full.toLowerCase().includes(short.toLowerCase()) ? full : `${short} – ${full}`}
+                  onClick={() => switchMode(md.id)}
+                  className={`press edge-light flex min-h-[4.75rem] min-w-0 flex-col items-center justify-center gap-1 rounded-[1.25rem] px-1 pt-1.5 pb-1.5 transition-[translate] duration-300 [container-type:inline-size] ${
+                    on ? 'mat mat-satin tint-gold -translate-y-0.5 text-ink' : 'mat-paper text-ink'
+                  }`}
+                >
+                  <img src={img(md.art)} alt="" className={`pop-3d size-[min(2.5rem,10vw)] object-contain transition-transform duration-500 ease-[var(--ease-spring)] ${on ? 'scale-110' : ''}`} />
+                  <span className="max-w-full leading-tight font-extrabold" style={fitWords(short, 'min(0.8125rem, 3.5vw)', 0.64)}>
+                    {short}
+                  </span>
+                </button>
+              )
+            })}
+          </div>
+
+          <div className="order-3 flex flex-col gap-3 cols:order-none">
+            {!sel && (
+              <CharacterMessage hero="koren" mood="determination">
+                <p className="font-extrabold">
+                  {mode === 'provinces' ? t('map.provinces.count') + ' ' + t('map.pick.provinces') : mode === 'landmarks' || mode === 'cities' ? t('map.pick') : t(`map.pick.${mode}` as TKey)}
+                </p>
+              </CharacterMessage>
+            )}
+            {!sel && mode === 'landmarks' && <TimelineLink />}
+            {sel && <InfoPanel key={`${sel.kind}:${sel.id}`} sel={sel} onClose={() => setSel(null)} missionsAt={missionsAt} />}
+          </div>
         </div>
       </div>
+      </div>
     </Screen>
+  )
+}
+
+/** The legend under the map, in the same dishes the markers stand in. */
+function Legend() {
+  const t = useT()
+  return (
+    <ul className="flex flex-wrap items-center gap-1.5 text-[length:min(0.8125rem,3.5vw)] font-extrabold">
+      <li className="flex items-center gap-1.5 rounded-full py-1 pr-2 pl-1">
+        <span className="mat-ceramic-gold size-5" aria-hidden="true" />
+        {t('map.legend.done')}
+      </li>
+      <li className="flex items-center gap-1.5 rounded-full py-1 pr-2 pl-1">
+        <span className="mat-ceramic size-5 outline-[2.5px] outline-coral" aria-hidden="true" />
+        {t('map.legend.open')}
+      </li>
+      <li className="flex items-center gap-1.5 rounded-full py-1 pr-2 pl-1">
+        <img src={img(ART.key)} alt="" className="size-5" />
+        {t('map.legend.locked')}
+      </li>
+    </ul>
   )
 }
 
@@ -365,8 +405,18 @@ function InfoPanel({ sel, onClose, missionsAt }: { sel: NonNullable<Selection>; 
     )
   }
 
+  // On a phone the panel opens under the map: bring it into view (the page's scroll padding keeps it clear of the nav).
+  const panel = useRef<HTMLElement>(null)
+  useEffect(() => {
+    const reduce = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+    const el = panel.current
+    // only when the panel's top is out of sight (a phone): beside the map (computer) the page never jumps
+    if (el && el.getBoundingClientRect().top > window.innerHeight - 96) el.scrollIntoView?.({ block: 'nearest', behavior: reduce ? 'auto' : 'smooth' })
+  }, [])
+
   return (
     <m.section
+      ref={panel}
       initial={{ opacity: 0, y: 24, scale: 0.95 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={bouncy}

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from 'react'
+import { useCallback, useEffect, useId, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { Icon } from '../components/Icon'
 import { img } from '../components/Brand'
 import { RELIEF } from './art'
@@ -36,6 +36,8 @@ type Props = {
   highlight?: { x: number; y: number; r: number }
   /** Accessible description of the map. */
   label: string
+  /** v0.26: shown in the row under the map, left of the zoom buttons (e.g. the legend). */
+  footer?: ReactNode
 }
 
 const MIN_SCALE = 1
@@ -52,8 +54,9 @@ const clamp = (v: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, v
  * nearest marker within HIT_RADIUS, so close places stay tappable when zoomed in.
  * Every marker is also a real <button> for keyboard and screen-reader users.
  */
-export function BulgariaMap({ markers, onSelect, highlight, label, relief = false, layer, labels = [], onMapTap }: Props) {
+export function BulgariaMap({ markers, onSelect, highlight, label, relief = false, layer, labels = [], onMapTap, footer }: Props) {
   const t = useT()
+  const outside = `bg-outside-${useId().replace(/[^a-zA-Z0-9_-]/g, '')}`
   const box = useRef<HTMLDivElement>(null)
   const markerRefs = useRef(new Map<string, HTMLElement>())
   const labelRefs = useRef(new Map<string, HTMLElement>())
@@ -221,7 +224,7 @@ export function BulgariaMap({ markers, onSelect, highlight, label, relief = fals
         ref={box}
         role="group"
         aria-label={label}
-        className="relative w-full touch-none overflow-hidden rounded-[2rem] bg-[#A9DDF8] [box-shadow:var(--elev-3)] select-none"
+        className="relative w-full touch-none overflow-hidden rounded-[2rem] bg-[linear-gradient(170deg,#c3e6f6,#a3d4ee)] [box-shadow:var(--elev-3)] select-none"
         style={{ aspectRatio: `${MAP_W} / ${MAP_H}` }}
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
@@ -235,8 +238,23 @@ export function BulgariaMap({ markers, onSelect, highlight, label, relief = fals
           {/* Real relief (scripts/build-relief.py): the land is painted by the picture, the SVG keeps only the lines. */}
           {relief && <img src={img(RELIEF)} alt="" draggable={false} className="pointer-events-none absolute inset-0 size-full" />}
           <svg viewBox={`0 0 ${MAP_W} ${MAP_H}`} className="absolute inset-0 size-full" aria-hidden="true">
-            <path d={NEIGHBOURS_D} fill={relief ? 'none' : '#F4EEE0'} stroke="#DDD3BE" strokeWidth={1.5} vectorEffect="non-scaling-stroke" />
+            <defs>
+              <mask id={outside} maskUnits="userSpaceOnUse" x={-20} y={-20} width={MAP_W + 40} height={MAP_H + 40}>
+                <rect x={-20} y={-20} width={MAP_W + 40} height={MAP_H + 40} fill="#fff" />
+                <path d={BULGARIA_D} fill="#000" />
+              </mask>
+            </defs>
+            <path d={NEIGHBOURS_D} fill={relief ? '#F8F5ED' : '#F4EEE0'} fillOpacity={relief ? 0.3 : 1} stroke="#DDD3BE" strokeWidth={1.5} vectorEffect="non-scaling-stroke" />
+            {/* v0.26: Bulgaria is a raised piece laid on the map — a soft shadow and a side 6 units deep, seen only
+                OUTSIDE the country (the mask), so the land itself (and every place on it) stays exactly where it is. */}
+            <g mask={`url(#${outside})`} aria-hidden="true">
+              <path d={BULGARIA_D} transform="translate(3 15)" fill="#342C18" opacity={0.14} />
+              <path d={BULGARIA_D} transform="translate(0 6)" fill={relief ? '#6F8B55' : '#4FA673'} />
+              <path d={BULGARIA_D} transform="translate(0 6)" fill="none" stroke="#3E5A2E" strokeOpacity={0.35} strokeWidth={1} vectorEffect="non-scaling-stroke" />
+            </g>
             <path d={BULGARIA_D} fill={relief ? 'none' : '#8ED4A6'} stroke="#0C6B3C" strokeWidth={3} strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
+            {/* the lit top edge: a fine white line just inside the border, light from the top-left */}
+            <path d={BULGARIA_D} transform="translate(-0.8 -1.2)" fill="none" stroke="#fff" strokeOpacity={0.55} strokeWidth={1.25} strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
             <path d={DANUBE_D} fill="none" stroke="#3D9FD1" strokeWidth={4} strokeLinecap="round" vectorEffect="non-scaling-stroke" />
             {/* where a marker had to move aside: a thin line and a dot at the real place */}
             {markers.map((m) => {
@@ -305,7 +323,9 @@ export function BulgariaMap({ markers, onSelect, highlight, label, relief = fals
       </div>
 
       {/* Under the map (not on it): the controls can never hide a place, a spot or a hint. */}
-      <div className="mt-2 flex justify-end gap-2" data-map-control>
+      {/* the footer (legend) takes its own row on a very narrow phone — the zoom buttons then wrap under it, at the right */}
+      <div className="mt-2 flex flex-wrap items-start justify-end gap-2" data-map-control>
+        {footer && <div className="min-w-[min(100%,13rem)] flex-1 [overflow-wrap:break-word]">{footer}</div>}
         <MapButton label={t('map.zoomIn')} onClick={() => zoomButton(1.6)} disabled={view.s >= MAX_SCALE}>
           +
         </MapButton>

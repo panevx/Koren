@@ -1,6 +1,6 @@
 import type { Mission } from '../content/schema'
 import { PLACES } from '../content/places'
-import { ART, GAME_ART } from '../world'
+import { ART, GAME_ART, MODE_ART } from '../world'
 import { AVATARS } from '../store/profiles'
 import { avatarImg } from '../components/ProfileAvatar'
 import { SECTIONS, sectionIcon } from '../sections'
@@ -22,6 +22,7 @@ export const UI_IMAGES: readonly string[] = [
   ...AVATARS.map(avatarImg),
   ...Object.values(ART),
   ...Object.values(GAME_ART),
+  ...Object.values(MODE_ART).flatMap((m) => [m.hero, m.far]),
   ...PLACES.flatMap((p) => (p.img ? [p.img] : [])),
   ...MAP_IMAGES,
   // v0.21–0.22: the Hall of Fame and the fair stall

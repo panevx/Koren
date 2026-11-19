@@ -45,6 +45,16 @@ export const ART = {
 
 export type ArtId = keyof typeof ART
 
+/**
+ * v0.26 age screen: each mode is its own little world — a hero (cut down from the poses by scripts/export-modes.py),
+ * the mode's emblem and one far object in the sky / on the hill.
+ */
+export const MODE_ART = {
+  small: { hero: 'modes/small.webp', far: 'world/butterfly.webp' },
+  young: { hero: 'modes/young.webp', far: ART.balloon },
+  guard: { hero: 'modes/guard.webp', far: 'world/tsarevets-fortress.webp' },
+} as const
+
 /** A small picture for each kind of game (shown on the adventure path so a child sees what awaits). */
 export const GAME_ART: Record<string, string> = {
   quiz: ART.orb,

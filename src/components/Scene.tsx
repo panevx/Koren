@@ -70,7 +70,8 @@ const LOOK: Record<SceneId, { sky: [string, string]; far: string; mid: string; g
   },
 }
 
-export function SceneBackdrop({ scene, className = '' }: { scene: SceneId; className?: string }) {
+/** `quiet`: no sun and no extra details — for small framed worlds where a cropped sun or snow cap would look cut off. */
+export function SceneBackdrop({ scene, className = '', quiet = false }: { scene: SceneId; className?: string; quiet?: boolean }) {
   const look = LOOK[scene]
   const id = `scene-${scene}`
   return (
@@ -86,10 +87,10 @@ export function SceneBackdrop({ scene, className = '' }: { scene: SceneId; class
         </linearGradient>
       </defs>
       <rect width="400" height="300" fill={`url(#${id}-sky)`} />
-      <circle cx="340" cy="52" r="26" fill="#FFE27A" opacity="0.9" />
+      {!quiet && <circle cx="340" cy="52" r="26" fill="#FFE27A" opacity="0.9" />}
       <path d="M0 150 Q60 95 120 135 T250 120 T400 135 V300 H0 Z" fill={look.far} />
       <path d="M0 185 Q90 140 190 172 T400 165 V300 H0 Z" fill={look.mid} />
-      {look.extra}
+      {!quiet && look.extra}
       <path d="M0 215 Q110 190 210 210 T400 205 V300 H0 Z" fill={`url(#${id}-ground)`} />
     </svg>
   )
