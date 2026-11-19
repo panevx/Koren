@@ -67,6 +67,9 @@ export function MissionList({ topic }: { topic?: boolean }) {
   const locked = missions.filter((mission) => !done[mission.id] && progress.status(mission) === 'locked')
   const open = missions.filter((mission) => !done[mission.id] && progress.status(mission) !== 'locked')
   const world = SUBJECT_WORLD[subject ?? missions[0]!.subject]
+  // Every mission here still waits for the teacher (the demo build): say it ONCE on the banner, not on every card.
+  const allDraft = missions.every((mission) => mission.draft)
+  const draftChip = !allDraft
 
   return (
     <Screen nav wide>
@@ -82,6 +85,7 @@ export function MissionList({ topic }: { topic?: boolean }) {
             <span className="flex min-w-0 flex-1 flex-col gap-1.5">
               <span className="text-row">{t('missions.count', { done: played.length, total: missions.length })}</span>
               <Meter value={played.length} max={missions.length} tint="tint-green" className="h-2.5" />
+              {allDraft && <span className="text-meta text-muted">{t('missions.draft')}</span>}
             </span>
           </div>
           {subject === 'history' && <TimelineLink />}
@@ -90,10 +94,14 @@ export function MissionList({ topic }: { topic?: boolean }) {
         {open.length > 0 && (
           <section aria-labelledby="topic-open" className="flex flex-col gap-3">
             <h2 id="topic-open" className="text-headline px-1">{t('topic.open')}</h2>
-            <m.ul variants={stagger} initial="hidden" animate="show" className="grid gap-4 cols:grid-cols-[repeat(auto-fill,minmax(min(19rem,100%),1fr))]">
+            <m.ul variants={stagger} initial="hidden" animate="show" className="grid gap-3 cols:grid-cols-[repeat(auto-fill,minmax(min(19rem,100%),1fr))]">
               {open.map((mission, i) => (
                 <m.li key={mission.id} variants={rise} className={`flex ${i === 0 ? 'cols:col-span-2' : ''}`}>
-                  <Adventure mission={mission} scene={world.scene} fresh={progress.isNew(mission)} lazy={i >= 4} featured={i === 0} />
+                  {i === 0 ? (
+                    <Adventure mission={mission} scene={world.scene} fresh={progress.isNew(mission)} lazy={false} draftChip={draftChip} />
+                  ) : (
+                    <Compact mission={mission} scene={world.scene} fresh={progress.isNew(mission)} lazy={i >= 6} draftChip={draftChip} />
+                  )}
                 </m.li>
               ))}
             </m.ul>
@@ -106,7 +114,7 @@ export function MissionList({ topic }: { topic?: boolean }) {
             <ul className="grid grid-cols-2 gap-3 cols:grid-cols-[repeat(auto-fill,minmax(11rem,1fr))]">
               {played.map((mission, i) => (
                 <li key={mission.id} className="flex">
-                  <Medal mission={mission} lazy={i >= 6} />
+                  <Medal mission={mission} lazy={i >= 6} draftChip={draftChip} />
                 </li>
               ))}
             </ul>
@@ -122,7 +130,7 @@ export function MissionList({ topic }: { topic?: boolean }) {
             <ul className="grid gap-2.5 cols:grid-cols-[repeat(auto-fill,minmax(min(19rem,100%),1fr))]">
               {locked.map((mission) => (
                 <li key={mission.id} className="flex">
-                  <Locked mission={mission} />
+                  <Locked mission={mission} draftChip={draftChip} />
                 </li>
               ))}
             </ul>
@@ -135,47 +143,32 @@ export function MissionList({ topic }: { topic?: boolean }) {
 }
 
 /** Chips every card can carry: new, draft. */
-function Flags({ mission, fresh }: { mission: Mission; fresh?: boolean }) {
+function Flags({ mission, fresh, draftChip }: { mission: Mission; fresh?: boolean; draftChip: boolean }) {
   const t = useT()
-  if (!fresh && !mission.draft) return null
+  const draft = draftChip && mission.draft
+  if (!fresh && !draft) return null
   return (
     <span className="flex flex-wrap items-center gap-1.5">
       {fresh && <span className="btn-satin tint-coral rounded-full px-2.5 py-0.5 text-xs font-black whitespace-nowrap text-coral-ink">{t('unlock.new')}</span>}
-      {mission.draft && <span className="well rounded-full px-2.5 py-0.5 text-xs font-bold whitespace-nowrap text-ink">{t('missions.draftShort')}</span>}
+      {draft && <span className="well rounded-full px-2.5 py-0.5 text-xs font-bold whitespace-nowrap text-ink">{t('missions.draftShort')}</span>}
     </span>
   )
 }
 
-/**
- * An open mission: a little land with the medal waiting on its pedestal and the games inside on glass chips.
- * The first (the next one on the path) is the big card; the rest are compact — land on the left, words on the right
- * on a phone; on a computer the compact ones stand upright in the grid and the big one lies across two columns.
- */
-function Adventure({ mission, scene, fresh, lazy, featured }: { mission: Mission; scene: SceneId; fresh: boolean; lazy: boolean; featured: boolean }) {
+/** The next mission on the path: the big adventure card — a little land with the medal waiting on its pedestal and the games inside on glass chips. */
+function Adventure({ mission, scene, fresh, lazy, draftChip }: { mission: Mission; scene: SceneId; fresh: boolean; lazy: boolean; draftChip: boolean }) {
   const t = useT()
   const l = useLocalized()
-  const level = ageToLevel(useAge())
-  const { content } = pickLevel(mission, level)
-  const games = [...new Set([content.game.type, ...(content.extra ? [content.extra.type] : [])])]
+  const games = useGames(mission)
   const title = l(mission.title)
-  const box = featured ? 'flex-col cols:flex-row' : 'flex-row cols:flex-col'
-  const land = featured
-    ? 'h-[min(9.5rem,40vw)] rounded-t-[inherit] cols:h-auto cols:min-h-[12rem] cols:w-1/2 cols:rounded-tr-none cols:rounded-l-[inherit]'
-    : 'w-[38%] shrink-0 rounded-l-[inherit] cols:h-[9rem] cols:w-auto cols:rounded-l-none cols:rounded-t-[inherit]'
-  const medal = featured ? 'size-[min(6.5rem,28vw)] cols:size-[8rem]' : 'size-[min(4.5rem,19vw)] cols:size-[5.5rem]'
   return (
-    <Link to={`/mission/${mission.id}`} className={`lift mat-paper edge-light flex w-full overflow-hidden rounded-[1.75rem] ${box}`}>
-      <span className={`relative block min-h-[min(8rem,34vw)] overflow-hidden ${land}`} aria-hidden="true">
+    <Link to={`/mission/${mission.id}`} className="lift mat-paper edge-light flex w-full flex-col overflow-hidden rounded-[1.75rem] cols:flex-row">
+      <span className="relative block h-[min(9.5rem,40vw)] min-h-[min(8rem,34vw)] overflow-hidden rounded-t-[inherit] cols:h-auto cols:min-h-[12rem] cols:w-1/2 cols:rounded-tr-none cols:rounded-l-[inherit]" aria-hidden="true">
         <SceneBackdrop scene={scene} quiet className="absolute inset-0 size-full" />
         <span className="rim-over absolute inset-0" />
-        <span className={`pedestal-gold absolute bottom-[10%] h-[13%] ${featured ? 'left-[8%] w-[36%] cols:w-[50%]' : 'left-1/2 w-[70%] -translate-x-1/2 cols:left-[8%] cols:w-[38%] cols:translate-x-0'}`} />
-        <BadgeArt
-          icon={mission.badge.icon}
-          lazy={lazy}
-          className={`pop-3d absolute bottom-[15%] ${featured ? 'left-[11%]' : 'left-1/2 -translate-x-1/2 cols:left-[11%] cols:translate-x-0'} ${medal}`}
-        />
-        {/* the games inside, on glass chips (the big card and the computer only — a compact phone card says it in words to the reader) */}
-        <span className={`absolute top-3 right-3 flex-col items-end gap-1.5 ${featured ? 'flex' : 'hidden cols:flex'}`}>
+        <span className="pedestal-gold absolute bottom-[10%] left-[8%] h-[13%] w-[36%] cols:w-[50%]" />
+        <BadgeArt icon={mission.badge.icon} lazy={lazy} className="pop-3d absolute bottom-[15%] left-[11%] size-[min(6.5rem,28vw)] cols:size-[8rem]" />
+        <span className="absolute top-3 right-3 flex flex-col items-end gap-1.5">
           {games.map((g) => (
             <span key={g} className="mat-glass grid size-[min(2.75rem,11vw)] place-items-center rounded-full">
               <img src={img(GAME_ART[g]!)} alt="" className="size-[72%] object-contain" />
@@ -183,41 +176,69 @@ function Adventure({ mission, scene, fresh, lazy, featured }: { mission: Mission
           ))}
         </span>
       </span>
-      <span className={`flex min-w-0 flex-1 flex-col gap-2 [container-type:inline-size] ${featured ? 'p-4 pt-3 cols:justify-center cols:p-6' : 'p-3.5 cols:p-4 cols:pt-3'}`}>
-        {featured && <span className="text-eyebrow text-green-dark">{t('path.next')}</span>}
-        <Flags mission={mission} fresh={fresh} />
-        <span
-          className={featured ? 'text-headline' : 'text-heading'}
-          style={fitWords(title, featured ? 'min(1.75rem, 7vw)' : 'min(1.25rem, 5.4vw)', 0.62)}
-        >
+      <span className="flex min-w-0 flex-1 flex-col gap-2 p-4 pt-3 [container-type:inline-size] cols:justify-center cols:p-6">
+        <span className="text-eyebrow text-green-dark">{t('path.next')}</span>
+        <Flags mission={mission} fresh={fresh} draftChip={draftChip} />
+        <span className="text-headline" style={fitWords(title, 'min(1.75rem, 7vw)', 0.62)}>
           {title}
         </span>
         <span className="sr-only">{games.map((g) => t(`game.${g}` as TKey)).join(', ')}</span>
-        {featured ? (
-          <span className="btn-satin tint-coral edge-light mt-auto flex min-h-[var(--tap)] items-center justify-center gap-2 self-start rounded-full px-6 text-lg font-extrabold text-coral-ink" aria-hidden="true">
-            <Icon name="play" width="1em" height="1em" />
-            {t('missions.play')}
-          </span>
-        ) : (
-          <span className="mt-auto flex items-center justify-between gap-2" aria-hidden="true">
-            <span className="flex gap-1 cols:hidden">
-              {games.map((g) => (
-                <img key={g} src={img(GAME_ART[g]!)} alt="" className="size-7 object-contain" />
-              ))}
-            </span>
-            <span className="btn-satin tint-coral edge-light ml-auto grid size-[max(2.75rem,var(--tap))] shrink-0 place-items-center rounded-full text-coral-ink cols:flex cols:w-auto cols:gap-1.5 cols:px-5 cols:font-extrabold">
-              <Icon name="play" width="1.05em" height="1.05em" />
-              <span className="hidden cols:inline">{t('missions.play')}</span>
-            </span>
-          </span>
-        )}
+        <span className="btn-satin tint-coral edge-light mt-auto flex min-h-[var(--tap)] items-center justify-center gap-2 self-start rounded-full px-6 text-lg font-extrabold text-coral-ink" aria-hidden="true">
+          <Icon name="play" width="1em" height="1em" />
+          {t('missions.play')}
+        </span>
+      </span>
+    </Link>
+  )
+}
+
+/** The game types inside a mission at the child's level (the main game, then the challenge round). */
+function useGames(mission: Mission) {
+  const level = ageToLevel(useAge())
+  const { content } = pickLevel(mission, level)
+  return [...new Set([content.game.type, ...(content.extra ? [content.extra.type] : [])])]
+}
+
+/**
+ * Every other open mission: one compact row — the medal in a small window onto the land, the title, the games as
+ * small pictures, the play puck. "New" is a coral bead on the window (the word is read out to screen readers).
+ */
+function Compact({ mission, scene, fresh, lazy, draftChip }: { mission: Mission; scene: SceneId; fresh: boolean; lazy: boolean; draftChip: boolean }) {
+  const t = useT()
+  const l = useLocalized()
+  const games = useGames(mission)
+  const title = l(mission.title)
+  return (
+    <Link to={`/mission/${mission.id}`} className="lift mat-paper edge-light flex w-full items-center gap-3 rounded-[1.5rem] p-2 pr-3">
+      <span className="relative block size-[min(4.75rem,20vw)] shrink-0 overflow-hidden rounded-[1.125rem]" aria-hidden="true">
+        <SceneBackdrop scene={scene} quiet className="absolute inset-0 size-full" />
+        <span className="rim-over absolute inset-0" />
+        <span className="pedestal-gold absolute bottom-[8%] left-1/2 h-[14%] w-[72%] -translate-x-1/2" />
+        <BadgeArt icon={mission.badge.icon} lazy={lazy} className="pop-3d absolute bottom-[13%] left-1/2 size-[66%] -translate-x-1/2" />
+      </span>
+      {fresh && <span className="btn-satin tint-coral absolute top-1.5 left-1.5 size-3.5 rounded-full" aria-hidden="true" />}
+      <span className="flex min-w-0 flex-1 flex-col gap-1 [container-type:inline-size]">
+        <span className="text-row" style={fitWords(title, 'min(1.0625rem, 4.5vw)', 0.72)}>
+          {title}
+        </span>
+        {fresh && <span className="sr-only">{t('unlock.new')}</span>}
+        <span className="flex flex-wrap items-center gap-1.5">
+          {games.map((g) => (
+            <img key={g} src={img(GAME_ART[g]!)} alt="" className="size-6 object-contain" aria-hidden="true" />
+          ))}
+          <span className="sr-only">{games.map((g) => t(`game.${g}` as TKey)).join(', ')}</span>
+          {draftChip && mission.draft && <span className="well rounded-full px-2 py-px text-xs font-bold text-ink">{t('missions.draftShort')}</span>}
+        </span>
+      </span>
+      <span className="btn-satin tint-coral edge-light grid size-[max(2.75rem,var(--tap))] shrink-0 place-items-center rounded-full text-coral-ink" aria-hidden="true">
+        <Icon name="play" width="1.05em" height="1.05em" />
       </span>
     </Link>
   )
 }
 
 /** A played mission: its medal in colour on a gold pedestal, with a tick. */
-function Medal({ mission, lazy }: { mission: Mission; lazy: boolean }) {
+function Medal({ mission, lazy, draftChip }: { mission: Mission; lazy: boolean; draftChip: boolean }) {
   const t = useT()
   const l = useLocalized()
   const title = l(mission.title)
@@ -233,7 +254,7 @@ function Medal({ mission, lazy }: { mission: Mission; lazy: boolean }) {
       <span className="text-row" style={fitWords(title, 'min(1rem, 4.3vw)', 0.64)}>
         {title}
       </span>
-      <Flags mission={mission} />
+      <Flags mission={mission} draftChip={draftChip} />
       <span className="text-meta mt-auto flex items-center gap-1 text-green-dark">
         <Icon name="refresh" width="1em" height="1em" />
         {t('path.replay')}
@@ -243,7 +264,7 @@ function Medal({ mission, lazy }: { mission: Mission; lazy: boolean }) {
 }
 
 /** A locked mission: pressed into the page — a recess, the medal still grey, a key. It still opens (and explains how). */
-function Locked({ mission }: { mission: Mission }) {
+function Locked({ mission, draftChip }: { mission: Mission; draftChip: boolean }) {
   const t = useT()
   const l = useLocalized()
   return (
@@ -256,7 +277,7 @@ function Locked({ mission }: { mission: Mission }) {
         <span className="text-row">{l(mission.title)}</span>
         <span className="text-meta flex flex-wrap items-center gap-1.5 text-muted">
           {t('path.locked')}
-          {mission.draft && <span className="rounded-full bg-white/70 px-2 py-px text-xs font-bold text-ink">{t('missions.draftShort')}</span>}
+          {draftChip && mission.draft && <span className="rounded-full bg-white/70 px-2 py-px text-xs font-bold text-ink">{t('missions.draftShort')}</span>}
         </span>
       </span>
     </Link>

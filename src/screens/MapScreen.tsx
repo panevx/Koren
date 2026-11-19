@@ -87,7 +87,6 @@ export function MapScreen() {
         // v0.26: a little 3D landmark standing in a glazed dish (gold when played, a coral rim when open, a grey recess
         // when locked), with a soft shadow on the land under it — the dish's centre is the exact spot.
         <span data-state={state} className={`relative grid size-full place-items-center transition-transform duration-500 ease-[var(--ease-spring)] ${active ? '-translate-y-1 scale-[1.3]' : ''}`}>
-          {fresh && <img src={img(ART.burst)} alt="" className="anim-spin-slow pointer-events-none absolute size-16 max-w-none opacity-80" />}
           {active && <span className="anim-glow pointer-events-none absolute size-16 rounded-full bg-gold/60" aria-hidden="true" />}
           <span className="ground absolute top-[62%] left-1/2 h-[26%] w-[86%] -translate-x-1/2" aria-hidden="true" />
           {p.img ? (
@@ -99,6 +98,8 @@ export function MapScreen() {
               <PlaceGlyph icon={p.icon} className="size-4" />
             </span>
           )}
+          {/* new (open, never opened): one small coral bead on the dish's rim — quiet, but it stands out from "open" */}
+          {fresh && state !== 'locked' && <span className="btn-satin tint-coral absolute top-0.5 -right-0.5 size-3 rounded-full" aria-hidden="true" />}
           {state === 'locked' && <img src={img(ART.key)} alt="" className="pop-3d absolute -right-1.5 -bottom-0.5 size-5" />}
           {state === 'done' && (
             <span className="btn-satin tint-green absolute -right-1 -bottom-0.5 grid size-[1.125rem] place-items-center rounded-full text-white">
@@ -221,7 +222,7 @@ export function MapScreen() {
       <div className="@container/page">
       {/* v0.26 composition. Phone: the mode dock (all eight modes in view — no hidden sideways scroll), the map on its table,
           then the guide or what was tapped. Computer: the map large on the left; the dock and the panel in a column on the right. */}
-      <div className="flex flex-col gap-4 px-4 pb-[calc(var(--tap)+4rem+env(safe-area-inset-bottom))] short:pb-8 cols:grid cols:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)] cols:items-start cols:gap-x-7 cols:pb-10">
+      <div className="flex flex-col gap-4 px-4 pb-[calc(var(--tap)+4rem+env(safe-area-inset-bottom))] short:pb-8 cols:grid cols:grid-cols-[minmax(0,1fr)_15.5rem] cols:items-start cols:gap-x-6 cols:pb-10">
         <div className="order-2 flex flex-col gap-3 cols:order-none cols:col-start-1 cols:row-start-1">
           <BulgariaMap
             label={t('map.label')}
@@ -262,7 +263,7 @@ export function MapScreen() {
 
         <div className="contents cols:sticky cols:top-4 cols:col-start-2 cols:row-start-1 cols:flex cols:flex-col cols:gap-4">
           {/* The dock: eight modes as tiles with their 3D picture — the chosen one is gold satin and lifted. */}
-          <div role="group" aria-label={t('map.mode.label')} className="order-1 grid grid-cols-4 gap-2 cols:order-none cols:gap-2.5">
+          <div role="group" aria-label={t('map.mode.label')} className="order-1 grid grid-cols-4 gap-2 cols:order-none cols:grid-cols-2">
             {MODES.map((md) => {
               const on = mode === md.id
               const short = t(`map.modeShort.${md.id}` as TKey)
@@ -275,13 +276,16 @@ export function MapScreen() {
                   // the full name for screen readers; it always contains the visible short word (label in name)
                   aria-label={full.toLowerCase().includes(short.toLowerCase()) ? full : `${short} – ${full}`}
                   onClick={() => switchMode(md.id)}
-                  className={`press edge-light flex min-h-[4.75rem] min-w-0 flex-col items-center justify-center gap-1 rounded-[1.25rem] px-1 pt-1.5 pb-1.5 transition-[translate] duration-300 [container-type:inline-size] ${
+                  className={`press edge-light flex min-h-[4.75rem] min-w-0 flex-col items-center justify-center gap-1 rounded-[1.25rem] px-1 pt-1.5 pb-1.5 transition-[translate] duration-300 cols:min-h-[3.25rem] cols:flex-row cols:justify-start cols:gap-1.5 cols:px-1.5 cols:text-left ${
                     on ? 'mat mat-satin tint-gold -translate-y-0.5 text-ink' : 'mat-paper text-ink'
                   }`}
                 >
-                  <img src={img(md.art)} alt="" className={`pop-3d size-[min(2.5rem,10vw)] object-contain transition-transform duration-500 ease-[var(--ease-spring)] ${on ? 'scale-110' : ''}`} />
-                  <span className="max-w-full leading-tight font-extrabold" style={fitWords(short, 'min(0.8125rem, 3.5vw)', 0.64)}>
-                    {short}
+                  <img src={img(md.art)} alt="" className={`pop-3d size-[min(2.5rem,10vw)] shrink-0 object-contain cols:size-9 transition-transform duration-500 ease-[var(--ease-spring)] ${on ? 'scale-110' : ''}`} />
+                  {/* the label measures its own box (container units): full tile width on a phone, beside the picture on a computer */}
+                  <span className="block w-full min-w-0 text-center [container-type:inline-size] cols:w-auto cols:flex-1 cols:text-left">
+                    <span className="block leading-tight font-extrabold" style={fitWords(short, 'min(0.8125rem, 3.5vw)', 0.64)}>
+                      {short}
+                    </span>
                   </span>
                 </button>
               )
@@ -322,6 +326,10 @@ function Legend() {
       <li className="flex items-center gap-1.5 rounded-full py-1 pr-2 pl-1">
         <img src={img(ART.key)} alt="" className="size-5" />
         {t('map.legend.locked')}
+      </li>
+      <li className="flex items-center gap-1.5 rounded-full py-1 pr-2 pl-1">
+        <span className="btn-satin tint-coral size-3 rounded-full" aria-hidden="true" />
+        {t('unlock.new')}
       </li>
     </ul>
   )
@@ -423,7 +431,7 @@ function InfoPanel({ sel, onClose, missionsAt }: { sel: NonNullable<Selection>; 
       aria-live="polite"
       className="relative overflow-hidden rounded-[var(--radius-stage)] bg-white shadow-stage"
     >
-      <div className={`${tone} relative flex min-h-20 items-end gap-3 px-4 pt-4 pb-3`}>
+      <div className={`${tone} relative flex min-h-20 items-end gap-3 px-4 pt-4 pb-3 [container-type:inline-size]`}>
         {art && (
           <m.img
             src={img(art)}
@@ -431,10 +439,13 @@ function InfoPanel({ sel, onClose, missionsAt }: { sel: NonNullable<Selection>; 
             initial={{ scale: 0.4, y: 20, rotate: -10 }}
             animate={{ scale: 1, y: 0, rotate: 0 }}
             transition={bouncy}
-            className="pop-3d -mb-1 size-[min(6.5rem,26vw)] shrink-0 object-contain wide:size-[4.5rem]"
+            className="pop-3d -mb-1 size-[min(6.5rem,26vw)] shrink-0 object-contain wide:size-[3.25rem]"
           />
         )}
-        <h2 className="text-title min-w-0 flex-1 pr-10 pb-1 text-ink">{title}</h2>
+        {/* sized by its longest word against the header (a narrow column beside the map on a computer) */}
+        <h2 className="text-title min-w-0 flex-1 pr-10 pb-1 text-ink" style={fitWords(title, 'min(1.75rem, 7vw)', 0.66)}>
+          {title}
+        </h2>
         <button type="button" onClick={onClose} aria-label={t('map.close')} className="tap press absolute top-1 right-1 grid place-items-center rounded-full text-ink">
           <Icon name="close" />
         </button>

@@ -1,4 +1,4 @@
-import type { CSSProperties } from 'react'
+import type { CSSProperties, ReactNode } from 'react'
 import type { SceneId } from '../content/schema'
 import { useT } from '../i18n/useT'
 import { bouncy, m } from '../motion'
@@ -24,7 +24,8 @@ const WORLD: Record<Level, { scene: SceneId; pedestal: string }> = {
 }
 
 /** The three modes plus the exact age (a slider 4–14). Both edit the age of the child who is playing. */
-export function AgePicker() {
+/** `action`: shown beside the exact-age ruler (the computer puts "Next" there, so the whole step fits on one screen). */
+export function AgePicker({ action }: { action?: ReactNode }) {
   const t = useT()
   const age = useAge()
   const setAge = useProfiles((s) => s.setAge)
@@ -41,7 +42,8 @@ export function AgePicker() {
       </div>
 
       {/* The exact age: a ruler under the worlds — the number hops whenever the slider moves. */}
-      <div className="mat-paper edge-light rounded-[1.75rem] px-5 pt-3 pb-3 wide:mx-auto wide:w-full wide:max-w-2xl">
+      <div className="flex items-center gap-5 wide:mx-auto wide:w-full wide:max-w-4xl">
+      <div className="mat-paper edge-light min-w-0 flex-1 rounded-[1.75rem] px-5 pt-3 pb-3">
         <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
           <span className="text-eyebrow text-muted">{t('age.exact')}</span>
           <m.span
@@ -74,6 +76,8 @@ export function AgePicker() {
           ))}
         </div>
       </div>
+      {action}
+      </div>
     </div>
   )
 }
@@ -90,7 +94,7 @@ function ModeWorld({ level, selected, onPick }: { level: Level; selected: boolea
       onClick={() => {
         if (!selected) onPick()
       }}
-      className={`lift group relative isolate flex min-h-[min(9rem,38vw)] overflow-hidden rounded-[1.75rem] text-left transition-[transform,box-shadow] wide:min-h-0 wide:flex-col ${
+      className={`lift group relative isolate flex min-h-[min(7.25rem,31vw)] overflow-hidden rounded-[1.75rem] text-left transition-[transform,box-shadow] wide:min-h-0 wide:flex-col ${
         selected ? 'outline-[3px] outline-offset-[3px] outline-green-dark [box-shadow:var(--elev-4)]' : '[box-shadow:var(--elev-2)]'
       }`}
     >
@@ -99,7 +103,7 @@ function ModeWorld({ level, selected, onPick }: { level: Level; selected: boolea
       <span className="rim-over pointer-events-none absolute inset-0 rounded-[inherit]" aria-hidden="true" />
 
       {/* The picture: the far object, the emblem on its pedestal, the hero standing on the grass. */}
-      <span className="relative order-2 w-[40%] shrink-0 wide:order-1 wide:h-[clamp(11rem,28vh,18rem)] wide:w-full" aria-hidden="true">
+      <span className="relative order-2 w-[40%] shrink-0 wide:order-1 wide:h-[clamp(8.5rem,22vh,15rem)] wide:w-full" aria-hidden="true">
         <img
           src={img(art.far)}
           alt=""
@@ -121,7 +125,7 @@ function ModeWorld({ level, selected, onPick }: { level: Level; selected: boolea
       </span>
 
       {/* The plaque: what this world is called and — when chosen — what awaits there. */}
-      <span className="mat-paper edge-light relative order-1 m-2.5 mr-0 flex min-w-0 flex-1 flex-col justify-center gap-0.5 rounded-[1.25rem] px-3.5 py-3 [container-type:inline-size] wide:order-2 wide:m-3 wide:mt-0 wide:flex-none">
+      <span className="mat-paper edge-light relative order-1 m-2 mr-0 flex min-w-0 flex-1 flex-col justify-center gap-0.5 rounded-[1.25rem] px-3.5 py-2.5 [container-type:inline-size] wide:order-2 wide:m-3 wide:mt-0 wide:flex-none">
         <span className="flex items-center justify-between gap-2">
           <span className="text-eyebrow min-w-0 text-muted">{t(`level.${level}.range`)}</span>
           {/* the radio dot: a recess, or a satin green coin with the tick */}

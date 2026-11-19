@@ -85,8 +85,13 @@ export function WhoPlays() {
                   </span>
 
                   <span className="flex min-w-0 flex-1 flex-col gap-1 [container-type:inline-size] wide:mb-4 wide:flex-none wide:items-center">
-                    {active && (
+                    {/* "Playing now": on a computer every card keeps the chip's row (invisible when not playing), so the names line up */}
+                    {active ? (
                       <span className="self-start rounded-full bg-green-dark px-2.5 py-0.5 text-xs font-black whitespace-nowrap text-white uppercase shadow-[inset_0_1px_0_rgb(255_255_255/0.22),0_1px_1px_rgb(10_82_48/0.3)] wide:self-center">
+                        {t('profile.playing')}
+                      </span>
+                    ) : (
+                      <span className="hidden px-2.5 py-0.5 text-xs font-black wide:invisible wide:block" aria-hidden="true">
                         {t('profile.playing')}
                       </span>
                     )}
