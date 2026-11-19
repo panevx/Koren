@@ -1,3 +1,4 @@
+import { fitWords } from '../components/fit'
 import { useEffect, useMemo, useState } from 'react'
 import { img } from '../components/Brand'
 import { ART } from '../world'
@@ -85,14 +86,14 @@ export function Memory({ game, onDone }: { game: MemoryGame; onDone: () => void 
                 </span>
                 {/* face */}
                 <span
-                  className={`rounded-level absolute inset-[4%] flex [transform:rotateY(180deg)] flex-col items-center justify-center gap-1 p-1.5 text-center shadow-soft [backface-visibility:hidden] ${
+                  className={`rounded-level absolute inset-[4%] flex [container-type:inline-size] [transform:rotateY(180deg)] flex-col items-center justify-center gap-1 p-1.5 text-center shadow-soft [backface-visibility:hidden] ${
                     done ? 'bg-green-soft ring-[3px] ring-green' : 'bg-white'
                   }`}
                 >
                   {f.img && <img src={img(f.img)} alt="" draggable={false} className={`pop-3d object-contain ${game.pairs[pairOf(card)]!.b ? 'size-[70%]' : 'size-[88%]'}`} />}
                   {/* Picture + picture (for children who cannot read yet): the picture alone, its name is the button's label. */}
                   {(!f.img || game.pairs[pairOf(card)]!.b) && (
-                    <span className={`leading-tight font-extrabold ${f.img ? 'text-[length:clamp(0.55rem,11cqw,0.95rem)]' : 'text-[length:clamp(0.7rem,15cqw,1.25rem)]'}`}>
+                    <span className="leading-tight font-extrabold" style={fitWords(l(f), f.img ? 'clamp(0.55rem,11cqw,0.95rem)' : 'clamp(0.7rem,15cqw,1.25rem)', 0.64)}>
                       {l(f)}
                     </span>
                   )}

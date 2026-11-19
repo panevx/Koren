@@ -1,3 +1,4 @@
+import { fitWords } from '../components/fit'
 import { useMemo, useState } from 'react'
 import { img } from '../components/Brand'
 import { Icon } from '../components/Icon'
@@ -101,7 +102,7 @@ function QuizQuestion({
               onClick={() => choose(i)}
               disabled={isWrong || (solved && !isRight)}
               aria-pressed={isRight || isWrong}
-              className={`tap press rounded-level flex h-full w-full items-center gap-3 px-4 py-3 text-left text-lg leading-snug font-extrabold ${
+              className={`tap press rounded-level flex h-full w-full items-center gap-3 px-4 py-3 text-left text-lg leading-snug font-extrabold [container-type:inline-size] ${
                 // Picture cards are narrow: the label shrinks with the card (cqw), so one long word never breaks.
                 withImages ? 'flex-col justify-center text-center [container-type:inline-size]' : ''
               } ${
@@ -109,7 +110,7 @@ function QuizQuestion({
                   ? 'bg-green-soft text-green-dark shadow-soft ring-[3px] ring-green'
                   : isWrong || solved
                     ? 'bg-sand/70 text-muted'
-                    : 'bg-white text-ink shadow-soft'
+                    : 'mat-paper edge-light text-ink'
               }`}
             >
               {option.img ? (
@@ -117,7 +118,7 @@ function QuizQuestion({
               ) : (
                 <span className={`size-3.5 shrink-0 rounded-full ${isWrong || (solved && !isRight) ? 'bg-muted/40' : DOTS[at % DOTS.length]}`} aria-hidden="true" />
               )}
-              <span className={`min-w-0 flex-1 [overflow-wrap:anywhere] ${withImages ? 'text-[length:clamp(0.6rem,12cqw,1.125rem)]' : ''}`}>{l(option)}</span>
+              <span className="min-w-0 flex-1 [overflow-wrap:anywhere]" style={fitWords(l(option), withImages ? 'clamp(0.6rem,12cqw,1.125rem)' : '1.125rem', 0.78)}>{l(option)}</span>
               {isWrong && <span aria-hidden="true">×</span>}
               {isRight && (
                 <m.span initial={{ scale: 0 }} animate={{ scale: 1 }} transition={bouncy} className="grid size-8 shrink-0 place-items-center rounded-full bg-green text-white">

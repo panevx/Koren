@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useState, type CSSProperties } from 'react'
 import { GLAGOLITIC } from '../content/glagolitic'
 import type { CipherGame } from '../content/schema'
 import { useLocalized } from '../content/useLocalized'
@@ -54,6 +54,7 @@ export function Cipher({ game, onDone }: { game: CipherGame; onDone: () => void 
   }
 
   let seen = 0
+  const longest = Math.max(1, ...game.message.bg.split(' ').map((w) => [...w].length))
   return (
     <div className="flex flex-1 flex-col gap-3 side:grid side:grid-cols-2 side:content-start side:gap-x-4 side:[&>*]:col-start-1">
       <Prompt>{l(game.prompt)}</Prompt>
@@ -62,7 +63,9 @@ export function Cipher({ game, onDone }: { game: CipherGame; onDone: () => void 
       <div
         role="group"
         aria-label={t('cipher.message')}
-        className="flex flex-wrap justify-center gap-x-3 gap-y-2 rounded-[1.75rem] bg-[#F4EAD5] px-3 py-3 shadow-soft side:col-start-2! side:row-start-1"
+        className="flex flex-wrap justify-center gap-x-3 gap-y-2 rounded-[1.75rem] bg-[#F4EAD5] px-3 py-3 shadow-soft [container-type:inline-size] side:col-start-2! side:row-start-1"
+        // The longest word must fit on one row: its cells share the panel's width (on a 320 px phone 9 letters did not).
+        style={{ '--cell': `min(2.25rem, 9vw, calc((100cqw - ${longest - 1} * 0.25rem) / ${longest}))` } as CSSProperties}
       >
         {game.message.bg.split(' ').map((word, w) => (
           <div key={w} className="flex gap-1">
@@ -73,7 +76,7 @@ export function Cipher({ game, onDone }: { game: CipherGame; onDone: () => void 
               return (
                 <div key={j} className="flex flex-col items-center gap-0.5">
                   <span className="sr-only">{t('cipher.symbolAt', { n: n + 1, glyph: glyphName(c) })}</span>
-                  <span className="text-[length:min(2rem,8vw)] leading-none text-[#7A3B12]" style={{ fontFamily: "'Noto Sans Glagolitic', serif" }} aria-hidden="true">
+                  <span className="text-[length:min(2rem,8vw,calc(var(--cell)*0.9))] leading-none text-[#7A3B12]" style={{ fontFamily: "'Noto Sans Glagolitic', serif" }} aria-hidden="true">
                     {GLAGOLITIC[c]}
                   </span>
                   <m.span
@@ -82,7 +85,7 @@ export function Cipher({ game, onDone }: { game: CipherGame; onDone: () => void 
                     animate={{ scale: 1 }}
                     transition={bouncy}
                     lang={open ? 'bg' : undefined}
-                    className={`grid size-[min(2.25rem,9vw)] place-items-center rounded-[0.6rem] text-[length:min(1.25rem,5.5vw)] font-black ${
+                    className={`grid size-[var(--cell)] place-items-center rounded-[0.6rem] text-[length:min(1.25rem,5.5vw,calc(var(--cell)*0.6))] font-black ${
                       open ? 'bg-white text-green-dark' : next ? 'bg-gold-soft ring-[3px] ring-gold' : 'bg-white/60'
                     }`}
                   >

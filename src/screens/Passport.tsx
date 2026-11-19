@@ -53,9 +53,9 @@ export function Passport() {
               <span className="mat-ceramic-gold grid size-[min(4.5rem,18vw)] shrink-0 place-items-center">
                 <ProfileAvatar avatar={profile.avatar} outfit={profile.outfit} className="size-[82%] shadow-none" />
               </span>
-              <div className="min-w-0 flex-1">
+              <div className="min-w-0 flex-1 [container-type:inline-size]">
                 <img src={img('logo/koren-white.svg')} alt="" className="foil mb-1.5 h-6 w-auto" />
-                <p className="text-title">{name(profile, index)}</p>
+                <p className="text-title text-[length:min(1.5rem,6.4vw,13cqw)]">{name(profile, index)}</p>
               </div>
             </div>
             <dl className="relative mt-4 grid grid-cols-3 gap-2 text-center">

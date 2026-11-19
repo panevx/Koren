@@ -44,13 +44,13 @@ export function Welcome() {
         </div>
       </div>
 
-      <div className="mat-paper edge-light relative z-10 -mt-8 flex flex-1 flex-col gap-4 rounded-t-[2.25rem] px-6 pt-[4.5rem] pb-6 side:mt-0 side:justify-center side:gap-3 side:rounded-[2rem] side:p-5">
+      <div className="mat-paper edge-light relative z-10 -mt-8 flex min-w-0 flex-1 flex-col [container-type:inline-size] gap-4 rounded-t-[2.25rem] px-6 pt-[4.5rem] pb-6 side:mt-0 side:justify-center side:gap-3 side:rounded-[2rem] side:p-5">
         <span className="paper-top" aria-hidden="true" />
         <Ornamented>
           <p className="text-center text-lg leading-snug font-extrabold text-green-dark">{t('app.tagline')}</p>
         </Ornamented>
 
-        <Button variant="primary" className="w-full py-3.5 text-[length:min(1.5rem,6.2vw)] whitespace-nowrap" onClick={() => navigate('/age')}>
+        <Button variant="primary" className="w-full py-3.5 text-[length:min(1.5rem,6.2vw,7.4cqw)] whitespace-nowrap" onClick={() => navigate('/age')}>
           <Icon name="play" />
           {t('welcome.start')}
         </Button>

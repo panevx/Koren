@@ -1,3 +1,4 @@
+import { fitWords } from '../components/fit'
 import { useMemo, useState } from 'react'
 import { img } from '../components/Brand'
 import type { MatchGame, Option } from '../content/schema'
@@ -61,8 +62,8 @@ export function Match({ game, onDone }: { game: MatchGame; onDone: () => void })
           done
             ? 'bg-green-soft text-green-dark'
             : active
-              ? 'scale-[1.04] bg-gold text-ink shadow-float'
-              : 'bg-white shadow-soft'
+              ? 'fill-satin tint-gold scale-[1.04] text-ink [box-shadow:var(--rim-tint),var(--elev-4)]'
+              : 'mat-paper edge-light'
         }`}
       >
         {option.img && (
@@ -73,7 +74,7 @@ export function Match({ game, onDone }: { game: MatchGame; onDone: () => void })
           />
         )}
         {/* The label shrinks with the card (cqw), so one long word never breaks. */}
-        <span className="text-[length:clamp(0.6rem,12cqw,1rem)]">{l(option)}</span>
+        <span style={fitWords(l(option), 'clamp(0.6rem,12cqw,1rem)', 0.64)}>{l(option)}</span>
         {done && (
           <m.span
             initial={{ scale: 0 }}

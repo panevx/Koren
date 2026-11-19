@@ -1,3 +1,4 @@
+import { fitWords } from '../components/fit'
 import { Avatar, img } from '../components/Brand'
 import { Sparkles } from '../components/ds'
 import { ART } from '../world'
@@ -84,8 +85,10 @@ export function Prompt({ children }: { children: string }) {
         <Avatar hero="koren" mood="determination" className="size-[min(3.5rem,13vw)]" />
       </m.span>
       <div className="edge-light relative min-w-0 flex-1 rounded-[1.5rem] rounded-bl-md mat-paper px-[min(1.125rem,4vw)] py-3.5 [container-type:inline-size]">
-        {/* Also capped by the bubble's own width: beside a picture (landscape) the bubble is narrow and a long word would break. */}
-        <h3 className="text-[length:min(1.2rem,5.6vw,11cqw)] leading-snug font-extrabold">{children}</h3>
+        {/* Capped by the bubble's own width AND by its longest word (v0.26): at 320 px with a big font „крепостта!“ broke. */}
+        <h3 className="leading-snug font-extrabold" style={fitWords(children, 'min(1.2rem,5.6vw,11cqw)', 0.66)}>
+          {children}
+        </h3>
       </div>
     </div>
   )

@@ -1,3 +1,4 @@
+import { fitWords } from '../components/fit'
 import { useState } from "react";
 import { Icon } from "../components/Icon";
 import { Card } from "../components/ui";
@@ -80,7 +81,7 @@ export function MapFind({
   return (
     // Wide landscape screen: the task on the left, the map on the right, sized to fit the low screen.
     <div className="flex flex-1 flex-col gap-3 side:grid side:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] side:content-start side:gap-x-4 side:[&>*]:col-start-1">
-      <Card className="flex items-center gap-3 px-4 py-3">
+      <Card className="flex items-center gap-3 px-4 py-3 [container-type:inline-size]">
         {game.showIcons && (
           <span
             className="btn-satin tint-coral edge-light grid size-14 shrink-0 place-items-center rounded-full text-coral-ink"
@@ -89,7 +90,8 @@ export function MapFind({
             <PlaceGlyph icon={target.icon} className="size-8" />
           </span>
         )}
-        <h3 className="min-w-0 flex-1 text-xl leading-snug font-extrabold [overflow-wrap:break-word] side:text-[length:min(1.25rem,3vw)]">
+        {/* the task is sized by its longest word against the card (container units) — a 5-year-old's big font at 320 px broke „крепостта!“ */}
+        <h3 className="min-w-0 flex-1 leading-snug font-extrabold [overflow-wrap:break-word]" style={fitWords(l(game.prompt), 'min(1.25rem, 5.4vw)', 0.68)}>
           {l(game.prompt)}
         </h3>
       </Card>
