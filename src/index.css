@@ -689,3 +689,73 @@ body {
     inset 0 -36px 40px -30px rgb(var(--shade) / 0.28);
   background: radial-gradient(70% 60% at 15% 0%, rgb(255 250 230 / 0.22), transparent 70%);
 }
+
+/* ---- v0.26 diorama (the hub's stage) ----------------------------------------------------------------------
+ * A physical toy theatre: the landscape is the BACK WALL (narrower, set back), the green card is the FLOOR SLAB in
+ * front of it. The slab has a lit top face (where Koren, Raya and the medal stand), a satin front face (the text)
+ * and a visible thickness at the bottom. Things cross the layers (feet on the top face, the medal rising into the
+ * scene) — that crossing is what makes it read as depth rather than two stacked cards. */
+.plinth {
+  position: relative;
+  isolation: isolate;
+  --tint-hi: #138b50;
+  --tint: #0f7a46;
+  --tint-lo: #0a5e36;
+  --glow: 10 82 48;
+  background: linear-gradient(180deg, var(--tint-hi) 0%, var(--tint) 45%, var(--tint-lo) 100%);
+  box-shadow:
+    inset 0 -1.5px 0 rgb(255 255 255 / 0.08),
+    0 6px 0 #08472a,
+    0 7px 1px rgb(0 30 15 / 0.35),
+    0 22px 34px -12px rgb(var(--glow) / 0.5),
+    0 48px 70px -34px rgb(var(--glow) / 0.45);
+  transition: transform var(--dur-std) var(--ease-tactile);
+  -webkit-user-select: none;
+  user-select: none;
+}
+/* Sheen on the front face: light from the top-left falls across it. Behind the content. */
+.plinth::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    radial-gradient(55% 45% at 8% 8%, rgb(255 255 255 / 0.16), transparent 70%),
+    linear-gradient(100deg, transparent 55%, rgb(255 255 255 / 0.05) 70%, transparent 85%);
+}
+a.plinth:active {
+  transform: translateY(2px) scale(0.993);
+  transition-duration: var(--dur-micro);
+}
+/* The top face of the slab: brighter (it faces the light), a white lip at the back, and a crisp edge that throws a
+   thin shadow onto the front face. */
+.plinth-top {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 1.5rem;
+  z-index: -1;
+  border-radius: inherit;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  background: linear-gradient(180deg, #5cc98d 0%, #34ad6c 55%, #239b5d 100%);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.6),
+    0 1px 0 rgb(255 255 255 / 0.22),
+    0 2px 3px rgb(0 40 20 / 0.4);
+}
+/* The back wall: the picture, set back from the slab (narrower), darker toward the floor (ambient occlusion). */
+.backwall {
+  box-shadow: 0 1px 2px rgb(var(--shade) / 0.12), 0 12px 24px -14px rgb(var(--shade) / 0.35);
+}
+
+/* A pedestal under a world's 3D object: a lit elliptical disc with a front edge — each tile is a tiny stage. */
+.pedestal {
+  border-radius: 50%;
+  background: radial-gradient(60% 70% at 45% 35%, rgb(255 255 255 / 0.7), rgb(255 255 255 / 0.32) 70%);
+  box-shadow:
+    inset 0 -2px 3px rgb(var(--glow) / 0.18),
+    0 3px 0 rgb(var(--glow) / 0.22),
+    0 8px 12px -4px rgb(var(--glow) / 0.35);
+}
