@@ -33,7 +33,7 @@ export function Screen({
       <m.main {...pageEnter} className={`mx-auto flex min-h-dvh w-full max-w-md flex-col ${wide ? 'wide:max-w-6xl wide:px-4' : ''} ${className}`}>
         {children}
       </m.main>
-      {nav && <BottomNav />}
+      {nav && <BottomNav refined={atmosphere} />}
     </div>
   )
 }

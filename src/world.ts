@@ -5,6 +5,10 @@
  */
 export const ART = {
   hills: 'world/hills-v02.webp',
+  /** v0.26 diorama: the same landscape with the sky cut away (scripts/diorama-layers.py) — the front layer of the back wall. */
+  hillsNear: 'world/diorama-hills.webp',
+  cloud: 'world/cloud.webp',
+  bush: 'world/forest-bush.webp',
   /** v0.21: the blank number plate (the code and digits are text on top). */
   plate: 'places/car-license-plate.svg',
   /** v0.22: days of adventure, coins. */
