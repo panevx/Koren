@@ -386,7 +386,7 @@ export function Trace({
           <button
             type="button"
             onClick={nextStop}
-            className="tap press rounded-full bg-white px-5 py-2 text-base font-extrabold text-green-dark shadow-soft"
+            className="edge-light relative tap press rounded-full mat-paper px-5 py-2 text-base font-extrabold text-green-dark"
           >
             {reached < stops.length
               ? t("trace.next")

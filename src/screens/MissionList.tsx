@@ -57,14 +57,14 @@ export function MissionList({ topic }: { topic?: boolean }) {
       <div className="flex flex-col gap-4 px-4 pb-32 short:pb-8 wide:pb-10">
         {subject === 'history' && <TimelineLink />}
         {/* Progress pill */}
-        <div className="flex items-center gap-3 rounded-full bg-white py-2 pr-4 pl-2 shadow-soft">
-          <span className="grid size-10 shrink-0 place-items-center rounded-full bg-gold text-ink">
+        <div className="edge-light relative flex items-center gap-3 rounded-full mat-paper py-2 pr-4 pl-2">
+          <span className="mat-ceramic-gold grid size-10 shrink-0 place-items-center text-ink">
             <Icon name="star" width="1.2em" height="1.2em" />
           </span>
           <div className="min-w-0 flex-1">
             <p className="text-sm font-extrabold">{t('missions.count', { done: played, total: missions.length })}</p>
-            <div className="mt-1 h-2.5 overflow-hidden rounded-full bg-sand" aria-hidden="true">
-              <div className="h-full rounded-full bg-green" style={{ width: `${(played / missions.length) * 100}%` }} />
+            <div className="well mt-1 h-2.5 overflow-hidden rounded-full" aria-hidden="true">
+              <div className="fill-satin tint-green h-full rounded-full" style={{ width: `${(played / missions.length) * 100}%` }} />
             </div>
           </div>
         </div>
@@ -75,16 +75,16 @@ export function MissionList({ topic }: { topic?: boolean }) {
             const locked = progress.status(mission) === 'locked'
             return (
               <m.li key={mission.id} variants={rise}>
-                <Link to={`/mission/${mission.id}`} className="press rounded-level flex items-center gap-3 bg-white p-2.5 shadow-soft">
-                  <BadgeArt icon={mission.badge.icon} lazy={i >= 6} className="size-[min(4.5rem,18vw)]" />
+                <Link to={`/mission/${mission.id}`} className="edge-light relative press rounded-level flex items-center gap-3 mat-paper p-2.5">
+                  <BadgeArt icon={mission.badge.icon} lazy={i >= 6} className="size-[min(4.5rem,18vw)] drop-shadow-[0_4px_4px_rgb(52_44_24/0.22)]" />
                   <span className="flex min-w-0 flex-1 flex-col items-start gap-1">
                     <span className="flex flex-wrap items-center gap-1.5">
                       <span className={`rounded-full px-2.5 py-0.5 text-xs font-black tracking-wide whitespace-nowrap text-ink uppercase ${SUBJECT_TINT[mission.subject]}`}>
                         {t(`subject.${mission.subject}`)}
                       </span>
-                      {locked && <span className="rounded-full bg-sand px-2.5 py-0.5 text-xs font-bold whitespace-nowrap text-ink">{t('path.locked')}</span>}
+                      {locked && <span className="well rounded-full px-2.5 py-0.5 text-xs font-bold whitespace-nowrap text-ink">{t('path.locked')}</span>}
                       {progress.isNew(mission) && <span className="rounded-full bg-coral px-2.5 py-0.5 text-xs font-black whitespace-nowrap text-coral-ink">{t('unlock.new')}</span>}
-                      {mission.draft && <span className="rounded-full bg-sand px-2.5 py-0.5 text-xs font-bold whitespace-nowrap text-ink">{t('missions.draftShort')}</span>}
+                      {mission.draft && <span className="well rounded-full px-2.5 py-0.5 text-xs font-bold whitespace-nowrap text-ink">{t('missions.draftShort')}</span>}
                     </span>
                     <span className="text-[length:min(1.125rem,5.4vw)] leading-tight font-extrabold">{l(mission.title)}</span>
                     {isDone && (

@@ -221,7 +221,7 @@ export function BulgariaMap({ markers, onSelect, highlight, label, relief = fals
         ref={box}
         role="group"
         aria-label={label}
-        className="relative w-full touch-none overflow-hidden rounded-[2rem] bg-[#A9DDF8] shadow-soft select-none"
+        className="relative w-full touch-none overflow-hidden rounded-[2rem] bg-[#A9DDF8] [box-shadow:var(--elev-3)] select-none"
         style={{ aspectRatio: `${MAP_W} / ${MAP_H}` }}
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
@@ -299,6 +299,9 @@ export function BulgariaMap({ markers, onSelect, highlight, label, relief = fals
             </button>
           ))}
         </div>
+        {/* v0.26: the map lies under glass — a rim of light and a faint top-left reflection, drawn OVER the map (never
+            catches taps), so the board reads as a physical table like the hub's diorama. */}
+        <span className="rim-over pointer-events-none absolute inset-0 rounded-[inherit]" aria-hidden="true" />
       </div>
 
       {/* Under the map (not on it): the controls can never hide a place, a spot or a hint. */}
@@ -326,7 +329,7 @@ function MapButton({ label, onClick, disabled, children }: { label: string; onCl
       aria-label={label}
       onClick={onClick}
       disabled={disabled}
-      className="press grid size-12 place-items-center rounded-full bg-white text-2xl font-black text-green-dark shadow-float disabled:opacity-40"
+      className="lift mat-paper edge-light grid size-12 place-items-center rounded-full text-2xl font-black text-green-dark disabled:opacity-40"
     >
       {children}
     </button>

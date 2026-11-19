@@ -84,10 +84,12 @@
   --ease-calm: cubic-bezier(0.22, 1, 0.36, 1);
 
   /* Soft, layered shadows: a contact shadow, a mid shadow and a wide ambient one. */
-  --shadow-soft: 0 1px 2px rgb(28 43 35 / 0.05), 0 6px 14px -6px rgb(28 43 35 / 0.12), 0 18px 30px -18px rgb(28 43 35 / 0.18);
-  --shadow-float: 0 2px 4px rgb(28 43 35 / 0.06), 0 12px 24px -8px rgb(28 43 35 / 0.18), 0 28px 48px -24px rgb(28 43 35 / 0.3);
-  /* A raised stage (the adventure card, the reward): a long soft shadow that lifts it off the page. */
-  --shadow-stage: 0 2px 6px rgb(28 43 35 / 0.08), 0 20px 36px -14px rgb(28 43 35 / 0.32), 0 44px 70px -40px rgb(16 48 31 / 0.45);
+  /* v0.26: every shadow is warm (never black), lit from the top-left, and carries a white top rim + a 1 px hairline
+     that separates white from cream. soft = depth 2, float = depth 4, stage = depth 5 (see the spatial system below). */
+  --shadow-soft: inset 0 1px 0 rgb(255 255 255 / 0.85), 0 0 0 1px rgb(52 44 24 / 0.05), 0 1px 2px rgb(52 44 24 / 0.08), 0 4px 10px -4px rgb(52 44 24 / 0.1), 0 14px 28px -16px rgb(52 44 24 / 0.2);
+  --shadow-float: inset 0 1px 0 rgb(255 255 255 / 0.9), 0 0 0 1px rgb(52 44 24 / 0.06), 0 1px 3px rgb(52 44 24 / 0.08), 0 14px 30px -10px rgb(52 44 24 / 0.22), 0 40px 64px -28px rgb(52 44 24 / 0.3);
+  /* A raised stage (dialogs, the reward): a long soft shadow that lifts it off the page. */
+  --shadow-stage: inset 0 1px 0 rgb(255 255 255 / 0.6), 0 0 0 1px rgb(52 44 24 / 0.05), 0 2px 6px rgb(52 44 24 / 0.12), 0 24px 48px -16px rgb(52 44 24 / 0.32), 0 64px 100px -40px rgb(16 48 31 / 0.36);
 }
 
 /* Type scale (v0.13). Sizes follow the screen width on narrow phones, so no word ever breaks. */
@@ -214,10 +216,15 @@ body {
  * Set the side colour with --edge (e.g. class="[--edge:var(--color-coral-deep)]").
  */
 .puck {
+  /* v0.26 satin: the fill curves (a light top, a slightly darker base) over whatever bg-* colour the button has,
+     a bright top edge, a THIN side (2.5 px, was 5 px) and a contact + ambient shadow. */
+  background-image: linear-gradient(180deg, rgb(255 255 255 / 0.2), rgb(255 255 255 / 0) 48%, rgb(0 0 0 / 0.05));
   box-shadow:
-    inset 0 2px 0 rgb(255 255 255 / 0.38),
-    0 5px 0 var(--edge, var(--color-sand)),
-    0 14px 22px -12px rgb(28 43 35 / 0.4);
+    inset 0 1px 0 rgb(255 255 255 / 0.5),
+    inset 0 -1.5px 0 rgb(0 0 0 / 0.07),
+    0 2.5px 0 var(--edge, var(--color-sand)),
+    0 3.5px 1.5px rgb(52 44 24 / 0.2),
+    0 12px 20px -12px rgb(52 44 24 / 0.45);
 }
 
 /*
@@ -226,21 +233,22 @@ body {
  */
 .press {
   transition:
-    transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1),
+    transform 0.36s cubic-bezier(0.3, 1.25, 0.5, 1),
     box-shadow 0.15s ease-out,
     filter 0.15s ease-out;
   -webkit-user-select: none;
   user-select: none;
 }
 .press:active:not(:disabled) {
-  transform: translateY(3px) scale(0.97);
-  transition-duration: 0.08s;
+  transform: translateY(2px) scale(0.98);
+  transition-duration: 0.1s;
 }
 .puck.press:active:not(:disabled) {
   box-shadow:
-    inset 0 2px 0 rgb(255 255 255 / 0.38),
-    0 1px 0 var(--edge, var(--color-sand)),
-    0 6px 10px -8px rgb(28 43 35 / 0.4);
+    inset 0 1px 0 rgb(255 255 255 / 0.3),
+    inset 0 1px 3px rgb(0 0 0 / 0.1),
+    0 0.5px 0 var(--edge, var(--color-sand)),
+    0 3px 6px -4px rgb(52 44 24 / 0.4);
 }
 @media (hover: hover) {
   .press:hover:not(:disabled) {
@@ -269,10 +277,10 @@ body {
     to right,
     var(--color-green) 0%,
     var(--color-green) var(--fill, 50%),
-    var(--color-sand) var(--fill, 50%),
-    var(--color-sand) 100%
+    #e4dccb var(--fill, 50%),
+    #e4dccb 100%
   );
-  box-shadow: inset 0 2px 3px rgb(28 43 35 / 0.18);
+  box-shadow: inset 0 1.5px 2px rgb(52 44 24 / 0.22), inset 0 -1px 0 rgb(255 255 255 / 0.7);
 }
 .age-range::-moz-range-track {
   height: 14px;
@@ -290,11 +298,15 @@ body {
   height: 38px;
   margin-top: -12px;
   border-radius: 50%;
-  background: var(--color-coral);
+  /* v0.26: a satin coral knob in a white bezel — lit from the top-left, a thin side, a soft drop */
+  background: radial-gradient(circle at 35% 28%, #ffa29b 0%, var(--color-coral) 55%, #f04f45 100%);
   border: 4px solid #fff;
   box-shadow:
-    0 3px 0 var(--color-coral-deep),
-    0 8px 12px -4px rgb(28 43 35 / 0.4);
+    inset 0 1px 1px rgb(255 255 255 / 0.5),
+    0 0 0 1px rgb(52 44 24 / 0.06),
+    0 2px 0 #e9e2d2,
+    0 3px 2px rgb(52 44 24 / 0.2),
+    0 10px 14px -6px rgb(52 44 24 / 0.4);
 }
 .age-range::-moz-range-thumb {
   width: 30px;
@@ -350,19 +362,29 @@ body {
  */
 /* Tinted stage backgrounds with soft light from the top-left (like the 3D figures). */
 .bg-stage-green {
-  background: radial-gradient(120% 90% at 15% 0%, #1a9a58 0%, var(--color-green) 45%, var(--color-green-dark) 100%);
+  background:
+    radial-gradient(50% 42% at 6% 0%, rgb(255 255 255 / 0.12), transparent 72%),
+    radial-gradient(120% 90% at 15% 0%, #1a9a58 0%, var(--color-green) 45%, var(--color-green-dark) 100%);
 }
 .bg-stage-sky {
-  background: radial-gradient(120% 100% at 20% 0%, #c9ecff 0%, var(--color-sky) 60%, #4fb3e8 100%);
+  background:
+    radial-gradient(50% 42% at 6% 0%, rgb(255 255 255 / 0.3), transparent 72%),
+    radial-gradient(120% 100% at 20% 0%, #c9ecff 0%, var(--color-sky) 60%, #4fb3e8 100%);
 }
 .bg-stage-gold {
-  background: radial-gradient(120% 100% at 20% 0%, #fff0b8 0%, var(--color-gold) 60%, #f7c23c 100%);
+  background:
+    radial-gradient(50% 42% at 6% 0%, rgb(255 255 255 / 0.3), transparent 72%),
+    radial-gradient(120% 100% at 20% 0%, #fff0b8 0%, var(--color-gold) 60%, #f7c23c 100%);
 }
 .bg-stage-coral {
-  background: radial-gradient(120% 100% at 20% 0%, #ffa59d 0%, var(--color-coral) 60%, #f2554c 100%);
+  background:
+    radial-gradient(50% 42% at 6% 0%, rgb(255 255 255 / 0.3), transparent 72%),
+    radial-gradient(120% 100% at 20% 0%, #ffa59d 0%, var(--color-coral) 60%, #f2554c 100%);
 }
 .bg-stage-night {
-  background: radial-gradient(120% 90% at 50% 0%, #1f6a43 0%, var(--color-green-deep) 55%, var(--color-night) 100%);
+  background:
+    radial-gradient(50% 42% at 6% 0%, rgb(255 255 255 / 0.12), transparent 72%),
+    radial-gradient(120% 90% at 50% 0%, #1f6a43 0%, var(--color-green-deep) 55%, var(--color-night) 100%);
 }
 /* A thing being dragged in a game is lifted off the page. */
 [data-dragging='true'] {
@@ -475,7 +497,6 @@ body {
 /* ---- Materials --------------------------------------------------------------------------------------- */
 /* Shared: a positioned, isolated surface whose ::before (sheen) sits behind the content. */
 .mat {
-  position: relative;
   isolation: isolate;
 }
 .mat::before {
@@ -574,7 +595,6 @@ body {
 /* Satin button: a curved pill (lighter top, darker base), a bright top edge, a coloured contact + ambient shadow.
    Hover lifts it 1 px and widens the shadow; press sinks it 1 px, flattens the shadow and dims the top light. */
 .btn-satin {
-  position: relative;
   isolation: isolate;
   background: linear-gradient(180deg, var(--tint-hi) 0%, var(--tint) 52%, var(--tint-lo) 100%);
   box-shadow:
@@ -696,7 +716,6 @@ body {
  * and a visible thickness at the bottom. Things cross the layers (feet on the top face, the medal rising into the
  * scene) — that crossing is what makes it read as depth rather than two stacked cards. */
 .plinth {
-  position: relative;
   isolation: isolate;
   --tint-hi: #138b50;
   --tint: #0f7a46;
@@ -802,4 +821,89 @@ body {
   html:has(.atmosphere) {
     scroll-padding-bottom: calc(var(--tap) + 3rem + env(safe-area-inset-bottom));
   }
+}
+/* A white satin button: the coloured glow would look like dirt under white — a neutral, lighter shadow instead. */
+.btn-satin.tint-paper {
+  box-shadow:
+    inset 0 1px 0 #fff,
+    inset 0 -1.5px 0 rgb(var(--shade) / 0.06),
+    0 0 0 1px rgb(var(--shade) / 0.06),
+    0 1px 2px rgb(var(--shade) / 0.12),
+    0 6px 14px -8px rgb(var(--shade) / 0.35);
+}
+.btn-satin.tint-paper:active:not(:disabled) {
+  box-shadow: inset 0 1px 3px rgb(var(--shade) / 0.12), 0 0 0 1px rgb(var(--shade) / 0.06), 0 1px 1px rgb(var(--shade) / 0.12);
+}
+.btn-satin:disabled {
+  cursor: not-allowed;
+}
+.btn-satin.tint-gold { --tint-hi: #ffe58f; --tint: #ffd35a; --tint-lo: #f4bd36; --glow: 170 120 10; }
+.btn-satin.tint-sky { --tint-hi: #a7defa; --tint: #72c8f5; --tint-lo: #4fb3e8; --glow: 40 120 170; }
+
+/* The top face of a PAPER slab (welcome): a lighter strip with a white lip, a hairline edge onto the front face. */
+.paper-top {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 1.1rem;
+  border-radius: inherit;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  background: linear-gradient(180deg, #ffffff, #f6f1e4);
+  box-shadow: inset 0 1px 0 #fff, 0 1px 0 rgb(var(--shade) / 0.06), 0 2px 4px rgb(var(--shade) / 0.08);
+  pointer-events: none;
+}
+/* The badge's pedestal: glazed cream-gold, lit from the top-left, a front edge and a soft ground shadow. */
+.pedestal-gold {
+  border-radius: 50%;
+  background: radial-gradient(60% 75% at 40% 30%, #fffbea 0%, #ffe9a6 45%, #f0c95a 100%);
+  box-shadow:
+    inset 0 -3px 5px rgb(150 100 0 / 0.25),
+    inset 0 2px 2px rgb(255 255 255 / 0.8),
+    0 4px 0 #d9a832,
+    0 5px 1px rgb(120 80 0 / 0.25),
+    0 16px 22px -8px rgb(120 80 0 / 0.35);
+}
+
+/* Materials that draw ::before/::after layers need a positioned box — but must NEVER override an explicit position
+   class (this CSS is outside Tailwind's layers, so a plain `position: relative` here beat `absolute` and collapsed
+   the diorama's back wall). Only elements without absolute/fixed/sticky become relative. */
+:is(.mat, .btn-satin, .plinth, .edge-light, .mat-paper):not(.absolute, .fixed, .sticky) {
+  position: relative;
+}
+
+/* ---- The passport (v0.26) ----------------------------------------------------------------------------------
+ * Dark green leather: a soft grain (two offset dot fields, 4 % — felt, not seen), light pooling at the top-left,
+ * the cover curving away at the bottom; a darker spine with a crease highlight; a stitched seam; gold-foil logo. */
+.leather {
+  background:
+    radial-gradient(circle at 1px 1px, rgb(255 255 255 / 0.035) 1px, transparent 1.4px) 0 0 / 5px 5px,
+    radial-gradient(circle at 1px 1px, rgb(0 0 0 / 0.06) 1px, transparent 1.4px) 2px 3px / 6px 6px,
+    radial-gradient(60% 50% at 10% 0%, rgb(255 255 255 / 0.12), transparent 72%),
+    linear-gradient(170deg, #1f6a43 0%, #12502f 55%, #0b3a22 100%);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.18),
+    inset 0 -2px 0 rgb(0 0 0 / 0.25),
+    0 2px 0 #072a18,
+    0 3px 2px rgb(0 20 10 / 0.3),
+    0 22px 40px -16px rgb(10 50 30 / 0.55),
+    0 50px 80px -40px rgb(10 50 30 / 0.45);
+}
+.leather-spine {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0.9rem;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgb(0 0 0 / 0.3), rgb(0 0 0 / 0.08) 70%, rgb(255 255 255 / 0.12) 92%, transparent);
+}
+.leather-stitch {
+  position: absolute;
+  inset: 0.55rem 0.55rem 0.55rem 1.35rem;
+  border-radius: calc(var(--radius-stage) - 0.55rem);
+  outline: 1.5px dashed rgb(255 235 190 / 0.22);
+  outline-offset: 0;
+  pointer-events: none;
+}
+/* Gold foil: the white logo pressed in warm gold with a faint top light. */
+.foil {
+  filter: sepia(1) saturate(3.2) hue-rotate(-12deg) brightness(1.02) drop-shadow(0 1px 0 rgb(0 0 0 / 0.35));
 }

@@ -66,7 +66,7 @@ export function Puzzle({ game, onDone }: { game: PuzzleGame; onDone: () => void 
       </div>
 
       <div
-        className="mx-auto grid w-full max-w-sm gap-1.5 rounded-[2rem] bg-white p-2.5 shadow-soft"
+        className="edge-light relative mx-auto grid w-full max-w-sm gap-1.5 rounded-[2rem] mat-paper p-2.5"
         style={{ gridTemplateColumns: `repeat(${cols}, 1fr)`, aspectRatio: `${cols} / ${rows}` }}
         role="group"
         aria-label={t('puzzle.board')}

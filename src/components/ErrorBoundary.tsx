@@ -40,7 +40,7 @@ export class ErrorBoundary extends Component<{ children: ReactNode }, State> {
         <button
           type="button"
           onClick={this.restart}
-          className="tap press puck rounded-full bg-green px-8 text-xl font-extrabold text-white [--edge:var(--color-green-deep)]"
+          className="btn-satin tint-green edge-light tap rounded-full px-8 text-xl font-extrabold text-white"
         >
           {t('error.restart')}
         </button>

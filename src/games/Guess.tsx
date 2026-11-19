@@ -77,7 +77,7 @@ export function Guess({ game, onDone }: { game: GuessGame; onDone: () => void })
       {/* Clues */}
       <ul aria-label={t('guess.clues')} className="grid grid-cols-[repeat(auto-fit,minmax(5.5rem,1fr))] gap-2">
         {game.clues.map((c, i) => (
-          <li key={i} className="rounded-level relative flex flex-col items-center gap-1 bg-white p-2 text-center shadow-soft [container-type:inline-size]">
+          <li key={i} className="edge-light rounded-level relative flex flex-col items-center gap-1 mat-paper p-2 text-center [container-type:inline-size]">
             {i < shown ? (
               <m.div initial={{ rotateY: 90 }} animate={{ rotateY: 0 }} transition={bouncy} className="flex flex-col items-center gap-1">
                 <img src={img(c.img)} alt="" className="pop-3d size-[min(3.75rem,15vw)] object-contain" />

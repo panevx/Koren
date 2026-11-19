@@ -83,7 +83,7 @@ export function Prompt({ children }: { children: string }) {
       <m.span initial={{ scale: 0.5, rotate: -12 }} animate={{ scale: 1, rotate: 0 }} transition={bouncy} className="shrink-0">
         <Avatar hero="koren" mood="determination" className="size-[min(3.5rem,13vw)]" />
       </m.span>
-      <div className="relative min-w-0 flex-1 rounded-[1.5rem] rounded-bl-md bg-white px-[min(1.125rem,4vw)] py-3.5 shadow-soft [container-type:inline-size]">
+      <div className="edge-light relative min-w-0 flex-1 rounded-[1.5rem] rounded-bl-md mat-paper px-[min(1.125rem,4vw)] py-3.5 [container-type:inline-size]">
         {/* Also capped by the bubble's own width: beside a picture (landscape) the bubble is narrow and a long word would break. */}
         <h3 className="text-[length:min(1.2rem,5.6vw,11cqw)] leading-snug font-extrabold">{children}</h3>
       </div>

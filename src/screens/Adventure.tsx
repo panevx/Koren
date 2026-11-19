@@ -94,7 +94,7 @@ export function Adventure() {
           )}
           {/* Progress: gems for played missions (on a computer it is in the side panel). */}
           {ordered.length > 0 && (
-          <Link to="/collection" className="press flex items-center gap-3 rounded-full bg-white py-2 pr-4 pl-2 shadow-soft wide:hidden">
+          <Link to="/collection" className="edge-light relative press flex items-center gap-3 rounded-full mat-paper py-2 pr-4 pl-2 wide:hidden">
             <img src={img(ART.gemGreen)} alt="" className="pop-3d size-11 shrink-0" />
             <span className="min-w-0 flex-1">
               <span className="block text-sm font-extrabold">{t('path.progress', { done: played, total: ordered.length })}</span>
@@ -164,7 +164,7 @@ export function Adventure() {
         {/* Computer: progress, the next stop and the medals stay in view while the road scrolls. */}
         {ordered.length > 0 && (
         <aside className="sticky top-4 hidden flex-col gap-4 wide:flex" aria-label={t('path.rewards')}>
-          <section className="rounded-[var(--radius-card)] bg-white p-4 shadow-soft">
+          <section className="edge-light relative rounded-[var(--radius-card)] mat-paper p-4">
             <p className="font-black">{t('path.progress', { done: played, total: ordered.length })}</p>
             <ProgressBar value={played} max={ordered.length} icon={ART.gemGreen} className="mt-2" />
           </section>
@@ -181,7 +181,7 @@ export function Adventure() {
               </span>
             </button>
           )}
-          <section className="rounded-[var(--radius-card)] bg-white p-4 shadow-soft">
+          <section className="edge-light relative rounded-[var(--radius-card)] mat-paper p-4">
             <h2 className="mb-2 font-black">{t('path.rewards')}</h2>
             <ul className="grid grid-cols-4 gap-1">
               {MILESTONES.map(({ id }) => {
@@ -278,7 +278,7 @@ function StopSheet({ mission, status, onClose }: { mission: Mission; status: 'lo
         <Link
           to={`/mission/${mission.id}`}
           data-autofocus
-          className="tap press puck flex items-center justify-center gap-2 rounded-full bg-coral px-6 text-xl font-extrabold text-coral-ink [--edge:var(--color-coral-deep)]"
+          className="btn-satin tint-coral edge-light tap flex items-center justify-center gap-2 rounded-full px-6 text-xl font-extrabold text-coral-ink"
         >
           <Icon name={status === 'done' ? 'refresh' : 'play'} />
           {status === 'done' ? t('path.replay') : t('path.play')}

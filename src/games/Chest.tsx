@@ -125,7 +125,7 @@ export function Chest({ game, onDone }: { game: ChestGame; onDone: () => void })
                       type="button"
                       {...drag(String(i))}
                       onClick={() => put(i)}
-                      className={`tap press rounded-level flex w-full flex-col items-center gap-1 bg-white p-2 text-center font-extrabold shadow-soft select-none [container-type:inline-size] ${
+                      className={`edge-light relative tap press rounded-level flex w-full flex-col items-center gap-1 mat-paper p-2 text-center font-extrabold select-none [container-type:inline-size] ${
                         bump?.item === i ? 'anim-wiggle' : ''
                       }`}
                     >

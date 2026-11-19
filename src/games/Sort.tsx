@@ -58,7 +58,7 @@ export function Sort({ game, onDone }: { game: SortGame; onDone: () => void }) {
               data-drop={`bin-${b}`}
               onClick={() => (selected === null ? setSay({ good: false, text: t('sort.pickFirst') }) : drop(selected, b))}
               aria-label={t('sort.putIn', { box: l(bin) })}
-              className={`press rounded-level flex min-h-36 flex-col items-center gap-1 bg-white p-2 text-center shadow-soft transition-shadow data-[over=true]:shadow-float data-[over=true]:ring-4 data-[over=true]:ring-gold ${
+              className={`edge-light relative press rounded-level flex min-h-36 flex-col items-center gap-1 mat-paper p-2 text-center transition-shadow data-[over=true]:shadow-float data-[over=true]:ring-4 data-[over=true]:ring-gold ${
                 selected !== null ? 'ring-[3px] ring-sky' : ''
               }`}
             >

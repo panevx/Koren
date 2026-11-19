@@ -44,15 +44,17 @@ export function Passport() {
       <div className="flex flex-col gap-5 px-4 pb-32 short:pb-8 wide:grid wide:grid-cols-[minmax(0,min(19rem,50%))_minmax(0,1fr)] wide:items-start wide:gap-8 wide:pb-10">
         <div className="flex flex-col gap-5 wide:sticky wide:top-4">
           {/* The passport cover */}
-          <section className="bg-stage-night relative overflow-hidden rounded-[var(--radius-stage)] p-5 text-white shadow-stage">
-            <span className="absolute -top-16 -right-12 size-48 rounded-full bg-white/10" aria-hidden="true" />
+          {/* v0.26: a real passport — green leather with a spine on the left, a stitched seam, gold foil, recessed fields */}
+          <section className="leather relative overflow-hidden rounded-[var(--radius-stage)] p-5 pl-7 text-white">
+            <span className="leather-spine" aria-hidden="true" />
+            <span className="leather-stitch" aria-hidden="true" />
             <img src={img("ornaments/right.png")} alt="" className="kid-deco absolute top-4 right-4 size-9 opacity-40" />
             <div className="relative flex items-center gap-3">
-              <span className="grid size-[min(4.5rem,18vw)] shrink-0 place-items-center rounded-full bg-gold shadow-[inset_0_3px_0_rgb(255_255_255/0.5),0_5px_0_var(--color-gold-deep)]">
+              <span className="mat-ceramic-gold grid size-[min(4.5rem,18vw)] shrink-0 place-items-center">
                 <ProfileAvatar avatar={profile.avatar} outfit={profile.outfit} className="size-[82%] shadow-none" />
               </span>
               <div className="min-w-0 flex-1">
-                <img src={img('logo/koren-white.svg')} alt="" className="mb-1.5 h-6 w-auto" />
+                <img src={img('logo/koren-white.svg')} alt="" className="foil mb-1.5 h-6 w-auto" />
                 <p className="text-title">{name(profile, index)}</p>
               </div>
             </div>
@@ -62,7 +64,7 @@ export function Passport() {
                 { n: medals, label: t('passport.stat.rewards'), art: ART.gold },
                 { n: places, label: t('passport.stat.places'), art: ART.gemBlue },
               ].map((s) => (
-                <div key={s.label} className="flex flex-col items-center rounded-[1.25rem] bg-white/10 px-1 py-2 [container-type:inline-size]">
+                <div key={s.label} className="well-on-tint flex flex-col items-center rounded-[1.25rem] px-1 py-2 [container-type:inline-size]">
                   <img src={img(s.art)} alt="" className="pop-3d size-8 object-contain" />
                   <dt className="order-last text-[length:clamp(0.6rem,13cqw,0.75rem)] font-bold text-white/85">{s.label}</dt>
                   <dd className="text-2xl leading-none font-black">{s.n}</dd>
@@ -71,12 +73,12 @@ export function Passport() {
             </dl>
             <div className="relative mt-4">
               <p className="mb-1.5 text-sm font-bold">{t('passport.count', { n: earned.length, total })}</p>
-              <ProgressBar value={earned.length} max={total} tone="gold" track="bg-white/20" height="h-3.5" />
+              <ProgressBar value={earned.length} max={total} tone="gold" track="well-on-tint" height="h-3" />
             </div>
           </section>
 
           {/* v0.22: the fair stall — coins, days of adventure, folk costume for the sign */}
-          <Link to="/shop" className="press tap flex items-center gap-2 rounded-[var(--radius-card)] bg-white px-3 py-3 font-extrabold text-ink shadow-soft">
+          <Link to="/shop" className="edge-light relative press tap flex items-center gap-2 rounded-[var(--radius-card)] mat-paper px-3 py-3 font-extrabold text-ink">
             <img src={img(ART.coins)} alt="" className="pop-3d size-[min(3rem,12vw)] shrink-0" />
             <span className="min-w-0 flex-1 text-[length:min(1.125rem,5vw)] leading-tight">{t('shop.title')}</span>
             <span className="flex items-center gap-1 rounded-full bg-gold-soft px-2.5 py-1 text-sm">
@@ -95,14 +97,14 @@ export function Passport() {
           {/* The reward track: one line, four medals. */}
           {/* No missions in this build yet: no medal track (it would say "0 of 0"). */}
           {MISSIONS.length > 0 && (
-          <section aria-labelledby="rewards" className="rounded-[var(--radius-card)] bg-white p-4 shadow-soft">
+          <section aria-labelledby="rewards" className="edge-light relative rounded-[var(--radius-card)] mat-paper p-4">
             <h2 id="rewards" className="mb-3 text-lg font-black">
               {t('reward.title')}
             </h2>
             <div className="relative">
-              <span className="absolute inset-x-[12.5%] top-[min(1.75rem,7.5vw)] h-2 overflow-hidden rounded-full bg-sand" aria-hidden="true">
+              <span className="well absolute inset-x-[12.5%] top-[min(1.75rem,7.5vw)] h-2 overflow-hidden rounded-full" aria-hidden="true">
                 <m.span
-                  className="block h-full origin-left rounded-full bg-gold"
+                  className="fill-satin tint-gold block h-full origin-left rounded-full"
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: medals <= 1 ? 0 : (medals - 1) / (MILESTONES.length - 1) }}
                   transition={{ type: 'spring', stiffness: 90, damping: 18, delay: 0.3 }}
@@ -118,7 +120,7 @@ export function Passport() {
                         initial={got ? { scale: 0.4, rotate: -20 } : false}
                         animate={{ scale: 1, rotate: 0 }}
                         transition={{ ...bouncy, delay: 0.3 + i * 0.12 }}
-                        className={`grid size-[min(3.5rem,15vw)] place-items-center rounded-full ${got ? 'bg-gold-soft ring-[3px] ring-gold' : 'bg-cream ring-2 ring-sand'}`}
+                        className={`grid size-[min(3.5rem,15vw)] place-items-center rounded-full ${got ? 'mat-ceramic-gold' : 'well'}`}
                       >
                         <img src={img(REWARD_ART[id])} alt={t(`reward.${id}`)} className={`size-[86%] object-contain ${got ? 'pop-3d' : 'opacity-40 grayscale'}`} />
                       </m.span>
@@ -136,10 +138,10 @@ export function Passport() {
 
         <div className="flex flex-col gap-5">
           {earned.length === 0 ? (
-            <p className="rounded-[var(--radius-card)] bg-gold-soft p-4 text-center font-bold">{MISSIONS.length ? t('passport.empty') : t('empty.text')}</p>
+            <p className="fill-satin tint-gold edge-light rounded-[var(--radius-card)] p-4 text-center font-bold">{MISSIONS.length ? t('passport.empty') : t('empty.text')}</p>
           ) : (
             <section aria-labelledby="earned" className="flex flex-col gap-3">
-              <h2 id="earned" className="text-title px-1">
+              <h2 id="earned" className="text-headline px-1">
                 {t('passport.earnedTitle')}
               </h2>
               <m.ul variants={stagger} initial="hidden" animate="show" className="grid grid-cols-2 gap-x-3 gap-y-5 wide:grid-cols-[repeat(auto-fill,minmax(min(9rem,100%),1fr))]">
@@ -152,7 +154,7 @@ export function Passport() {
 
           {missing.length > 0 && (
             <section aria-labelledby="to-find" className="flex flex-col gap-3">
-              <h2 id="to-find" className="text-title px-1">
+              <h2 id="to-find" className="text-headline px-1">
                 {t('passport.toFind')}
               </h2>
               <ul className="grid grid-cols-3 gap-x-2 gap-y-4 wide:grid-cols-[repeat(auto-fill,minmax(min(7rem,100%),1fr))]">
@@ -174,7 +176,8 @@ function BadgeItem({ mission, has, i }: { mission: Mission; has: boolean; i: num
   const l = useLocalized()
   const body = (
     <Link to={`/mission/${mission.id}`} className="press flex h-full flex-col items-center gap-1.5 rounded-[2rem] px-1 text-center [container-type:inline-size]">
-      <span className="relative">
+      {/* earned: the badge stands proud with its stamp; not yet: an empty socket pressed into the page */}
+      <span className={`relative ${has ? '' : 'well rounded-full p-[6%]'}`}>
         <BadgeArt
           icon={mission.badge.icon}
           earned={has}

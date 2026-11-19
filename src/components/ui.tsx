@@ -17,13 +17,13 @@ export function Screen({
   className = '',
   nav = false,
   wide = false,
-  atmosphere = false,
+  atmosphere = true,
 }: {
   children: ReactNode
   className?: string
   nav?: boolean
   wide?: boolean
-  /** v0.26: the lit "Depth 0" background (sunlight top-left, sky top-right) instead of flat cream. */
+  /** v0.26: the lit "Depth 0" background (sunlight top-left, sky top-right) and the refined navigation. On by default. */
   atmosphere?: boolean
 }) {
   return (
@@ -41,10 +41,11 @@ export function Screen({
 type Variant = 'primary' | 'accent' | 'secondary'
 
 /** Pill buttons with a 3D side. White on green needs bold text-xl (see contrast rules in index.css). */
+/** v0.26: satin pills (see .btn-satin in index.css) — curved fill, bright top edge, coloured contact shadow, edge light. */
 const variants: Record<Variant, string> = {
-  primary: 'puck bg-coral text-coral-ink [--edge:var(--color-coral-deep)]',
-  accent: 'puck bg-green text-white [--edge:var(--color-green-deep)]',
-  secondary: 'puck bg-white text-ink [--edge:var(--color-sand)]',
+  primary: 'btn-satin tint-coral text-coral-ink',
+  accent: 'btn-satin tint-green text-white',
+  secondary: 'btn-satin tint-paper text-ink',
 }
 
 export function Button({
@@ -55,19 +56,19 @@ export function Button({
   return (
     <button
       type="button"
-      className={`tap press inline-flex items-center justify-center gap-2 rounded-full px-7 py-1.5 text-center text-xl leading-tight font-extrabold disabled:opacity-50 ${variants[variant]} ${className}`}
+      className={`tap edge-light inline-flex items-center justify-center gap-2 rounded-full px-7 py-1.5 text-center text-xl leading-tight font-extrabold disabled:opacity-50 ${variants[variant]} ${className}`}
       {...props}
     />
   )
 }
 
-/** White surface with the soft layered shadow — the basic card. No borders. */
+/** Matte paper with an edge light and a depth-2 shadow — the basic card. No borders. */
 export function Card({ children, className = '', as: Tag = 'div' }: { children: ReactNode; className?: string; as?: 'div' | 'section' | 'li' }) {
-  return <Tag className={`rounded-level bg-white shadow-soft ${className}`}>{children}</Tag>
+  return <Tag className={`mat-paper edge-light relative rounded-level ${className}`}>{children}</Tag>
 }
 
 /** Round white button with an icon (back, close, settings). */
-export const roundButton = 'tap press grid shrink-0 place-items-center rounded-full bg-white text-green-dark shadow-soft'
+export const roundButton = 'tap lift mat-paper edge-light relative grid shrink-0 place-items-center rounded-full text-green-dark'
 
 /** Browser tab / screen reader page title: "Screen – KOREN" (just "KOREN" without a screen name). */
 export function useTitle(title?: string) {
@@ -104,7 +105,7 @@ export function TopBar({
       </button>
       {/* Also capped by its own width: between two 64 px buttons on a 280 px folding phone "пътешественика" broke in two. */}
       <h1 className="min-w-0 flex-1 text-center leading-tight font-black [container-type:inline-size]">
-        <span className="block text-[length:min(1.5rem,6.4vw,12cqw)]">{title}</span>
+        <span className="block text-[length:min(1.5rem,6.4vw,12cqw)] tracking-[-0.012em]">{title}</span>
       </h1>
       <div className="tap grid shrink-0 place-items-center">{right}</div>
     </header>

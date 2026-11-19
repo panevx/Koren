@@ -27,13 +27,13 @@ export function Fame() {
     <Screen nav wide>
       <TopBar title={t('fame.title')} />
       <div className="flex flex-col gap-5 px-4 pb-32 short:pb-8 wide:pb-10">
-        <p className="rounded-[var(--radius-card)] bg-gold-soft px-4 py-3 text-center font-bold">{people.length ? t('fame.intro', { n: lit, total: people.length }) : t('empty.text')}</p>
+        <p className="fill-satin tint-gold edge-light rounded-[var(--radius-card)] px-4 py-3 text-center font-bold">{people.length ? t('fame.intro', { n: lit, total: people.length }) : t('empty.text')}</p>
         {FIELDS.map((field) => {
           const list = people.filter((p) => p.field === field)
           if (!list.length) return null
           return (
             <section key={field} aria-labelledby={`fame-${field}`} className="flex flex-col gap-3">
-              <h2 id={`fame-${field}`} className="text-title px-1">
+              <h2 id={`fame-${field}`} className="text-headline px-1">
                 {t(`fame.field.${field}`)}
               </h2>
               <ul className="grid grid-cols-2 gap-3 wide:grid-cols-[repeat(auto-fill,minmax(min(13rem,100%),1fr))]">
@@ -47,9 +47,12 @@ export function Fame() {
                           type="button"
                           onClick={() => setOpen(open === p.id ? null : p.id)}
                           aria-expanded={open === p.id}
-                          className="press flex h-full w-full flex-col items-center gap-1.5 rounded-[var(--radius-card)] bg-white p-3 text-center shadow-soft"
+                          className="edge-light relative press flex h-full w-full flex-col items-center gap-1.5 rounded-[var(--radius-card)] mat-paper p-3 text-center"
                         >
-                          <img src={img(p.img)} alt="" className="pop-3d size-[min(5rem,30cqw)] object-contain" />
+                          <span className="relative grid place-items-center px-2 pb-1">
+                            <span className="pedestal tint-paper absolute bottom-0 left-1/2 h-[24%] w-[88%] -translate-x-1/2" aria-hidden="true" />
+                            <img src={img(p.img)} alt="" className="pop-3d relative size-[min(5rem,30cqw)] object-contain" />
+                          </span>
                           <span className="text-[length:clamp(0.55rem,8.5cqw,1.05rem)] leading-tight font-black">{l(p.name)}</span>
                           {open === p.id && (
                             <m.span initial={{ opacity: 0, y: -6 }} animate={{ opacity: 1, y: 0 }} transition={bouncy} className="text-sm leading-snug font-semibold text-ink">

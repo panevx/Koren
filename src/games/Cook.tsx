@@ -106,7 +106,7 @@ export function Cook({ game, onDone }: { game: CookGame; onDone: () => void }) {
                     type="button"
                     {...drag(String(i))}
                     onClick={() => add(i)}
-                    className={`tap press flex items-center gap-1.5 rounded-full bg-white py-1 pr-4 font-extrabold shadow-soft select-none ${x.img ? 'pl-1' : 'pl-4'}`}
+                    className={`edge-light relative tap press flex items-center gap-1.5 rounded-full mat-paper py-1 pr-4 font-extrabold select-none ${x.img ? 'pl-1' : 'pl-4'}`}
                   >
                     {x.img && <img src={img(x.img)} alt="" draggable={false} className="size-11 object-contain" />}
                     <span className="leading-tight">{l(x)}</span>
@@ -139,7 +139,7 @@ export function Cook({ game, onDone }: { game: CookGame; onDone: () => void }) {
                       key={bump?.k === `s${k}` ? bump.n : undefined}
                       type="button"
                       onClick={() => step(k)}
-                      className={`tap press w-full rounded-[1.25rem] bg-white px-4 py-2 text-left font-bold shadow-soft ${bump?.k === `s${k}` ? 'anim-wiggle' : ''}`}
+                      className={`edge-light relative tap press w-full rounded-[1.25rem] mat-paper px-4 py-2 text-left font-bold ${bump?.k === `s${k}` ? 'anim-wiggle' : ''}`}
                     >
                       {l(game.steps[k]!)}
                     </button>

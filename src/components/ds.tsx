@@ -27,12 +27,13 @@ export function SecondaryButton(props: Omit<ComponentProps<typeof Button>, 'vari
 }
 
 type Tone = 'green' | 'gold' | 'coral' | 'sky' | 'white'
+/** v0.26: satin fills (curved, a highlight line on top) — the same material as the hub's meters. */
 const FILL: Record<Tone, string> = {
-  green: 'bg-green',
-  gold: 'bg-gold',
-  coral: 'bg-coral',
-  sky: 'bg-sky',
-  white: 'bg-white',
+  green: 'fill-satin tint-green',
+  gold: 'fill-satin tint-gold',
+  coral: 'fill-satin tint-coral',
+  sky: 'fill-satin tint-sky',
+  white: 'bg-white shadow-[inset_0_-1px_0_rgb(52_44_24/0.08)]',
 }
 
 /**
@@ -108,9 +109,9 @@ export function ProgressBar({
       aria-label={label}
     >
       {icon && <img src={img(icon)} alt="" className="pop-3d -my-2 size-9 shrink-0 object-contain" />}
-      <span className={`relative block flex-1 overflow-hidden rounded-full shadow-[inset_0_2px_3px_rgb(28_43_35/0.16)] ${track} ${height}`}>
+      <span className={`relative block flex-1 overflow-hidden rounded-full ${track === 'bg-sand' ? 'well' : track.startsWith('well') ? track : `${track} shadow-[inset_0_1.5px_2px_rgb(52_44_24/0.16)]`} ${height}`}>
         <m.span
-          className={`absolute inset-0 origin-left rounded-full ${FILL[tone]} shadow-[inset_0_2px_0_rgb(255_255_255/0.4)]`}
+          className={`absolute inset-0 origin-left rounded-full ${FILL[tone]}`}
           initial={{ scaleX: 0 }}
           animate={{ scaleX: ratio }}
           transition={{ type: 'spring', stiffness: 120, damping: 20, delay: 0.15 }}
@@ -151,7 +152,7 @@ export function CharacterMessage({
         initial={{ opacity: 0, scale: 0.85, x: right ? 10 : -10 }}
         animate={{ opacity: 1, scale: 1, x: 0 }}
         transition={{ ...bouncy, delay: 0.08 }}
-        className={`relative min-w-0 flex-1 rounded-[1.5rem] px-4 py-3 shadow-soft ${tone} ${right ? 'origin-bottom-right rounded-br-md' : 'origin-bottom-left rounded-bl-md'}`}
+        className={`edge-light relative min-w-0 flex-1 rounded-[1.5rem] px-4 py-3 shadow-soft ${tone === 'bg-white' ? 'mat-paper' : tone} ${right ? 'origin-bottom-right rounded-br-md' : 'origin-bottom-left rounded-bl-md'}`}
       >
         {children}
       </m.div>
@@ -179,7 +180,7 @@ export function Panel({ label, onClose, children, className = '' }: { label: str
     }
   }, [onClose])
   return (
-    <div className="fixed inset-0 z-30 flex items-end justify-center bg-ink/35 short:items-center wide:items-center" onClick={onClose}>
+    <div className="fixed inset-0 z-30 flex items-end justify-center bg-[rgb(28_36_30/0.42)] short:items-center wide:items-center" onClick={onClose}>
       <m.div
         ref={box}
         tabIndex={-1}
@@ -190,10 +191,10 @@ export function Panel({ label, onClose, children, className = '' }: { label: str
         animate={{ y: 0, opacity: 1, scale: 1 }}
         transition={bouncy}
         onClick={(e) => e.stopPropagation()}
-        className={`relative m-3 flex max-h-[calc(100dvh-1.5rem)] w-full max-w-md flex-col gap-3 overflow-y-auto rounded-[var(--radius-stage)] bg-white p-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] shadow-stage outline-none ${className}`}
+        className={`relative m-3 flex max-h-[calc(100dvh-1.5rem)] w-full max-w-md flex-col gap-3 overflow-y-auto mat-paper edge-light rounded-[var(--radius-stage)] p-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] [box-shadow:var(--rim-light),var(--elev-5)] outline-none ${className}`}
       >
         {/* a grab handle on phones — the sheet "belongs" to the bottom edge */}
-        <span className="mx-auto -mt-2 mb-1 block h-1.5 w-12 rounded-full bg-sand wide:hidden" aria-hidden="true" />
+        <span className="well mx-auto -mt-2 mb-1 block h-1.5 w-12 rounded-full wide:hidden" aria-hidden="true" />
         <button type="button" onClick={onClose} aria-label={t('path.close')} className="tap press absolute top-1 right-1 grid place-items-center rounded-full text-muted">
           <Icon name="close" />
         </button>
@@ -234,7 +235,7 @@ export function Sparkles({ burst, className = '' }: { burst: number | string; cl
 export function SectionHeading({ id, children, to, more }: { id?: string; children: ReactNode; to?: string; more?: string }) {
   return (
     <div className="flex items-end justify-between gap-3 px-1">
-      <h2 id={id} className="text-title min-w-0">
+      <h2 id={id} className="text-headline min-w-0">
         {children}
       </h2>
       {to && more && (

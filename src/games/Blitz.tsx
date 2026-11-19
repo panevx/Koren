@@ -74,7 +74,7 @@ export function Blitz({ game, onDone }: { game: BlitzGame; onDone: () => void })
         <p className="text-sm font-bold text-muted">{t('blitz.count', { n: Math.min(at + 1, game.questions.length), total: game.questions.length })}</p>
       </div>
       {!done && (
-        <m.div key={at} initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} className="relative rounded-[1.75rem] bg-white p-5 shadow-soft">
+        <m.div key={at} initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} className="edge-light relative rounded-[1.75rem] mat-paper p-5">
           {clock && left > 0 && (
             <div className="absolute -top-2 -right-2 grid size-12 place-items-center rounded-full bg-coral text-lg font-black text-coral-ink shadow-float" aria-live="off">
               {left}
@@ -94,7 +94,7 @@ export function Blitz({ game, onDone }: { game: BlitzGame; onDone: () => void })
                   type="button"
                   onClick={() => pick(i)}
                   disabled={no}
-                  className="press flex h-full w-full flex-col items-center justify-center gap-1 rounded-[1.25rem] bg-white px-3 py-3 text-lg font-black shadow-soft disabled:opacity-40"
+                  className="edge-light relative press flex h-full w-full flex-col items-center justify-center gap-1 rounded-[1.25rem] mat-paper px-3 py-3 text-lg font-black disabled:opacity-40"
                 >
                   {o.img && <img src={img(o.img)} alt="" className="size-12 object-contain" />}
                   {l(o)}

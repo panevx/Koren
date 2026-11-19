@@ -52,15 +52,17 @@ export function Shop() {
           <section aria-labelledby="purse" className="bg-stage-night relative rounded-[var(--radius-stage)] p-5 text-white shadow-stage">
             <h2 id="purse" className="sr-only">{t('shop.purse')}</h2>
             <div className="flex items-center justify-center gap-6 pt-6">
-              <ProfileAvatar avatar={profile.avatar} outfit={profile.outfit} className="size-[min(6rem,26vw)]" />
+              <span className="mat-ceramic grid size-[min(6.5rem,28vw)] place-items-center">
+                <ProfileAvatar avatar={profile.avatar} outfit={profile.outfit} className="size-[88%] shadow-none" />
+              </span>
             </div>
             <dl className="mt-4 grid grid-cols-2 gap-2 text-center">
-              <div className="flex flex-col items-center rounded-[1.25rem] bg-white/10 py-2">
+              <div className="well-on-tint flex flex-col items-center rounded-[1.25rem] py-2">
                 <img src={img(COIN)} alt="" className="pop-3d size-9" />
                 <dd className="text-3xl leading-none font-black">{purse.coins}</dd>
                 <dt className="order-last text-sm font-bold text-white/85">{t('shop.coins')}</dt>
               </div>
-              <div className="flex flex-col items-center rounded-[1.25rem] bg-white/10 py-2">
+              <div className="well-on-tint flex flex-col items-center rounded-[1.25rem] py-2">
                 <img src={img(PENDAR)} alt="" className="pop-3d size-9" />
                 <dd className="text-3xl leading-none font-black">{purse.pendars}</dd>
                 <dt className="order-last text-sm font-bold text-white/85">{t('shop.pendars')}</dt>
@@ -70,7 +72,7 @@ export function Shop() {
           </section>
 
           {/* Days of adventure — only good news */}
-          <section aria-labelledby="days" className="flex items-center gap-3 rounded-[var(--radius-card)] bg-white p-4 shadow-soft">
+          <section aria-labelledby="days" className="edge-light relative flex items-center gap-3 rounded-[var(--radius-card)] mat-paper p-4">
             <img src={img(ART.streak)} alt="" className="pop-3d size-12 shrink-0" />
             <div className="min-w-0 flex-1">
               <h2 id="days" className="font-black">{t('shop.days', { n: days.total })}</h2>
@@ -80,7 +82,7 @@ export function Shop() {
 
           {/* What is worn */}
           {worn.length > 0 && (
-            <section aria-labelledby="worn" className="rounded-[var(--radius-card)] bg-white p-4 shadow-soft">
+            <section aria-labelledby="worn" className="edge-light relative rounded-[var(--radius-card)] mat-paper p-4">
               <h2 id="worn" className="mb-2 font-black">{t('shop.worn')}</h2>
               <ul className="flex flex-wrap gap-2">
                 {worn.map((i) => (
@@ -98,7 +100,7 @@ export function Shop() {
 
         {/* The stall */}
         <section aria-labelledby="stall" className="flex flex-col gap-3">
-          <h2 id="stall" className="text-title px-1">{t('shop.stall')}</h2>
+          <h2 id="stall" className="text-headline px-1">{t('shop.stall')}</h2>
           <ul className="grid grid-cols-2 gap-3 wide:grid-cols-[repeat(auto-fill,minmax(min(11rem,100%),1fr))]">
             {SHOP.map((i) => {
               const owned = profile.owned.includes(i.id)
@@ -109,21 +111,25 @@ export function Shop() {
                   <m.div
                     animate={just === i.id ? { scale: [1, 1.08, 1] } : undefined}
                     transition={bouncy}
-                    className={`flex h-full flex-col items-center gap-1.5 rounded-[var(--radius-card)] p-3 text-center shadow-soft ${on ? 'bg-gold-soft' : 'bg-white'}`}
+                    className={`edge-light flex h-full flex-col items-center gap-1.5 rounded-[var(--radius-card)] p-3 text-center ${on ? 'mat-satin mat tint-gold' : 'mat-paper'}`}
                   >
-                    <img src={img(i.img)} alt="" className="pop-3d size-[min(5rem,34cqw)] object-contain" />
+                    {/* each item stands on its own little pedestal, like goods laid out on a stall */}
+                    <span className="relative grid place-items-center px-2 pb-1">
+                      <span className={`pedestal absolute bottom-0 left-1/2 h-[24%] w-[88%] -translate-x-1/2 ${on ? 'tint-gold' : 'tint-paper'}`} aria-hidden="true" />
+                      <img src={img(i.img)} alt="" className="pop-3d relative size-[min(5rem,34cqw)] object-contain" />
+                    </span>
                     <p className="text-[length:clamp(0.6rem,9cqw,1rem)] leading-tight font-black">{l(i.name)}</p>
                     {owned ? (
                       <button
                         type="button"
                         onClick={() => (on ? takeOff(i.slot) : wear(i.id, i.slot))}
                         aria-pressed={on}
-                        className={`tap press mt-auto w-full rounded-full px-2 py-1.5 text-sm font-extrabold ${on ? 'bg-green-dark text-white' : 'bg-green-soft text-green-dark'}`}
+                        className={`tap press mt-auto w-full rounded-full px-2 py-1.5 text-sm font-extrabold ${on ? 'bg-green-dark text-white shadow-[inset_0_1px_0_rgb(255_255_255/0.22),0_1px_2px_rgb(10_82_48/0.3)]' : 'bg-green-soft text-green-dark shadow-[inset_0_1px_0_#fff,0_0_0_1px_rgb(10_82_48/0.08)]'}`}
                       >
                         {on ? t('shop.wearing') : t('shop.wear')}
                       </button>
                     ) : need > 0 ? (
-                      <p className="mt-auto flex items-center justify-center gap-1 rounded-full bg-sand/70 px-2 py-1.5 text-[length:clamp(0.5rem,8cqw,0.75rem)] font-bold text-muted">
+                      <p className="well mt-auto flex items-center justify-center gap-1 rounded-full px-2 py-1.5 text-[length:clamp(0.5rem,8cqw,0.75rem)] font-bold text-muted">
                         <img src={img(i.currency === 'coin' ? COIN : PENDAR)} alt="" className="size-4 shrink-0" />
                         {t(i.currency === 'coin' ? 'shop.needCoins' : 'shop.needPendars', { n: need })}
                       </p>
@@ -131,7 +137,7 @@ export function Shop() {
                       <button
                         type="button"
                         onClick={() => onBuy(i)}
-                        className={`tap press mt-auto flex w-full items-center justify-center gap-1 rounded-full px-2 py-1.5 text-sm font-extrabold ${asking === i.id ? 'bg-coral text-coral-ink' : 'bg-gold text-ink'}`}
+                        className={`tap btn-satin edge-light mt-auto flex w-full items-center justify-center gap-1 rounded-full px-2 py-1.5 text-sm font-extrabold ${asking === i.id ? 'tint-coral text-coral-ink' : 'tint-gold text-ink'}`}
                       >
                         <img src={img(i.currency === 'coin' ? COIN : PENDAR)} alt="" className="size-5" />
                         {asking === i.id ? t('shop.sure') : t('shop.buy', { n: i.price })}

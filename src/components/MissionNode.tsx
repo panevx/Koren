@@ -51,14 +51,20 @@ export function MissionNode({
           type="button"
           onClick={onOpen}
           aria-label={label}
-          className={`press puck relative grid size-[min(5.75rem,24vw)] place-items-center rounded-full ${
-            status === 'done'
-              ? 'bg-gold-soft ring-4 ring-gold [--edge:var(--color-gold-deep)]'
-              : status === 'open'
-                ? 'bg-white ring-4 ring-coral [--edge:var(--color-coral-deep)]'
-                : 'bg-sand [--edge:#d6ccb6]'
-          }`}
+          className={`press relative z-10 grid size-[min(5.75rem,24vw)] place-items-center rounded-full ${status === 'locked' ? '[box-shadow:var(--elev-1)]' : '[box-shadow:var(--elev-3)]'}`}
         >
+          {/* v0.26: a stop is a glazed ceramic disc set in a satin ring — gold = played, coral = open;
+              a locked stop is pressed INTO the ground (a recess, no shadow): the shape says it, not only the colour. */}
+          <span
+            aria-hidden="true"
+            className={`absolute inset-0 rounded-full ${status === 'done' ? 'fill-satin tint-gold' : status === 'open' ? 'fill-satin tint-coral' : 'well'}`}
+          />
+          <span
+            aria-hidden="true"
+            className={`absolute inset-[7%] rounded-full ${
+              status === 'done' ? 'mat-ceramic-gold' : status === 'open' ? 'mat-ceramic' : 'bg-[#ece5d5] shadow-[inset_0_2px_5px_rgb(52_44_24/0.2),inset_0_-1px_0_rgb(255_255_255/0.6)]'
+            }`}
+          />
           {isNew && (
             <m.img
               src={img(ART.burst)}
@@ -85,7 +91,7 @@ export function MissionNode({
           )}
           {status === 'locked' && <img src={img(ART.key)} alt="" className="absolute -right-1 -bottom-1 size-10 drop-shadow" />}
           {status === 'done' && (
-            <span className="absolute -right-1 -bottom-1 grid size-9 place-items-center rounded-full bg-green-dark text-white ring-[3px] ring-white" aria-hidden="true">
+            <span className="btn-satin tint-green absolute -right-1 -bottom-1 grid size-9 place-items-center rounded-full text-white outline-[3px] outline-white" aria-hidden="true">
               <Icon name="check" width="1.1em" height="1.1em" />
             </span>
           )}
@@ -104,7 +110,7 @@ export function MissionNode({
         </m.div>
         <span
           className={`mt-2 line-clamp-2 rounded-full px-2.5 py-0.5 text-center text-[length:min(0.85rem,3.6vw)] leading-tight font-extrabold ${
-            status === 'locked' ? 'bg-white/80 text-muted' : 'bg-white text-ink shadow-soft'
+            status === 'locked' ? 'bg-white/75 text-muted shadow-[0_0_0_1px_rgb(52_44_24/0.05)]' : 'mat-paper edge-light relative text-ink'
           }`}
           aria-hidden="true"
         >

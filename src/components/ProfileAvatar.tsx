@@ -25,7 +25,7 @@ export function ProfileAvatar({ avatar, className = 'size-12', outfit }: { avata
   const head = outfit?.head && shopItem(outfit.head)
   const pin = outfit?.pin && shopItem(outfit.pin)
   return (
-    <span className={`relative grid shrink-0 place-items-center rounded-full bg-white shadow-soft ${className}`} aria-hidden="true">
+    <span className={`edge-light relative grid shrink-0 place-items-center rounded-full mat-paper ${className}`} aria-hidden="true">
       <img src={img(AVATAR_IMG[avatar])} alt="" className="size-[76%] object-contain" />
       {head && <img src={img(head.img)} alt="" className="pop-3d absolute -top-[38%] left-1/2 w-[78%] -translate-x-1/2 object-contain" />}
       {pin && <img src={img(pin.img)} alt="" className="pop-3d absolute -right-[12%] -bottom-[8%] w-[42%] object-contain" />}

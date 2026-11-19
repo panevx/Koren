@@ -25,7 +25,7 @@ export function TimelineMap({ epoch, label }: { epoch: Epoch; label: string }) {
   const labelLeft = cap ? cap[0] > WIDE_W * 0.62 : false
 
   return (
-    <div className="relative overflow-hidden rounded-[2rem] bg-[#A9DDF8] shadow-soft" style={{ aspectRatio: `${WIDE_W} / ${WIDE_H}` }}>
+    <div className="relative overflow-hidden rounded-[2rem] bg-[#A9DDF8] [box-shadow:var(--elev-3)]" style={{ aspectRatio: `${WIDE_W} / ${WIDE_H}` }}>
       <svg viewBox={`0 0 ${WIDE_W} ${WIDE_H}`} className="absolute inset-0 size-full" role="img" aria-label={label}>
         <defs>
           <clipPath id="tl-land">

@@ -129,7 +129,7 @@ export function Avatar({ hero, mood, className = 'size-14' }: { hero: Hero; mood
       alt=""
       width={192}
       height={192}
-      className={`shrink-0 rounded-full bg-white object-cover shadow-soft ring-[3px] ring-white ${className}`}
+      className={`edge-light relative shrink-0 rounded-full mat-paper object-cover ring-[3px] ring-white ${className}`}
       decoding="async"
     />
   )

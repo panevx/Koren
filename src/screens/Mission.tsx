@@ -1,8 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Navigate, useLocation, useNavigate, useNavigationType, useParams } from 'react-router'
 import { BadgeArt } from '../components/BadgeArt'
-import { Avatar, img, Scenery } from '../components/Brand'
+import { Avatar, img } from '../components/Brand'
 import { Icon } from '../components/Icon'
+import { BackWall } from '../components/Diorama'
 import { Button, Screen, useTitle } from '../components/ui'
 import { MISSIONS, missionById, pickLevel } from '../content/missions'
 import { useChildMissions } from '../content/useChildMissions'
@@ -73,7 +74,7 @@ function Locked({ mission }: { mission: MissionData }) {
         />
         <h1 className="text-2xl font-black">{l(mission.title)}</h1>
         <p className="rounded-full bg-sand px-4 py-1 text-sm font-extrabold">{t('unlock.locked')}</p>
-        <div className="rounded-level flex w-full items-start gap-3 bg-white p-4 text-left shadow-soft">
+        <div className="edge-light relative rounded-level flex w-full items-start gap-3 mat-paper p-4 text-left">
           <Avatar hero="raya" mood="determination" className="size-14 shrink-0" />
           <div className="min-w-0 flex-1">
             <p className="mb-1 font-semibold text-muted">{t('unlock.lockedText')}</p>
@@ -203,12 +204,14 @@ function GameHeader({
   const t = useT()
   const at = phases.indexOf(phase)
   return (
-    <header className="sticky top-0 z-10 flex items-center gap-3 bg-cream/95 px-4 pt-3 pb-2 backdrop-blur-sm short:pt-1.5 short:pb-1">
+    <header className="sticky top-0 z-10 px-3 pt-3 pb-2 short:pt-1.5 short:pb-1">
+      {/* v0.26: the header floats as one frosted-glass bar (small area → the blur is cheap) */}
+      <div className="mat-glass edge-light relative flex items-center gap-3 rounded-[1.75rem] py-1.5 pr-3 pl-1.5">
       <button
         type="button"
         onClick={onExit}
-        className={`tap press flex shrink-0 items-center gap-1 rounded-full pr-4 pl-3 font-extrabold shadow-soft transition-colors ${
-          confirming ? 'bg-coral text-coral-ink' : 'bg-white text-ink'
+        className={`tap btn-satin edge-light flex shrink-0 items-center gap-1 rounded-full pr-4 pl-3 font-extrabold ${
+          confirming ? 'tint-coral text-coral-ink' : 'tint-paper text-ink'
         }`}
       >
         <Icon name="close" />
@@ -218,9 +221,9 @@ function GameHeader({
         <p className="truncate text-sm leading-tight font-black text-green-dark">{title}</p>
         <ol className="relative mt-1 flex items-center justify-between" aria-label={t('mission.progress', { n: at + 1, total: phases.length })} role="img">
           {/* the line between the stones, filled up to the current step */}
-          <span className="absolute inset-x-3 top-1/2 h-1.5 -translate-y-1/2 overflow-hidden rounded-full bg-sand" aria-hidden="true">
+          <span className="well absolute inset-x-3 top-1/2 h-1.5 -translate-y-1/2 overflow-hidden rounded-full" aria-hidden="true">
             <span
-              className="block h-full origin-left rounded-full bg-green transition-transform duration-700 ease-[var(--ease-calm)]"
+              className="fill-satin tint-green block h-full origin-left rounded-full transition-transform duration-700 ease-[var(--ease-calm)]"
               style={{ transform: `scaleX(${phases.length > 1 ? at / (phases.length - 1) : 1})` }}
             />
           </span>
@@ -229,13 +232,14 @@ function GameHeader({
               key={p}
               title={t(`mission.phase.${p}` as TKey)}
               className={`relative grid size-8 place-items-center rounded-full transition-transform duration-500 ease-[var(--ease-spring)] ${
-                i < at ? 'bg-green-soft ring-2 ring-green' : i === at ? 'scale-125 bg-white shadow-float ring-[3px] ring-coral' : 'bg-white ring-2 ring-sand'
+                i < at ? 'mat-ceramic outline-2 outline-green' : i === at ? 'mat-ceramic scale-125 outline-[3px] outline-coral' : 'bg-white/70 outline-2 outline-sand'
               }`}
             >
               <img src={img(p === 'game' ? (GAME_ART[game] ?? ART.orb) : p === 'extra' ? (GAME_ART[extra ?? ''] ?? ART.orb) : PHASE_ART[p])} alt="" className={`size-[78%] object-contain ${i > at ? 'opacity-40 grayscale' : ''}`} />
             </li>
           ))}
         </ol>
+      </div>
       </div>
     </header>
   )
@@ -255,9 +259,13 @@ function Story({ lines, onDone }: { lines: StoryLine[]; onDone: () => void }) {
   return (
     <div className="flex flex-1 flex-col gap-3">
       <p className="sr-only">{t('mission.storyProgress', { n: i + 1, total: lines.length })}</p>
-      <div className="relative flex min-h-[min(27rem,62dvh)] flex-1 flex-col overflow-hidden rounded-[var(--radius-stage)] shadow-soft short:min-h-0 side:flex-row-reverse side:items-end">
-        {/* The fortress of the backdrop would peek out behind a story object — it steps aside. */}
-        <Scenery className="absolute inset-0" castle={!line.img} />
+      {/* v0.26: the story is a diorama — the layered landscape as the back wall, a green floor slab in front,
+          the speaking hero standing on its top face, the object of the line on the slab across from them. */}
+      <div className="relative flex min-h-[min(27rem,62dvh)] flex-1 flex-col overflow-hidden rounded-[var(--radius-stage)] [box-shadow:var(--elev-3)] [--slab:3.25rem] short:min-h-0 short:[--slab:2.25rem] side:flex-row-reverse side:items-end">
+        <BackWall className="absolute inset-0 rounded-[inherit]" />
+        <span className="plinth absolute inset-x-0 bottom-0 h-[var(--slab)] rounded-none" aria-hidden="true">
+          <span className="plinth-top" />
+        </span>
         {/* the speech bubble */}
         <m.p
           key={i}
@@ -265,7 +273,7 @@ function Story({ lines, onDone }: { lines: StoryLine[]; onDone: () => void }) {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={bouncy}
           aria-live="polite"
-          className={`relative z-10 m-3 rounded-[1.75rem] bg-white px-5 py-4 text-[length:min(1.25rem,5.6vw)] leading-snug font-bold shadow-float side:mb-auto side:min-w-0 side:flex-1 ${
+          className={`mat-paper edge-light relative z-10 m-3 rounded-[1.75rem] px-5 py-4 text-[length:min(1.25rem,5.6vw)] leading-snug font-bold [box-shadow:var(--rim-light),var(--elev-4)] side:mb-auto side:min-w-0 side:flex-1 ${
             fromRight ? 'origin-bottom-right rounded-br-md' : 'origin-bottom-left rounded-bl-md'
           }`}
         >
@@ -286,12 +294,12 @@ function Story({ lines, onDone }: { lines: StoryLine[]; onDone: () => void }) {
             initial={{ opacity: 0, scale: 0.5, y: 30 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ ...bouncy, delay: 0.15 }}
-            className={`pop-3d absolute bottom-[7%] z-[1] max-h-[min(12rem,28dvh)] w-[44%] object-contain object-bottom short:bottom-[3%] short:max-h-[19dvh] short:w-[24%] side:right-[4%] side:left-auto side:w-[32%] ${fromRight ? 'left-[5%]' : 'right-[5%]'}`}
+            className={`pop-3d absolute bottom-[calc(var(--slab)-0.6rem)] z-[1] max-h-[min(12rem,28dvh)] w-[44%] object-contain object-bottom short:max-h-[19dvh] short:w-[24%] side:right-[4%] side:left-auto side:w-[32%] ${fromRight ? 'left-[5%]' : 'right-[5%]'}`}
           />
         )}
         {/* the hero walks in from their side and stands on the hill */}
-        <div className={`relative mt-auto flex px-4 side:mt-0 side:shrink-0 ${fromRight ? 'justify-end' : 'justify-start'}`}>
-          <span className={`absolute bottom-2 h-4 w-[34%] rounded-[50%] bg-ink/20 blur-[3px] ${fromRight ? 'right-[8%]' : 'left-[8%]'}`} aria-hidden="true" />
+        <div className={`relative mt-auto flex px-4 pb-[calc(var(--slab)-0.7rem)] side:mt-0 side:shrink-0 ${fromRight ? 'justify-end' : 'justify-start'}`}>
+          <span className={`ground absolute bottom-[calc(var(--slab)-1.2rem)] h-4 w-[34%] ${fromRight ? 'right-[8%]' : 'left-[8%]'}`} aria-hidden="true" />
           <m.img
             key={`${i}-${line.hero}-${line.pose}`}
             src={img(`poses/${line.hero}-${line.pose}.webp`)}
@@ -396,7 +404,7 @@ function Badge({ mission, level, profileId, entryKey, legacyEntry }: {
 
   return (
     <div className="flex flex-1 flex-col items-center justify-center gap-3 text-center">
-      <m.h2 initial={{ opacity: 0, y: -14 }} animate={{ opacity: 1, y: 0 }} className="text-3xl font-black text-green-dark">
+      <m.h2 initial={{ opacity: 0, y: -14 }} animate={{ opacity: 1, y: 0 }} className="text-[length:min(2rem,8.4vw)] leading-tight font-black tracking-[-0.02em] text-green-dark">
         {t('badge.title')}
       </m.h2>
 
@@ -420,11 +428,18 @@ function Badge({ mission, level, profileId, entryKey, legacyEntry }: {
             transition={{ duration: 1.4, delay: 0.3 + i * 0.012, ease: 'easeOut' }}
           />
         ))}
+        {/* v0.26: the medal lands on a small glazed pedestal (a lit ellipse with a front edge and a ground shadow) */}
+        <m.span
+          initial={{ opacity: 0, scaleX: 0.6 }}
+          animate={{ opacity: 1, scaleX: 1 }}
+          transition={{ ...bouncy, delay: 0.05 }}
+          className="pedestal-gold absolute bottom-[-2%] h-[15%] w-[72%]"
+        />
         <m.div
-          initial={{ scale: 0, rotate: -30 }}
-          animate={{ scale: 1, rotate: 0 }}
-          transition={{ type: 'spring', stiffness: 240, damping: 11, delay: 0.12 }}
-          className="relative grid size-44 place-items-center overflow-hidden rounded-full shadow-[0_26px_34px_-14px_rgb(28_43_35/0.5)]"
+          initial={{ scale: 0, rotate: -30, y: -30 }}
+          animate={{ scale: 1, rotate: 0, y: 0 }}
+          transition={{ type: 'spring', stiffness: 240, damping: 13, delay: 0.12 }}
+          className="relative -mt-3 grid size-44 place-items-center overflow-hidden rounded-full shadow-[0_2px_3px_rgb(52_44_24/0.25),0_14px_18px_-10px_rgb(52_44_24/0.45)]"
         >
           <BadgeArt icon={mission.badge.icon} className="size-full" />
           {/* one glint of light across the medal */}
@@ -443,7 +458,7 @@ function Badge({ mission, level, profileId, entryKey, legacyEntry }: {
           initial={{ scale: 0.5, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ ...bouncy, delay: 0.9 }}
-          className="flex items-center gap-2 rounded-full bg-gold-soft px-4 py-1.5 font-black text-ink"
+          className="fill-satin tint-gold edge-light relative flex items-center gap-2 rounded-full px-4 py-1.5 font-black text-ink"
         >
           <img src={img(ART.coin)} alt="" className="size-7" />
           {t('badge.coins', { n: gotCoins })}

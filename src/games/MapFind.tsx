@@ -83,7 +83,7 @@ export function MapFind({
       <Card className="flex items-center gap-3 px-4 py-3">
         {game.showIcons && (
           <span
-            className="puck grid size-14 shrink-0 place-items-center rounded-full bg-coral text-coral-ink [--edge:var(--color-coral-deep)]"
+            className="btn-satin tint-coral edge-light grid size-14 shrink-0 place-items-center rounded-full text-coral-ink"
             aria-hidden="true"
           >
             <PlaceGlyph icon={target.icon} className="size-8" />

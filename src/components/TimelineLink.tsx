@@ -6,7 +6,7 @@ import { Icon } from './Icon'
 export function TimelineLink() {
   const t = useT()
   return (
-    <Link to="/timeline" className="press puck flex items-center gap-3 rounded-full bg-sky py-2 pr-5 pl-2 text-ink [--edge:var(--color-sky-deep)]">
+    <Link to="/timeline" className="btn-satin tint-sky edge-light flex items-center gap-3 rounded-full py-2 pr-5 pl-2 text-ink">
       <span className="grid size-[min(3rem,12vw)] shrink-0 place-items-center rounded-full bg-white">
         <Icon name="clock" />
       </span>

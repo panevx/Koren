@@ -60,7 +60,7 @@ export function Fill({ game, onDone }: { game: FillGame; onDone: () => void }) {
           )
         })}
         {!done && (
-          <m.li key={at} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="rounded-[1.5rem] bg-white px-4 py-4 text-xl leading-relaxed font-bold shadow-soft">
+          <m.li key={at} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="edge-light relative rounded-[1.5rem] mat-paper px-4 py-4 text-xl leading-relaxed font-bold">
             {parts(item.text)[0]}
             <span
               data-drop="gap"

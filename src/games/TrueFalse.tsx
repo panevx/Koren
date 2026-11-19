@@ -41,7 +41,7 @@ export function TrueFalse({ game, onDone }: { game: TrueFalseGame; onDone: () =>
     <div className="flex flex-1 flex-col gap-3">
       <Prompt>{l(game.prompt)}</Prompt>
       <p className="text-center text-sm font-bold text-muted">{t('tf.count', { n: at + 1, total: game.items.length })}</p>
-      <m.div key={at} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="flex flex-col items-center gap-3 rounded-[1.75rem] bg-white p-5 text-center shadow-soft">
+      <m.div key={at} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="edge-light relative flex flex-col items-center gap-3 rounded-[1.75rem] mat-paper p-5 text-center">
         {item.img && <img src={img(item.img)} alt="" className="pop-3d size-[min(6rem,26vw)] object-contain" />}
         <p className="text-xl leading-snug font-extrabold">{l(item.text)}</p>
       </m.div>

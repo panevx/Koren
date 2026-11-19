@@ -56,7 +56,7 @@ export function Riddle({ game, onDone }: { game: RiddleGame; onDone: () => void 
                 initial={i === 0 ? false : { opacity: 0, y: -8, scale: 0.96 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={bouncy}
-                className="flex items-start gap-2 rounded-[1.25rem] bg-white px-3 py-2.5 text-lg leading-snug font-bold shadow-soft"
+                className="edge-light relative flex items-start gap-2 rounded-[1.25rem] mat-paper px-3 py-2.5 text-lg leading-snug font-bold"
               >
                 <span className="grid size-7 shrink-0 place-items-center rounded-full bg-gold-soft text-sm font-black text-ink" aria-hidden="true">
                   {i + 1}
@@ -74,7 +74,7 @@ export function Riddle({ game, onDone }: { game: RiddleGame; onDone: () => void 
       </ol>
       {!solved && more && (
         <div className="flex justify-center">
-          <button type="button" onClick={next} className="tap press rounded-full bg-white px-5 py-2 text-base font-extrabold text-green-dark shadow-soft">
+          <button type="button" onClick={next} className="edge-light relative tap press rounded-full mat-paper px-5 py-2 text-base font-extrabold text-green-dark">
             {t('riddle.more')}
           </button>
         </div>

@@ -133,13 +133,19 @@ export default defineConfig(({ mode }) => ({
           'index.html',
           'favicon.svg',
           'img/logo/*.svg',
-          'img/icons/*.png',
+          // v0.26: only the 192 px icon. The 512 px icons (65 + 61 KB) and the iOS icon are read by the browser when the app is
+          // INSTALLED, which happens online — the app itself never shows them, so keeping them offline only cost 141 KB.
+          'img/icons/icon-192.png',
           'img/ornaments/*.png',
           'img/heroes/*-wave.webp',
           'img/heroes/*-joy.webp',
           'img/tiles/*.webp',
           'img/levels/*.webp',
           `img/${ART.hills}`,
+          // v0.26: the hub diorama's other layers (the first screen must look the same offline).
+          `img/${ART.hillsNear}`,
+          `img/${ART.cloud}`,
+          `img/${ART.bush}`,
         ],
         navigateFallback: 'index.html',
         cleanupOutdatedCaches: true,

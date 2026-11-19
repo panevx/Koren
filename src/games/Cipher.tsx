@@ -117,7 +117,7 @@ export function Cipher({ game, onDone }: { game: CipherGame; onDone: () => void 
         <ul aria-label={t('cipher.letters')} className="flex flex-wrap justify-center gap-2">
           {keyboard.map((c) => (
             <li key={c}>
-              <button type="button" lang="bg" onClick={() => press(c)} className="tap press grid size-[max(3rem,var(--tap))] place-items-center rounded-full bg-white text-2xl font-black text-ink shadow-soft">
+              <button type="button" lang="bg" onClick={() => press(c)} className="edge-light relative tap press grid size-[max(3rem,var(--tap))] place-items-center rounded-full mat-paper text-2xl font-black text-ink">
                 {c}
               </button>
             </li>

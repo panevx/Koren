@@ -139,7 +139,7 @@ export function Paint({ game, onDone }: { game: PaintGame; onDone: () => void })
 
       <div className="relative mx-auto flex w-[min(100%,24rem,calc(100dvh-20rem))] flex-col gap-2 side:col-start-2! side:row-span-4 side:row-start-1 side:w-[min(100%,calc(100dvh-7rem))]">
         {game.copy && !done && (
-          <figure className="flex items-center gap-2 self-end rounded-[1.25rem] bg-white p-1.5 pr-3 shadow-soft">
+          <figure className="edge-light relative flex items-center gap-2 self-end rounded-[1.25rem] mat-paper p-1.5 pr-3">
             <svg viewBox={`0 0 ${w} ${h}`} aria-hidden="true" className="block size-[min(5.5rem,22vw)] rounded-[0.75rem] side:size-[min(8rem,16vw)]" style={game.look === 'stitch' ? { background: CLOTH } : undefined}>
               {eggDefs('egg-m')}
               {picture(true)}
@@ -167,7 +167,7 @@ export function Paint({ game, onDone }: { game: PaintGame; onDone: () => void })
                   setColour(i)
                 }}
                 aria-pressed={colour === i}
-                className={`tap press flex items-center gap-2 rounded-full bg-white py-1 pr-4 pl-1 font-extrabold shadow-soft ${colour === i ? 'ring-[3px] ring-green-dark' : ''}`}
+                className={`edge-light relative tap press flex items-center gap-2 rounded-full mat-paper py-1 pr-4 pl-1 font-extrabold ${colour === i ? 'ring-[3px] ring-green-dark' : ''}`}
               >
                 <span className="size-10 rounded-full ring-2 ring-black/10" style={{ background: c.color }} aria-hidden="true" />
                 {l(c)}

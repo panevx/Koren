@@ -214,8 +214,10 @@ export function MapScreen() {
                 type="button"
                 aria-pressed={mode === md.id}
                 onClick={() => switchMode(md.id)}
-                className={`press flex min-h-11 shrink-0 snap-start items-center gap-1.5 rounded-full py-1 pr-3.5 pl-1 text-sm font-extrabold shadow-soft ${
-                  mode === md.id ? 'bg-green-dark text-white' : 'bg-white text-ink'
+                className={`press edge-light flex min-h-11 shrink-0 snap-start items-center gap-1.5 rounded-full py-1 pr-3.5 pl-1 text-sm font-extrabold ${
+                  mode === md.id
+                    ? 'bg-green-dark text-white shadow-[inset_0_1px_0_rgb(255_255_255/0.25),inset_0_-1.5px_0_rgb(0_0_0/0.15),0_1px_2px_rgb(10_82_48/0.3),0_8px_14px_-8px_rgb(10_82_48/0.6)]'
+                    : 'mat-paper text-ink'
                 }`}
               >
                 <img src={img(md.art)} alt="" className="size-8 object-contain" />
@@ -228,15 +230,15 @@ export function MapScreen() {
 
           {(mode === 'landmarks' || mode === 'cities' || mode === 'tourism') && (
             <ul className="flex flex-wrap items-center justify-center gap-2 text-sm font-extrabold">
-              <li className="flex items-center gap-1.5 rounded-full bg-white py-1 pr-3 pl-1 shadow-soft">
+              <li className="edge-light relative flex items-center gap-1.5 rounded-full mat-paper py-1 pr-3 pl-1">
                 <span className="size-5 rounded-full bg-gold-soft ring-[3px] ring-gold" aria-hidden="true" />
                 {t('map.legend.done')}
               </li>
-              <li className="flex items-center gap-1.5 rounded-full bg-white py-1 pr-3 pl-1 shadow-soft">
+              <li className="edge-light relative flex items-center gap-1.5 rounded-full mat-paper py-1 pr-3 pl-1">
                 <span className="size-5 rounded-full bg-white ring-[3px] ring-coral" aria-hidden="true" />
                 {t('map.legend.open')}
               </li>
-              <li className="flex items-center gap-1.5 rounded-full bg-white py-1 pr-3 pl-1 shadow-soft">
+              <li className="edge-light relative flex items-center gap-1.5 rounded-full mat-paper py-1 pr-3 pl-1">
                 <img src={img(ART.key)} alt="" className="size-5" />
                 {t('map.legend.locked')}
               </li>
@@ -244,7 +246,7 @@ export function MapScreen() {
           )}
 
           {mode === 'provinces' && (
-            <details className="rounded-[var(--radius-card)] bg-white px-4 py-2 shadow-soft">
+            <details className="edge-light relative rounded-[var(--radius-card)] mat-paper px-4 py-2">
               <summary className="tap flex cursor-pointer items-center font-extrabold">{t('map.provinces.list')} (28)</summary>
               <ul className="flex flex-wrap gap-1.5 pb-2">
                 {[...PROVINCES].sort((a, b) => l(a.name).localeCompare(l(b.name))).map((p) => (
@@ -421,7 +423,7 @@ function MissionList({ missions }: { missions: Mission[] }) {
               >
                 <span className="min-w-0 flex-1 leading-tight">{l(mission.title)}</span>
                 {done[mission.id] && <Icon name="check" className="shrink-0 text-green-dark" />}
-                <span className="puck grid size-11 shrink-0 place-items-center rounded-full bg-coral text-coral-ink [--edge:var(--color-coral-deep)]" aria-hidden="true">
+                <span className="btn-satin tint-coral edge-light grid size-11 shrink-0 place-items-center rounded-full text-coral-ink" aria-hidden="true">
                   <Icon name="play" width="1.1em" height="1.1em" />
                 </span>
               </Link>

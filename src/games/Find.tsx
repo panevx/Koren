@@ -135,7 +135,7 @@ export function Find({ game, onDone }: { game: FindGame; onDone: () => void }) {
       </div>
 
       {/* What to find — the tray fills up. */}
-      <ul aria-label={t('find.toFind')} className="flex flex-wrap items-center justify-center gap-2 rounded-full bg-white px-3 py-2 shadow-soft">
+      <ul aria-label={t('find.toFind')} className="edge-light relative flex flex-wrap items-center justify-center gap-2 rounded-full mat-paper px-3 py-2">
         <li className="sr-only">{t('find.count', { n: found.length, total: targets.length })}</li>
         {targets.map((i) => {
           const item = game.items[i]!

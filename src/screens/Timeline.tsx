@@ -48,7 +48,7 @@ export function Timeline() {
               initial={{ scale: 0.8, y: 4 }}
               animate={{ scale: 1, y: 0 }}
               transition={bouncy}
-              className="mx-auto w-fit rounded-full bg-coral px-5 py-1 text-[length:min(1.875rem,8vw)] font-black whitespace-nowrap side:px-4 side:text-[length:min(1.875rem,4vw)] text-coral-ink"
+              className="fill-satin tint-coral edge-light mx-auto w-fit rounded-full px-5 py-1 text-[length:min(1.875rem,8vw)] font-black whitespace-nowrap side:px-4 side:text-[length:min(1.875rem,4vw)] text-coral-ink"
             >
               {yearLabel}
             </m.p>
@@ -90,20 +90,20 @@ export function Timeline() {
         {/* What happened — told by Raya, in words for the child's age */}
         <div className="flex items-start gap-3">
           <Avatar hero="raya" mood={hasState(epoch) ? 'joy' : 'thoughtful'} className="size-[min(3.5rem,14vw)]" />
-          <m.div key={epoch.id} initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }} className="min-w-0 flex-1 rounded-[1.5rem] rounded-tl-md bg-white px-4 py-3 shadow-soft">
+          <m.div key={epoch.id} initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }} className="edge-light relative min-w-0 flex-1 rounded-[1.5rem] rounded-tl-md mat-paper px-4 py-3">
             <p className="text-lg leading-snug font-bold">{l(epoch.text[level])}</p>
             {capital && <p className="mt-1 text-sm font-extrabold text-green-dark">{t('timeline.capital', { name: l(capital.name) })}</p>}
             {/* v0.18: who ruled then, and the mission about it */}
             {(epoch.people || mission) && (
               <div className="mt-2 flex flex-wrap items-center gap-2">
                 {epoch.people?.map((p) => (
-                  <span key={p.img} className="flex min-w-0 items-center gap-1.5 rounded-full bg-gold-soft py-0.5 pr-3 pl-0.5 text-sm font-extrabold">
-                    <img src={img(p.img)} alt="" className="size-9 shrink-0 rounded-full bg-white object-contain" />
+                  <span key={p.img} className="fill-satin tint-gold flex min-w-0 items-center gap-1.5 rounded-full py-0.5 pr-3 pl-0.5 text-sm font-extrabold">
+                    <img src={img(p.img)} alt="" className="mat-ceramic size-9 shrink-0 object-contain" />
                     <span className="min-w-0">{l(p)}</span>
                   </span>
                 ))}
                 {mission && (
-                  <Link to={`/mission/${mission}`} className="press tap flex items-center gap-1 rounded-full bg-green-dark px-4 py-1.5 text-sm font-extrabold text-white">
+                  <Link to={`/mission/${mission}`} className="press tap edge-light flex items-center gap-1 rounded-full bg-green-dark px-4 py-1.5 text-sm font-extrabold text-white shadow-[inset_0_1px_0_rgb(255_255_255/0.22),0_1px_2px_rgb(10_82_48/0.3),0_8px_14px_-8px_rgb(10_82_48/0.6)]">
                     {t('timeline.toMission')}
                     <Icon name="chevron" width="0.9em" height="0.9em" />
                   </Link>

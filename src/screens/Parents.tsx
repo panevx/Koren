@@ -67,7 +67,7 @@ function Gate({ onPass, onTest }: { onPass: () => void; onTest: () => void }) {
         <div
           aria-live="polite"
           aria-atomic="true"
-          className="grid h-16 min-w-44 place-items-center rounded-full px-5 bg-white text-3xl font-black tracking-widest shadow-[inset_0_3px_6px_rgb(28_43_35/0.14)] ring-2 ring-sand"
+          className="well grid h-16 min-w-44 place-items-center rounded-full bg-white/70 px-5 text-3xl font-black tracking-widest"
         >
           <span className="sr-only">{t('gate.answer')}: </span>
           {input || ' '}
@@ -82,12 +82,12 @@ function Gate({ onPass, onTest }: { onPass: () => void; onTest: () => void }) {
               type="button"
               onClick={() => key(k)}
               aria-label={k === '⌫' ? t('gate.delete') : k}
-              className="tap press puck rounded-full bg-white text-2xl font-black [--edge:var(--color-sand)]"
+              className="btn-satin tint-paper edge-light tap rounded-full text-2xl font-black"
             >
               {k}
             </button>
           ))}
-          <button type="button" onClick={submit} disabled={!input} className="tap press puck rounded-full bg-green text-[min(1.25rem,6.5vw)] font-black text-white [--edge:var(--color-green-deep)] disabled:opacity-40">
+          <button type="button" onClick={submit} disabled={!input} className="btn-satin tint-green edge-light tap rounded-full text-[min(1.25rem,6.5vw)] font-black text-white disabled:opacity-40">
             {t('gate.ok')}
           </button>
         </div>
@@ -157,9 +157,10 @@ function TesterSection() {
 
 function Section({ icon, title, children }: { icon: IconName; title: string; children: ReactNode }) {
   return (
-    <section className="rounded-level bg-white p-5 shadow-soft">
+    <section className="edge-light relative rounded-level mat-paper p-5">
       <h2 className="mb-3 flex items-center gap-2.5 text-lg font-black">
-        <span className="grid size-9 place-items-center rounded-full bg-green-soft text-green-dark">
+        {/* v0.26: each section has a small satin "app icon" — a squircle, white glyph, lit from the top */}
+        <span className="btn-satin tint-green grid size-9 place-items-center rounded-[0.75rem] text-white">
           <Icon name={icon} />
         </span>
         {title}
@@ -179,10 +180,10 @@ function SwitchRow({ label, hint, checked, onChange }: { label: string; hint: st
         aria-checked={checked}
         aria-label={label}
         onClick={() => onChange(!checked)}
-        className={`tap relative flex shrink-0 items-center rounded-full shadow-[inset_0_2px_4px_rgb(28_43_35/0.18)] transition-colors ${checked ? 'bg-green' : 'bg-sand'}`}
+        className={`tap relative flex shrink-0 items-center rounded-full transition-colors ${checked ? 'fill-satin tint-green' : 'well'}`}
         style={{ width: 'calc(var(--tap) * 1.4)' }}
       >
-        <span className={`absolute left-1.5 size-7 rounded-full bg-white shadow-soft transition-transform duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${checked ? 'translate-x-[calc(var(--tap)*1.4-2.5rem)]' : ''}`} />
+        <span className={`nav-marker absolute left-1.5 size-7 rounded-full transition-transform duration-300 ease-[var(--ease-tactile)] ${checked ? 'translate-x-[calc(var(--tap)*1.4-2.5rem)]' : ''}`} />
       </button>
     </div>
   )
@@ -212,7 +213,7 @@ function ProfileForm({ initial, onSave, onCancel }: { initial: Draft; onSave: (d
   const t = useT()
   const [d, setD] = useState(initial)
   return (
-    <div className="rounded-level flex flex-col gap-4 bg-green-soft p-4">
+    <div className="rounded-level flex flex-col gap-4 bg-green-soft p-4 shadow-[inset_0_1px_2px_rgb(10_82_48/0.12)]">
       <label className="flex flex-col gap-1 font-bold">
         {t('parents.nickname')}
         <input
@@ -227,13 +228,13 @@ function ProfileForm({ initial, onSave, onCancel }: { initial: Draft; onSave: (d
       </label>
       <div className="flex items-center gap-3 font-bold">
         <span className="flex-1">{t('parents.age')}</span>
-        <button type="button" aria-label={t('parents.younger')} onClick={() => setD({ ...d, age: clampAge(d.age - 1) })} disabled={d.age <= MIN_AGE} className="tap press puck grid place-items-center rounded-full bg-white text-2xl font-black [--edge:var(--color-sand)] disabled:opacity-40">
+        <button type="button" aria-label={t('parents.younger')} onClick={() => setD({ ...d, age: clampAge(d.age - 1) })} disabled={d.age <= MIN_AGE} className="btn-satin tint-paper edge-light tap grid place-items-center rounded-full text-2xl font-black disabled:opacity-40">
           −
         </button>
         <output className="w-24 text-center text-xl font-black" aria-live="polite">
           {t('age.years', { n: d.age })}
         </output>
-        <button type="button" aria-label={t('parents.older')} onClick={() => setD({ ...d, age: clampAge(d.age + 1) })} disabled={d.age >= MAX_AGE} className="tap press puck grid place-items-center rounded-full bg-white text-2xl font-black [--edge:var(--color-sand)] disabled:opacity-40">
+        <button type="button" aria-label={t('parents.older')} onClick={() => setD({ ...d, age: clampAge(d.age + 1) })} disabled={d.age >= MAX_AGE} className="btn-satin tint-paper edge-light tap grid place-items-center rounded-full text-2xl font-black disabled:opacity-40">
           +
         </button>
       </div>
@@ -275,7 +276,7 @@ function ProfileCard({ profile, index }: { profile: Profile; index: number }) {
     )
 
   return (
-    <li className="rounded-level flex flex-col gap-3 bg-cream p-3">
+    <li className="rounded-level flex flex-col gap-3 bg-cream p-3 shadow-[inset_0_1px_2px_rgb(52_44_24/0.1),inset_0_-1px_0_rgb(255_255_255/0.8)]">
       <div className="flex items-center gap-3">
         <ProfileAvatar avatar={profile.avatar} className="size-14" />
         <div className="min-w-0 flex-1">
@@ -453,7 +454,7 @@ function ParentsArea({ onExpired }: { onExpired: () => void }) {
         </Section>
 
         <Section icon="globe" title={t('settings.language')}>
-          <div role="radiogroup" aria-label={t('settings.language')} className="grid grid-cols-2 gap-1 rounded-full bg-sand p-1.5">
+          <div role="radiogroup" aria-label={t('settings.language')} className="well grid grid-cols-2 gap-1 rounded-full p-1.5">
             {LANGS.map((l) => (
               <button
                 key={l}
@@ -463,7 +464,7 @@ function ParentsArea({ onExpired }: { onExpired: () => void }) {
                 lang={l}
                 onClick={() => setLang(l)}
                 className={`tap press flex items-center justify-center gap-2 rounded-full font-extrabold ${
-                  lang === l ? 'bg-white text-green-dark shadow-soft' : 'text-muted'
+                  lang === l ? 'nav-marker text-green-dark' : 'text-muted'
                 }`}
               >
                 <Flag lang={l} className="h-4 w-6" />
