@@ -80,7 +80,9 @@ export function Passport() {
           {/* v0.22: the fair stall — coins, days of adventure, folk costume for the sign */}
           <Link to="/shop" className="edge-light relative press tap flex items-center gap-2 rounded-[var(--radius-card)] mat-paper px-3 py-3 font-extrabold text-ink">
             <img src={img(ART.coins)} alt="" className="pop-3d size-[min(3rem,12vw)] shrink-0" />
-            <span className="min-w-0 flex-1 text-[length:min(1.125rem,5vw)] leading-tight">{t('shop.title')}</span>
+            <span className="min-w-0 flex-1 leading-tight [container-type:inline-size]">
+              <span className="block text-[length:min(1.125rem,5vw,16cqw)]">{t('shop.title')}</span>
+            </span>
             <span className="flex items-center gap-1 rounded-full bg-gold-soft px-2.5 py-1 text-sm">
               <img src={img(ART.coin)} alt="" className="size-5" />
               {wallet(profile, ALL_MISSIONS).coins}
