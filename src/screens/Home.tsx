@@ -92,7 +92,7 @@ export function Home() {
         <div>
           {/* 1. Koren and Raya greet the child. */}
           <section className="relative mt-3 flow-root min-h-[min(12.5rem,54vw)] pb-4 short:min-h-[11rem] wide:min-h-[15rem]">
-            <Scenery castle={false} className="absolute inset-0 rounded-[var(--radius-stage)] shadow-soft" />
+            <Scenery landscape className="absolute inset-0 rounded-[var(--radius-stage)] shadow-soft" />
             <div className="absolute top-3 left-3 rounded-full bg-white px-3.5 py-1.5 shadow-soft wide:hidden">
               <Logo size="sm" className="h-7" />
             </div>

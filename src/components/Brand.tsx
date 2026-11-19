@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import { useT } from '../i18n/useT'
+import { ART } from '../world'
 
 /** Official KOREN logo (design/logo, vector). `lg` = main lockup, `sm` = compact for headers. */
 export function Logo({ size = 'lg', className = '' }: { size?: 'sm' | 'lg'; className?: string }) {
@@ -16,7 +17,22 @@ export function Logo({ size = 'lg', className = '' }: { size?: 'sm' | 'lg'; clas
  * Pure vector in the KOREN palette — sharp on every screen and costs no download.
  * `castle={false}` where Koren and Raya stand on the right: the fortress would peek out between their legs.
  */
-export function Scenery({ className = '', castle = true }: { className?: string; castle?: boolean }) {
+export function Scenery({ className = '', castle = true, landscape = false }: { className?: string; castle?: boolean; landscape?: boolean }) {
+  if (landscape) {
+    return (
+      <div className={`overflow-hidden bg-sky-soft ${className}`} aria-hidden="true">
+        <img
+          src={img(ART.hills)}
+          alt=""
+          width={960}
+          height={640}
+          className="absolute inset-0 size-full object-cover object-[50%_65%]"
+          fetchPriority="high"
+        />
+      </div>
+    )
+  }
+
   return (
     <div className={`overflow-hidden bg-gradient-to-b from-sky to-sky-soft ${className}`} aria-hidden="true">
       {/* sun with a soft halo */}

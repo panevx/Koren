@@ -8,6 +8,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 import assetManifest from './content/assets/manifest.json'
 import { Mission } from './src/content/schema'
 import { compareMissionOrder, summarizeMission } from './src/content/missionSummary'
+import { ART } from './src/world'
 import { IMAGE_CACHE } from './src/offline/imageCache'
 import { staticPages } from './src/routes'
 
@@ -138,6 +139,7 @@ export default defineConfig(({ mode }) => ({
           'img/heroes/*-joy.webp',
           'img/tiles/*.webp',
           'img/levels/*.webp',
+          `img/${ART.hills}`,
         ],
         navigateFallback: 'index.html',
         cleanupOutdatedCaches: true,

@@ -4,6 +4,7 @@
  * scripts/export-world.py. tests/assets.test.ts checks that every file exists.
  */
 export const ART = {
+  hills: 'world/hills-v02.webp',
   /** v0.21: the blank number plate (the code and digits are text on top). */
   plate: 'places/car-license-plate.svg',
   /** v0.22: days of adventure, coins. */
