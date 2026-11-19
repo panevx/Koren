@@ -36,6 +36,45 @@ const FILL: Record<Tone, string> = {
 }
 
 /**
+ * v0.26 meter: a recessed well with a satin fill (curved, lit from the top-left). Same spring as ProgressBar.
+ * `tint` = one of the tint-* material classes; `onTint` when it sits on a coloured surface.
+ */
+export function Meter({
+  value,
+  max,
+  tint = 'tint-green',
+  onTint = false,
+  label,
+  className = '',
+}: {
+  value: number
+  max: number
+  tint?: 'tint-green' | 'tint-gold' | 'tint-coral' | 'tint-sky'
+  onTint?: boolean
+  label?: string
+  className?: string
+}) {
+  const ratio = max > 0 ? Math.min(1, value / max) : 0
+  return (
+    <span
+      className={`relative block h-2 overflow-hidden rounded-full ${onTint ? 'well-on-tint' : 'well'} ${className}`}
+      role="progressbar"
+      aria-valuemin={0}
+      aria-valuemax={max}
+      aria-valuenow={value}
+      aria-label={label}
+    >
+      <m.span
+        className={`fill-satin absolute inset-0 origin-left rounded-full ${tint}`}
+        initial={{ scaleX: 0 }}
+        animate={{ scaleX: ratio }}
+        transition={{ type: 'spring', stiffness: 110, damping: 22, delay: 0.2 }}
+      />
+    </span>
+  )
+}
+
+/**
  * A progress bar whose fill springs from empty to its value (scaleX — no layout work).
  * `icon` is a 3D picture sitting at the start (a gem, a medal). The numbers are for screen readers in `label`.
  */

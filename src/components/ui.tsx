@@ -12,10 +12,23 @@ import { Icon } from './Icon'
  * - `wide`: on a computer the screen may use the whole width next to the side bar (it lays itself out in columns);
  *   without it the phone column stays centred in the free space.
  */
-export function Screen({ children, className = '', nav = false, wide = false }: { children: ReactNode; className?: string; nav?: boolean; wide?: boolean }) {
+export function Screen({
+  children,
+  className = '',
+  nav = false,
+  wide = false,
+  atmosphere = false,
+}: {
+  children: ReactNode
+  className?: string
+  nav?: boolean
+  wide?: boolean
+  /** v0.26: the lit "Depth 0" background (sunlight top-left, sky top-right) instead of flat cream. */
+  atmosphere?: boolean
+}) {
   return (
     <div
-      className={`min-h-dvh overflow-x-clip bg-cream ${nav ? 'short:pl-[calc(5.25rem+env(safe-area-inset-left))] wide:pl-[calc(var(--rail)+1rem)]' : ''}`}
+      className={`min-h-dvh overflow-x-clip bg-cream ${atmosphere ? 'atmosphere' : ''} ${nav ? 'short:pl-[calc(5.25rem+env(safe-area-inset-left))] wide:pl-[calc(var(--rail)+1rem)]' : ''}`}
     >
       <m.main {...pageEnter} className={`mx-auto flex min-h-dvh w-full max-w-md flex-col ${wide ? 'wide:max-w-6xl wide:px-4' : ''} ${className}`}>
         {children}
