@@ -1,3 +1,4 @@
+import { fitWords } from '../components/fit'
 import { useMemo, useState } from 'react'
 import { img } from '../components/Brand'
 import { SceneBackdrop } from '../components/Scene'
@@ -135,7 +136,8 @@ export function Assemble({ game, onDone }: { game: AssembleGame; onDone: () => v
                   } ${bump?.k === k ? 'anim-wiggle' : ''}`}
                 >
                   <img src={img(p.img)} alt="" draggable={false} className="pop-3d size-[min(3.75rem,15vw)] object-contain" />
-                  <span className="w-full text-center text-[length:clamp(0.5rem,11cqw,0.85rem)] leading-tight">{name(p)}</span>
+                  {/* sized by the longest word, not the whole label: „Порта“ was 9.6 px for 4–6 year olds; two words may take two lines */}
+                  <span className="w-full text-center leading-tight" style={fitWords(name(p), 'min(1rem, 4.4vw)', 0.64)}>{name(p)}</span>
                 </button>
               </li>
             )

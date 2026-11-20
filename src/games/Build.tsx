@@ -68,7 +68,7 @@ export function Build({ game, onDone }: { game: BuildGame; onDone: () => void })
         >
           {game.labels && (
             <span
-              className={`absolute top-full mt-0.5 rounded-full bg-white/90 px-1.5 text-[0.65rem] leading-tight font-extrabold whitespace-nowrap text-ink ${
+              className={`absolute top-full mt-0.5 rounded-full bg-white/90 px-1.5 text-[0.75rem] leading-tight font-extrabold whitespace-nowrap text-ink ${
                 // Near the edge of the map the name grows inwards, so it is never cut off.
                 place.x < MAP_W * 0.2 ? 'left-0' : place.x > MAP_W * 0.8 ? 'right-0' : ''
               }`}

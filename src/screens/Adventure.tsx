@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router'
 import { BadgeArt } from '../components/BadgeArt'
 import { img } from '../components/Brand'
+import { ContentState } from '../components/ContentState'
 import { Panel, ProgressBar } from '../components/ds'
 import { Icon } from '../components/Icon'
 import { MissionNode, stopArt } from '../components/MissionNode'
@@ -52,6 +53,8 @@ export function Adventure() {
   const progress = useProgress(missions)
   const chapters = pathChapters(missions)
   const ordered = chapters.flatMap((c) => c.missions)
+  // the demo shows drafts: say so beside the progress, so played ≠ checked by a teacher (the family build has no drafts)
+  const drafts = ordered.filter((m) => m.draft).length
   const next = progress.next(ordered)
   const played = ordered.filter((x) => progress.status(x) === 'done').length
   const [open, setOpen] = useState<Mission | null>(null)
@@ -99,6 +102,7 @@ export function Adventure() {
             <span className="min-w-0 flex-1">
               <span className="block text-sm font-extrabold">{t('path.progress', { done: played, total: ordered.length })}</span>
               <ProgressBar value={played} max={ordered.length} height="h-2.5" className="mt-1" />
+              {drafts > 0 && <span className="mt-1.5 flex"><ContentState drafts={drafts} total={ordered.length} /></span>}
             </span>
             <Icon name="chevron" className="shrink-0 text-muted" />
           </Link>
@@ -167,6 +171,7 @@ export function Adventure() {
           <section className="edge-light relative rounded-[var(--radius-card)] mat-paper p-4">
             <p className="font-black">{t('path.progress', { done: played, total: ordered.length })}</p>
             <ProgressBar value={played} max={ordered.length} icon={ART.gemGreen} className="mt-2" />
+            {drafts > 0 && <span className="mt-2 flex"><ContentState drafts={drafts} total={ordered.length} /></span>}
           </section>
           {next && (
             <button

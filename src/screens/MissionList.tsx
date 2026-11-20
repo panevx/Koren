@@ -3,6 +3,7 @@ import { BadgeArt } from '../components/BadgeArt'
 import { img } from '../components/Brand'
 import { Meter } from '../components/ds'
 import { fitWords } from '../components/fit'
+import { ContentState, DraftChip } from '../components/ContentState'
 import { Icon } from '../components/Icon'
 import { SceneBackdrop } from '../components/Scene'
 import { TimelineLink } from '../components/TimelineLink'
@@ -145,38 +146,6 @@ export function MissionList({ topic }: { topic?: boolean }) {
       </div>
       </div>
     </Screen>
-  )
-}
-
-/**
- * The state of the content in this topic, said once: all drafts (the demo), some drafts (then each draft card also has its
- * chip), or all checked by a teacher (the family build shows only checked missions).
- */
-function ContentState({ drafts, total }: { drafts: number; total: number }) {
-  const t = useT()
-  if (drafts === 0)
-    return (
-      <span className="text-meta flex items-center gap-1.5 text-green-dark">
-        <Icon name="check" width="1.05em" height="1.05em" className="shrink-0" />
-        {t('topic.allReviewed')}
-      </span>
-    )
-  return (
-    <span className="text-meta well flex items-start gap-1.5 self-start rounded-[0.875rem] px-2.5 py-1 text-ink">
-      <span className="mt-[0.35em] size-2 shrink-0 rounded-full bg-gold-dark" aria-hidden="true" />
-      {drafts === total ? t('topic.allDraft') : t('topic.someDraft', { n: drafts })}
-    </span>
-  )
-}
-
-/** One look for "draft" everywhere: a recess with a gold-dark dot — the same mark as on the banner. */
-function DraftChip() {
-  const t = useT()
-  return (
-    <span className="well flex items-center gap-1 rounded-full px-2 py-px text-xs font-bold whitespace-nowrap text-ink">
-      <span className="size-1.5 rounded-full bg-gold-dark" aria-hidden="true" />
-      {t('missions.draftShort')}
-    </span>
   )
 }
 
