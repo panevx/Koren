@@ -23,11 +23,13 @@ export function AgeSelect() {
       <div className="flex flex-1 flex-col gap-4 px-4 wide:px-2">
         <p className="text-center font-bold text-muted">{t('age.subtitle')}</p>
         <AgePicker action={wide ? next : undefined} />
-        <p className="text-center text-sm text-muted">{t('age.hint')}</p>
-        {/* Phone: "Next" stays at hand — it sticks to the bottom edge (over a soft fade of the page) while the worlds scroll. */}
+        {wide && <p className="text-center text-sm text-muted">{t('age.hint')}</p>}
+        {/* Phone: "Next" and the note for parents stay at hand in a solid bar at the bottom edge — the worlds scroll above it,
+            nothing is half-covered by a fade, and the page ends with the bar's own room (sticky = it takes its place in the flow). */}
         {!wide && (
-          <div className="sticky bottom-0 z-10 -mx-4 mt-auto bg-[linear-gradient(to_top,var(--color-cream)_62%,rgb(248_245_237/0))] px-4 pt-5 pb-[calc(0.75rem+env(safe-area-inset-bottom))]">
+          <div className="sticky bottom-0 z-10 -mx-4 mt-auto flex flex-col gap-2 bg-cream px-4 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] shadow-[0_-1px_0_rgb(52_44_24/0.06),0_-14px_24px_-18px_rgb(52_44_24/0.35)] short:static short:shadow-none">
             {next}
+            <p className="text-center text-[length:min(0.8125rem,3.5vw)] leading-snug text-muted">{t('age.hint')}</p>
           </div>
         )}
       </div>

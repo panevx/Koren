@@ -5,7 +5,16 @@ import type { CSSProperties } from 'react'
  * on the parent). Short titles keep `max`; a long word or a squeezed column (tablet, big system font) gets smaller letters
  * instead of a word broken in two („Аспару-х“). `perChar` = average letter width of Nunito Black in em (Cyrillic capitals are wide).
  */
-export function fitWords(text: string, max: string, perChar = 0.7): CSSProperties {
-  const longest = Math.max(4, ...text.split(/[\s‑-]+/).map((w) => w.length))
+export function fitWords(text: string, max: string, perChar = 0.7, wholeHyphenated = false): CSSProperties {
+  // wholeHyphenated: words like „Най-високият“ are kept on one line (see HyphenSafe), so they are measured whole
+  const longest = Math.max(4, ...text.split(wholeHyphenated ? /\s+/ : /[\s‑-]+/).map((w) => w.length))
   return { fontSize: `min(${max}, ${(100 / (longest * perChar)).toFixed(2)}cqw)` }
+}
+
+/**
+ * Splits text into words and keeps every hyphenated word („Най-високият“, „Велико-Търновска“) on one line — on a card with
+ * one or two words a break after the hyphen reads like a broken word to a child. Use with fitWords(…, wholeHyphenated: true).
+ */
+export function hyphenSafe(text: string): (string | { nowrap: string })[] {
+  return text.split(/(\s+)/).map((part) => (/\S-\S/.test(part) ? { nowrap: part } : part))
 }

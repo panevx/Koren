@@ -1,4 +1,4 @@
-import { fitWords } from '../components/fit'
+import { fitWords, hyphenSafe } from '../components/fit'
 import { useEffect, useMemo, useState } from 'react'
 import { img } from '../components/Brand'
 import { ART } from '../world'
@@ -93,8 +93,8 @@ export function Memory({ game, onDone }: { game: MemoryGame; onDone: () => void 
                   {f.img && <img src={img(f.img)} alt="" draggable={false} className={`pop-3d object-contain ${game.pairs[pairOf(card)]!.b ? 'size-[70%]' : 'size-[88%]'}`} />}
                   {/* Picture + picture (for children who cannot read yet): the picture alone, its name is the button's label. */}
                   {(!f.img || game.pairs[pairOf(card)]!.b) && (
-                    <span className="leading-tight font-extrabold" style={fitWords(l(f), f.img ? 'clamp(0.55rem,11cqw,0.95rem)' : 'clamp(0.7rem,15cqw,1.25rem)', 0.64)}>
-                      {l(f)}
+                    <span className="leading-tight font-extrabold" style={fitWords(l(f), f.img ? 'clamp(0.55rem,11cqw,0.95rem)' : 'clamp(0.7rem,15cqw,1.25rem)', 0.64, true)}>
+                      {hyphenSafe(l(f)).map((p, i) => (typeof p === 'string' ? p : <span key={i} className="whitespace-nowrap">{p.nowrap}</span>))}
                     </span>
                   )}
                 </span>

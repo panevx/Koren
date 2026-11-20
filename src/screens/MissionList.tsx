@@ -68,7 +68,8 @@ export function MissionList({ topic }: { topic?: boolean }) {
   const open = missions.filter((mission) => !done[mission.id] && progress.status(mission) !== 'locked')
   const world = SUBJECT_WORLD[subject ?? missions[0]!.subject]
   // Every mission here still waits for the teacher (the demo build): say it ONCE on the banner, not on every card.
-  const allDraft = missions.every((mission) => mission.draft)
+  const drafts = missions.filter((mission) => mission.draft).length
+  const allDraft = drafts === missions.length
   const draftChip = !allDraft
 
   return (
@@ -82,10 +83,15 @@ export function MissionList({ topic }: { topic?: boolean }) {
             <span className={`mat mat-satin edge-light grid size-[min(4.75rem,19vw)] shrink-0 place-items-center rounded-full ${world.tint}`} aria-hidden="true">
               {section && <img src={img(sectionIcon(section.id))} alt="" className="pop-3d size-[86%] object-contain" />}
             </span>
-            <span className="flex min-w-0 flex-1 flex-col gap-1.5">
-              <span className="text-row">{t('missions.count', { done: played.length, total: missions.length })}</span>
-              <Meter value={played.length} max={missions.length} tint="tint-green" className="h-2.5" />
-              {allDraft && <span className="text-meta text-muted">{t('missions.draft')}</span>}
+            <span className="flex min-w-0 flex-1 flex-col gap-2">
+              {/* Two different things, two different looks: the CHILD's progress (green meter) and the state of the CONTENT
+                  (a teacher's check) — so "2 of 22 played" never reads as if the progress itself were a draft. */}
+              <span className="flex flex-col gap-1.5">
+                <span className="text-eyebrow text-muted">{t('topic.progress')}</span>
+                <span className="text-row">{t('missions.count', { done: played.length, total: missions.length })}</span>
+                <Meter value={played.length} max={missions.length} tint="tint-green" className="h-2.5" />
+              </span>
+              <ContentState drafts={drafts} total={missions.length} />
             </span>
           </div>
           {subject === 'history' && <TimelineLink />}
@@ -142,6 +148,38 @@ export function MissionList({ topic }: { topic?: boolean }) {
   )
 }
 
+/**
+ * The state of the content in this topic, said once: all drafts (the demo), some drafts (then each draft card also has its
+ * chip), or all checked by a teacher (the family build shows only checked missions).
+ */
+function ContentState({ drafts, total }: { drafts: number; total: number }) {
+  const t = useT()
+  if (drafts === 0)
+    return (
+      <span className="text-meta flex items-center gap-1.5 text-green-dark">
+        <Icon name="check" width="1.05em" height="1.05em" className="shrink-0" />
+        {t('topic.allReviewed')}
+      </span>
+    )
+  return (
+    <span className="text-meta well flex items-start gap-1.5 self-start rounded-[0.875rem] px-2.5 py-1 text-ink">
+      <span className="mt-[0.35em] size-2 shrink-0 rounded-full bg-gold-dark" aria-hidden="true" />
+      {drafts === total ? t('topic.allDraft') : t('topic.someDraft', { n: drafts })}
+    </span>
+  )
+}
+
+/** One look for "draft" everywhere: a recess with a gold-dark dot — the same mark as on the banner. */
+function DraftChip() {
+  const t = useT()
+  return (
+    <span className="well flex items-center gap-1 rounded-full px-2 py-px text-xs font-bold whitespace-nowrap text-ink">
+      <span className="size-1.5 rounded-full bg-gold-dark" aria-hidden="true" />
+      {t('missions.draftShort')}
+    </span>
+  )
+}
+
 /** Chips every card can carry: new, draft. */
 function Flags({ mission, fresh, draftChip }: { mission: Mission; fresh?: boolean; draftChip: boolean }) {
   const t = useT()
@@ -150,7 +188,7 @@ function Flags({ mission, fresh, draftChip }: { mission: Mission; fresh?: boolea
   return (
     <span className="flex flex-wrap items-center gap-1.5">
       {fresh && <span className="btn-satin tint-coral rounded-full px-2.5 py-0.5 text-xs font-black whitespace-nowrap text-coral-ink">{t('unlock.new')}</span>}
-      {draft && <span className="well rounded-full px-2.5 py-0.5 text-xs font-bold whitespace-nowrap text-ink">{t('missions.draftShort')}</span>}
+      {draft && <DraftChip />}
     </span>
   )
 }
@@ -227,7 +265,7 @@ function Compact({ mission, scene, fresh, lazy, draftChip }: { mission: Mission;
             <img key={g} src={img(GAME_ART[g]!)} alt="" className="size-6 object-contain" aria-hidden="true" />
           ))}
           <span className="sr-only">{games.map((g) => t(`game.${g}` as TKey)).join(', ')}</span>
-          {draftChip && mission.draft && <span className="well rounded-full px-2 py-px text-xs font-bold text-ink">{t('missions.draftShort')}</span>}
+          {draftChip && mission.draft && <DraftChip />}
         </span>
       </span>
       <span className="btn-satin tint-coral edge-light grid size-[max(2.75rem,var(--tap))] shrink-0 place-items-center rounded-full text-coral-ink" aria-hidden="true">
@@ -277,7 +315,7 @@ function Locked({ mission, draftChip }: { mission: Mission; draftChip: boolean }
         <span className="text-row">{l(mission.title)}</span>
         <span className="text-meta flex flex-wrap items-center gap-1.5 text-muted">
           {t('path.locked')}
-          {draftChip && mission.draft && <span className="rounded-full bg-white/70 px-2 py-px text-xs font-bold text-ink">{t('missions.draftShort')}</span>}
+          {draftChip && mission.draft && <DraftChip />}
         </span>
       </span>
     </Link>
