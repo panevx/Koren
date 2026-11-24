@@ -42,5 +42,7 @@ if (HUB_MISSIONS.length !== hubIds.size || HUB_MISSIONS.some((m) => !hubIds.dele
 // Budgets cover the JS entry, home mission index, and complete precache.
 // v0.24: precache 1.75 → 2.3 MB (uncompressed): the 7–14 levels got a second round and 3 questions, plus 12 exam missions.
 // The missions chunk is ~220 KB gzip and loads only when a mission or the path opens — the hub stays on the small index.
+// v0.27.1: precache 2.3 → 2.45 MB (uncompressed), approved by the owner: 18 missions for every place and peak on the map
+// (+~120 KB of mission text, ~+30 KB over the network with gzip).
 console.log(`Pages entry: ${entryBytes} gzip bytes. Home mission index: ${hubBytes} gzip bytes. Precache: ${precacheBytes} uncompressed bytes.`)
-if (entryBytes > 160_000 || hubBytes > 10_000 || precacheBytes > 2_300_000) throw new Error('Pages build exceeds its size budget')
+if (entryBytes > 160_000 || hubBytes > 10_000 || precacheBytes > 2_450_000) throw new Error('Pages build exceeds its size budget')
