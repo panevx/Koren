@@ -21,7 +21,7 @@ const REWARD_ART: Record<MilestoneId, string> = { bronze: ART.bronze, silver: AR
 /**
  * "Traveller's passport" — a collection to be proud of:
  * - the cover: the child's sign, name and three numbers (badges, medals, places);
- * - the reward track: bronze → silver → gold → cup on one line that fills up;
+ * - the reward track: bronze → silver → gold → cup with a short segment between each two, filling toward the next;
  * - earned badges, big and stamped; then the ones still to discover, smaller and faded.
  * On a computer the cover and the track stay on the left, the badges fill the right.
  */
