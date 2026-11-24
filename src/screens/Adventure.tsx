@@ -214,9 +214,9 @@ function ChapterSign({ title, done, total }: { title: string; done: number; tota
   const say = complete ? t('path.chapterDone') : t('path.chapterLeft', { done, total })
   return (
     <li className="relative flex h-[var(--path-row)] items-center justify-center">
-      <span className="relative grid w-[min(9rem,44vw)] place-items-center">
+      <span className="relative grid w-[min(10rem,48vw)] place-items-center">
         <img src={img(ART.sign)} alt="" className="pop-3d w-full" />
-        <span className="absolute top-[8%] flex h-[34%] w-[80%] items-center justify-center text-center text-[length:min(0.9rem,3.8vw)] leading-tight font-black text-[#4A2A12]">
+        <span className="absolute top-[8%] flex h-[34%] w-[80%] items-center justify-center text-center text-[length:min(0.9rem,3.8vw)] leading-tight font-black text-[#4A2A12]" data-fit-label>
           {title}
         </span>
       </span>

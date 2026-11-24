@@ -227,7 +227,7 @@ function SlabMission({ next, missions, done }: { next: MissionSummary | undefine
         initial={{ y: 14, scale: 0.88 }}
         animate={{ y: 0, scale: 1 }}
         transition={{ ...bouncy, delay: 0.25 }}
-        className="mat-ceramic-gold absolute -top-[min(3.25rem,13vw)] left-1 grid size-[min(5.5rem,22vw)] place-items-center wide:-top-[4.25rem] wide:size-[6.5rem]"
+        className="mat-ceramic-gold absolute -top-[min(3.25rem,13vw)] left-1 z-10 grid size-[min(5.5rem,22vw)] place-items-center wide:-top-[4.25rem] wide:size-[6.5rem]"
       >
         {next ? (
           <BadgeArt icon={next.badge.icon} className="relative size-[84%]" />

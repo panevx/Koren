@@ -140,7 +140,7 @@ function ModeWorld({ level, selected, onPick }: { level: Level; selected: boolea
           </span>
         </span>
         {/* sized by its longest word against the plaque: „пътешественици“ must not break on a 320 px phone */}
-        <span className="text-heading" style={fitWords(t(`level.${level}.name`), 'min(1.25rem, 5.4vw)', 0.62)}>
+        <span className="text-heading" style={fitWords(t(`level.${level}.name`), 'min(1.25rem, 5.4vw)', 0.7)}>
           {t(`level.${level}.name`)}
         </span>
         <span className={`text-meta mt-0.5 text-muted ${selected ? '' : 'hidden wide:block'}`}>{t(`level.${level}.about`)}</span>

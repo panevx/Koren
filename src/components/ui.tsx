@@ -1,3 +1,4 @@
+import { fitWords } from './fit'
 import { useEffect, type ComponentProps, type ReactNode } from 'react'
 import { useNavigate } from 'react-router'
 import { useT } from '../i18n/useT'
@@ -105,7 +106,7 @@ export function TopBar({
       </button>
       {/* Also capped by its own width: between two 64 px buttons on a 280 px folding phone "пътешественика" broke in two. */}
       <h1 className="min-w-0 flex-1 text-center leading-tight font-black [container-type:inline-size]">
-        <span className="block text-[length:min(1.5rem,6.4vw,12cqw)] tracking-[-0.012em]">{title}</span>
+        <span className="block tracking-[-0.012em]" style={fitWords(title, 'min(1.5rem,6.4vw)', 0.7)}>{title}</span>
       </h1>
       <div className="tap grid shrink-0 place-items-center">{right}</div>
     </header>

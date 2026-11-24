@@ -1,6 +1,7 @@
 import { Link } from 'react-router'
 import { BadgeArt } from '../components/BadgeArt'
 import { img } from '../components/Brand'
+import { fitWords } from '../components/fit'
 import { ProgressBar } from '../components/ds'
 import { Icon } from '../components/Icon'
 import { ProfileAvatar, useProfileName } from '../components/ProfileAvatar'
@@ -48,14 +49,13 @@ export function Passport() {
           <section className="leather relative overflow-hidden rounded-[var(--radius-stage)] p-5 pl-7 text-white">
             <span className="leather-spine" aria-hidden="true" />
             <span className="leather-stitch" aria-hidden="true" />
-            <img src={img("ornaments/right.png")} alt="" className="kid-deco absolute top-4 right-4 size-9 opacity-40" />
             <div className="relative flex items-center gap-3">
               <span className="mat-ceramic-gold grid size-[min(4.5rem,18vw)] shrink-0 place-items-center">
                 <ProfileAvatar avatar={profile.avatar} outfit={profile.outfit} className="size-[82%] shadow-none" />
               </span>
               <div className="min-w-0 flex-1 [container-type:inline-size]">
                 <img src={img('logo/koren-white.svg')} alt="" className="foil mb-1.5 h-6 w-auto" />
-                <p className="text-title text-[length:min(1.5rem,6.4vw,13cqw)]">{name(profile, index)}</p>
+                <p className="text-title" style={fitWords(name(profile, index), 'min(1.5rem,6.4vw)', 0.7)}>{name(profile, index)}</p>
               </div>
             </div>
             <dl className="relative mt-4 grid grid-cols-3 gap-2 text-center">
@@ -208,7 +208,7 @@ function BadgeItem({ mission, has, i }: { mission: Mission; has: boolean; i: num
           />
         )}
       </span>
-      <span className={`w-full leading-tight font-extrabold ${has ? 'text-[length:clamp(0.5rem,10.5cqw,0.875rem)]' : 'text-[length:clamp(0.42rem,10.5cqw,0.75rem)] text-muted'}`}>{l(mission.title)}</span>
+      <span className={`w-full leading-tight font-extrabold ${has ? 'text-[length:clamp(0.5rem,10.5cqw,0.875rem)]' : 'text-[length:clamp(0.42rem,10.5cqw,0.75rem)] text-muted'}`} data-fit-label>{l(mission.title)}</span>
       <span className={`flex items-center gap-1 text-xs font-bold ${has ? 'text-green-dark' : 'sr-only'}`}>
         {has && <Icon name="check" width="1em" height="1em" />}
         {has ? t('passport.earned') : t('passport.locked')}

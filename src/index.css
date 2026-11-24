@@ -446,8 +446,8 @@ body {
   }
 }
 
-/* v0.23.4: smaller letters instead of a broken word — set by src/fitText.ts, only where a word did not fit. */
-[data-fit-label][data-fit] {
+/* Smaller letters instead of a broken word — set by src/fitText.ts on headings and labels, only where a word did not fit. */
+[data-fit] {
   font-size: var(--fit-px) !important;
 }
 
@@ -781,19 +781,23 @@ body {
 /* The top face of the slab: it faces the light, so it is lighter and less saturated (like grass in the sun);
    a fine white lip at the back edge, and a crisp front edge that throws a hairline shadow onto the front face. */
 .plinth-top {
+  /* The whole slab's shape, clipped to its top band: the band's corners are the slab's corners (a 0.95rem-high box of
+     its own would round its corners smaller and stick out past the slab's curve on the left and right). */
   position: absolute;
-  inset: 0 0 auto 0;
-  height: 0.95rem;
+  inset: 0;
   z-index: -1;
   border-radius: inherit;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  background: linear-gradient(180deg, #6fcb98 0%, #47b179 40%, #2f9d65 100%);
-  box-shadow:
-    inset 0 1px 0 rgb(255 255 255 / 0.55),
-    inset 0 -1px 0 rgb(255 255 255 / 0.18),
-    0 1px 0 rgb(0 50 25 / 0.18),
-    0 2px 4px rgb(0 40 20 / 0.22);
+  clip-path: inset(0 0 calc(100% - 0.95rem - 4px) 0);
+  background: linear-gradient(
+    180deg,
+    #6fcb98 0,
+    #47b179 0.38rem,
+    #2f9d65 0.95rem,
+    rgb(0 50 25 / 0.3) 0.95rem,
+    rgb(0 40 20 / 0.12) calc(0.95rem + 1.5px),
+    transparent calc(0.95rem + 4px)
+  );
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.55);
 }
 /* The back wall: the picture, set back from the slab (narrower), darker toward the floor (ambient occlusion). */
 .backwall {

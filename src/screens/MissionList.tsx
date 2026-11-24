@@ -225,7 +225,7 @@ function Compact({ mission, scene, fresh, lazy, draftChip }: { mission: Mission;
       </span>
       {fresh && <span className="btn-satin tint-coral absolute top-1.5 left-1.5 size-3.5 rounded-full" aria-hidden="true" />}
       <span className="flex min-w-0 flex-1 flex-col gap-1 [container-type:inline-size]">
-        <span className="text-row" style={fitWords(title, 'min(1.0625rem, 4.5vw)', 0.72)}>
+        <span className="text-row" style={fitWords(title, 'min(1.0625rem, 4.5vw)', 0.72)} data-fit-label>
           {title}
         </span>
         {fresh && <span className="sr-only">{t('unlock.new')}</span>}
