@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { lazy, Suspense, useMemo } from 'react'
 import { fitWords } from '../components/fit'
 import { Link } from 'react-router'
 import { BadgeArt } from '../components/BadgeArt'
@@ -26,6 +26,9 @@ import { activeProfile, useProfiles } from '../store/profiles'
 import { ageToLevel } from '../theme/levels'
 import { useWide } from '../useWide'
 import { ART } from '../world'
+
+// v0.27: its own chunk — the hub's first download does not grow
+const DailyCard = lazy(() => import('../components/DailyCard'))
 
 /** Rewards in the order they are won (same thresholds as src/content/progress.ts → MILESTONES, without loading it). */
 const REWARDS: readonly { id: 'bronze' | 'silver' | 'gold' | 'trophy'; need: number | 'all'; art: string }[] = [
@@ -169,6 +172,13 @@ export function Home() {
             {t('tester.chip')}
           </Link>
         )}
+
+        {/* v0.27: the day's adventure and the week's stamp — loaded after the first screen (the start download stays small). */}
+        <Suspense fallback={<div className="mt-section min-h-[11rem]" />}>
+          <div className="mt-section">
+            <DailyCard profile={profile} />
+          </div>
+        </Suspense>
 
         {/* 3. Phone: the progress panel under the diorama (on a computer it stands on the slab). */}
         {!wide && progressPanel && <div className="mt-section">{progressPanel}</div>}

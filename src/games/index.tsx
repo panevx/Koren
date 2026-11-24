@@ -26,10 +26,10 @@ import { TrueFalse } from './TrueFalse'
  * Game templates by type. Adding a template = a component here + a schema entry
  * in src/content/schema.ts. The mission screen never changes.
  */
-export function GameView({ game, onDone }: { game: Game; onDone: () => void }) {
+export function GameView({ game, onDone, onAnswer }: { game: Game; onDone: () => void; onAnswer?: (index: number, right: boolean) => void }) {
   switch (game.type) {
     case 'quiz':
-      return <Quiz questions={game.questions} onDone={onDone} />
+      return <Quiz questions={game.questions} onDone={onDone} onAnswer={onAnswer} />
     case 'map':
       return <MapFind game={game} onDone={onDone} />
     case 'match':

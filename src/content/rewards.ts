@@ -2,6 +2,7 @@ import type { Profile } from '../store/profiles'
 import { localDay, shopItem, type ShopItem } from './shop'
 import { LEVELS } from '../theme/levels'
 import { forLevel } from './forLevel'
+import { COINS_PER_WEEK, stampedWeeks } from './habits'
 import { pathChapters } from './path'
 import type { Mission } from './schema'
 
@@ -36,11 +37,14 @@ export function finishedChapters(profile: Pick<Profile, 'done'>, all: readonly M
  * The purse. `all` = EVERY mission of this build, not only the ones the child's age shows: what was earned is never taken
  * away (a child who turns 7 keeps the coins of the little ones' missions; a parent who changes the age by mistake too).
  */
-export function wallet(profile: Pick<Profile, 'done' | 'days' | 'owned'>, all: readonly Mission[]) {
+export function wallet(profile: Pick<Profile, 'done' | 'days' | 'owned'> & Partial<Pick<Profile, 'gifts'>>, all: readonly Mission[]) {
   const played = Object.keys(profile.done).length
-  const earnedCoins = played * COINS_PER_MISSION + profile.days.length * COINS_PER_DAY
+  // v0.27: + coins for each week with its stamp (3 days of 7)
+  const earnedCoins = played * COINS_PER_MISSION + profile.days.length * COINS_PER_DAY + stampedWeeks(profile.days) * COINS_PER_WEEK
   const earnedPendars = finishedChapters(profile, all)
-  const spent = (c: ShopItem['currency']) => profile.owned.map(shopItem).reduce((sum, i) => sum + (i && i.currency === c ? i.price : 0), 0)
+  // a surprise from Koren is owned but was never paid for
+  const bought = profile.owned.filter((id) => !profile.gifts?.[id])
+  const spent = (c: ShopItem['currency']) => bought.map(shopItem).reduce((sum, i) => sum + (i && i.currency === c ? i.price : 0), 0)
   return { coins: Math.max(0, earnedCoins - spent('coin')), pendars: Math.max(0, earnedPendars - spent('pendar')), earnedCoins, earnedPendars }
 }
 

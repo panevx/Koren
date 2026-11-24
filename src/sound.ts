@@ -16,7 +16,11 @@ const SOUNDS: Record<Sound, { wave: OscillatorType; notes: [number, number, numb
 
 let ctx: AudioContext | null = null
 
+/** v0.27: every right answer ('correct') and every hint after a mistake ('hint') — heard or not — for the combo in a mission. */
+export const answers = new EventTarget()
+
 export function play(sound: Sound) {
+  if (sound === 'correct' || sound === 'hint') answers.dispatchEvent(new Event(sound))
   if (!useSettings.getState().sound) return
   try {
     const AC = window.AudioContext ?? (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext

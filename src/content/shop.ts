@@ -20,6 +20,8 @@ export const SHOP: readonly ShopItem[] = [
   { id: 'rose', slot: 'pin', img: 'avatar/rose-accessory.webp', price: 1, currency: 'pendar', name: { bg: 'Розичка', en: 'Little rose' } },
 ]
 export const shopItem = (id: string) => SHOP.find((i) => i.id === id)
+/** v0.27: every 4th mission played for the first time brings a surprise from the stall (src/store/profiles.ts withGift). */
+export const GIFT_EVERY = 4
 
 /**
  * Today's date on the child's own clock, as YYYY-MM-DD. NOT toISOString(): that is UTC, and a child in New York who plays

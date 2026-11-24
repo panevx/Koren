@@ -21,7 +21,10 @@ import { Quiz } from '../games/Quiz'
 import type { TKey } from '../i18n'
 import { useT } from '../i18n/useT'
 import { bouncy, m } from '../motion'
-import { play } from '../sound'
+import { answers, play } from '../sound'
+import { reviewKey } from '../content/habits'
+import { shopItem } from '../content/shop'
+import { Sparkles } from '../components/ds'
 import { BREAK_AFTER, saveProfileChange, useActiveProfile, useProfiles } from '../store/profiles'
 import { ageToLevel, type Level } from '../theme/levels'
 
@@ -100,6 +103,10 @@ function MissionRun({ mission, childLevel, profileId }: { mission: MissionData; 
   )
   useTitle(l(mission.title))
   const markSeen = useProfiles((s) => s.markSeen)
+  const noteAnswers = useProfiles((s) => s.noteAnswers)
+  // v0.27: the first try at every question is remembered — a mistake comes back in practice tomorrow
+  const noteAnswer = (where: 'game' | 'extra' | 'check') => (index: number, right: boolean) =>
+    saveProfileChange(() => noteAnswers([{ key: reviewKey(mission.id, level, where, index), right }], false))
   useEffect(() => saveProfileChange(() => markSeen(mission.id, profileId)), [markSeen, mission.id, profileId])
   // Each phase is its own history entry: the phone's "back" gesture goes one step back
   // (game → story) instead of throwing the child out of the mission.
@@ -153,16 +160,18 @@ function MissionRun({ mission, childLevel, profileId }: { mission: MissionData; 
         {mission.draft && (
           <p className="mb-3 self-center rounded-full bg-sand px-3 py-1 text-center text-xs font-bold text-ink short:mb-1">{t('missions.draft')}</p>
         )}
+        {(phase === 'game' || phase === 'extra' || phase === 'check') && <Combo key={phase} />}
         {/* Each phase slides in like a new page. */}
         <m.div key={phase} initial={{ opacity: 0, x: 28 }} animate={{ opacity: 1, x: 0 }} className="flex flex-1 flex-col">
           {phase === 'story' && <Story lines={content.story} onDone={next} />}
-          {phase === 'game' && <GameView game={content.game} onDone={next} />}
-          {phase === 'extra' && content.extra && <GameView game={content.extra} onDone={next} />}
+          {phase === 'game' && <GameView game={content.game} onDone={next} onAnswer={noteAnswer('game')} />}
+          {phase === 'extra' && content.extra && <GameView game={content.extra} onDone={next} onAnswer={noteAnswer('extra')} />}
           {phase === 'check' && (
             <Quiz
               questions={content.check}
               title={t('check.title')}
               onDone={next}
+              onAnswer={noteAnswer('check')}
               // a reload goes on from the same question, not from the first one
               start={typeof saved?.q === 'number' && Number.isInteger(saved.q) ? saved.q : 0}
               onIndex={(q) => navigate(location.pathname, { state: { profileId, level, phase: 'check', q }, replace: true })}
@@ -172,6 +181,50 @@ function MissionRun({ mission, childLevel, profileId }: { mission: MissionData; 
         </m.div>
       </div>
     </Screen>
+  )
+}
+
+/**
+ * v0.27 combo: three right answers in a row (and six, nine…) — Koren cheers with sparkles. A mistake only starts the count
+ * again; nothing is lost and nothing is shown. Listens to the game sounds (src/sound.ts `answers`), so it works in every game.
+ */
+function Combo() {
+  const t = useT()
+  const [run, setRun] = useState(0)
+  const [shown, setShown] = useState(0)
+  useEffect(() => {
+    const right = () => setRun((n) => n + 1)
+    const miss = () => setRun(0)
+    answers.addEventListener('correct', right)
+    answers.addEventListener('hint', miss)
+    return () => {
+      answers.removeEventListener('correct', right)
+      answers.removeEventListener('hint', miss)
+    }
+  }, [])
+  useEffect(() => {
+    if (run < 3 || run % 3 !== 0) return
+    setShown(run)
+    const timer = setTimeout(() => setShown(0), 1800)
+    return () => clearTimeout(timer)
+  }, [run])
+  return (
+    <div className="pointer-events-none fixed inset-x-0 top-[calc(env(safe-area-inset-top)+5.5rem)] z-40 flex justify-center" aria-live="polite">
+      {shown > 0 && (
+        <m.p
+          key={shown}
+          initial={{ scale: 0.4, opacity: 0, y: -10 }}
+          animate={{ scale: 1, opacity: 1, y: 0 }}
+          exit={{ opacity: 0 }}
+          transition={bouncy}
+          className="fill-satin tint-gold edge-light relative flex items-center gap-2 rounded-full py-1.5 pr-4 pl-1.5 font-black text-ink shadow-float"
+        >
+          <Avatar hero="koren" mood="joy" className="size-9" />
+          {t('combo', { n: shown })}
+          <Sparkles burst={shown} />
+        </m.p>
+      )}
+    </div>
   )
 }
 
@@ -366,12 +419,16 @@ function Badge({ mission, level, profileId, entryKey, legacyEntry }: {
   const [before] = useState(() => {
     const p = profile
     const w = wallet(p, MISSIONS)
-    return { open: unlockedIds(p, missions), rewards: reachedMilestones(earnedCount(p.badges, missions), missions), coins: w.earnedCoins, pendars: w.earnedPendars }
+    return { open: unlockedIds(p, missions), rewards: reachedMilestones(earnedCount(p.badges, missions), missions), coins: w.earnedCoins, pendars: w.earnedPendars, gifts: Object.keys(p.gifts) }
   })
   // v0.22: what this badge brought to the purse (a replayed mission brings nothing new — and says nothing)
   const purse = wallet(profile, MISSIONS)
   const gotCoins = purse.earnedCoins - before.coins
   const gotPendars = purse.earnedPendars - before.pendars
+  // v0.27: Koren's surprise — a stall thing that came with THIS badge (every 4th new mission)
+  const gift = shopItem(Object.keys(profile.gifts).find((id) => profile.gifts[id] === mission.id && !before.gifts.includes(id)) ?? '')
+  const wear = useProfiles((s) => s.wear)
+  const [worn, setWorn] = useState(false)
   const opened = unlockedIds(profile, missions)
     .filter((id) => !before.open.includes(id))
     .map((id) => missionById(id)!)
@@ -469,6 +526,35 @@ function Badge({ mission, level, profileId, entryKey, legacyEntry }: {
             </>
           )}
         </m.p>
+      )}
+      {gift && (
+        <m.section
+          initial={{ scale: 0.6, opacity: 0, rotate: -4 }}
+          animate={{ scale: 1, opacity: 1, rotate: 0 }}
+          transition={{ ...bouncy, delay: 1.1 }}
+          className="mat-paper edge-light relative flex w-full items-center gap-3 rounded-[1.5rem] p-3 text-left"
+          aria-live="polite"
+        >
+          <span className="mat-ceramic-gold relative grid size-16 shrink-0 place-items-center">
+            <img src={img(gift.img)} alt="" className="pop-3d size-[80%] object-contain" />
+            <Sparkles burst={gift.id} />
+          </span>
+          <span className="flex min-w-0 flex-1 flex-col gap-1">
+            <span className="text-eyebrow text-coral-dark">{t('gift.title')}</span>
+            <span className="text-row font-black">{t('gift.text', { name: l(gift.name) })}</span>
+          </span>
+          <button
+            type="button"
+            disabled={worn}
+            onClick={() => {
+              wear(gift.id)
+              setWorn(true)
+            }}
+            className="btn-satin tint-green tap shrink-0 rounded-full px-4 font-black text-white disabled:opacity-60"
+          >
+            {worn ? <Icon name="check" /> : t('gift.wear')}
+          </button>
+        </m.section>
       )}
       {shown && !closed && (
         <RewardModal

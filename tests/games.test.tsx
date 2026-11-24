@@ -136,3 +136,24 @@ describe('find: the finger areas of things never overlap (v0.23.1)', () => {
       }
   })
 })
+
+describe('quiz first try and the answers channel (v0.27)', () => {
+  it('reports only the first try of each question, and every right answer / hint goes to the combo channel', async () => {
+    const { Quiz } = await import('../src/games/Quiz')
+    const { answers } = await import('../src/sound')
+    const heard: string[] = []
+    const listen = (e: Event) => heard.push(e.type)
+    answers.addEventListener('correct', listen)
+    answers.addEventListener('hint', listen)
+    const onAnswer = vi.fn()
+    const q = (n: string) => ({ q: T(`Въпрос ${n}`), options: [T('Да'), T('Не'), T('Може би')], answer: 0 })
+    render(<Quiz questions={[q('1'), q('2')]} onDone={() => {}} onAnswer={onAnswer} />)
+    fireEvent.click(screen.getByRole('button', { name: /Не/ }))
+    fireEvent.click(screen.getByRole('button', { name: /Може би/ }))
+    fireEvent.click(screen.getByRole('button', { name: /Да/ }))
+    expect(onAnswer.mock.calls).toEqual([[0, false]])
+    expect(heard).toEqual(['hint', 'hint', 'correct'])
+    answers.removeEventListener('correct', listen)
+    answers.removeEventListener('hint', listen)
+  })
+})

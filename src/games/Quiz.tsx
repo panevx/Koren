@@ -18,6 +18,8 @@ type Props = {
   /** Resume at this question (after a reload), and report each new one (the mission keeps it in the history entry). */
   start?: number
   onIndex?: (index: number) => void
+  /** v0.27: the FIRST try at each question — right or not (a mistake comes back in practice). */
+  onAnswer?: (index: number, right: boolean) => void
 }
 
 /** A different colour for each answer's marker, so the list is not four identical rows. */
@@ -28,7 +30,7 @@ const DOTS = ['bg-sky', 'bg-gold', 'bg-coral', 'bg-mint']
  * A wrong answer is gently set aside and Raya gives a hint — never a red screen.
  * The child moves on only after finding the right answer.
  */
-export function Quiz({ questions, title, onDone, start = 0, onIndex }: Props) {
+export function Quiz({ questions, title, onDone, start = 0, onIndex, onAnswer }: Props) {
   const [index, setIndexState] = useState(() => Math.min(Math.max(0, start), questions.length - 1))
   const setIndex = (n: number) => {
     setIndexState(n)
@@ -44,6 +46,7 @@ export function Quiz({ questions, title, onDone, start = 0, onIndex }: Props) {
       total={questions.length}
       title={title}
       last={last}
+      onFirst={(right) => onAnswer?.(index, right)}
       onNext={() => (last ? onDone() : setIndex(index + 1))}
     />
   )
@@ -55,6 +58,7 @@ function QuizQuestion({
   total,
   title,
   last,
+  onFirst,
   onNext,
 }: {
   question: Question
@@ -62,6 +66,7 @@ function QuizQuestion({
   total: number
   title?: string
   last: boolean
+  onFirst?: (right: boolean) => void
   onNext: () => void
 }) {
   const t = useT()
@@ -74,6 +79,7 @@ function QuizQuestion({
 
   const choose = (i: number) => {
     if (solved || wrong.includes(i)) return
+    if (wrong.length === 0) onFirst?.(i === question.answer)
     if (i === question.answer) {
       setSolved(true)
       play('correct')

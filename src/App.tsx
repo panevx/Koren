@@ -37,6 +37,7 @@ const Timeline = lazy(() => import('./screens/Timeline').then((m) => ({ default:
 const Fame = lazy(() => import('./screens/Fame').then((m) => ({ default: m.Fame })))
 const Shop = lazy(() => import('./screens/Shop').then((m) => ({ default: m.Shop })))
 const Adventure = lazy(() => import('./screens/Adventure').then((m) => ({ default: m.Adventure })))
+const Practice = lazy(() => import('./screens/Practice').then((m) => ({ default: m.Practice })))
 const MissionList = lazy(() => import('./screens/MissionList').then((m) => ({ default: m.MissionList })))
 
 function Loading() {
@@ -83,6 +84,7 @@ export function AppRoutes() {
         <Route path={appPages.collection} element={<Passport />} />
         <Route path={appPages.fame} element={<Fame />} />
         <Route path={appPages.shop} element={<Shop />} />
+        <Route path={appPages.practice} element={<Practice />} />
         <Route path="/topic/:id" element={<MissionList topic />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

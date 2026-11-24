@@ -11,6 +11,7 @@ export const appPages = {
   collection: '/collection',
   fame: '/fame',
   shop: '/shop',
+  practice: '/practice',
 } as const
 
 const topics = ['history', 'culture', 'language']

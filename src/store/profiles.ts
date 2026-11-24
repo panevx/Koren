@@ -1,7 +1,8 @@
 import { create } from 'zustand'
 import { createJSONStorage, persist } from 'zustand/middleware'
 import { DEFAULT_AGE, LEVELS, clampAge, type Level } from '../theme/levels'
-import { localDay, shopItem } from '../content/shop'
+import { GIFT_EVERY, SHOP, localDay, shopItem } from '../content/shop'
+import { answer, type Review } from '../content/habits'
 import { STORAGE_KEY as SETTINGS_KEY, safeLocalStorage, useSettings } from './settings'
 
 /**
@@ -33,6 +34,10 @@ export type Profile = {
   /** v0.22: things bought at the fair stall (src/content/rewards.ts) and what is worn now, per slot. */
   owned: string[]
   outfit: Partial<Record<string, string>>
+  /** v0.27: questions to repeat (src/content/habits.ts) — key → box and the day it comes back. */
+  review: Record<string, Review>
+  /** v0.27: stall things Koren gave as a surprise (item → the mission that brought it) — owned, but never paid. */
+  gifts: Record<string, string>
 }
 
 type State = {
@@ -53,10 +58,27 @@ type State = {
   wear: (itemId: string, slot?: string) => void
   takeOff: (slot: string) => void
   takeBreak: () => void
+  /** v0.27: first-try answers to questions (a mistake comes back in practice). */
+  noteAnswers: (answers: readonly { key: string; right: boolean }[], practice: boolean) => void
+  /** v0.27: a finished practice makes today a day with an adventure. */
+  practiced: () => void
   reset: () => void
 }
 
 export const BREAK_AFTER = 3
+
+/**
+ * v0.27 surprise: every GIFT_EVERY-th mission played for the FIRST time, Koren gives the next stall thing (coins only, in
+ * stall order) — once, recorded with the mission that brought it. Not random, nothing to buy, nothing to spin.
+ */
+export function withGift(next: Profile, before: Profile, missionId: string): Profile {
+  if (before.done[missionId]) return next
+  const played = Object.keys(next.done).length
+  if (played === 0 || played % GIFT_EVERY !== 0) return next
+  const item = SHOP.find((i) => i.currency === 'coin' && !next.owned.includes(i.id))
+  if (!item) return next
+  return { ...next, owned: [...next.owned, item.id], gifts: { ...next.gifts, [item.id]: missionId } }
+}
 
 function readSavedProfiles() {
   const value = safeLocalStorage.getItem(PROFILES_KEY)
@@ -131,7 +153,26 @@ export function sanitizeProfile(raw: unknown): Profile | null {
     days: sanitizeBadges(r.days).filter((d) => /^\d{4}-\d{2}-\d{2}$/.test(d)),
     owned: sanitizeBadges(r.owned),
     outfit: sanitizeOutfit(r.outfit),
+    review: sanitizeReview(r.review),
+    gifts: sanitizeGifts(r.gifts),
   }
+}
+
+const DAY = /^\d{4}-\d{2}-\d{2}$/
+function sanitizeReview(raw: unknown): Record<string, Review> {
+  const out: Record<string, Review> = {}
+  if (!raw || typeof raw !== 'object') return out
+  for (const [key, v] of Object.entries(raw as Record<string, unknown>).slice(0, 2000)) {
+    const r = v as Partial<Review> | null
+    if (r && Number.isInteger(r.box) && r.box! >= 0 && r.box! < 3 && typeof r.due === 'string' && DAY.test(r.due)) out[key] = { box: r.box!, due: r.due }
+  }
+  return out
+}
+function sanitizeGifts(raw: unknown): Record<string, string> {
+  const out: Record<string, string> = {}
+  if (!raw || typeof raw !== 'object') return out
+  for (const [item, mission] of Object.entries(raw as Record<string, unknown>)) if (shopItem(item) && typeof mission === 'string') out[item] = mission
+  return out
 }
 
 function sanitizeOutfit(raw: unknown): Partial<Record<string, string>> {
@@ -178,6 +219,8 @@ function initialProfiles(): Pick<State, 'profiles' | 'activeId'> {
     days: [],
     owned: [],
     outfit: {},
+    review: {},
+    gifts: {},
   }
   return { profiles: [profile], activeId: profile.id }
 }
@@ -211,7 +254,7 @@ export const useProfiles = create<State>()(
           if ((readSavedProfiles()?.profiles ?? get().profiles).length >= MAX_PROFILES) return null
           const id = newId()
           set((s) => ({
-            profiles: s.profiles.length >= MAX_PROFILES ? s.profiles : [...s.profiles, { id, nickname: cleanNickname(nickname), age: clampAge(age), avatar, done: {}, badges: [], seen: [], days: [], owned: [], outfit: {} }],
+            profiles: s.profiles.length >= MAX_PROFILES ? s.profiles : [...s.profiles, { id, nickname: cleanNickname(nickname), age: clampAge(age), avatar, done: {}, badges: [], seen: [], days: [], owned: [], outfit: {}, review: {}, gifts: {} }],
           }))
           return id
         },
@@ -242,12 +285,12 @@ export const useProfiles = create<State>()(
             if (!state.profiles.some((p) => p.id === profileId)) return {}
             const today = localDay()
             return {
-              profiles: state.profiles.map((p) => p.id !== profileId ? p : {
+              profiles: state.profiles.map((p) => p.id !== profileId ? p : withGift({
                 ...p,
                 done: { ...p.done, [missionId]: { level, at: today } },
                 badges: p.badges.includes(badgeId) ? p.badges : [...p.badges, badgeId],
                 days: p.days.includes(today) ? p.days : [...p.days, today],
-              }),
+              }, p, missionId)),
               streak: state.streak + Number(state.activeId === profileId),
             }
           })
@@ -274,9 +317,18 @@ export const useProfiles = create<State>()(
           }))
         },
         takeBreak: () => set({ streak: 0 }),
+        noteAnswers: (answers, practice) =>
+          patchActive((p) => {
+            const review = answers.reduce((r, a) => answer(r, a.key, a.right, practice), p.review)
+            return review === p.review ? p : { ...p, review }
+          }),
+        practiced: () => {
+          const today = localDay()
+          patchActive((p) => (p.days.includes(today) ? p : { ...p, days: [...p.days, today] }))
+        },
         reset: () => {
           safeLocalStorage.removeItem(LEGACY_PROGRESS_KEY)
-          const fresh: Profile = { id: newId(), nickname: '', age: DEFAULT_AGE, avatar: 'bear', done: {}, badges: [], seen: [], days: [], owned: [], outfit: {} }
+          const fresh: Profile = { id: newId(), nickname: '', age: DEFAULT_AGE, avatar: 'bear', done: {}, badges: [], seen: [], days: [], owned: [], outfit: {}, review: {}, gifts: {} }
           set({ profiles: [fresh], activeId: fresh.id, streak: 0 })
         },
       }

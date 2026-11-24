@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { img } from '../components/Brand'
 import { ProfileAvatar } from '../components/ProfileAvatar'
 import { Screen, TopBar } from '../components/ui'
+import { stampedWeeks } from '../content/habits'
 import { COINS_PER_DAY, COINS_PER_MISSION, SHOP, SLOTS, adventureDays, shopItem, wallet, type ShopItem } from '../content/rewards'
 import { MISSIONS } from '../content/missions'
 import { useLocalized } from '../content/useLocalized'
@@ -77,6 +78,7 @@ export function Shop() {
             <div className="min-w-0 flex-1">
               <h2 id="days" className="font-black">{t('shop.days', { n: days.total })}</h2>
               <p className="text-sm font-semibold text-muted">{days.row >= 2 ? t('shop.row', { n: days.row }) : t('shop.rowHint')}</p>
+              {stampedWeeks(profile.days) > 0 && <p className="text-sm font-semibold text-muted">{t('shop.weeks', { n: stampedWeeks(profile.days) })}</p>}
             </div>
           </section>
 
