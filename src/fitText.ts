@@ -13,7 +13,7 @@
 const TARGETS = 'h1, h2, h3, [data-fit-label], .text-display, .text-title, .text-headline, .text-heading'
 const MIN = 0.62
 const STEP = 0.06
-const FLOOR = 11
+const FLOOR = 10
 
 /** True when one word of the element's own text lies on more than one line. */
 function hasBrokenWord(el: HTMLElement, range: Range): boolean {

@@ -187,8 +187,8 @@ function Adventure({ mission, scene, fresh, lazy, draftChip }: { mission: Missio
       <span className="flex min-w-0 flex-1 flex-col gap-2 p-4 pt-3 [container-type:inline-size] cols:justify-center cols:p-6">
         <span className="text-eyebrow text-green-dark">{t('path.next')}</span>
         <Flags mission={mission} fresh={fresh} draftChip={draftChip} />
-        <span className="text-headline" style={fitWords(title, 'min(1.75rem, 7vw)', 0.62)}>
-          {title}
+        <span className="text-headline" style={fitWords(title, 'min(1.75rem, 7vw)', 0.62, true)}>
+          <HyphenSafe text={title} />
         </span>
         <span className="sr-only">{games.map((g) => t(`game.${g}` as TKey)).join(', ')}</span>
         <span className="btn-satin tint-coral edge-light mt-auto flex min-h-[var(--tap)] items-center justify-center gap-2 self-start rounded-full px-6 text-lg font-extrabold text-coral-ink" aria-hidden="true">
@@ -282,7 +282,7 @@ function Locked({ mission, draftChip }: { mission: Mission; draftChip: boolean }
         <img src={img(ART.key)} alt="" className="pop-3d absolute -right-1.5 -bottom-1 size-[55%] object-contain" />
       </span>
       <span className="flex min-w-0 flex-1 flex-col gap-0.5">
-        <span className="text-row">{l(mission.title)}</span>
+        <span className="text-row" data-fit-label><HyphenSafe text={l(mission.title)} /></span>
         <span className="text-meta flex flex-wrap items-center gap-1.5 text-muted">
           {t('path.locked')}
           {draftChip && mission.draft && <DraftChip />}

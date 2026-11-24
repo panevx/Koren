@@ -6,6 +6,7 @@ import { useLocalized } from '../content/useLocalized'
 import { useT } from '../i18n/useT'
 import { play } from '../sound'
 import { DoneButton, Feedback, Prompt } from './Feedback'
+import { HyphenSafe } from '../components/HyphenSafe'
 import { shuffledIndexes } from './shuffle'
 
 /**
@@ -79,7 +80,7 @@ export function Order({ game, onDone }: { game: OrderGame; onDone: () => void })
                 }`}
               >
                 {game.items[item]!.img && <img src={img(game.items[item]!.img!)} alt="" className="size-10 object-contain" />}
-                <span className="min-w-0 flex-1">{l(game.items[item]!)}</span>
+                <span className="min-w-0 flex-1"><HyphenSafe text={l(game.items[item]!)} /></span>
                 {locked[i] && <Icon name="check" />}
               </button>
             )}
@@ -97,7 +98,7 @@ export function Order({ game, onDone }: { game: OrderGame; onDone: () => void })
               className="btn-satin tint-paper edge-light tap flex items-center gap-2 rounded-[1.5rem] px-4 py-2 text-left leading-snug font-extrabold"
             >
               {game.items[item]!.img && <img src={img(game.items[item]!.img!)} alt="" className="size-10 object-contain" />}
-              {l(game.items[item]!)}
+              <HyphenSafe text={l(game.items[item]!)} />
             </button>
           ))}
         </div>

@@ -15,6 +15,7 @@ import { useLocalized } from '../content/useLocalized'
 import { useT } from '../i18n/useT'
 import { bouncy, m, stagger } from '../motion'
 import { activeProfile, useProfiles } from '../store/profiles'
+import { HyphenSafe } from '../components/HyphenSafe'
 import { ART } from '../world'
 
 const REWARD_ART: Record<MilestoneId, string> = { bronze: ART.bronze, silver: ART.silver, gold: ART.gold, trophy: ART.trophy }
@@ -208,7 +209,7 @@ function BadgeItem({ mission, has, i }: { mission: Mission; has: boolean; i: num
           />
         )}
       </span>
-      <span className={`w-full leading-tight font-extrabold ${has ? 'text-[length:clamp(0.5rem,10.5cqw,0.875rem)]' : 'text-[length:clamp(0.42rem,10.5cqw,0.75rem)] text-muted'}`} data-fit-label>{l(mission.title)}</span>
+      <span className={`w-full leading-tight font-extrabold ${has ? 'text-[length:clamp(0.5rem,10.5cqw,0.875rem)]' : 'text-[length:clamp(0.42rem,10.5cqw,0.75rem)] text-muted'}`} data-fit-label><HyphenSafe text={l(mission.title)} /></span>
       <span className={`flex items-center gap-1 text-xs font-bold ${has ? 'text-green-dark' : 'sr-only'}`}>
         {has && <Icon name="check" width="1em" height="1em" />}
         {has ? t('passport.earned') : t('passport.locked')}

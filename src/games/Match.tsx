@@ -7,6 +7,7 @@ import { useT } from '../i18n/useT'
 import { bouncy, m } from '../motion'
 import { play } from '../sound'
 import { DoneButton, Feedback, Prompt } from './Feedback'
+import { HyphenSafe } from '../components/HyphenSafe'
 import { shuffledIndexes } from './shuffle'
 
 type Side = 'a' | 'b'
@@ -74,7 +75,7 @@ export function Match({ game, onDone }: { game: MatchGame; onDone: () => void })
           />
         )}
         {/* The label shrinks with the card (cqw), so one long word never breaks. */}
-        <span style={fitWords(l(option), 'clamp(0.6rem,12cqw,1rem)', 0.64)}>{l(option)}</span>
+        <span style={fitWords(l(option), 'clamp(0.6rem,12cqw,1rem)', 0.64, true)}><HyphenSafe text={l(option)} /></span>
         {done && (
           <m.span
             initial={{ scale: 0 }}

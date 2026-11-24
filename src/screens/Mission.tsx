@@ -274,7 +274,7 @@ function GameHeader({
       </button>
       <div className="min-w-0 flex-1 [container-type:inline-size]">
         {/* the whole title, never „…“: up to two lines, smaller letters on a narrow phone */}
-        <p className="leading-tight font-black text-green-dark" data-fit-label style={fitWords(title, 'min(0.875rem,3.7vw)', 0.68)}>{title}</p>
+        <p className="leading-tight font-black text-green-dark" data-fit-label style={fitWords(title, 'min(0.875rem,3.7vw)', 0.68, true)}><HyphenSafe text={title} /></p>
         <ol className="relative mt-1 flex items-center justify-between" aria-label={t('mission.progress', { n: at + 1, total: phases.length })} role="img">
           {/* the line between the stones, filled up to the current step */}
           <span className="well absolute inset-x-3 top-1/2 h-1.5 -translate-y-1/2 overflow-hidden rounded-full" aria-hidden="true">
