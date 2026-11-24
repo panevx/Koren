@@ -295,7 +295,8 @@ export function MapScreen() {
           <div className="order-3 flex flex-col gap-3 cols:order-none">
             {!sel && (
               <CharacterMessage hero="koren" mood="determination">
-                <p className="font-extrabold">
+                {/* a sentence: a long word moves whole to the next line instead of getting a hyphen */}
+                <p className="font-extrabold hyphens-manual">
                   {mode === 'provinces' ? t('map.provinces.count') + ' ' + t('map.pick.provinces') : mode === 'landmarks' || mode === 'cities' ? t('map.pick') : t(`map.pick.${mode}` as TKey)}
                 </p>
               </CharacterMessage>

@@ -91,7 +91,12 @@ export function Home() {
           <span className="mat-ceramic grid size-11 shrink-0 place-items-center">
             <ProfileAvatar avatar={profile.avatar} outfit={profile.outfit} className="size-10 bg-transparent shadow-none" />
           </span>
-          <span className="text-row truncate">{name(profile, profiles.indexOf(profile))}</span>
+          {/* never cut with „…“: the name gets smaller letters (by its longest word) and may take a second line */}
+          <span className="min-w-0 flex-1 [container-type:inline-size]">
+            <span className="text-row block leading-tight" data-fit-label style={fitWords(name(profile, profiles.indexOf(profile)), 'min(1.0625rem,4.4vw)', 0.68)}>
+              {name(profile, profiles.indexOf(profile))}
+            </span>
+          </span>
         </Link>
         <Logo size="sm" className="hidden h-9 min-[350px]:block wide:hidden" />
         <Link to="/parents" className="tap lift mat-paper edge-light relative grid shrink-0 place-items-center rounded-full text-green-dark" aria-label={t('parents.title')}>
@@ -260,7 +265,7 @@ function SlabMission({ next, missions, done }: { next: MissionSummary | undefine
       {/* The title — the largest type on the screen, the whole width of the slab. */}
       <span className="mt-2.5 block [container-type:inline-size]">
         <span
-          className="line-clamp-3 block leading-[1.05] font-black tracking-[-0.02em] [text-shadow:0_1px_0_rgb(0_40_20/0.25)]"
+          className="block leading-[1.05] font-black tracking-[-0.02em] [text-shadow:0_1px_0_rgb(0_40_20/0.25)]"
           data-fit-label
           style={fitWords(title, 'min(1.875rem,7.8vw)', 0.66)}
         >

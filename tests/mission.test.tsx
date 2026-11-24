@@ -231,10 +231,11 @@ describe('map screen', () => {
     // Krum is still locked: it says so and links to what opens it (Asparuh) — so Asparuh's link appears twice.
     for (const a of screen.getAllByRole('link', { name: /^Хан Аспарух и новата държава/ })) expect(a).toHaveAttribute('href', `/mission/${ID}`)
     expect(screen.getByText('Хан Крум и хан Омуртаг')).toBeInTheDocument()
-    // v0.15: cities have their own mode; a place without a mission says so and shows its fact.
+    // v0.15: cities have their own mode. v0.27.1: every place has a mission now — Gabrovo opens its own.
     fireEvent.click(screen.getByRole('button', { name: /Градове/ }))
     fireEvent.click(screen.getByRole('button', { name: 'Габрово' }))
-    expect(screen.getByText('Скоро тук ще има мисия.')).toBeInTheDocument()
+    expect(screen.getAllByRole('link', { name: /^Габрово – градът на хумора/ })[0]).toHaveAttribute('href', '/mission/map-09-gabrovo')
+    expect(screen.queryByText('Скоро тук ще има мисия.')).not.toBeInTheDocument()
     expect(screen.getByText(/Градът на хумора и сатирата/)).toBeInTheDocument()
   })
 

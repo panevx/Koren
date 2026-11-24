@@ -174,6 +174,18 @@ describe('content/map/places.json', () => {
 })
 
 
+describe('the map has no "mission coming soon" (v0.27.1)', () => {
+  it('every place on the map and every peak has a mission at every age', async () => {
+    const { forLevel } = await import('../src/content/forLevel')
+    const peaks = (await import('../content/map/peaks.json')).default as { id: string }[]
+    for (const level of ['small', 'young', 'guard'] as const) {
+      const at = new Set(forLevel(MISSIONS, level).filter((m) => m.levels[level] || !m.ages).map((m) => m.place))
+      for (const p of PLACES.filter((x) => x.onMap !== false)) expect(at.has(p.id), `${level}: ${p.id}`).toBe(true)
+      for (const p of peaks) expect(at.has(p.id), `${level}: peak ${p.id}`).toBe(true)
+    }
+  })
+})
+
 describe('map games are fair for younger children', () => {
   // ~1 km per 0.009° latitude; good enough at Bulgaria's size.
   const km = (a: { lat: number; lon: number }, b: { lat: number; lon: number }) =>

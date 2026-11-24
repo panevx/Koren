@@ -1,0 +1,478 @@
+{
+  "id": "map-03-nessebar",
+  "subject": "history",
+  "free": true,
+  "order": 123,
+  "place": "nessebar",
+  "unlock": {
+    "after": [
+      "map-02-baba-vida"
+    ]
+  },
+  "badge": {
+    "id": "nessebar",
+    "icon": "landmarks/nessebar.webp"
+  },
+  "title": {
+    "bg": "Древният Несебър",
+    "en": "Ancient Nessebar"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Несебър е град на малък полуостров в морето.",
+          "en": "Nessebar is a town on a little peninsula in the sea.",
+          "img": "landmarks/nessebar.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Там има много стари църкви от камък и тухли.",
+          "en": "It has many old churches made of stone and brick."
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Кой е старият Несебър?",
+              "en": "Which one is old Nessebar?"
+            },
+            "options": [
+              {
+                "bg": "Град до морето",
+                "en": "A town by the sea",
+                "img": "landmarks/nessebar.webp"
+              },
+              {
+                "bg": "Пещера",
+                "en": "A cave",
+                "img": "landmarks/devils-throat.webp"
+              },
+              {
+                "bg": "Крепост на Дунав",
+                "en": "A fortress on the Danube",
+                "img": "landmarks/baba-vida.webp"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Старият Несебър е на малък полуостров, свързан със сушата с тясна ивица земя.",
+          "en": "Old Nessebar stands on a small peninsula joined to the land by a narrow strip.",
+          "img": "landmarks/nessebar.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "reading",
+          "bg": "Градът е много древен – тук са живели траки, после гърци, римляни и българи.",
+          "en": "The town is very old – Thracians lived here, then Greeks, Romans and Bulgarians."
+        },
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "Старите му църкви и къщи са обект на световното наследство на ЮНЕСКО.",
+          "en": "Its old churches and houses are a UNESCO World Heritage site."
+        }
+      ],
+      "game": {
+        "type": "map",
+        "target": "nessebar",
+        "choices": [
+          "belogradchik",
+          "nessebar",
+          "sandanski",
+          "sapareva-banya"
+        ],
+        "prompt": {
+          "bg": "Намери на картата: Несебър",
+          "en": "Find it on the map: Nessebar"
+        },
+        "hint": {
+          "bg": "Несебър е на брега на Черно море, близо до Бургас.",
+          "en": "Nessebar is on the Black Sea coast, near Burgas."
+        },
+        "showIcons": false
+      },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Несебър е на брега на Черно море.",
+              "en": "Nessebar is on the Black Sea coast."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – на малък полуостров.",
+              "en": "Yes – on a small peninsula."
+            }
+          },
+          {
+            "text": {
+              "bg": "Несебър е нов град, построен преди 50 години.",
+              "en": "Nessebar is a new town built 50 years ago."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – той е един от най-старите градове в Европа.",
+              "en": "No – it is one of the oldest towns in Europe."
+            }
+          },
+          {
+            "text": {
+              "bg": "Старият Несебър е обект на ЮНЕСКО.",
+              "en": "Old Nessebar is a UNESCO site."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – заради древните си църкви и къщи.",
+              "en": "Yes – for its ancient churches and houses."
+            }
+          },
+          {
+            "text": {
+              "bg": "Несебър е в планината.",
+              "en": "Nessebar is in the mountains."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – на морето.",
+              "en": "No – by the sea."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "На какво е построен старият Несебър?",
+            "en": "What is old Nessebar built on?"
+          },
+          "options": [
+            {
+              "bg": "Полуостров",
+              "en": "A peninsula"
+            },
+            {
+              "bg": "Остров в река",
+              "en": "A river island"
+            },
+            {
+              "bg": "Връх",
+              "en": "A peak"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Близо до кой голям град е Несебър?",
+            "en": "Which big city is Nessebar near?"
+          },
+          "options": [
+            {
+              "bg": "Бургас",
+              "en": "Burgas"
+            },
+            {
+              "bg": "София",
+              "en": "Sofia"
+            },
+            {
+              "bg": "Плевен",
+              "en": "Pleven"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "С какво е известен Несебър?",
+            "en": "What is Nessebar famous for?"
+          },
+          "options": [
+            {
+              "bg": "Старите църкви",
+              "en": "Its old churches"
+            },
+            {
+              "bg": "Ски пистите",
+              "en": "Ski slopes"
+            },
+            {
+              "bg": "Пещерите",
+              "en": "Caves"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Несебър е един от най-старите градове в Европа – на около 3000 години.",
+          "en": "Nessebar is one of the oldest towns in Europe – about 3,000 years old.",
+          "img": "landmarks/nessebar.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Траките го наричали Менебрия, а гръцките заселници – Месамбрия.",
+          "en": "The Thracians called it Menebria, and the Greek settlers Mesambria."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "През 812 г. хан Крум присъединява града към България.",
+          "en": "In 812 Khan Krum joined the town to Bulgaria."
+        },
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "От 1983 г. старият град е в списъка на световното наследство на ЮНЕСКО.",
+          "en": "Since 1983 the old town has been on the UNESCO World Heritage List."
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Как са наричали Несебър гръцките заселници?",
+              "en": "What did the Greek settlers call Nessebar?"
+            },
+            "options": [
+              {
+                "bg": "Месамбрия",
+                "en": "Mesambria"
+              },
+              {
+                "bg": "Одесос",
+                "en": "Odessos"
+              },
+              {
+                "bg": "Аполония",
+                "en": "Apollonia"
+              },
+              {
+                "bg": "Сердика",
+                "en": "Serdica"
+              }
+            ],
+            "answer": 0,
+            "hint": {
+              "bg": "Одесос е днешна Варна, Аполония – Созопол, Сердика – София.",
+              "en": "Odessos is today’s Varna, Apollonia is Sozopol, Serdica is Sofia."
+            }
+          },
+          {
+            "q": {
+              "bg": "Кой хан присъединява Несебър към България през 812 г.?",
+              "en": "Which khan joined Nessebar to Bulgaria in 812?"
+            },
+            "options": [
+              {
+                "bg": "Крум",
+                "en": "Krum"
+              },
+              {
+                "bg": "Аспарух",
+                "en": "Asparuh"
+              },
+              {
+                "bg": "Тервел",
+                "en": "Tervel"
+              },
+              {
+                "bg": "Омуртаг",
+                "en": "Omurtag"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Какво свързва стария Несебър със сушата?",
+              "en": "What joins old Nessebar to the land?"
+            },
+            "options": [
+              {
+                "bg": "Тясна ивица земя",
+                "en": "A narrow strip of land"
+              },
+              {
+                "bg": "Висок мост",
+                "en": "A high bridge"
+              },
+              {
+                "bg": "Подводен тунел",
+                "en": "An underwater tunnel"
+              },
+              {
+                "bg": "Нищо – той е остров",
+                "en": "Nothing – it is an island"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Несебър е на около 3000 години.",
+              "en": "Nessebar is about 3,000 years old."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – основан е от траките.",
+              "en": "Yes – it was founded by the Thracians."
+            }
+          },
+          {
+            "text": {
+              "bg": "Тракийското име на града е Месамбрия.",
+              "en": "The Thracian name of the town is Mesambria."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – тракийското е Менебрия, гръцкото е Месамбрия.",
+              "en": "No – the Thracian name is Menebria; Mesambria is the Greek one."
+            }
+          },
+          {
+            "text": {
+              "bg": "Старият Несебър е обект на ЮНЕСКО от 1983 г.",
+              "en": "Old Nessebar has been a UNESCO site since 1983."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – заедно с Рилския манастир.",
+              "en": "Yes – in the same year as the Rila Monastery."
+            }
+          },
+          {
+            "text": {
+              "bg": "Несебър става част от България при хан Аспарух.",
+              "en": "Nessebar became part of Bulgaria under Khan Asparuh."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – при хан Крум, през 812 г.",
+              "en": "No – under Khan Krum, in 812."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "От коя година старият Несебър е обект на ЮНЕСКО?",
+            "en": "Since which year has old Nessebar been a UNESCO site?"
+          },
+          "options": [
+            {
+              "bg": "1983",
+              "en": "1983"
+            },
+            {
+              "bg": "1878",
+              "en": "1878"
+            },
+            {
+              "bg": "2007",
+              "en": "2007"
+            },
+            {
+              "bg": "1946",
+              "en": "1946"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кой народ е основал града?",
+            "en": "Which people founded the town?"
+          },
+          "options": [
+            {
+              "bg": "Траките",
+              "en": "The Thracians"
+            },
+            {
+              "bg": "Римляните",
+              "en": "The Romans"
+            },
+            {
+              "bg": "Славяните",
+              "en": "The Slavs"
+            },
+            {
+              "bg": "Викингите",
+              "en": "The Vikings"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кое е типично за старите църкви в Несебър?",
+            "en": "What is typical of Nessebar’s old churches?"
+          },
+          "options": [
+            {
+              "bg": "Редове камък и червени тухли",
+              "en": "Rows of stone and red brick"
+            },
+            {
+              "bg": "Стъклени стени",
+              "en": "Glass walls"
+            },
+            {
+              "bg": "Дървени покриви без стени",
+              "en": "Wooden roofs without walls"
+            },
+            {
+              "bg": "Ледени куполи",
+              "en": "Ice domes"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Списък на световното наследство на ЮНЕСКО: Ancient City of Nessebar (1983)",
+    "Учебник по „Човекът и обществото“ / география за 4.–7. клас [страница — попълва учителят]"
+  ],
+  "review": null,
+  "draft": true
+}

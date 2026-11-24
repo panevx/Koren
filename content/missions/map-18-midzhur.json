@@ -1,0 +1,456 @@
+{
+  "id": "map-18-midzhur",
+  "subject": "geography",
+  "free": true,
+  "order": 138,
+  "place": "midzhur",
+  "unlock": {
+    "after": [
+      "map-17-golyam-perelik"
+    ]
+  },
+  "badge": {
+    "id": "midzhur",
+    "icon": "geo/balkan.webp"
+  },
+  "title": {
+    "bg": "Връх Миджур",
+    "en": "Midzhur Peak"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "explorer",
+          "bg": "Да се качим на връх Миджур! Той е висок, висок!",
+          "en": "Let’s climb Midzhur peak! It is very, very high!",
+          "img": "geo/balkan.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "winter",
+          "bg": "Горе е студено и духа вятър. Обличаме се топло!",
+          "en": "Up there it is cold and windy. We dress warmly!"
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Кой е високият връх?",
+              "en": "Which one is the high peak?"
+            },
+            "options": [
+              {
+                "bg": "Връх в планината",
+                "en": "A mountain peak",
+                "img": "geo/balkan.webp"
+              },
+              {
+                "bg": "Море",
+                "en": "The sea",
+                "img": "geo/coast.webp"
+              },
+              {
+                "bg": "Равнина",
+                "en": "A plain",
+                "img": "geo/plain.webp"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Миджур е най-високият връх в Западна Стара планина.",
+          "en": "Midzhur is the highest peak of the western Balkan Mountains.",
+          "img": "geo/balkan.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "explorer",
+          "bg": "Висок е 2168 метра. Той е в Западна Стара планина.",
+          "en": "It is 2,168 metres high. It is in the western Balkan Mountains.",
+          "img": "geo/balkan.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "През върха минава границата между България и Сърбия.",
+          "en": "The border between Bulgaria and Serbia runs across the summit."
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "В коя планина е връх Миджур?",
+              "en": "Which mountains is Midzhur peak in?"
+            },
+            "options": [
+              {
+                "bg": "Западна Стара планина",
+                "en": "the western Balkan Mountains"
+              },
+              {
+                "bg": "Странджа",
+                "en": "Strandzha"
+              },
+              {
+                "bg": "Сакар",
+                "en": "Sakar"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Кой връх е по-висок?",
+              "en": "Which peak is higher?"
+            },
+            "options": [
+              {
+                "bg": "Голям Перелик (2191 м)",
+                "en": "Golyam Perelik (2,191 m)"
+              },
+              {
+                "bg": "Миджур (2168 м)",
+                "en": "Midzhur (2,168 m)"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Връх Миджур е в Западна Стара планина.",
+              "en": "Midzhur peak is in the western Balkan Mountains."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "Миджур е по-нисък от 1000 метра.",
+              "en": "Midzhur is lower than 1,000 metres."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – той е висок 2168 м.",
+              "en": "No – it is 2,168 m high."
+            }
+          },
+          {
+            "text": {
+              "bg": "Наблизо са Белоградчишките скали и пещерата Магурата.",
+              "en": "The Belogradchik Rocks and Magura Cave are nearby."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "Миджур е на брега на морето.",
+              "en": "Midzhur is on the coast."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – той е високо в планината.",
+              "en": "No – it is high in the mountains."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Колко висок е Миджур?",
+            "en": "How high is Midzhur?"
+          },
+          "options": [
+            {
+              "bg": "2925 м",
+              "en": "2,925 m"
+            },
+            {
+              "bg": "2191 м",
+              "en": "2,191 m"
+            },
+            {
+              "bg": "2168 м",
+              "en": "2,168 m"
+            }
+          ],
+          "answer": 2
+        },
+        {
+          "q": {
+            "bg": "Кое е вярно за връх Миджур?",
+            "en": "What is true about Midzhur peak?"
+          },
+          "options": [
+            {
+              "bg": "През върха минава границата със Сърбия.",
+              "en": "The border with Serbia runs across the summit."
+            },
+            {
+              "bg": "Това е най-високият връх на Балканския полуостров.",
+              "en": "It is the highest peak on the Balkan Peninsula."
+            },
+            {
+              "bg": "Върхът е изграден от бял мрамор.",
+              "en": "The peak is made of white marble."
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какво е важно, когато се качваш на висок връх?",
+            "en": "What matters when you climb a high peak?"
+          },
+          "options": [
+            {
+              "bg": "Топли дрехи и вода",
+              "en": "Warm clothes and water"
+            },
+            {
+              "bg": "Само джапанки",
+              "en": "Only flip-flops"
+            },
+            {
+              "bg": "Да тръгнеш вечерта",
+              "en": "Setting off in the evening"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Миджур е най-високият връх в Западна Стара планина.",
+          "en": "Midzhur is the highest peak of the western Balkan Mountains.",
+          "img": "geo/balkan.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "През върха минава границата между България и Сърбия.",
+          "en": "The border between Bulgaria and Serbia runs across the summit."
+        },
+        {
+          "hero": "koren",
+          "pose": "nature",
+          "bg": "Наблизо са Белоградчишките скали и пещерата Магурата.",
+          "en": "The Belogradchik Rocks and Magura Cave are nearby.",
+          "img": "geo/balkan.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "Височината му е 2168 м – той е 6-ият по височина от шестте най-известни върха в България.",
+          "en": "It is 2,168 m high – number 6 of the six best-known peaks in Bulgaria."
+        }
+      ],
+      "game": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди върховете от най-високия към най-ниския.",
+          "en": "Order the peaks from the highest to the lowest."
+        },
+        "items": [
+          {
+            "bg": "Мусала (Рила)",
+            "en": "Musala (Rila)"
+          },
+          {
+            "bg": "Вихрен (Пирин)",
+            "en": "Vihren (Pirin)"
+          },
+          {
+            "bg": "Ботев (Стара планина)",
+            "en": "Botev (Balkan Mountains)"
+          },
+          {
+            "bg": "Миджур (Западна Стара планина)",
+            "en": "Midzhur (western Balkan Mountains)"
+          }
+        ],
+        "hint": {
+          "bg": "Миджур е висок 2168 м.",
+          "en": "Midzhur is 2,168 m high."
+        }
+      },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "В коя планина е Миджур?",
+              "en": "Which mountain range is Midzhur in?"
+            },
+            "options": [
+              {
+                "bg": "Западна Стара планина",
+                "en": "the western Balkan Mountains"
+              },
+              {
+                "bg": "Рила",
+                "en": "Rila"
+              },
+              {
+                "bg": "Пирин",
+                "en": "Pirin"
+              },
+              {
+                "bg": "Родопите",
+                "en": "The Rhodopes"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Колко висок е Миджур?",
+              "en": "How high is Midzhur?"
+            },
+            "options": [
+              {
+                "bg": "2168 м",
+                "en": "2,168 m"
+              },
+              {
+                "bg": "2925 м",
+                "en": "2,925 m"
+              },
+              {
+                "bg": "2914 м",
+                "en": "2,914 m"
+              },
+              {
+                "bg": "2376 м",
+                "en": "2,376 m"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кой е най-високият връх на Балканския полуостров?",
+            "en": "Which is the highest peak on the Balkan Peninsula?"
+          },
+          "options": [
+            {
+              "bg": "Мусала",
+              "en": "Musala"
+            },
+            {
+              "bg": "Вихрен",
+              "en": "Vihren"
+            },
+            {
+              "bg": "Олимп",
+              "en": "Olympus"
+            },
+            {
+              "bg": "Ботев",
+              "en": "Botev"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "bg": "Олимп в Гърция е 2918 м – малко по-нисък от Мусала.",
+            "en": "Olympus in Greece is 2,918 m – a little lower than Musala."
+          }
+        },
+        {
+          "q": {
+            "bg": "Кое твърдение за Миджур е вярно?",
+            "en": "Which statement about Midzhur is true?"
+          },
+          "options": [
+            {
+              "bg": "През върха минава границата със Сърбия.",
+              "en": "The border with Serbia runs across the summit."
+            },
+            {
+              "bg": "По-рано върхът се е наричал Юмрукчал.",
+              "en": "The peak used to be called Yumrukchal."
+            },
+            {
+              "bg": "Върхът се издига точно над София.",
+              "en": "The peak rises right above Sofia."
+            },
+            {
+              "bg": "Това е най-високият връх на Родопите.",
+              "en": "It is the highest peak of the Rhodopes."
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Защо на високия връх е по-студено, отколкото в долината?",
+            "en": "Why is it colder on a high peak than in the valley?"
+          },
+          "options": [
+            {
+              "bg": "С височината въздухът изстива",
+              "en": "The air gets colder with height"
+            },
+            {
+              "bg": "Защото е по-далеч от Слънцето с много км",
+              "en": "It is many km further from the Sun"
+            },
+            {
+              "bg": "Защото там е винаги нощ",
+              "en": "It is always night there"
+            },
+            {
+              "bg": "Защото там духа само северен вятър",
+              "en": "Only the north wind blows there"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Българска академия на науките – Географски институт: височини на върховете",
+    "content/map/peaks.json (официални височини)",
+    "Учебник по „Човекът и обществото“ / география за 4.–7. клас [страница — попълва учителят]"
+  ],
+  "review": null,
+  "draft": true
+}

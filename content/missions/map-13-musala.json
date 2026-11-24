@@ -1,0 +1,451 @@
+{
+  "id": "map-13-musala",
+  "subject": "geography",
+  "free": true,
+  "order": 133,
+  "place": "musala",
+  "badge": {
+    "id": "musala",
+    "icon": "geo/musala.webp"
+  },
+  "title": {
+    "bg": "Връх Мусала",
+    "en": "Musala Peak"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "explorer",
+          "bg": "Да се качим на връх Мусала! Той е висок, висок!",
+          "en": "Let’s climb Musala peak! It is very, very high!",
+          "img": "geo/musala.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "winter",
+          "bg": "Горе е студено и духа вятър. Обличаме се топло!",
+          "en": "Up there it is cold and windy. We dress warmly!"
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Кой е високият връх?",
+              "en": "Which one is the high peak?"
+            },
+            "options": [
+              {
+                "bg": "Връх в планината",
+                "en": "A mountain peak",
+                "img": "geo/musala.webp"
+              },
+              {
+                "bg": "Море",
+                "en": "The sea",
+                "img": "geo/coast.webp"
+              },
+              {
+                "bg": "Равнина",
+                "en": "A plain",
+                "img": "geo/plain.webp"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Мусала е най-високият връх в България и на целия Балкански полуостров.",
+          "en": "Musala is the highest peak in Bulgaria and on the whole Balkan Peninsula.",
+          "img": "geo/musala.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "explorer",
+          "bg": "Висок е 2925 метра. Той е в Рила.",
+          "en": "It is 2,925 metres high. It is in Rila.",
+          "img": "geo/rila.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "На върха има метеорологична станция – там се мери времето дори през зимата.",
+          "en": "There is a weather station on the summit – it measures the weather even in winter."
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "В коя планина е връх Мусала?",
+              "en": "Which mountains is Musala peak in?"
+            },
+            "options": [
+              {
+                "bg": "Рила",
+                "en": "Rila"
+              },
+              {
+                "bg": "Странджа",
+                "en": "Strandzha"
+              },
+              {
+                "bg": "Сакар",
+                "en": "Sakar"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Кой връх е по-висок?",
+              "en": "Which peak is higher?"
+            },
+            "options": [
+              {
+                "bg": "Мусала (2925 м)",
+                "en": "Musala (2,925 m)"
+              },
+              {
+                "bg": "Вихрен (2914 м)",
+                "en": "Vihren (2,914 m)"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Връх Мусала е в Рила.",
+              "en": "Musala peak is in Rila."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "Мусала е по-нисък от 1000 метра.",
+              "en": "Musala is lower than 1,000 metres."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – той е висок 2925 м.",
+              "en": "No – it is 2,925 m high."
+            }
+          },
+          {
+            "text": {
+              "bg": "Под Мусала са Мусаленските езера, а от склоновете му извира река Марица.",
+              "en": "Below Musala lie the Musala lakes, and the Maritsa springs from its slopes."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "Мусала е на брега на морето.",
+              "en": "Musala is on the coast."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – той е високо в планината.",
+              "en": "No – it is high in the mountains."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Колко висок е Мусала?",
+            "en": "How high is Musala?"
+          },
+          "options": [
+            {
+              "bg": "2914 м",
+              "en": "2,914 m"
+            },
+            {
+              "bg": "2168 м",
+              "en": "2,168 m"
+            },
+            {
+              "bg": "2925 м",
+              "en": "2,925 m"
+            }
+          ],
+          "answer": 2
+        },
+        {
+          "q": {
+            "bg": "Кое е вярно за връх Мусала?",
+            "en": "What is true about Musala peak?"
+          },
+          "options": [
+            {
+              "bg": "Това е най-високият връх на Балканския полуостров.",
+              "en": "It is the highest peak on the Balkan Peninsula."
+            },
+            {
+              "bg": "Върхът е изграден от бял мрамор.",
+              "en": "The peak is made of white marble."
+            },
+            {
+              "bg": "По-рано върхът се е наричал Юмрукчал.",
+              "en": "The peak used to be called Yumrukchal."
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какво е важно, когато се качваш на висок връх?",
+            "en": "What matters when you climb a high peak?"
+          },
+          "options": [
+            {
+              "bg": "Топли дрехи и вода",
+              "en": "Warm clothes and water"
+            },
+            {
+              "bg": "Само джапанки",
+              "en": "Only flip-flops"
+            },
+            {
+              "bg": "Да тръгнеш вечерта",
+              "en": "Setting off in the evening"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Мусала е най-високият връх в България и на целия Балкански полуостров.",
+          "en": "Musala is the highest peak in Bulgaria and on the whole Balkan Peninsula.",
+          "img": "geo/musala.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "На върха има метеорологична станция – там се мери времето дори през зимата.",
+          "en": "There is a weather station on the summit – it measures the weather even in winter."
+        },
+        {
+          "hero": "koren",
+          "pose": "nature",
+          "bg": "Под Мусала са Мусаленските езера, а от склоновете му извира река Марица.",
+          "en": "Below Musala lie the Musala lakes, and the Maritsa springs from its slopes.",
+          "img": "geo/rila.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "Височината му е 2925 м – той е 1-ият по височина от шестте най-известни върха в България.",
+          "en": "It is 2,925 m high – number 1 of the six best-known peaks in Bulgaria."
+        }
+      ],
+      "game": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди върховете от най-високия към най-ниския.",
+          "en": "Order the peaks from the highest to the lowest."
+        },
+        "items": [
+          {
+            "bg": "Мусала (Рила)",
+            "en": "Musala (Rila)"
+          },
+          {
+            "bg": "Вихрен (Пирин)",
+            "en": "Vihren (Pirin)"
+          },
+          {
+            "bg": "Ботев (Стара планина)",
+            "en": "Botev (Balkan Mountains)"
+          },
+          {
+            "bg": "Черни връх (Витоша)",
+            "en": "Cherni Vrah (Vitosha)"
+          }
+        ],
+        "hint": {
+          "bg": "Мусала е висок 2925 м.",
+          "en": "Musala is 2,925 m high."
+        }
+      },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "В коя планина е Мусала?",
+              "en": "Which mountain range is Musala in?"
+            },
+            "options": [
+              {
+                "bg": "Рила",
+                "en": "Rila"
+              },
+              {
+                "bg": "Пирин",
+                "en": "Pirin"
+              },
+              {
+                "bg": "Родопите",
+                "en": "The Rhodopes"
+              },
+              {
+                "bg": "Витоша",
+                "en": "Vitosha"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Колко висок е Мусала?",
+              "en": "How high is Musala?"
+            },
+            "options": [
+              {
+                "bg": "2925 м",
+                "en": "2,925 m"
+              },
+              {
+                "bg": "2914 м",
+                "en": "2,914 m"
+              },
+              {
+                "bg": "2376 м",
+                "en": "2,376 m"
+              },
+              {
+                "bg": "2290 м",
+                "en": "2,290 m"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кой е най-високият връх на Балканския полуостров?",
+            "en": "Which is the highest peak on the Balkan Peninsula?"
+          },
+          "options": [
+            {
+              "bg": "Мусала",
+              "en": "Musala"
+            },
+            {
+              "bg": "Вихрен",
+              "en": "Vihren"
+            },
+            {
+              "bg": "Олимп",
+              "en": "Olympus"
+            },
+            {
+              "bg": "Ботев",
+              "en": "Botev"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "bg": "Олимп в Гърция е 2918 м – малко по-нисък от Мусала.",
+            "en": "Olympus in Greece is 2,918 m – a little lower than Musala."
+          }
+        },
+        {
+          "q": {
+            "bg": "Кое твърдение за Мусала е вярно?",
+            "en": "Which statement about Musala is true?"
+          },
+          "options": [
+            {
+              "bg": "Това е най-високият връх на Балканския полуостров.",
+              "en": "It is the highest peak on the Balkan Peninsula."
+            },
+            {
+              "bg": "Върхът се издига точно над София.",
+              "en": "The peak rises right above Sofia."
+            },
+            {
+              "bg": "Това е най-високият връх на Родопите.",
+              "en": "It is the highest peak of the Rhodopes."
+            },
+            {
+              "bg": "През върха минава границата със Сърбия.",
+              "en": "The border with Serbia runs across the summit."
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Защо на високия връх е по-студено, отколкото в долината?",
+            "en": "Why is it colder on a high peak than in the valley?"
+          },
+          "options": [
+            {
+              "bg": "С височината въздухът изстива",
+              "en": "The air gets colder with height"
+            },
+            {
+              "bg": "Защото е по-далеч от Слънцето с много км",
+              "en": "It is many km further from the Sun"
+            },
+            {
+              "bg": "Защото там е винаги нощ",
+              "en": "It is always night there"
+            },
+            {
+              "bg": "Защото там духа само северен вятър",
+              "en": "Only the north wind blows there"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Българска академия на науките – Географски институт: височини на върховете",
+    "content/map/peaks.json (официални височини)",
+    "Учебник по „Човекът и обществото“ / география за 4.–7. клас [страница — попълва учителят]"
+  ],
+  "review": null,
+  "draft": true
+}

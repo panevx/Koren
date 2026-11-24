@@ -109,7 +109,7 @@ export function MissionNode({
         </button>
         </m.div>
         <span
-          className={`mt-2 line-clamp-2 rounded-full px-2.5 py-0.5 text-center text-[length:min(0.85rem,3.6vw)] leading-tight font-extrabold ${
+          className={`mt-2 rounded-[0.9rem] px-2.5 py-0.5 text-center text-[length:min(0.85rem,3.6vw)] leading-tight font-extrabold ${
             status === 'locked' ? 'bg-white/75 text-muted shadow-[0_0_0_1px_rgb(52_44_24/0.05)]' : 'mat-paper edge-light relative text-ink'
           }`}
           aria-hidden="true"

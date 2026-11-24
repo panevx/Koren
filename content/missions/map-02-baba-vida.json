@@ -1,0 +1,473 @@
+{
+  "id": "map-02-baba-vida",
+  "subject": "history",
+  "free": true,
+  "order": 122,
+  "place": "baba-vida",
+  "badge": {
+    "id": "baba-vida",
+    "icon": "landmarks/baba-vida.webp"
+  },
+  "title": {
+    "bg": "Крепостта Баба Вида",
+    "en": "Baba Vida Fortress"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Това е крепостта Баба Вида – на брега на река Дунав.",
+          "en": "This is Baba Vida Fortress – on the bank of the Danube.",
+          "img": "landmarks/baba-vida.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Тя има кули и дебели стени. Пазела е града Видин.",
+          "en": "It has towers and thick walls. It guarded the town of Vidin."
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Коя е крепостта Баба Вида?",
+              "en": "Which one is Baba Vida Fortress?"
+            },
+            "options": [
+              {
+                "bg": "Крепостта",
+                "en": "The fortress",
+                "img": "landmarks/baba-vida.webp"
+              },
+              {
+                "bg": "Конникът",
+                "en": "The rider",
+                "img": "landmarks/madara-rider.webp"
+              },
+              {
+                "bg": "Старият град",
+                "en": "The old town",
+                "img": "landmarks/nessebar.webp"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Баба Вида е във Видин, на брега на Дунав.",
+          "en": "Baba Vida is in Vidin, on the bank of the Danube.",
+          "img": "landmarks/baba-vida.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Това е единствената изцяло запазена средновековна крепост в България.",
+          "en": "It is the only fully preserved medieval fortress in Bulgaria."
+        },
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "Легендата разказва, че един цар оставил крепостта на най-голямата си дъщеря – Вида.",
+          "en": "A legend says that a king left the fortress to his eldest daughter – Vida."
+        }
+      ],
+      "game": {
+        "type": "map",
+        "target": "baba-vida",
+        "choices": [
+          "balchik",
+          "baba-vida",
+          "nessebar",
+          "madara"
+        ],
+        "prompt": {
+          "bg": "Намери на картата: Крепост „Баба Вида“",
+          "en": "Find it on the map: Baba Vida Fortress"
+        },
+        "hint": {
+          "bg": "Видин е в най-северозападния край на България, на Дунав.",
+          "en": "Vidin is in the far north-west of Bulgaria, on the Danube."
+        },
+        "showIcons": false
+      },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Баба Вида е на брега на Дунав.",
+              "en": "Baba Vida is on the bank of the Danube."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – във Видин.",
+              "en": "Yes – in Vidin."
+            }
+          },
+          {
+            "text": {
+              "bg": "Баба Вида е на брега на Черно море.",
+              "en": "Baba Vida is on the Black Sea coast."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – на Дунав, в Северозападна България.",
+              "en": "No – on the Danube, in north-western Bulgaria."
+            }
+          },
+          {
+            "text": {
+              "bg": "Крепостта е запазена изцяло.",
+              "en": "The fortress is fully preserved."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – единствената такава средновековна крепост у нас.",
+              "en": "Yes – the only medieval fortress like that in Bulgaria."
+            }
+          },
+          {
+            "text": {
+              "bg": "Според легендата Вида е най-малката дъщеря.",
+              "en": "In the legend Vida is the youngest daughter."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – Вида е най-голямата дъщеря.",
+              "en": "No – Vida is the eldest daughter."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "В кой град е Баба Вида?",
+            "en": "In which town is Baba Vida?"
+          },
+          "options": [
+            {
+              "bg": "Видин",
+              "en": "Vidin"
+            },
+            {
+              "bg": "Русе",
+              "en": "Ruse"
+            },
+            {
+              "bg": "Варна",
+              "en": "Varna"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Покрай коя река е крепостта?",
+            "en": "Which river is the fortress by?"
+          },
+          "options": [
+            {
+              "bg": "Дунав",
+              "en": "The Danube"
+            },
+            {
+              "bg": "Марица",
+              "en": "The Maritsa"
+            },
+            {
+              "bg": "Искър",
+              "en": "The Iskar"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Каква е Баба Вида?",
+            "en": "What is Baba Vida?"
+          },
+          "options": [
+            {
+              "bg": "Крепост",
+              "en": "A fortress"
+            },
+            {
+              "bg": "Пещера",
+              "en": "A cave"
+            },
+            {
+              "bg": "Връх",
+              "en": "A peak"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Баба Вида се издига на брега на Дунав във Видин.",
+          "en": "Baba Vida stands on the bank of the Danube in Vidin.",
+          "img": "landmarks/baba-vida.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "reading",
+          "bg": "Строена е на мястото на римско укрепление, а главните ѝ стени и кули са от времето на Второто българско царство.",
+          "en": "It was built on the site of a Roman fort; its main walls and towers date from the Second Bulgarian Empire."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Видин е бил столица на последния български цар преди османското завоюване – Иван Срацимир.",
+          "en": "Vidin was the capital of the last Bulgarian tsar before the Ottoman conquest – Ivan Sratsimir."
+        },
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "Видин пада под османска власт през 1396 г. Днес в крепостта има музей.",
+          "en": "Vidin fell to the Ottomans in 1396. Today the fortress is a museum."
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Кой цар е управлявал от Видин в края на XIV век?",
+              "en": "Which tsar ruled from Vidin at the end of the 14th century?"
+            },
+            "options": [
+              {
+                "bg": "Иван Срацимир",
+                "en": "Ivan Sratsimir"
+              },
+              {
+                "bg": "Иван Шишман",
+                "en": "Ivan Shishman"
+              },
+              {
+                "bg": "Иван Асен II",
+                "en": "Ivan Asen II"
+              },
+              {
+                "bg": "Калоян",
+                "en": "Kaloyan"
+              }
+            ],
+            "answer": 0,
+            "hint": {
+              "bg": "Иван Шишман е управлявал от Търново.",
+              "en": "Ivan Shishman ruled from Tarnovo."
+            }
+          },
+          {
+            "q": {
+              "bg": "През коя година Видин пада под османска власт?",
+              "en": "In which year did Vidin fall to the Ottomans?"
+            },
+            "options": [
+              {
+                "bg": "1396",
+                "en": "1396"
+              },
+              {
+                "bg": "1018",
+                "en": "1018"
+              },
+              {
+                "bg": "1453",
+                "en": "1453"
+              },
+              {
+                "bg": "1878",
+                "en": "1878"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Какво е имало на мястото на Баба Вида преди средновековната крепост?",
+              "en": "What stood where Baba Vida is before the medieval fortress?"
+            },
+            "options": [
+              {
+                "bg": "Римско укрепление",
+                "en": "A Roman fort"
+              },
+              {
+                "bg": "Тракийска гробница",
+                "en": "A Thracian tomb"
+              },
+              {
+                "bg": "Манастир",
+                "en": "A monastery"
+              },
+              {
+                "bg": "Нищо – било е река",
+                "en": "Nothing – it was river"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Баба Вида е единствената изцяло запазена средновековна крепост у нас.",
+              "en": "Baba Vida is the only fully preserved medieval fortress in Bulgaria."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – затова е толкова ценна.",
+              "en": "Yes – that is why it is so valuable."
+            }
+          },
+          {
+            "text": {
+              "bg": "Крепостта е построена през XIX век.",
+              "en": "The fortress was built in the 19th century."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – основните ѝ части са средновековни, върху римски основи.",
+              "en": "No – its main parts are medieval, on Roman foundations."
+            }
+          },
+          {
+            "text": {
+              "bg": "Видин е бил столица на Видинското царство.",
+              "en": "Vidin was the capital of the Tsardom of Vidin."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – на цар Иван Срацимир.",
+              "en": "Yes – of Tsar Ivan Sratsimir."
+            }
+          },
+          {
+            "text": {
+              "bg": "Видин е на брега на Марица.",
+              "en": "Vidin is on the Maritsa."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – на Дунав.",
+              "en": "No – on the Danube."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Каква е Баба Вида днес?",
+            "en": "What is Baba Vida today?"
+          },
+          "options": [
+            {
+              "bg": "Музей",
+              "en": "A museum"
+            },
+            {
+              "bg": "Военна база",
+              "en": "A military base"
+            },
+            {
+              "bg": "Хотел",
+              "en": "A hotel"
+            },
+            {
+              "bg": "Пристанище",
+              "en": "A port"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "В коя част на България е Видин?",
+            "en": "In which part of Bulgaria is Vidin?"
+          },
+          "options": [
+            {
+              "bg": "Северозападна",
+              "en": "North-west"
+            },
+            {
+              "bg": "Североизточна",
+              "en": "North-east"
+            },
+            {
+              "bg": "Югозападна",
+              "en": "South-west"
+            },
+            {
+              "bg": "Югоизточна",
+              "en": "South-east"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Коя дъщеря получила крепостта според легендата?",
+            "en": "Which daughter received the fortress in the legend?"
+          },
+          "options": [
+            {
+              "bg": "Най-голямата – Вида",
+              "en": "The eldest – Vida"
+            },
+            {
+              "bg": "Най-малката – Гъмза",
+              "en": "The youngest – Gamza"
+            },
+            {
+              "bg": "Средната – Кула",
+              "en": "The middle one – Kula"
+            },
+            {
+              "bg": "Всички заедно",
+              "en": "All of them together"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Регионален исторически музей – Видин (крепост „Баба Вида“)",
+    "Учебник по „Човекът и обществото“ / география за 4.–7. клас [страница — попълва учителят]"
+  ],
+  "review": null,
+  "draft": true
+}

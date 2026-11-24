@@ -189,12 +189,9 @@ body {
   /* Long Bulgarian words ("славянобългарска") wrap instead of stretching a card past the screen.
      "anywhere" also lets flex/grid items shrink below their longest word. */
   overflow-wrap: anywhere;
-  hyphens: auto;
-  /* …but only really long words get a hyphen (12+ letters, at least 4 on each side):
-     "славянобългар-ска" yes, "на-родната" no. */
-  hyphenate-limit-chars: 12 4 4;
-  -webkit-hyphenate-limit-before: 4;
-  -webkit-hyphenate-limit-after: 4;
+  /* v0.27.1: no automatic hyphens — a word that does not fit moves WHOLE to the next line; a heading or label that is
+     still too narrow gets smaller letters (src/fitText.ts). A child reads „при-близителни“ as two words. */
+  hyphens: manual;
   background: var(--color-cream);
   color: var(--color-ink);
   font-family: var(--font-sans);

@@ -1,0 +1,478 @@
+{
+  "id": "map-01-madara",
+  "subject": "history",
+  "free": true,
+  "order": 121,
+  "place": "madara",
+  "badge": {
+    "id": "madara-rider",
+    "icon": "landmarks/madara-rider.webp"
+  },
+  "title": {
+    "bg": "Мадарският конник",
+    "en": "The Madara Rider"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Виж! Конник, издълбан в скалата!",
+          "en": "Look! A horseman carved into the rock!",
+          "img": "landmarks/madara-rider.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Зад коня тича куче, а под него има лъв.",
+          "en": "A dog runs behind the horse, and a lion lies under it."
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Кой е Мадарският конник?",
+              "en": "Which one is the Madara Rider?"
+            },
+            "options": [
+              {
+                "bg": "Конникът в скалата",
+                "en": "The rider in the rock",
+                "img": "landmarks/madara-rider.webp"
+              },
+              {
+                "bg": "Крепостта",
+                "en": "The fortress",
+                "img": "landmarks/baba-vida.webp"
+              },
+              {
+                "bg": "Пещерата",
+                "en": "The cave",
+                "img": "landmarks/devetashka-cave.webp"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Мадарският конник е издълбан във висока скала близо до Шумен.",
+          "en": "The Madara Rider is carved into a tall cliff near Shumen.",
+          "img": "landmarks/madara-rider.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "explorer",
+          "bg": "Конникът е издълбан високо в скалата – на 23 метра над земята! Под коня има лъв, а зад него тича куче.",
+          "en": "The rider is carved high up in the cliff – 23 metres above the ground! There is a lion under the horse and a dog running behind it."
+        },
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "Направен е преди около 1300 години, в първите години на българската държава.",
+          "en": "It was made about 1,300 years ago, in the first years of the Bulgarian state."
+        }
+      ],
+      "game": {
+        "type": "map",
+        "target": "madara",
+        "choices": [
+          "sandanski",
+          "madara",
+          "belogradchik",
+          "rila-monastery"
+        ],
+        "prompt": {
+          "bg": "Намери на картата: Мадарски конник",
+          "en": "Find it on the map: Madara Rider"
+        },
+        "hint": {
+          "bg": "Мадара е в Североизточна България, близо до Шумен.",
+          "en": "Madara is in north-eastern Bulgaria, near Shumen."
+        },
+        "showIcons": false
+      },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Мадарският конник е издълбан в скала.",
+              "en": "The Madara Rider is carved into rock."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – в отвесна скала, високо над земята.",
+              "en": "Yes – into a sheer cliff, high above the ground."
+            }
+          },
+          {
+            "text": {
+              "bg": "Конникът е нарисуван с бои върху стена.",
+              "en": "The rider is painted on a wall."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – той е релеф, издълбан в камъка.",
+              "en": "No – it is a relief carved into the stone."
+            }
+          },
+          {
+            "text": {
+              "bg": "Под коня има лъв.",
+              "en": "There is a lion under the horse."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – конникът е пробол лъва с копие.",
+              "en": "Yes – the rider has struck the lion with a spear."
+            }
+          },
+          {
+            "text": {
+              "bg": "Мадарският конник е във Видин.",
+              "en": "The Madara Rider is in Vidin."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – той е край Шумен, в Североизточна България.",
+              "en": "No – it is near Shumen, in north-eastern Bulgaria."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Какво животно тича зад коня?",
+            "en": "Which animal runs behind the horse?"
+          },
+          "options": [
+            {
+              "bg": "Куче",
+              "en": "A dog"
+            },
+            {
+              "bg": "Вълк",
+              "en": "A wolf"
+            },
+            {
+              "bg": "Мечка",
+              "en": "A bear"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Близо до кой град е Мадара?",
+            "en": "Which town is Madara near?"
+          },
+          "options": [
+            {
+              "bg": "Шумен",
+              "en": "Shumen"
+            },
+            {
+              "bg": "Бургас",
+              "en": "Burgas"
+            },
+            {
+              "bg": "Видин",
+              "en": "Vidin"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "В какво е издълбан конникът?",
+            "en": "What is the rider carved into?"
+          },
+          "options": [
+            {
+              "bg": "В скала",
+              "en": "Into a cliff"
+            },
+            {
+              "bg": "В дърво",
+              "en": "Into a tree"
+            },
+            {
+              "bg": "В лед",
+              "en": "Into ice"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Мадарският конник е единственият скален релеф от ранното Средновековие в Европа от този вид.",
+          "en": "The Madara Rider is the only early medieval rock relief of its kind in Europe.",
+          "img": "landmarks/madara-rider.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Издълбан е около 23 м над земята, в началото на VIII век – по времето на хан Тервел.",
+          "en": "It was carved about 23 m above the ground at the start of the 8th century – in the time of Khan Tervel."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Около него има надписи на гръцки език за българските ханове.",
+          "en": "Around it there are inscriptions in Greek about the Bulgarian khans."
+        },
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "От 1979 г. е в списъка на световното наследство на ЮНЕСКО.",
+          "en": "Since 1979 it has been on the UNESCO World Heritage List."
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "По времето на кой хан е издълбан Мадарският конник?",
+              "en": "In the time of which khan was the Madara Rider carved?"
+            },
+            "options": [
+              {
+                "bg": "Тервел",
+                "en": "Tervel"
+              },
+              {
+                "bg": "Крум",
+                "en": "Krum"
+              },
+              {
+                "bg": "Омуртаг",
+                "en": "Omurtag"
+              },
+              {
+                "bg": "Борис I",
+                "en": "Boris I"
+              }
+            ],
+            "answer": 0,
+            "hint": {
+              "bg": "Конникът е от началото на VIII век.",
+              "en": "The rider dates from the start of the 8th century."
+            }
+          },
+          {
+            "q": {
+              "bg": "На какъв език са надписите около релефа?",
+              "en": "In which language are the inscriptions around the relief?"
+            },
+            "options": [
+              {
+                "bg": "Гръцки",
+                "en": "Greek"
+              },
+              {
+                "bg": "Латински",
+                "en": "Latin"
+              },
+              {
+                "bg": "Старобългарски с глаголица",
+                "en": "Old Bulgarian in Glagolitic"
+              },
+              {
+                "bg": "Турски",
+                "en": "Turkish"
+              }
+            ],
+            "answer": 0,
+            "hint": {
+              "bg": "Глаголицата е създадена много по-късно – през IX век.",
+              "en": "The Glagolitic script was created much later – in the 9th century."
+            }
+          },
+          {
+            "q": {
+              "bg": "Какво пробожда конникът с копието си?",
+              "en": "What does the rider strike with his spear?"
+            },
+            "options": [
+              {
+                "bg": "Лъв",
+                "en": "A lion"
+              },
+              {
+                "bg": "Мечка",
+                "en": "A bear"
+              },
+              {
+                "bg": "Змей",
+                "en": "A dragon"
+              },
+              {
+                "bg": "Вълк",
+                "en": "A wolf"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Мадарският конник е в списъка на ЮНЕСКО.",
+              "en": "The Madara Rider is on the UNESCO list."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – от 1979 г.",
+              "en": "Yes – since 1979."
+            }
+          },
+          {
+            "text": {
+              "bg": "Релефът е издълбан през XIV век.",
+              "en": "The relief was carved in the 14th century."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – в началото на VIII век.",
+              "en": "No – at the start of the 8th century."
+            }
+          },
+          {
+            "text": {
+              "bg": "Релефът е на около 23 м над земята.",
+              "en": "The relief is about 23 m above the ground."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – високо в отвесна скала.",
+              "en": "Yes – high up on a sheer cliff."
+            }
+          },
+          {
+            "text": {
+              "bg": "Надписите около конника са на латински.",
+              "en": "The inscriptions around the rider are in Latin."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – на гръцки, както пишели тогава в българската държава.",
+              "en": "No – in Greek, as was usual in the Bulgarian state then."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "От коя година Мадарският конник е обект на ЮНЕСКО?",
+            "en": "Since which year has the Madara Rider been a UNESCO site?"
+          },
+          "options": [
+            {
+              "bg": "1979",
+              "en": "1979"
+            },
+            {
+              "bg": "1944",
+              "en": "1944"
+            },
+            {
+              "bg": "2007",
+              "en": "2007"
+            },
+            {
+              "bg": "1878",
+              "en": "1878"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кое животно тича след коня в релефа?",
+            "en": "Which animal runs after the horse in the relief?"
+          },
+          "options": [
+            {
+              "bg": "Куче",
+              "en": "A dog"
+            },
+            {
+              "bg": "Сокол",
+              "en": "A falcon"
+            },
+            {
+              "bg": "Кон без ездач",
+              "en": "A riderless horse"
+            },
+            {
+              "bg": "Елен",
+              "en": "A deer"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "В коя част на България е Мадара?",
+            "en": "In which part of Bulgaria is Madara?"
+          },
+          "options": [
+            {
+              "bg": "Североизточна",
+              "en": "North-east"
+            },
+            {
+              "bg": "Югозападна",
+              "en": "South-west"
+            },
+            {
+              "bg": "Северозападна",
+              "en": "North-west"
+            },
+            {
+              "bg": "Югоизточна",
+              "en": "South-east"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Национален историко-археологически резерват „Мадара“",
+    "UNESCO World Heritage List: Madara Rider (1979)",
+    "Учебник по „Човекът и обществото“ / география за 4.–7. клас [страница — попълва учителят]"
+  ],
+  "review": null,
+  "draft": true
+}

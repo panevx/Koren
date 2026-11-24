@@ -1,0 +1,456 @@
+{
+  "id": "map-16-cherni-vrah",
+  "subject": "geography",
+  "free": true,
+  "order": 136,
+  "place": "cherni-vrah",
+  "unlock": {
+    "after": [
+      "map-15-botev"
+    ]
+  },
+  "badge": {
+    "id": "cherni-vrah",
+    "icon": "geo/vitosha.webp"
+  },
+  "title": {
+    "bg": "Черни връх",
+    "en": "Cherni Vrah Peak"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "explorer",
+          "bg": "Да се качим на връх Черни връх! Той е висок, висок!",
+          "en": "Let’s climb Cherni Vrah peak! It is very, very high!",
+          "img": "geo/vitosha.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "winter",
+          "bg": "Горе е студено и духа вятър. Обличаме се топло!",
+          "en": "Up there it is cold and windy. We dress warmly!"
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Кой е високият връх?",
+              "en": "Which one is the high peak?"
+            },
+            "options": [
+              {
+                "bg": "Връх в планината",
+                "en": "A mountain peak",
+                "img": "geo/vitosha.webp"
+              },
+              {
+                "bg": "Море",
+                "en": "The sea",
+                "img": "geo/coast.webp"
+              },
+              {
+                "bg": "Равнина",
+                "en": "A plain",
+                "img": "geo/plain.webp"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Черни връх е най-високият връх на Витоша – планината над София.",
+          "en": "Cherni Vrah is the highest peak of Vitosha – the mountain above Sofia.",
+          "img": "geo/vitosha.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "explorer",
+          "bg": "Висок е 2290 метра. Той е в Витоша.",
+          "en": "It is 2,290 metres high. It is in Vitosha.",
+          "img": "geo/vitosha.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "Витоша е първият природен парк в България и на Балканите – от 1934 г.",
+          "en": "Vitosha is the first nature park in Bulgaria and the Balkans – since 1934."
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "В коя планина е връх Черни връх?",
+              "en": "Which mountains is Cherni Vrah peak in?"
+            },
+            "options": [
+              {
+                "bg": "Витоша",
+                "en": "Vitosha"
+              },
+              {
+                "bg": "Странджа",
+                "en": "Strandzha"
+              },
+              {
+                "bg": "Сакар",
+                "en": "Sakar"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Кой връх е по-висок?",
+              "en": "Which peak is higher?"
+            },
+            "options": [
+              {
+                "bg": "Ботев (2376 м)",
+                "en": "Botev (2,376 m)"
+              },
+              {
+                "bg": "Черни връх (2290 м)",
+                "en": "Cherni Vrah (2,290 m)"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Връх Черни връх е в Витоша.",
+              "en": "Cherni Vrah peak is in Vitosha."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "Черни връх е по-нисък от 1000 метра.",
+              "en": "Cherni Vrah is lower than 1,000 metres."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – той е висок 2290 м.",
+              "en": "No – it is 2,290 m high."
+            }
+          },
+          {
+            "text": {
+              "bg": "По склоновете на Витоша има „каменни реки“ – дълги ивици от големи заоблени камъни.",
+              "en": "On Vitosha’s slopes there are “stone rivers” – long strips of big rounded boulders."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да.",
+              "en": "Yes."
+            }
+          },
+          {
+            "text": {
+              "bg": "Черни връх е на брега на морето.",
+              "en": "Cherni Vrah is on the coast."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – той е високо в планината.",
+              "en": "No – it is high in the mountains."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Колко висок е Черни връх?",
+            "en": "How high is Cherni Vrah?"
+          },
+          "options": [
+            {
+              "bg": "2925 м",
+              "en": "2,925 m"
+            },
+            {
+              "bg": "2168 м",
+              "en": "2,168 m"
+            },
+            {
+              "bg": "2290 м",
+              "en": "2,290 m"
+            }
+          ],
+          "answer": 2
+        },
+        {
+          "q": {
+            "bg": "Кое е вярно за връх Черни връх?",
+            "en": "What is true about Cherni Vrah peak?"
+          },
+          "options": [
+            {
+              "bg": "Върхът се издига точно над София.",
+              "en": "The peak rises right above Sofia."
+            },
+            {
+              "bg": "Това е най-високият връх на Балканския полуостров.",
+              "en": "It is the highest peak on the Balkan Peninsula."
+            },
+            {
+              "bg": "Върхът е изграден от бял мрамор.",
+              "en": "The peak is made of white marble."
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какво е важно, когато се качваш на висок връх?",
+            "en": "What matters when you climb a high peak?"
+          },
+          "options": [
+            {
+              "bg": "Топли дрехи и вода",
+              "en": "Warm clothes and water"
+            },
+            {
+              "bg": "Само джапанки",
+              "en": "Only flip-flops"
+            },
+            {
+              "bg": "Да тръгнеш вечерта",
+              "en": "Setting off in the evening"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Черни връх е най-високият връх на Витоша – планината над София.",
+          "en": "Cherni Vrah is the highest peak of Vitosha – the mountain above Sofia.",
+          "img": "geo/vitosha.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Витоша е първият природен парк в България и на Балканите – от 1934 г.",
+          "en": "Vitosha is the first nature park in Bulgaria and the Balkans – since 1934."
+        },
+        {
+          "hero": "koren",
+          "pose": "nature",
+          "bg": "По склоновете на Витоша има „каменни реки“ – дълги ивици от големи заоблени камъни.",
+          "en": "On Vitosha’s slopes there are “stone rivers” – long strips of big rounded boulders.",
+          "img": "geo/vitosha.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "Височината му е 2290 м – той е 4-ият по височина от шестте най-известни върха в България.",
+          "en": "It is 2,290 m high – number 4 of the six best-known peaks in Bulgaria."
+        }
+      ],
+      "game": {
+        "type": "order",
+        "prompt": {
+          "bg": "Подреди върховете от най-високия към най-ниския.",
+          "en": "Order the peaks from the highest to the lowest."
+        },
+        "items": [
+          {
+            "bg": "Мусала (Рила)",
+            "en": "Musala (Rila)"
+          },
+          {
+            "bg": "Вихрен (Пирин)",
+            "en": "Vihren (Pirin)"
+          },
+          {
+            "bg": "Ботев (Стара планина)",
+            "en": "Botev (Balkan Mountains)"
+          },
+          {
+            "bg": "Черни връх (Витоша)",
+            "en": "Cherni Vrah (Vitosha)"
+          }
+        ],
+        "hint": {
+          "bg": "Черни връх е висок 2290 м.",
+          "en": "Cherni Vrah is 2,290 m high."
+        }
+      },
+      "extra": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "В коя планина е Черни връх?",
+              "en": "Which mountain range is Cherni Vrah in?"
+            },
+            "options": [
+              {
+                "bg": "Витоша",
+                "en": "Vitosha"
+              },
+              {
+                "bg": "Рила",
+                "en": "Rila"
+              },
+              {
+                "bg": "Пирин",
+                "en": "Pirin"
+              },
+              {
+                "bg": "Родопите",
+                "en": "The Rhodopes"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Колко висок е Черни връх?",
+              "en": "How high is Cherni Vrah?"
+            },
+            "options": [
+              {
+                "bg": "2290 м",
+                "en": "2,290 m"
+              },
+              {
+                "bg": "2925 м",
+                "en": "2,925 m"
+              },
+              {
+                "bg": "2914 м",
+                "en": "2,914 m"
+              },
+              {
+                "bg": "2376 м",
+                "en": "2,376 m"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Кой е най-високият връх на Балканския полуостров?",
+            "en": "Which is the highest peak on the Balkan Peninsula?"
+          },
+          "options": [
+            {
+              "bg": "Мусала",
+              "en": "Musala"
+            },
+            {
+              "bg": "Вихрен",
+              "en": "Vihren"
+            },
+            {
+              "bg": "Олимп",
+              "en": "Olympus"
+            },
+            {
+              "bg": "Ботев",
+              "en": "Botev"
+            }
+          ],
+          "answer": 0,
+          "hint": {
+            "bg": "Олимп в Гърция е 2918 м – малко по-нисък от Мусала.",
+            "en": "Olympus in Greece is 2,918 m – a little lower than Musala."
+          }
+        },
+        {
+          "q": {
+            "bg": "Кое твърдение за Черни връх е вярно?",
+            "en": "Which statement about Cherni Vrah is true?"
+          },
+          "options": [
+            {
+              "bg": "Върхът се издига точно над София.",
+              "en": "The peak rises right above Sofia."
+            },
+            {
+              "bg": "По-рано върхът се е наричал Юмрукчал.",
+              "en": "The peak used to be called Yumrukchal."
+            },
+            {
+              "bg": "Това е най-високият връх на Родопите.",
+              "en": "It is the highest peak of the Rhodopes."
+            },
+            {
+              "bg": "През върха минава границата със Сърбия.",
+              "en": "The border with Serbia runs across the summit."
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Защо на високия връх е по-студено, отколкото в долината?",
+            "en": "Why is it colder on a high peak than in the valley?"
+          },
+          "options": [
+            {
+              "bg": "С височината въздухът изстива",
+              "en": "The air gets colder with height"
+            },
+            {
+              "bg": "Защото е по-далеч от Слънцето с много км",
+              "en": "It is many km further from the Sun"
+            },
+            {
+              "bg": "Защото там е винаги нощ",
+              "en": "It is always night there"
+            },
+            {
+              "bg": "Защото там духа само северен вятър",
+              "en": "Only the north wind blows there"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Българска академия на науките – Географски институт: височини на върховете",
+    "content/map/peaks.json (официални височини)",
+    "Учебник по „Човекът и обществото“ / география за 4.–7. клас [страница — попълва учителят]"
+  ],
+  "review": null,
+  "draft": true
+}

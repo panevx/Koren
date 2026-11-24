@@ -1,0 +1,469 @@
+{
+  "id": "map-06-devils-throat",
+  "subject": "geography",
+  "free": true,
+  "order": 126,
+  "place": "devils-throat",
+  "badge": {
+    "id": "devils-throat",
+    "icon": "landmarks/devils-throat.webp"
+  },
+  "title": {
+    "bg": "Пещерата „Дяволското гърло“",
+    "en": "The Devil’s Throat Cave"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Чуваш ли шума? В тази пещера пада голям водопад!",
+          "en": "Can you hear the noise? A big waterfall falls inside this cave!",
+          "img": "landmarks/devils-throat.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "explorer",
+          "bg": "Пещерата е в Родопите. Река влиза в нея и изчезва под земята.",
+          "en": "The cave is in the Rhodopes. A river goes into it and disappears underground."
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Коя пещера има водопад вътре?",
+              "en": "Which cave has a waterfall inside?"
+            },
+            "options": [
+              {
+                "bg": "Дяволското гърло",
+                "en": "The Devil’s Throat",
+                "img": "landmarks/devils-throat.webp"
+              },
+              {
+                "bg": "Старият град",
+                "en": "The old town",
+                "img": "landmarks/nessebar.webp"
+              },
+              {
+                "bg": "Конникът",
+                "en": "The rider",
+                "img": "landmarks/madara-rider.webp"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "„Дяволското гърло“ е пещера в Родопите, близо до село Триград.",
+          "en": "The Devil’s Throat is a cave in the Rhodopes, near the village of Trigrad.",
+          "img": "landmarks/devils-throat.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "explorer",
+          "bg": "Вътре има голяма зала, в която с грохот пада водопад – Залата на грохота.",
+          "en": "Inside there is a big hall where a waterfall crashes down – the Hall of Roar."
+        },
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "Легендата казва, че оттук певецът Орфей е слязъл в подземното царство.",
+          "en": "A legend says that the singer Orpheus went down into the underworld from here."
+        }
+      ],
+      "game": {
+        "type": "map",
+        "target": "devils-throat",
+        "choices": [
+          "balchik",
+          "devils-throat",
+          "srebarna",
+          "pliska"
+        ],
+        "prompt": {
+          "bg": "Намери на картата: Пещерата „Дяволското гърло“",
+          "en": "Find it on the map: Devil's Throat Cave"
+        },
+        "hint": {
+          "bg": "Пещерата е в Родопите, в Южна България.",
+          "en": "The cave is in the Rhodopes, in southern Bulgaria."
+        },
+        "showIcons": false
+      },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "„Дяволското гърло“ е в Родопите.",
+              "en": "The Devil’s Throat is in the Rhodopes."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – близо до Триград.",
+              "en": "Yes – near Trigrad."
+            }
+          },
+          {
+            "text": {
+              "bg": "В пещерата има водопад.",
+              "en": "There is a waterfall in the cave."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – в Залата на грохота.",
+              "en": "Yes – in the Hall of Roar."
+            }
+          },
+          {
+            "text": {
+              "bg": "Реката излиза от пещерата веднага, след като влезе.",
+              "en": "The river comes straight out after it goes in."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – тя тече под земята и излиза чак по-нататък.",
+              "en": "No – it flows underground and comes out much further on."
+            }
+          },
+          {
+            "text": {
+              "bg": "Легендата за пещерата е за Крали Марко.",
+              "en": "The cave’s legend is about Krali Marko."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – за певеца Орфей.",
+              "en": "No – about the singer Orpheus."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "В коя планина е пещерата?",
+            "en": "Which mountains is the cave in?"
+          },
+          "options": [
+            {
+              "bg": "Родопите",
+              "en": "The Rhodopes"
+            },
+            {
+              "bg": "Стара планина",
+              "en": "The Balkan Mountains"
+            },
+            {
+              "bg": "Витоша",
+              "en": "Vitosha"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Как се казва голямата зала с водопада?",
+            "en": "What is the big hall with the waterfall called?"
+          },
+          "options": [
+            {
+              "bg": "Залата на грохота",
+              "en": "The Hall of Roar"
+            },
+            {
+              "bg": "Залата на тишината",
+              "en": "The Hall of Silence"
+            },
+            {
+              "bg": "Залата на леда",
+              "en": "The Hall of Ice"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "За кого е легендата?",
+            "en": "Who is the legend about?"
+          },
+          "options": [
+            {
+              "bg": "Орфей",
+              "en": "Orpheus"
+            },
+            {
+              "bg": "Баба Марта",
+              "en": "Granny Marta"
+            },
+            {
+              "bg": "Хитър Петър",
+              "en": "Clever Peter"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "„Дяволското гърло“ е в Западните Родопи, край село Триград.",
+          "en": "The Devil’s Throat is in the Western Rhodopes, near the village of Trigrad.",
+          "img": "landmarks/devils-throat.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "explorer",
+          "bg": "Триградската река влиза в пещерата и изчезва под земята.",
+          "en": "The Trigrad River flows into the cave and vanishes underground."
+        },
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "В Залата на грохота водата пада от около 42 м – един от най-високите подземни водопади на Балканите.",
+          "en": "In the Hall of Roar the water falls about 42 m – one of the highest underground waterfalls in the Balkans."
+        },
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "Според легендата оттук Орфей слязъл в подземното царство, за да търси Евридика.",
+          "en": "Legend says Orpheus went down to the underworld from here to look for Eurydice."
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Коя река изчезва в „Дяволското гърло“?",
+              "en": "Which river disappears into the Devil’s Throat?"
+            },
+            "options": [
+              {
+                "bg": "Триградската река",
+                "en": "The Trigrad River"
+              },
+              {
+                "bg": "Марица",
+                "en": "The Maritsa"
+              },
+              {
+                "bg": "Арда",
+                "en": "The Arda"
+              },
+              {
+                "bg": "Искър",
+                "en": "The Iskar"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Колко висок е водопадът в Залата на грохота?",
+              "en": "How high is the waterfall in the Hall of Roar?"
+            },
+            "options": [
+              {
+                "bg": "Около 42 м",
+                "en": "About 42 m"
+              },
+              {
+                "bg": "Около 4 м",
+                "en": "About 4 m"
+              },
+              {
+                "bg": "Около 420 м",
+                "en": "About 420 m"
+              },
+              {
+                "bg": "Около 1 км",
+                "en": "About 1 km"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Кого е търсил Орфей в подземното царство?",
+              "en": "Whom was Orpheus looking for in the underworld?"
+            },
+            "options": [
+              {
+                "bg": "Евридика",
+                "en": "Eurydice"
+              },
+              {
+                "bg": "Персефона",
+                "en": "Persephone"
+              },
+              {
+                "bg": "Афродита",
+                "en": "Aphrodite"
+              },
+              {
+                "bg": "Атина",
+                "en": "Athena"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Пещерата е в Западните Родопи.",
+              "en": "The cave is in the Western Rhodopes."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – край Триград.",
+              "en": "Yes – near Trigrad."
+            }
+          },
+          {
+            "text": {
+              "bg": "Водопадът в пещерата е най-високият водопад в света.",
+              "en": "The cave’s waterfall is the highest waterfall in the world."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – но е сред най-високите подземни на Балканите.",
+              "en": "No – but it is among the highest underground ones in the Balkans."
+            }
+          },
+          {
+            "text": {
+              "bg": "Орфей е герой от тракийските и древногръцките легенди.",
+              "en": "Orpheus is a hero of Thracian and ancient Greek legends."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – певец, роден според преданията в Родопите.",
+              "en": "Yes – a singer who, the stories say, was born in the Rhodopes."
+            }
+          },
+          {
+            "text": {
+              "bg": "В пещерата водата тече нагоре.",
+              "en": "In the cave the water flows uphill."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – тя пада и тече надолу под земята.",
+              "en": "No – it falls and flows downward underground."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Край кое село е пещерата?",
+            "en": "Which village is the cave near?"
+          },
+          "options": [
+            {
+              "bg": "Триград",
+              "en": "Trigrad"
+            },
+            {
+              "bg": "Копривщица",
+              "en": "Koprivshtitsa"
+            },
+            {
+              "bg": "Арбанаси",
+              "en": "Arbanasi"
+            },
+            {
+              "bg": "Жеравна",
+              "en": "Zheravna"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "С кой музикален инструмент е изобразяван Орфей?",
+            "en": "Which instrument is Orpheus shown with?"
+          },
+          "options": [
+            {
+              "bg": "Лира",
+              "en": "A lyre"
+            },
+            {
+              "bg": "Гайда",
+              "en": "Bagpipes"
+            },
+            {
+              "bg": "Тъпан",
+              "en": "A drum"
+            },
+            {
+              "bg": "Пиано",
+              "en": "A piano"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какво се случва с реката в пещерата?",
+            "en": "What happens to the river in the cave?"
+          },
+          "options": [
+            {
+              "bg": "Тече под земята",
+              "en": "It flows underground"
+            },
+            {
+              "bg": "Замръзва завинаги",
+              "en": "It freezes forever"
+            },
+            {
+              "bg": "Изпарява се изцяло",
+              "en": "It all evaporates"
+            },
+            {
+              "bg": "Става солена",
+              "en": "It turns salty"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Пещера „Дяволското гърло“ – информационни материали; ПП „Родопи“",
+    "Учебник по „Човекът и обществото“ / география за 4.–7. клас [страница — попълва учителят]"
+  ],
+  "review": null,
+  "draft": true
+}

@@ -327,6 +327,56 @@
         "pro-11-holidays",
         "pro-12-grand-exam"
       ]
+    },
+    {
+      "title": {
+        "bg": "Крепости и древни градове",
+        "en": "Fortresses and ancient towns"
+      },
+      "missions": [
+        "map-01-madara",
+        "map-02-baba-vida",
+        "map-03-nessebar",
+        "map-04-hisarya"
+      ]
+    },
+    {
+      "title": {
+        "bg": "Пещери и топли извори",
+        "en": "Caves and hot springs"
+      },
+      "missions": [
+        "map-05-devetashka",
+        "map-06-devils-throat",
+        "map-07-sapareva-banya",
+        "map-08-sandanski"
+      ]
+    },
+    {
+      "title": {
+        "bg": "Градове и курорти",
+        "en": "Towns and resorts"
+      },
+      "missions": [
+        "map-09-gabrovo",
+        "map-10-balchik",
+        "map-11-bansko",
+        "map-12-pamporovo"
+      ]
+    },
+    {
+      "title": {
+        "bg": "Шестте върха",
+        "en": "The six peaks"
+      },
+      "missions": [
+        "map-13-musala",
+        "map-14-vihren",
+        "map-15-botev",
+        "map-16-cherni-vrah",
+        "map-17-golyam-perelik",
+        "map-18-midzhur"
+      ]
     }
   ]
 }

@@ -1,0 +1,475 @@
+{
+  "id": "map-08-sandanski",
+  "subject": "geography",
+  "free": true,
+  "order": 128,
+  "place": "sandanski",
+  "unlock": {
+    "after": [
+      "map-07-sapareva-banya"
+    ]
+  },
+  "badge": {
+    "id": "sandanski",
+    "icon": "places/mineral-sandanski.webp"
+  },
+  "title": {
+    "bg": "Сандански – слънце и извори",
+    "en": "Sandanski – sunshine and springs"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "В Сандански е топло и слънчево почти през цялата година.",
+          "en": "In Sandanski it is warm and sunny almost all year round.",
+          "img": "places/mineral-sandanski.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Наблизо е голямата планина Пирин.",
+          "en": "The big Pirin mountains are nearby.",
+          "img": "geo/pirin.webp"
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Коя планина е до Сандански?",
+              "en": "Which mountains are next to Sandanski?"
+            },
+            "options": [
+              {
+                "bg": "Пирин",
+                "en": "Pirin",
+                "img": "geo/pirin.webp"
+              },
+              {
+                "bg": "Морето",
+                "en": "The sea",
+                "img": "geo/coast.webp"
+              },
+              {
+                "bg": "Дунав",
+                "en": "The Danube",
+                "img": "geo/danube.webp"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Сандански е град в Югозападна България, в подножието на Пирин.",
+          "en": "Sandanski is a town in south-western Bulgaria, at the foot of Pirin.",
+          "img": "places/mineral-sandanski.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "nature",
+          "bg": "Климатът тук е мек – зимата е топла, а слънцето грее много дни в годината.",
+          "en": "The climate here is mild – winters are warm and the sun shines on many days of the year."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "В града има минерални извори. Хората идват тук да лекуват дробовете си.",
+          "en": "The town has mineral springs. People come here to heal their lungs."
+        }
+      ],
+      "game": {
+        "type": "map",
+        "target": "sandanski",
+        "choices": [
+          "balchik",
+          "sandanski",
+          "srebarna",
+          "nessebar"
+        ],
+        "prompt": {
+          "bg": "Намери на картата: Сандански",
+          "en": "Find it on the map: Sandanski"
+        },
+        "hint": {
+          "bg": "Сандански е в Югозападна България, близо до границата с Гърция.",
+          "en": "Sandanski is in south-western Bulgaria, near the border with Greece."
+        },
+        "showIcons": false
+      },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Сандански е в подножието на Пирин.",
+              "en": "Sandanski is at the foot of Pirin."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – в Югозападна България.",
+              "en": "Yes – in south-western Bulgaria."
+            }
+          },
+          {
+            "text": {
+              "bg": "В Сандански зимата е много студена и снежна.",
+              "en": "In Sandanski winters are very cold and snowy."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – климатът е мек, зимата е топла.",
+              "en": "No – the climate is mild and winters are warm."
+            }
+          },
+          {
+            "text": {
+              "bg": "В Сандански има минерални извори.",
+              "en": "Sandanski has mineral springs."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – затова е курорт.",
+              "en": "Yes – that is why it is a resort."
+            }
+          },
+          {
+            "text": {
+              "bg": "Сандански е на брега на Дунав.",
+              "en": "Sandanski is on the Danube."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – далеч на юг, близо до Гърция.",
+              "en": "No – far to the south, near Greece."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "В коя част на България е Сандански?",
+            "en": "In which part of Bulgaria is Sandanski?"
+          },
+          "options": [
+            {
+              "bg": "Югозападна",
+              "en": "South-west"
+            },
+            {
+              "bg": "Североизточна",
+              "en": "North-east"
+            },
+            {
+              "bg": "Северозападна",
+              "en": "North-west"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какъв е климатът в Сандански?",
+            "en": "What is the climate in Sandanski like?"
+          },
+          "options": [
+            {
+              "bg": "Мек и слънчев",
+              "en": "Mild and sunny"
+            },
+            {
+              "bg": "Леден",
+              "en": "Icy"
+            },
+            {
+              "bg": "Пустинен",
+              "en": "Desert-like"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Защо хората идват в Сандански?",
+            "en": "Why do people come to Sandanski?"
+          },
+          "options": [
+            {
+              "bg": "За лечение и почивка",
+              "en": "To heal and rest"
+            },
+            {
+              "bg": "За ски",
+              "en": "To ski"
+            },
+            {
+              "bg": "За риболов в морето",
+              "en": "To fish in the sea"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Сандански е в долината на река Струма, в подножието на Пирин.",
+          "en": "Sandanski lies in the Struma valley, at the foot of Pirin.",
+          "img": "places/mineral-sandanski.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "reading",
+          "bg": "Градът е кръстен на революционера Яне Сандански.",
+          "en": "The town is named after the revolutionary Yane Sandanski."
+        },
+        {
+          "hero": "raya",
+          "pose": "nature",
+          "bg": "Климатът тук е преходно-средиземноморски – едни от най-високите средни температури в България.",
+          "en": "The climate is transitional Mediterranean – among the highest average temperatures in Bulgaria."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Минералните извори и сухият въздух го правят курорт за лечение на дихателни болести.",
+          "en": "Its mineral springs and dry air make it a resort for treating breathing illnesses."
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "В долината на коя река е Сандански?",
+              "en": "In which river valley is Sandanski?"
+            },
+            "options": [
+              {
+                "bg": "Струма",
+                "en": "The Struma"
+              },
+              {
+                "bg": "Марица",
+                "en": "The Maritsa"
+              },
+              {
+                "bg": "Янтра",
+                "en": "The Yantra"
+              },
+              {
+                "bg": "Камчия",
+                "en": "The Kamchia"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "На кого е кръстен град Сандански?",
+              "en": "Who is the town of Sandanski named after?"
+            },
+            "options": [
+              {
+                "bg": "На Яне Сандански",
+                "en": "Yane Sandanski"
+              },
+              {
+                "bg": "На Христо Ботев",
+                "en": "Hristo Botev"
+              },
+              {
+                "bg": "На цар Самуил",
+                "en": "Tsar Samuel"
+              },
+              {
+                "bg": "На Иван Вазов",
+                "en": "Ivan Vazov"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Какъв е климатът около Сандански?",
+              "en": "What is the climate around Sandanski?"
+            },
+            "options": [
+              {
+                "bg": "Преходно-средиземноморски",
+                "en": "Transitional Mediterranean"
+              },
+              {
+                "bg": "Високопланински",
+                "en": "High mountain"
+              },
+              {
+                "bg": "Арктически",
+                "en": "Arctic"
+              },
+              {
+                "bg": "Тропически",
+                "en": "Tropical"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Сандански е в долината на Струма.",
+              "en": "Sandanski is in the Struma valley."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – между Пирин и Огражден.",
+              "en": "Yes – between Pirin and Ograzhden."
+            }
+          },
+          {
+            "text": {
+              "bg": "Сандански е кръстен на хан Крум.",
+              "en": "Sandanski is named after Khan Krum."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – на революционера Яне Сандански.",
+              "en": "No – after the revolutionary Yane Sandanski."
+            }
+          },
+          {
+            "text": {
+              "bg": "Сандански е сред най-топлите места в България.",
+              "en": "Sandanski is among the warmest places in Bulgaria."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – заради средиземноморското влияние.",
+              "en": "Yes – thanks to the Mediterranean influence."
+            }
+          },
+          {
+            "text": {
+              "bg": "Сандански е ски курорт в Рила.",
+              "en": "Sandanski is a ski resort in Rila."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – балнеоложки курорт до Пирин.",
+              "en": "No – a spa resort near Pirin."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Какво лекуват най-често в Сандански?",
+            "en": "What is most often treated in Sandanski?"
+          },
+          "options": [
+            {
+              "bg": "Болести на дишането",
+              "en": "Breathing illnesses"
+            },
+            {
+              "bg": "Счупени кости",
+              "en": "Broken bones"
+            },
+            {
+              "bg": "Зъби",
+              "en": "Teeth"
+            },
+            {
+              "bg": "Очи",
+              "en": "Eyes"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Към коя съседна държава е близо Сандански?",
+            "en": "Which neighbouring country is Sandanski close to?"
+          },
+          "options": [
+            {
+              "bg": "Гърция",
+              "en": "Greece"
+            },
+            {
+              "bg": "Румъния",
+              "en": "Romania"
+            },
+            {
+              "bg": "Турция",
+              "en": "Turkey"
+            },
+            {
+              "bg": "Сърбия",
+              "en": "Serbia"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Коя планина е над Сандански?",
+            "en": "Which mountain range rises above Sandanski?"
+          },
+          "options": [
+            {
+              "bg": "Пирин",
+              "en": "Pirin"
+            },
+            {
+              "bg": "Витоша",
+              "en": "Vitosha"
+            },
+            {
+              "bg": "Сакар",
+              "en": "Sakar"
+            },
+            {
+              "bg": "Странджа",
+              "en": "Strandzha"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Община Сандански; климатични данни на НИМХ",
+    "Учебник по „Човекът и обществото“ / география за 4.–7. клас [страница — попълва учителят]"
+  ],
+  "review": null,
+  "draft": true
+}

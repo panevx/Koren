@@ -1,0 +1,469 @@
+{
+  "id": "map-09-gabrovo",
+  "subject": "culture",
+  "free": true,
+  "order": 129,
+  "place": "gabrovo",
+  "badge": {
+    "id": "gabrovo",
+    "icon": "city/gabrovo.webp"
+  },
+  "title": {
+    "bg": "Габрово – градът на хумора",
+    "en": "Gabrovo – the town of humour"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "В Габрово хората обичат да се смеят и да разказват смешки!",
+          "en": "In Gabrovo people love to laugh and tell jokes!",
+          "img": "city/gabrovo.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Там има и музей на смеха!",
+          "en": "There is even a museum of laughter there!"
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Кой град е известен с хумора си?",
+              "en": "Which town is famous for its humour?"
+            },
+            "options": [
+              {
+                "bg": "Габрово",
+                "en": "Gabrovo",
+                "img": "city/gabrovo.webp"
+              },
+              {
+                "bg": "Бургас",
+                "en": "Burgas",
+                "img": "city/burgas.webp"
+              },
+              {
+                "bg": "Русе",
+                "en": "Ruse",
+                "img": "city/ruse.webp"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Габрово е град в подножието на Стара планина. През него тече река Янтра.",
+          "en": "Gabrovo is a town at the foot of the Balkan Mountains. The Yantra river flows through it.",
+          "img": "city/gabrovo.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Габровци са известни с шегите за пестеливостта си – смеят се на себе си!",
+          "en": "The people of Gabrovo are known for jokes about being thrifty – they laugh at themselves!"
+        },
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "В Габрово има Дом на хумора и сатирата, а наблизо е музеят на открито „Етъра“ със стари занаяти.",
+          "en": "Gabrovo has a House of Humour and Satire, and nearby is the open-air museum “Etar” with old crafts."
+        }
+      ],
+      "game": {
+        "type": "map",
+        "target": "gabrovo",
+        "choices": [
+          "balchik",
+          "gabrovo",
+          "baba-vida",
+          "sandanski"
+        ],
+        "prompt": {
+          "bg": "Намери на картата: Габрово",
+          "en": "Find it on the map: Gabrovo"
+        },
+        "hint": {
+          "bg": "Габрово е в средата на България, в подножието на Стара планина.",
+          "en": "Gabrovo is in the middle of Bulgaria, at the foot of the Balkan Mountains."
+        },
+        "showIcons": false
+      },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "В Габрово има музей на хумора.",
+              "en": "Gabrovo has a museum of humour."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – Дом на хумора и сатирата.",
+              "en": "Yes – the House of Humour and Satire."
+            }
+          },
+          {
+            "text": {
+              "bg": "Габрово е на брега на морето.",
+              "en": "Gabrovo is on the coast."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – в подножието на Стара планина.",
+              "en": "No – at the foot of the Balkan Mountains."
+            }
+          },
+          {
+            "text": {
+              "bg": "През Габрово тече река Янтра.",
+              "en": "The Yantra flows through Gabrovo."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – по нея има много мостове.",
+              "en": "Yes – with many bridges across it."
+            }
+          },
+          {
+            "text": {
+              "bg": "В „Етъра“ се показват космически кораби.",
+              "en": "Spaceships are shown at Etar."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – там се показват стари занаяти.",
+              "en": "No – old crafts are shown there."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "С какво е известно Габрово?",
+            "en": "What is Gabrovo famous for?"
+          },
+          "options": [
+            {
+              "bg": "С хумора",
+              "en": "Its humour"
+            },
+            {
+              "bg": "С морето",
+              "en": "The sea"
+            },
+            {
+              "bg": "С пустинята",
+              "en": "A desert"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Каква река тече през Габрово?",
+            "en": "Which river flows through Gabrovo?"
+          },
+          "options": [
+            {
+              "bg": "Янтра",
+              "en": "The Yantra"
+            },
+            {
+              "bg": "Дунав",
+              "en": "The Danube"
+            },
+            {
+              "bg": "Струма",
+              "en": "The Struma"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какво можеш да видиш в „Етъра“?",
+            "en": "What can you see at Etar?"
+          },
+          "options": [
+            {
+              "bg": "Стари занаяти",
+              "en": "Old crafts"
+            },
+            {
+              "bg": "Ракети",
+              "en": "Rockets"
+            },
+            {
+              "bg": "Делфини",
+              "en": "Dolphins"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Габрово е в Централна Северна България, на река Янтра, в подножието на Стара планина.",
+          "en": "Gabrovo is in central northern Bulgaria, on the Yantra, at the foot of the Balkan Mountains.",
+          "img": "city/gabrovo.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "През Възраждането в Габрово е открито първото светско училище в България – Априловското (1835 г.).",
+          "en": "During the National Revival the first secular school in Bulgaria opened in Gabrovo – the Aprilov School (1835)."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Домът на хумора и сатирата е открит през 1972 г. и събира смешни творби от целия свят.",
+          "en": "The House of Humour and Satire opened in 1972 and collects funny works from all over the world."
+        },
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "„Етъра“ е музей на открито с работилници на стари занаяти, задвижвани от водата.",
+          "en": "“Etar” is an open-air museum with workshops of old crafts, driven by water."
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Кое първо училище е открито в Габрово през 1835 г.?",
+              "en": "Which first school opened in Gabrovo in 1835?"
+            },
+            "options": [
+              {
+                "bg": "Първото светско българско училище",
+                "en": "The first secular Bulgarian school"
+              },
+              {
+                "bg": "Първият университет",
+                "en": "The first university"
+              },
+              {
+                "bg": "Първото военно училище",
+                "en": "The first military academy"
+              },
+              {
+                "bg": "Първото музикално училище",
+                "en": "The first music school"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Кога е открит Домът на хумора и сатирата?",
+              "en": "When did the House of Humour and Satire open?"
+            },
+            "options": [
+              {
+                "bg": "1972",
+                "en": "1972"
+              },
+              {
+                "bg": "1878",
+                "en": "1878"
+              },
+              {
+                "bg": "1835",
+                "en": "1835"
+              },
+              {
+                "bg": "2001",
+                "en": "2001"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Какво задвижва машините в „Етъра“?",
+              "en": "What drives the machines at Etar?"
+            },
+            "options": [
+              {
+                "bg": "Водата",
+                "en": "Water"
+              },
+              {
+                "bg": "Вятърът",
+                "en": "Wind"
+              },
+              {
+                "bg": "Електричеството от слънцето",
+                "en": "Solar power"
+              },
+              {
+                "bg": "Пара от въглища",
+                "en": "Coal steam"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Априловското училище е открито в Габрово.",
+              "en": "The Aprilov School opened in Gabrovo."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – през 1835 г.",
+              "en": "Yes – in 1835."
+            }
+          },
+          {
+            "text": {
+              "bg": "Габровските шеги са подигравка с други градове.",
+              "en": "Gabrovo jokes make fun of other towns."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – габровци се смеят на себе си.",
+              "en": "No – the people of Gabrovo laugh at themselves."
+            }
+          },
+          {
+            "text": {
+              "bg": "„Етъра“ е музей на открито.",
+              "en": "Etar is an open-air museum."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – с работещи работилници.",
+              "en": "Yes – with working workshops."
+            }
+          },
+          {
+            "text": {
+              "bg": "Габрово е в Добруджа.",
+              "en": "Gabrovo is in Dobruja."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – в подножието на Централна Стара планина.",
+              "en": "No – at the foot of the central Balkan Mountains."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "През коя епоха е открито Априловското училище?",
+            "en": "In which period did the Aprilov School open?"
+          },
+          "options": [
+            {
+              "bg": "Възраждането",
+              "en": "The National Revival"
+            },
+            {
+              "bg": "Първото българско царство",
+              "en": "The First Bulgarian Empire"
+            },
+            {
+              "bg": "Римската епоха",
+              "en": "Roman times"
+            },
+            {
+              "bg": "XXI век",
+              "en": "The 21st century"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Каква е темата на габровските шеги?",
+            "en": "What are Gabrovo jokes usually about?"
+          },
+          "options": [
+            {
+              "bg": "Пестеливостта",
+              "en": "Thriftiness"
+            },
+            {
+              "bg": "Морето",
+              "en": "The sea"
+            },
+            {
+              "bg": "Космоса",
+              "en": "Space"
+            },
+            {
+              "bg": "Спорта",
+              "en": "Sport"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "В подножието на коя планина е Габрово?",
+            "en": "At the foot of which mountains is Gabrovo?"
+          },
+          "options": [
+            {
+              "bg": "Стара планина",
+              "en": "The Balkan Mountains"
+            },
+            {
+              "bg": "Рила",
+              "en": "Rila"
+            },
+            {
+              "bg": "Пирин",
+              "en": "Pirin"
+            },
+            {
+              "bg": "Родопите",
+              "en": "The Rhodopes"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Дом на хумора и сатирата – Габрово; АЕМ „Етър“; НГ „Акад. Иван Гюзелев“ (Априловска гимназия)",
+    "Учебник по „Човекът и обществото“ / география за 4.–7. клас [страница — попълва учителят]"
+  ],
+  "review": null,
+  "draft": true
+}

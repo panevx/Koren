@@ -1,0 +1,478 @@
+{
+  "id": "map-07-sapareva-banya",
+  "subject": "geography",
+  "free": true,
+  "order": 127,
+  "place": "sapareva-banya",
+  "unlock": {
+    "after": [
+      "map-06-devils-throat"
+    ]
+  },
+  "badge": {
+    "id": "sapareva-geyser",
+    "icon": "geo/rila.webp"
+  },
+  "title": {
+    "bg": "Сапарева баня – горещият извор",
+    "en": "Sapareva Banya – the hot spring"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "В Сапарева баня водата излиза от земята толкова гореща, че пуши!",
+          "en": "In Sapareva Banya the water comes out of the ground so hot that it steams!",
+          "img": "geo/rila.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Внимание – тази вода е много гореща. Не я пипаме!",
+          "en": "Careful – this water is very hot. We don’t touch it!"
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Каква е водата в Сапарева баня?",
+              "en": "What is the water in Sapareva Banya like?"
+            },
+            "options": [
+              {
+                "bg": "Много гореща",
+                "en": "Very hot",
+                "img": "places/mineral-hisarya.webp"
+              },
+              {
+                "bg": "Ледена",
+                "en": "Icy",
+                "img": "geo/musala.webp"
+              },
+              {
+                "bg": "Солена морска",
+                "en": "Salty sea water",
+                "img": "geo/coast.webp"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Сапарева баня е малък град в подножието на Рила.",
+          "en": "Sapareva Banya is a small town at the foot of Rila.",
+          "img": "geo/rila.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Тук е най-горещият минерален извор в България – водата е около 103 °C!",
+          "en": "Here is the hottest mineral spring in Bulgaria – the water is about 103 °C!"
+        },
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "Изворът бълбука като малък гейзер и над него се издига пара.",
+          "en": "The spring bubbles like a small geyser and steam rises above it."
+        }
+      ],
+      "game": {
+        "type": "map",
+        "target": "sapareva-banya",
+        "choices": [
+          "balchik",
+          "sapareva-banya",
+          "srebarna",
+          "nessebar"
+        ],
+        "prompt": {
+          "bg": "Намери на картата: Сапарева баня",
+          "en": "Find it on the map: Sapareva Banya"
+        },
+        "hint": {
+          "bg": "Сапарева баня е в Югозападна България, в подножието на Рила.",
+          "en": "Sapareva Banya is in south-western Bulgaria, at the foot of Rila."
+        },
+        "showIcons": false
+      },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Водата в Сапарева баня е по-гореща от кипяща вода.",
+              "en": "The water in Sapareva Banya is hotter than boiling water."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – около 103 °C при извора.",
+              "en": "Yes – about 103 °C at the spring."
+            }
+          },
+          {
+            "text": {
+              "bg": "Сапарева баня е на брега на морето.",
+              "en": "Sapareva Banya is on the coast."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – в подножието на Рила.",
+              "en": "No – at the foot of Rila."
+            }
+          },
+          {
+            "text": {
+              "bg": "Над извора се вижда пара.",
+              "en": "Steam can be seen above the spring."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – водата е много гореща.",
+              "en": "Yes – the water is very hot."
+            }
+          },
+          {
+            "text": {
+              "bg": "Можеш да пиеш водата направо от извора.",
+              "en": "You can drink the water straight from the spring."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – ще се изгориш! Тя е около 103 °C.",
+              "en": "No – you would burn yourself! It is about 103 °C."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Колко гореща е водата при извора?",
+            "en": "How hot is the water at the spring?"
+          },
+          "options": [
+            {
+              "bg": "Около 103 °C",
+              "en": "About 103 °C"
+            },
+            {
+              "bg": "Около 10 °C",
+              "en": "About 10 °C"
+            },
+            {
+              "bg": "Около 0 °C",
+              "en": "About 0 °C"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "В подножието на коя планина е Сапарева баня?",
+            "en": "At the foot of which mountains is Sapareva Banya?"
+          },
+          "options": [
+            {
+              "bg": "Рила",
+              "en": "Rila"
+            },
+            {
+              "bg": "Странджа",
+              "en": "Strandzha"
+            },
+            {
+              "bg": "Стара планина",
+              "en": "The Balkan Mountains"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "На какво прилича изворът?",
+            "en": "What does the spring look like?"
+          },
+          "options": [
+            {
+              "bg": "На малък гейзер",
+              "en": "A small geyser"
+            },
+            {
+              "bg": "На замръзнало езеро",
+              "en": "A frozen lake"
+            },
+            {
+              "bg": "На пясъчна дюна",
+              "en": "A sand dune"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Сапарева баня е в подножието на Рила, в Кюстендилска област.",
+          "en": "Sapareva Banya lies at the foot of Rila, in Kyustendil Province.",
+          "img": "geo/rila.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Тук блика най-горещата минерална вода в България – около 103 °C.",
+          "en": "The hottest mineral water in Bulgaria springs here – about 103 °C."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Гейзерът е пробит при сондаж преди десетилетия и оттогава изхвърля гореща вода и пара.",
+          "en": "The geyser was opened by drilling decades ago and has thrown up hot water and steam ever since."
+        },
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "Тук е имало селище още в римско време – римляните са ценели горещите извори.",
+          "en": "There was a settlement here already in Roman times – the Romans valued the hot springs."
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Защо водата в Сапарева баня е толкова гореща?",
+              "en": "Why is the water in Sapareva Banya so hot?"
+            },
+            "options": [
+              {
+                "bg": "Идва от голяма дълбочина, където скалите са горещи",
+                "en": "It comes from deep underground, where the rocks are hot"
+              },
+              {
+                "bg": "Слънцето я нагрява",
+                "en": "The sun heats it"
+              },
+              {
+                "bg": "Хората я варят",
+                "en": "People boil it"
+              },
+              {
+                "bg": "Тече от вулкан на повърхността",
+                "en": "It flows from a volcano on the surface"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "В коя област е Сапарева баня?",
+              "en": "In which province is Sapareva Banya?"
+            },
+            "options": [
+              {
+                "bg": "Кюстендил",
+                "en": "Kyustendil"
+              },
+              {
+                "bg": "Варна",
+                "en": "Varna"
+              },
+              {
+                "bg": "Видин",
+                "en": "Vidin"
+              },
+              {
+                "bg": "Хасково",
+                "en": "Haskovo"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "При каква температура кипи водата на морското равнище?",
+              "en": "At what temperature does water boil at sea level?"
+            },
+            "options": [
+              {
+                "bg": "100 °C",
+                "en": "100 °C"
+              },
+              {
+                "bg": "50 °C",
+                "en": "50 °C"
+              },
+              {
+                "bg": "103 °C",
+                "en": "103 °C"
+              },
+              {
+                "bg": "0 °C",
+                "en": "0 °C"
+              }
+            ],
+            "answer": 0,
+            "hint": {
+              "bg": "Изворът в Сапарева баня е около 103 °C – дори малко над това.",
+              "en": "The Sapareva Banya spring is about 103 °C – even a little above that."
+            }
+          }
+        ]
+      },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Сапарева баня има най-горещия извор в България.",
+              "en": "Sapareva Banya has the hottest spring in Bulgaria."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – около 103 °C.",
+              "en": "Yes – about 103 °C."
+            }
+          },
+          {
+            "text": {
+              "bg": "Гейзерът в Сапарева баня е естествен вулкан.",
+              "en": "The geyser in Sapareva Banya is a natural volcano."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – той е от сондаж, а водата е загрята дълбоко в земята.",
+              "en": "No – it comes from a borehole; the water is heated deep underground."
+            }
+          },
+          {
+            "text": {
+              "bg": "Селище тук е имало още в римско време.",
+              "en": "There was a settlement here in Roman times."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – заради горещите извори.",
+              "en": "Yes – because of the hot springs."
+            }
+          },
+          {
+            "text": {
+              "bg": "Сапарева баня е в Пирин.",
+              "en": "Sapareva Banya is in Pirin."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – в подножието на Рила.",
+              "en": "No – at the foot of Rila."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Какво излиза от гейзера освен вода?",
+            "en": "What comes out of the geyser besides water?"
+          },
+          "options": [
+            {
+              "bg": "Пара",
+              "en": "Steam"
+            },
+            {
+              "bg": "Пясък",
+              "en": "Sand"
+            },
+            {
+              "bg": "Лед",
+              "en": "Ice"
+            },
+            {
+              "bg": "Нефт",
+              "en": "Oil"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Коя планина е до Сапарева баня?",
+            "en": "Which mountain range is next to Sapareva Banya?"
+          },
+          "options": [
+            {
+              "bg": "Рила",
+              "en": "Rila"
+            },
+            {
+              "bg": "Пирин",
+              "en": "Pirin"
+            },
+            {
+              "bg": "Родопите",
+              "en": "The Rhodopes"
+            },
+            {
+              "bg": "Странджа",
+              "en": "Strandzha"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кой е ценял горещите извори още в древността?",
+            "en": "Who valued the hot springs in ancient times?"
+          },
+          "options": [
+            {
+              "bg": "Римляните",
+              "en": "The Romans"
+            },
+            {
+              "bg": "Викингите",
+              "en": "The Vikings"
+            },
+            {
+              "bg": "Ацтеките",
+              "en": "The Aztecs"
+            },
+            {
+              "bg": "Монголите",
+              "en": "The Mongols"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Община Сапарева баня – минерален извор (гейзер), ~103 °C",
+    "Учебник по „Човекът и обществото“ / география за 4.–7. клас [страница — попълва учителят]"
+  ],
+  "review": null,
+  "draft": true
+}

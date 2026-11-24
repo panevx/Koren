@@ -156,7 +156,7 @@ export function Timeline() {
               </li>
             )}
           </ul>
-          <p className="text-center text-xs font-semibold text-muted">
+          <p className="text-center text-xs font-semibold text-muted hyphens-manual">
             {t('timeline.schematic')}
             {TIMELINE.draft && ` ${t('missions.draft')}.`}
           </p>

@@ -1,0 +1,469 @@
+{
+  "id": "map-05-devetashka",
+  "subject": "geography",
+  "free": true,
+  "order": 125,
+  "place": "devetashka",
+  "badge": {
+    "id": "devetashka-cave",
+    "icon": "landmarks/devetashka-cave.webp"
+  },
+  "title": {
+    "bg": "Деветашката пещера",
+    "en": "Devetashka Cave"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Влизаме в огромна пещера! Отгоре има дупки и влиза светлина.",
+          "en": "We are going into a huge cave! There are holes above and light comes in.",
+          "img": "landmarks/devetashka-cave.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "nature",
+          "bg": "Тук живеят много прилепи. Те спят през деня.",
+          "en": "Lots of bats live here. They sleep during the day."
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Коя е Деветашката пещера?",
+              "en": "Which one is Devetashka Cave?"
+            },
+            "options": [
+              {
+                "bg": "Голямата пещера",
+                "en": "The big cave",
+                "img": "landmarks/devetashka-cave.webp"
+              },
+              {
+                "bg": "Крепостта",
+                "en": "The fortress",
+                "img": "landmarks/baba-vida.webp"
+              },
+              {
+                "bg": "Конникът",
+                "en": "The rider",
+                "img": "landmarks/madara-rider.webp"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Деветашката пещера е близо до град Ловеч.",
+          "en": "Devetashka Cave is near the town of Lovech.",
+          "img": "landmarks/devetashka-cave.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "explorer",
+          "bg": "Входът ѝ е огромен, а в тавана има отвори – „прозорци“, през които влиза светлина.",
+          "en": "Its entrance is huge, and there are openings in the ceiling – “windows” that let the light in."
+        },
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Хора са живели в пещерата още в праисторията, преди десетки хиляди години.",
+          "en": "People lived in the cave in prehistoric times, tens of thousands of years ago."
+        }
+      ],
+      "game": {
+        "type": "map",
+        "target": "devetashka",
+        "choices": [
+          "balchik",
+          "devetashka",
+          "nessebar",
+          "sandanski"
+        ],
+        "prompt": {
+          "bg": "Намери на картата: Деветашката пещера",
+          "en": "Find it on the map: Devetashka Cave"
+        },
+        "hint": {
+          "bg": "Пещерата е в Северна България, близо до Ловеч.",
+          "en": "The cave is in northern Bulgaria, near Lovech."
+        },
+        "showIcons": false
+      },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "В Деветашката пещера живеят прилепи.",
+              "en": "Bats live in Devetashka Cave."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – тя е техен важен дом.",
+              "en": "Yes – it is an important home for them."
+            }
+          },
+          {
+            "text": {
+              "bg": "Пещерата е на дъното на морето.",
+              "en": "The cave is at the bottom of the sea."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – близо до Ловеч, на сушата.",
+              "en": "No – near Lovech, on land."
+            }
+          },
+          {
+            "text": {
+              "bg": "В тавана на пещерата има отвори.",
+              "en": "There are openings in the ceiling of the cave."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – през тях влиза светлина.",
+              "en": "Yes – light comes in through them."
+            }
+          },
+          {
+            "text": {
+              "bg": "В пещерата никога не са живели хора.",
+              "en": "People have never lived in the cave."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – хора са живели тук още в праисторията.",
+              "en": "No – people lived here in prehistoric times."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Близо до кой град е пещерата?",
+            "en": "Which town is the cave near?"
+          },
+          "options": [
+            {
+              "bg": "Ловеч",
+              "en": "Lovech"
+            },
+            {
+              "bg": "Бургас",
+              "en": "Burgas"
+            },
+            {
+              "bg": "Смолян",
+              "en": "Smolyan"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какви животни живеят в пещерата?",
+            "en": "Which animals live in the cave?"
+          },
+          "options": [
+            {
+              "bg": "Прилепи",
+              "en": "Bats"
+            },
+            {
+              "bg": "Пингвини",
+              "en": "Penguins"
+            },
+            {
+              "bg": "Делфини",
+              "en": "Dolphins"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Откъде влиза светлина в пещерата?",
+            "en": "Where does light come into the cave?"
+          },
+          "options": [
+            {
+              "bg": "От отворите в тавана",
+              "en": "Through the openings in the ceiling"
+            },
+            {
+              "bg": "От лампи в пода",
+              "en": "From lamps in the floor"
+            },
+            {
+              "bg": "Изобщо не влиза",
+              "en": "It never does"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Деветашката пещера е една от най-големите пещери в България – входът ѝ е висок около 35 м.",
+          "en": "Devetashka is one of the largest caves in Bulgaria – its entrance is about 35 m high.",
+          "img": "landmarks/devetashka-cave.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Археолозите са открили следи от хора, живели тук преди около 70 000 години.",
+          "en": "Archaeologists have found traces of people who lived here about 70,000 years ago."
+        },
+        {
+          "hero": "koren",
+          "pose": "nature",
+          "bg": "Пещерата е важно място за зимуване на хиляди прилепи и е защитена природна забележителност.",
+          "en": "The cave is an important winter home for thousands of bats and is a protected natural landmark."
+        },
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "През пещерата тече река и има малки водопади.",
+          "en": "A river flows through the cave, with small waterfalls."
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Колко отдавна приблизително са живели хора в Деветашката пещера?",
+              "en": "Roughly how long ago did people live in Devetashka Cave?"
+            },
+            "options": [
+              {
+                "bg": "Преди около 70 000 години",
+                "en": "About 70,000 years ago"
+              },
+              {
+                "bg": "Преди около 700 години",
+                "en": "About 700 years ago"
+              },
+              {
+                "bg": "Преди около 7 години",
+                "en": "About 7 years ago"
+              },
+              {
+                "bg": "Преди 7 милиона години",
+                "en": "7 million years ago"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Защо пещерата е защитена?",
+              "en": "Why is the cave protected?"
+            },
+            "options": [
+              {
+                "bg": "Защото там зимуват хиляди прилепи",
+                "en": "Thousands of bats spend the winter there"
+              },
+              {
+                "bg": "Защото там има злато",
+                "en": "There is gold in it"
+              },
+              {
+                "bg": "Защото е частен дом",
+                "en": "It is a private home"
+              },
+              {
+                "bg": "Защото е военна база",
+                "en": "It is a military base"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Какво образува „прозорците“ в тавана?",
+              "en": "What forms the “windows” in the ceiling?"
+            },
+            "options": [
+              {
+                "bg": "Отвори, издълбани от водата в скалата",
+                "en": "Openings carved in the rock by water"
+              },
+              {
+                "bg": "Прозорци, поставени от хора",
+                "en": "Windows put in by people"
+              },
+              {
+                "bg": "Удари на мълнии",
+                "en": "Lightning strikes"
+              },
+              {
+                "bg": "Ровене на мечки",
+                "en": "Bears digging"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Пещерите в България се образуват най-често във варовик.",
+              "en": "Caves in Bulgaria most often form in limestone."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – водата бавно разтваря варовика.",
+              "en": "Yes – water slowly dissolves the limestone."
+            }
+          },
+          {
+            "text": {
+              "bg": "В пещерата е забранено да се влиза по всяко време.",
+              "en": "Entering the cave is forbidden at all times."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – има часове за посещения, но прилепите трябва да се пазят.",
+              "en": "No – there are visiting hours, but the bats must be protected."
+            }
+          },
+          {
+            "text": {
+              "bg": "Входът на пещерата е висок колкото многоетажна сграда.",
+              "en": "The cave entrance is as tall as a tall building."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – около 35 метра.",
+              "en": "Yes – about 35 metres."
+            }
+          },
+          {
+            "text": {
+              "bg": "Прилепите в пещерата са опасни хищници за хората.",
+              "en": "The bats in the cave are dangerous predators for people."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – те ядат насекоми и пазят природата.",
+              "en": "No – they eat insects and help nature."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "В каква скала се образуват повечето пещери у нас?",
+            "en": "In which rock do most caves in Bulgaria form?"
+          },
+          "options": [
+            {
+              "bg": "Варовик",
+              "en": "Limestone"
+            },
+            {
+              "bg": "Гранит",
+              "en": "Granite"
+            },
+            {
+              "bg": "Мрамор от Рила",
+              "en": "Rila marble"
+            },
+            {
+              "bg": "Вулканичен базалт",
+              "en": "Volcanic basalt"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какво прави водата в пещерата?",
+            "en": "What does the water in the cave form?"
+          },
+          "options": [
+            {
+              "bg": "Река и малки водопади",
+              "en": "A river and small waterfalls"
+            },
+            {
+              "bg": "Солено езеро",
+              "en": "A salt lake"
+            },
+            {
+              "bg": "Гейзер",
+              "en": "A geyser"
+            },
+            {
+              "bg": "Ледник",
+              "en": "A glacier"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Защо прилепите са полезни?",
+            "en": "Why are bats useful?"
+          },
+          "options": [
+            {
+              "bg": "Ядат много насекоми",
+              "en": "They eat lots of insects"
+            },
+            {
+              "bg": "Пазят пещерата от крадци",
+              "en": "They guard the cave from thieves"
+            },
+            {
+              "bg": "Носят светлина",
+              "en": "They bring light"
+            },
+            {
+              "bg": "Строят пещерата",
+              "en": "They build the cave"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Регионален исторически музей – Ловеч; Защитена местност „Деветашка пещера“",
+    "Учебник по „Човекът и обществото“ / география за 4.–7. клас [страница — попълва учителят]"
+  ],
+  "review": null,
+  "draft": true
+}

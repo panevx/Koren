@@ -1,0 +1,473 @@
+{
+  "id": "map-10-balchik",
+  "subject": "geography",
+  "free": true,
+  "order": 130,
+  "place": "balchik",
+  "badge": {
+    "id": "balchik",
+    "icon": "nature/black-sea.webp"
+  },
+  "title": {
+    "bg": "Балчик – белият град",
+    "en": "Balchik – the white town"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Балчик е град на морето с бели скали.",
+          "en": "Balchik is a town by the sea with white cliffs.",
+          "img": "nature/black-sea.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "nature",
+          "bg": "Там има голяма градина с много цветя и кактуси!",
+          "en": "There is a big garden with lots of flowers and cacti!"
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "До какво е Балчик?",
+              "en": "What is Balchik next to?"
+            },
+            "options": [
+              {
+                "bg": "Морето",
+                "en": "The sea",
+                "img": "nature/black-sea.webp"
+              },
+              {
+                "bg": "Висока планина",
+                "en": "High mountains",
+                "img": "geo/musala.webp"
+              },
+              {
+                "bg": "Пещера",
+                "en": "A cave",
+                "img": "landmarks/devetashka-cave.webp"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Балчик е на северното Черноморие. Наричат го „Белия град“ заради белите скали.",
+          "en": "Balchik is on the northern Black Sea coast. It is called “the White Town” because of its white cliffs.",
+          "img": "nature/black-sea.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "nature",
+          "bg": "На брега има дворец с голяма ботаническа градина – с хиляди растения и много кактуси.",
+          "en": "On the shore there is a palace with a big botanical garden – thousands of plants and many cacti."
+        },
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "Дворецът е построен за румънската кралица Мария, когато Южна Добруджа е била част от Румъния.",
+          "en": "The palace was built for Queen Marie of Romania, when Southern Dobruja was part of Romania."
+        }
+      ],
+      "game": {
+        "type": "map",
+        "target": "balchik",
+        "choices": [
+          "belogradchik",
+          "balchik",
+          "sandanski",
+          "sapareva-banya"
+        ],
+        "prompt": {
+          "bg": "Намери на картата: Балчик",
+          "en": "Find it on the map: Balchik"
+        },
+        "hint": {
+          "bg": "Балчик е на брега на Черно море, северно от Варна.",
+          "en": "Balchik is on the Black Sea coast, north of Varna."
+        },
+        "showIcons": false
+      },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Балчик е на брега на Черно море.",
+              "en": "Balchik is on the Black Sea coast."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – северно от Варна.",
+              "en": "Yes – north of Varna."
+            }
+          },
+          {
+            "text": {
+              "bg": "Наричат Балчик „Черния град“.",
+              "en": "Balchik is called “the Black Town”."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – „Белия град“, заради белите скали.",
+              "en": "No – “the White Town”, for its white cliffs."
+            }
+          },
+          {
+            "text": {
+              "bg": "В Балчик има ботаническа градина.",
+              "en": "Balchik has a botanical garden."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – с голяма колекция от кактуси.",
+              "en": "Yes – with a big cactus collection."
+            }
+          },
+          {
+            "text": {
+              "bg": "Дворецът в Балчик е построен за руски цар.",
+              "en": "The palace in Balchik was built for a Russian tsar."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – за румънската кралица Мария.",
+              "en": "No – for Queen Marie of Romania."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Защо Балчик е „Белият град“?",
+            "en": "Why is Balchik “the White Town”?"
+          },
+          "options": [
+            {
+              "bg": "Заради белите скали",
+              "en": "Because of the white cliffs"
+            },
+            {
+              "bg": "Заради снега",
+              "en": "Because of snow"
+            },
+            {
+              "bg": "Заради белите котки",
+              "en": "Because of white cats"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какви растения са известни в градината?",
+            "en": "Which plants is the garden famous for?"
+          },
+          "options": [
+            {
+              "bg": "Кактусите",
+              "en": "Cacti"
+            },
+            {
+              "bg": "Палмите в пустинята",
+              "en": "Desert palms"
+            },
+            {
+              "bg": "Морските водорасли",
+              "en": "Seaweed"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Северно от кой град е Балчик?",
+            "en": "North of which city is Balchik?"
+          },
+          "options": [
+            {
+              "bg": "Варна",
+              "en": "Varna"
+            },
+            {
+              "bg": "Бургас",
+              "en": "Burgas"
+            },
+            {
+              "bg": "Пловдив",
+              "en": "Plovdiv"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Балчик е на брега на Добруджа, на северното Черноморие.",
+          "en": "Balchik lies on the coast of Dobruja, on the northern Black Sea shore.",
+          "img": "nature/black-sea.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "reading",
+          "bg": "Между 1913 и 1940 г. Южна Добруджа е част от Румъния. Тогава край морето е построен дворецът „Тихото гнездо“ за кралица Мария.",
+          "en": "From 1913 to 1940 Southern Dobruja was part of Romania. Then the palace “Quiet Nest” was built by the sea for Queen Marie."
+        },
+        {
+          "hero": "raya",
+          "pose": "nature",
+          "bg": "Днес там е Ботаническата градина на Софийския университет – с една от най-големите колекции от кактуси в Европа.",
+          "en": "Today it houses the Sofia University Botanical Garden – with one of the largest cactus collections in Europe."
+        },
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "С Крайовската спогодба от 1940 г. Южна Добруджа отново става част от България.",
+          "en": "With the Treaty of Craiova in 1940 Southern Dobruja became part of Bulgaria again."
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Как се казва дворецът в Балчик?",
+              "en": "What is the palace in Balchik called?"
+            },
+            "options": [
+              {
+                "bg": "„Тихото гнездо“",
+                "en": "“Quiet Nest”"
+              },
+              {
+                "bg": "„Евксиноград“",
+                "en": "“Euxinograd”"
+              },
+              {
+                "bg": "„Врана“",
+                "en": "“Vrana”"
+              },
+              {
+                "bg": "„Царска Бистрица“",
+                "en": "“Tsarska Bistritsa”"
+              }
+            ],
+            "answer": 0,
+            "hint": {
+              "bg": "Евксиноград е край Варна, Врана – край София.",
+              "en": "Euxinograd is near Varna, Vrana near Sofia."
+            }
+          },
+          {
+            "q": {
+              "bg": "С кой договор Южна Добруджа се връща в България през 1940 г.?",
+              "en": "Which treaty returned Southern Dobruja to Bulgaria in 1940?"
+            },
+            "options": [
+              {
+                "bg": "Крайовската спогодба",
+                "en": "The Treaty of Craiova"
+              },
+              {
+                "bg": "Берлинският договор",
+                "en": "The Treaty of Berlin"
+              },
+              {
+                "bg": "Ньойският договор",
+                "en": "The Treaty of Neuilly"
+              },
+              {
+                "bg": "Санстефанският договор",
+                "en": "The Treaty of San Stefano"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Чия е днес ботаническата градина в Балчик?",
+              "en": "Who runs the Balchik botanical garden today?"
+            },
+            "options": [
+              {
+                "bg": "На Софийския университет",
+                "en": "Sofia University"
+              },
+              {
+                "bg": "На кралското семейство на Румъния",
+                "en": "The Romanian royal family"
+              },
+              {
+                "bg": "На община Варна",
+                "en": "Varna municipality"
+              },
+              {
+                "bg": "На частна фирма от чужбина",
+                "en": "A foreign private company"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Южна Добруджа е била част от Румъния между 1913 и 1940 г.",
+              "en": "Southern Dobruja was part of Romania from 1913 to 1940."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – след Междусъюзническата война.",
+              "en": "Yes – after the Second Balkan War."
+            }
+          },
+          {
+            "text": {
+              "bg": "Дворецът е построен за българската царица Йоанна.",
+              "en": "The palace was built for the Bulgarian Tsaritsa Giovanna."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – за румънската кралица Мария.",
+              "en": "No – for Queen Marie of Romania."
+            }
+          },
+          {
+            "text": {
+              "bg": "В градината има една от най-големите колекции от кактуси в Европа.",
+              "en": "The garden has one of the largest cactus collections in Europe."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – с хиляди растения.",
+              "en": "Yes – with thousands of plants."
+            }
+          },
+          {
+            "text": {
+              "bg": "Балчик е на южното Черноморие.",
+              "en": "Balchik is on the southern Black Sea coast."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – на северното, в Добруджа.",
+              "en": "No – on the northern coast, in Dobruja."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "В коя историческа област е Балчик?",
+            "en": "In which historical region is Balchik?"
+          },
+          "options": [
+            {
+              "bg": "Добруджа",
+              "en": "Dobruja"
+            },
+            {
+              "bg": "Тракия",
+              "en": "Thrace"
+            },
+            {
+              "bg": "Македония",
+              "en": "Macedonia"
+            },
+            {
+              "bg": "Мизия",
+              "en": "Moesia"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "През коя година Южна Добруджа се връща в България?",
+            "en": "In which year did Southern Dobruja return to Bulgaria?"
+          },
+          "options": [
+            {
+              "bg": "1940",
+              "en": "1940"
+            },
+            {
+              "bg": "1878",
+              "en": "1878"
+            },
+            {
+              "bg": "1913",
+              "en": "1913"
+            },
+            {
+              "bg": "1946",
+              "en": "1946"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "За коя кралица е построен дворецът?",
+            "en": "For which queen was the palace built?"
+          },
+          "options": [
+            {
+              "bg": "Мария Румънска",
+              "en": "Marie of Romania"
+            },
+            {
+              "bg": "Виктория Британска",
+              "en": "Victoria of Britain"
+            },
+            {
+              "bg": "Елисавета I",
+              "en": "Elizabeth I"
+            },
+            {
+              "bg": "Мария-Антоанета",
+              "en": "Marie Antoinette"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Ботаническа градина – Балчик (Софийски университет); Архитектурно-парков комплекс „Двореца“",
+    "Учебник по „Човекът и обществото“ / география за 4.–7. клас [страница — попълва учителят]"
+  ],
+  "review": null,
+  "draft": true
+}

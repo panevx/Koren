@@ -143,7 +143,7 @@ function ModeWorld({ level, selected, onPick }: { level: Level; selected: boolea
         <span className="text-heading" style={fitWords(t(`level.${level}.name`), 'min(1.25rem, 5.4vw)', 0.7)}>
           {t(`level.${level}.name`)}
         </span>
-        <span className={`text-meta mt-0.5 text-muted ${selected ? '' : 'hidden wide:block'}`}>{t(`level.${level}.about`)}</span>
+        <span className={`text-meta mt-0.5 text-muted hyphens-manual ${selected ? '' : 'hidden wide:block'}`} data-fit-label>{t(`level.${level}.about`)}</span>
       </span>
     </button>
   )

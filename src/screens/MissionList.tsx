@@ -2,7 +2,7 @@ import { Link, useParams } from 'react-router'
 import { BadgeArt } from '../components/BadgeArt'
 import { img } from '../components/Brand'
 import { Meter } from '../components/ds'
-import { fitWords } from '../components/fit'
+import { fitWords, hyphenSafe } from '../components/fit'
 import { ContentState, DraftChip } from '../components/ContentState'
 import { Icon } from '../components/Icon'
 import { SceneBackdrop } from '../components/Scene'
@@ -225,8 +225,8 @@ function Compact({ mission, scene, fresh, lazy, draftChip }: { mission: Mission;
       </span>
       {fresh && <span className="btn-satin tint-coral absolute top-1.5 left-1.5 size-3.5 rounded-full" aria-hidden="true" />}
       <span className="flex min-w-0 flex-1 flex-col gap-1 [container-type:inline-size]">
-        <span className="text-row" style={fitWords(title, 'min(1.0625rem, 4.5vw)', 0.72)} data-fit-label>
-          {title}
+        <span className="text-row" style={fitWords(title, 'min(1.0625rem, 4.5vw)', 0.72, true)} data-fit-label>
+          <HyphenSafe text={title} />
         </span>
         {fresh && <span className="sr-only">{t('unlock.new')}</span>}
         <span className="flex flex-wrap items-center gap-1.5">
@@ -258,8 +258,8 @@ function Medal({ mission, lazy, draftChip }: { mission: Mission; lazy: boolean; 
           <Icon name="check" width="0.95em" height="0.95em" />
         </span>
       </span>
-      <span className="text-row" style={fitWords(title, 'min(1rem, 4.3vw)', 0.64)}>
-        {title}
+      <span className="text-row" style={fitWords(title, 'min(1rem, 4.3vw)', 0.64, true)} data-fit-label>
+        <HyphenSafe text={title} />
       </span>
       <Flags mission={mission} draftChip={draftChip} />
       <span className="text-meta mt-auto flex items-center gap-1 text-green-dark">
@@ -288,5 +288,14 @@ function Locked({ mission, draftChip }: { mission: Mission; draftChip: boolean }
         </span>
       </span>
     </Link>
+  )
+}
+
+/** A title whose hyphenated words („Slavo-Bulgarian“, „Най-високият“) never break at the hyphen. */
+function HyphenSafe({ text }: { text: string }) {
+  return (
+    <>
+      {hyphenSafe(text).map((part, i) => (typeof part === 'string' ? part : <span key={i} className="whitespace-nowrap">{part.nowrap}</span>))}
+    </>
   )
 }

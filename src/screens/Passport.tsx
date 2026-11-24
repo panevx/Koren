@@ -169,7 +169,7 @@ export function Passport() {
               <h2 id="to-find" className="text-headline px-1">
                 {t('passport.toFind')}
               </h2>
-              <ul className="grid grid-cols-3 gap-x-2 gap-y-4 wide:grid-cols-[repeat(auto-fill,minmax(min(7rem,100%),1fr))]">
+              <ul className="grid grid-cols-2 gap-x-2 gap-y-4 min-[400px]:grid-cols-3 wide:grid-cols-[repeat(auto-fill,minmax(min(7rem,100%),1fr))]">
                 {missing.map((mission, i) => (
                   <BadgeItem key={mission.id} mission={mission} has={false} i={i} />
                 ))}

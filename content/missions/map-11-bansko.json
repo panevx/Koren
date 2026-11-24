@@ -1,0 +1,476 @@
+{
+  "id": "map-11-bansko",
+  "subject": "geography",
+  "free": true,
+  "order": 131,
+  "place": "bansko",
+  "unlock": {
+    "after": [
+      "map-10-balchik"
+    ]
+  },
+  "badge": {
+    "id": "bansko",
+    "icon": "city/bansko.webp"
+  },
+  "title": {
+    "bg": "Банско – под върховете на Пирин",
+    "en": "Bansko – below the peaks of Pirin"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "winter",
+          "bg": "В Банско зимата пада много сняг. Хората карат ски!",
+          "en": "In Bansko lots of snow falls in winter. People go skiing!",
+          "img": "places/ski-bansko.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Градът е в подножието на планината Пирин.",
+          "en": "The town is at the foot of the Pirin mountains.",
+          "img": "geo/pirin.webp"
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Какво правят хората в Банско през зимата?",
+              "en": "What do people do in Bansko in winter?"
+            },
+            "options": [
+              {
+                "bg": "Карат ски",
+                "en": "They ski",
+                "img": "places/ski-bansko.webp"
+              },
+              {
+                "bg": "Плуват в морето",
+                "en": "They swim in the sea",
+                "img": "geo/coast.webp"
+              },
+              {
+                "bg": "Влизат в пещера",
+                "en": "They go into a cave",
+                "img": "landmarks/devetashka-cave.webp"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Банско е град в подножието на Пирин, с големи ски писти.",
+          "en": "Bansko is a town at the foot of Pirin with big ski slopes.",
+          "img": "city/bansko.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "reading",
+          "bg": "В Банско има стари каменни къщи – някои са били като малки крепости.",
+          "en": "Bansko has old stone houses – some were like little fortresses."
+        },
+        {
+          "hero": "raya",
+          "pose": "think",
+          "bg": "Тук е роден Паисий Хилендарски – авторът на „История славянобългарска“.",
+          "en": "Paisius of Hilendar, who wrote the “Slavonic-Bulgarian History”, was born here."
+        }
+      ],
+      "game": {
+        "type": "map",
+        "target": "bansko",
+        "choices": [
+          "balchik",
+          "bansko",
+          "srebarna",
+          "nessebar"
+        ],
+        "prompt": {
+          "bg": "Намери на картата: Банско",
+          "en": "Find it on the map: Bansko"
+        },
+        "hint": {
+          "bg": "Банско е в Югозападна България, в подножието на Пирин.",
+          "en": "Bansko is in south-western Bulgaria, at the foot of Pirin."
+        },
+        "showIcons": false
+      },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Банско е ски курорт.",
+              "en": "Bansko is a ski resort."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – в Пирин.",
+              "en": "Yes – in Pirin."
+            }
+          },
+          {
+            "text": {
+              "bg": "Банско е на брега на Дунав.",
+              "en": "Bansko is on the Danube."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – в подножието на Пирин.",
+              "en": "No – at the foot of Pirin."
+            }
+          },
+          {
+            "text": {
+              "bg": "Паисий Хилендарски е роден в Банско.",
+              "en": "Paisius of Hilendar was born in Bansko."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – през 1722 г.",
+              "en": "Yes – in 1722."
+            }
+          },
+          {
+            "text": {
+              "bg": "В Банско няма стари къщи.",
+              "en": "There are no old houses in Bansko."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – има много стари каменни къщи.",
+              "en": "No – there are many old stone houses."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "В подножието на коя планина е Банско?",
+            "en": "At the foot of which mountains is Bansko?"
+          },
+          "options": [
+            {
+              "bg": "Пирин",
+              "en": "Pirin"
+            },
+            {
+              "bg": "Странджа",
+              "en": "Strandzha"
+            },
+            {
+              "bg": "Витоша",
+              "en": "Vitosha"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кой е роден в Банско?",
+            "en": "Who was born in Bansko?"
+          },
+          "options": [
+            {
+              "bg": "Паисий Хилендарски",
+              "en": "Paisius of Hilendar"
+            },
+            {
+              "bg": "Христо Ботев",
+              "en": "Hristo Botev"
+            },
+            {
+              "bg": "Васил Левски",
+              "en": "Vasil Levski"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "С какво е известно Банско зимата?",
+            "en": "What is Bansko famous for in winter?"
+          },
+          "options": [
+            {
+              "bg": "Със ски пистите",
+              "en": "Its ski slopes"
+            },
+            {
+              "bg": "С плажа",
+              "en": "Its beach"
+            },
+            {
+              "bg": "С пустинята",
+              "en": "A desert"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Банско е в Разложката котловина, между Пирин, Рила и Родопите.",
+          "en": "Bansko lies in the Razlog valley, between Pirin, Rila and the Rhodopes.",
+          "img": "city/bansko.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Тук е роден Паисий Хилендарски (1722 г.), който през 1762 г. завършва „История славянобългарска“.",
+          "en": "Paisius of Hilendar was born here (1722); in 1762 he finished the “Slavonic-Bulgarian History”."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "В Банско е роден и Неофит Рилски – учител и автор на първата българска граматика.",
+          "en": "Neofit Rilski – a teacher and author of the first Bulgarian grammar – was also born in Bansko."
+        },
+        {
+          "hero": "raya",
+          "pose": "winter",
+          "bg": "Днес Банско е един от най-големите ски курорти в България.",
+          "en": "Today Bansko is one of the biggest ski resorts in Bulgaria.",
+          "img": "places/ski-bansko.webp"
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "През коя година Паисий завършва „История славянобългарска“?",
+              "en": "In which year did Paisius finish the “Slavonic-Bulgarian History”?"
+            },
+            "options": [
+              {
+                "bg": "1762",
+                "en": "1762"
+              },
+              {
+                "bg": "1878",
+                "en": "1878"
+              },
+              {
+                "bg": "1396",
+                "en": "1396"
+              },
+              {
+                "bg": "1835",
+                "en": "1835"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Кой още е роден в Банско?",
+              "en": "Who else was born in Bansko?"
+            },
+            "options": [
+              {
+                "bg": "Неофит Рилски",
+                "en": "Neofit Rilski"
+              },
+              {
+                "bg": "Иван Вазов",
+                "en": "Ivan Vazov"
+              },
+              {
+                "bg": "Алеко Константинов",
+                "en": "Aleko Konstantinov"
+              },
+              {
+                "bg": "Петко Славейков",
+                "en": "Petko Slaveykov"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "В коя котловина е Банско?",
+              "en": "In which valley is Bansko?"
+            },
+            "options": [
+              {
+                "bg": "Разложката",
+                "en": "The Razlog valley"
+              },
+              {
+                "bg": "Софийската",
+                "en": "The Sofia valley"
+              },
+              {
+                "bg": "Казанлъшката",
+                "en": "The Kazanlak valley"
+              },
+              {
+                "bg": "Самоковската",
+                "en": "The Samokov valley"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Банско е между три планини.",
+              "en": "Bansko lies between three mountain ranges."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – Пирин, Рила и Родопите.",
+              "en": "Yes – Pirin, Rila and the Rhodopes."
+            }
+          },
+          {
+            "text": {
+              "bg": "Неофит Рилски е автор на „История славянобългарска“.",
+              "en": "Neofit Rilski wrote the “Slavonic-Bulgarian History”."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – това е Паисий; Неофит е автор на граматика.",
+              "en": "No – that was Paisius; Neofit wrote a grammar."
+            }
+          },
+          {
+            "text": {
+              "bg": "Паисий е роден в началото на XVIII век.",
+              "en": "Paisius was born in the early 18th century."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – през 1722 г.",
+              "en": "Yes – in 1722."
+            }
+          },
+          {
+            "text": {
+              "bg": "Банско е в Странджа.",
+              "en": "Bansko is in Strandzha."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – под Пирин.",
+              "en": "No – below Pirin."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Какво е написал Неофит Рилски?",
+            "en": "What did Neofit Rilski write?"
+          },
+          "options": [
+            {
+              "bg": "Първата българска граматика",
+              "en": "The first Bulgarian grammar"
+            },
+            {
+              "bg": "Първия роман",
+              "en": "The first novel"
+            },
+            {
+              "bg": "Конституцията",
+              "en": "The constitution"
+            },
+            {
+              "bg": "Химна",
+              "en": "The national anthem"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кои три планини обграждат Разложката котловина?",
+            "en": "Which three ranges surround the Razlog valley?"
+          },
+          "options": [
+            {
+              "bg": "Пирин, Рила, Родопи",
+              "en": "Pirin, Rila, Rhodopes"
+            },
+            {
+              "bg": "Витоша, Рила, Стара планина",
+              "en": "Vitosha, Rila, Balkan"
+            },
+            {
+              "bg": "Странджа, Сакар, Родопи",
+              "en": "Strandzha, Sakar, Rhodopes"
+            },
+            {
+              "bg": "Беласица, Огражден, Пирин",
+              "en": "Belasitsa, Ograzhden, Pirin"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "В кой манастир Паисий пише своята история?",
+            "en": "In which monastery did Paisius write his history?"
+          },
+          "options": [
+            {
+              "bg": "Хилендарския",
+              "en": "Hilandar"
+            },
+            {
+              "bg": "Рилския",
+              "en": "Rila"
+            },
+            {
+              "bg": "Бачковския",
+              "en": "Bachkovo"
+            },
+            {
+              "bg": "Троянския",
+              "en": "Troyan"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Къща-музей „Неофит Рилски“ – Банско; Исторически музей – Банско",
+    "Учебник по „Човекът и обществото“ / география за 4.–7. клас [страница — попълва учителят]"
+  ],
+  "review": null,
+  "draft": true
+}

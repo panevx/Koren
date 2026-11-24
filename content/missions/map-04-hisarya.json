@@ -1,0 +1,478 @@
+{
+  "id": "map-04-hisarya",
+  "subject": "history",
+  "free": true,
+  "order": 124,
+  "place": "hisarya",
+  "unlock": {
+    "after": [
+      "map-03-nessebar"
+    ]
+  },
+  "badge": {
+    "id": "hisarya",
+    "icon": "places/mineral-hisarya.webp"
+  },
+  "title": {
+    "bg": "Хисаря – римските стени и лековитата вода",
+    "en": "Hisarya – Roman walls and healing water"
+  },
+  "levels": {
+    "small": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "В Хисаря от земята извира топла вода.",
+          "en": "In Hisarya warm water springs from the ground.",
+          "img": "places/mineral-hisarya.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Около града има стари каменни стени от римско време.",
+          "en": "Around the town there are old stone walls from Roman times."
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Какво извира от земята в Хисаря?",
+              "en": "What springs from the ground in Hisarya?"
+            },
+            "options": [
+              {
+                "bg": "Топла вода",
+                "en": "Warm water",
+                "img": "places/mineral-hisarya.webp"
+              },
+              {
+                "bg": "Сняг",
+                "en": "Snow",
+                "img": "geo/musala.webp"
+              },
+              {
+                "bg": "Пясък",
+                "en": "Sand",
+                "img": "geo/coast.webp"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "check": []
+    },
+    "young": {
+      "story": [
+        {
+          "hero": "koren",
+          "pose": "wave",
+          "bg": "Хисаря е град с много минерални извори – водата им е лековита.",
+          "en": "Hisarya is a town with many mineral springs – their water is healing.",
+          "img": "places/mineral-hisarya.webp"
+        },
+        {
+          "hero": "raya",
+          "pose": "reading",
+          "bg": "Преди около 1700 години тук е имало римски град с високи крепостни стени.",
+          "en": "About 1,700 years ago there was a Roman town here with high fortress walls."
+        },
+        {
+          "hero": "koren",
+          "pose": "point",
+          "bg": "Една от портите се нарича „Камилите“ – защото прилича на две камили.",
+          "en": "One of the gates is called “The Camels” – because it looks like two camels."
+        }
+      ],
+      "game": {
+        "type": "map",
+        "target": "hisarya",
+        "choices": [
+          "balchik",
+          "hisarya",
+          "srebarna",
+          "nessebar"
+        ],
+        "prompt": {
+          "bg": "Намери на картата: Хисаря",
+          "en": "Find it on the map: Hisarya"
+        },
+        "hint": {
+          "bg": "Хисаря е в Южна България, близо до Пловдив.",
+          "en": "Hisarya is in southern Bulgaria, near Plovdiv."
+        },
+        "showIcons": false
+      },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "В Хисаря има минерални извори.",
+              "en": "Hisarya has mineral springs."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – много на брой.",
+              "en": "Yes – lots of them."
+            }
+          },
+          {
+            "text": {
+              "bg": "Стените на Хисаря са строени от викингите.",
+              "en": "Hisarya’s walls were built by the Vikings."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – от римляните.",
+              "en": "No – by the Romans."
+            }
+          },
+          {
+            "text": {
+              "bg": "Една порта в Хисаря се казва „Камилите“.",
+              "en": "One gate in Hisarya is called “The Camels”."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – заради формата си.",
+              "en": "Yes – because of its shape."
+            }
+          },
+          {
+            "text": {
+              "bg": "Хисаря е на брега на морето.",
+              "en": "Hisarya is on the coast."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – близо до Пловдив, далеч от морето.",
+              "en": "No – near Plovdiv, far from the sea."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "Каква е водата в Хисаря?",
+            "en": "What is the water in Hisarya like?"
+          },
+          "options": [
+            {
+              "bg": "Минерална",
+              "en": "Mineral"
+            },
+            {
+              "bg": "Солена морска",
+              "en": "Salty sea water"
+            },
+            {
+              "bg": "Замръзнала",
+              "en": "Frozen"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Кой е строил старите стени?",
+            "en": "Who built the old walls?"
+          },
+          "options": [
+            {
+              "bg": "Римляните",
+              "en": "The Romans"
+            },
+            {
+              "bg": "Пиратите",
+              "en": "Pirates"
+            },
+            {
+              "bg": "Индианците",
+              "en": "Native Americans"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Близо до кой град е Хисаря?",
+            "en": "Which city is Hisarya near?"
+          },
+          "options": [
+            {
+              "bg": "Пловдив",
+              "en": "Plovdiv"
+            },
+            {
+              "bg": "Варна",
+              "en": "Varna"
+            },
+            {
+              "bg": "Видин",
+              "en": "Vidin"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "guard": {
+      "story": [
+        {
+          "hero": "raya",
+          "pose": "wave",
+          "bg": "Хисаря е един от най-известните балнеоложки курорти в България.",
+          "en": "Hisarya is one of the best-known spa towns in Bulgaria.",
+          "img": "places/mineral-hisarya.webp"
+        },
+        {
+          "hero": "koren",
+          "pose": "reading",
+          "bg": "През IV век тук е римският град Диоклецианопол, кръстен на император Диоклециан.",
+          "en": "In the 4th century the Roman town of Diocletianopolis stood here, named after Emperor Diocletian."
+        },
+        {
+          "hero": "raya",
+          "pose": "point",
+          "bg": "Крепостните му стени са сред най-добре запазените римски стени у нас, а южната порта е наречена „Камилите“.",
+          "en": "Its walls are among the best-preserved Roman walls in Bulgaria; the southern gate is called “The Camels”."
+        },
+        {
+          "hero": "koren",
+          "pose": "think",
+          "bg": "Римляните ценели топлите извори и строели около тях бани.",
+          "en": "The Romans valued the warm springs and built baths around them."
+        }
+      ],
+      "game": {
+        "type": "quiz",
+        "questions": [
+          {
+            "q": {
+              "bg": "Как се е казвал римският град на мястото на Хисаря?",
+              "en": "What was the Roman town where Hisarya stands called?"
+            },
+            "options": [
+              {
+                "bg": "Диоклецианопол",
+                "en": "Diocletianopolis"
+              },
+              {
+                "bg": "Филипопол",
+                "en": "Philippopolis"
+              },
+              {
+                "bg": "Августа Траяна",
+                "en": "Augusta Traiana"
+              },
+              {
+                "bg": "Никополис ад Иструм",
+                "en": "Nicopolis ad Istrum"
+              }
+            ],
+            "answer": 0,
+            "hint": {
+              "bg": "Филипопол е Пловдив, Августа Траяна – Стара Загора.",
+              "en": "Philippopolis is Plovdiv, Augusta Traiana is Stara Zagora."
+            }
+          },
+          {
+            "q": {
+              "bg": "Защо римляните са ценели това място?",
+              "en": "Why did the Romans value this place?"
+            },
+            "options": [
+              {
+                "bg": "Заради топлите минерални извори",
+                "en": "For the warm mineral springs"
+              },
+              {
+                "bg": "Заради златните мини",
+                "en": "For gold mines"
+              },
+              {
+                "bg": "Заради пристанището",
+                "en": "For the harbour"
+              },
+              {
+                "bg": "Заради ледниците",
+                "en": "For the glaciers"
+              }
+            ],
+            "answer": 0
+          },
+          {
+            "q": {
+              "bg": "Как се казва южната порта на крепостта?",
+              "en": "What is the southern gate of the fortress called?"
+            },
+            "options": [
+              {
+                "bg": "„Камилите“",
+                "en": "“The Camels”"
+              },
+              {
+                "bg": "„Лъвовете“",
+                "en": "“The Lions”"
+              },
+              {
+                "bg": "„Царската“",
+                "en": "“The Royal Gate”"
+              },
+              {
+                "bg": "„Слънцето“",
+                "en": "“The Sun”"
+              }
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "extra": {
+        "type": "truefalse",
+        "prompt": {
+          "bg": "Вярно или не е вярно?",
+          "en": "True or not true?"
+        },
+        "items": [
+          {
+            "text": {
+              "bg": "Диоклецианопол е кръстен на римски император.",
+              "en": "Diocletianopolis is named after a Roman emperor."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – на Диоклециан.",
+              "en": "Yes – Diocletian."
+            }
+          },
+          {
+            "text": {
+              "bg": "Стените на Хисаря са от XIX век.",
+              "en": "Hisarya’s walls are from the 19th century."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – от римско време, около IV век.",
+              "en": "No – from Roman times, around the 4th century."
+            }
+          },
+          {
+            "text": {
+              "bg": "Римляните строели бани около минералните извори.",
+              "en": "The Romans built baths around the mineral springs."
+            },
+            "answer": true,
+            "why": {
+              "bg": "Да – за лечение и отдих.",
+              "en": "Yes – for healing and rest."
+            }
+          },
+          {
+            "text": {
+              "bg": "Хисаря е в Северна България.",
+              "en": "Hisarya is in northern Bulgaria."
+            },
+            "answer": false,
+            "why": {
+              "bg": "Не – в Южна, в Пловдивска област.",
+              "en": "No – in the south, in Plovdiv Province."
+            }
+          }
+        ]
+      },
+      "check": [
+        {
+          "q": {
+            "bg": "През кой век е бил разцветът на римския град тук?",
+            "en": "In which century did the Roman town here flourish?"
+          },
+          "options": [
+            {
+              "bg": "IV век",
+              "en": "4th century"
+            },
+            {
+              "bg": "XIV век",
+              "en": "14th century"
+            },
+            {
+              "bg": "I век пр.н.е.",
+              "en": "1st century BC"
+            },
+            {
+              "bg": "XIX век",
+              "en": "19th century"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "В коя област е Хисаря?",
+            "en": "In which province is Hisarya?"
+          },
+          "options": [
+            {
+              "bg": "Пловдив",
+              "en": "Plovdiv"
+            },
+            {
+              "bg": "Бургас",
+              "en": "Burgas"
+            },
+            {
+              "bg": "Видин",
+              "en": "Vidin"
+            },
+            {
+              "bg": "Кърджали",
+              "en": "Kardzhali"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "q": {
+            "bg": "Какъв курорт е Хисаря?",
+            "en": "What kind of resort is Hisarya?"
+          },
+          "options": [
+            {
+              "bg": "Балнеоложки (с минерална вода)",
+              "en": "A spa (mineral water) resort"
+            },
+            {
+              "bg": "Ски курорт",
+              "en": "A ski resort"
+            },
+            {
+              "bg": "Морски курорт",
+              "en": "A seaside resort"
+            },
+            {
+              "bg": "Пустинен",
+              "en": "A desert resort"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Археологически музей – Хисаря",
+    "Учебник по „Човекът и обществото“ / география за 4.–7. клас [страница — попълва учителят]"
+  ],
+  "review": null,
+  "draft": true
+}
