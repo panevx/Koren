@@ -6,6 +6,7 @@ import { useT } from '../i18n/useT'
 import { m } from '../motion'
 import { play } from '../sound'
 import { ART } from '../world'
+import { HyphenSafe } from '../components/HyphenSafe'
 import { DoneButton, Feedback, Prompt } from './Feedback'
 
 /**
@@ -43,7 +44,7 @@ export function TrueFalse({ game, onDone }: { game: TrueFalseGame; onDone: () =>
       <p className="text-center text-sm font-bold text-muted">{t('tf.count', { n: at + 1, total: game.items.length })}</p>
       <m.div key={at} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="edge-light relative flex flex-col items-center gap-3 rounded-[1.75rem] mat-paper p-5 text-center">
         {item.img && <img src={img(item.img)} alt="" className="pop-3d size-[min(6rem,26vw)] object-contain" />}
-        <p className="text-xl leading-snug font-extrabold">{l(item.text)}</p>
+        <p className="text-xl leading-snug font-extrabold"><HyphenSafe text={l(item.text)} /></p>
       </m.div>
       <div className="grid grid-cols-2 gap-3">
         {([true, false] as const).map((v) => {

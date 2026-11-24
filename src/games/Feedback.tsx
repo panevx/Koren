@@ -1,4 +1,5 @@
 import { fitWords } from '../components/fit'
+import { HyphenSafe } from '../components/HyphenSafe'
 import { Avatar, img } from '../components/Brand'
 import { Sparkles } from '../components/ds'
 import { ART } from '../world'
@@ -37,7 +38,7 @@ export function Feedback({ correct, help, idle, nudge = 0 }: { correct?: string;
             />
           </m.div>
           <m.p initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }} className={`${bubble} bg-green-soft font-extrabold text-green-dark`}>
-            {correct}
+            <HyphenSafe text={correct} />
           </m.p>
         </div>
       ) : help ? (
@@ -52,7 +53,7 @@ export function Feedback({ correct, help, idle, nudge = 0 }: { correct?: string;
             <img src={img(ART.heart)} alt="" className="absolute -right-1.5 -bottom-1 size-[40%]" />
           </m.div>
           <m.p initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }} className={`${bubble} bg-gold-soft font-bold text-ink`}>
-            {help}
+            <HyphenSafe text={help} />
           </m.p>
         </div>
       ) : idle ? (
@@ -86,8 +87,8 @@ export function Prompt({ children }: { children: string }) {
       </m.span>
       <div className="edge-light relative min-w-0 flex-1 rounded-[1.5rem] rounded-bl-md mat-paper px-[min(1.125rem,4vw)] py-3.5 [container-type:inline-size]">
         {/* Capped by the bubble's own width AND by its longest word (v0.26): at 320 px with a big font „крепостта!“ broke. */}
-        <h3 className="leading-snug font-extrabold" style={fitWords(children, 'min(1.2rem,5.6vw,11cqw)', 0.66)}>
-          {children}
+        <h3 className="leading-snug font-extrabold" style={fitWords(children, 'min(1.2rem,5.6vw,11cqw)', 0.66, true)}>
+          <HyphenSafe text={children} />
         </h3>
       </div>
     </div>

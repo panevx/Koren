@@ -2,7 +2,8 @@ import { Link, useParams } from 'react-router'
 import { BadgeArt } from '../components/BadgeArt'
 import { img } from '../components/Brand'
 import { Meter } from '../components/ds'
-import { fitWords, hyphenSafe } from '../components/fit'
+import { fitWords } from '../components/fit'
+import { HyphenSafe } from '../components/HyphenSafe'
 import { ContentState, DraftChip } from '../components/ContentState'
 import { Icon } from '../components/Icon'
 import { SceneBackdrop } from '../components/Scene'
@@ -288,14 +289,5 @@ function Locked({ mission, draftChip }: { mission: Mission; draftChip: boolean }
         </span>
       </span>
     </Link>
-  )
-}
-
-/** A title whose hyphenated words („Slavo-Bulgarian“, „Най-високият“) never break at the hyphen. */
-function HyphenSafe({ text }: { text: string }) {
-  return (
-    <>
-      {hyphenSafe(text).map((part, i) => (typeof part === 'string' ? part : <span key={i} className="whitespace-nowrap">{part.nowrap}</span>))}
-    </>
   )
 }

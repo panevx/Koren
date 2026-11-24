@@ -4,6 +4,7 @@ import { BadgeArt } from '../components/BadgeArt'
 import { Avatar, img } from '../components/Brand'
 import { Icon } from '../components/Icon'
 import { fitWords } from '../components/fit'
+import { HyphenSafe } from '../components/HyphenSafe'
 import { BackWall } from '../components/Diorama'
 import { Button, Screen, useTitle } from '../components/ui'
 import { MISSIONS, missionById, pickLevel } from '../content/missions'
@@ -332,7 +333,7 @@ function Story({ lines, onDone }: { lines: StoryLine[]; onDone: () => void }) {
             fromRight ? 'origin-bottom-right rounded-br-md' : 'origin-bottom-left rounded-bl-md'
           }`}
         >
-          {l(line)}
+          <HyphenSafe text={l(line)} />
           {/* tail towards the speaker */}
           <span
             className={`absolute -bottom-2.5 size-6 rotate-45 rounded-[4px] bg-white side:hidden ${fromRight ? 'right-[22%]' : 'left-[22%]'}`}

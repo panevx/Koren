@@ -8,6 +8,7 @@ import { useT } from '../i18n/useT'
 import { bouncy, m, rise, stagger } from '../motion'
 import { play } from '../sound'
 import { DoneButton, Feedback, Prompt } from './Feedback'
+import { HyphenSafe } from '../components/HyphenSafe'
 import { answerOrder } from './shuffle'
 
 type Props = {
@@ -124,7 +125,7 @@ function QuizQuestion({
               ) : (
                 <span className={`size-3.5 shrink-0 rounded-full ${isWrong || (solved && !isRight) ? 'bg-muted/40' : DOTS[at % DOTS.length]}`} aria-hidden="true" />
               )}
-              <span className="min-w-0 flex-1 [overflow-wrap:anywhere]" style={fitWords(l(option), withImages ? 'clamp(0.6rem,12cqw,1.125rem)' : '1.125rem', 0.78)}>{l(option)}</span>
+              <span className="min-w-0 flex-1 [overflow-wrap:anywhere]" style={fitWords(l(option), withImages ? 'clamp(0.6rem,12cqw,1.125rem)' : '1.125rem', 0.78, true)}><HyphenSafe text={l(option)} /></span>
               {isWrong && <span aria-hidden="true">×</span>}
               {isRight && (
                 <m.span initial={{ scale: 0 }} animate={{ scale: 1 }} transition={bouncy} className="grid size-8 shrink-0 place-items-center rounded-full bg-green text-white">

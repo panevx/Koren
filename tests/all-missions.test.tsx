@@ -10,6 +10,10 @@ import { partsOf } from '../src/games/Paint'
 import { shuffledIndexes } from '../src/games/shuffle'
 import { activeProfile, useProfiles } from '../src/store/profiles'
 import { useSettings } from '../src/store/settings'
+
+/** Matches an element by its whole text, even when hyphenated words are wrapped in their own <span> (HyphenSafe). */
+const wholeText = (text: string) => (_: string, el: Element | null) =>
+  el?.textContent === text && [...(el?.children ?? [])].every((c) => c.textContent !== text)
 import { LEVEL_DEFAULT_AGE, type Level } from '../src/theme/levels'
 
 /**
@@ -175,7 +179,7 @@ describe('every mission can be finished on every level', () => {
           </MemoryRouter>,
         )
         const content = m.levels[level]!
-        await screen.findByText(content.story[0]!.bg)
+        await screen.findByText(wholeText(content.story[0]!.bg))
         for (let i = 0; i < content.story.length; i++) fireEvent.click(screen.getByRole('button', { name: /Напред/ }))
         await solveGame(content.game)
         if (content.extra) await solveGame(content.extra)
@@ -199,7 +203,7 @@ describe('a break after 3 missions in a row', () => {
         </MemoryRouter>,
       )
       const content = m.levels.young!
-      await screen.findByText(content.story[0]!.bg)
+      await screen.findByText(wholeText(content.story[0]!.bg))
       for (let k = 0; k < content.story.length; k++) fireEvent.click(screen.getByRole('button', { name: /Напред/ }))
       await solveGame(content.game)
       if (content.extra) await solveGame(content.extra)
