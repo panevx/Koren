@@ -96,33 +96,43 @@ export function Passport() {
             <Icon name="chevron" width="1em" height="1em" />
           </Link>
 
-          {/* The reward track: one line, four medals. */}
+          {/* The reward track: four medals, a short stretch of road between each two (filled toward the next). */}
           {/* No missions in this build yet: no medal track (it would say "0 of 0"). */}
           {MISSIONS.length > 0 && (
           <section aria-labelledby="rewards" className="edge-light relative rounded-[var(--radius-card)] mat-paper p-4">
             <h2 id="rewards" className="mb-3 text-lg font-black">
               {t('reward.title')}
             </h2>
-            <div className="relative">
-              <span className="well absolute inset-x-[12.5%] top-[min(1.75rem,7.5vw)] h-2 overflow-hidden rounded-full" aria-hidden="true">
-                <m.span
-                  className="fill-satin tint-gold block h-full origin-left rounded-full"
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: medals <= 1 ? 0 : (medals - 1) / (MILESTONES.length - 1) }}
-                  transition={{ type: 'spring', stiffness: 90, damping: 18, delay: 0.3 }}
-                />
-              </span>
+            <div className="[--disc:min(3.5rem,15vw)]">
               <ul className="relative grid grid-cols-4 gap-2">
                 {MILESTONES.map(({ id }, i) => {
                   const need = milestoneNeed(id, MISSIONS)
                   const got = earned.length >= need
+                  // One stretch of road from this reward to the next (not one bar under all four):
+                  // it fills with the badges earned on the way to the next reward.
+                  const nextId = MILESTONES[i + 1]?.id
+                  const nextNeed = nextId ? milestoneNeed(nextId, MISSIONS) : 0
+                  const part = nextId ? Math.min(1, Math.max(0, (earned.length - need) / Math.max(1, nextNeed - need))) : 0
                   return (
-                    <li key={id} className="flex flex-col items-center gap-1 text-center [container-type:inline-size]">
+                    <li key={id} className="relative flex flex-col items-center gap-1 text-center [container-type:inline-size]">
+                      {nextId && (
+                        <span
+                          className="well absolute top-[calc(var(--disc)/2)] left-[calc(50%+var(--disc)/2+0.125rem)] h-1.5 w-[calc(100%+0.25rem-var(--disc))] -translate-y-1/2 overflow-hidden rounded-full"
+                          aria-hidden="true"
+                        >
+                          <m.span
+                            className="fill-satin tint-gold block h-full origin-left rounded-full"
+                            initial={{ scaleX: 0 }}
+                            animate={{ scaleX: part }}
+                            transition={{ type: 'spring', stiffness: 90, damping: 18, delay: 0.3 + i * 0.12 }}
+                          />
+                        </span>
+                      )}
                       <m.span
                         initial={got ? { scale: 0.4, rotate: -20 } : false}
                         animate={{ scale: 1, rotate: 0 }}
                         transition={{ ...bouncy, delay: 0.3 + i * 0.12 }}
-                        className={`grid size-[min(3.5rem,15vw)] place-items-center rounded-full ${got ? 'mat-ceramic-gold' : 'well'}`}
+                        className={`grid size-(--disc) place-items-center rounded-full ${got ? 'mat-ceramic-gold' : 'well'}`}
                       >
                         <img src={img(REWARD_ART[id])} alt={t(`reward.${id}`)} className={`size-[86%] object-contain ${got ? 'pop-3d' : 'opacity-40 grayscale'}`} />
                       </m.span>
