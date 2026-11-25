@@ -374,8 +374,7 @@
   "map.peak.range": "Mountain range: {name}",
   "map.neighbour.capital": "Capital: {name}",
   "map.neighbour.kind": "Neighbouring country",
-  "map.sources": "Relief and rivers (except the Danube, Yantra, Kamchia, Ogosta): Terrain Tiles (Mapzen — SRTM and others) · Borders, the Danube and the other rivers: Natural Earth",
-  "map.sources.osm": "Rivers: © OpenStreetMap contributors",
+  "map.sources": "Relief and rivers (except the Danube, Yantra, Kamchia and Ogosta): Terrain Tiles by Mapzen (SRTM and others). Borders, the Danube and the other rivers: Natural Earth.",
   "trace.map": "Map of the {river} river",
   "trace.idle": "Put your finger on the drop and lead it along the river to {end}.",
   "trace.grab": "Start from the drop – it is where the light is.",
@@ -537,5 +536,6 @@
   "practice.score": "You got {n} of {total} on the first try.",
   "practice.day": "Today is yours!",
   "practice.tomorrow": "{n} questions come back tomorrow.",
-  "shop.weeks": "Weekly stamps (3 days of 7): {n}"
+  "shop.weeks": "Weekly stamps (3 days of 7): {n}",
+  "parents.sources": "Map data sources"
 }

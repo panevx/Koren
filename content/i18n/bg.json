@@ -374,8 +374,7 @@
   "map.peak.range": "Планина: {name}",
   "map.neighbour.capital": "Столица: {name}",
   "map.neighbour.kind": "Съседна държава",
-  "map.sources": "Релеф и реките (без Дунав, Янтра, Камчия, Огоста): Terrain Tiles (Mapzen — SRTM и др.) · Граници, Дунав и останалите реки: Natural Earth",
-  "map.sources.osm": "Реки: © OpenStreetMap",
+  "map.sources": "Релеф и реки (без Дунав, Янтра, Камчия и Огоста): Terrain Tiles на Mapzen (SRTM и др.). Граници, Дунав и останалите реки: Natural Earth.",
   "trace.map": "Карта на река {river}",
   "trace.idle": "Сложи пръст на капката и я поведи по реката до {end}.",
   "trace.grab": "Започни от капката – тя е там, където свети.",
@@ -537,5 +536,6 @@
   "practice.score": "От първия опит позна {n} от {total}.",
   "practice.day": "Днешният ден е твой!",
   "practice.tomorrow": "Утре се връщат {n} въпроса за повторение.",
-  "shop.weeks": "Печати за седмица (3 дни от 7): {n}"
+  "shop.weeks": "Печати за седмица (3 дни от 7): {n}",
+  "parents.sources": "Източници на картата"
 }

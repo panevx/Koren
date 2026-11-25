@@ -29,3 +29,15 @@ describe('i18n dictionaries', () => {
     expect(translate('en', 'age.years', { n: 9 })).toBe('9 years')
   })
 })
+
+describe('no long dashes in what people read (v0.27.3)', () => {
+  it('texts, missions, places, timeline and the Hall of Fame use „–“, never „—“', async () => {
+    const { readFileSync, readdirSync } = await import('node:fs')
+    const files = [
+      'content/i18n/bg.json', 'content/i18n/en.json', 'content/fame.json', 'content/path.json',
+      'content/map/places.json', 'content/map/peaks.json', 'content/timeline/epochs.json',
+      ...readdirSync('content/missions').map((f) => `content/missions/${f}`),
+    ]
+    for (const f of files) expect(readFileSync(f, 'utf8').includes('—'), f).toBe(false)
+  })
+})

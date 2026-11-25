@@ -7,7 +7,7 @@ import { Icon } from '../components/Icon'
 import { TimelineLink } from '../components/TimelineLink'
 import { Screen, TopBar } from '../components/ui'
 import { UnlockInfo } from '../components/UnlockInfo'
-import { LAKES, MAP_RANGES, PARKS_AND_PLAINS, NEIGHBOURS, PEAKS, PROVINCES, PROVINCE_FILL, RANGES, RIVERS, SEA, SOURCES, provinceAt } from '../content/layers'
+import { LAKES, MAP_RANGES, PARKS_AND_PLAINS, NEIGHBOURS, PEAKS, PROVINCES, PROVINCE_FILL, RANGES, RIVERS, SEA, provinceAt } from '../content/layers'
 import { PLACES, type MapPlace } from '../content/places'
 import type { Mission } from '../content/schema'
 import { useChildMissions } from '../content/useChildMissions'
@@ -255,10 +255,6 @@ export function MapScreen() {
             </details>
           )}
 
-          <p className="text-center text-xs font-semibold text-muted">
-            {t('map.sources')}
-            {SOURCES.includes('OpenStreetMap') && <> · {t('map.sources.osm')}</>}
-          </p>
         </div>
 
         <div className="contents cols:sticky cols:top-4 cols:col-start-2 cols:row-start-1 cols:flex cols:flex-col cols:gap-4">

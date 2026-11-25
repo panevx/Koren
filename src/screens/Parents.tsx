@@ -490,6 +490,11 @@ function ParentsArea({ onExpired }: { onExpired: () => void }) {
           <p className="text-sm text-muted">{t('parents.privacyText')}</p>
         </Section>
 
+        {/* The map's data sources: their licences ask to name them (Terrain Tiles). Here, not under the children's map. */}
+        <Section icon="globe" title={t('parents.sources')}>
+          <p className="text-sm text-muted">{t('map.sources')}</p>
+        </Section>
+
         <div className="flex flex-col items-center gap-2 pt-3">
           <Button variant="secondary" onClick={eraseAll} className={armed ? 'text-coral-dark ring-[3px] ring-coral' : ''}>
             <Icon name="refresh" />

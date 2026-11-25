@@ -19,6 +19,8 @@ import { useT } from '../i18n/useT'
 import { m } from '../motion'
 import { useAge } from '../store/profiles'
 import { ageToLevel } from '../theme/levels'
+import { fitWords } from '../components/fit'
+import { HyphenSafe } from '../components/HyphenSafe'
 import { ART, GAME_ART } from '../world'
 
 /** Horizontal position (% of the column) of the n-th stop: a gentle serpentine. */
@@ -214,10 +216,14 @@ function ChapterSign({ title, done, total }: { title: string; done: number; tota
   const say = complete ? t('path.chapterDone') : t('path.chapterLeft', { done, total })
   return (
     <li className="relative flex h-[var(--path-row)] items-center justify-center">
-      <span className="relative grid w-[min(10rem,48vw)] place-items-center">
+      {/* The text sits ON the upper board: measured from the picture, the board is 14–47 % of its height and the bolts stand
+          at its ends — so the text box is 16–44 % high and 60 % wide (between the bolts), centred both ways; sized by the sign's own width (cqw). */}
+      <span className="relative grid w-[min(10rem,48vw)] place-items-center [container-type:inline-size]">
         <img src={img(ART.sign)} alt="" className="pop-3d w-full" />
-        <span className="absolute top-[8%] flex h-[34%] w-[80%] items-center justify-center text-center text-[length:min(0.9rem,3.8vw)] leading-tight font-black text-[#4A2A12]" data-fit-label>
-          {title}
+        <span className="absolute top-[16%] left-1/2 flex h-[28%] w-[60%] -translate-x-1/2 items-center justify-center">
+          <span className="text-center leading-[1.1] font-black text-[#4A2A12]" data-fit-label style={fitWords(title, 'min(0.9rem,8cqw)', 0.68 / 0.6, true)}>
+            <HyphenSafe text={title} />
+          </span>
         </span>
       </span>
       <span className={`absolute right-[3%] bottom-[12%] flex items-center gap-1 rounded-full py-0.5 pr-2.5 pl-0.5 text-xs font-black text-ink shadow-soft ${complete ? 'bg-gold' : 'bg-white'}`}>
