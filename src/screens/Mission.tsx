@@ -190,7 +190,10 @@ function MissionRun({ mission, childLevel, profileId }: { mission: MissionData; 
  * v0.27 combo: three right answers in a row (and six, nine…) — Koren cheers with sparkles. A mistake only starts the count
  * again; nothing is lost and nothing is shown. Listens to the game sounds (src/sound.ts `answers`), so it works in every game.
  */
-function Combo() {
+/** How long „3 right in a row!“ stays. */
+export const COMBO_MS = 1800
+
+export function Combo() {
   const t = useT()
   const [run, setRun] = useState(0)
   const [shown, setShown] = useState(0)
@@ -204,12 +207,17 @@ function Combo() {
       answers.removeEventListener('hint', miss)
     }
   }, [])
+  // Show at 3, 6, 9… right answers in a row.
   useEffect(() => {
-    if (run < 3 || run % 3 !== 0) return
-    setShown(run)
-    const timer = setTimeout(() => setShown(0), 1800)
-    return () => clearTimeout(timer)
+    if (run >= 3 && run % 3 === 0) setShown(run)
   }, [run])
+  // Hide 1.8 s after it APPEARED — keyed on what is shown, not on the next answers. (Bug in v0.27: the timer lived in the
+  // effect above, so a 4th quick right answer cleared it and the toast stayed on screen for the rest of the game.)
+  useEffect(() => {
+    if (!shown) return
+    const timer = setTimeout(() => setShown(0), COMBO_MS)
+    return () => clearTimeout(timer)
+  }, [shown])
   return (
     <div className="pointer-events-none fixed inset-x-0 top-[calc(env(safe-area-inset-top)+5.5rem)] z-40 flex justify-center" aria-live="polite">
       {shown > 0 && (

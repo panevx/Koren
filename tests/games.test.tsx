@@ -157,3 +157,31 @@ describe('quiz first try and the answers channel (v0.27)', () => {
     answers.removeEventListener('hint', listen)
   })
 })
+
+describe('"3 right in a row!" (v0.27 combo)', () => {
+  it('appears at 3, and is gone 1.8 s later even when more right answers come quickly (bug: it stayed forever)', async () => {
+    vi.useFakeTimers()
+    try {
+      const { act } = await import('@testing-library/react')
+      const { Combo, COMBO_MS } = await import('../src/screens/Mission')
+      const { answers } = await import('../src/sound')
+      render(<Combo />)
+      const right = () => act(() => void answers.dispatchEvent(new Event('correct')))
+      right(); right(); right()
+      expect(screen.getByText(/3/)).toBeInTheDocument()
+      right() // the 4th quick right answer used to cancel the timer
+      act(() => void vi.advanceTimersByTime(COMBO_MS + 50))
+      expect(screen.queryByText(/3/)).not.toBeInTheDocument()
+      // a mistake starts the count again: two more right answers show nothing
+      act(() => void answers.dispatchEvent(new Event('hint')))
+      right(); right()
+      expect(screen.queryByText(/[0-9]/)).not.toBeInTheDocument()
+      right()
+      expect(screen.getByText(/3/)).toBeInTheDocument()
+      act(() => void vi.advanceTimersByTime(COMBO_MS + 50))
+      expect(screen.queryByText(/[0-9]/)).not.toBeInTheDocument()
+    } finally {
+      vi.useRealTimers()
+    }
+  })
+})
