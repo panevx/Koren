@@ -496,10 +496,16 @@ function Badge({ mission, level, profileId, entryKey, legacyEntry }: {
           className="pedestal-gold absolute bottom-[-2%] h-[15%] w-[72%]"
         />
         <m.div
-          initial={{ scale: 0, rotate: -30, y: -30 }}
-          animate={{ scale: 1, rotate: 0, y: 0 }}
-          transition={{ type: 'spring', stiffness: 240, damping: 13, delay: 0.12 }}
-          className="relative -mt-3 grid size-44 place-items-center overflow-hidden rounded-full shadow-[0_2px_3px_rgb(52_44_24/0.25),0_14px_18px_-10px_rgb(52_44_24/0.45)]"
+          // falls in an arc (rotate + drop), squashes on the pedestal, bounces once, settles — squash & stretch, follow through
+          initial={{ scale: 0.3, rotate: -30, y: -70, x: -24 }}
+          animate={{ scale: 1, rotate: 0, x: 0, y: [-70, 0, -10, 0], scaleY: [1.12, 0.86, 1.05, 1], scaleX: [0.9, 1.12, 0.97, 1] }}
+          transition={{
+            type: 'spring', stiffness: 240, damping: 13, delay: 0.12,
+            y: { duration: 0.72, delay: 0.12, times: [0, 0.45, 0.72, 1], ease: ['easeIn', 'easeOut', 'easeInOut'] },
+            scaleY: { duration: 0.72, delay: 0.12, times: [0, 0.45, 0.72, 1] },
+            scaleX: { duration: 0.72, delay: 0.12, times: [0, 0.45, 0.72, 1] },
+          }}
+          className="relative -mt-3 grid size-44 origin-bottom place-items-center overflow-hidden rounded-full shadow-[0_2px_3px_rgb(52_44_24/0.25),0_14px_18px_-10px_rgb(52_44_24/0.45)]"
         >
           <BadgeArt icon={mission.badge.icon} className="size-full" />
           {/* one glint of light across the medal */}

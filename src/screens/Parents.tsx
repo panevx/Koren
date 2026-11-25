@@ -356,7 +356,7 @@ function ProfileBackup({ onExpired }: { onExpired: () => void }) {
       <div className="flex flex-col gap-3">
         <Button variant="secondary" onClick={exportFile}>{t('backup.export')}</Button>
         <label>{t('backup.file')}
-          <input type="file" accept=".json,application/json" className="block w-full" onChange={async e => {
+          <input type="file" accept=".json,application/json" className="mt-1 block min-h-[var(--tap)] w-full file:mr-3 file:min-h-[var(--tap)] file:rounded-full file:border-0 file:bg-green-soft file:px-5 file:font-bold file:text-green-dark" onChange={async e => {
             const input = e.currentTarget
             const file = input.files?.[0]
             setPending(null)

@@ -22,9 +22,10 @@ export function Feedback({ correct, help, idle, nudge = 0 }: { correct?: string;
         <div className="flex items-center gap-3">
           <m.div
             initial={{ opacity: 0, scale: 0.4, rotate: -18 }}
-            animate={{ opacity: 1, scale: 1, rotate: 0, y: [0, -14, 0] }}
-            className="relative shrink-0"
-            transition={{ default: bouncy, y: { duration: 0.55, delay: 0.2, times: [0, 0.4, 1] } }}
+            // anticipation (a small crouch) → stretch on the way up → squash on landing → settle
+            animate={{ opacity: 1, scale: 1, rotate: 0, y: [0, 3, -16, 0, 0], scaleY: [1, 0.9, 1.08, 0.92, 1], scaleX: [1, 1.06, 0.95, 1.06, 1] }}
+            className="relative shrink-0 origin-bottom"
+            transition={{ default: bouncy, y: { duration: 0.62, delay: 0.15, times: [0, 0.18, 0.5, 0.78, 1] }, scaleY: { duration: 0.62, delay: 0.15, times: [0, 0.18, 0.5, 0.78, 1] }, scaleX: { duration: 0.62, delay: 0.15, times: [0, 0.18, 0.5, 0.78, 1] } }}
           >
             <Sparkles burst={correct} />
             <Avatar hero="koren" mood="joy" className="size-[min(4rem,15vw)]" />

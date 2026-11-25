@@ -40,9 +40,25 @@ const Adventure = lazy(() => import('./screens/Adventure').then((m) => ({ defaul
 const Practice = lazy(() => import('./screens/Practice').then((m) => ({ default: m.Practice })))
 const MissionList = lazy(() => import('./screens/MissionList').then((m) => ({ default: m.MissionList })))
 
+/** Doherty threshold: a fast screen shows nothing in between; a slow one shows three bouncing dots after 300 ms. */
 function Loading() {
-  return <div className="min-h-dvh bg-cream" aria-busy="true" />
+  return (
+    <div className="grid min-h-dvh place-items-center bg-cream" aria-busy="true">
+      <span className="loading-dots" aria-hidden="true"><i /><i /><i /></span>
+    </div>
+  )
 }
+
+/** While the child looks at the first screen, fetch the code of the screens a tap away (they open in < 400 ms then). */
+function prefetchScreens() {
+  const load = () => {
+    for (const screen of [() => import('./screens/MapScreen'), () => import('./screens/Adventure'), () => import('./screens/Mission'), () => import('./screens/Passport')]) void screen().catch(() => {})
+  }
+  const idle = (window as { requestIdleCallback?: (f: () => void) => void }).requestIdleCallback ?? ((f: () => void) => setTimeout(f, 1500))
+  if (document.readyState === 'complete') idle(load)
+  else addEventListener('load', () => idle(load), { once: true })
+}
+if (typeof window !== 'undefined' && !import.meta.env.VITEST) prefetchScreens()
 
 /** Returning visitors skip the start screens and land on the hub. */
 function FirstVisitOnly({ children }: { children: ReactNode }) {

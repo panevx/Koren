@@ -241,7 +241,8 @@ body {
   user-select: none;
 }
 .press:active:not(:disabled) {
-  transform: translateY(2px) scale(0.98);
+  /* squash: a little wider and lower, like a ball pressed onto the table; the release curve (1.25) stretches it back */
+  transform: translateY(2px) scale(1.015, 0.95);
   transition-duration: 0.1s;
 }
 .puck.press:active:not(:disabled) {
@@ -371,7 +372,36 @@ body {
   }
   /* The hot-air balloon on the adventure path. */
   .anim-float { animation: float 4.5s ease-in-out 6; }
+
+  /* v0.27.2 — the 12 principles where children look most: the answer they tapped.
+     Right: anticipation (a tiny dip), a stretch upwards, a squash on landing, settle (pose to pose, slow in & out).
+     Not yet: a gentle sideways nudge — never a shake of „wrong!“ (a hint, not a punishment), 2 small swings, 320 ms. */
+  @keyframes answer-right {
+    0% { transform: scale(1); }
+    18% { transform: translateY(2px) scale(1.02, 0.95); }
+    48% { transform: translateY(-5px) scale(0.97, 1.06); }
+    72% { transform: translateY(0) scale(1.04, 0.97); }
+    100% { transform: scale(1); }
+  }
+  @keyframes answer-nudge {
+    0%, 100% { transform: translateX(0); }
+    30% { transform: translateX(-5px); }
+    65% { transform: translateX(4px); }
+  }
+  .anim-right { animation: answer-right 0.52s cubic-bezier(0.3, 0.7, 0.3, 1); }
+  .anim-nudge { animation: answer-nudge 0.32s ease-in-out; }
+  /* Doherty: three dots, only if the wait is longer than 300 ms (a fast screen never flashes them) */
+  @keyframes dot-hop {
+    0%, 60%, 100% { transform: translateY(0) scale(1, 1); }
+    30% { transform: translateY(-9px) scale(0.9, 1.12); }
+  }
+  .loading-dots i { animation: dot-hop 0.9s cubic-bezier(0.45, 0, 0.55, 1) infinite; }
+  .loading-dots i:nth-child(2) { animation-delay: 0.12s; }
+  .loading-dots i:nth-child(3) { animation-delay: 0.24s; }
 }
+.loading-dots { display: flex; gap: 0.5rem; opacity: 0; animation: dots-in 0.2s ease-out 0.3s forwards; }
+.loading-dots i { display: block; width: 0.75rem; height: 0.75rem; border-radius: 999px; background: var(--color-green); }
+@keyframes dots-in { to { opacity: 0.7; } }
 
 /*
  * Ambient animations above run a few times and then rest (no endless motion that pulls a child's attention).

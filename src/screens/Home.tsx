@@ -173,7 +173,7 @@ export function Home() {
 
         {/* Testers' switch on (demo build only): say so, so nobody forgets it before a presentation. */}
         {testing && (
-          <Link to="/parents" className="btn-satin tint-coral mx-auto mt-section block w-max max-w-full rounded-full px-3 py-1 text-sm font-black text-coral-ink">
+          <Link to="/parents" className="btn-satin tint-coral mx-auto mt-section flex min-h-[var(--tap)] w-max max-w-full items-center rounded-full px-4 text-sm font-black text-coral-ink">
             {t('tester.chip')}
           </Link>
         )}

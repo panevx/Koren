@@ -57,7 +57,7 @@ export function TrueFalse({ game, onDone }: { game: TrueFalseGame; onDone: () =>
               onClick={() => pick(v)}
               disabled={answer !== null}
               className={`press flex flex-col items-center gap-1 rounded-[1.5rem] p-3 text-lg font-black shadow-soft disabled:cursor-default ${
-                isRight ? 'bg-green-soft text-green-dark ring-[3px] ring-green' : chosen ? 'bg-gold-soft text-ink' : 'bg-white text-ink'
+                isRight ? `bg-green-soft text-green-dark ring-[3px] ring-green ${chosen ? 'anim-right' : ''}` : chosen ? 'anim-nudge bg-gold-soft text-ink' : 'bg-white text-ink'
               } ${answer !== null && !isRight && !chosen ? 'opacity-50' : ''}`}
             >
               <img src={img(v ? ART.yes : ART.no)} alt="" className="size-[min(4rem,18vw)]" />

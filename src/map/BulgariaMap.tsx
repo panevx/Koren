@@ -349,7 +349,7 @@ function MapButton({ label, onClick, disabled, children }: { label: string; onCl
       aria-label={label}
       onClick={onClick}
       disabled={disabled}
-      className="lift mat-paper edge-light grid size-12 place-items-center rounded-full text-2xl font-black text-green-dark disabled:opacity-40"
+      className="lift mat-paper edge-light grid size-[max(3rem,var(--tap))] place-items-center rounded-full text-2xl font-black text-green-dark disabled:opacity-40"
     >
       {children}
     </button>

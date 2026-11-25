@@ -114,8 +114,10 @@ function QuizQuestion({
                 withImages ? 'flex-col justify-center text-center [container-type:inline-size]' : ''
               } ${
                 isRight
-                  ? 'bg-green-soft text-green-dark shadow-soft ring-[3px] ring-green'
-                  : isWrong || solved
+                  ? 'anim-right bg-green-soft text-green-dark shadow-soft ring-[3px] ring-green'
+                  : isWrong
+                    ? 'anim-nudge bg-sand/70 text-muted'
+                    : solved
                     ? 'bg-sand/70 text-muted'
                     : 'mat-paper edge-light text-ink'
               }`}
