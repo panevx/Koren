@@ -16,8 +16,13 @@ export const LEGACY_PROGRESS_KEY = 'koren:progress'
 export const MAX_PROFILES = 3
 export const NICKNAME_MAX = 16
 
-export const AVATARS = ['bear', 'compass', 'helmet', 'martenitsa', 'backpack', 'medal', 'book', 'tower'] as const
-export type AvatarId = (typeof AVATARS)[number]
+export const AVATARS = ['bear', 'fox', 'wolf', 'rabbit', 'hedgehog', 'squirrel', 'fawn', 'owl', 'sheep', 'goat', 'donkey', 'horse', 'puppy', 'kitten', 'otter', 'badger', 'wild_boar', 'lynx', 'stork', 'duckling', 'ground_squirrel'] as const
+// Older profile backups retain their original IDs. The picker displays the bear for them.
+const storedAvatars = [...AVATARS, 'compass', 'helmet', 'martenitsa', 'backpack', 'medal', 'book', 'tower'] as const
+export type AvatarId = (typeof storedAvatars)[number]
+export function visibleAvatar(id: AvatarId) {
+  return AVATARS.find(avatar => avatar === id) ?? 'bear'
+}
 
 export type Done = { level: Level; at: string }
 export type Profile = {
@@ -146,7 +151,7 @@ export function sanitizeProfile(raw: unknown): Profile | null {
     id: r.id,
     nickname: cleanNickname(r.nickname),
     age: clampAge(typeof r.age === 'number' ? r.age : DEFAULT_AGE),
-    avatar: AVATARS.includes(r.avatar as AvatarId) ? (r.avatar as AvatarId) : 'bear',
+    avatar: storedAvatars.includes(r.avatar as AvatarId) ? (r.avatar as AvatarId) : 'bear',
     done: sanitizeDone(r.done),
     badges: sanitizeBadges(r.badges),
     seen: sanitizeBadges(r.seen),

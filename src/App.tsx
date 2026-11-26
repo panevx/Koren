@@ -1,8 +1,6 @@
 import { lazy, Suspense, type ReactNode } from 'react'
 import { BrowserRouter, Link, Navigate, Route, Routes, useLocation } from 'react-router'
-import { AgeSelect } from './screens/AgeSelect'
 import { Home } from './screens/Home'
-import { SignSelect } from './screens/SignSelect'
 import { Welcome } from './screens/Welcome'
 import { MotionRoot } from './motion'
 import { Screen, useTitle } from './components/ui'
@@ -28,6 +26,8 @@ const basename = resolveBasename(import.meta.env.BASE_URL, window.location.pathn
 
 // Missions (and the content schema they validate against) load only when a child opens them,
 // so the start screens stay small.
+const AgeSelect = lazy(() => import('./screens/AgeSelect').then((m) => ({ default: m.AgeSelect })))
+const SignSelect = lazy(() => import('./screens/SignSelect').then((m) => ({ default: m.SignSelect })))
 const Mission = lazy(() => import('./screens/Mission').then((m) => ({ default: m.Mission })))
 const MapScreen = lazy(() => import('./screens/MapScreen').then((m) => ({ default: m.MapScreen })))
 const WhoPlays = lazy(() => import('./screens/WhoPlays').then((m) => ({ default: m.WhoPlays })))

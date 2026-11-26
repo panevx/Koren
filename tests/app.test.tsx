@@ -48,14 +48,15 @@ describe('first visit → hub → reload', () => {
     expect(document.documentElement.lang).toBe('en')
 
     fireEvent.click(screen.getByRole('button', { name: /Start the adventure/ }))
-    expect(screen.getByRole('heading', { name: 'How old are you?' })).toBeInTheDocument()
+    expect(await screen.findByRole('heading', { name: 'How old are you?' })).toBeInTheDocument()
 
     fireEvent.click(screen.getByRole('radio', { name: /11 – 14 years/ }))
     expect(document.documentElement.dataset.level).toBe('guard')
 
     fireEvent.click(screen.getByRole('button', { name: /Next/ }))
-    expect(screen.getByRole('heading', { name: 'Choose your sign' })).toBeInTheDocument()
-    fireEvent.click(screen.getByRole('radio', { name: 'Helmet' }))
+    expect(await screen.findByRole('heading', { name: 'Choose an avatar' })).toBeInTheDocument()
+    expect(screen.getAllByRole('radio')).toHaveLength(21)
+    fireEvent.click(screen.getByRole('radio', { name: 'Lynx' }))
     fireEvent.click(screen.getByRole('button', { name: /Next/ }))
     expect(screen.getByRole('link', { name: /Discover Bulgaria/ })).toBeInTheDocument()
 
@@ -63,7 +64,7 @@ describe('first visit → hub → reload', () => {
     cleanup()
     await act(() => useSettings.persist.rehydrate())
     await act(() => useProfiles.persist.rehydrate())
-    expect(activeProfile(useProfiles.getState())).toMatchObject({ age: 12, avatar: 'helmet' })
+    expect(activeProfile(useProfiles.getState())).toMatchObject({ age: 12, avatar: 'lynx' })
     renderAt('/')
     expect(screen.getByRole('link', { name: /Discover Bulgaria/ })).toBeInTheDocument()
     expect(screen.queryByRole('button', { name: /Start the adventure/ })).not.toBeInTheDocument()

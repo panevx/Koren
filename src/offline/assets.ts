@@ -19,6 +19,7 @@ export const UI_IMAGES: readonly string[] = [
   'ornaments/right.png',
   ...['koren', 'raya'].flatMap((h) => ['joy', 'thoughtful', 'surprise', 'determination', 'laughter'].map((m) => `heroes/${h}-${m}.webp`)),
   ...SECTIONS.map((s) => sectionIcon(s.id)),
+  'levels/guard.webp',
   ...AVATARS.map(avatarImg),
   ...Object.values(ART),
   ...Object.values(GAME_ART),
