@@ -43,7 +43,7 @@ export function Passport() {
   return (
     <Screen nav wide>
       <TopBar title={t('passport.title')} />
-      <div className="flex flex-col gap-5 px-4 pb-32 short:pb-8 wide:grid wide:grid-cols-[minmax(0,min(19rem,50%))_minmax(0,1fr)] wide:items-start wide:gap-8 wide:pb-10">
+      <div className="flex flex-col gap-5 px-4 pb-3 short:pb-8 wide:grid wide:grid-cols-[minmax(0,min(19rem,50%))_minmax(0,1fr)] wide:items-start wide:gap-8 wide:pb-10">
         <div className="flex flex-col gap-5 wide:sticky wide:top-4">
           {/* The passport cover */}
           {/* v0.26: a real passport — green leather with a spine on the left, a stitched seam, gold foil, recessed fields */}

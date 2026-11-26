@@ -79,8 +79,8 @@
         {
           "hero": "raya",
           "pose": "wave",
-          "bg": "През 681 г. Византия сключила мир с Аспарух. Така се родила новата българска държава. Аспарух се съюзил със славянските племена, а Плиска станала столица.",
-          "en": "In 681 Byzantium made peace with Asparuh. That is how the new Bulgarian state was born. Asparuh made an alliance with the Slavic tribes, and Pliska became the capital."
+          "bg": "През 681 г. Византия сключила мир с Аспарух. Така се родила новата българска държава. Аспарух се съюзил със славянските племена, а Плиска станала столица. На днешната карта тя е в Североизточна България, навътре от Черно море.",
+          "en": "In 681 Byzantium made peace with Asparuh. That is how the new Bulgarian state was born. Asparuh made an alliance with the Slavic tribes, and Pliska became the capital. On today’s map, Pliska lies in north-eastern Bulgaria, inland from the Black Sea."
         }
       ],
       "game": {
@@ -97,8 +97,8 @@
           "en": "Find Pliska – the first capital – on the map!"
         },
         "hint": {
-          "bg": "Търси на североизток – близо до морето, но не на самия бряг.",
-          "en": "Look in the north-east – near the sea, but not on the coast."
+          "bg": "Избери точката навътре в североизточната част на картата, западно от точката на черноморския бряг.",
+          "en": "Look for the inland dot in the north-east, west of the dot on the Black Sea coast."
         },
         "showIcons": false
       },

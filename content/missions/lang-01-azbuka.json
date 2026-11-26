@@ -9,8 +9,8 @@
     "icon": "badges/azbuka.webp"
   },
   "title": {
-    "bg": "Азбуката на Кирил и Методий",
-    "en": "The alphabet of Cyril and Methodius"
+    "bg": "Глаголица и българските букви",
+    "en": "Glagolitic and Bulgarian letters"
   },
   "levels": {
     "small": {
@@ -18,14 +18,14 @@
         {
           "hero": "koren",
           "pose": "wave",
-          "bg": "Това е нашата азбука!",
-          "en": "This is our alphabet!"
+          "bg": "Кирил и Методий създали глаголицата. Днес пишем на кирилица.",
+          "en": "Cyril and Methodius created Glagolitic. Today we write in Cyrillic."
         },
         {
           "hero": "raya",
           "pose": "point",
-          "bg": "Всяка голяма буква си има малка сестричка.",
-          "en": "Every big letter has a little sister."
+          "bg": "Това са кирилските букви А, Б, Д и Ж. Всяка голяма буква има малка сестричка.",
+          "en": "These are the Cyrillic letters А, Б, Д and Ж. Each capital letter has a little sister."
         },
         {
           "hero": "koren",
@@ -94,8 +94,8 @@
         {
           "hero": "raya",
           "pose": "wave",
-          "bg": "Знаеш ли, че българската азбука има 30 букви?",
-          "en": "Did you know the Bulgarian alphabet has 30 letters?"
+          "bg": "Днешната българска азбука е кирилица и има 30 букви.",
+          "en": "Today’s Bulgarian alphabet uses Cyrillic and has 30 letters."
         },
         {
           "hero": "koren",
@@ -121,8 +121,8 @@
       "game": {
         "type": "order",
         "prompt": {
-          "bg": "Подреди буквите по азбучен ред!",
-          "en": "Put the letters in alphabetical order!"
+          "bg": "Подреди кирилските букви по азбучен ред!",
+          "en": "Put the Cyrillic letters in alphabetical order!"
         },
         "items": [
           {
@@ -565,6 +565,7 @@
     }
   },
   "sources": [
+    "Институт за български език – БАН, „Българските азбуки“ и речникова статия „Глаголица“",
     "Кирило-Методиевска енциклопедия, т. I–IV. София: БАН, 1985–2003.",
     "[учебник/помагало – издателство и страница: попълва учителят]"
   ],

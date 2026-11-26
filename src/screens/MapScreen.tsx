@@ -222,7 +222,7 @@ export function MapScreen() {
       <div className="@container/page">
       {/* v0.26 composition. Phone: the mode dock (all eight modes in view — no hidden sideways scroll), the map on its table,
           then the guide or what was tapped. Computer: the map large on the left; the dock and the panel in a column on the right. */}
-      <div className="flex flex-col gap-4 px-4 pb-[calc(var(--tap)+4rem+env(safe-area-inset-bottom))] short:pb-8 cols:grid cols:grid-cols-[minmax(0,1fr)_15.5rem] cols:items-start cols:gap-x-6 cols:pb-10">
+      <div className="flex flex-col gap-4 px-4 pb-3 short:pb-8 cols:grid cols:grid-cols-[minmax(0,1fr)_15.5rem] cols:items-start cols:gap-x-6 cols:pb-10">
         <div className="order-2 flex flex-col gap-3 cols:order-none cols:col-start-1 cols:row-start-1">
           <BulgariaMap
             label={t('map.label')}
@@ -297,6 +297,10 @@ export function MapScreen() {
                 </p>
               </CharacterMessage>
             )}
+            <Link to="/topic/geography" className="tap mat-paper edge-light flex items-center justify-between gap-2 rounded-[1.25rem] px-4 font-extrabold">
+              {t('subject.geography')}
+              <Icon name="chevron" />
+            </Link>
             {!sel && mode === 'landmarks' && <TimelineLink />}
             {sel && <InfoPanel key={`${sel.kind}:${sel.id}`} sel={sel} onClose={() => setSel(null)} missionsAt={missionsAt} />}
           </div>

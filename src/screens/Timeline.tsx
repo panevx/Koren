@@ -54,7 +54,7 @@ export function Timeline() {
     <Screen nav wide>
       <TopBar title={t('timeline.title')} />
       <div className="@container/page">
-      <div className="flex flex-col gap-4 px-4 pb-[calc(var(--tap)+4rem+env(safe-area-inset-bottom))] short:pb-8 cols:grid cols:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] cols:items-start cols:gap-x-7 cols:gap-y-4 cols:pb-10 cols:[&>*]:col-start-2">
+      <div className="flex flex-col gap-4 px-4 pb-3 short:pb-8 cols:grid cols:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] cols:items-start cols:gap-x-7 cols:gap-y-4 cols:pb-10 cols:[&>*]:col-start-2">
         {/* 1. The year seal between "earlier" and "later" (the era is named on the chronicle page) */}
         <div className="flex items-center gap-3">
           {/* aria-disabled (not disabled): at the first/last year the button keeps keyboard focus instead of dropping it. */}

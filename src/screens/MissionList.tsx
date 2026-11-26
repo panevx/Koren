@@ -25,6 +25,7 @@ import { ComingSoon } from './ComingSoon'
 
 /** Hub topics that map to a mission subject. */
 const TOPIC_SUBJECT: Partial<Record<SectionId, Subject>> = {
+  geography: 'geography',
   history: 'history',
   culture: 'culture',
   language: 'language',
@@ -78,7 +79,7 @@ export function MissionList({ topic }: { topic?: boolean }) {
     <Screen nav wide>
       <TopBar title={section ? t(section.label) : t('missions.title')} />
       <div className="@container/page">
-      <div className="flex flex-col gap-section px-4 pb-[calc(var(--tap)+4rem+env(safe-area-inset-bottom))] short:pb-8 wide:pb-10">
+      <div className="flex flex-col gap-section px-4 pb-3 short:pb-8 wide:pb-10">
         {/* The topic's banner: its 3D picture in a satin medallion, how far the child has come. */}
         <div className="flex flex-col gap-3 cols:grid cols:grid-cols-[minmax(0,1fr)_minmax(0,22rem)] cols:items-center cols:gap-5">
           <div className="mat-paper edge-light flex items-center gap-4 rounded-[1.75rem] p-3 pr-5">

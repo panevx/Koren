@@ -1,4 +1,4 @@
-import { useEffect, useState, type ReactNode } from 'react'
+import { useEffect, useRef, useState, type ReactNode } from 'react'
 import { useNavigate } from 'react-router'
 import { Flag } from '../components/Brand'
 import { OfflinePanel } from '../components/OfflinePanel'
@@ -18,7 +18,7 @@ import { useChildMissions } from '../content/useChildMissions'
 import { DEFAULT_AGE, MAX_AGE, MIN_AGE, ageToLevel, clampAge } from '../theme/levels'
 
 // ── Gate ─────────────────────────────────────────────────────────────
-/** Once solved, the gate stays open for a few minutes so a parent can move around. */
+/** Access expires after ten minutes or when the parent leaves. */
 const UNLOCK_MS = 10 * 60 * 1000
 let unlockedAt = 0
 export const lockParents = () => {
@@ -112,6 +112,7 @@ export function Parents() {
     return () => {
       window.clearTimeout(timer)
       document.removeEventListener('visibilitychange', check)
+      lockParents()
     }
   }, [open])
 
@@ -339,7 +340,15 @@ function Learns({ profile, index }: { profile: Profile; index: number }) {
 function ProfileBackup({ onExpired }: { onExpired: () => void }) {
   const t = useT()
   const [pending, setPending] = useState<ReturnType<typeof sanitizeProfiles>>(null)
-  const [status, setStatus] = useState<'backup.invalid' | 'backup.done' | null>(null)
+  const [status, setStatus] = useState<'backup.invalid' | 'backup.done' | 'backup.cancelled' | null>(null)
+  const [filename, setFilename] = useState('')
+  const fileInput = useRef<HTMLInputElement>(null)
+  useEffect(() => {
+    const input = fileInput.current
+    const cancel = () => setStatus('backup.cancelled')
+    input?.addEventListener('cancel', cancel)
+    return () => input?.removeEventListener('cancel', cancel)
+  }, [])
   const exportFile = () => {
     if (!parentsUnlocked()) return onExpired()
     const { profiles, activeId } = useProfiles.getState()
@@ -355,33 +364,45 @@ function ProfileBackup({ onExpired }: { onExpired: () => void }) {
     <Section icon="save" title={t('backup.title')}>
       <div className="flex flex-col gap-3">
         <Button variant="secondary" onClick={exportFile}>{t('backup.export')}</Button>
-        <label>{t('backup.file')}
-          <input type="file" accept=".json,application/json" className="mt-1 block min-h-[var(--tap)] w-full file:mr-3 file:min-h-[var(--tap)] file:rounded-full file:border-0 file:bg-green-soft file:px-5 file:font-bold file:text-green-dark" onChange={async e => {
-            const input = e.currentTarget
-            const file = input.files?.[0]
-            setPending(null)
-            setStatus(null)
-            if (!file) return
-            try {
-              if (file.size > 16 * 1024 * 1024) throw Error()
-              const data = JSON.parse(await file.text())
-              if (input.files?.[0] !== file) return
-              const clean = sanitizeProfiles(data)
-              if (data.format !== 'koren-profiles-v1' || !clean || clean.activeId !== data.activeId ||
-                  clean.profiles.length !== data.profiles.length ||
-                  clean.profiles.some((profile, i) => Object.entries(profile).some(([key, value]) =>
-                    JSON.stringify(value) !== JSON.stringify(data.profiles[i][key])))) throw Error()
-              setPending(clean)
-            } catch {
-              if (input.files?.[0] === file) setStatus('backup.invalid')
-            }
-            if (input.files?.[0] === file) input.value = ''
-          }} />
-        </label>
+        <Button variant="secondary" onClick={() => {
+          setPending(null)
+          setStatus(null)
+          setFilename('')
+          const input = fileInput.current
+          if (!input) return
+          input.value = ''
+          input.click()
+        }}>{t('backup.file')}</Button>
+        <p className="text-sm text-muted [overflow-wrap:anywhere]" aria-live="polite">
+          {filename ? t('backup.selected', { name: filename }) : t('backup.noFile')}
+        </p>
+        <input ref={fileInput} type="file" accept=".json,application/json" className="hidden" aria-label={t('backup.file')} onChange={async e => {
+          const input = e.currentTarget
+          const file = input.files?.[0]
+          setPending(null)
+          setStatus(null)
+          setFilename(file?.name ?? '')
+          if (!file) return
+          try {
+            if (file.size > 16 * 1024 * 1024) throw Error()
+            const data = JSON.parse(await file.text())
+            if (input.files?.[0] !== file) return
+            const clean = sanitizeProfiles(data)
+            if (data.format !== 'koren-profiles-v1' || !clean || clean.activeId !== data.activeId ||
+                clean.profiles.length !== data.profiles.length ||
+                clean.profiles.some((profile, i) => Object.entries(profile).some(([key, value]) =>
+                  JSON.stringify(value) !== JSON.stringify(data.profiles[i][key])))) throw Error()
+            setPending(clean)
+          } catch {
+            if (input.files?.[0] === file) setStatus('backup.invalid')
+          }
+          if (input.files?.[0] === file) input.value = ''
+        }} />
         {pending && <Button variant="accent" onClick={() => saveProfileChange(() => {
           if (!parentsUnlocked()) return onExpired()
           useProfiles.setState({ ...pending, streak: 0 })
           setPending(null)
+          setFilename('')
           setStatus('backup.done')
         })}>{t('backup.apply')}</Button>}
         <p role="status">{status && t(status)}</p>

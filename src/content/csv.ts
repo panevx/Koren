@@ -97,6 +97,10 @@ export function missionsToCsv(missions: Mission[]): string {
             add({ mission: id, level, block: 'game', kind: 'pair', bg: p.a.bg, en: p.a.en, img: p.a.img ?? '', opt_bg: p.b.bg, opt_en: p.b.en, opt_img: p.b.img ?? '' })
           break
         case 'order':
+          if (g.explanation) {
+            head('json', { bg: JSON.stringify(g) })
+            break
+          }
           head('order', { bg: g.prompt.bg, en: g.prompt.en, hint_bg: g.hint?.bg ?? '', hint_en: g.hint?.en ?? '' })
           for (const it of g.items) add({ mission: id, level, block: 'game', kind: 'item', bg: it.bg, en: it.en, img: it.img ?? '' })
           break

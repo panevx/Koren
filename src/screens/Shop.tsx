@@ -47,7 +47,7 @@ export function Shop() {
   return (
     <Screen nav wide>
       <TopBar title={t('shop.title')} />
-      <div className="flex flex-col gap-5 px-4 pb-32 short:pb-8 wide:grid wide:grid-cols-[minmax(0,min(19rem,50%))_minmax(0,1fr)] wide:items-start wide:gap-8 wide:pb-10">
+      <div className="flex flex-col gap-5 px-4 pb-3 short:pb-8 wide:grid wide:grid-cols-[minmax(0,min(19rem,50%))_minmax(0,1fr)] wide:items-start wide:gap-8 wide:pb-10">
         <div className="flex flex-col gap-4 wide:sticky wide:top-4">
           {/* The purse */}
           <section aria-labelledby="purse" className="bg-stage-night relative rounded-[var(--radius-stage)] p-5 text-white shadow-stage">

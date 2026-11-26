@@ -26,29 +26,28 @@
         {
           "hero": "koren",
           "pose": "reading",
-          "bg": "Всяка приказка си има вълшебен предмет.",
-          "en": "Every tale has its magic object.",
+          "bg": "В „Златната ябълка“ най-малкият брат остава буден да пази дървото.",
+          "en": "In “The Golden Apple”, the youngest brother stays awake to guard the tree.",
           "img": "minigame/fairytale-golden-apple.webp"
         },
         {
           "hero": "raya",
           "pose": "point",
-          "bg": "Свържи предмета с приказката.",
-          "en": "Match the object with the tale."
+          "bg": "В „Житената питка“ питката бяга и пее. В „Кума Лиса и Кумчо Вълчо“ вълкът лови риба с опашката си.",
+          "en": "In “The Wheat Loaf”, the loaf runs away singing. In “Godmother Fox and Godfather Wolf”, the wolf fishes with his tail."
         }
       ],
       "game": {
         "type": "match",
         "prompt": {
-          "bg": "От коя приказка е?",
-          "en": "Which tale is it from?"
+          "bg": "От коя приказка е всяка случка?",
+          "en": "Which tale does each event belong to?"
         },
         "pairs": [
           {
             "a": {
-              "bg": "Златна ябълка",
-              "en": "Golden apple",
-              "img": "minigame/fairytale-golden-apple.webp"
+              "bg": "Братът пази дървото, докато другите спят.",
+              "en": "A brother guards the tree while the others sleep."
             },
             "b": {
               "bg": "„Златната ябълка“",
@@ -57,9 +56,8 @@
           },
           {
             "a": {
-              "bg": "Питка",
-              "en": "Loaf",
-              "img": "world/traditional-bread.webp"
+              "bg": "Пее и бяга от всяко животно по пътя.",
+              "en": "The hero sings and escapes each animal along the road."
             },
             "b": {
               "bg": "„Житената питка“",
@@ -68,9 +66,8 @@
           },
           {
             "a": {
-              "bg": "Опашката на вълка в леда",
-              "en": "The wolf's tail in the ice",
-              "img": "animals/wolf.webp"
+              "bg": "Вълкът се опитва да лови риба през дупка в леда.",
+              "en": "The wolf tries to catch fish through a hole in the ice."
             },
             "b": {
               "bg": "„Кума Лиса и Кумчо Вълчо“",

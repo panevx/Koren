@@ -113,14 +113,14 @@ describe('hub navigation', () => {
       renderAt('/home')
       fireEvent.click(screen.getByRole('link', { name: new RegExp(name) }))
       expect(await screen.findByRole('heading', { name })).toBeInTheDocument()
-      expect(screen.getAllByRole('link', { name: /Хан Аспарух|Баба Марта|Азбуката/ }).length).toBeGreaterThan(0)
+      expect(screen.getAllByRole('link', { name: /Хан Аспарух|Баба Марта|Глаголица/ }).length).toBeGreaterThan(0)
     }
     // The path link under the adventure card opens the adventure path: every mission is a stop on it.
     cleanup()
     renderAt('/home')
     fireEvent.click(await screen.findByRole('link', { name: /Пътят на приключенията/ }))
     expect(await screen.findByRole('heading', { name: 'Пътят на приключенията' })).toBeInTheDocument()
-    expect(screen.getAllByRole('button', { name: /Хан Аспарух|Баба Марта|Азбуката/ }).length).toBeGreaterThan(0)
+    expect(screen.getAllByRole('button', { name: /Хан Аспарух|Баба Марта|Глаголица/ }).length).toBeGreaterThan(0)
   })
 
   it('unknown topics and routes fall back safely', async () => {
@@ -164,6 +164,16 @@ describe('parents section', () => {
     expect(screen.getByRole('heading', { name: 'За родители' })).toBeInTheDocument()
   })
 
+  it('locks the parent area on leaving and returning', async () => {
+    renderAt('/parents')
+    await screen.findByRole('heading', { name: 'Само за родители' })
+    solveGate()
+    expect(screen.getByRole('heading', { name: 'За родители' })).toBeInTheDocument()
+    cleanup()
+    renderAt('/parents')
+    expect(await screen.findByRole('heading', { name: 'Само за родители' })).toBeInTheDocument()
+  })
+
   it('restores progress only after the parent confirms the selected backup', async () => {
     renderAt('/parents')
     await screen.findByRole('heading', { name: 'Само за родители' })
@@ -172,9 +182,10 @@ describe('parents section', () => {
     const data = { format: 'koren-profiles-v1', activeId: original.id,
       profiles: [{ ...original, nickname: 'Рая', badges: ['asparuh'] }] }
     fireEvent.change(screen.getByLabelText('Избери файл за възстановяване'), {
-      target: { files: [{ size: 500, text: async () => JSON.stringify(data) }] },
+      target: { files: [{ name: 'family.json', size: 500, text: async () => JSON.stringify(data) }] },
     })
     const apply = await screen.findByRole('button', { name: 'Замени текущите профили с тези от копието' })
+    expect(screen.getByText(/Избран файл: family\.json/)).toBeInTheDocument()
     expect(activeProfile(useProfiles.getState())).toEqual(original)
     fireEvent.click(apply)
     expect(activeProfile(useProfiles.getState())).toMatchObject({ nickname: 'Рая', badges: ['asparuh'] })

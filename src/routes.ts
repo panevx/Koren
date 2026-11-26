@@ -14,7 +14,7 @@ export const appPages = {
   practice: '/practice',
 } as const
 
-const topics = ['history', 'culture', 'language']
+const topics = ['geography', 'history', 'culture', 'language']
 export const staticPages = [...Object.values(appPages), ...topics.map((topic) => `/topic/${topic}`)]
 const knownPages = new Set<string>(staticPages)
 

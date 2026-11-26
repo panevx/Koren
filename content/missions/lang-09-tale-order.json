@@ -29,8 +29,8 @@
         {
           "hero": "koren",
           "pose": "point",
-          "bg": "Кого среща питката? Подреди ги!",
-          "en": "Whom does the loaf meet? Put them in order!"
+          "bg": "Първо срещнала заек, после вълк и мечка, а накрая – хитрата лисица.",
+          "en": "First it met a hare, then a wolf and a bear, and last of all the clever fox."
         }
       ],
       "game": {
@@ -80,8 +80,8 @@
         {
           "hero": "koren",
           "pose": "point",
-          "bg": "Подреди приказката!",
-          "en": "Put the tale in order!"
+          "bg": "Бабата изпича питката. Тя избягва и надхитрява заека, вълка и мечката с песничка. Накрая лисицата я измамва и я изяжда.",
+          "en": "Grandma bakes the loaf. It rolls away and outwits the hare, the wolf and the bear with a song. At last the fox tricks it and eats it."
         }
       ],
       "game": {
@@ -104,7 +104,7 @@
             "en": "It runs from the hare, the wolf and the bear"
           },
           {
-            "bg": "Лисицата я хитрува и я изяжда",
+            "bg": "Лисицата я измамва и я изяжда",
             "en": "The fox tricks it and eats it"
           }
         ]
@@ -240,43 +240,47 @@
         {
           "hero": "raya",
           "pose": "reading",
-          "bg": "Приказките често се повтарят по три пъти – и накрая идва обрат.",
-          "en": "Tales often repeat things three times – and then comes a twist.",
+          "bg": "Баба изпича питка, която оживява и се търкулва навън. По пътя тя пее на заека, вълка и мечката и успява да избяга.",
+          "en": "Grandma bakes a loaf that comes to life and rolls outside. It sings to the hare, the wolf and the bear and gets away each time.",
           "img": "world/traditional-bread.webp"
         },
         {
           "hero": "koren",
           "pose": "compass",
-          "bg": "Подреди частите на приказката, както ги учим в час.",
-          "en": "Put the parts of the tale in order, as we learn in class."
+          "bg": "Лисицата се преструва, че не чува песента. Кани питката да се качи върху носа ѝ, за да пее по-близо, и я изяжда.",
+          "en": "The fox pretends she cannot hear the song. She asks the loaf to climb onto her nose and sing closer, then eats it."
         }
       ],
       "game": {
         "type": "order",
+        "explanation": {
+          "bg": "Начало: бабата пече питката. Завръзка: питката избягва. Следват повтарящите се срещи. Кулминация: лисицата я измамва. Край: лисицата изяжда питката.",
+          "en": "Beginning: Grandma bakes the loaf. Rising action: the loaf escapes. The encounters repeat. Climax: the fox tricks it. Ending: the fox eats the loaf."
+        },
         "prompt": {
           "bg": "Подреди частите на приказката!",
           "en": "Put the parts of the tale in order!"
         },
         "items": [
           {
-            "bg": "Начало: „Имало едно време дядо и баба…“",
-            "en": "Beginning: \"Once upon a time there were a grandpa and a grandma…\""
+            "bg": "Бабата омесва и изпича питката.",
+            "en": "Grandma kneads and bakes the loaf."
           },
           {
-            "bg": "Завръзка: питката избягва",
-            "en": "Rising action: the loaf escapes"
+            "bg": "Питката се търкулва навън и избягва.",
+            "en": "The loaf rolls out of the house and escapes."
           },
           {
-            "bg": "Повторения: заек, вълк, мечка",
-            "en": "Repetition: hare, wolf, bear"
+            "bg": "Питката пее на заека, вълка и мечката и им избягва.",
+            "en": "The loaf sings to the hare, wolf and bear and escapes each of them."
           },
           {
-            "bg": "Кулминация: срещата с лисицата",
-            "en": "Climax: meeting the fox"
+            "bg": "Лисицата мами питката да се качи на носа ѝ.",
+            "en": "The fox tricks the loaf into climbing onto her nose."
           },
           {
-            "bg": "Край: поуката за самохвалството",
-            "en": "Ending: the lesson about boasting"
+            "bg": "Лисицата изяжда питката.",
+            "en": "The fox eats the loaf."
           }
         ]
       },

@@ -109,7 +109,7 @@ export function Home() {
       </div>
 
       {/* Bottom padding = the floating navigation + a gap + the safe area, so the last tile scrolls fully clear of it. */}
-      <div className="flex flex-col px-4 pb-[calc(var(--tap)+3.5rem+env(safe-area-inset-bottom))] short:pb-8 wide:pb-10">
+      <div className="flex flex-col px-4 pb-3 short:pb-8 wide:pb-10">
         {/* 1 + 2. The diorama: a layered back wall (sky → far mountains → clouds → hills), Koren and Raya standing in
             front of the hills on the slab, a bush in front of them. The slab carries the next mission (and on a
             computer the progress too — one object, not three cards). */}

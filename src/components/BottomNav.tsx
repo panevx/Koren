@@ -1,4 +1,4 @@
-import { useEffect, useState, type CSSProperties } from 'react'
+import { useEffect, useRef, useState, type CSSProperties } from 'react'
 import { NavLink, useLocation } from 'react-router'
 import type { TKey } from '../i18n'
 import { useT } from '../i18n/useT'
@@ -25,6 +25,17 @@ let lastIndex = 0
  * - computer / tablet sideways (`wide:`): a side bar with the logo and big rows.
  */
 export function BottomNav({ refined = false }: { refined?: boolean }) {
+  const nav = useRef<HTMLElement>(null)
+  useEffect(() => {
+    const element = nav.current
+    const screen = element?.parentElement
+    if (!element || !screen || typeof ResizeObserver === 'undefined') return
+    const measure = () => screen.style.setProperty('--nav-height', `${element.offsetHeight}px`)
+    const observer = new ResizeObserver(measure)
+    measure()
+    observer.observe(element)
+    return () => observer.disconnect()
+  }, [])
   const t = useT()
   const { pathname } = useLocation()
   const active = ITEMS.findIndex((it) => pathname === it.to || pathname.startsWith(it.to + '/'))
@@ -39,6 +50,7 @@ export function BottomNav({ refined = false }: { refined?: boolean }) {
 
   return (
     <nav
+      ref={nav}
       aria-label={t('nav.main')}
       className="pointer-events-none fixed inset-x-0 bottom-0 z-20 px-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] short:inset-y-0 short:right-auto short:flex short:items-center short:pr-0 short:pb-0 short:pl-[max(0.5rem,env(safe-area-inset-left))] wide:inset-y-0 wide:right-auto wide:w-[var(--rail)] wide:p-4 wide:pr-0"
     >

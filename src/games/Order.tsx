@@ -105,7 +105,7 @@ export function Order({ game, onDone }: { game: OrderGame; onDone: () => void })
       )}
 
       <Feedback
-        correct={solved ? t('order.done') : undefined}
+        correct={solved ? (game.explanation ? l(game.explanation) : t('order.done')) : undefined}
         help={misses === 0 || solved ? undefined : misses >= 2 && game.hint ? l(game.hint) : t('order.tryAgain')}
         nudge={misses}
       />

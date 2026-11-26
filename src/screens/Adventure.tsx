@@ -89,7 +89,7 @@ export function Adventure() {
   return (
     <Screen nav wide>
       <TopBar title={t('path.title')} />
-      <div className="px-4 pb-32 short:pb-8 wide:grid wide:grid-cols-[minmax(0,1fr)_minmax(0,min(19rem,50%))] wide:items-start wide:gap-8 wide:pb-10">
+      <div className="px-4 pb-3 short:pb-8 wide:grid wide:grid-cols-[minmax(0,1fr)_minmax(0,min(19rem,50%))] wide:items-start wide:gap-8 wide:pb-10">
         <div className="flex flex-col gap-3 wide:mx-auto wide:w-full wide:max-w-[30rem]">
           {ordered.length === 0 && (
             <p className="rounded-[var(--radius-card)] bg-gold-soft p-4 text-center font-bold">

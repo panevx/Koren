@@ -26,7 +26,7 @@ export function Fame() {
   return (
     <Screen nav wide>
       <TopBar title={t('fame.title')} />
-      <div className="flex flex-col gap-5 px-4 pb-32 short:pb-8 wide:pb-10">
+      <div className="flex flex-col gap-5 px-4 pb-3 short:pb-8 wide:pb-10">
         <p className="fill-satin tint-gold edge-light rounded-[var(--radius-card)] px-4 py-3 text-center font-bold">{people.length ? t('fame.intro', { n: lit, total: people.length }) : t('empty.text')}</p>
         {FIELDS.map((field) => {
           const list = people.filter((p) => p.field === field)

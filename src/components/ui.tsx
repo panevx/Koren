@@ -29,7 +29,7 @@ export function Screen({
 }) {
   return (
     <div
-      className={`min-h-dvh overflow-x-clip bg-cream ${atmosphere ? 'atmosphere' : ''} ${nav ? 'short:pl-[calc(5.25rem+env(safe-area-inset-left))] wide:pl-[calc(var(--rail)+1rem)]' : ''}`}
+      className={`min-h-dvh overflow-x-clip bg-cream ${atmosphere ? 'atmosphere' : ''} ${nav ? 'has-bottom-nav short:pl-[calc(5.25rem+env(safe-area-inset-left))] wide:pl-[calc(var(--rail)+1rem)]' : ''}`}
     >
       <m.main {...pageEnter} className={`mx-auto flex min-h-dvh w-full max-w-md flex-col ${wide ? 'wide:max-w-6xl wide:px-4' : ''} ${className}`}>
         {children}

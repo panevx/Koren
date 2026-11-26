@@ -110,7 +110,7 @@ export const MatchGame = z
 
 /** Put cards in order. `items` are written in the CORRECT order; the game shuffles them. */
 export const OrderGame = z
-  .object({ type: z.literal('order'), prompt: Text, items: z.array(Option).min(3).max(6), hint: Text.optional() })
+  .object({ type: z.literal('order'), prompt: Text, items: z.array(Option).min(3).max(6), hint: Text.optional(), explanation: Text.optional() })
   .strict()
   .refine((g) => distinct(g.items), { message: 'items must be different', path: ['items'] })
 
