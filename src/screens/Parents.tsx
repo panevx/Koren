@@ -12,6 +12,7 @@ import { useLocalized } from '../content/useLocalized'
 import { LANGS } from '../i18n'
 import { useT } from '../i18n/useT'
 import { MAX_PROFILES, NICKNAME_MAX, sanitizeProfiles, saveProfileChange, useProfiles, type AvatarId, type Profile } from '../store/profiles'
+import { checkPin, clearPin, readPin } from '../store/parentPin'
 import { useSettings } from '../store/settings'
 import { TESTER_CODE, TESTER_TOOLS } from '../content/tester'
 import { useChildMissions } from '../content/useChildMissions'
@@ -25,70 +26,87 @@ export const lockParents = () => {
   unlockedAt = 0
 }
 
-function newSum() {
-  const r = () => 6 + Math.floor(Math.random() * 4) // 6..9 — beyond what young children know by heart
-  return { a: r(), b: r() }
-}
-
 function Gate({ onPass, onTest }: { onPass: () => void; onTest: () => void }) {
   const t = useT()
   const navigate = useNavigate()
-  const [sum, setSum] = useState(newSum)
+  const [setup, setSetup] = useState(() => {
+    try { return readPin() === null } catch { return false }
+  })
+  const [first, setFirst] = useState('')
   const [input, setInput] = useState('')
-  const [wrong, setWrong] = useState(false)
+  const [message, setMessage] = useState<'gate.wrong' | 'gate.mismatch' | 'gate.storage' | null>(null)
+  const [busy, setBusy] = useState(false)
+  const mounted = useRef(false)
+  useEffect(() => {
+    mounted.current = true
+    return () => { mounted.current = false }
+  }, [])
 
-  const submit = () => {
-    if (TESTER_TOOLS && input === TESTER_CODE) {
-      onTest()
-      return
-    }
-    if (Number(input) === sum.a * sum.b) {
-      unlockedAt = Date.now()
-      onPass()
-      return
-    }
-    setWrong(true)
+  const submit = async () => {
+    if (busy) return
+    if (TESTER_TOOLS && input === TESTER_CODE) return onTest()
     setInput('')
-    setSum(newSum())
+    if (!/^\d{6}$/.test(input)) return setMessage('gate.wrong')
+    if (setup && !first) {
+      setFirst(input)
+      setMessage(null)
+      return
+    }
+    if (setup && first !== input) {
+      setFirst('')
+      setMessage('gate.mismatch')
+      return
+    }
+    setBusy(true)
+    try {
+      const valid = await checkPin(input, setup)
+      if (!mounted.current) return
+      if (valid) {
+        unlockedAt = Date.now()
+        onPass()
+      } else {
+        setSetup(readPin() === null)
+        setFirst('')
+        setMessage('gate.wrong')
+      }
+    } catch {
+      if (mounted.current) setMessage('gate.storage')
+    } finally {
+      if (mounted.current) setBusy(false)
+    }
   }
   const key = (k: string) => {
-    setWrong(false)
-    setInput((v) => (k === '⌫' ? v.slice(0, -1) : (v + k).slice(0, TESTER_TOOLS ? TESTER_CODE.length : 3)))
+    setMessage(null)
+    setInput(v => k === '⌫' ? v.slice(0, -1) : (v + k).slice(0, 7))
   }
 
   return (
     <Screen>
       <TopBar title={t('gate.title')} onBack={() => navigate('/home')} />
       <div className="flex flex-1 flex-col items-center gap-4 px-6 pb-8">
-        <p className="text-center font-semibold text-muted">{t('gate.text')}</p>
-        <p className="text-3xl font-black" id="gate-q">
-          {t('gate.question', { a: sum.a, b: sum.b })}
-        </p>
-        <div
-          aria-live="polite"
-          aria-atomic="true"
-          className="well grid h-16 min-w-44 place-items-center rounded-full bg-white/70 px-5 text-3xl font-black tracking-widest"
-        >
-          <span className="sr-only">{t('gate.answer')}: </span>
-          {input || ' '}
-        </div>
-        <p role="status" className="min-h-6 text-center font-bold text-coral-dark">
-          {wrong ? t('gate.wrong') : ''}
-        </p>
+        <label htmlFor="parent-pin" className="text-center font-semibold text-muted">
+          {t(setup ? first ? 'gate.confirm' : 'gate.create' : 'gate.text')}
+        </label>
+        <input id="parent-pin" type="password" inputMode="numeric" maxLength={7}
+          autoComplete={setup ? 'new-password' : 'current-password'} value={input} disabled={busy}
+          onChange={e => { setInput(e.target.value.replace(/\D/g, '').slice(0, 7)); setMessage(null) }}
+          onKeyDown={e => { if (e.key === 'Enter') { e.preventDefault(); void submit() } }}
+          className="well h-16 w-44 rounded-full bg-white/70 px-5 text-center text-3xl font-black tracking-widest" />
+        <p role="status" className="min-h-6 text-center font-bold text-coral-dark">{message && t(message)}</p>
         <div className="grid w-full max-w-xs grid-cols-3 gap-x-3 gap-y-4">
           {['1', '2', '3', '4', '5', '6', '7', '8', '9', '⌫', '0'].map((k) => (
             <button
               key={k}
               type="button"
-              onClick={() => key(k)}
+              disabled={busy} onClick={() => key(k)}
               aria-label={k === '⌫' ? t('gate.delete') : k}
               className="btn-satin tint-paper edge-light tap rounded-full text-2xl font-black"
             >
               {k}
             </button>
           ))}
-          <button type="button" onClick={submit} disabled={!input} className="btn-satin tint-green edge-light tap rounded-full text-[min(1.25rem,6.5vw)] font-black text-white disabled:opacity-40">
-            {t('gate.ok')}
+          <button type="button" onClick={submit} disabled={!input || busy} className="btn-satin tint-green edge-light tap rounded-full text-[min(1.25rem,6.5vw)] font-black text-white disabled:opacity-40">
+            {t(setup ? first ? 'gate.save' : 'gate.next' : 'gate.ok')}
           </button>
         </div>
       </div>
@@ -427,6 +445,7 @@ function ParentsArea({ onExpired }: { onExpired: () => void }) {
     if (!confirm()) return
     saveProfileChange(() => {
       if (!parentsUnlocked()) return
+      clearPin()
       useProfiles.getState().reset()
       useSettings.getState().reset()
       lockParents()

@@ -1,3 +1,4 @@
+import { webcrypto } from 'node:crypto'
 import { act, cleanup, fireEvent, render, screen, within } from '@testing-library/react'
 import { MemoryRouter } from 'react-router'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
@@ -140,34 +141,43 @@ describe('hub navigation', () => {
   })
 })
 
-/** Reads "Колко е 7 × 8?" from the gate and types the answer on its keypad. */
-function solveGate(answer?: string) {
-  const q = screen.getByText(/Колко е \d × \d\?/).textContent!
-  const [, a, b] = q.match(/(\d) × (\d)/)!
-  for (const d of answer ?? String(Number(a) * Number(b))) fireEvent.click(screen.getByRole('button', { name: d }))
-  fireEvent.click(screen.getByRole('button', { name: 'Влез' }))
+function enterCode(code: string) {
+  fireEvent.change(screen.getByLabelText(/ПИН/), { target: { value: code } })
+  fireEvent.keyDown(screen.getByLabelText(/ПИН/), { key: 'Enter' })
+}
+
+async function openParentGate() {
+  if (screen.queryByLabelText(/избери 6-цифрен/)) enterCode('012345')
+  enterCode('012345')
+  await screen.findByRole('heading', { name: 'За родители' })
 }
 
 describe('parents section', () => {
-  it('the gear leads to a gate a young child cannot pass by tapping around', async () => {
+  beforeEach(() => { vi.stubGlobal('crypto', webcrypto) })
+  afterEach(() => { vi.unstubAllGlobals() })
+
+  it('confirms a new PIN and requires it again after reopening', async () => {
     useSettings.getState().completeOnboarding()
     renderAt('/home')
     fireEvent.click(screen.getByRole('link', { name: 'За родители' }))
-    expect(await screen.findByRole('heading', { name: 'Само за родители' })).toBeInTheDocument()
-    const before = screen.getByText(/Колко е/).textContent
-    solveGate('12') // wrong
-    expect(screen.getByRole('status')).toHaveTextContent('Не е вярно')
+    await screen.findByRole('heading', { name: 'Само за родители' })
+    enterCode('012345')
+    enterCode('654321')
+    expect(screen.getByRole('status')).toHaveTextContent('Двата кода се различават')
+    await openParentGate()
+    cleanup()
+    renderAt('/parents')
+    await screen.findByLabelText('Въведи своя родителски ПИН.')
+    enterCode('654321')
+    await screen.findByText('Невалиден ПИН. Опитай отново.')
     expect(screen.queryByRole('heading', { name: 'За родители' })).not.toBeInTheDocument()
-    expect(screen.getByText(/Колко е/).textContent).toBeDefined() // a new question is asked
-    void before
-    solveGate()
-    expect(screen.getByRole('heading', { name: 'За родители' })).toBeInTheDocument()
+    await openParentGate()
   })
 
   it('locks the parent area on leaving and returning', async () => {
     renderAt('/parents')
     await screen.findByRole('heading', { name: 'Само за родители' })
-    solveGate()
+    await openParentGate()
     expect(screen.getByRole('heading', { name: 'За родители' })).toBeInTheDocument()
     cleanup()
     renderAt('/parents')
@@ -177,7 +187,7 @@ describe('parents section', () => {
   it('restores progress only after the parent confirms the selected backup', async () => {
     renderAt('/parents')
     await screen.findByRole('heading', { name: 'Само за родители' })
-    solveGate()
+    await openParentGate()
     const original = activeProfile(useProfiles.getState())
     const data = { format: 'koren-profiles-v1', activeId: original.id,
       profiles: [{ ...original, nickname: 'Рая', badges: ['asparuh'] }] }
@@ -194,14 +204,15 @@ describe('parents section', () => {
   it('locks the parent area when the session expires while it is open', async () => {
     renderAt('/parents')
     await screen.findByRole('heading', { name: 'Само за родители' })
-    vi.useFakeTimers()
+    const now = Date.now()
+    await openParentGate()
+    vi.spyOn(Date, 'now').mockReturnValue(now + 11 * 60 * 1000)
     try {
-      solveGate()
       expect(screen.getByRole('heading', { name: 'За родители' })).toBeInTheDocument()
-      act(() => vi.advanceTimersByTime(10 * 60 * 1000))
+      act(() => document.dispatchEvent(new Event('visibilitychange')))
       expect(screen.getByRole('heading', { name: 'Само за родители' })).toBeInTheDocument()
     } finally {
-      vi.useRealTimers()
+      vi.restoreAllMocks()
     }
   })
 
@@ -209,10 +220,10 @@ describe('parents section', () => {
     useSettings.getState().completeOnboarding()
     renderAt('/parents')
     await screen.findByRole('heading', { name: 'Само за родители' })
-    solveGate('6812008') // a long wrong number is just wrong
-    expect(screen.getByRole('status')).toHaveTextContent('Не е вярно')
+    enterCode('6812008') // a long wrong number is just wrong
+    expect(screen.getByRole('status')).toHaveTextContent('Невалиден ПИН')
     expect(screen.queryByRole('heading', { name: 'Режим за тестване' })).not.toBeInTheDocument()
-    solveGate('6812007')
+    enterCode('6812007')
     expect(screen.queryByRole('heading', { name: 'За родители' })).not.toBeInTheDocument()
     expect(screen.queryByRole('button', { name: /Изтрий всички данни/ })).not.toBeInTheDocument()
     expect(screen.getByRole('heading', { name: 'Режим за тестване' })).toBeInTheDocument()
@@ -232,10 +243,10 @@ describe('parents section', () => {
     expect(await screen.findByRole('link', { name: 'Тест: всички мисии са отворени' })).toBeInTheDocument()
   })
 
-  it('the parents\' section has no testing part when opened with the sum', async () => {
+  it('the parents\' section has no testing part when opened with the PIN', async () => {
     renderAt('/parents')
     await screen.findByRole('heading', { name: 'Само за родители' })
-    solveGate()
+    await openParentGate()
     expect(screen.getByRole('heading', { name: 'За родители' })).toBeInTheDocument()
     expect(screen.queryByRole('heading', { name: 'Режим за тестване' })).not.toBeInTheDocument()
   })
@@ -250,7 +261,7 @@ describe('parents section', () => {
     useProfiles.getState().complete('hist-01-asparuh', 'young', 'asparuh')
     renderAt('/parents')
     await screen.findByRole('heading', { name: 'Само за родители' })
-    solveGate()
+    await openParentGate()
     fireEvent.click(screen.getByRole('button', { name: /Добави дете/ }))
     fireEvent.change(screen.getByRole('textbox', { name: /Прякор/ }), { target: { value: 'Бобчо' } })
     fireEvent.click(screen.getByRole('button', { name: 'По-малко години' }))
@@ -278,7 +289,7 @@ describe('parents section', () => {
     useProfiles.getState().addProfile({ nickname: 'Ани', age: 9, avatar: 'book' })
     renderAt('/parents')
     await screen.findByRole('heading', { name: 'Само за родители' })
-    solveGate()
+    await openParentGate()
     fireEvent.click(screen.getByRole('button', { name: 'Изтрий профила: Ани' }))
     expect(useProfiles.getState().profiles).toHaveLength(2)
     fireEvent.click(screen.getByRole('button', { name: 'Натисни пак, за да изтриеш: Ани' }))
@@ -289,7 +300,7 @@ describe('parents section', () => {
   it('changes the language everywhere', async () => {
     renderAt('/parents')
     await screen.findByRole('heading', { name: 'Само за родители' })
-    solveGate()
+    await openParentGate()
     fireEvent.click(screen.getByRole('radio', { name: /English/ }))
     expect(screen.getByRole('heading', { name: 'For parents' })).toBeInTheDocument()
   })
@@ -298,7 +309,7 @@ describe('parents section', () => {
     useProfiles.getState().complete('cult-01-baba-marta', 'small', 'baba-marta')
     renderAt('/parents')
     await screen.findByRole('heading', { name: 'Само за родители' })
-    solveGate()
+    await openParentGate()
     expect(screen.getByText(`Пътешественик 1 — Изиграни мисии: 1 от ${FOR_OLDER}`)).toBeInTheDocument()
     expect(screen.getByText('Баба Марта и мартениците')).toBeInTheDocument()
   })
@@ -308,7 +319,7 @@ describe('parents section', () => {
     useProfiles.getState().complete('hist-01-asparuh', 'young', 'asparuh')
     renderAt('/parents')
     await screen.findByRole('heading', { name: 'Само за родители' })
-    solveGate()
+    await openParentGate()
     fireEvent.click(screen.getByRole('button', { name: /Изтрий всички данни/ }))
     expect(useSettings.getState().onboarded).toBe(true)
     fireEvent.click(screen.getByRole('button', { name: /Натисни пак – изтрива/ }))
