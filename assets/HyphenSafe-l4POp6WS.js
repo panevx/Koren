@@ -1,0 +1,1 @@
+import{j as n,G as p}from"./index-cXCc5XF7.js";function o({text:s}){return n.jsx("span",{children:p(s).map((e,a)=>typeof e=="string"?e:n.jsx("span",{className:"whitespace-nowrap",children:e.nowrap},a))})}export{o as H};
