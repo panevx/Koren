@@ -1,3 +1,4 @@
+import { detailImage } from '../components/detailImage'
 import { useMemo, useState } from 'react'
 import { img } from '../components/Brand'
 import { Sparkles } from '../components/ds'
@@ -68,7 +69,7 @@ export function Cook({ game, onDone }: { game: CookGame; onDone: () => void }) {
         {cooked ? (
           <m.div initial={{ scale: 0.4, rotate: -12 }} animate={{ scale: 1, rotate: 0 }} transition={bouncy} className="relative">
             <Sparkles burst="dish" />
-            <img src={img(game.dish.img)} alt={l(game.dish)} className="pop-3d w-full object-contain" />
+            <img src={img(game.dish.img)} {...detailImage(game.dish.img, '(min-width: 800px) 288px, min(60vw, 240px)')} alt={l(game.dish)} className="pop-3d w-full object-contain" />
           </m.div>
         ) : (
           <div data-drop="pot" className="relative w-full rounded-full transition-transform data-[over=true]:scale-110" aria-label={t('cook.pot')} role="img">

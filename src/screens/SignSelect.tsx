@@ -1,3 +1,4 @@
+import { detailImage } from '../components/detailImage'
 import { useNavigate } from 'react-router'
 import { img } from '../components/Brand'
 import { Icon } from '../components/Icon'
@@ -26,7 +27,7 @@ export function SignSelect() {
           <div className="grid size-36 place-items-center rounded-full bg-gold shadow-[inset_0_3px_0_rgb(255_255_255/0.5),0_7px_0_var(--color-gold-deep),0_22px_30px_-14px_rgb(28_43_35/0.45)]">
             <m.img
               key={avatar}
-              src={img(avatarImg(avatar))}
+              src={img(avatarImg(avatar))} {...detailImage(avatarImg(avatar), '96px')}
               alt=""
               initial={{ scale: 0.4, rotate: -20, opacity: 0 }}
               animate={{ scale: 1, rotate: 0, opacity: 1 }}
@@ -39,7 +40,7 @@ export function SignSelect() {
         <AvatarPicker value={avatar} onChange={setAvatar} />
       </div>
       <div className="flex shrink-0 items-center gap-3 border-t border-green/15 bg-cream px-5 pt-3 pb-[max(0.875rem,env(safe-area-inset-bottom))]">
-        <img src={img(avatarImg(avatar))} alt="" className="size-12 shrink-0 object-contain" />
+        <img src={img(avatarImg(avatar))} {...detailImage(avatarImg(avatar), '96px')} alt="" className="size-12 shrink-0 object-contain" />
         <span className="min-w-0 flex-1 font-extrabold leading-tight">{t(`avatar.${visibleAvatar(avatar)}`)}</span>
         <Button
           variant="accent"

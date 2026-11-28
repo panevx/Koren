@@ -1,3 +1,4 @@
+import { detailImage } from './detailImage'
 import type { CSSProperties, ReactNode } from 'react'
 import type { SceneId } from '../content/schema'
 import { useT } from '../i18n/useT'
@@ -105,7 +106,7 @@ function ModeWorld({ level, selected, onPick }: { level: Level; selected: boolea
       {/* The picture: the far object, the emblem on its pedestal, the hero standing on the grass. */}
       <span className="relative order-2 w-[40%] shrink-0 wide:order-1 wide:h-[clamp(8.5rem,22vh,15rem)] wide:w-full" aria-hidden="true">
         <img
-          src={img(art.far)}
+          src={img(art.far)} {...detailImage(art.far, '(min-width: 1024px) 145px, 64px')}
           alt=""
           className={`absolute object-contain opacity-90 ${
             level === 'guard' ? 'top-[14%] right-[8%] w-[40%]' : level === 'young' ? 'top-[6%] right-[6%] w-[24%] anim-float' : 'top-[10%] right-[10%] w-[20%] anim-float'
@@ -115,7 +116,7 @@ function ModeWorld({ level, selected, onPick }: { level: Level; selected: boolea
         <LevelIcon level={level} className="pop-3d absolute bottom-[13%] left-[6%] w-[30%]" />
         <span className="ground absolute bottom-[3%] left-[52%] h-[9%] w-[44%] -translate-x-1/2" />
         <img
-          src={img(art.hero)}
+          src={img(art.hero)} {...detailImage(art.hero, '(min-width: 1024px) 165px, min(35vw, 130px)')}
           alt=""
           decoding="async"
           className={`pop-3d absolute bottom-[5%] left-[52%] h-[88%] w-[96%] -translate-x-1/2 object-contain object-bottom transition-transform duration-500 ease-[var(--ease-spring)] ${

@@ -1,3 +1,4 @@
+import { detailImage } from '../components/detailImage'
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router'
 import { BadgeArt } from '../components/BadgeArt'
@@ -219,7 +220,7 @@ function ChapterSign({ title, done, total }: { title: string; done: number; tota
       {/* The text sits ON the upper board: measured from the picture, the board is 14–47 % of its height and the bolts stand
           at its ends — so the text box is 16–44 % high and 60 % wide (between the bolts), centred both ways; sized by the sign's own width (cqw). */}
       <span className="relative grid w-[min(10rem,48vw)] place-items-center [container-type:inline-size]">
-        <img src={img(ART.sign)} alt="" className="pop-3d w-full" />
+        <img src={img(ART.sign)} {...detailImage(ART.sign, 'min(57vw, 192px)')} alt="" className="pop-3d w-full" />
         <span className="absolute top-[16%] left-1/2 flex h-[28%] w-[60%] -translate-x-1/2 items-center justify-center">
           <span className="text-center leading-[1.1] font-black text-[#4A2A12]" data-fit-label style={fitWords(title, 'min(0.9rem,8cqw)', 0.68 / 0.6, true)}>
             <HyphenSafe text={title} />

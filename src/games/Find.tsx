@@ -1,3 +1,4 @@
+import { detailImage } from '../components/detailImage'
 import { useMemo, useState, type CSSProperties } from 'react'
 import { img } from '../components/Brand'
 import { ART } from '../world'
@@ -73,7 +74,7 @@ export function Find({ game, onDone }: { game: FindGame; onDone: () => void }) {
           // v0.22: a painted picture to search in (hidden objects); the drawn scene stays behind it as the sky
           <>
             <SceneBackdrop scene={game.scene} className="absolute inset-0 size-full" />
-            <img src={img(game.backdrop)} alt="" draggable={false} className="absolute inset-0 size-full object-contain" />
+            <img src={img(game.backdrop)} {...detailImage(game.backdrop, '(min-width: 800px) 470px, min(100vw, 448px)')} alt="" draggable={false} className="absolute inset-0 size-full object-contain" />
           </>
         ) : (
           <SceneBackdrop scene={game.scene} className="absolute inset-0 size-full" />

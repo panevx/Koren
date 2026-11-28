@@ -1,3 +1,4 @@
+import { detailImage } from '../components/detailImage'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Navigate, useLocation, useNavigate, useNavigationType, useParams } from 'react-router'
 import { BadgeArt } from '../components/BadgeArt'
@@ -353,7 +354,7 @@ function Story({ lines, onDone }: { lines: StoryLine[]; onDone: () => void }) {
         {line.img && (
           <m.img
             key={`obj-${i}`}
-            src={img(line.img)}
+            src={img(line.img)} {...detailImage(line.img, '(min-width: 800px) 290px, min(44vw, 280px)')}
             alt=""
             initial={{ opacity: 0, scale: 0.5, y: 30 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -515,7 +516,7 @@ function Badge({ mission, level, profileId, entryKey, legacyEntry }: {
           }}
           className="relative -mt-3 grid size-44 origin-bottom place-items-center overflow-hidden rounded-full shadow-[0_2px_3px_rgb(52_44_24/0.25),0_14px_18px_-10px_rgb(52_44_24/0.45)]"
         >
-          <BadgeArt icon={mission.badge.icon} className="size-full" />
+          <BadgeArt icon={mission.badge.icon} sizes={mission.badge.icon.startsWith('badges/') ? '176px' : '110px'} className="size-full" />
           {/* one glint of light across the medal */}
           <m.span
             className="absolute inset-y-0 w-10 -skew-x-12 bg-white/55"

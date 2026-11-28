@@ -1,3 +1,4 @@
+import imageWidths from '../content/imageWidths.json'
 import type { Mission } from '../content/schema'
 import { PLACES } from '../content/places'
 import { ART, GAME_ART, MODE_ART } from '../world'
@@ -10,6 +11,7 @@ import { FAME } from '../content/fame'
 
 /** Images the interface itself uses (paths inside public/img). */
 export const UI_IMAGES: readonly string[] = [
+  ...Object.keys(imageWidths).map(path => 'detail/' + path),
   'logo/koren.svg',
   'logo/koren-compact.svg',
   'logo/koren-white.svg',

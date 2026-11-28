@@ -1,3 +1,4 @@
+import { detailImage } from './detailImage'
 import { img } from './Brand'
 import { ART } from '../world'
 
@@ -14,7 +15,7 @@ export function BackWall({ className }: { className: string }) {
     <div className={`backwall overflow-hidden bg-sky-soft [container-type:size] ${className}`} aria-hidden="true">
       {/* "cover" for ANY proportion: as wide as the wall, or 1.5 × its height if the wall is tall (a phone's welcome screen) */}
       <div className="absolute top-[65%] left-1/2 aspect-[3/2] w-[max(100cqw,150cqh)] -translate-x-1/2 -translate-y-[65%]">
-        <img src={img(ART.hills)} alt="" width={960} height={640} className="absolute inset-0 size-full" fetchPriority="high" />
+        <img src={img(ART.hills)} {...detailImage(ART.hills, '(min-width: 1024px) 64vw, 100vw')} alt="" width={960} height={640} className="absolute inset-0 size-full" fetchPriority="high" />
         <svg viewBox="0 0 960 640" className="absolute inset-0 size-full" focusable="false">
           <defs>
             <linearGradient id="dio-far" x1="0" y1="0" x2="0" y2="1">
@@ -59,7 +60,7 @@ export function BackWall({ className }: { className: string }) {
           {/* a small cloud between the mountains and the hills — the hills cover its lower half */}
           <image href={img(ART.cloud)} x="150" y="292" width="112" height="112" opacity="0.9" />
         </svg>
-        <img src={img(ART.hillsNear)} alt="" width={960} height={640} className="absolute inset-0 size-full" fetchPriority="high" />
+        <img src={img(ART.hillsNear)} {...detailImage(ART.hillsNear, '(min-width: 1024px) 64vw, 100vw')} alt="" width={960} height={640} className="absolute inset-0 size-full" fetchPriority="high" />
       </div>
       {/* rim + ambient occlusion toward the floor */}
       <span className="rim-over absolute inset-0 rounded-[inherit]" />

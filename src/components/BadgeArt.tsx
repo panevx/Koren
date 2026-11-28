@@ -1,3 +1,4 @@
+import { detailImage } from './detailImage'
 import { img } from './Brand'
 
 /**
@@ -11,17 +12,19 @@ export function BadgeArt({
   earned = true,
   className = 'size-24',
   lazy = false,
+  sizes,
 }: {
   icon: string
   earned?: boolean
   className?: string
   /** For badges far down a long list: fetched only when scrolled near. */
+  sizes?: string
   lazy?: boolean
 }) {
   if (icon.startsWith('badges/')) {
     return (
       <img
-        src={img(icon)}
+        src={img(icon)} {...(sizes && detailImage(icon, sizes))}
         alt=""
         width={320}
         height={320}
@@ -41,7 +44,7 @@ export function BadgeArt({
     >
       <span className={`grid size-full place-items-center rounded-full ${earned ? 'bg-white' : 'bg-cream'}`}>
         <img
-          src={img(icon)}
+          src={img(icon)} {...(sizes && detailImage(icon, sizes))}
           alt=""
           className={`size-[70%] object-contain ${earned ? '' : 'opacity-40 grayscale'}`}
           loading={lazy ? 'lazy' : undefined}

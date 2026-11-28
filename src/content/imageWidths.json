@@ -1,0 +1,20 @@
+{
+  "badges/baba-marta.webp": [320, 484],
+  "food/shopska-salad.webp": [320, 448],
+  "food/tarator.webp": [320, 456],
+  "heroes/raya-joy.webp": [192, 235],
+  "levels/small.webp": [160, 243],
+  "minigame/hidden-object-scene.webp": [640, 929],
+  "modes/guard.webp": [165, 239],
+  "modes/small.webp": [308, 448],
+  "modes/young.webp": [180, 261],
+  "nature/thracian-lowland.webp": [640, 962],
+  "people/vasil-levski.webp": [320, 528],
+  "puzzles/koren-raya.webp": [640, 960],
+  "puzzles/rose.webp": [640, 960],
+  "world/diorama-hills.webp": [960, 1536],
+  "world/hills-v02.webp": [960, 1536],
+  "world/hint-lantern.webp": [192, 230],
+  "world/tsarevets-fortress.webp": [320, 528],
+  "world/wooden-sign.webp": [320, 528]
+}

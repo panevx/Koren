@@ -1,3 +1,4 @@
+import { detailImage } from './detailImage'
 import { useT } from '../i18n/useT'
 import { sectionIcon, type SectionId } from '../sections'
 import type { Level } from '../theme/levels'
@@ -29,7 +30,7 @@ export function SectionIcon({ id, className = 'size-16' }: { id: SectionId; clas
 export function LevelIcon({ level, className = 'size-11' }: { level: Level; className?: string }) {
   return (
     <img
-      src={img(`levels/${level}.webp`)}
+      src={img(`levels/${level}.webp`)} {...detailImage(`levels/${level}.webp`, '(min-width: 1024px) 100px, 48px')}
       alt=""
       aria-hidden="true"
       width={160}

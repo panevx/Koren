@@ -1,3 +1,4 @@
+import { detailImage } from '../components/detailImage'
 import { useMemo, useState } from 'react'
 import { img } from '../components/Brand'
 import type { PuzzleGame } from '../content/schema'
@@ -86,15 +87,14 @@ export function Puzzle({ game, onDone }: { game: PuzzleGame; onDone: () => void 
               disabled={done && !solved}
               aria-pressed={active}
               aria-label={t('puzzle.piece', { n: pos + 1 })}
-              className={`press relative min-h-16 rounded-2xl bg-no-repeat ${
+              className={`press relative min-h-16 overflow-hidden rounded-2xl ${
                 active ? 'z-10 scale-95 shadow-float ring-4 ring-coral' : done ? '' : 'shadow-soft'
               }`}
-              style={{
-                backgroundImage: `url("${src}")`,
-                backgroundSize: `${cols * 100}% ${rows * 100}%`,
-                backgroundPosition: `${cols > 1 ? (c / (cols - 1)) * 100 : 0}% ${rows > 1 ? (r / (rows - 1)) * 100 : 0}%`,
-              }}
-            />
+            >
+              <img src={src} {...detailImage(game.img, 'min(100vw, 368px)')} alt="" draggable={false}
+                className="pointer-events-none absolute max-w-none"
+                style={{ width: `${cols * 100}%`, height: `${rows * 100}%`, left: `-${c * 100}%`, top: `-${r * 100}%` }} />
+            </button>
           )
         })}
       </div>

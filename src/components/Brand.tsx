@@ -1,3 +1,4 @@
+import { detailImage } from './detailImage'
 import type { ReactNode } from 'react'
 import { useT } from '../i18n/useT'
 import { ART } from '../world'
@@ -22,7 +23,7 @@ export function Scenery({ className = '', castle = true, landscape = false }: { 
     return (
       <div className={`overflow-hidden bg-sky-soft ${className}`} aria-hidden="true">
         <img
-          src={img(ART.hills)}
+          src={img(ART.hills)} {...detailImage(ART.hills, '100vw')}
           alt=""
           width={960}
           height={640}
